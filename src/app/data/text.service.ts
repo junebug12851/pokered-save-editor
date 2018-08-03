@@ -261,7 +261,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class SaveTextService {
+export class TextService {
 
     constructor() {
         for (let i = 0; i < rawTrans.length; i++) {

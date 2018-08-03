@@ -15,18 +15,22 @@
  */
 
 import { Injectable } from '@angular/core';
-import { SaveTextService } from "./savetext.service";
+import { TextService } from "./text.service";
+import { resolve } from 'path';
+
+const BluePromise = require("bluebird");
 
 const electron = require('electron').remote
 const { dialog } = electron;
-const fs = require('fs');
+
+const fs = BluePromise.promisifyAll(require("fs"));
 
 @Injectable({
     providedIn: 'root'
 })
 export class SaveFileService {
 
-    constructor(private saveText: SaveTextService) { }
+    constructor(private saveText: TextService) { }
 
     /*
     * bcd2number -> takes a nodejs buffer with a BCD and returns the corresponding number.
@@ -205,64 +209,68 @@ export class SaveFileService {
     }
 
     // Handles Open File Dialog
-    protected openOpenFileDialog(title: string, cb: Function) {
-        dialog.showOpenDialog({
-            title,
-            buttonLabel: "Open",
-            filters: [
-                { name: 'SAV Files', extensions: ['sav'] },
-                { name: 'All Files', extensions: ['*'] },
-            ],
-            properties: [
-                "openFile",
-                "treatPackageAsDirectory",
-            ],
-        }, cb);
+    // We want this to use es6 async/await and since it never throws an error
+    // we can't use Bluebird so we need to promisfy it manually
+    protected async openOpenFileDialog(title: string) {
+        return new Promise((resolve, reject) => {
+            dialog.showOpenDialog({
+                title,
+                buttonLabel: "Open",
+                filters: [
+                    { name: 'SAV Files', extensions: ['sav'] },
+                    { name: 'All Files', extensions: ['*'] },
+                ],
+                properties: [
+                    "openFile",
+                    "treatPackageAsDirectory",
+                ],
+            }, files => {
+                resolve(files);
+            });
+        });
     }
 
     // Handles Save File Dialog
-    protected openSaveFileDialog(title: string, cb: Function) {
-        dialog.showSaveDialog({
-            title,
-            buttonLabel: "Save",
-            filters: [
-                { name: 'SAV Files', extensions: ['sav'] },
-                { name: 'All Files', extensions: ['*'] },
-            ],
-        }, cb);
+    // We want this to use es6 async/await and since it never throws an error
+    // we can't use Bluebird so we need to promisfy it manually
+    protected async openSaveFileDialog(title: string) {
+        return new Promise((resolve, reject) => {
+            dialog.showSaveDialog({
+                title,
+                buttonLabel: "Save",
+                filters: [
+                    { name: 'SAV Files', extensions: ['sav'] },
+                    { name: 'All Files', extensions: ['*'] },
+                ],
+            }, file => {
+                resolve(file);
+            });
+        });
     }
 
     // Handles loading file into memory
-    protected async bufferSaveFile(filePath: string) {
-        fs.readFile(filePath, (err, data) => {
-            if (err) {
-                throw err;
-            }
-
-            this.filePath = filePath;
-            this.fileData = data;
-        });
+    protected async readSaveFile(filePath: string) {
+        const data = await fs.readFileAsync(filePath);
+        this.filePath = filePath;
+        this.fileData = data;
     }
 
     // Write Buffer to file
-    protected async writeSaveFileBuffer() {
-        fs.writeFile(this.filePath, this.fileData, async err => {
-            if (err) {
-                throw err;
-            }
-        });
+    protected async writeSaveFile(_filePath: string = this.filePath) {
+        this.recalcChecksums();
+        await fs.writeFileAsync(_filePath, this.fileData);
     }
 
     // Initiates an open file dialog to open save file
     public async openFile() {
-        this.openOpenFileDialog("Open Save File", async fileNames => {
-            if (fileNames === undefined) {
-                return;
-            }
+        const fileNames = await this.openOpenFileDialog("Open Save File");
 
-            const filePath = fileNames[0];
-            await this.bufferSaveFile(filePath);
-        });
+        if (fileNames === undefined) {
+            return;
+        }
+
+        const filePath = fileNames[0];
+        await this.readSaveFile(filePath);
     }
 
     // Reloads file from disk erasing unsaved changes, if no open file is
@@ -274,7 +282,7 @@ export class SaveFileService {
             return;
         }
 
-        await this.bufferSaveFile(this.filePath);
+        await this.readSaveFile(this.filePath);
     }
 
     // Closes file in memory and erases buffer
@@ -290,31 +298,37 @@ export class SaveFileService {
             return;
         }
 
-        this.recalcChecksums();
-        await this.writeSaveFileBuffer();
+        await this.writeSaveFile();
     }
 
     // Save file as...
     public async saveAsFile() {
-        this.openSaveFileDialog("Save File As...", async filePath => {
-            if (filePath === undefined) {
-                return;
-            }
+        const fileName = await this.openSaveFileDialog("Save File As...");
 
-            this.filePath = filePath;
-            await this.saveFile();
-        });
+        if (fileName === undefined) {
+            return;
+        }
+
+        // I literally don't know what typescript is thinking half the time
+        // fileName is a string, the assignment is correct, furthermore you
+        // inferred correctly above??? I never thought there was a comment
+        // command to turn off typescripts idiocy, will have to
+        // remember this one
+        // @ts-ignore
+        this.filePath = fileName;
+        await this.saveFile();
     }
 
     // Save copy of file
     public async saveAsCopyFile() {
-        this.openSaveFileDialog("Save Copy As...", async filePath => {
-            if (filePath === undefined) {
-                return;
-            }
+        const fileName = await this.openSaveFileDialog("Save Copy As...");
 
-            await this.saveFile();
-        });
+        if (fileName === undefined) {
+            return;
+        }
+
+        // @ts-ignore
+        await this.writeSaveFile(fileName);
     }
 
     // Current file path
