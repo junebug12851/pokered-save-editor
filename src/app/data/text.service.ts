@@ -31,12 +31,14 @@
 
 // Raw translation table
 
-type RawTransArr = {
+type RawTransArrEntry = {
     code: number,
     eng: string,
     shorthand?: boolean,
     normal?: boolean,
-}[];
+};
+
+type RawTransArr = RawTransArrEntry[];
 
 type TransIndToEng = {
     eng: string,
@@ -45,7 +47,7 @@ type TransIndToEng = {
 }[];
 
 type TransEngToInd = {
-    [key: string]: RawTransArr
+    [key: string]: RawTransArrEntry
 };
 
 const rawTrans: RawTransArr = [
@@ -269,8 +271,8 @@ export class TextService {
             const transPair = rawTrans[i];
 
             // Cache inside direct lookup caches for easier lookup
-            exports.indToEng[transPair.code] = transPair;
-            exports.engToIndex[transPair.eng] = transPair;
+            this.indToEng[transPair.code] = transPair;
+            this.engToIndex[transPair.eng] = transPair;
         }
     }
 

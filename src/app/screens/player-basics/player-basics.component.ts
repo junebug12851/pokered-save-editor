@@ -15,13 +15,17 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { SaveFileService } from "../../data/savefile.service";
 
 declare var M: any;
 
 @Component({
     selector: 'screen-player-basics',
     templateUrl: './player-basics.component.html',
-    styleUrls: ['./player-basics.component.scss']
+    styleUrls: ['./player-basics.component.scss'],
+    providers: [
+        SaveFileService
+    ],
 })
 export class PlayerBasicsComponent implements OnInit {
 

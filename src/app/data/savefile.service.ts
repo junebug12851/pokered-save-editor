@@ -14,16 +14,27 @@
    limitations under the License.
  */
 
+/**
+ * Provides means to work with a Pokemon Red save file and correctly extract
+ * various data formats in a useable and readable form as well as write them
+ * back correctly.
+ */
+
+declare const Buffer;
+
 import { Injectable } from '@angular/core';
 import { TextService } from "./text.service";
-import { resolve } from 'path';
 
-const BluePromise = require("bluebird");
+// @ts-ignore
+const BluePromise = window.require("bluebird");
 
-const electron = require('electron').remote
+// @ts-ignore
+const electron = window.require('electron').remote
 const { dialog } = electron;
 
-const fs = BluePromise.promisifyAll(require("fs"));
+// Quiet Typescript, I already can't access fs normally thanks to angular
+// @ts-ignore
+const fs = BluePromise.promisifyAll(window.require("fs"));
 
 @Injectable({
     providedIn: 'root'
