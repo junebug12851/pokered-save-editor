@@ -19,7 +19,7 @@ declare var $: any;
 declare var jQuery: any;
 
 import { Component, OnInit } from '@angular/core';
-import { AppService } from "../../data/app/app.service";
+import { AppService } from "../../data/app.service";
 
 @Component({
     selector: 'app-navbar',
