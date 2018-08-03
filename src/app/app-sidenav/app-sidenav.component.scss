@@ -13,17 +13,22 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+@import "../../styles/color_vars";
+@import "~materialize-css/sass/components/color-classes";
+@import "../../styles/materialize_vars";
 
-import 'hammerjs';
-
-if (environment.production) {
-    enableProdMode();
+a:hover {
+    background-color: darken($primary-color, 15%) !important;
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.log(err));
+.subheader {
+    color: color("grey", "lighten-2");
+    text-align: left;
+    padding-left: 15px;
+}
+
+.sidenav {
+    box-shadow: none !important;
+    margin-top: 64px;
+}

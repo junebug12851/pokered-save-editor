@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+   Copyright 2018 June Hanabi
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
+// Basics that can be overridden
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+// Materialize
+@import "./styles/materialize";
+
+// Ico-Moon Font Icons
+@import "./styles/icomoon.css";
+
+// Set core fixes
+* {
+    box-sizing: border-box !important;
+}
+
+a:focus, button:focus {
+    outline: 0 !important;
+}
+
+html, body {
+    background-color: color("grey", "darken-4");
+    color: color("grey", "lighten-4");
+}
+
+// Properly pad content next to side-nav
+.nav-wrapper {
+      padding-left: 200px;
+}
+
+@media only screen and (max-width : 992px) {
+    .nav-wrapper {
+        padding-left: 0;
+    }
+}
+
+// Custom Scrollbar
+
+::-webkit-scrollbar {
+    width: .4em;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary-color;
+    width: 5px;
+    border: none;
+    border-radius: 4px;
+}

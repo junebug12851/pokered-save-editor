@@ -13,17 +13,21 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { Injectable } from '@angular/core';
 
-import 'hammerjs';
+@Injectable({
+    providedIn: 'root'
+})
+export class AppService {
 
-if (environment.production) {
-    enableProdMode();
+    constructor() { }
+
+    get appName() {
+        return "Pokered Save Editor";
+    }
+
+    get appNameShort() {
+        return "Save Editor"
+    }
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.log(err));

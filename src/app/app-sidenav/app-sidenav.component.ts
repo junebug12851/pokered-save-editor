@@ -13,17 +13,23 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+declare var M: any;
+declare var $: any;
+declare var jQuery: any;
 
-import 'hammerjs';
+import { Component, OnInit } from '@angular/core';
 
-if (environment.production) {
-    enableProdMode();
+@Component({
+    selector: 'app-sidenav',
+    templateUrl: './app-sidenav.component.html',
+    styleUrls: ['./app-sidenav.component.scss']
+})
+export class AppSidenavComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {
+        $('#sidenav').sidenav();
+    }
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.log(err));
