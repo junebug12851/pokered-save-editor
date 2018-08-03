@@ -14,21 +14,23 @@
    limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+declare var M: any;
+declare var $: any;
+declare var jQuery: any;
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+import { Component, OnInit } from '@angular/core';
+import { AppService } from "../../data/app/app.service";
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+@Component({
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss']
 })
-export class AppRoutingModule { }
+export class NavbarComponent implements OnInit {
+
+    constructor(private appService: AppService) { }
+
+    ngOnInit() {
+        $("#file-dropdown-trigger").dropdown();
+    }
+}

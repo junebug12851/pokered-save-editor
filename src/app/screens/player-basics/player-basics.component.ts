@@ -14,21 +14,21 @@
    limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+import { Component, OnInit } from '@angular/core';
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+declare var M: any;
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+@Component({
+    selector: 'screen-player-basics',
+    templateUrl: './player-basics.component.html',
+    styleUrls: ['./player-basics.component.scss']
 })
-export class AppRoutingModule { }
+export class PlayerBasicsComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {
+        M.updateTextFields();
+    }
+
+}

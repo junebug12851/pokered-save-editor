@@ -14,22 +14,22 @@
    limitations under the License.
  */
 
-declare var M: any;
-declare var $: any;
-declare var jQuery: any;
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-sidenav',
-    templateUrl: './app-sidenav.component.html',
-    styleUrls: ['./app-sidenav.component.scss']
+    selector: 'gym-button',
+    templateUrl: './gym-button.component.html',
+    styleUrls: ['./gym-button.component.scss']
 })
-export class AppSidenavComponent implements OnInit {
+export class GymButtonComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {
-        $('#sidenav').sidenav();
-    }
+    ngOnInit() { }
+
+    @Input()
+    public gymLeader: string;
+
+    @Input()
+    public gymBadge: string;
 }

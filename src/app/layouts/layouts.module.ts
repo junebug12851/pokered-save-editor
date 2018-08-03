@@ -15,20 +15,26 @@
  */
 
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { FontawesomeModule } from "../libs/fontawesome.module";
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [
+        CommonModule,
+        FontawesomeModule
+    ],
+    declarations: [
+        NavbarComponent,
+        SidenavComponent
+    ],
+    exports: [
+        NavbarComponent,
+        SidenavComponent
+    ]
 })
-export class AppRoutingModule { }
+export class LayoutModule {
+
+}

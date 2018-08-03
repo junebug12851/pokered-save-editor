@@ -14,21 +14,23 @@
    limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+@import "../../../styles/color_vars";
+@import "~materialize-css/sass/components/color-classes";
+@import "../../../styles/materialize_vars";
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+a:hover {
+    background-color: darken($primary-color, 15%) !important;
+}
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-})
-export class AppRoutingModule { }
+.subheader {
+    color: color("grey", "lighten-2");
+    text-align: left;
+    padding-left: 15px;
+}
+
+.sidenav {
+    box-shadow: none !important;
+    margin-top: 64px;
+    padding-top: 10px;
+    padding-bottom: 150px;
+}

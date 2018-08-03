@@ -14,21 +14,28 @@
    limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+@import "../../../styles/color_vars";
+@import "~materialize-css/sass/components/color-classes";
+@import "../../../styles/materialize_vars";
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+.gym-btn {
+    height: 60px;
+    width: 100px;
+    line-height: 1.70;
+    text-transform: none;
+    background-color: color("grey", "lighten-1");
+    border-radius: 10px;
+    text-align: center;
+    color: color("grey", "darken-4");
+    margin-right: 15px;
+    margin-top: 15px;
+    display: inline-block;
+}
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-})
-export class AppRoutingModule { }
+.gym-btn .gym-leader {
+    font-size: 15px;
+}
+
+.gym-btn .gym-badge {
+    font-size: 20px;
+}

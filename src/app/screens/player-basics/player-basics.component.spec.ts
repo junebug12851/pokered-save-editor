@@ -16,21 +16,21 @@
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppSidenavComponent } from './app-sidenav.component';
+import { PlayerBasicsComponent } from './player-basics.component';
 
-describe('AppSidenavComponent', () => {
-    let component: AppSidenavComponent;
-    let fixture: ComponentFixture<AppSidenavComponent>;
+describe('ScreenPlayerBasicsComponent', () => {
+    let component: PlayerBasicsComponent;
+    let fixture: ComponentFixture<PlayerBasicsComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AppSidenavComponent]
+            declarations: [PlayerBasicsComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AppSidenavComponent);
+        fixture = TestBed.createComponent(PlayerBasicsComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

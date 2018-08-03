@@ -14,21 +14,22 @@
    limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+declare var M: any;
+declare var $: any;
+declare var jQuery: any;
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+import { Component, OnInit } from '@angular/core';
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+@Component({
+    selector: 'app-sidenav',
+    templateUrl: './sidenav.component.html',
+    styleUrls: ['./sidenav.component.scss']
 })
-export class AppRoutingModule { }
+export class SidenavComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {
+        $('#sidenav').sidenav();
+    }
+}

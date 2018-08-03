@@ -15,20 +15,23 @@
  */
 
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [
-    { path: 'player-basics', component: PlayerBasicsComponent },
-    {
-        path: '',
-        redirectTo: '/player-basics',
-        pathMatch: 'full'
-    },
-];
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+
+library.add(fas, far);
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [
+        CommonModule
+    ],
+    exports: [
+        FontAwesomeModule,
+    ]
 })
-export class AppRoutingModule { }
+export class FontawesomeModule {
+
+}

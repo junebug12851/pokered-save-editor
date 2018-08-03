@@ -14,23 +14,24 @@
    limitations under the License.
  */
 
-@import "../../styles/color_vars";
-@import "~materialize-css/sass/components/color-classes";
-@import "../../styles/materialize_vars";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FragmentsModule } from "../fragments/fragments.module";
 
-a:hover {
-    background-color: darken($primary-color, 15%) !important;
-}
+import { PlayerBasicsComponent } from './player-basics/player-basics.component';
 
-.subheader {
-    color: color("grey", "lighten-2");
-    text-align: left;
-    padding-left: 15px;
-}
+@NgModule({
+    imports: [
+        CommonModule,
+        FragmentsModule
+    ],
+    declarations: [
+        PlayerBasicsComponent
+    ],
+    exports: [
+        PlayerBasicsComponent
+    ]
+})
+export class ScreensModule {
 
-.sidenav {
-    box-shadow: none !important;
-    margin-top: 64px;
-    padding-top: 10px;
-    padding-bottom: 150px;
 }

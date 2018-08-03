@@ -14,23 +14,22 @@
    limitations under the License.
  */
 
-declare var M: any;
-declare var $: any;
-declare var jQuery: any;
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { Component, OnInit } from '@angular/core';
-import { AppService } from "../app.service";
+import { GymButtonComponent } from './gym-button/gym-button.component';
 
-@Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+@NgModule({
+    imports: [
+        CommonModule
+    ],
+    declarations: [
+        GymButtonComponent,
+    ],
+    exports: [
+        GymButtonComponent,
+    ]
 })
-export class NavbarComponent implements OnInit {
+export class FragmentsModule {
 
-    constructor(private appService: AppService) { }
-
-    ngOnInit() {
-        $("#file-dropdown-trigger").dropdown();
-    }
 }

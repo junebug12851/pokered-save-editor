@@ -1,10 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 /**
    Copyright 2018 June Hanabi
 
@@ -21,26 +14,24 @@ import { far } from '@fortawesome/free-regular-svg-icons';
    limitations under the License.
  */
 
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { AppSidenavComponent } from './app-sidenav/app-sidenav.component';
-import { ScreenPlayerBasicsComponent } from './screen-player-basics/screen-player-basics.component';
-
-library.add(fas, far);
+import { ScreensModule } from './screens/screens.module';
+import { LayoutModule } from './layouts/layouts.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent,
-        AppSidenavComponent,
-        ScreenPlayerBasicsComponent,
     ],
     imports: [
         BrowserModule,
-        FontAwesomeModule,
         AppRoutingModule,
+        ScreensModule,
+        LayoutModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
