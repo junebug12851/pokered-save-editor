@@ -38,14 +38,28 @@ html, body {
     color: color("grey", "lighten-4");
 }
 
+input, textarea {
+    color: color("grey", "lighten-4");
+}
+
 // Properly pad content next to side-nav
 .nav-wrapper {
       padding-left: 200px;
 }
 
+.container {
+    margin-left: 225px;
+    margin-top: 25px;
+}
+
 @media only screen and (max-width : 992px) {
     .nav-wrapper {
         padding-left: 0;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-top: 25px;
     }
 }
 
@@ -66,4 +80,9 @@ html, body {
     width: 5px;
     border: none;
     border-radius: 4px;
+}
+
+// Debug
+.debug {
+    border: 1px solid red;
 }

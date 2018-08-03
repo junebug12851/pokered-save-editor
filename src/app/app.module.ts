@@ -26,6 +26,7 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppSidenavComponent } from './app-sidenav/app-sidenav.component';
+import { ScreenPlayerBasicsComponent } from './screen-player-basics/screen-player-basics.component';
 
 library.add(fas, far);
 
@@ -34,6 +35,7 @@ library.add(fas, far);
         AppComponent,
         NavbarComponent,
         AppSidenavComponent,
+        ScreenPlayerBasicsComponent,
     ],
     imports: [
         BrowserModule,

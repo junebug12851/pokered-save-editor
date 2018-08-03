@@ -16,9 +16,15 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ScreenPlayerBasicsComponent } from "./screen-player-basics/screen-player-basics.component";
 
 const routes: Routes = [
-
+    { path: 'player-basics', component: ScreenPlayerBasicsComponent },
+    {
+        path: '',
+        redirectTo: '/player-basics',
+        pathMatch: 'full'
+    },
 ];
 
 @NgModule({
