@@ -1,5 +1,4 @@
 import { SpriteDataExtended } from '../fragments/spriteDataExt';
-import { PokemonParty } from '../fragments/PokemonParty';
 import { Missable } from '../fragments/missable';
 import { SignData } from '../fragments/signData';
 import { WarpData } from '../fragments/WarpData';
@@ -118,7 +117,6 @@ export class Area {
     public enemyPartySpecies: number[];
     public waterPokemonRate: number;
     public waterPokemon: number; // 20 entries
-    public enemyPokemon: PokemonParty[];
     public trainerHeaderPtr: number;
     public oppAfterWrongAnsw: number;
     public curMapScript: number;
