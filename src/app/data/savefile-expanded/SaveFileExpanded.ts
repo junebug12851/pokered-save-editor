@@ -7,7 +7,7 @@ import { HoFRecord } from './fragments/HoF';
 import { SaveFileService } from '../savefile.service';
 import { Player } from './sections/Player';
 
-export class SaveFileDataExpanded {
+export class SaveFileExpanded {
     constructor(saveFile: SaveFileService) {
         this.player = new Player(saveFile);
         this.rival = new Rival(saveFile);

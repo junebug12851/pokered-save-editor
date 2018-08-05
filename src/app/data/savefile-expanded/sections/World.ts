@@ -125,6 +125,7 @@ export class World {
     public fossilItemGiven: number;
     public fossilPkmnResult: number;
     public lastBlackoutMap: number;
+    public lastMap: number;
 
     public obtainedOldRod: boolean;
     public obtainedGoodRod: boolean;

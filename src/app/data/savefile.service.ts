@@ -1,3 +1,4 @@
+import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 /**
    Copyright 2018 June Hanabi
 
@@ -41,7 +42,9 @@ const fs = BluePromise.promisifyAll(window.require("fs"));
 })
 export class SaveFileService {
 
-    constructor(private saveText: TextService) { }
+    constructor(private saveText: TextService) {
+        this.fileDataExpanded = new SaveFileExpanded(this);
+    }
 
     /*
     * bcd2number -> takes a nodejs buffer with a BCD and returns the corresponding number.
@@ -174,6 +177,26 @@ export class SaveFileService {
         this.setHex(from, size, bitsHex);
     }
 
+    public getWord(from: number): number {
+        return +((this.getRange(from, 2).reverse()).join(''));
+    }
+
+    public setWord(from: number, value: number): void {
+
+        const byte1 = value & 0x00FF;
+        const byte2 = value & 0xFF00;
+
+        this.copyRange(from, 2, new Uint8Array([byte1, byte2]));
+    }
+
+    public getByte(offset: number): number {
+        return this.fileData[offset];
+    }
+
+    public setByte(offset: number, value: number): void {
+        this.fileData[offset] = value;
+    }
+
     // Calculates checksum from start index inclusive to end index exclusive
     // and returns it
     public getChecksum(from: number, to: number): number {
@@ -264,6 +287,7 @@ export class SaveFileService {
         const data = await fs.readFileAsync(filePath);
         this.filePath = filePath;
         this.fileData = data;
+        this.fileDataExpanded = new SaveFileExpanded(this);
     }
 
     // Write Buffer to file
@@ -300,6 +324,7 @@ export class SaveFileService {
     public closeFile() {
         this.filePath = null;
         this.fileData = new Uint8Array(0x8000);
+        this.fileDataExpanded = new SaveFileExpanded(this);
     }
 
     // Save file
@@ -320,11 +345,6 @@ export class SaveFileService {
             return;
         }
 
-        // I literally don't know what typescript is thinking half the time
-        // fileName is a string, the assignment is correct, furthermore you
-        // inferred correctly above??? I never thought there was a comment
-        // command to turn off typescripts idiocy, will have to
-        // remember this one
         // @ts-ignore
         this.filePath = fileName;
         await this.saveFile();
@@ -347,4 +367,7 @@ export class SaveFileService {
 
     // Buffered file data
     public fileData: Uint8Array = new Uint8Array(0x8000);
+
+    // Expands the save data to something more readable and useable
+    public fileDataExpanded: SaveFileExpanded;
 }
