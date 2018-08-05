@@ -19,14 +19,16 @@ import { CommonModule } from '@angular/common';
 import { FragmentsModule } from "../fragments/fragments.module";
 
 import { PlayerBasicsComponent } from './player-basics/player-basics.component';
+import { SaveFileStringDirective } from '../directives/savefile-string.directive';
 
 @NgModule({
     imports: [
         CommonModule,
-        FragmentsModule
+        FragmentsModule,
     ],
     declarations: [
-        PlayerBasicsComponent
+        PlayerBasicsComponent,
+        SaveFileStringDirective
     ],
     exports: [
         PlayerBasicsComponent

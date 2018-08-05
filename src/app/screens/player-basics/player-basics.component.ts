@@ -29,10 +29,9 @@ declare var M: any;
 })
 export class PlayerBasicsComponent implements OnInit {
 
-    constructor() { }
+    constructor(public fileService: SaveFileService) { }
 
     ngOnInit() {
         M.updateTextFields();
     }
-
 }
