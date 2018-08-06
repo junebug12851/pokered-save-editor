@@ -89,7 +89,8 @@ export class PokemonBox {
         const nicknameOffset = (index * 0xB) + nicknameStartOffset;
         this.nickname = saveFile.getStr(nicknameOffset, 0xB, 10);
 
-        // Pokemon box data structure complete
+        // Pokemon box data structure complete, Ready for Pokemon Party to
+        // takeover
     }
 
     public offset: number;

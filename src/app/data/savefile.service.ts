@@ -45,6 +45,7 @@ export class SaveFileService {
 
     constructor(private saveText: TextService) {
         this.fileDataExpanded = new SaveFileExpanded(this);
+        window["saveFile"] = this;
     }
 
     public get iterator(): SaveFileIterator {
@@ -89,8 +90,11 @@ export class SaveFileService {
     }
 
     // Copies a range of bytes to a buffer of size and returns them
-    public getRange(from: number, size: number): Uint8Array {
-        return this.fileData.subarray(from, from + size);
+    public getRange(from: number, size: number, bigEndian: boolean = false): Uint8Array {
+        if (bigEndian)
+            return this.fileData.subarray(from, from + size).reverse();
+        else
+            return this.fileData.subarray(from, from + size);
     }
 
     // Copies data to the save data at a particular place going no further
@@ -100,25 +104,33 @@ export class SaveFileService {
     // from = index to start copying at inclusive
     // size = maximum length to copy
     // data = array of data to copy into, will stop at size or data length
-    public copyRange(from: number, size: number, data: Uint8Array) {
+    public copyRange(from: number, size: number, data: Uint8Array, bigEndian: boolean = false) {
+
+        if (bigEndian)
+            data = data.reverse();
+
         for (let i = from, j = 0; i < (from + size) || j < data.length; i++ , j++) {
             this.fileData[i] = data[j];
         }
     }
 
     // Gets a string from the save file auto-converted to normal characters
+    // Strings are always little endian
     public getStr(from: number, size: number, maxChars: number): string {
         return this.saveText.convertFromCode(this.getRange(from, size), maxChars);
     }
 
     // Sets a string to save file auto-converted to in-game characters
+    // Strings are always little endian
     public setStr(from: number, size: number, maxChars: number, str: string): void {
         this.copyRange(from, size, this.saveText.convertToCode(str, maxChars));
     }
 
     // Gets a value in hex from the save file
-    public getHex(from: number, size: number, prefix: boolean = false): string {
-        const rawHex = (this.getRange(from, size).reverse());
+    public getHex(from: number, size: number, prefix: boolean = false, bigEndian: boolean = false): string {
+
+        let rawHex = this.getRange(from, size, bigEndian);
+
         let hexStr = "";
         for (let i = 0; i < rawHex.length; i++) {
             hexStr += rawHex[i].toString(16);
@@ -131,7 +143,7 @@ export class SaveFileService {
     }
 
     // Saves a hex value to bytes in the save file
-    public setHex(from: number, size: number, hex: string, hasPrefix: boolean = false): void {
+    public setHex(from: number, size: number, hex: string, hasPrefix: boolean = false, bigEndian: boolean = false): void {
         // Trim prefix if any
         if (hasPrefix)
             hex = hex.substr(2);
@@ -152,46 +164,76 @@ export class SaveFileService {
             }
 
         // Copy to save data
-        this.copyRange(from, size, new Uint8Array(hexArr));
+        this.copyRange(from, size, new Uint8Array(hexArr), !bigEndian);
     }
 
     // Get a Raw BCD value in integer format
+    // BCD is always little endian
     public getBCD(from: number, size: number): number {
         return this.bcd2number(this.getRange(from, size));
     }
 
     // Sets a number in raw BCD format
+    // BCD is always little endian
     public setBCD(from: number, size: number, val: number): void {
         this.copyRange(from, size, this.number2bcd(val, size));
     }
 
     // Gets a bit from a value
-    public getBit(from: number, size: number, bit: number): boolean {
-        const value = +((this.getRange(from, size).reverse()).join(''));
-        return (value & (1 << bit)) !== 0;
+    public getBit(from: number, size: number, bit: number, bigEndian: boolean = false): boolean {
+        let value = this.getRange(from, size);
+
+        if (bigEndian)
+            value = value.reverse();
+
+        let res = value[0];
+
+        if (size > 0)
+            for (let i = 1; i < size; i++) {
+                res <<= 8;
+                res |= value[i];
+            }
+
+        return (res & (1 << bit)) !== 0;
     }
 
     // Sets/Resets a bit in a value
-    public setBit(from: number, size: number, bit: number, val: number): void {
-        let bits = +((this.getRange(from, size).reverse()).join(''));
+    public setBit(from: number, size: number, bit: number, val: boolean, bigEndian: boolean = false): void {
+        let value = this.getRange(from, size, bigEndian);
+
+        let res = value[0];
+
+        if (size > 0)
+            for (let i = 1; i < size; i++) {
+                res <<= 8;
+                res |= value[i];
+            }
+
         if (val)
-            bits |= (1 << bit);
+            res |= (1 << bit);
         else
-            bits &= ~(1 << bit);
-        const bitsHex = bits.toString(16);
-        this.setHex(from, size, bitsHex);
+            res &= ~(1 << bit);
+
+        const resHex = res.toString(16);
+        this.setHex(from, size, resHex, false, bigEndian);
     }
 
-    public getWord(from: number): number {
-        return +((this.getRange(from, 2).reverse()).join(''));
+    public getWord(from: number, bigEndian: boolean = false): number {
+        let value = this.getRange(from, 2, bigEndian);
+
+        let res = value[0];
+        res <<= 8;
+        res |= value[1];
+
+        return res;
     }
 
-    public setWord(from: number, value: number): void {
+    public setWord(from: number, value: number, bigEndian: boolean = false): void {
 
-        const byte1 = value & 0x00FF;
-        const byte2 = value & 0xFF00;
+        const byteL = value & 0x00FF;
+        const byteH = value & 0xFF00;
 
-        this.copyRange(from, 2, new Uint8Array([byte1, byte2]));
+        this.copyRange(from, 2, new Uint8Array([byteH, byteL]), bigEndian);
     }
 
     public getByte(offset: number): number {
