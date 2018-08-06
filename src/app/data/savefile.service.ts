@@ -1,3 +1,4 @@
+import { SaveFileIterator } from './savefile-expanded/SaveFileIterator';
 import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 /**
    Copyright 2018 June Hanabi
@@ -44,6 +45,10 @@ export class SaveFileService {
 
     constructor(private saveText: TextService) {
         this.fileDataExpanded = new SaveFileExpanded(this);
+    }
+
+    public get iterator(): SaveFileIterator {
+        return new SaveFileIterator(this);
     }
 
     /*
