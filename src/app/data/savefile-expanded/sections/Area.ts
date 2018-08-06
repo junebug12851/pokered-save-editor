@@ -1,13 +1,12 @@
-import { MapConnData } from './../fragments/mapConnData';
-import { SpriteDataExtended } from '../fragments/spriteDataExt';
-import { Missable } from '../fragments/missable';
-import { SignData } from '../fragments/signData';
+import { MapConnData } from './../fragments/MapConnData';
+import { SpriteDataExtended } from '../fragments/SpriteDataExt';
+import { Missable } from '../fragments/Missable';
+import { SignData } from '../fragments/SignData';
 import { WarpData } from '../fragments/WarpData';
-import { SaveFileService } from '../../savefile.service';
-import { SpriteData } from '../fragments/spriteData';
+import { SpriteData } from '../fragments/SpriteData';
 
 export class Area {
-    constructor(saveFile: SaveFileService) {
+    constructor(saveFile: any) {
         this.musicID = saveFile.getByte(0x2607);
         this.musicBank = saveFile.getByte(0x2608);
         this.contrast = saveFile.getByte(0x2609);
@@ -145,6 +144,7 @@ export class Area {
         this.safariGameOver = saveFile.getByte(0x2CF2);
         this.safariBallCount = saveFile.getByte(0x2CF3);
 
+        this.extendedSpriteData = [];
         for (let i = 0; i < 16; i++) {
             this.extendedSpriteData.push(new SpriteDataExtended(saveFile, i));
         }

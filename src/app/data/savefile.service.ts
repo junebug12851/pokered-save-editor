@@ -43,7 +43,7 @@ const fs = BluePromise.promisifyAll(window.require("fs"));
 })
 export class SaveFileService {
 
-    constructor(private saveText: TextService) {
+    constructor(public saveText: TextService) {
         this.fileDataExpanded = new SaveFileExpanded(this);
         window["saveFile"] = this;
     }

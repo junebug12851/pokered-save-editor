@@ -1,7 +1,7 @@
 import { SaveFileService } from './../savefile.service';
 
 export class SaveFileIterator {
-    constructor(saveFile: SaveFileService) {
+    constructor(saveFile: any) {
         this.saveFile = saveFile;
         this.state = [];
     }
@@ -142,5 +142,5 @@ export class SaveFileIterator {
 
     public offset: number = 0x0000;
     protected state: number[];
-    protected saveFile: SaveFileService;
+    protected saveFile: any;
 }

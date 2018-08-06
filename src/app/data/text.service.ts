@@ -341,7 +341,7 @@ export class TextService {
             if (code === 0x50)
                 break;
 
-            eng += this.indToEng[code];
+            eng += this.indToEng[code].eng;
 
             // If we're done with the 10th character assume 11th is terminator
             //and stop here
