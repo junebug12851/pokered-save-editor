@@ -32,6 +32,28 @@
         </a>
     </li>
 </ul>
+<div id="char-modal" class="modal bottom-sheet">
+    <div class="modal-content">
+        <p class="instr center-align">
+            Complete in-game keyboard, click to copy. All of these take 1 slot even if it's multiple characters.
+        </p>
+        <div class="special-char" *ngFor="let char of specialChars">
+            <span class="preview pr-container pr-white pr-small" innerHTML="{{char.html}}" (click)="copyChar(char.copyCode)">
+            </span>
+
+            <span class="code">{{char.copyCode}}</span>
+        </div>
+
+        <br/>
+        <br/>
+        <div class="special-char" *ngFor="let char of typeableChars">
+            <span class="preview pr-container pr-white pr-small" innerHTML="{{char.html}}" (click)="copyChar($char.copyCode)">
+            </span>
+
+            <span class="code">{{char.copyCode}}</span>
+        </div>
+    </div>
+</div>
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
@@ -40,8 +62,13 @@
             </a>
             <ul class="left">
                 <li>
-                    <a id="file-dropdown-trigger" data-target="file-dropdown">
+                    <a data-target="file-dropdown" class="dropdown-btn">
                         File
+                    </a>
+                </li>
+                <li>
+                    <a data-target="char-modal" class="modal-trigger">
+                        Keyboard
                     </a>
                 </li>
             </ul>
