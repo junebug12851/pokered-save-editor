@@ -356,6 +356,76 @@ export class TextService {
         return eng;
     }
 
+    // Converts an english format string to code represented as how it would be
+    // in-game
+    public convertEngToHTML(msg: string, maxChars: number, rival: string = "BLUE") {
+        // Convert string to char codes
+        let charCodes = Array.from(this.convertToCode(msg, maxChars, false));
+
+        // Pre-pass
+        for (let i = 0; i < charCodes.length; i++) {
+            const char = charCodes[i];
+            // <pkmn>
+            if (char === 0x4A) {
+                charCodes.splice(i, 1, 0xE1, 0xE2);
+            }
+            // <rival>
+            else if (char === 0x53) {
+                const rivalName = Array.from(this.convertToCode(rival, 7, false));
+                charCodes.splice(i, 1, ...rivalName);
+            }
+            // POK<e>
+            else if (char === 0x54) {
+                const str = Array.from(this.convertToCode("POK<e>", 10, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <......>
+            else if (char === 0x56) {
+                const str = Array.from(this.convertToCode("<...><...>", 10, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <targ>
+            else if (char === 0x59) {
+                const str = Array.from(this.convertToCode("Enemy BLASTOISE", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <user>
+            else if (char === 0x5A) {
+                const str = Array.from(this.convertToCode("CHARIZARD", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <pc>
+            else if (char === 0x5B) {
+                const str = Array.from(this.convertToCode("PC", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <tm>
+            else if (char === 0x5C) {
+                const str = Array.from(this.convertToCode("TM", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <trainer>
+            else if (char === 0x5D) {
+                const str = Array.from(this.convertToCode("TRAINER", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+            // <rocket>
+            else if (char === 0x5E) {
+                const str = Array.from(this.convertToCode("ROCKET", 100, false));
+                charCodes.splice(i, 1, ...str);
+            }
+        }
+
+        const fontStr = [];
+        for (let i = 0; i < charCodes.length; i++) {
+            const char = charCodes[i];
+            // @ts-ignore
+            fontStr.push(`<div class="pr pr-${char.toString(16).toUpperCase()}"></div>`);
+        }
+
+        return fontStr.join('');
+    }
+
     // Table of raw translation data
     public rawTrans: RawTransArr = rawTrans;
 

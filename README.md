@@ -6,6 +6,8 @@ simple to jump-in and use right away intuitively with a well-designed interface.
 
 This project is deep in development.
 
+![clip](https://thumbs.gfycat.com/HarmoniousCrispIndianskimmer-size_restricted.gif)
+
 ## License
 
 This project has an easy license, it's licensed Apache 2, just do whatever as

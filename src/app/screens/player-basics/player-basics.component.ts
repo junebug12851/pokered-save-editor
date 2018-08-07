@@ -34,4 +34,13 @@ export class PlayerBasicsComponent implements OnInit {
     ngOnInit() {
         M.updateTextFields();
     }
+
+    get agathaSpeech() {
+        const fontStr = this.fileService.fileDataExpanded.player.playerNameFontStr;
+        const c = this.fileService.saveText.convertEngToHTML.bind(this.fileService.saveText);
+        const rivalName = this.fileService.fileDataExpanded.rival.rivalName;
+
+        return `${fontStr}${c(`! I'll show`, 1000, rivalName)}<br/>
+                ${c(`you how a real`, 1000, rivalName)}`;
+    }
 }
