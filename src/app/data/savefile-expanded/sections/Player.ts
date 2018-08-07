@@ -86,71 +86,14 @@ export class Player {
     }
 
     onNameChange() {
-        // Convert string to char codes
-        let charCodes = Array.from(this.playerNameInternal = this.saveFile.saveText.convertToCode(this.playerName, 7));
+        // Convert player name to bytes and retrieve in-game simulation html
+        this.playerNameInternal = this.saveFile.saveText.convertToCode(
+            this.playerName,
+            7,
+            /*this.saveFile.fileDataExpanded.rival.rivalName*/);
 
-        // Pre-pass
-        for (let i = 0; i < charCodes.length; i++) {
-            const char = charCodes[i];
-            // <pkmn>
-            if (char === 0x4A) {
-                charCodes.splice(i, 1, 0xE1, 0xE2);
-            }
-            // <rival>
-            else if (char === 0x53) {
-                const rivalName = Array.from(this.saveFile.saveText.convertToCode(this.saveFile.fileDataExpanded.rival.rivalName, 7, false));
-                charCodes.splice(i, 1, ...rivalName);
-            }
-            // POK<e>
-            else if (char === 0x54) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("POK<e>", 10, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <......>
-            else if (char === 0x56) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("<...><...>", 10, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <targ>
-            else if (char === 0x59) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("Enemy BLASTOISE", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <user>
-            else if (char === 0x5A) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("CHARIZARD", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <pc>
-            else if (char === 0x5B) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("PC", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <tm>
-            else if (char === 0x5C) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("TM", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <trainer>
-            else if (char === 0x5D) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("TRAINER", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-            // <rocket>
-            else if (char === 0x5E) {
-                const str = Array.from(this.saveFile.saveText.convertToCode("ROCKET", 100, false));
-                charCodes.splice(i, 1, ...str);
-            }
-        }
-
-        const fontStr = [];
-        for (let i = 0; i < charCodes.length; i++) {
-            const char = charCodes[i];
-            // @ts-ignore
-            fontStr.push(`<div class="pr pr-${char.toString(16).toUpperCase()}"></div>`);
-        }
-
-        this.playerNameFontStr = fontStr.join('');
+        this.playerNameFontStr =
+            this.saveFile.saveText.convertEngToHTML(this.playerName, 7);
     }
 
     public saveFile: any;

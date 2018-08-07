@@ -29,6 +29,15 @@ $size: 8px;
     background-repeat: no-repeat;
 }
 
+.pr-container.pr-textbox {
+    background-image: url('assets/textbox.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    padding-left: 18px;
+    padding-top: 30px;
+    line-height: 1.75;
+}
+
 //////////
 // Row 0
 /////////
