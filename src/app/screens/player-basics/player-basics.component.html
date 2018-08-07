@@ -5,8 +5,11 @@
 </div>
 <div class="row">
     <div class="input-field col s6">
-        <input placeholder="Name" id="player_name" type="text">
+        <input placeholder="Name" id="player_name" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerName" (ngModelChange)="fileService.fileDataExpanded.player.onNameChange()">
         <label for="player_name">Player Name</label>
+        <div class="pr-container pr-white" innerHTML="{{fileService.fileDataExpanded.player.playerNameFontStr}}">
+            <!-- <div *ngFor="let char of fileService.fileDataExpanded.player.playerNameInternal" class="pr pr-white pr-{{char}}"></div>-->
+        </div>
     </div>
     <div class="input-field col s6 m2">
         <input placeholder="ID" id="player_id" type="text">
@@ -36,10 +39,5 @@
         <gym-button gymLeader="Sabrina" gymBadge="Marsh"></gym-button>
         <gym-button gymLeader="Blaine" gymBadge="Volcano"></gym-button>
         <gym-button gymLeader="Giovanni" gymBadge="Earth"></gym-button>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12">
-        <h1>{{fileService.fileDataExpanded.player.playerName}}></h1>
     </div>
 </div>

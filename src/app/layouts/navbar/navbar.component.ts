@@ -1,3 +1,4 @@
+import { SaveFileService } from './../../data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -18,7 +19,7 @@ declare var M: any;
 declare var $: any;
 declare var jQuery: any;
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 import { AppService } from "../../data/app.service";
 
 @Component({
@@ -28,7 +29,8 @@ import { AppService } from "../../data/app.service";
 })
 export class NavbarComponent implements OnInit {
 
-    constructor(private appService: AppService) { }
+    constructor(private appService: AppService,
+        private saveFile: SaveFileService) { }
 
     ngOnInit() {
         $("#file-dropdown-trigger").dropdown();

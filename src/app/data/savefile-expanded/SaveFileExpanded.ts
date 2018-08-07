@@ -9,6 +9,7 @@ import { Player } from './sections/Player';
 
 export class SaveFileExpanded {
     constructor(saveFile: any) {
+
         this.player = new Player(saveFile);
         this.rival = new Rival(saveFile);
         this.storage = new Storage(saveFile);

@@ -1,6 +1,8 @@
 import { PokemonParty } from './../fragments/PokemonParty';
 import { SaveFileService } from '../../savefile.service';
 
+import _ from "lodash";
+
 export class Player {
     constructor(saveFile: SaveFileService) {
         const it = saveFile.iterator;
@@ -78,9 +80,47 @@ export class Player {
                 0x303C,
                 i));
         }
+
+        this.saveFile = saveFile;
+        this.onNameChange();
     }
 
+    onNameChange() {
+        // Convert string to char codes
+        let charCodes = Array.from(this.playerNameInternal = this.saveFile.saveText.convertToCode(this.playerName, 7));
+
+        // Pre-pass
+        for (let i = 0; i < charCodes.length; i++) {
+            const char = charCodes[i];
+            if (char === 0x4A) {
+                charCodes.splice(i, 1, 0xE1, 0xE2);
+            }
+            else if (char === 0x53) {
+                const rivalName = Array.from(this.saveFile.saveText.convertToCode(this.saveFile.fileDataExpanded.rival.rivalName, 7));
+                charCodes.splice(i, 1, rivalName);
+                _.flatten(charCodes);
+            }
+            else if (char === 0x4A) {
+                charCodes.splice(i, 1, 0xE1, 0xE2);
+            }
+        }
+
+        const fontStr = [];
+        for (let i = 0; i < charCodes.length; i++) {
+            const char = charCodes[i];
+            // @ts-ignore
+            fontStr.push(`<div class="pr pr-${char.toString(16).toUpperCase()}"></div>`);
+        }
+
+        this.playerNameFontStr = fontStr.join('');
+    }
+
+    public saveFile: any;
+
     public playerName: string;
+    public playerNameInternal: Uint8Array = new Uint8Array([0x80]);
+    public playerNameFontStr: string;
+
     public playerID: number;
     public pokedexOwned: boolean[];
     public pokedexSeen: boolean[];

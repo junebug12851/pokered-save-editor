@@ -1,3 +1,4 @@
+import { SaveFileService } from './data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -33,7 +34,9 @@ import { LayoutModule } from './layouts/layouts.module';
         ScreensModule,
         LayoutModule,
     ],
-    providers: [],
+    providers: [
+        SaveFileService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

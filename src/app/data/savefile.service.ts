@@ -24,7 +24,7 @@ import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 
 declare const Buffer;
 
-import { Injectable } from '@angular/core';
+import { Injectable, Input, Output } from '@angular/core';
 import { TextService } from "./text.service";
 
 // @ts-ignore
@@ -45,7 +45,14 @@ export class SaveFileService {
 
     constructor(public saveText: TextService) {
         this.fileDataExpanded = new SaveFileExpanded(this);
-        window["saveFile"] = this;
+
+        if (Array.isArray(window["saveFile"]))
+            window["saveFile"].push(this);
+        else {
+            window["saveFile"] = [];
+            window["saveFile"].push(this);
+        }
+
     }
 
     public get iterator(): SaveFileIterator {
@@ -335,6 +342,8 @@ export class SaveFileService {
         this.filePath = filePath;
         this.fileData = data;
         this.fileDataExpanded = new SaveFileExpanded(this);
+
+        //window["saveFile"] = this;
     }
 
     // Write Buffer to file

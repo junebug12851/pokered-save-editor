@@ -24,7 +24,7 @@ declare var M: any;
     templateUrl: './player-basics.component.html',
     styleUrls: ['./player-basics.component.scss'],
     providers: [
-        SaveFileService
+
     ],
 })
 export class PlayerBasicsComponent implements OnInit {
