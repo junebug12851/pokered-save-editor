@@ -6,7 +6,7 @@ simple to jump-in and use right away intuitively with a well-designed interface.
 
 This project is deep in development.
 
-![clip](https://thumbs.gfycat.com/HarmoniousCrispIndianskimmer-size_restricted.gif)
+![clip](https://thumbs.gfycat.com/NearRevolvingIcelandicsheepdog-size_restricted.gif)
 
 ## License
 
