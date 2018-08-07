@@ -1,4 +1,12 @@
+import { TextService } from './../../data/text.service';
 import { SaveFileService } from './../../data/savefile.service';
+
+declare var window: {
+    require: any;
+};
+
+const { clipboard } = window.require('electron');
+
 /**
    Copyright 2018 June Hanabi
 
@@ -19,7 +27,7 @@ declare var M: any;
 declare var $: any;
 declare var jQuery: any;
 
-import { Component, OnInit, ApplicationRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from "../../data/app.service";
 
 @Component({
@@ -30,9 +38,57 @@ import { AppService } from "../../data/app.service";
 export class NavbarComponent implements OnInit {
 
     constructor(private appService: AppService,
-        private saveFile: SaveFileService) { }
+        private saveFile: SaveFileService,
+        public textService: TextService) { }
 
     ngOnInit() {
-        $("#file-dropdown-trigger").dropdown();
+        $(".dropdown-btn").dropdown();
+        $('.modal').modal();
+    }
+
+    get specialChars() {
+        const chars = [];
+
+        for (let i = 0; i < this.textService.rawTrans.length; i++) {
+            const rawEntry = this.textService.rawTrans[i];
+            if (!rawEntry.shorthand)
+                continue;
+
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+
+            // We only want special untypable chars given a typical
+            // American keyboard or just in-general impossible out of the game
+            chars.push({
+                html,
+                copyCode: rawEntry.eng
+            });
+        }
+
+        return chars;
+    }
+
+    get typeableChars() {
+        const chars = [];
+
+        for (let i = 0; i < this.textService.rawTrans.length; i++) {
+            const rawEntry = this.textService.rawTrans[i];
+            if (rawEntry.shorthand)
+                continue;
+
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+
+            // We only want regular typable chars given a typical
+            // American keyboard or just in-general impossible out of the game
+            chars.push({
+                html,
+                copyCode: rawEntry.eng
+            });
+        }
+
+        return chars;
+    }
+
+    copyChar(code) {
+        clipboard.writeText(code);
     }
 }

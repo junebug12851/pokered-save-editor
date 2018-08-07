@@ -18,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
 declare var M: any;
+declare var $: any;
 
 @Component({
     selector: 'screen-player-basics',

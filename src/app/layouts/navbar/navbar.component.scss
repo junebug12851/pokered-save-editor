@@ -14,7 +14,55 @@
    limitations under the License.
  */
 
+// Color
+@import "../../../styles/color_vars";
+@import "~materialize-css/sass/components/color-classes";
+
+// Variables;
+@import "../../../styles/materialize_vars";
+
 .dropdown-content {
     width: auto !important;
     height: auto !important;
+}
+
+.modal.bottom-sheet {
+    background-color: darken(color("grey", "darken-4"), 5%); //color("grey", "darken-4");
+    color: color("grey", "lighten-4");
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border: 3px groove $secondary-color;
+    border-bottom: none;
+}
+
+.modal-content > h4 {
+    font-size: 24px;
+}
+
+.modal-content > .instr {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.special-char {
+    display: inline-block;
+    border: 1px solid rgba(color("grey", "darken-4"), .5);
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all .15s linear;
+}
+
+.special-char:hover {
+    background-color: darken($secondary-color, 15%);
+}
+
+.special-char > .preview {
+    display: block;
+    margin: 0 auto;
+}
+
+.special-char > .code {
+    //color: color("grey", "darken-4");
+    font-size: 12px;
 }

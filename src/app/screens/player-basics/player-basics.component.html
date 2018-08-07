@@ -6,7 +6,9 @@
 <div class="row">
     <div class="input-field col s6">
         <input placeholder="Name" id="player_name" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerName" (ngModelChange)="fileService.fileDataExpanded.player.onNameChange()">
-        <label for="player_name">Player Name</label>
+        <label for="player_name">
+            Player Name
+        </label>
         <div class="pr-container pr-textbox pr-black" innerHTML="{{agathaSpeech}}"></div>
     </div>
     <div class="input-field col s6 m2">

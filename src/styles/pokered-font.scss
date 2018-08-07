@@ -18,6 +18,11 @@ $size: 8px;
     margin-right: 8px;
 }
 
+.pr-container.pr-small > .pr {
+    transform: scale(1.5, 1.5);
+    margin-right: 4px;
+}
+
 .pr-container > .pr,
 .pr-container.pr-black > .pr {
     background-image: url('assets/pokered-font.png');
@@ -532,6 +537,116 @@ $size: 8px;
 // 9
 .pr-container > .pr.pr-FF {
     background-position: off(15px) off(7px);
+}
+
+//////////
+// Row 8
+/////////
+
+// <A>
+.pr-container > .pr.pr-60{
+    background-position: off(0px) off(8px);
+}
+
+// <B>
+.pr-container > .pr.pr-61{
+    background-position: off(1px) off(8px);
+}
+
+// <C>
+.pr-container > .pr.pr-62{
+    background-position: off(2px) off(8px);
+}
+
+// <D>
+.pr-container > .pr.pr-63{
+    background-position: off(3px) off(8px);
+}
+
+//////////
+// Row 9
+/////////
+
+// <E>
+.pr-container > .pr.pr-64{
+    background-position: off(0px) off(9px);
+}
+
+// <F>
+.pr-container > .pr.pr-65{
+    background-position: off(1px) off(9px);
+}
+
+// <G>
+.pr-container > .pr.pr-66{
+    background-position: off(2px) off(9px);
+}
+
+// <H>
+.pr-container > .pr.pr-67{
+    background-position: off(3px) off(9px);
+}
+
+//////////
+// Row 10
+/////////
+
+// <I>
+.pr-container > .pr.pr-68{
+    background-position: off(0px) off(10px);
+}
+
+// <V>
+.pr-container > .pr.pr-69{
+    background-position: off(1px) off(10px);
+}
+
+// <S>
+.pr-container > .pr.pr-6A{
+    background-position: off(2px) off(10px);
+}
+
+// <L>
+.pr-container > .pr.pr-6B{
+    background-position: off(3px) off(10px);
+}
+
+//////////
+// Row 11
+/////////
+
+// <M>
+.pr-container > .pr.pr-6C{
+    background-position: off(0px) off(11px);
+}
+
+// <:>
+.pr-container > .pr.pr-6D{
+    background-position: off(1px) off(11px);
+}
+
+//////////
+// Row 12
+/////////
+
+// <o'>
+.pr-container > .pr.pr-70{
+    background-position: off(0px) off(12px);
+}
+
+// <c'>
+.pr-container > .pr.pr-71 {
+    background-position: off(1px) off(12px);
+}
+
+// <o">
+.pr-container > .pr.pr-72 {
+    background-position: off(2px) off(12px);
+}
+
+// <c">
+.pr-container > .pr.pr-73 {
+    background-position: off(3px) off(12px);
 }
 
 //////////
