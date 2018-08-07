@@ -30,6 +30,8 @@ Contributions are definately welcome, just fork and send a pull request.
 * PokeRed Team (Pokemon Red/Blue Source Code) - Public Domain, All the
   information I have came from those awesome people and their years of hard
   work.
+* Pokemon Red Bitmap Font Sprite Sheet (Pokemon Red/Blue Source Code) - Also came 
+  from the pokered team.
 * Electron (Desktop Platform) - License MIT, this is a desktop only app and this
   makes it possible very elegantly
 * Materialize (UI Kit) - License MIT, Provides a pretty and simple UI framework
