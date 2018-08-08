@@ -18,6 +18,8 @@ import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 import { ItemService, itemEntries } from '../../data/item.service';
 
+import _ from "lodash";
+
 declare var M: any;
 declare var $: any;
 
@@ -37,7 +39,7 @@ export class PlayerItemsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-
+        M.updateTextFields();
     }
 
     get entries() {
@@ -45,10 +47,43 @@ export class PlayerItemsComponent implements OnInit {
     }
 
     get itemList() {
-        return itemEntries;
+        const itemListNormal = _.filter(itemEntries, (value) => {
+            if (value.normal)
+                return true;
+        });
+
+        const itemListGlitch = _.filter(itemEntries, (value) => {
+            if (!value.normal)
+                return true;
+        });
+
+        return [
+            ...itemListNormal,
+            { name: "--- Glitch Items ---", ind: 0x00, disable: true },
+            ...itemListGlitch
+        ];
     }
 
     idToName(id) {
         return this.itemService.indToName[id].name;
+    }
+
+    addListItem() {
+        this.fileService.fileDataExpanded.player.bagItems.push({
+            id: 0,
+            amount: 1,
+            index: this.fileService.fileDataExpanded.player.bagItems.length
+        });
+    }
+
+    remListItem(index) {
+        this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
+        this.reUpdateIndexes();
+    }
+
+    reUpdateIndexes() {
+        for (let i = 0; i < this.fileService.fileDataExpanded.player.bagItems.length; i++) {
+            this.fileService.fileDataExpanded.player.bagItems[i].index = i;
+        }
     }
 }

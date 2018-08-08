@@ -12,8 +12,8 @@
         <div class="pr-container pr-textbox pr-black" innerHTML="{{agathaSpeech}}"></div>
     </div>
     <div class="input-field col s6 m2">
-        <input placeholder="ID" id="player_id" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerID" required pattern="[0-9a-fA-F][0-9a-fA-F]"
-            minlength="2" maxlength="2">
+        <input placeholder="ID" id="player_id" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerID" required pattern="[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]"
+            minlength="4" maxlength="4">
         <label for="player_id">Player ID</label>
     </div>
     <div class="input-field col s6 m2">
