@@ -47,8 +47,13 @@ export class PlayerItemsComponent implements OnInit {
     }
 
     get itemList() {
-        const itemListNormal = _.filter(itemEntries, (value) => {
-            if (value.normal)
+        const itemListCommon = _.filter(itemEntries, (value) => {
+            if (value.normal && value.typical)
+                return true;
+        });
+
+        const itemListSpecial = _.filter(itemEntries, (value) => {
+            if (value.normal && !value.typical)
                 return true;
         });
 
@@ -58,7 +63,9 @@ export class PlayerItemsComponent implements OnInit {
         });
 
         return [
-            ...itemListNormal,
+            ...itemListCommon,
+            { name: "--- Special Items ---", ind: 0x00, disable: true },
+            ...itemListSpecial,
             { name: "--- Glitch Items ---", ind: 0x00, disable: true },
             ...itemListGlitch
         ];
