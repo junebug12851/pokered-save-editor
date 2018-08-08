@@ -50,7 +50,8 @@ export class Player {
         for (let i = 0; i < amount; i++) {
             this.bagItems.push({
                 id: it.getByte(),
-                amount: it.getByte()
+                amount: it.getByte(),
+                index: this.bagItems.length
             });
         }
 
@@ -108,6 +109,7 @@ export class Player {
     public bagItems: {
         id: number,
         amount: number,
+        index: number
     }[];
     public playerParty: PokemonParty[];
     public money: number;

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col s12">
+        <ul class="collection items">
+            <li class="collection-item" *ngFor="let entry of entries">
+                <div class="row">
+                    <div class="col s6">
+                        <select id="playerStarterSelect" class="browser-default" [(ngModel)]="fileService.fileDataExpanded.player.bagItems[entry.index].id">
+                            <option [value]="0" disabled>Choose Item</option>
+                            <option *ngFor="let itemOption of itemList" [value]="itemOption.ind">{{itemOption.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col s6">
+                        <span class="item-name">{{idToName(entry.id)}}</span> {{entry.amount}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
