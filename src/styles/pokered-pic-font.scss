@@ -1,0 +1,457 @@
+$size: 8px;
+
+@function off($value1) {
+  @return $value1 * -8px / 1px;
+}
+
+.pr-pic-overworld {
+    background-image: url('assets/overworld.png') !important;
+}
+
+//////////
+// Row 0
+/////////
+
+.pr-container > .pr.pr-01 {
+    background-position: off(1px) off(0px);
+}
+
+.pr-container > .pr.pr-02 {
+    background-position: off(2px) off(0px);
+}
+
+.pr-container > .pr.pr-03 {
+    background-position: off(3px) off(0px);
+}
+
+.pr-container > .pr.pr-04 {
+    background-position: off(4px) off(0px);
+}
+
+.pr-container > .pr.pr-05 {
+    background-position: off(5px) off(0px);
+}
+
+.pr-container > .pr.pr-06 {
+    background-position: off(6px) off(0px);
+}
+
+.pr-container > .pr.pr-07 {
+    background-position: off(7px) off(0px);
+}
+
+.pr-container > .pr.pr-08 {
+    background-position: off(8px) off(0px);
+}
+
+.pr-container > .pr.pr-09 {
+    background-position: off(9px) off(0px);
+}
+
+.pr-container > .pr.pr-0A {
+    background-position: off(10px) off(0px);
+}
+
+.pr-container > .pr.pr-0B {
+    background-position: off(11px) off(0px);
+}
+
+.pr-container > .pr.pr-0C {
+    background-position: off(12px) off(0px);
+}
+
+.pr-container > .pr.pr-0D {
+    background-position: off(13px) off(0px);
+}
+
+.pr-container > .pr.pr-0E {
+    background-position: off(14px) off(0px);
+}
+
+.pr-container > .pr.pr-0F {
+    background-position: off(15px) off(0px);
+}
+
+//////////
+// Row 1
+/////////
+
+.pr-container > .pr.pr-10 {
+    background-position: off(0px) off(1px);
+}
+
+.pr-container > .pr.pr-11 {
+    background-position: off(1px) off(1px);
+}
+
+.pr-container > .pr.pr-12 {
+    background-position: off(2px) off(1px);
+}
+
+.pr-container > .pr.pr-13 {
+    background-position: off(3px) off(1px);
+}
+
+.pr-container > .pr.pr-14 {
+    background-position: off(4px) off(1px);
+}
+
+.pr-container > .pr.pr-15 {
+    background-position: off(5px) off(1px);
+}
+
+.pr-container > .pr.pr-16 {
+    background-position: off(6px) off(1px);
+}
+
+.pr-container > .pr.pr-17 {
+    background-position: off(7px) off(1px);
+}
+
+.pr-container > .pr.pr-18 {
+    background-position: off(8px) off(1px);
+}
+
+.pr-container > .pr.pr-19 {
+    background-position: off(9px) off(1px);
+}
+
+.pr-container > .pr.pr-1A {
+    background-position: off(10px) off(1px);
+}
+
+.pr-container > .pr.pr-1B {
+    background-position: off(11px) off(1px);
+}
+
+.pr-container > .pr.pr-1C {
+    background-position: off(12px) off(1px);
+}
+
+.pr-container > .pr.pr-1D {
+    background-position: off(13px) off(1px);
+}
+
+.pr-container > .pr.pr-1E {
+    background-position: off(14px) off(1px);
+}
+
+.pr-container > .pr.pr-1F {
+    background-position: off(15px) off(1px);
+}
+
+//////////
+// Row 2
+/////////
+
+.pr-container > .pr.pr-20 {
+    background-position: off(0px) off(2px);
+}
+
+.pr-container > .pr.pr-21 {
+    background-position: off(1px) off(2px);
+}
+
+.pr-container > .pr.pr-22 {
+    background-position: off(2px) off(2px);
+}
+
+.pr-container > .pr.pr-23 {
+    background-position: off(3px) off(2px);
+}
+
+.pr-container > .pr.pr-24 {
+    background-position: off(4px) off(2px);
+}
+
+.pr-container > .pr.pr-25 {
+    background-position: off(5px) off(2px);
+}
+
+.pr-container > .pr.pr-26 {
+    background-position: off(6px) off(2px);
+}
+
+.pr-container > .pr.pr-27 {
+    background-position: off(7px) off(2px);
+}
+
+.pr-container > .pr.pr-28 {
+    background-position: off(8px) off(2px);
+}
+
+.pr-container > .pr.pr-29 {
+    background-position: off(9px) off(2px);
+}
+
+.pr-container > .pr.pr-2A {
+    background-position: off(10px) off(2px);
+}
+
+.pr-container > .pr.pr-2B {
+    background-position: off(11px) off(2px);
+}
+
+.pr-container > .pr.pr-2C {
+    background-position: off(12px) off(2px);
+}
+
+.pr-container > .pr.pr-2D {
+    background-position: off(13px) off(2px);
+}
+
+.pr-container > .pr.pr-2E {
+    background-position: off(14px) off(2px);
+}
+
+.pr-container > .pr.pr-2F {
+    background-position: off(15px) off(2px);
+}
+
+//////////
+// Row 3
+/////////
+
+.pr-container > .pr.pr-30 {
+    background-position: off(0px) off(3px);
+}
+
+.pr-container > .pr.pr-31 {
+    background-position: off(1px) off(3px);
+}
+
+.pr-container > .pr.pr-32 {
+    background-position: off(2px) off(3px);
+}
+
+.pr-container > .pr.pr-33 {
+    background-position: off(3px) off(3px);
+}
+
+.pr-container > .pr.pr-34 {
+    background-position: off(4px) off(3px);
+}
+
+.pr-container > .pr.pr-35 {
+    background-position: off(5px) off(3px);
+}
+
+.pr-container > .pr.pr-36 {
+    background-position: off(6px) off(3px);
+}
+
+.pr-container > .pr.pr-37 {
+    background-position: off(7px) off(3px);
+}
+
+.pr-container > .pr.pr-38 {
+    background-position: off(8px) off(3px);
+}
+
+.pr-container > .pr.pr-39 {
+    background-position: off(9px) off(3px);
+}
+
+.pr-container > .pr.pr-3A {
+    background-position: off(10px) off(3px);
+}
+
+.pr-container > .pr.pr-3B {
+    background-position: off(11px) off(3px);
+}
+
+.pr-container > .pr.pr-3C {
+    background-position: off(12px) off(3px);
+}
+
+.pr-container > .pr.pr-3D {
+    background-position: off(13px) off(3px);
+}
+
+.pr-container > .pr.pr-3E {
+    background-position: off(14px) off(3px);
+}
+
+.pr-container > .pr.pr-3F {
+    background-position: off(15px) off(3px);
+}
+
+//////////
+// Row 4
+/////////
+
+.pr-container > .pr.pr-40 {
+    background-position: off(0px) off(4px);
+}
+
+.pr-container > .pr.pr-41 {
+    background-position: off(1px) off(4px);
+}
+
+.pr-container > .pr.pr-42 {
+    background-position: off(2px) off(4px);
+}
+
+.pr-container > .pr.pr-43 {
+    background-position: off(3px) off(4px);
+}
+
+.pr-container > .pr.pr-44 {
+    background-position: off(4px) off(4px);
+}
+
+.pr-container > .pr.pr-45 {
+    background-position: off(5px) off(4px);
+}
+
+.pr-container > .pr.pr-46 {
+    background-position: off(6px) off(4px);
+}
+
+.pr-container > .pr.pr-47 {
+    background-position: off(7px) off(4px);
+}
+
+.pr-container > .pr.pr-48 {
+    background-position: off(8px) off(4px);
+}
+
+.pr-container > .pr.pr-4D {
+    background-position: off(13px) off(4px);
+}
+
+//////////
+// Row 4 (Non Tileset)
+/////////
+
+.pr-container > .pr.pr-C0 {
+    background-position: off(0px) off(4px);
+}
+
+.pr-container > .pr.pr-C1 {
+    background-position: off(1px) off(4px);
+}
+
+.pr-container > .pr.pr-C2 {
+    background-position: off(2px) off(4px);
+}
+
+.pr-container > .pr.pr-C3 {
+    background-position: off(3px) off(4px);
+}
+
+.pr-container > .pr.pr-C4 {
+    background-position: off(4px) off(4px);
+}
+
+.pr-container > .pr.pr-C5 {
+    background-position: off(5px) off(4px);
+}
+
+.pr-container > .pr.pr-C6 {
+    background-position: off(6px) off(4px);
+}
+
+.pr-container > .pr.pr-C7 {
+    background-position: off(7px) off(4px);
+}
+
+.pr-container > .pr.pr-C8 {
+    background-position: off(8px) off(4px);
+}
+
+.pr-container > .pr.pr-C9 {
+    background-position: off(9px) off(4px);
+}
+
+.pr-container > .pr.pr-CA {
+    background-position: off(10px) off(4px);
+}
+
+.pr-container > .pr.pr-CB {
+    background-position: off(11px) off(4px);
+}
+
+.pr-container > .pr.pr-CC {
+    background-position: off(12px) off(4px);
+}
+
+.pr-container > .pr.pr-CD {
+    background-position: off(13px) off(4px);
+}
+
+.pr-container > .pr.pr-CE {
+    background-position: off(14px) off(4px);
+}
+
+.pr-container > .pr.pr-CF {
+    background-position: off(15px) off(4px);
+}
+
+//////////
+// Row 5 (Non Tileset)
+/////////
+
+.pr-container > .pr.pr-D0 {
+    background-position: off(0px) off(5px);
+}
+
+.pr-container > .pr.pr-D1 {
+    background-position: off(1px) off(5px);
+}
+
+.pr-container > .pr.pr-D2 {
+    background-position: off(2px) off(5px);
+}
+
+.pr-container > .pr.pr-D3 {
+    background-position: off(3px) off(5px);
+}
+
+.pr-container > .pr.pr-D4 {
+    background-position: off(4px) off(5px);
+}
+
+.pr-container > .pr.pr-D5 {
+    background-position: off(5px) off(5px);
+}
+
+.pr-container > .pr.pr-D6 {
+    background-position: off(6px) off(5px);
+}
+
+.pr-container > .pr.pr-D7 {
+    background-position: off(7px) off(5px);
+}
+
+.pr-container > .pr.pr-D8 {
+    background-position: off(8px) off(5px);
+}
+
+.pr-container > .pr.pr-D9 {
+    background-position: off(9px) off(5px);
+}
+
+.pr-container > .pr.pr-DA {
+    background-position: off(10px) off(5px);
+}
+
+.pr-container > .pr.pr-DB {
+    background-position: off(11px) off(5px);
+}
+
+.pr-container > .pr.pr-DC {
+    background-position: off(12px) off(5px);
+}
+
+.pr-container > .pr.pr-DD {
+    background-position: off(13px) off(5px);
+}
+
+.pr-container > .pr.pr-DE {
+    background-position: off(14px) off(5px);
+}
+
+.pr-container > .pr.pr-DF {
+    background-position: off(15px) off(5px);
+}

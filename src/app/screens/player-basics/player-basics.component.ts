@@ -1,3 +1,4 @@
+import { RawTransArrEntry } from './../../data/text.service';
 /**
    Copyright 2018 June Hanabi
 

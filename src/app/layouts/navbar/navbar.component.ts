@@ -1,5 +1,7 @@
-import { TextService } from './../../data/text.service';
+import { TextService, RawTransArrEntry } from './../../data/text.service';
 import { SaveFileService } from './../../data/savefile.service';
+
+import _ from "lodash";
 
 declare var window: {
     require: any;
@@ -46,43 +48,114 @@ export class NavbarComponent implements OnInit {
         $('.modal').modal();
     }
 
-    get specialChars() {
-        const chars = [];
+    get controlKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (value.control)
+                return true;
+        });
 
-        for (let i = 0; i < this.textService.rawTrans.length; i++) {
-            const rawEntry = this.textService.rawTrans[i];
-            if (!rawEntry.shorthand)
-                continue;
-
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-
-            // We only want special untypable chars given a typical
-            // American keyboard or just in-general impossible out of the game
-            chars.push({
+            chars[i] = {
                 html,
                 copyCode: rawEntry.eng
-            });
+            }
         }
 
         return chars;
     }
 
-    get typeableChars() {
-        const chars = [];
+    get multiCharKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (value.multiChar)
+                return true;
+        });
 
-        for (let i = 0; i < this.textService.rawTrans.length; i++) {
-            const rawEntry = this.textService.rawTrans[i];
-            if (rawEntry.shorthand)
-                continue;
-
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-
-            // We only want regular typable chars given a typical
-            // American keyboard or just in-general impossible out of the game
-            chars.push({
+            chars[i] = {
                 html,
                 copyCode: rawEntry.eng
-            });
+            }
+        }
+
+        return chars;
+    }
+
+    get singleCharKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (value.singleChar)
+                return true;
+        });
+
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+            chars[i] = {
+                html,
+                copyCode: rawEntry.eng
+            }
+        }
+
+        return chars;
+    }
+
+    // 3 Keyboards
+    // 1) Basic Keyboard containing only in-game provided keys
+    // 2) Full Keyboard contaning all keys except picture keys
+    // 3) Graphic Keyboard containing only graphic keys
+
+    get basicKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (value.normal)
+                return true;
+        });
+
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+            chars[i] = {
+                html,
+                copyCode: rawEntry.eng
+            }
+        }
+
+        return chars;
+    }
+
+    get fullKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (!value.picture)
+                return true;
+        });
+
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+            chars[i] = {
+                html,
+                copyCode: rawEntry.eng
+            }
+        }
+
+        return chars;
+    }
+
+    get picKeys() {
+        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+            if (value.picture)
+                return true;
+        });
+
+        for (let i = 0; i < chars.length; i++) {
+            const rawEntry: RawTransArrEntry = chars[i];
+            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
+            chars[i] = {
+                html,
+                copyCode: rawEntry.eng
+            }
         }
 
         return chars;
