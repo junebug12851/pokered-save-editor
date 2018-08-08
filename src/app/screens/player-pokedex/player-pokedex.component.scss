@@ -13,3 +13,23 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+
+ .pokedex {
+     width: 45%;
+     margin: 0 auto;
+     min-width: 500px;
+ }
+
+ .pokedex li {
+     line-height: 32px;
+ }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn-small {
+    text-transform: none;
+}
