@@ -25,5 +25,19 @@
  }
 
  .items li {
-     line-height: 32px;
+     line-height: 44px;
  }
+
+ select {
+     height: 44px;
+ }
+
+ .row {
+     margin-bottom: inherit;
+ }
+
+.btn-floating {
+    line-height: 56px;
+    font-size: 25px;
+    padding-top: 2px;
+}
