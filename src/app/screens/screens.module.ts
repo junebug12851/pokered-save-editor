@@ -1,3 +1,4 @@
+import { PlayerItemsComponent } from './player-items/player-items.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -30,11 +31,13 @@ import { PlayerPokedexComponent } from './player-pokedex/player-pokedex.componen
     ],
     declarations: [
         PlayerBasicsComponent,
-        PlayerPokedexComponent
+        PlayerPokedexComponent,
+        PlayerItemsComponent
     ],
     exports: [
         PlayerBasicsComponent,
-        PlayerPokedexComponent
+        PlayerPokedexComponent,
+        PlayerItemsComponent
     ]
 })
 export class ScreensModule {
