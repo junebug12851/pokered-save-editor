@@ -16,6 +16,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -24,7 +25,8 @@ import { FontawesomeModule } from "../libs/fontawesome.module";
 @NgModule({
     imports: [
         CommonModule,
-        FontawesomeModule
+        FontawesomeModule,
+        RouterModule
     ],
     declarations: [
         NavbarComponent,

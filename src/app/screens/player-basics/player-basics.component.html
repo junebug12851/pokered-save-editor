@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="input-field col s6">
+    <div class="input-field col s4">
         <input placeholder="Name" id="player_name" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerName" (ngModelChange)="fileService.fileDataExpanded.player.onNameChange()">
         <label for="player_name">
             Player Name
@@ -12,16 +12,26 @@
         <div class="pr-container pr-textbox pr-black" innerHTML="{{agathaSpeech}}"></div>
     </div>
     <div class="input-field col s6 m2">
-        <input placeholder="ID" id="player_id" type="text">
+        <input placeholder="ID" id="player_id" type="text" [(ngModel)]="fileService.fileDataExpanded.player.playerID" required pattern="[0-9a-fA-F][0-9a-fA-F]"
+            minlength="2" maxlength="2">
         <label for="player_id">Player ID</label>
     </div>
     <div class="input-field col s6 m2">
-        <input placeholder="Money" id="money" type="number">
+        <input placeholder="Money" id="money" type="number" [(ngModel)]="fileService.fileDataExpanded.player.money" max="999999"
+            min="0">
         <label for="money">Spending Money</label>
     </div>
     <div class="input-field col s6 m2">
-        <input placeholder="Coins" id="coins" type="number">
+        <input placeholder="Coins" id="coins" type="number" [(ngModel)]="fileService.fileDataExpanded.player.coins" max="9999" min="0">
         <label for="coins">Casino Coins</label>
+    </div>
+    <div class="input-field col s6 m2">
+        <select id="playerStarterSelect" class="browser-default" [(ngModel)]="fileService.fileDataExpanded.player.playerStarter">
+            <option [value]="'00'" disabled>Choose Starter</option>
+            <option [value]="'B0'">Charmander</option>
+            <option [value]="'B1'">Squirtle</option>
+            <option [value]="'99'">Bulbasaur</option>
+        </select>
     </div>
 </div>
 <div class="row">

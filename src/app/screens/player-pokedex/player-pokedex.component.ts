@@ -1,4 +1,3 @@
-import { RawTransArrEntry } from './../../data/text.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -22,32 +21,18 @@ declare var M: any;
 declare var $: any;
 
 @Component({
-    selector: 'screen-player-basics',
-    templateUrl: './player-basics.component.html',
-    styleUrls: ['./player-basics.component.scss'],
+    selector: 'screen-pokedex',
+    templateUrl: './player-pokedex.component.html',
+    styleUrls: ['./player-pokedex.component.scss'],
     providers: [
 
     ],
 })
-export class PlayerBasicsComponent implements OnInit {
+export class PlayerPokedexComponent implements OnInit {
 
     constructor(public fileService: SaveFileService) { }
 
     ngOnInit() {
-        M.updateTextFields();
-        //$('select').formSelect();
-    }
 
-    get agathaSpeech() {
-        const fontStr = this.fileService.fileDataExpanded.player.playerNameFontStr;
-        const c = this.fileService.saveText.convertEngToHTML.bind(this.fileService.saveText);
-        const rivalName = this.fileService.fileDataExpanded.rival.rivalName;
-
-        return `${fontStr}${c(`! I'll show`, 1000, rivalName)}<br/>
-                ${c(`you how a real`, 1000, rivalName)}`;
-    }
-
-    get chosenStarter() {
-        return this.fileService.fileDataExpanded.player.playerStarter;
     }
 }

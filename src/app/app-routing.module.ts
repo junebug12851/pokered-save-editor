@@ -17,9 +17,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
+import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
+    { path: 'player-pokedex', component: PlayerPokedexComponent },
     {
         path: '',
         redirectTo: '/player-basics',

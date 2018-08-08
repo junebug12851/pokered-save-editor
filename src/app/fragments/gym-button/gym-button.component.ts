@@ -1,3 +1,4 @@
+import { SaveFileService } from './../../data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -23,7 +24,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GymButtonComponent implements OnInit {
 
-    constructor() { }
+    constructor(public fileService: SaveFileService) { }
 
     ngOnInit() { }
 
@@ -32,4 +33,16 @@ export class GymButtonComponent implements OnInit {
 
     @Input()
     public gymBadge: string;
+
+    get value(): boolean {
+        return this.fileService.fileDataExpanded.player.badges[this.gymBadge.toLowerCase()];
+    }
+
+    set value(val: boolean) {
+        this.fileService.fileDataExpanded.player.badges[this.gymBadge.toLowerCase()] = val;
+    }
+
+    toggle() {
+        this.value = !this.value;
+    }
 }
