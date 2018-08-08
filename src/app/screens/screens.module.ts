@@ -20,6 +20,7 @@ import { FragmentsModule } from "../fragments/fragments.module";
 
 import { PlayerBasicsComponent } from './player-basics/player-basics.component';
 import { FormsModule } from '@angular/forms';
+import { PlayerPokedexComponent } from './player-pokedex/player-pokedex.component';
 
 @NgModule({
     imports: [
@@ -29,9 +30,11 @@ import { FormsModule } from '@angular/forms';
     ],
     declarations: [
         PlayerBasicsComponent,
+        PlayerPokedexComponent
     ],
     exports: [
-        PlayerBasicsComponent
+        PlayerBasicsComponent,
+        PlayerPokedexComponent
     ]
 })
 export class ScreensModule {

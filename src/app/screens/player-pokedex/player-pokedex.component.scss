@@ -13,28 +13,3 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-
-@import "../../../styles/color_vars";
-@import "~materialize-css/sass/components/color-classes";
-@import "../../../styles/materialize_vars";
-
-a:hover {
-    background-color: darken($primary-color, 15%) !important;
-}
-
-.subheader {
-    color: color("grey", "lighten-2");
-    text-align: left;
-    padding-left: 15px;
-}
-
-.sidenav {
-    box-shadow: none !important;
-    margin-top: 64px;
-    padding-top: 10px;
-    padding-bottom: 150px;
-}
-
-.active {
-    background-color: darken($secondary-color, 10%);
-}

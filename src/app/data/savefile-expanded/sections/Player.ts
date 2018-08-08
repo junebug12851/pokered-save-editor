@@ -8,7 +8,7 @@ export class Player {
         const it = saveFile.iterator;
 
         this.playerName = saveFile.getStr(0x2598, 0xB, 7);
-        this.playerID = saveFile.getWord(0x2605);
+        this.playerID = saveFile.getHex(0x2605, 2);
 
         this.pokedexOwned = [];
         it.offsetTo(0x25A3);
@@ -69,7 +69,7 @@ export class Player {
             earth: it.getBit(1, 7),
         };
 
-        this.playerStarter = saveFile.getByte(0x29C3);
+        this.playerStarter = saveFile.getHex(0x29C3, 1).toUpperCase().padStart(2, "0");
 
         this.playerParty = [];
         for (let i = 0; i < saveFile.getByte(0x2F2C) && i < 6; i++) {
@@ -102,7 +102,7 @@ export class Player {
     public playerNameInternal: Uint8Array = new Uint8Array([0x80]);
     public playerNameFontStr: string;
 
-    public playerID: number;
+    public playerID: string;
     public pokedexOwned: boolean[];
     public pokedexSeen: boolean[];
     public bagItems: {
@@ -122,5 +122,5 @@ export class Player {
         volcano: boolean,
         earth: boolean,
     };
-    public playerStarter: number;
+    public playerStarter: string;
 }
