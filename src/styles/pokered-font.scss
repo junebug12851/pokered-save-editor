@@ -23,6 +23,11 @@ $size: 8px;
     margin-right: 4px;
 }
 
+.pr-container.pr-large > .pr {
+    transform: scale(2.5, 2.5);
+    margin-right: 4px;
+}
+
 .pr-container > .pr,
 .pr-container.pr-black > .pr {
     background-image: url('assets/pokered-font.png');
@@ -433,7 +438,20 @@ $size: 8px;
     background-position: off(8px) off(6px);
 }
 
-// skip Japanese characters...
+// <jka>
+.pr-container > .pr.pr-E9 {
+    background-position: off(9px) off(6px);
+}
+
+// <jku>
+.pr-container > .pr.pr-EA {
+    background-position: off(10px) off(6px);
+}
+
+// <jke>
+.pr-container > .pr.pr-EB {
+    background-position: off(11px) off(6px);
+}
 
 // <arr-r2>
 .pr-container > .pr.pr-EC {
@@ -625,6 +643,16 @@ $size: 8px;
     background-position: off(1px) off(11px);
 }
 
+// <ji>
+.pr-container > .pr.pr-6E{
+    background-position: off(2px) off(11px);
+}
+
+// <ju>
+.pr-container > .pr.pr-6F{
+    background-position: off(3px) off(11px);
+}
+
 //////////
 // Row 12
 /////////
@@ -663,9 +691,24 @@ $size: 8px;
     background-position: off(1px) off(13px);
 }
 
+// <ja>
+.pr-container > .pr.pr-76 {
+    background-position: off(2px) off(13px);
+}
+
+// <je>
+.pr-container > .pr.pr-77 {
+    background-position: off(3px) off(13px);
+}
+
 //////////
 // Row 14
 /////////
+
+// <jo>
+.pr-container > .pr.pr-78 {
+    background-position: off(0px) off(14px);
+}
 
 // <ul>
 .pr-container > .pr.pr-79 {
