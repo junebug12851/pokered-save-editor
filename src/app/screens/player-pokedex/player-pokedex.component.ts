@@ -1,3 +1,4 @@
+import { PokedexService } from './../../data/pokedex.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -30,9 +31,60 @@ declare var $: any;
 })
 export class PlayerPokedexComponent implements OnInit {
 
-    constructor(public fileService: SaveFileService) { }
+    constructor(
+        public fileService: SaveFileService,
+        public pokedexService: PokedexService
+    ) { }
 
     ngOnInit() {
 
+    }
+
+    get entries() {
+        return this.pokedexService.namePairs;
+    }
+
+    getSeen(index): boolean {
+        return this.fileService.fileDataExpanded.player.pokedexSeen[index];
+    }
+
+    setSeen(index, value) {
+        this.fileService.fileDataExpanded.player.pokedexSeen[index] = value;
+    }
+
+    toggleSeen(index) {
+        this.setSeen(index, !this.getSeen(index));
+    }
+
+    getOwn(index): boolean {
+        return this.fileService.fileDataExpanded.player.pokedexOwned[index];
+    }
+
+    setOwn(index, value) {
+        this.fileService.fileDataExpanded.player.pokedexOwned[index] = value;
+    }
+
+    toggleOwn(index) {
+        this.setOwn(index, !this.getOwn(index));
+    }
+
+    toggleAllSeen() {
+        const item0 = this.getSeen(0);
+
+        const count = this.fileService.fileDataExpanded.player.pokedexSeen.length;
+
+        for (let i = 0; i < count; i++) {
+            this.setSeen(i, !item0);
+        }
+    }
+
+    toggleAllOwn() {
+        const item0 = this.getOwn(0);
+
+        const count = this.fileService.fileDataExpanded.player.pokedexOwned.length;
+
+        for (let i = 0; i < count; i++) {
+            this.setOwn(i, !item0);
+        }
     }
 }

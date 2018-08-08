@@ -182,7 +182,7 @@ export class PokedexService {
             const name = indToName[i];
             this.nameToInd[name] = ind;
 
-            this.namePairs[name] = { name, ind, num: ind + 1 };
+            this.namePairs[i] = { name, ind, num: (ind + 1).toString().padStart(3, "0") };
         };
     }
 
@@ -193,5 +193,5 @@ export class PokedexService {
     public indToName = indToName;
 
     // A pair of both
-    public namePairs = {};
+    public namePairs = [];
 }
