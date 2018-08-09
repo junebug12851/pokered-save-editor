@@ -1,4 +1,4 @@
-import { PokemonBox } from '../fragments/PokemonBox';
+import { PokemonBox } from './../fragments/PokemonBox';
 import { SaveFileService } from '../../savefile.service';
 
 export class Storage {
@@ -150,6 +150,26 @@ export class Storage {
                 0x7894,
                 i));
         }
+
+        // Overwrite box data of the current box with current box data
+        // Pokemon Red and Blue save a copy of the current box locally in Bank 1
+        // All box changes go to this box, in other words
+        // If the current box is box number 1, then the actual box number 1
+        // reflects all changes up until the box switch and none after. Box 1,
+        // in this example, will only be updated to reflect all newest changes
+        // when switching boxes
+
+        // Wipe current box data and re-insert from scratch latest box data for
+        // that box
+        this.pokemonBoxes[curBox] = [];
+        for (let i = 0; i < saveFile.getByte(0x30C0) && i < 20; i++) {
+            this.pokemonBoxes[curBox].push(new PokemonBox(
+                saveFile,
+                0x30D6,
+                0x3446,
+                0x336A,
+                i));
+        }
     }
 
     public curBox: number;
@@ -157,5 +177,5 @@ export class Storage {
         id: number,
         amount: number
     }[];
-    public pokemonBoxes;
+    public pokemonBoxes: PokemonBox[][];
 }

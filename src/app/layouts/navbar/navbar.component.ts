@@ -1,3 +1,4 @@
+import { SaveFileService } from './../../data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -21,14 +22,12 @@ declare var window: {
 };
 
 import { TextService, RawTransArrEntry } from './../../data/text.service';
-import { SaveFileService } from './../../data/savefile.service';
 
-import _ from "lodash";
+const _: any = window.require("lodash");
 
 const { clipboard } = window.require('electron');
 
 import { Component, OnInit } from '@angular/core';
-import { AppService } from "../../data/app.service";
 
 @Component({
     selector: 'app-navbar',
@@ -37,9 +36,9 @@ import { AppService } from "../../data/app.service";
 })
 export class NavbarComponent implements OnInit {
 
-    constructor(private appService: AppService,
-        private saveFile: SaveFileService,
-        public textService: TextService) { }
+    constructor(
+        public textService: TextService,
+        public saveFile: SaveFileService) { }
 
     ngOnInit() {
         $(".dropdown-btn").dropdown();
@@ -50,6 +49,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (value.control)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -68,6 +69,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (value.multiChar)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -86,6 +89,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (value.singleChar)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -109,6 +114,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (value.normal)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -127,6 +134,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (!value.picture)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -145,6 +154,8 @@ export class NavbarComponent implements OnInit {
         const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
             if (value.picture)
                 return true;
+
+            return false;
         });
 
         for (let i = 0; i < chars.length; i++) {
@@ -159,7 +170,7 @@ export class NavbarComponent implements OnInit {
         return chars;
     }
 
-    copyChar(code) {
+    copyChar(code: string) {
         clipboard.writeText(code);
     }
 }

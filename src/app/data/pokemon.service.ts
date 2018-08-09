@@ -227,11 +227,19 @@ export class PokemonService {
     }
 
     // Generated list of Pokemon in same order as above but lookup index by name
-    public nameToInd = {};
+    public nameToInd: {
+        [key: string]: number
+    } = {};
 
     // Generated list of Pokemon in same order as above but lookup name by index
     public indToName = indToName;
 
     // A pair of both
-    public namePairs = {};
+    public namePairs: {
+        [key: string]: {
+            name: string,
+            ind: number,
+            num: number
+        }
+    } = {};
 }

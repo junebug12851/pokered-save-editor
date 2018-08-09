@@ -249,6 +249,8 @@ export class World {
         // Is the daycare in use, if so extract daycare Pokemon Information
         if (saveFile.getByte(0x2CF4) > 0)
             this.dayCare = new PokemonBox(saveFile, 0x2D0B, 0x2CF5, 0x2D00, 0);
+        else
+            this.dayCare = null;
     }
 
     public options: {
@@ -392,5 +394,5 @@ export class World {
         frames: number
     };
 
-    public dayCare: PokemonBox;
+    public dayCare: PokemonBox | null;
 }

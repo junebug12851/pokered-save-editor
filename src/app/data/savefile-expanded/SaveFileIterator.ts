@@ -44,12 +44,13 @@ export class SaveFileIterator {
     }
 
     public pop(): SaveFileIterator {
-        this.offset = this.state.pop();
+        let val = this.state.pop();
 
         // In case of error (too many pops), revert offset to zero
-        if (this.offset === undefined)
-            this.offset = 0x0000;
+        if (val === undefined)
+            val = 0x0000;
 
+        this.offset = val;
         return this;
     }
 

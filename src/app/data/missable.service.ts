@@ -17,7 +17,7 @@
 import { Injectable } from '@angular/core';
 
 // List of Hidden objects in bitfield order
-export const indToName: Array<string> = ["PALLET_TOWN_OAK",
+export const indToName: string[] = ["PALLET_TOWN_OAK",
     "LYING_OLD_MAN",
     "OLD_MAN",
     "MUSEUM_GUY",
@@ -262,11 +262,19 @@ export class MissableService {
     }
 
     // Generated list of Pokemon in same order as above but lookup index by name
-    public nameToInd = {};
+    public nameToInd: {
+        [key: string]: number
+    } = {};
 
     // Generated list of Pokemon in same order as above but lookup name by index
     public indToName = indToName;
 
     // A pair of both
-    public namePairs = {};
+    public namePairs: {
+        [key: string]: {
+            name: string,
+            ind: number,
+            num: number
+        }
+    } = {};
 }

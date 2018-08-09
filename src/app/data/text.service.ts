@@ -521,7 +521,6 @@ export class TextService {
                 fontStr.push(`<div class="pr pr-pic-overworld pr-${char.toString(16).toUpperCase().padStart(2, "0")}"></div>`);
             else
                 // pr-pic-overworld
-                // @ts-ignore
                 fontStr.push(`<div class="pr pr-${char.toString(16).toUpperCase().padStart(2, "0")}"></div>`);
         }
 

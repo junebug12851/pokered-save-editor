@@ -16,9 +16,16 @@
 
 import { Injectable } from '@angular/core';
 
+export interface ItemEntry {
+    name: string,
+    ind: number,
+    normal?: boolean,
+    typical?: boolean
+};
+
 // List of Pokemon in National Pokedex Order and in array form which is zero
 // based
-export const itemEntries = [
+export const itemEntries: ItemEntry[] = [
     { name: "Master Ball", ind: 0x01, normal: true, typical: true },
     { name: "Ultra Ball", ind: 0x02, normal: true, typical: true },
     { name: "Great Ball", ind: 0x03, normal: true, typical: true },
@@ -187,8 +194,10 @@ export class ItemService {
     }
 
     // Generated list of Pokemon in same order as above but lookup index by name
-    public nameToInd = {};
+    public nameToInd: {
+        [key: string]: ItemEntry
+    } = {};
 
     // Generated list of Pokemon in same order as above but lookup name by index
-    public indToName = [];
+    public indToName: ItemEntry[] = [];
 }
