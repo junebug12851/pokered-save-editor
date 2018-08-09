@@ -14,79 +14,18 @@
    limitations under the License.
  */
 
-// Basics that can be overridden
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+ // Low priority styles
+@import "./styles/fixes/init_fixes";
 
 // Materialize
-@import "./styles/materialize";
+@import "./styles/materialize/materialize";
+
+// Post higher priority styles in general and to materialize
+@import "./styles/fixes/materialize_fixes";
+@import "./styles/fixes/post_fixes";
 
 // Ico-Moon Font Icons
-@import "./styles/icomoon.css";
+@import "./styles/fonts/icomoon/icomoon.css";
 
 // Pokered Font
-@import "./styles/pokered-font";
-@import "./styles/pokered-pic-font";
-
-// Set core fixes
-* {
-    box-sizing: border-box !important;
-}
-
-a:focus, button:focus {
-    outline: 0 !important;
-}
-
-html, body {
-    background-color: color("grey", "darken-4");
-    color: color("grey", "lighten-4");
-}
-
-input, textarea {
-    color: color("grey", "lighten-4");
-}
-
-// Properly pad content next to side-nav
-.nav-wrapper {
-      padding-left: 200px;
-}
-
-.container {
-    margin-left: 225px;
-    margin-top: 25px;
-}
-
-@media only screen and (max-width : 992px) {
-    .nav-wrapper {
-        padding-left: 0;
-    }
-
-    .container {
-        margin-left: auto;
-        margin-top: 25px;
-    }
-}
-
-// Custom Scrollbar
-
-::-webkit-scrollbar {
-    width: .4em;
-}
-
-::-webkit-scrollbar,
-::-webkit-scrollbar-thumb {
-  overflow:visible;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: $secondary-color;
-    width: 5px;
-    border: none;
-    border-radius: 4px;
-}
-
-// Debug
-.debug {
-    border: 1px solid red;
-}
+@import "./styles/fonts/pokered/pokered_all";

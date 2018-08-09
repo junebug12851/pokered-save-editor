@@ -8,6 +8,4 @@
         "src/test.ts",
         "**/*.spec.ts"
     ],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
 }

@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box !important;
+}
+
+a:focus, button:focus {
+    outline: 0 !important;
+}
+
+html, body {
+    background-color: color("grey", "darken-4");
+    color: color("grey", "lighten-4");
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+    width: .4em;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary-color;
+    width: 5px;
+    border: none;
+    border-radius: 4px;
+}

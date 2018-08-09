@@ -1,0 +1,42 @@
+// All pokemon red fonts must be inside a .pr-container
+.pr-container {
+    padding: 8px;
+    margin: 8px;
+
+    // Each character must have .pr
+    .pr {
+        height: 8px;
+        width: 8px;
+        transform: scale(1.75, 1.75);
+        background-position: 0px (8px * 5);
+        display: inline-block;
+        margin-right: 8px;
+        background-repeat: no-repeat;
+    }
+
+    // Container-Wide variations
+    &.pr-small {
+        .pr {
+            transform: scale(1.5, 1.5);
+            margin-right: 4px;
+        }
+    }
+
+    &.pr-large {
+        .pr {
+            transform: scale(1.5, 1.5);
+            margin-right: 4px;
+        }
+    }
+
+    // Some in-game contexts that can be applied container-wide to give a more
+    // immersive and viable simulation
+    &.pr-textbox {
+        background-image: url('assets/pokered-font/in-game-context/textbox.png');
+        background-repeat: no-repeat;
+        height: 100px;
+        padding-left: 18px;
+        padding-top: 30px;
+        line-height: 1.75;
+    }
+}

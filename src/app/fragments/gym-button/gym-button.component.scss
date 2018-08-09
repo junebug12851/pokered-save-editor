@@ -14,9 +14,7 @@
    limitations under the License.
  */
 
-@import "../../../styles/color_vars";
-@import "~materialize-css/sass/components/color-classes";
-@import "../../../styles/materialize_vars";
+@import "../../../styles/materialize/env";
 
 .gym-btn {
     height: 60px;

@@ -1,14 +1,3 @@
-import { TextService, RawTransArrEntry } from './../../data/text.service';
-import { SaveFileService } from './../../data/savefile.service';
-
-import _ from "lodash";
-
-declare var window: {
-    require: any;
-};
-
-const { clipboard } = window.require('electron');
-
 /**
    Copyright 2018 June Hanabi
 
@@ -25,16 +14,25 @@ const { clipboard } = window.require('electron');
    limitations under the License.
  */
 
-declare var M: any;
 declare var $: any;
-declare var jQuery: any;
+
+declare var window: {
+    require: any;
+};
+
+import { TextService, RawTransArrEntry } from './../../data/text.service';
+import { SaveFileService } from './../../data/savefile.service';
+
+import _ from "lodash";
+
+const { clipboard } = window.require('electron');
 
 import { Component, OnInit } from '@angular/core';
 import { AppService } from "../../data/app.service";
 
 @Component({
     selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
+    templateUrl: './navbar.component.pug',
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {

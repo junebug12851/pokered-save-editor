@@ -1,0 +1,17 @@
+.row
+  .col.s12
+    ul.collection.pokedex
+      li.collection-item.clearfix
+        span.left
+          a.waves-effect.waves-light.btn-small.darken-2('[class.grey]'='!getSeen(0)' '[class.green]'='getSeen(0)' '(click)'='toggleAllSeen()') Seen
+        .center-align
+          | Toggle All
+          span.right
+            a.waves-effect.waves-light.btn-small.darken-2([class.grey]='!getOwn(0)' '[class.green]'='getOwn(0)' '(click)'='toggleAllOwn()') Own
+      li.collection-item.clearfix(*ngFor='let entry of entries')
+        span.left
+          a.waves-effect.waves-light.btn-small.darken-2([class.grey]='!getSeen(entry.ind)' '[class.green]'='getSeen(entry.ind)' '(click)'='toggleSeen(entry.ind)') Seen
+        .center-align
+          | # {{entry.num}} {{entry.name}}
+          span.right
+            a.waves-effect.waves-light.btn-small.darken-2([class.grey]='!getOwn(entry.ind)' '[class.green]'='getOwn(entry.ind)' '(click)'='toggleOwn(entry.ind)') Own

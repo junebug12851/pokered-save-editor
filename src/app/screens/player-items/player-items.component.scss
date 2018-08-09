@@ -14,14 +14,10 @@
    limitations under the License.
  */
 
- .item-name {
-
- }
-
  .items {
      width: 45%;
      margin: 0 auto;
-     min-width: 500px;
+     min-width: 550px;
  }
 
  .items li {
@@ -40,4 +36,34 @@
     line-height: 56px;
     font-size: 25px;
     padding-top: 2px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-container > .flex-item {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.waves-effect {
+    overflow: inherit;
+}
+
+.drag-placeholder {
+    width: 100%;
+    height: 56px;
+    background-color: indigo;
+}
+
+.items {
+    user-select: none;
+}
+
+.handle {
+    cursor: pointer;
 }

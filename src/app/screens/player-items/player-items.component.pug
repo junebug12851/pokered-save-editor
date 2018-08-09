@@ -1,0 +1,23 @@
+.row
+    .col.s12
+        ul.collection.items
+            li.collection-item.item.flex-container(*ngFor='let entry of entries')
+                span.flex-item.handle
+                    fa-icon(icon='bars')
+                select.browser-default.flex-item([(ngModel)]='fileService.fileDataExpanded.player.bagItems[entry.index].id')
+                    option([value]='0', disabled='') Choose Item
+                    option(*ngFor='let itemOption of itemList', [value]='itemOption.ind', [disabled]='itemOption.disable') {{itemOption.name}}
+                input#amount.flex-item(placeholder='Amount', type='number', [(ngModel)]='fileService.fileDataExpanded.player.bagItems[entry.index].amount', max='99', min='0')
+                a.btn-small.waves-effect.flex-item((click)='remListItem(entry.index)')
+                    span.im.im-delete
+            li.collection-item.flex-container(*ngIf='entries.length == 0')
+                span.disabled.flex-item
+                    fa-icon(icon='bars')
+                select.browser-default.flex-item(disabled='')
+                    option([value]='0', disabled='') Choose Item
+                input#amount.flex-item(disabled='', placeholder='Amount', type='number', max='99', min='0')
+                a.btn-small.disabled.waves-effect.flex-item
+                    span.im.im-delete
+.fixed-action-btn
+    a.btn-floating.btn-large.waves-effect((click)='addListItem()')
+        span.im.im-plus3

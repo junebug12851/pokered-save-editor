@@ -15,11 +15,7 @@
  */
 
 // Color
-@import "../../../styles/color_vars";
-@import "~materialize-css/sass/components/color-classes";
-
-// Variables;
-@import "../../../styles/materialize_vars";
+@import "../../../styles/materialize/env";
 
 .dropdown-content {
     width: auto !important;
@@ -27,7 +23,7 @@
 }
 
 .modal.bottom-sheet {
-    background-color: darken(color("grey", "darken-4"), 5%); //color("grey", "darken-4");
+    background-color: darken(color("grey", "darken-4"), 5%);
     color: color("grey", "lighten-4");
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
@@ -63,7 +59,6 @@
 }
 
 .special-char > .code {
-    //color: color("grey", "darken-4");
     font-size: 12px;
 }
 
