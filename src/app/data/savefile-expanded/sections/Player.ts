@@ -6,7 +6,7 @@ export class Player {
         const it = saveFile.iterator;
 
         this.playerName = saveFile.getStr(0x2598, 0xB, 7);
-        this.playerID = saveFile.getHex(0x2605, 2);
+        this.playerID = saveFile.getHex(0x2605, 2).padStart(4, "0");
 
         this.pokedexOwned = [];
         it.offsetTo(0x25A3);

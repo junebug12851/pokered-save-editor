@@ -14,56 +14,15 @@
    limitations under the License.
  */
 
- .items {
-     width: 45%;
-     margin: 0 auto;
-     min-width: 550px;
- }
-
- .items li {
-     line-height: 44px;
- }
-
- select {
-     height: 44px;
- }
-
- .row {
-     margin-bottom: inherit;
- }
-
-.btn-floating {
-    line-height: 56px;
-    font-size: 25px;
-    padding-top: 2px;
+ul.sticky {
+    overflow: visible;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.flex-container > .flex-item {
-    margin-right: 5px;
-    margin-left: 5px;
+.btn-floating-icon-normal.stick {
+    bottom: -15px;
+    right: -15px;
 }
 
 .waves-effect {
     overflow: inherit;
-}
-
-.drag-placeholder {
-    width: 100%;
-    height: 56px;
-    background-color: indigo;
-}
-
-.items {
-    user-select: none;
-}
-
-.handle {
-    cursor: pointer;
 }
