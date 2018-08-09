@@ -38,27 +38,27 @@ export class PlayerPokedexComponent implements OnInit {
         return this.pokedexService.namePairs;
     }
 
-    getSeen(index): boolean {
+    getSeen(index: number): boolean {
         return this.fileService.fileDataExpanded.player.pokedexSeen[index];
     }
 
-    setSeen(index, value) {
+    setSeen(index: number, value: boolean) {
         this.fileService.fileDataExpanded.player.pokedexSeen[index] = value;
     }
 
-    toggleSeen(index) {
+    toggleSeen(index: number) {
         this.setSeen(index, !this.getSeen(index));
     }
 
-    getOwn(index): boolean {
+    getOwn(index: number): boolean {
         return this.fileService.fileDataExpanded.player.pokedexOwned[index];
     }
 
-    setOwn(index, value) {
+    setOwn(index: number, value: boolean) {
         this.fileService.fileDataExpanded.player.pokedexOwned[index] = value;
     }
 
-    toggleOwn(index) {
+    toggleOwn(index: number) {
         this.setOwn(index, !this.getOwn(index));
     }
 

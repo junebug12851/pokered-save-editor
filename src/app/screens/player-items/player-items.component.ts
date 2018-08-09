@@ -14,14 +14,17 @@
    limitations under the License.
  */
 
-import { Component, OnInit } from '@angular/core';
-import { SaveFileService } from "../../data/savefile.service";
-import { ItemService, itemEntries } from '../../data/item.service';
-
-import _ from "lodash";
+declare var window: {
+    require: any;
+}
 
 declare var M: any;
-declare var $: any;
+
+import { Component, OnInit } from '@angular/core';
+import { SaveFileService } from "../../data/savefile.service";
+import { ItemService, itemEntries, ItemEntry } from '../../data/item.service';
+
+const _: any = window.require("lodash");
 
 @Component({
     selector: 'screen-player-items',
@@ -48,23 +51,29 @@ export class PlayerItemsComponent implements OnInit {
     }
 
     get itemList() {
-        let itemListCommon = _.filter(itemEntries, (value) => {
+        let itemListCommon = _.filter(itemEntries, (value: ItemEntry) => {
             if (value.normal && value.typical)
                 return true;
+
+            return false;
         });
 
         itemListCommon = _.sortBy(itemListCommon, ['name']);
 
-        let itemListSpecial = _.filter(itemEntries, (value) => {
+        let itemListSpecial = _.filter(itemEntries, (value: ItemEntry) => {
             if (value.normal && !value.typical)
                 return true;
+
+            return false;
         });
 
         itemListSpecial = _.sortBy(itemListSpecial, ['name']);
 
-        let itemListGlitch = _.filter(itemEntries, (value) => {
+        let itemListGlitch = _.filter(itemEntries, (value: ItemEntry) => {
             if (!value.normal)
                 return true;
+
+            return false;
         });
 
         itemListGlitch = _.sortBy(itemListGlitch, ['name']);
@@ -79,7 +88,7 @@ export class PlayerItemsComponent implements OnInit {
         ];
     }
 
-    idToName(id) {
+    idToName(id: number) {
         return this.itemService.indToName[id].name;
     }
 
@@ -91,7 +100,7 @@ export class PlayerItemsComponent implements OnInit {
         });
     }
 
-    remListItem(index) {
+    remListItem(index: number) {
         this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
         this.reUpdateIndexes();
     }

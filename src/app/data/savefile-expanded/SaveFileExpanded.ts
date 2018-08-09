@@ -1,14 +1,14 @@
+import { SaveFileService } from './../savefile.service';
 import { World } from './sections/World';
 import { Area } from './sections/Area';
 import { Enemy } from './sections/Enemy';
 import { Storage } from './sections/Storage';
 import { Rival } from './sections/Rival';
 import { HoFRecord } from './fragments/HoF';
-import { SaveFileService } from '../savefile.service';
 import { Player } from './sections/Player';
 
 export class SaveFileExpanded {
-    constructor(saveFile: any) {
+    constructor(saveFile: SaveFileService) {
 
         this.player = new Player(saveFile);
         this.rival = new Rival(saveFile);

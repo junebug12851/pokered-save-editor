@@ -22,21 +22,21 @@ import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
  * back correctly.
  */
 
-declare const Buffer;
+declare var window: {
+    saveFile: SaveFileService
+    require: any
+}
 
-import { Injectable, Input, Output } from '@angular/core';
+declare var Buffer: any;
+
+import { Injectable } from '@angular/core';
 import { TextService } from "./text.service";
 
-// @ts-ignore
-const BluePromise = window.require("bluebird");
-
-// @ts-ignore
-const electron = window.require('electron').remote
+const BluePromise: any = window.require("bluebird");
+const fs: any = window.require("fs");
+const electron: any = window.require("electron").remote;
 const { dialog } = electron;
-
-// Quiet Typescript, I already can't access fs normally thanks to angular
-// @ts-ignore
-const fs = BluePromise.promisifyAll(window.require("fs"));
+const fs2 = BluePromise.promisifyAll(fs);
 
 @Injectable({
     providedIn: 'root'
@@ -46,13 +46,7 @@ export class SaveFileService {
     constructor(public saveText: TextService) {
         this.fileDataExpanded = new SaveFileExpanded(this);
 
-        if (Array.isArray(window["saveFile"]))
-            window["saveFile"].push(this);
-        else {
-            window["saveFile"] = [];
-            window["saveFile"].push(this);
-        }
-
+        window.saveFile = this;
     }
 
     public get iterator(): SaveFileIterator {
@@ -299,8 +293,8 @@ export class SaveFileService {
     // Handles Open File Dialog
     // We want this to use es6 async/await and since it never throws an error
     // we can't use Bluebird so we need to promisfy it manually
-    protected async openOpenFileDialog(title: string) {
-        return new Promise((resolve, reject) => {
+    protected openOpenFileDialog(title: string): Promise<string[]> {
+        return new Promise((resolve) => {
             dialog.showOpenDialog({
                 title,
                 buttonLabel: "Open",
@@ -312,7 +306,7 @@ export class SaveFileService {
                     "openFile",
                     "treatPackageAsDirectory",
                 ],
-            }, files => {
+            }, (files: string[]) => {
                 resolve(files);
             });
         });
@@ -321,8 +315,8 @@ export class SaveFileService {
     // Handles Save File Dialog
     // We want this to use es6 async/await and since it never throws an error
     // we can't use Bluebird so we need to promisfy it manually
-    protected async openSaveFileDialog(title: string) {
-        return new Promise((resolve, reject) => {
+    protected openSaveFileDialog(title: string): Promise<string> {
+        return new Promise((resolve) => {
             dialog.showSaveDialog({
                 title,
                 buttonLabel: "Save",
@@ -330,7 +324,7 @@ export class SaveFileService {
                     { name: 'SAV Files', extensions: ['sav'] },
                     { name: 'All Files', extensions: ['*'] },
                 ],
-            }, file => {
+            }, (file: string) => {
                 resolve(file);
             });
         });
@@ -338,18 +332,16 @@ export class SaveFileService {
 
     // Handles loading file into memory
     protected async readSaveFile(filePath: string) {
-        const data = await fs.readFileAsync(filePath);
+        const data = await fs2.readFileAsync(filePath);
         this.filePath = filePath;
         this.fileData = data;
         this.fileDataExpanded = new SaveFileExpanded(this);
-
-        //window["saveFile"] = this;
     }
 
     // Write Buffer to file
     protected async writeSaveFile(_filePath: string = this.filePath) {
         this.recalcChecksums();
-        await fs.writeFileAsync(_filePath, this.fileData);
+        await fs2.writeFileAsync(_filePath, this.fileData);
     }
 
     // Initiates an open file dialog to open save file
@@ -368,8 +360,9 @@ export class SaveFileService {
     // present just resets buffer
     public async reOpenFile() {
         // If theres no open file then reload an empty array
-        if (this.filePath === null) {
+        if (this.filePath === "") {
             this.fileData = new Uint8Array(0x8000);
+            this.fileDataExpanded = new SaveFileExpanded(this);
             return;
         }
 
@@ -378,14 +371,14 @@ export class SaveFileService {
 
     // Closes file in memory and erases buffer
     public closeFile() {
-        this.filePath = null;
+        this.filePath = "";
         this.fileData = new Uint8Array(0x8000);
         this.fileDataExpanded = new SaveFileExpanded(this);
     }
 
     // Save file
     public async saveFile() {
-        if (this.filePath === null) {
+        if (this.filePath === "") {
             await this.saveAsFile();
             return;
         }
@@ -395,13 +388,12 @@ export class SaveFileService {
 
     // Save file as...
     public async saveAsFile() {
-        const fileName = await this.openSaveFileDialog("Save File As...");
+        const fileName: string = await this.openSaveFileDialog("Save File As...");
 
         if (fileName === undefined) {
             return;
         }
 
-        // @ts-ignore
         this.filePath = fileName;
         await this.saveFile();
     }
@@ -414,12 +406,11 @@ export class SaveFileService {
             return;
         }
 
-        // @ts-ignore
         await this.writeSaveFile(fileName);
     }
 
     // Current file path
-    public filePath: string = null;
+    public filePath: string = "";
 
     // Buffered file data
     public fileData: Uint8Array = new Uint8Array(0x8000);

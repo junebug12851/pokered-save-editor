@@ -1,8 +1,6 @@
 import { PokemonParty } from './../fragments/PokemonParty';
 import { SaveFileService } from '../../savefile.service';
 
-import _ from "lodash";
-
 export class Player {
     constructor(saveFile: SaveFileService) {
         const it = saveFile.iterator;
@@ -101,7 +99,7 @@ export class Player {
 
     public playerName: string;
     public playerNameInternal: Uint8Array = new Uint8Array([0x80]);
-    public playerNameFontStr: string;
+    public playerNameFontStr: string = "";
 
     public playerID: string;
     public pokedexOwned: boolean[];
@@ -123,6 +121,7 @@ export class Player {
         marsh: boolean,
         volcano: boolean,
         earth: boolean,
+        [key: string]: boolean;
     };
     public playerStarter: string;
 }

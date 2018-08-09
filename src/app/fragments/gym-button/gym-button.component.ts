@@ -29,10 +29,10 @@ export class GymButtonComponent implements OnInit {
     ngOnInit() { }
 
     @Input()
-    public gymLeader: string;
+    public gymLeader: string = "Brock";
 
     @Input()
-    public gymBadge: string;
+    public gymBadge: string = "Boulder";
 
     get value(): boolean {
         return this.fileService.fileDataExpanded.player.badges[this.gymBadge.toLowerCase()];
