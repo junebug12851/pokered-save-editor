@@ -1,0 +1,903 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: Pokemon Gen 1
+//   Authors: June Hanabi
+//   Version: 1
+//   Purpose:
+//  Category:
+// File Mask:
+//  ID Bytes:
+//   History:
+//------------------------------------------------
+
+// Seen and Owned
+struct POKEDEX_BITS {
+    BitfieldDisablePadding();
+    char Bulbasaur: 1<name="Bulbasaur">;
+    char Ivysaur: 1<name="Ivysaur">;
+    char Venusaur: 1<name="Venusaur">;
+    char Charmander: 1<name="Charmander">;
+    char Charmeleon: 1<name="Charmeleon">;
+    char Charizard: 1<name="Charizard">;
+    char Squirtle: 1<name="Squirtle">;
+    char Wartortle: 1<name="Wartortle">;
+    char Blastoise: 1<name="Blastoise">;
+    char Caterpie: 1<name="Caterpie">;
+    char Metapod: 1<name="Metapod">;
+    char Butterfree: 1<name="Butterfree">;
+    char Weedle: 1<name="Weedle">;
+    char Kakuna: 1<name="Kakuna">;
+    char Beedrill: 1<name="Beedrill">;
+    char Pidgey: 1<name="Pidgey">;
+    char Pidgeotto: 1<name="Pidgeotto">;
+    char Pidgeot: 1<name="Pidgeot">;
+    char Rattata: 1<name="Rattata">;
+    char Raticate: 1<name="Raticate">;
+    char Spearow: 1<name="Spearow">;
+    char Fearow: 1<name="Fearow">;
+    char Ekans: 1<name="Ekans">;
+    char Arbok: 1<name="Arbok">;
+    char Pikachu: 1<name="Pikachu">;
+    char Raichu: 1<name="Raichu">;
+    char Sandshrew: 1<name="Sandshrew">;
+    char Sandslash: 1<name="Sandslash">;
+    char NidoranF: 1<name="NidoranF">;
+    char Nidorina: 1<name="Nidorina">;
+    char Nidoqueen: 1<name="Nidoqueen">;
+    char NidoranM: 1<name="NidoranM">;
+    char Nidorino: 1<name="Nidorino">;
+    char Nidoking: 1<name="Nidoking">;
+    char Clefairy: 1<name="Clefairy">;
+    char Clefable: 1<name="Clefable">;
+    char Vulpix: 1<name="Vulpix">;
+    char Ninetales: 1<name="Ninetales">;
+    char Jigglypuff: 1<name="Jigglypuff">;
+    char Wigglytuff: 1<name="Wigglytuff">;
+    char Zubat: 1<name="Zubat">;
+    char Golbat: 1<name="Golbat">;
+    char Oddish: 1<name="Oddish">;
+    char Gloom: 1<name="Gloom">;
+    char Vileplume: 1<name="Vileplume">;
+    char Paras: 1<name="Paras">;
+    char Parasect: 1<name="Parasect">;
+    char Venonat: 1<name="Venonat">;
+    char Venomoth: 1<name="Venomoth">;
+    char Diglett: 1<name="Diglett">;
+    char Dugtrio: 1<name="Dugtrio">;
+    char Meowth: 1<name="Meowth">;
+    char Persian: 1<name="Persian">;
+    char Psyduck: 1<name="Psyduck">;
+    char Golduck: 1<name="Golduck">;
+    char Mankey: 1<name="Mankey">;
+    char Primeape: 1<name="Primeape">;
+    char Growlithe: 1<name="Growlithe">;
+    char Arcanine: 1<name="Arcanine">;
+    char Poliwag: 1<name="Poliwag">;
+    char Poliwhirl: 1<name="Poliwhirl">;
+    char Poliwrath: 1<name="Poliwrath">;
+    char Abra: 1<name="Abra">;
+    char Kadabra: 1<name="Kadabra">;
+    char Alakazam: 1<name="Alakazam">;
+    char Machop: 1<name="Machop">;
+    char Machoke: 1<name="Machoke">;
+    char Machamp: 1<name="Machamp">;
+    char Bellsprout: 1<name="Bellsprout">;
+    char Weepinbell: 1<name="Weepinbell">;
+    char Victreebel: 1<name="Victreebel">;
+    char Tentacool: 1<name="Tentacool">;
+    char Tentacruel: 1<name="Tentacruel">;
+    char Geodude: 1<name="Geodude">;
+    char Graveler: 1<name="Graveler">;
+    char Golem: 1<name="Golem">;
+    char Ponyta: 1<name="Ponyta">;
+    char Rapidash: 1<name="Rapidash">;
+    char Slowpoke: 1<name="Slowpoke">;
+    char Slowbro: 1<name="Slowbro">;
+    char Magnemite: 1<name="Magnemite">;
+    char Magneton: 1<name="Magneton">;
+    char Farfetchd: 1<name="Farfetchd">;
+    char Doduo: 1<name="Doduo">;
+    char Dodrio: 1<name="Dodrio">;
+    char Seel: 1<name="Seel">;
+    char Dewgong: 1<name="Dewgong">;
+    char Grimer: 1<name="Grimer">;
+    char Muk: 1<name="Muk">;
+    char Shellder: 1<name="Shellder">;
+    char Cloyster: 1<name="Cloyster">;
+    char Gastly: 1<name="Gastly">;
+    char Haunter: 1<name="Haunter">;
+    char Gengar: 1<name="Gengar">;
+    char Onix: 1<name="Onix">;
+    char Drowzee: 1<name="Drowzee">;
+    char Hypno: 1<name="Hypno">;
+    char Krabby: 1<name="Krabby">;
+    char Kingler: 1<name="Kingler">;
+    char Voltorb: 1<name="Voltorb">;
+    char Electrode: 1<name="Electrode">;
+    char Exeggcute: 1<name="Exeggcute">;
+    char Exeggutor: 1<name="Exeggutor">;
+    char Cubone: 1<name="Cubone">;
+    char Marowak: 1<name="Marowak">;
+    char Hitmonlee: 1<name="Hitmonlee">;
+    char Hitmonchan: 1<name="Hitmonchan">;
+    char Lickitung: 1<name="Lickitung">;
+    char Koffing: 1<name="Koffing">;
+    char Weezing: 1<name="Weezing">;
+    char Rhyhorn: 1<name="Rhyhorn">;
+    char Rhydon: 1<name="Rhydon">;
+    char Chansey: 1<name="Chansey">;
+    char Tangela: 1<name="Tangela">;
+    char Kangaskhan: 1<name="Kangaskhan">;
+    char Horsea: 1<name="Horsea">;
+    char Seadra: 1<name="Seadra">;
+    char Goldeen: 1<name="Goldeen">;
+    char Seaking: 1<name="Seaking">;
+    char Staryu: 1<name="Staryu">;
+    char Starmie: 1<name="Starmie">;
+    char MrMime: 1<name="Mr. Mime">;
+    char Scyther: 1<name="Scyther">;
+    char Jynx: 1<name="Jynx">;
+    char Electabuzz: 1<name="Electabuzz">;
+    char Magmar: 1<name="Magmar">;
+    char Pinsir: 1<name="Pinsir">;
+    char Tauros: 1<name="Tauros">;
+    char Magikarp: 1<name="Magikarp">;
+    char Gyarados: 1<name="Gyarados">;
+    char Lapras: 1<name="Lapras">;
+    char Ditto: 1<name="Ditto">;
+    char Eevee: 1<name="Eevee">;
+    char Vaporeon: 1<name="Vaporeon">;
+    char Jolteon: 1<name="Jolteon">;
+    char Flareon: 1<name="Flareon">;
+    char Porygon: 1<name="Porygon">;
+    char Omanyte: 1<name="Omanyte">;
+    char Omastar: 1<name="Omastar">;
+    char Kabuto: 1<name="Kabuto">;
+    char Kabutops: 1<name="Kabutops">;
+    char Aerodactyl: 1<name="Aerodactyl">;
+    char Snorlax: 1<name="Snorlax">;
+    char Articuno: 1<name="Articuno">;
+    char Zapdos: 1<name="Zapdos">;
+    char Moltres: 1<name="Moltres">;
+    char Dratini: 1<name="Dratini">;
+    char Dragonair: 1<name="Dragonair">;
+    char Dragonite: 1<name="Dragonite">;
+    char Mewtwo: 1<name="Mewtwo">;
+    char Mew: 1<name="Mew">;
+    char Unused1: 1<name="Unused1">;
+};
+
+struct HOF_RECORD_POKEMON {
+    char species<format=hex,name="Species">;
+    char level<format=hex,name="Level">;
+    char name[0xB]<format=hex,name="Name">;
+    char padding[0x3]<format=hex,name="Padding">;
+};
+
+struct HOF_RECORD {
+    HOF_RECORD_POKEMON pokemon[6]<name="Pokemon">;
+};
+
+struct ITEM_LIST_ENTRY {
+    char id<format=hex,name="ID">;
+    char amount<format=hex,name="Amount">;
+};
+
+struct INDEX_LIST_ENTRY {
+    char id<format=hex,name="ID">;
+    char index<format=hex,name="Index">;
+};
+
+struct MAP_CONN_DATA_ENTRY {
+    char mapPtr<format=hex,name="Map Pointer">;
+    char stripSrc[2]<format=hex,name="Strip Src">;
+    char stripDest[2]<format=hex,name="Strip Dest">;
+    char stripWidth<format=hex,name="Strip Width">;
+    char connMapWidth<format=hex,name="Connected Map Width">;
+    char connMapYAlgn<format=hex,name="Connected Map Y Alignment">;
+    char connMapXAlgn<format=hex,name="Connected Map X Alignment">;
+    char connMapViewPtr[2]<format=hex,name="Connected Map View Ptr">;
+};
+
+struct SIGN_COORD {
+    char y<format=hex,name="Y">;
+    char x<format=hex,name="X">;
+};
+
+struct MAP_SPRITE_DATA_ENTRY {
+    char movementByte<format=hex,name="Movement Byte">;
+    char textID<format=hex,name="Text ID">;
+};
+
+struct MAP_SPRITE_EXTRA_DATA_ENTRY {
+    char classOrItemID<format=hex,name="Trainer Class or Item ID">;
+    char trainerSetID<format=hex,name="Trainer Set ID">;
+};
+
+struct PARTY_NAMES {
+    char pokemon1[11]<format=hex,name="Pokemon 1">;
+    char pokemon2[11]<format=hex,name="Pokemon 2">;
+    char pokemon3[11]<format=hex,name="Pokemon 3">;
+    char pokemon4[11]<format=hex,name="Pokemon 4">;
+    char pokemon5[11]<format=hex,name="Pokemon 5">;
+    char pokemon6[11]<format=hex,name="Pokemon 6">;
+};
+
+struct PARTY_NAME {
+    char pokemon[11]<format=hex,name="Pokemon">;
+};
+
+struct BOX_MON {
+    char species<format=hex,name="Species">;
+    char hp[2]<format=hex,name="HP">;
+    char boxLevel<format=hex,name="Box Level">;
+    char status<format=hex,name="Status">;
+    char type1<format=hex,name="Type 1">;
+    char type2<format=hex,name="Type 2">;
+    char catchRate<format=hex,name="Catch Rate">;
+    struct BOX_MOVES {
+        char move1 <format=hex,name="Move 1">;
+        char move2 <format=hex,name="Move 2">;
+        char move3 <format=hex,name="Move 3">;
+        char move4 <format=hex,name="Move 4">;
+    } moves<name="Moves">;
+    char ot[2]<format=hex,name="Original Trainer">;
+    char exp[3]<format=hex,name="Exp">;
+    char hpExp[2]<format=hex,name="HP Exp">;
+    char attackExp[2]<format=hex,name="Attack Exp">;
+    char defenseExp[2]<format=hex,name="Defense Exp">;
+    char speedExp[2]<format=hex,name="Speed Exp">;
+    char specialExp[2]<format=hex,name="Special Exp">;
+    char dvs[2]<format=hex,name="DVs">;
+    struct BOX_PP {
+        char pp1 <format=hex,name="PP 1">;
+        char pp2 <format=hex,name="PP 2">;
+        char pp3 <format=hex,name="PP 3">;
+        char pp4 <format=hex,name="PP 4">;
+    } pp<name="PP">;
+};
+
+struct PARTY_MON {
+    char species<format=hex,name="Species">;
+    char hp[2]<format=hex,name="HP">;
+    char boxLevel<format=hex,name="Box Level">;
+    char status<format=hex,name="Status">;
+    char type1<format=hex,name="Type 1">;
+    char type2<format=hex,name="Type 2">;
+    char catchRate<format=hex,name="Catch Rate">;
+    struct PARTY_MOVES {
+        char move1 <format=hex,name="Move 1">;
+        char move2 <format=hex,name="Move 2">;
+        char move3 <format=hex,name="Move 3">;
+        char move4 <format=hex,name="Move 4">;
+    } moves<name="Moves">;
+    char ot[2]<format=hex,name="Original Trainer">;
+    char exp[3]<format=hex,name="Exp">;
+    char hpExp[2]<format=hex,name="HP Exp">;
+    char attackExp[2]<format=hex,name="Attack Exp">;
+    char defenseExp[2]<format=hex,name="Defense Exp">;
+    char speedExp[2]<format=hex,name="Speed Exp">;
+    char specialExp[2]<format=hex,name="Special Exp">;
+    char dvs[2]<format=hex,name="DVs">;
+    struct PARTY_PP {
+        char pp1 <format=hex,name="PP 1">;
+        char pp2 <format=hex,name="PP 2">;
+        char pp3 <format=hex,name="PP 3">;
+        char pp4 <format=hex,name="PP 4">;
+    } pp<name="PP">;
+    char level<format=hex,name="Level">;
+    char maxHP[2]<format=hex,name="Max HP">;
+    char attack[2]<format=hex,name="Attack">;
+    char defense[2]<format=hex,name="Defense">;
+    char speed[2]<format=hex,name="Speed">;
+    char special[2]<format=hex,name="Special">;
+};
+
+struct SPRITE_DATA_ENTRY {
+    char picID<format=hex,name="Picture ID">;
+    char movStat<format=hex,name="Movement Status">;
+    char imgInd<format=hex,name="Image Index">;
+    char yStepVector<format=hex,name="Y Step Vector">;
+    char yPixels<format=hex,name="Y Pixels">;
+    char xStepVector<format=hex,name="X Step Vector">;
+    char xPixels<format=hex,name="X Pixels">;
+    char intraAnimFrameCounter<format=hex,name="Intra Anim Frame Counter">;
+    char animFrameCounter<format=hex,name="Anim Frame Counter">;
+    char faceDir<format=hex,name="Face Direction">;
+    char padding[6]<format=hex,name="Padding">;
+};
+
+struct SPRITE_DATA_EXTRA_ENTRY {
+    char walkAnimCtr<format=hex,name="Walk Animation Counter">;
+    char padding1[1]<format=hex,name="Padding">;
+    char yDisp<format=hex,name="Y displacement">;
+    char xDisp<format=hex,name="X Displacement">;
+    char mapY<format=hex,name="Map Y">;
+    char mapX<format=hex,name="Map X">;
+    char movByte<format=hex,name="Movement Byte 1">;
+    char grassPri<format=hex,name="Grass Priority">;
+    char moveDelay<format=hex,name="Movement Delay">;
+    char padding2[5]<format=hex,name="Padding">;
+    char imgBaseOff<format=hex,name="Image Base Offset">;
+    char padding3[1]<format=hex,name="Padding">;
+};
+
+struct BOX_DATA_SEC {
+    char count<format=hex,name="Count">;
+    char species[21]<format=hex,name="Species">;
+    BOX_MON pokemon[20]<format=hex,name="Pokemon">;
+
+    PARTY_NAME partyMonOT[20]<format=hex,name="Pokemon Orig Trainers">;
+    PARTY_NAME partyMonNicks[20]<format=hex,name="Pokemon Nicknames">;
+};
+
+struct WARP_ENTRY {
+    char y<format=hex,name="Y">;
+    char x<format=hex,name="X">;
+    char destWarp<format=hex,name="Dest Warp">;
+    char destMap<format=hex,name="Dest Map">;
+};
+
+struct FILE {
+    struct BANK0 {
+        char spriteBuffer0[0x188]<format=hex,name="Sprite Buffer 0">;
+        char spriteBuffer1[0x188]<format=hex,name="Sprite Buffer 1">;
+        char spriteBuffer2[0x188]<format=hex,name="Sprite Buffer 2">;
+        char unused1[0x100]<format=hex,name="Unused">;
+        HOF_RECORD hof[50]<name="Hall of Fame">;
+        char unused2[0x7A8]<format=hex,name="Unused">;
+    } bank0<name="Bank 0 (HOF & Scratch)">;
+
+    struct BANK1 {
+        char unused1[0x598]<format=hex,name="Unused">;
+        char playerName[0xB]<format=hex,name="Player Name">;
+
+        // Main Data directly corresponds to in-game memory byte-by-byte
+        // To convert between in-game memory address and SAV file address
+        // Simply add (Convert to) or subtract (Convert From) 0xAD54
+        struct MAIN_DATA {
+            POKEDEX_BITS pokedexOwned<name="Pokedex Owned">;
+            POKEDEX_BITS pokedexSeen<name="Pokedex Seen">;
+
+            struct BAG_ITEMS {
+                char itemCount <format=hex,name="Items Count">;
+                ITEM_LIST_ENTRY items[20]<name="Items">;
+                char itemsEnd <format=hex,name="Items End">;
+            } bagItems<name="Bag Items">;
+
+            char money[0x3]<format=hex,name="Money">;
+            char rival[0xB]<format=hex,name="Rival Name">;
+
+            struct OPTIONS {
+                char textSpeed: 4<name="Text Speed Slowness">;
+                char unused: 2<name="Unused">;
+                char battleStyle: 1<name="Battle Style Set">;
+                char battleAnim: 1<name="Battle Animation Off">;
+            } options<name="Options">;
+
+            struct BADGES {
+                char boulderBadge: 1<name="Boulder Badge">;
+                char cascadeBadge: 1<name="Cascade Badge">;
+                char thunderBadge: 1<name="Thunder Badge">;
+                char rainbowBadge: 1<name="Rainbow Badge">;
+                char soulBadge: 1<name="Soul Badge">;
+                char marshBadge: 1<name="Marsh Badge">;
+                char volcanoBadge: 1<name="Volcano Badge">;
+                char earthBadge: 1<name="Earth Badge">;
+                char unused<format=hex,name="Unused">;
+            } badges<name="Badges">;
+
+            struct LETTER_DELAY {
+                char letterDelay: 1<name="Normal Letter Delay">;
+                char letterZeroDelay: 1<name="Don't Zero Delay">;
+                char unused: 6<name="Unused">;
+            } letterDelay<name="Letter Delay">;
+
+            char playerID[0x2]<format=hex,name="Player ID">;
+
+            struct MAP {
+                struct MUSIC {
+                    char musicID<format=hex,name="Music ID">;
+                    char musicBank<format=hex,name="Music Bank">;
+                } music<name="Music">;
+
+                char contrastID<format=hex,name="Contrast ID">;
+                char curMap<format=hex,name="Current Map">;
+                char ULCornCurViewTileBlockMapPtr[2]<format=hex,name="UL Corner Cur View Tile Block Map Ptr">;
+
+                struct COORD {
+                    char yCord<format=hex,name="Y Coord">;
+                    char xCord<format=hex,name="X Coord">;
+                    char yBlockCord<format=hex,name="Y Block Coord">;
+                    char xBlockCord<format=hex,name="X Block Coord">;
+                } coord<name="Coord">;
+
+                char lastMap<format=hex,name="Last Map">;
+                char unused1<format=hex,name="Unused">;
+                char curTileset<format=hex,name="Current Tileset">;
+
+                struct SIZE {
+                    char mapHeight<format=hex,name="Map Height Blocks">;
+                    char mapWidth<format=hex,name="Map Width Blocks">;
+                } size<name="Size">;
+
+                struct POINTERS {
+                    char mapDataPtr[2]<format=hex,name="Map Data Pointer">;
+                    char mapTextPtr[2]<format=hex,name="Map Text Pointer">;
+                    char mapScriptPtr[2]<format=hex,name="Map Script Pointer">;
+                } pointers<name="Pointers">;
+
+                struct MAP_CONN {
+                    char east: 1<name="East">;
+                    char west: 1<name="West">;
+                    char south: 1<name="South">;
+                    char north: 1<name="North">;
+                    char unused: 4<name="Unused">;
+                } mapConn<name="Map Connections">;
+
+                struct MAP_CONN_DATA {
+                    MAP_CONN_DATA_ENTRY mapConnN<name="Map Connection North">;
+                    MAP_CONN_DATA_ENTRY mapConnS<name="Map Connection South">;
+                    MAP_CONN_DATA_ENTRY mapConnW<name="Map Connection West">;
+                    MAP_CONN_DATA_ENTRY mapConnE<name="Map Connection East">;
+                } mapConn<name="Map Connection Data">;
+
+                struct SPRITES {
+                    char spriteSet[11]<format=hex,name="Sprite Set IDs">;
+                    char spriteSetID<format=hex,name="Sprite Set ID">;
+                } sprites<name="Sprites">;
+
+                char objDataPtrTmp[4]<format=hex,name="Object Data Pointer Tmp">;
+                char outofBoundsTile<format=hex,name="Out of Bounds Tile">;
+
+                struct WARPS {
+                    char warpCount<format=hex,name="Warp Count">;
+                    //char warpEntries[128]<format=hex,name="Warp Entries">;
+                    WARP_ENTRY warpEntries[32]<name="Warp Entries">;
+                    char warpDestID<format=hex,name="Warp Dest">;
+                    char padding[128]<format=hex,name="Padding">;
+                } warps<name="Warps">;
+
+                struct SIGNS {
+                    char signCount<format=hex,name="Sign Count">;
+                    SIGN_COORD signCoords[16]<name="Sign Coords">;
+                    char signTextIds[16]<format=hex,name="Sign Text IDs">;
+                } signs<name="Signs">;
+
+                char spriteCount<format=hex,name="Sprite Count">;
+
+                char yOffsetSinceLastSpecialWarp<format=hex,name="Y Off Since Last Special Warp">;
+                char xOffsetSinceLastSpecialWarp<format=hex,name="X Off Since Last Special Warp">;
+
+                struct SPRITE_DATA {
+                    MAP_SPRITE_DATA_ENTRY data[16]<name="Data">;
+                    MAP_SPRITE_EXTRA_DATA_ENTRY extraData[16]<name="Extra Data">;
+                } spriteData<name="Sprite Data">;
+
+                struct MAP_2X2_META {
+                    char height<format=hex,name="Height">;
+                    char width<format=hex,name="Width">;
+                } map2x2Meta<name="Map 2x2 Meta Size">;
+
+                char mapViewVRAMPointer[2]<format=hex,name="Map View VRAM Pointer">;
+
+                struct PLAYER_MOVING {
+                    char movDirection<format=hex,name="Movement Direction">;
+                    char lastStopDir<format=hex,name="Last Stop Dir">;
+                    char curDir<format=hex,name="Current Direction">;
+                } playerMoving<name="Player Moving">;
+
+                struct TILESET_DATA {
+                    char tilesetBank<format=hex,name="Tileset Bank">;
+                    char tilesetBlockPtr[2]<format=hex,name="Tileset Block Ptr">;
+                    char tilesetGFXPtr[2]<format=hex,name="Tileset GFX Ptr">;
+                    char tilesetCollPtr[2]<format=hex,name="Tileset Coll Ptr">;
+                    char tilesetTalkingOverTiles[3]<format=hex,name="Tileset Talking Over Tiles">;
+                    char tilesetGrassTiles[5]<format=hex,name="Tileset Grass Tile">;
+                } tilesetData<name="Tileset Data">;
+
+            } map<name="Map">;
+
+            struct BOX_ITEMS {
+                char itemCount <format=hex,name="Items Count">;
+                ITEM_LIST_ENTRY items[50]<name="Items">;
+                char itemsEnd <format=hex,name="Items End">;
+            } boxItems<name="Box Items">;
+
+
+            char curBox[2]<format=hex,name="Cur Box">;
+            char hofRecordCount<format=hex,name="HOF Record Count">;
+            char unused<format=hex,name="Unused">;
+            char coins[2]<format=hex,name="Slot Coins">;
+
+            struct MISS_OBJECTS {
+                char missableObjects[32]<format=binary,name="Missable Objects">;
+                char padding[7]<format=binary,name="Padding">;
+
+                char scratch<format=hex,name="Scratch">;
+
+                INDEX_LIST_ENTRY missableList[17]<name="Missable List">;
+            } missableObjects<name="Missable Objects">;
+
+            struct GAME_PROG {
+                char oaksLab <format=binary,name="Oaks Lab">;
+                char palTown[2] <format=binary,name="Palette Town">;
+                char bluesHouse <format=binary,name="Blues House">;
+                char virdCity[3] <format=binary,name="Viridian City">;
+                char pewterCity <format=binary,name="Pewter City">;
+                char route3 <format=binary,name="Route 3">;
+                char route4[2] <format=binary,name="Route 4">;
+                char virdGym <format=binary,name="Viridian Gym">;
+                char pewtGym <format=binary,name="Pewter Gym">;
+                char cerGym <format=binary,name="Cerulean Gym">;
+                char vermGym <format=binary,name="Vermilion Gym">;
+                char celGym <format=binary,name="Celadon Gym">;
+                char route6 <format=binary,name="Route 6">;
+                char route8 <format=binary,name="Route 8">;
+                char route24 <format=binary,name="Route 24">;
+                char route25 <format=binary,name="Route 25">;
+                char route9 <format=binary,name="Route 9">;
+                char route10 <format=binary,name="Route 10">;
+                char mtMoon1 <format=binary,name="Mt Moon 1">;
+                char mtMoon3 <format=binary,name="Mt Moon 3">;
+                char ssAnne8 <format=binary,name="St Anne 8">;
+                char ssAnne9 <format=binary,name="St Anne 9">;
+                char route22[2] <format=binary,name="Route 22">;
+                char redsHouse2 <format=binary,name="Reds House 2">;
+                char virMarket <format=binary,name="Viridian Market">;
+                char route22Gate <format=binary,name="Route 22 Gate">;
+                char cerCity[8] <format=binary,name="Cerulean City">;
+                char ssAnne5 <format=binary,name="SS Anne 5">;
+                char virForest <format=binary,name="Viridian Forest">;
+                char mus1 <format=binary,name="Museum 1">;
+                char route13 <format=binary,name="Route 13">;
+                char route14 <format=binary,name="Route 14">;
+                char route17 <format=binary,name="Route 17">;
+                char route19 <format=binary,name="Route 19">;
+                char route21 <format=binary,name="Route 21">;
+                char safZoneEnt <format=binary,name="Safari Zone Entrance">;
+                char rockTun2 <format=binary,name="Rock Tunnel 2">;
+                char roxkTun1[2] <format=binary,name="Rock Tunnel 1">;
+                char route11 <format=binary,name="Route 11">;
+                char route12 <format=binary,name="Route 12">;
+                char route15 <format=binary,name="Route 15">;
+                char route16 <format=binary,name="Route 16">;
+                char route18 <format=binary,name="Route 18">;
+                char route20 <format=binary,name="Route 20">;
+                char ssAnne10 <format=binary,name="SS Anne 10">;
+                char vermCity <format=binary,name="Verm City">;
+                char pokeTower2 <format=binary,name="Pokemon Tower 2">;
+                char pokeTower3 <format=binary,name="Pokemon Tower 3">;
+                char pokeTower4 <format=binary,name="Pokemon Tower 4">;
+                char pokeTower5 <format=binary,name="Pokemon Tower 5">;
+                char pokeTower6 <format=binary,name="Pokemon Tower 6">;
+                char pokeTower7 <format=binary,name="Pokemon Tower 7">;
+                char rocketHideout1 <format=binary,name="Rocket Hideout 1">;
+                char rocketHideout2 <format=binary,name="Rocket Hideout 2">;
+                char rocketHideout3 <format=binary,name="Rocket Hideout 3">;
+                char rocketHideout4[2] <format=binary,name="Rocket Hideout 4">;
+                char route6Gate <format=binary,name="Route 6 Gate">;
+                char route8Gate[2] <format=binary,name="Route 8 Gate">;
+                char cinnIsland <format=binary,name="Cinnabar Island">;
+                char mansion1[2] <format=binary,name="Mansion 1">;
+                char mansion2 <format=binary,name="Mansion 2">;
+                char mansion3 <format=binary,name="Mansion 3">;
+                char mansion4 <format=binary,name="Mansion 4">;
+                char vicRoad2 <format=binary,name="Victory Road 2">;
+                char vicRoad3[2] <format=binary,name="Victory Road 3">;
+                char fightingDojo <format=binary,name="Fighting Dojo">;
+                char silphCo2 <format=binary,name="Silph Co 2">;
+                char silphCo3 <format=binary,name="Silph Co 3">;
+                char silphCo4 <format=binary,name="Silph Co 4">;
+                char silphCo5 <format=binary,name="Silph Co 5">;
+                char silphCo6 <format=binary,name="Silph Co 6">;
+                char silphCo7 <format=binary,name="Silph Co 7">;
+                char silphCo8 <format=binary,name="Silph Co 8">;
+                char silphCo9 <format=binary,name="Silph Co 9">;
+                char hofRoom <format=binary,name="Hall of Fame Room">;
+                char blue <format=binary,name="Blue">;
+                char lorlei <format=binary,name="Lorelei">;
+                char bruno <format=binary,name="Bruno">;
+                char agatha <format=binary,name="Agatha">;
+                char unknDgn3 <format=binary,name="Unknown Dungeon 3">;
+                char vicRoad1[2] <format=binary,name="Victory Road 1">;
+                char lance[5] <format=binary,name="Lance">;
+                char silphCo10 <format=binary,name="Silph Co 10">;
+                char silphCo11[2] <format=binary,name="Silph Co 11">;
+                char fuchsiaGym <format=binary,name="Fuchsia Gym">;
+                char saffronGym[2] <format=binary,name="Saffron Gym">;
+                char cinnGym <format=binary,name="Cinnabar Gym">;
+                char celGameCorner <format=binary,name="Celadon Game Corner">;
+                char route16Gate <format=binary,name="Route 16 Gate">;
+                char billsHouse <format=binary,name="Bills House">;
+                char route5Gate <format=binary,name="Route 5 Gate">;
+
+                union POWER_ROUTE_7 {
+                    char powerPlant[2] <format=binary,name="Power Plant">;
+                    char route7Gate[2] <format=binary,name="Route 7 Gate">;
+                } powerRoute7<name="Power Plant / Route 7 Gate">;
+
+                char ssAnne2 <format=binary,name="SS Anne 2">;
+                char seaFoamIslands4 <format=binary,name="Seafoam Islands 4">;
+                char route23 <format=binary,name="Route 23">;
+                char seafoamIslands5 <format=binary,name="Seafoam Islands 5">;
+                char route18Gate <format=binary,name="Route 18 Gate">;
+                char padding[78] <format=binary,name="Padding">;
+                char endProgPadding[56] <format=binary,name="End Progress Padding">;
+
+            } gameProg<name="Game Progress">;
+
+
+            char ownedHiddenItems[14] <format=binary,name="Owned Hidden Items">;
+            char ownedHiddenCoins[2] <format=binary,name="Owned Hidden Coins">;
+
+            char moveType<format=hex,name="Walk, Bike, or Surf">;
+            char padding[10]<format=hex,name="Padding">;
+            char townsVisited[2]<format=binary,name="Towns Visited">;
+            char safariSteps[2]<format=hex,name="Safari Steps">;
+            char fossilItem<format=hex,name="Fossil Item Given">;
+            char fossilMon[3]<format=hex,name="Fossil Pokemon Result">;
+
+            char enemyMonTrainerClass<format=hex,name="Enemy Mon or Trainer Class">;
+            char playerJumpYScrnCoords<format=hex,name="Player Jumping Y Scrn Coords">;
+            char rivalStarter[2]<format=hex,name="Rival Starter">;
+            char playerStarter<format=hex,name="Player Starter">;
+            char boulderSpriteInd<format=hex,name="Boulder Sprite Index">;
+            char lastBlackoutMap<format=hex,name="Last Blackout Map">;
+            char destMap<format=hex,name="Destination Map">;
+            char unused<format=hex,name="Unused">;
+            char tileInFrontofBoulderOrColl<format=hex,name="Tile front Boulder or Coll">;
+            char dungeonWarpDest<format=hex,name="Dungeon Warp Dest">;
+            char whichDungeonWarpUsed<format=hex,name="Which Dungeon Warp Used">;
+            char unused1[9]<format=hex,name="Unused">;
+
+            struct VARIOUS_FLAGS1 {
+                char strengthOutsideBattle: 1<name="Strength outside of battle">;
+                char surfingAllowed: 1<name="Is Surfing Allowed">;
+                char unused: 1<name="Unused">;
+                char unlockedOldRod: 1<name="Unlocked Old Rod">;
+                char unlockedGoodRod: 1<name="Unlocked Good Rod">;
+                char unlockedSuperRod: 1<name="Unlocked Super Rod">;
+                char unlockedSaffronGuards: 1<name="Unlocked Saffron Guards">;
+                char usedCardKey: 1<name="Used Card Key">;
+            } variousFlags1<name="Various Flags 1">;
+
+            char padding2<format=hex,name="Padding">;
+
+            struct DEFEATED_GYMS {
+                char brock: 1<name="Brock">;
+                char misty: 1<name="Misty">;
+                char ltSurge: 1<name="Lt. Surge">;
+                char erika: 1<name="Erika">;
+                char koga: 1<name="Koga">;
+                char sabrina: 1<name="Sabrina">;
+                char blaine: 1<name="Blaine">;
+                char giovanni: 1<name="Giovanni">;
+            } defeatedGyms<name="Defeated Gyms">;
+
+            char padding3<format=hex,name="Padding">;
+
+            struct VARIOUS_FLAGS2 {
+                char steps3PauseBattles: 1<name="Pause Battle 3 Steps">;
+                char noAudioFadeout: 1<name="No Audio Fadeout">;
+                char unused1: 1<name="Unused">;
+                char unused2: 1<name="Unused">;
+                char unused3: 1<name="Unused">;
+                char unused4: 1<name="Unused">;
+                char unused5: 1<name="Unused">;
+                char unused6: 1<name="Unused">;
+            } variousFlags2<name="Various Flags 2">;
+
+            struct VARIOUS_FLAGS3 {
+                char tradeCenterSpritesFaced: 1<name="Trade Center Sprites Faced">;
+                char unused1: 1<name="Unused">;
+                char unused2: 1<name="Unused">;
+                char doScriptedWarpLavender: 1<name="Do Warp to Lavender Town">;
+                char isDungeonWarp: 1<name="Is Dungeon Warp">;
+                char npcsFaceAway: 1<name="NPCs Face Away from Player">;
+                char isBattle: 1<name="Is Battle">;
+                char isTrainerBattle: 1<name="Is Trainer Battle">;
+            } variousFlags3<name="Various Flags 3">;
+
+            struct VARIOUS_FLAGS4 {
+                char laprasUnlocked: 1<name="Lapras Unlocked">;
+                char scratch1: 1<name="Scratch">;
+                char everHealedPokemon: 1<name="Ever healed Pokemon">;
+                char unlockedStarterPokemon: 1<name="Unlocked Starter Pokemon">;
+                char noBattles: 1<name="No Battles">;
+                char battleEndOrBlackout: 1<name="Battle Ended or Blackout">;
+                char linkCable: 1<name="Using Link Cable">;
+                char scriptedNPCMovement: 1<name="Scripted NPC Movement">;
+            } variousFlags4<name="Various Flags 4">;
+
+            char padding4<format=hex,name="Padding">;
+
+            struct VARIOUS_FLAGS5 {
+                char npcSpriteMovement: 1<name="NPC Sprite Movement">;
+                char unused1: 1<name="Unused">;
+                char unused2: 1<name="Unused">;
+                char unused3: 1<name="Unused">;
+                char unused4: 1<name="Unused">;
+                char ignoreJoypad: 1<name="Ignore Joypad">;
+                char noLetterDelay: 1<name="No Letter Delay">;
+                char joypadSimulation: 1<name="Joypad Simulation">;
+            } variousFlags5<name="Various Flags 5">;
+
+            char padding5<format=hex,name="Padding">;
+
+            struct VARIOUS_FLAGS6 {
+                char countPlayTime: 1<name="Count Play Time">;
+                char debugMode: 1<name="DebugMode">;
+                char flyOrDungeonWarp: 1<name="Fly or Dungeon Warp">;
+                char flyWarp: 1<name="Fly Warp">;
+                char dungeonWarp: 1<name="Dungeon Warp">;
+                char forceBikeRide: 1<name="Force Bike Ride">;
+                char blackoutDestination: 1<name="Blackout Destination">;
+                char unused1: 1<name="Unused">;
+            } variousFlags6<name="Various Flags 6">;
+
+            struct VARIOUS_FLAGS7 {
+                char runTestBattle: 1<name="Running Test Battle">;
+                char preventMusicChange: 1<name="Prevent Music Change">;
+                char skipJoypadCheckWarps: 1<name="Skip Joypad Check on Warps">;
+                char trainerBattle: 1<name="Trainer Battle">;
+                char curMapNextFrame: 1<name="Current Map Next Frame">;
+                char unused1: 1<name="Unused">;
+                char unused2: 1<name="Unused">;
+                char flyOutOfBattle: 1<name="Used fly out of Battle">;
+            } variousFlags7<name="Various Flags 7">;
+
+            char beatLorelei[2]<format=binary,name="Defeated Lorelei">;
+
+            struct VARIOUS_FLAGS8 {
+                char onDoor: 1<name="Standing on Door">;
+                char movingDoor: 1<name="Moving through door">;
+                char onWarp: 1<name="Standing on Warp">;
+                char unused1: 1<name="Unused">;
+                char unused2: 1<name="Unused">;
+                char unused3: 1<name="Unused">;
+                char ledgeJumpingFinal: 1<name="Final ledge jumping phase">;
+                char spinning: 1<name="Spin Player">;
+            } variousFlags8<name="Various Flags 8">;
+
+            char inGameTrades[2]<format=binary,name="In-Game Trades">;
+
+            char padding6[2]<format=hex,name="Padding">;
+
+            char warpedFromWarp<format=hex,name="Warped From Warp">;
+            char warpedFromMap<format=hex,name="Warped From Map">;
+
+            char padding7[2]<format=hex,name="Padding">;
+
+            char cardKeyDoorY<format=hex,name="Card Key Door Y">;
+            char cardKeyDoorX<format=hex,name="Card Key Door X">;
+
+            char padding8[2]<format=hex,name="Padding">;
+
+            char firstTrashcanLock<format=hex,name="First Trashcan Lock">;
+            char secondTrashcanLock<format=hex,name="Second Trashcan Lock">;
+
+            char padding9[2]<format=hex,name="Padding">;
+
+            char completedGameEvents[320]<format=binary,name="Completed Game Events">;
+
+            union GRASS_RATE_LINK_TRAINER {
+                char grassRate <format=hex,name="Grass Rate">;
+                char linkTrainer <format=hex,name="Link Trainer">;
+            } grassRateLinkTrainer<name="Grass Rate / Link Trainer">;
+
+            char grassPokemon[11] <format=hex,name="Grass Pokemon">;
+            char grassMonOrLinkData[9]<format=hex,name="Grass Pokemon or Link Data">;
+
+            char enemyPartyCount<format=hex,name="Enemy Party Count">;
+            char enemyPartyMon[7]<format=hex,name="Enemy Party Pokemon">;
+
+            union WATER_MON_ENEMY_MON {
+                struct WATER_MON {
+                    char waterRate<format=hex,name="Water Rate">;
+                    char waterMon[20]<format=hex,name="Water Pokemon">;
+                } waterMon<name="Water Pokemon">;
+
+                struct ENEMY_MON { // 44 bytes per party struct
+                    PARTY_MON enemyMon[6]<format=hex,name="Enemy Pokemon">;
+                    PARTY_NAMES enemyMonOT<format=hex,name="Enemy Pokemon Orig Trainers">;
+                    PARTY_NAMES enemyMonNicks<format=hex,name="Enemy Pokemon Nicknames">;
+                } enemyMon<name="Enemy Pokemon">;
+            } waterMonEnemyMon<name="Water Pokemon / Enemy Pokemon">;
+
+            char trainerHeaderPtr[2]<format=hex,name="Trainer Header Pokemon">;
+
+            char padding10[6]<format=hex,name="Padding">;
+
+            char opAfterWrongAnsw<format=hex,name="Opponent after wrong answer">;
+            char curMapScript<format=hex,name="Cur Map Script">;
+
+            char padding11[7]<format=hex,name="Padding">;
+
+            struct PLAY_TIME {
+                char hours<format=hex,name="Hours">;
+                char hours<format=hex,name="Maxed">;
+                char hours<format=hex,name="Minutes">;
+                char hours<format=hex,name="Seconds">;
+                char hours<format=hex,name="Frames">;
+            } playTime<name="Play Time">;
+
+            struct SAF_ZONE {
+                char gameOver<format=hex,name="Game Over">;
+                char ballCount<format=hex,name="Ball Count">;
+            } safZone<name="Safari Zone">;
+
+            struct DAYCARE {
+                char dayCareInUse<format=hex,name="Daycare In Use">;
+                char dayCareMonName[11]<format=hex,name="Daycare Pokemon Name">;
+                char dayCareMonOT[11]<format=hex,name="Daycare Original Trainer">;
+                BOX_MON dayCareMon<name="Daycare Pokemon">;
+            } dayCare<name="Daycare">;
+
+        } main_data<name="Main Data">;
+
+        struct SPRITE_DATA_SEC {
+            SPRITE_DATA_ENTRY player<name="Player">;
+            SPRITE_DATA_ENTRY sprites[15]<name="Sprites">;
+            SPRITE_DATA_EXTRA_ENTRY playerExtra<name="Player Extra">;
+            SPRITE_DATA_EXTRA_ENTRY spritesExtra[15]<name="Sprites Extra">;
+        } spriteDataSec<name="Sprite Data">;
+
+        struct PARTY_DATA_SEC {
+            char partyCount<format=hex,name="Party Count">;
+
+            struct PARTY_DATA_SPECIES {
+                char pokemon1<format=hex,name="Pokemon 1">;
+                char pokemon2<format=hex,name="Pokemon 2">;
+                char pokemon3<format=hex,name="Pokemon 3">;
+                char pokemon4<format=hex,name="Pokemon 4">;
+                char pokemon5<format=hex,name="Pokemon 5">;
+                char pokemon6<format=hex,name="Pokemon 6">;
+            } partyDataSpecies<name="Species">;
+
+            char partyEnd<format=hex,name="Party End">;
+
+            PARTY_MON pokemon1<format=hex,name="Pokemon 1">;
+            PARTY_MON pokemon2<format=hex,name="Pokemon 2">;
+            PARTY_MON pokemon3<format=hex,name="Pokemon 3">;
+            PARTY_MON pokemon4<format=hex,name="Pokemon 4">;
+            PARTY_MON pokemon5<format=hex,name="Pokemon 5">;
+            PARTY_MON pokemon6<format=hex,name="Pokemon 6">;
+
+            PARTY_NAMES partyMonOT<format=hex,name="Pokemon Orig Trainers">;
+            PARTY_NAMES partyMonNicks<format=hex,name="Pokemon Nicknames">;
+
+        } partyDataSec<name="Party Data">;
+
+        BOX_DATA_SEC curBoxData<name="Current Box Data">;
+
+        char tilesetType<format=hex,name="Tileset Type">;
+        char mainDataChecksum<format=hex,name="Main Data Checksum">;
+        char unused2[0xADC]<format=hex,name="Unused">;
+    } bank1<name="Bank 1 (Main)">;
+
+    struct BANK2 {
+        BOX_DATA_SEC box1<name="Box1">;
+        BOX_DATA_SEC box2<name="Box2">;
+        BOX_DATA_SEC box3<name="Box3">;
+        BOX_DATA_SEC box4<name="Box4">;
+        BOX_DATA_SEC box5<name="Box5">;
+        BOX_DATA_SEC box6<name="Box6">;
+        char allChecksums<format=hex,name="All Checksums">;
+        char indvChecksums[0x6]<format=hex,name="Individual Checksums">;
+        char unused[0x5AD]<format=hex,name="Unused">;
+    } bank2<name="Bank 2 (Boxes 1-6)">;
+
+    struct BANK3 {
+        BOX_DATA_SEC box7<name="Box7">;
+        BOX_DATA_SEC box8<name="Box8">;
+        BOX_DATA_SEC box9<name="Box9">;
+        BOX_DATA_SEC box10<name="Box10">;
+        BOX_DATA_SEC box11<name="Box11">;
+        BOX_DATA_SEC box12<name="Box12">;
+        char allChecksums<format=hex,name="All Checksums">;
+        char indvChecksums[0x6]<format=hex,name="Individual Checksums">;
+        char unused[0x5AD]<format=hex,name="Unused">;
+    } bank3<name="Bank 3 (Boxes 7-12)">;
+} file<name="SAV File">;
