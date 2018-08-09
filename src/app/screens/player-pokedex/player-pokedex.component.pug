@@ -39,18 +39,18 @@
                 span.left
                     a(class=btnClasses
 
-                        '[class.grey]'='!getSeen(entry.ind)'
-                        '[class.green]'='getSeen(entry.ind)'
-                        '(click)'='toggleSeen(entry.ind)'
+                        '[class.grey]'='!getSeen(entry.pokedex)'
+                        '[class.green]'='getSeen(entry.pokedex)'
+                        '(click)'='toggleSeen(entry.pokedex)'
                         ) Seen
 
                 .center-align
-                    | # {{entry.num}} {{entry.name}}
+                    | # {{entry.pokedex + 1}} {{entry.name}}
 
                     span.right
                         a(class=btnClasses
 
-                            '[class.grey]'='!getOwn(entry.ind)'
-                            '[class.green]'='getOwn(entry.ind)'
-                            '(click)'='toggleOwn(entry.ind)'
+                            '[class.grey]'='!getOwn(entry.pokedex)'
+                            '[class.green]'='getOwn(entry.pokedex)'
+                            '(click)'='toggleOwn(entry.pokedex)'
                         ) Own

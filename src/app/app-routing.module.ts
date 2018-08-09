@@ -19,11 +19,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.component";
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
+import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
     { path: 'player-pokedex', component: PlayerPokedexComponent },
     { path: 'player-items', component: PlayerItemsComponent },
+    { path: 'player-pokemon', component: PlayerPokemonComponent },
     {
         path: '',
         redirectTo: '/player-basics',

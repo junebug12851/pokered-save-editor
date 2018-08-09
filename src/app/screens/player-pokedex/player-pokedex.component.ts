@@ -1,3 +1,4 @@
+import { PokemonService } from './../../data/pokemon.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -16,7 +17,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
-import { PokedexService } from './../../data/pokedex.service';
 
 @Component({
     selector: 'screen-pokedex',
@@ -27,7 +27,7 @@ export class PlayerPokedexComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
-        public pokedexService: PokedexService
+        public pokemonService: PokemonService
     ) { }
 
     ngOnInit() {
@@ -35,7 +35,7 @@ export class PlayerPokedexComponent implements OnInit {
     }
 
     get entries() {
-        return this.pokedexService.namePairs;
+        return this.pokemonService.lookupPokedex;
     }
 
     getSeen(index: number): boolean {

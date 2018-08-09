@@ -1,0 +1,26 @@
+.row
+    .col.s12
+
+        ul.collection.items.slim-list.sticky
+
+            li.collection-item.item.flex-container(*ngFor='let entry of entries')
+                | {{entry.nickname}}
+//-                 select.browser-default.flex-item(
+//-                     '[(ngModel)]'='fileService.fileDataExpanded.player.bagItems[entry.index].id')
+//-                     option([value]='0', disabled='') Choose Item
+//-                     option(
+//-                         *ngFor='let itemOption of itemList',
+//-                         '[value]'='itemOption.ind',
+//-                         '[disabled]'='itemOption.disable'
+//-                     ) {{itemOption.name}}
+
+//-                 input#amount.flex-item(
+//-                     placeholder='Amount',
+//-                     type='number',
+//-                     '[(ngModel)]'='fileService.fileDataExpanded.player.bagItems[entry.index].amount',
+//-                     max='99',
+//-                     min='0'
+//-                 )
+
+//-                 a.btn-small.waves-effect.flex-item('(click)'='remListItem(entry.index)')
+//-                     span.im.im-delete
