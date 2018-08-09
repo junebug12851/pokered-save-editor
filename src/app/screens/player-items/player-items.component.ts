@@ -88,6 +88,10 @@ export class PlayerItemsComponent implements OnInit {
         ];
     }
 
+    get itemCount() {
+        return this.fileService.fileDataExpanded.player.bagItems.length;
+    }
+
     idToName(id: number) {
         return this.itemService.indToName[id].name;
     }

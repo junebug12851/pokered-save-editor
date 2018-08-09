@@ -39,5 +39,8 @@
                 a.btn-small.disabled.waves-effect.flex-item
                     span.im.im-delete
 
-            a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.br('(click)'='addListItem()')
+            a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.br(
+                '(click)'='addListItem()'
+                '[class.disabled]' = 'itemCount >= 20'
+            )
                 span.im.im-plus3
