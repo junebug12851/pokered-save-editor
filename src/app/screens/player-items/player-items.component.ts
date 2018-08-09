@@ -25,11 +25,8 @@ declare var $: any;
 
 @Component({
     selector: 'screen-player-items',
-    templateUrl: './player-items.component.html',
+    templateUrl: './player-items.component.pug',
     styleUrls: ['./player-items.component.scss'],
-    providers: [
-
-    ],
 })
 export class PlayerItemsComponent implements OnInit {
 
@@ -42,27 +39,38 @@ export class PlayerItemsComponent implements OnInit {
         M.updateTextFields();
     }
 
+    ngOnChanges() {
+        M.updateTextFields();
+    }
+
     get entries() {
         return this.fileService.fileDataExpanded.player.bagItems;
     }
 
     get itemList() {
-        const itemListCommon = _.filter(itemEntries, (value) => {
+        let itemListCommon = _.filter(itemEntries, (value) => {
             if (value.normal && value.typical)
                 return true;
         });
 
-        const itemListSpecial = _.filter(itemEntries, (value) => {
+        itemListCommon = _.sortBy(itemListCommon, ['name']);
+
+        let itemListSpecial = _.filter(itemEntries, (value) => {
             if (value.normal && !value.typical)
                 return true;
         });
 
-        const itemListGlitch = _.filter(itemEntries, (value) => {
+        itemListSpecial = _.sortBy(itemListSpecial, ['name']);
+
+        let itemListGlitch = _.filter(itemEntries, (value) => {
             if (!value.normal)
                 return true;
         });
 
+        itemListGlitch = _.sortBy(itemListGlitch, ['name']);
+
         return [
+            { name: "--- Common Items ---", ind: 0x00, disable: true },
             ...itemListCommon,
             { name: "--- Special Items ---", ind: 0x00, disable: true },
             ...itemListSpecial,

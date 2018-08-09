@@ -14,15 +14,13 @@
    limitations under the License.
  */
 
-declare var M: any;
 declare var $: any;
-declare var jQuery: any;
 
 import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-sidenav',
-    templateUrl: './sidenav.component.html',
+    templateUrl: './sidenav.component.pug',
     styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {

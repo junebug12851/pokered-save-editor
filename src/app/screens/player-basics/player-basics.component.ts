@@ -1,4 +1,3 @@
-import { RawTransArrEntry } from './../../data/text.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -19,15 +18,11 @@ import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
 declare var M: any;
-declare var $: any;
 
 @Component({
     selector: 'screen-player-basics',
-    templateUrl: './player-basics.component.html',
+    templateUrl: './player-basics.component.pug',
     styleUrls: ['./player-basics.component.scss'],
-    providers: [
-
-    ],
 })
 export class PlayerBasicsComponent implements OnInit {
 
@@ -35,7 +30,6 @@ export class PlayerBasicsComponent implements OnInit {
 
     ngOnInit() {
         M.updateTextFields();
-        //$('select').formSelect();
     }
 
     get agathaSpeech() {

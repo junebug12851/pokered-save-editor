@@ -14,9 +14,7 @@
    limitations under the License.
  */
 
-@import "../../../styles/color_vars";
-@import "~materialize-css/sass/components/color-classes";
-@import "../../../styles/materialize_vars";
+@import "../../../styles/materialize/env";
 
 a:hover {
     background-color: darken($primary-color, 15%) !important;

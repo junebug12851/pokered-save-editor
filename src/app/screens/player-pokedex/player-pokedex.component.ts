@@ -1,4 +1,3 @@
-import { PokedexService } from './../../data/pokedex.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -17,17 +16,12 @@ import { PokedexService } from './../../data/pokedex.service';
 
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
-
-declare var M: any;
-declare var $: any;
+import { PokedexService } from './../../data/pokedex.service';
 
 @Component({
     selector: 'screen-pokedex',
-    templateUrl: './player-pokedex.component.html',
+    templateUrl: './player-pokedex.component.pug',
     styleUrls: ['./player-pokedex.component.scss'],
-    providers: [
-
-    ],
 })
 export class PlayerPokedexComponent implements OnInit {
 

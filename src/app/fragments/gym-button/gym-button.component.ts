@@ -1,4 +1,3 @@
-import { SaveFileService } from './../../data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -16,10 +15,11 @@ import { SaveFileService } from './../../data/savefile.service';
  */
 
 import { Component, OnInit, Input } from '@angular/core';
+import { SaveFileService } from './../../data/savefile.service';
 
 @Component({
     selector: 'gym-button',
-    templateUrl: './gym-button.component.html',
+    templateUrl: './gym-button.component.pug',
     styleUrls: ['./gym-button.component.scss']
 })
 export class GymButtonComponent implements OnInit {

@@ -1,4 +1,3 @@
-import { SaveFileService } from './data/savefile.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -15,24 +14,50 @@ import { SaveFileService } from './data/savefile.service';
    limitations under the License.
  */
 
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Modules
+import { FontawesomeModule } from './libs/fontawesome.module';
+
+// Routing
 import { AppRoutingModule } from './app-routing.module';
+
+// Services
+import { SaveFileService } from './data/savefile.service';
+
+// Core
 import { AppComponent } from './app.component';
 
-import { ScreensModule } from './screens/screens.module';
-import { LayoutModule } from './layouts/layouts.module';
+// Fragments
+import { GymButtonComponent } from './fragments/gym-button/gym-button.component';
+
+// Layout
+import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { SidenavComponent } from './layouts/sidenav/sidenav.component';
+
+// Screens
+import { PlayerBasicsComponent } from './screens/player-basics/player-basics.component';
+import { FormsModule } from '@angular/forms';
+import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
+import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        PlayerBasicsComponent,
+        PlayerPokedexComponent,
+        PlayerItemsComponent,
+        GymButtonComponent,
+        NavbarComponent,
+        SidenavComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ScreensModule,
-        LayoutModule,
+        FormsModule,
+        FontawesomeModule,
     ],
     providers: [
         SaveFileService
