@@ -2,6 +2,10 @@
     box-sizing: border-box !important;
 }
 
+div, p, span, a, ul, li {
+    user-select: none;
+}
+
 a:focus, button:focus {
     outline: 0 !important;
 }

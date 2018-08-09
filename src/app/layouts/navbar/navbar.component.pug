@@ -27,6 +27,7 @@ ul#file-dropdown.dropdown-content
     a
       fa-icon(icon='broom')
       |  &nbsp; Wipe Unused Space
+
 ul#char-dropdown.dropdown-content
   li
     a.modal-trigger(data-target='char-basic-modal')
@@ -37,38 +38,61 @@ ul#char-dropdown.dropdown-content
   li
     a.modal-trigger(data-target='char-pic-modal')
       | Picture
+
 #char-basic-modal.modal.bottom-sheet
   .modal-content
-    p.instr.center-align
-      | Basic Keyboard containing only keys found normally in game. Click to copy.
+    p.instr.center-align.
+      Basic Keyboard containing only keys found normally in game. Click to copy.
+
     .special-char(*ngFor='let char of basicKeys')
-      span.preview.pr-container.pr-white.pr-small('innerHTML'='{{char.html}}' '(click)'='copyChar(char.copyCode)')
+      span.preview.pr-container.pr-white.pr-small(
+        'innerHTML'='{{char.html}}'
+        '(click)'='copyChar(char.copyCode)'
+      )
       span.code {{char.copyCode}}
+
 #char-full-modal.modal.bottom-sheet
   .modal-content
-    p.instr.center-align
-      | Complete keyboard containing every possible non-picture key the game uses, click to copy. All of these take 1 slot even if
-      | it&apos;s multiple characters.
+    p.instr.center-align.
+      Complete keyboard containing every possible non-picture key the game uses,
+      click to copy. All of these take 1 slot even if it's multiple
+      characters.
+
     .special-char(*ngFor='let char of controlKeys')
       span.preview((click)='copyChar(char.copyCode)')
       span.code {{char.copyCode}}
     br
+
     .special-char(*ngFor='let char of multiCharKeys')
-      span.preview.pr-container.pr-white.pr-small('innerHTML'='{{char.html}}' '(click)'='copyChar(char.copyCode)')
+      span.preview.pr-container.pr-white.pr-small(
+          'innerHTML'='{{char.html}}'
+          '(click)'='copyChar(char.copyCode)'
+        )
       span.code {{char.copyCode}}
     br
+
     .special-char(*ngFor='let char of singleCharKeys')
-      span.preview.pr-container.pr-white.pr-small('innerHTML'='{{char.html}}' '(click)'='copyChar(char.copyCode)')
+      span.preview.pr-container.pr-white.pr-small(
+          'innerHTML'='{{char.html}}'
+          '(click)'='copyChar(char.copyCode)'
+        )
       span.code {{char.copyCode}}
+
 #char-pic-modal.modal.bottom-sheet
   .modal-content
     p.instr.center-align
-      | Picture keyboard containing every picture you can insert that the game allows, click to copy.
+      | Picture keyboard containing every picture you can insert that the game
+      | allows, click to copy.
       br
-      | These pictures will not stay consistent and are based on the map, menu, or gameplay your in.
+      | These pictures will not stay consistent and are based on the map, menu,
+      | or gameplay your in.
     .special-char(*ngFor='let char of picKeys')
-      span.preview.pr-container.pr-white('innerHTML'='{{char.html}}' '(click)'='copyChar(char.copyCode)')
+      span.preview.pr-container.pr-white(
+          'innerHTML'='{{char.html}}'
+          '(click)'='copyChar(char.copyCode)'
+        )
       span.code {{char.copyCode}}
+
 .navbar-fixed
   nav
     .nav-wrapper
