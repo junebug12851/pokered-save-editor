@@ -42,6 +42,7 @@ import { PlayerBasicsComponent } from './screens/player-basics/player-basics.com
 import { FormsModule } from '@angular/forms';
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
+import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,8 @@ import { PlayerItemsComponent } from './screens/player-items/player-items.compon
         PlayerItemsComponent,
         GymButtonComponent,
         NavbarComponent,
-        SidenavComponent
+        SidenavComponent,
+        PlayerPokemonComponent
     ],
     imports: [
         BrowserModule,
