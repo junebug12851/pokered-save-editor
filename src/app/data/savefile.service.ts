@@ -29,7 +29,7 @@ declare var window: {
 
 declare var Buffer: any;
 
-import { Injectable } from '@angular/core';
+import { Injectable, ApplicationRef } from '@angular/core';
 import { TextService } from "./text.service";
 
 // @ts-ignore
@@ -49,7 +49,8 @@ const fs2 = BluePromise.promisifyAll(fs);
 })
 export class SaveFileService {
 
-    constructor(public saveText: TextService) {
+    constructor(public saveText: TextService,
+        public appRef: ApplicationRef) {
         this.fileDataExpanded = new SaveFileExpanded(this);
 
         window.saveFile = this;
@@ -369,6 +370,7 @@ export class SaveFileService {
         await this.readSaveFile(filePath);
         app.addRecentDocument(filePath);
         curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
+        this.appRef.tick();
     }
 
     // Reloads file from disk erasing unsaved changes, if no open file is
@@ -382,6 +384,7 @@ export class SaveFileService {
         }
 
         await this.readSaveFile(this.filePath);
+        this.appRef.tick();
     }
 
     // Closes file in memory and erases buffer
@@ -390,6 +393,7 @@ export class SaveFileService {
         this.fileData = new Uint8Array(0x8000);
         this.fileDataExpanded = new SaveFileExpanded(this);
         curWindow.setTitle(`Pokered Save Editor - New File`);
+        this.appRef.tick();
     }
 
     // Save file
@@ -437,6 +441,7 @@ export class SaveFileService {
         // We do this because we don't want to change the array instance only
         // the array contents
         this.fileData.fill(val);
+        this.appRef.tick();
     }
 
     // Current file path
