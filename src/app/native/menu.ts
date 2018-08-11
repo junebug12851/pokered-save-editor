@@ -116,6 +116,7 @@ const template = [{
 
 // @ts-ignore
 if (process.platform === 'darwin') {
+    // Add menu to beginning of app
     // @ts-ignore
     template.unshift({
         label: app.getName(),
@@ -134,25 +135,25 @@ if (process.platform === 'darwin') {
 
     // Edit menu
     // @ts-ignore
-    template[1].submenu.push(
-        { type: 'separator' },
-        {
-            label: 'Speech',
-            submenu: [
-                { role: 'startspeaking' },
-                { role: 'stopspeaking' }
-            ]
-        }
-    )
+    // template[2].submenu.push(
+    //     { type: 'separator' },
+    //     {
+    //         label: 'Speech',
+    //         submenu: [
+    //             { role: 'startspeaking' },
+    //             { role: 'stopspeaking' }
+    //         ]
+    //     }
+    // )
 
     // Window menu
-    template[3].submenu = [
-        { role: 'close' },
-        { role: 'minimize' },
-        { role: 'zoom' },
-        { type: 'separator' },
-        { role: 'front' }
-    ]
+    // template[3].submenu = [
+    //     { role: 'close' },
+    //     { role: 'minimize' },
+    //     { role: 'zoom' },
+    //     { type: 'separator' },
+    //     { role: 'front' }
+    // ]
 }
 
 const menu = Menu.buildFromTemplate(template);
