@@ -1,3 +1,7 @@
+import { OnInit } from '@angular/core';
+import "./native/app";
+import "./native/menu";
+
 /**
    Copyright 2018 June Hanabi
 
@@ -21,5 +25,8 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.pug',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    ngOnInit() {
+
+    }
 }

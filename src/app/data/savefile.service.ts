@@ -409,6 +409,18 @@ export class SaveFileService {
         await this.writeSaveFile(fileName);
     }
 
+    // This erases the raw internal data completely leaving the file all zeroes
+    // Normally the expanded copy will overwrite only the used bytes and leave
+    // everything else as-is however with this method the expanded copy will
+    // still do the same but will be writing back to a clean slate thus blasting
+    // away all unused values
+    public wipeUnusedSpace(val = 0x00) {
+        // We fill the array from start to end with a fill value, default 0x00
+        // We do this because we don't want to change the array instance only
+        // the array contents
+        this.fileData.fill(val);
+    }
+
     // Current file path
     public filePath: string = "";
 
