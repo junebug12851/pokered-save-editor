@@ -18,6 +18,7 @@ html, body {
 // Custom Scrollbar
 ::-webkit-scrollbar {
     width: .4em;
+    height: .25em;
 }
 
 ::-webkit-scrollbar,
@@ -29,6 +30,7 @@ html, body {
 ::-webkit-scrollbar-thumb {
     background-color: $secondary-color;
     width: 5px;
+    height: 5px;
     border: none;
     border-radius: 4px;
 }

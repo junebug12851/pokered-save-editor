@@ -19,7 +19,6 @@ import { Injectable } from '@angular/core';
 export interface RawEntry {
     name: string,
     ind: number,
-    special?: boolean,
     glitch?: boolean,
     pokedex?: number
 };
@@ -945,7 +944,7 @@ export const rawEntries: RawEntry[] = [
     {
         name: "Mon Ghost",
         ind: 0xB8,
-        special: true
+        glitch: true
     },
     {
         name: "Oddish",

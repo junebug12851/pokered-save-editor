@@ -18,7 +18,17 @@ export class PokemonBox {
         this.species = it.getByte();
         this.hp = it.getWord();
         this.boxLevel = it.getByte();
-        this.status = it.getByte();
+
+        const statusByte = it.getByte();
+        this.status = {
+            // Number of turns left
+            SLP: statusByte & 0b00000111,
+            PSN: (statusByte & 0b00001000) > 0,
+            BRN: (statusByte & 0b00010000) > 0,
+            FRZ: (statusByte & 0b00100000) > 0,
+            PAR: (statusByte & 0b01000000) > 0,
+        };
+
         this.type1 = it.getByte();
         this.type2 = it.getByte();
         this.catchRate = it.getByte();
@@ -29,11 +39,7 @@ export class PokemonBox {
         // Temporarily save moves for later
         const moves = [];
         for (let i = 0; i < 4; i++) {
-            // A Move of 0x00 indicates end of move list
             const moveID = it.getByte();
-            if (moveID === 0x00)
-                break;
-
             moves.push(moveID);
         }
 
@@ -55,7 +61,14 @@ export class PokemonBox {
         this.defenseExp = it.getWord();
         this.speedExp = it.getWord();
         this.specialExp = it.getWord();
-        this.dv = it.getWord();
+
+        const dvTotal = it.getWord();
+        this.dv = {
+            attack: (dvTotal & 0xF000) >> 12,
+            defense: (dvTotal & 0x0F00) >> 8,
+            speed: (dvTotal & 0x00F0) >> 4,
+            special: dvTotal & 0x000F
+        };
 
         it.push();
 
@@ -72,7 +85,8 @@ export class PokemonBox {
             const pp = ppList[i];
             this.moves.push({
                 moveID,
-                pp
+                pp: pp & 0b00111111,
+                ppUp: 0b1100000000
             });
         }
 
@@ -102,13 +116,20 @@ export class PokemonBox {
     public species: number;
     public hp: number;
     public boxLevel: number;
-    public status: number;
+    public status: {
+        SLP: number, // Number of sleep turns left
+        PSN: boolean,
+        BRN: boolean,
+        FRZ: boolean,
+        PAR: boolean
+    };
     public type1: number;
     public type2: number;
     public catchRate: number;
     public moves: {
         moveID: number;
         pp: number;
+        ppUp: number;
     }[];
     public otID: number;
     public exp: number;
@@ -117,7 +138,12 @@ export class PokemonBox {
     public defenseExp: number;
     public speedExp: number;
     public specialExp: number;
-    public dv: number;
+    public dv: {
+        attack: number,
+        defense: number,
+        speed: number,
+        special: number
+    };
     public otName: string;
     public nickname: string;
 }

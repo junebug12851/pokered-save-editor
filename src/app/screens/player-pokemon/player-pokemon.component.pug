@@ -1,10 +1,310 @@
 .row
-    .col.s12
+    .col.s6
+        .card.grey.darken-3
+            .card-content.ns
+                .progress
+                    .determinate.teal.accent-3(style="width:88%")
+                .row.ns-b.s-t.s-lr
+                    .col.s6
+                        .card-title CHARMANDER
 
-        ul.collection.items.slim-list.sticky
+                    .col.s1.offset-s3.right-align
+                        label.active Level
+                    .col.s2.right-align
+                        input(
+                            type='number'
+                            value="8"
+                        )
+                .row.s-lr
+                    .col.s4
+                        label Species
+                        select.browser-default.black-text
+                            option Charmander
+                    .col.s4
+                        label Type 1
+                        select.browser-default.black-text
+                            option Fire
+                    .col.s4
+                        label Type 2
+                        select.browser-default.black-text
+                            option ---
+            .card-tabs
+                ul.tabs.tabs-fixed-width
+                    li.tab
+                        a(href="#pokemon-0-basic") Basic
+                    li.tab
+                        a(href="#pokemon-0-moves") Moves
+                    li.tab
+                        a(href="#pokemon-0-stats") Stats
+                    li.tab
+                        a(href="#pokemon-0-exp") Exp
+                    li.tab
+                        a(href="#pokemon-0-iv") IV
+                    li.tab
+                        a(href="#pokemon-0-misc") Misc
+            .card-content
+                #pokemon-0-basic
+                    .row
+                        .col.s4
+                            label HP
+                            input(
+                                    type='number'
+                                    value="23"
+                                )
+                        .col.s4
+                            label Max HP
+                            input(
+                                    type='number'
+                                    value="26"
+                                )
+                        .col.s4
+                            label Status
+                            select.browser-default.black-text
+                                option ---
+                    .row
+                        .col.s1
+                            label.right-align
+                                input(type="checkbox")
+                                span &nbsp;
+                        .col.s7
+                            label Nickname
+                            input(
+                                type='text'
+                                value="CHARMANDER"
+                                disabled="true"
+                            )
+                        .col.s4
+                            label Sleep Turns
+                            input(
+                                    type='number'
+                                    value="0"
+                                    disabled="true"
+                                )
+                    .row
+                        .pr-container.pr-textbox.pr-black
+                #pokemon-0-moves
+                    .row
+                        .col.s6
+                            label Move 1
+                            select.browser-default.black-text
+                                option Scratch
+                        .col.s3
+                            label PP
+                            input(
+                                    type='number'
+                                    value="33"
+                                )
+                        .col.s3
+                            label PP UP
+                            input(
+                                    type='number'
+                                    value="0"
+                                )
+                    .row
+                        .col.s6
+                            label Move 2
+                            select.browser-default.black-text
+                                option Growl
+                        .col.s3
+                            label PP
+                            input(
+                                    type='number'
+                                    value="40"
+                                )
+                        .col.s3
+                            label PP UP
+                            input(
+                                    type='number'
+                                    value="0"
+                                )
+                    .row
+                        .col.s6
+                            label Move 3
+                            select.browser-default.black-text
+                                option ---
+                        .col.s3
+                            label PP
+                            input(
+                                    type='number'
+                                )
+                        .col.s3
+                            label PP UP
+                            input(
+                                    type='number'
+                                )
+                    .row
+                        .col.s6
+                            label Move 3
+                            select.browser-default.black-text
+                                option ---
+                        .col.s3
+                            label PP
+                            input(
+                                    type='number'
+                                )
+                        .col.s3
+                            label PP UP
+                            input(
+                                    type='number'
+                                )
+                #pokemon-0-stats
+                    .row
+                        .col.s3
+                            label Attack
+                            input(
+                                    type='number'
+                                    value="16"
+                                )
+                        .col.s3
+                            label Defense
+                            input(
+                                    type='number'
+                                    value="13"
+                                )
+                        .col.s3
+                            label Speed
+                            input(
+                                    type='number'
+                                    value="16"
+                                )
+                        .col.s3
+                            label Special
+                            input(
+                                    type='number'
+                                    value="14"
+                                )
+                #pokemon-0-exp
+                    .row
+                        .col.s3
+                            label Exp
+                            input(
+                                    type='number'
+                                    value="319"
+                                )
+                        .col.s3
+                            label HP Exp
+                            input(
+                                    type='number'
+                                    value="204"
+                                )
+                        .col.s3
+                            label Attack Exp
+                            input(
+                                    type='number'
+                                    value="228"
+                                )
+                        .col.s3
+                            label Defense Exp
+                            input(
+                                    type='number'
+                                    value="225"
+                                )
+                        .col.s3
+                            label Speed Exp
+                            input(
+                                    type='number'
+                                    value="267"
+                                )
+                        .col.s3
+                            label Special Exp
+                            input(
+                                    type='number'
+                                    value="190"
+                                )
+                #pokemon-0-iv
+                    .row
+                        .col.s3
+                            label Attack IV
+                            input(
+                                    type='number'
+                                    value="15"
+                                )
+                        .col.s3
+                            label Defense IV
+                            input(
+                                    type='number'
+                                    value="8"
+                                )
+                        .col.s3
+                            label Speed IV
+                            input(
+                                    type='number'
+                                    value="5"
+                                )
+                        .col.s3
+                            label Special IV
+                            input(
+                                    type='number'
+                                    value="8"
+                                )
+                #pokemon-0-misc
+                    .row
+                        .col.s3
+                            label Catch Rate
+                            input(
+                                    type='number'
+                                    value="45"
+                                )
 
-            li.collection-item.item.flex-container(*ngFor='let entry of entries')
-                | {{entry.nickname}}
+        //- ul.collection.items.sticky
+
+        //-     li.collection-item.item(*ngFor='let entry of entries')
+
+        //-         .row
+        //-             .col.s10.clearfix
+        //-                 .right
+        //-                     label
+        //-                         input(type='checkbox', '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].status.PSN')
+        //-                         span Poisoned
+        //-                     label
+        //-                         input(type='checkbox', '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].status.BRN')
+        //-                         span Burned
+        //-                     label
+        //-                         input(type='checkbox', '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].status.FRZ')
+        //-                         span Frozen
+        //-                     label
+        //-                         input(type='checkbox', '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].status.PAR')
+        //-                         span Paralyzed
+        //-             .col.s2.clearfix
+        //-                 .right
+        //-                     .input-field
+        //-                         input.validate(
+        //-                             placeholder='Sleep Turns'
+        //-                             type='number'
+        //-                             '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].status.SLP'
+        //-                             min="0",
+        //-                             max="7"
+        //-                         )
+        //-                         label.active Sleep Turns
+        //-         .row
+        //-             .col.s4
+        //-                 .input-field
+        //-                     select.browser-default(
+        //-                         '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].species')
+        //-                         option([value]='0', disabled='') Choose Species
+        //-                         option(
+        //-                             *ngFor='let pokemonSpecies of speciesList',
+        //-                             '[value]'='pokemonSpecies.ind',
+        //-                             '[disabled]'='pokemonSpecies.disable'
+        //-                         ) {{pokemonSpecies.name}}
+        //-                     label.active Species
+        //-             .col.s4
+        //-                 .input-field
+        //-                     input(
+        //-                         placeholder='HP'
+        //-                         type='number'
+        //-                         '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].hp'
+        //-                     )
+        //-                     label.active Current HP
+        //-             .col.s4
+        //-                 .input-field
+        //-                     input(
+        //-                         placeholder='Box Level'
+        //-                         type='number'
+        //-                         '[(ngModel)]'='fileService.fileDataExpanded.player.playerParty[entry.index].boxLevel'
+        //-                     )
+        //-                     label.active Box Level
+
 //-                 select.browser-default.flex-item(
 //-                     '[(ngModel)]'='fileService.fileDataExpanded.player.bagItems[entry.index].id')
 //-                     option([value]='0', disabled='') Choose Item

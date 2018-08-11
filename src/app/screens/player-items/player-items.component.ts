@@ -20,7 +20,7 @@ declare var window: {
 
 declare var M: any;
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 import { ItemService, itemEntries, ItemEntry } from '../../data/item.service';
 
@@ -31,7 +31,7 @@ const _: any = window.require("lodash");
     templateUrl: './player-items.component.pug',
     styleUrls: ['./player-items.component.scss'],
 })
-export class PlayerItemsComponent implements OnInit {
+export class PlayerItemsComponent implements OnInit, OnChanges {
 
     constructor(
         public fileService: SaveFileService,
