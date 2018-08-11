@@ -32,6 +32,12 @@ declare var Buffer: any;
 import { Injectable } from '@angular/core';
 import { TextService } from "./text.service";
 
+// @ts-ignore
+const { app, Menu, MenuItem, BrowserWindow } = window.require('electron').remote;
+// @ts-ignore
+const remote = window.require('electron').remote;
+const curWindow = remote.getCurrentWindow();
+
 const BluePromise: any = window.require("bluebird");
 const fs: any = window.require("fs");
 const electron: any = window.require("electron").remote;
@@ -47,6 +53,13 @@ export class SaveFileService {
         this.fileDataExpanded = new SaveFileExpanded(this);
 
         window.saveFile = this;
+
+        curWindow.setTitle(`Pokered Save Editor - New File`);
+
+        // @ts-ignore
+        curWindow.on('open-file', (...args) => {
+            console.log(args);
+        })
     }
 
     public get iterator(): SaveFileIterator {
@@ -354,6 +367,8 @@ export class SaveFileService {
 
         const filePath = fileNames[0];
         await this.readSaveFile(filePath);
+        app.addRecentDocument(filePath);
+        curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
     }
 
     // Reloads file from disk erasing unsaved changes, if no open file is
@@ -374,6 +389,7 @@ export class SaveFileService {
         this.filePath = "";
         this.fileData = new Uint8Array(0x8000);
         this.fileDataExpanded = new SaveFileExpanded(this);
+        curWindow.setTitle(`Pokered Save Editor - New File`);
     }
 
     // Save file
@@ -396,6 +412,8 @@ export class SaveFileService {
 
         this.filePath = fileName;
         await this.saveFile();
+        app.addRecentDocument(fileName);
+        curWindow.setTitle(`Pokered Save Editor - ${fileName}`);
     }
 
     // Save copy of file

@@ -17,6 +17,13 @@ const template = [{
                 window.saveFile.openFile();
             }
         },
+        {
+            label: 'Recent Files',
+            submenu: [
+                { role: 'recentDocuments' },
+                { role: 'clearRecentDocuments' },
+            ]
+        },
         { type: 'separator' },
         {
             label: 'Save',
