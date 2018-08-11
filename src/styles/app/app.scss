@@ -64,12 +64,24 @@
 
 .flex-container {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
 
-.flex-container > .flex-item {
-    margin-right: 5px;
-    margin-left: 5px;
+    &.flex-horz {
+        flex-direction: row;
+
+        .flex-item {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+
+    &.flex-vert {
+        flex-direction: column;
+
+        .flex-item {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
 }
