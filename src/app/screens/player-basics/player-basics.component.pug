@@ -3,19 +3,19 @@
     h5 Player Basics
 
 .row
-  .input-field.col.s4
-    input#player_name(
-        placeholder='Name'
-        type='text'
+  .input-field.col.s4.fix-margins-name
+    name-input-box(
+        '[maxLength]'="7"
+        label="Player Name"
+        '[bg]'="true"
+        '[textBlack]'="true"
+        'template'='<<t>><<c("! I\'ll show")>><br><<c("you how a real")>>'
         '[(ngModel)]'='fileService.fileDataExpanded.player.playerName'
-        '(ngModelChange)'='fileService.fileDataExpanded.player.onNameChange()'
     )
 
-    label(for='player_name') Player Name
-    .pr-container.pr-textbox.pr-black('innerHTML'='{{agathaSpeech}}')
-
   .input-field.col.s6.m2
-    input#player_id(
+    label Player ID
+    input(
         placeholder='ID'
         type='text'
         '[(ngModel)]'='fileService.fileDataExpanded.player.playerID'
@@ -25,10 +25,9 @@
         maxlength='4'
     )
 
-    label(for='player_id') Player ID
-
   .input-field.col.s6.m2
-    input#money(
+    label Spending Money
+    input(
         placeholder='Money'
         type='number'
         '[(ngModel)]'='fileService.fileDataExpanded.player.money'
@@ -36,10 +35,9 @@
         min='0'
     )
 
-    label(for='money') Spending Money
-
   .input-field.col.s6.m2
-    input#coins(
+    label Casino Coins
+    input(
         placeholder='Coins'
         type='number'
         '[(ngModel)]'='fileService.fileDataExpanded.player.coins'
@@ -47,17 +45,8 @@
         min='0'
     )
 
-    label(for='coins') Casino Coins
-
   .input-field.col.s6.m2
-    select#playerStarterSelect.browser-default(
-        '[(ngModel)]'='fileService.fileDataExpanded.player.playerStarter'
-    )
-
-      option([value]="'00'" disabled='') Choose Starter
-      option([value]="'B0'") Charmander
-      option([value]="'B1'") Squirtle
-      option([value]="'99'") Bulbasaur
+    select-starter('[(ngModel)]'='fileService.fileDataExpanded.player.playerStarter')
 
 .row
   .col.s12

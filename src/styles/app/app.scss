@@ -89,3 +89,11 @@
 .container {
     padding-top: 15px;
 }
+
+.fix-margins-name {
+    margin-top: 0;
+}
+
+.fix-margins-name input {
+    margin-top: -6px !important;
+}

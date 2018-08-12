@@ -43,6 +43,10 @@ import { FormsModule } from '@angular/forms';
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
+import { NameInputComponent } from './fragments/name-input/name-input.component';
+import { NameInputBoxComponent } from './fragments/name-input-box/name-input-box.component';
+import { NameBoxComponent } from './fragments/name-box/name-box.component';
+import { SelectStarterComponent } from './fragments/select-starter/select-starter.component';
 
 @NgModule({
     declarations: [
@@ -53,7 +57,11 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         GymButtonComponent,
         NavbarComponent,
         SidenavComponent,
-        PlayerPokemonComponent
+        PlayerPokemonComponent,
+        NameBoxComponent,
+        NameInputComponent,
+        NameInputBoxComponent,
+        SelectStarterComponent
     ],
     imports: [
         BrowserModule,

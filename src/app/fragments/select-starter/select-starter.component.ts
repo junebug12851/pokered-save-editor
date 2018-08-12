@@ -1,3 +1,4 @@
+import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
 
@@ -14,24 +15,23 @@
    limitations under the License.
  */
 
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { SaveFileService } from "../../data/savefile.service";
+import { Component } from '@angular/core';
 
-declare var M: any;
+import {
+    NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
-    selector: 'screen-player-basics',
-    templateUrl: './player-basics.component.pug',
-    styleUrls: ['./player-basics.component.scss'],
+    selector: 'select-starter',
+    templateUrl: './select-starter.component.pug',
+    styleUrls: ['./select-starter.component.scss'],
+    providers: [
+        { provide: NG_VALUE_ACCESSOR, useExisting: SelectStarterComponent, multi: true }
+    ],
 })
-export class PlayerBasicsComponent implements OnInit {
+export class SelectStarterComponent extends ValueAccessorBase<string> {
 
-    constructor(
-        public fileService: SaveFileService,
-        public changeDetectorRef: ChangeDetectorRef
-    ) { }
-
-    ngOnInit() {
-        M.updateTextFields();
+    constructor() {
+        super();
     }
 }
