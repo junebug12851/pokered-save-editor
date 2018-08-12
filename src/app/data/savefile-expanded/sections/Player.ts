@@ -81,26 +81,11 @@ export class Player {
         }
 
         this.saveFile = saveFile;
-        this.onNameChange();
-    }
-
-    onNameChange() {
-        // Convert player name to bytes and retrieve in-game simulation html
-        this.playerNameInternal = this.saveFile.saveText.convertToCode(
-            this.playerName,
-            7,
-            /*this.saveFile.fileDataExpanded.rival.rivalName*/);
-
-        this.playerNameFontStr =
-            this.saveFile.saveText.convertEngToHTML(this.playerName, 7);
     }
 
     public saveFile: any;
 
     public playerName: string;
-    public playerNameInternal: Uint8Array = new Uint8Array([0x80]);
-    public playerNameFontStr: string = "";
-
     public playerID: string;
     public pokedexOwned: boolean[];
     public pokedexSeen: boolean[];
