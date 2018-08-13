@@ -15,7 +15,7 @@ import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
    limitations under the License.
  */
 
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { SaveFileService } from './../../data/savefile.service';
 import { TextService } from '../../data/text.service';
 
@@ -33,7 +33,7 @@ declare var M: any;
         { provide: NG_VALUE_ACCESSOR, useExisting: NameInputComponent, multi: true }
     ],
 })
-export class NameInputComponent extends ValueAccessorBase<string> implements OnInit {
+export class NameInputComponent extends ValueAccessorBase<string> implements OnInit, OnChanges {
 
     constructor(
         public fileService: SaveFileService,
@@ -45,6 +45,10 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
     ngOnInit() {
         M.updateTextFields();
         this.doOnChange("");
+    }
+
+    ngOnChanges() {
+        this.doOnChange(this.value);
     }
 
     // Max Character count
