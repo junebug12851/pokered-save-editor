@@ -1,0 +1,10 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='0', '[disabled]'='true') Choose Item
+    option(
+        *ngFor='let itemOption of itemList',
+        '[value]'='itemOption.ind',
+        '[disabled]'='itemOption.disable'
+    ) {{itemOption.name}}

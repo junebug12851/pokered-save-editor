@@ -14,104 +14,38 @@
    limitations under the License.
  */
 
-declare var window: {
-    require: any;
-}
-
-declare var M: any;
-
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
-import { ItemService, itemEntries, ItemEntry } from '../../data/item.service';
-
-const _: any = window.require("lodash");
+import { ItemService } from '../../data/item.service';
 
 @Component({
     selector: 'screen-player-items',
     templateUrl: './player-items.component.pug',
     styleUrls: ['./player-items.component.scss'],
 })
-export class PlayerItemsComponent implements OnInit, OnChanges {
+export class PlayerItemsComponent {
 
     constructor(
         public fileService: SaveFileService,
         public itemService: ItemService
     ) { }
 
-    ngOnInit() {
-        M.updateTextFields();
-    }
-
-    ngOnChanges() {
-        M.updateTextFields();
-    }
-
     get entries() {
         return this.fileService.fileDataExpanded.player.bagItems;
     }
 
-    get itemList() {
-        let itemListCommon = _.filter(itemEntries, (value: ItemEntry) => {
-            if (value.normal && value.typical)
-                return true;
-
-            return false;
-        });
-
-        itemListCommon = _.sortBy(itemListCommon, ['name']);
-
-        let itemListSpecial = _.filter(itemEntries, (value: ItemEntry) => {
-            if (value.normal && !value.typical)
-                return true;
-
-            return false;
-        });
-
-        itemListSpecial = _.sortBy(itemListSpecial, ['name']);
-
-        let itemListGlitch = _.filter(itemEntries, (value: ItemEntry) => {
-            if (!value.normal)
-                return true;
-
-            return false;
-        });
-
-        itemListGlitch = _.sortBy(itemListGlitch, ['name']);
-
-        return [
-            { name: "--- Common Items ---", ind: 0x00, disable: true },
-            ...itemListCommon,
-            { name: "--- Special Items ---", ind: 0x00, disable: true },
-            ...itemListSpecial,
-            { name: "--- Glitch Items ---", ind: 0x00, disable: true },
-            ...itemListGlitch
-        ];
-    }
-
-    get itemCount() {
+    get entriesCount() {
         return this.fileService.fileDataExpanded.player.bagItems.length;
-    }
-
-    idToName(id: number) {
-        return this.itemService.indToName[id].name;
     }
 
     addListItem() {
         this.fileService.fileDataExpanded.player.bagItems.push({
             id: 0,
             amount: 1,
-            index: this.fileService.fileDataExpanded.player.bagItems.length
         });
     }
 
     remListItem(index: number) {
         this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
-        this.reUpdateIndexes();
-    }
-
-    reUpdateIndexes() {
-        for (let i = 0; i < this.fileService.fileDataExpanded.player.bagItems.length; i++) {
-            this.fileService.fileDataExpanded.player.bagItems[i].index = i;
-        }
     }
 }

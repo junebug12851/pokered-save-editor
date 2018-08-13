@@ -1,3 +1,5 @@
+import { EntryItemComponent } from './fragments/entry-item/entry-item.component';
+import { SelectItemComponent } from './fragments/select-item/select-item.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -32,6 +34,10 @@ import { AppComponent } from './app.component';
 
 // Fragments
 import { GymButtonComponent } from './fragments/gym-button/gym-button.component';
+import { NameInputComponent } from './fragments/name-input/name-input.component';
+import { NameInputBoxComponent } from './fragments/name-input-box/name-input-box.component';
+import { NameBoxComponent } from './fragments/name-box/name-box.component';
+import { SelectStarterComponent } from './fragments/select-starter/select-starter.component';
 
 // Layout
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -43,10 +49,6 @@ import { FormsModule } from '@angular/forms';
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
-import { NameInputComponent } from './fragments/name-input/name-input.component';
-import { NameInputBoxComponent } from './fragments/name-input-box/name-input-box.component';
-import { NameBoxComponent } from './fragments/name-box/name-box.component';
-import { SelectStarterComponent } from './fragments/select-starter/select-starter.component';
 
 @NgModule({
     declarations: [
@@ -61,7 +63,9 @@ import { SelectStarterComponent } from './fragments/select-starter/select-starte
         NameBoxComponent,
         NameInputComponent,
         NameInputBoxComponent,
-        SelectStarterComponent
+        SelectStarterComponent,
+        SelectItemComponent,
+        EntryItemComponent
     ],
     imports: [
         BrowserModule,

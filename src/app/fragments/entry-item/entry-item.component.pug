@@ -1,0 +1,18 @@
+li.collection-item.item.flex-container.flex-horz
+    select-item.flex-item(
+        '[(ngModel)]'='data.id'
+        '[disabled]'='disabled'
+    )
+    input.flex-item(
+        placeholder='Amount'
+        type='number'
+        '[(ngModel)]'='data.amount'
+        max='99'
+        min='0'
+        '[disabled]'='disabled'
+    )
+    a.btn-small.waves-effect.flex-item(
+        '(click)'='remListItem()'
+        '[class.disabled]'='disabled'
+    )
+        span.im.im-delete
