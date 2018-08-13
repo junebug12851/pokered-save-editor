@@ -90,14 +90,9 @@ export class NameInputBoxComponent extends ValueAccessorBase<string> implements 
     @Output()
     public onChangeHTML = new EventEmitter<string>();
 
-    protected compiled = null;
-    public writing = "";
-    public fontStr = "";
-
     public doOnChangeValue(event: any) {
         // Relay event
         this.onChangeValue.emit(event);
-        this.fontStr = event;
     }
 
     public doOnChangeInternal(event: any) {
