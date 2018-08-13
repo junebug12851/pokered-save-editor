@@ -379,6 +379,11 @@ export class TextService {
         let code = [];
         let lastCode = 0;
 
+        if ((typeof str !== 'string') && autoEnd)
+            return new Uint8Array([0x50]);
+        else if ((typeof str !== 'string') && !autoEnd)
+            return new Uint8Array();
+
         while (str.length !== 0) {
 
             let match = false;
