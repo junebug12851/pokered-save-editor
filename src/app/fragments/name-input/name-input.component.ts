@@ -37,7 +37,7 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
 
     constructor(
         public fileService: SaveFileService,
-        public textService: TextService
+        public textService: TextService,
     ) {
         super();
     }
