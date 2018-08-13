@@ -29,7 +29,7 @@ declare var window: {
 
 declare var Buffer: any;
 
-import { Injectable, ApplicationRef } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { TextService } from "./text.service";
 
 // @ts-ignore
@@ -50,7 +50,7 @@ const fs2 = BluePromise.promisifyAll(fs);
 export class SaveFileService {
 
     constructor(public saveText: TextService,
-        public appRef: ApplicationRef) {
+        public ng: NgZone) {
         this.fileDataExpanded = new SaveFileExpanded(this);
 
         window.saveFile = this;
@@ -346,10 +346,23 @@ export class SaveFileService {
 
     // Handles loading file into memory
     protected async readSaveFile(filePath: string) {
+        // Read file
         const data = await fs2.readFileAsync(filePath);
+
+        // Update file path
         this.filePath = filePath;
+
+        // Save file data
         this.fileData = data;
+
+        // Expand file data
         this.fileDataExpanded = new SaveFileExpanded(this);
+
+        // Add to OS recent docs
+        app.addRecentDocument(filePath);
+
+        // Add to window title
+        curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
     }
 
     // Write Buffer to file
@@ -360,75 +373,82 @@ export class SaveFileService {
 
     // Initiates an open file dialog to open save file
     public async openFile() {
-        const fileNames = await this.openOpenFileDialog("Open Save File");
+        await this.ng.run<any>(async () => {
+            const fileNames = await this.openOpenFileDialog("Open Save File");
 
-        if (fileNames === undefined) {
-            return;
-        }
+            if (fileNames === undefined) {
+                return;
+            }
 
-        const filePath = fileNames[0];
-        await this.readSaveFile(filePath);
-        app.addRecentDocument(filePath);
-        curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
-        this.appRef.tick();
+            const filePath = fileNames[0];
+            await this.readSaveFile(filePath);
+        });
     }
 
     // Reloads file from disk erasing unsaved changes, if no open file is
     // present just resets buffer
     public async reOpenFile() {
-        // If theres no open file then reload an empty array
-        if (this.filePath === "") {
-            this.fileData = new Uint8Array(0x8000);
-            this.fileDataExpanded = new SaveFileExpanded(this);
-            return;
-        }
+        await this.ng.run<any>(async () => {
+            // If theres no open file then reload an empty array
+            if (this.filePath === "") {
+                this.fileData = new Uint8Array(0x8000);
+                this.fileDataExpanded = new SaveFileExpanded(this);
+                return;
+            }
 
-        await this.readSaveFile(this.filePath);
-        this.appRef.tick();
+            await this.readSaveFile(this.filePath);
+        });
     }
 
     // Closes file in memory and erases buffer
     public closeFile() {
-        this.filePath = "";
-        this.fileData = new Uint8Array(0x8000);
-        this.fileDataExpanded = new SaveFileExpanded(this);
-        curWindow.setTitle(`Pokered Save Editor - New File`);
-        this.appRef.tick();
+        this.ng.run<any>(() => {
+            this.filePath = "";
+            this.fileData = new Uint8Array(0x8000);
+            this.fileDataExpanded = new SaveFileExpanded(this);
+            curWindow.setTitle(`Pokered Save Editor - New File`);
+        });
     }
 
     // Save file
     public async saveFile() {
-        if (this.filePath === "") {
-            await this.saveAsFile();
-            return;
-        }
+        await this.ng.run<any>(async () => {
+            if (this.filePath === "") {
+                await this.saveAsFile();
+                return;
+            }
 
-        await this.writeSaveFile();
+            await this.writeSaveFile();
+        });
     }
 
     // Save file as...
     public async saveAsFile() {
-        const fileName: string = await this.openSaveFileDialog("Save File As...");
+        await this.ng.run<any>(async () => {
+            const fileName: string = await this.openSaveFileDialog("Save File As...");
 
-        if (fileName === undefined) {
-            return;
-        }
+            if (fileName === undefined) {
+                return;
+            }
 
-        this.filePath = fileName;
-        await this.saveFile();
-        app.addRecentDocument(fileName);
-        curWindow.setTitle(`Pokered Save Editor - ${fileName}`);
+            this.filePath = fileName;
+            await this.saveFile();
+            app.addRecentDocument(fileName);
+            curWindow.setTitle(`Pokered Save Editor - ${fileName}`);
+        });
     }
 
     // Save copy of file
     public async saveAsCopyFile() {
-        const fileName = await this.openSaveFileDialog("Save Copy As...");
+        await this.ng.run<any>(async () => {
+            const fileName = await this.openSaveFileDialog("Save Copy As...");
 
-        if (fileName === undefined) {
-            return;
-        }
+            if (fileName === undefined) {
+                return;
+            }
 
-        await this.writeSaveFile(fileName);
+            await this.writeSaveFile(fileName);
+        });
     }
 
     // This erases the raw internal data completely leaving the file all zeroes
@@ -437,11 +457,12 @@ export class SaveFileService {
     // still do the same but will be writing back to a clean slate thus blasting
     // away all unused values
     public wipeUnusedSpace(val = 0x00) {
-        // We fill the array from start to end with a fill value, default 0x00
-        // We do this because we don't want to change the array instance only
-        // the array contents
-        this.fileData.fill(val);
-        this.appRef.tick();
+        this.ng.run<any>(() => {
+            // We fill the array from start to end with a fill value, default 0x00
+            // We do this because we don't want to change the array instance only
+            // the array contents
+            this.fileData.fill(val);
+        });
     }
 
     // Current file path

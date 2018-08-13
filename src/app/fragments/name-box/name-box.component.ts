@@ -35,7 +35,6 @@ export class NameBoxComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-
     }
 
     ngOnChanges() {

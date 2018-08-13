@@ -26,7 +26,6 @@ export class ValueAccessorBase<T> implements ControlValueAccessor {
         this.touched.forEach(f => f());
     }
 
-
     writeValue(value: T) {
         this.innerValue = value;
     }
