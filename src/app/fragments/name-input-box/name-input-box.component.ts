@@ -62,6 +62,9 @@ export class NameInputBoxComponent extends ValueAccessorBase<string> implements 
     @Input()
     public textBlack: boolean = true;
 
+    @Input()
+    public disabled: boolean = false;
+
     // The template contains 3 parts to it
     // 1. A gameboy string to give context to the text from the textbox
     // 2. HTML such as line breaks (A textbox is 2 lines)

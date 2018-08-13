@@ -1,5 +1,6 @@
 select.browser-default(
     '[(ngModel)]'='value'
+    '(ngModelChange)'='onSpeciesChange($event)'
     '[disabled]'='disabled'
     )
     option('[value]'='0', '[disabled]'='true') Choose Species

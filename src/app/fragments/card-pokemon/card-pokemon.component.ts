@@ -1,4 +1,6 @@
-import { EventEmitter } from '@angular/core';
+// @ts-ignore
+import { NicknameInputBoxComponent } from './../nickname-input-box/nickname-input-box.component';
+import { EventEmitter, OnInit, ViewChild } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
 
@@ -18,14 +20,22 @@ import { EventEmitter } from '@angular/core';
 import { Component, Input, Output } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 
+declare var M: any;
+declare var $: any;
+
 @Component({
     selector: 'card-pokemon',
     templateUrl: './card-pokemon.component.pug',
     styleUrls: ['./card-pokemon.component.scss'],
 })
-export class CardPokemonComponent {
+export class CardPokemonComponent implements OnInit {
 
     constructor() { }
+
+    ngOnInit() {
+        M.updateTextFields();
+        $('.tabs').tabs();
+    }
 
     @Input()
     public entry: any = PokemonParty.emptyData;
@@ -44,6 +54,9 @@ export class CardPokemonComponent {
 
     @Output()
     public onRem: EventEmitter<boolean> = new EventEmitter();
+
+    //@ts-ignore
+    @ViewChild(NicknameInputBoxComponent) nicknameInputBox: NicknameInputBoxComponent;
 
     onAddClick() {
         this.onAdd.emit(true);

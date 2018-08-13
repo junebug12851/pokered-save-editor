@@ -42,6 +42,10 @@ import { SelectItemComponent } from './fragments/select-item/select-item.compone
 import { CardPokemonComponent } from './fragments/card-pokemon/card-pokemon.component';
 import { SelectSpeciesComponent } from './fragments/select-species/select-species.component';
 import { SelectTypeComponent } from './fragments/select-type/select-type.component';
+import { SelectStatusComponent } from './fragments/select-status/select-status.component';
+
+// Scrapped
+// import { NicknameInputBoxComponent } from './fragments/nickname-input-box/nickname-input-box.component';
 
 // Layout
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -73,7 +77,9 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         HPBarComponent,
         CardPokemonComponent,
         SelectSpeciesComponent,
-        SelectTypeComponent
+        SelectTypeComponent,
+        SelectStatusComponent,
+        //NicknameInputBoxComponent // Scrapped
     ],
     imports: [
         BrowserModule,
