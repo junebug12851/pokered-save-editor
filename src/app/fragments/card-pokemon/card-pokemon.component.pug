@@ -1,0 +1,55 @@
+.col.s6
+    .card.grey.darken-3.sticky
+        .card-content.ns
+            hp-bar(
+                '[curHP]'='entry.hp'
+                '[maxHP]'='entry.maxHP || 1'
+                '[disabled]'='disabled'
+            )
+
+            .row.ns-b.s-lr
+                .col.s6
+                    .card-title
+                        name-box.pr-ns(
+                            '[value]'='entry.nickname'
+                        )
+                .col.s1.offset-s3.right-align
+                    label.active.label-title Level
+                .col.s2.right-align
+                    input(
+                        type='number'
+                        '[(ngModel)]'='entry.level'
+                        '[disabled]'='disabled'
+                    )
+
+            .row.s-lr
+                .col.s4
+                    label Species
+                    select-species.slim-select(
+                        '[(ngModel)]'='entry.species'
+                        '[disabled]'='disabled'
+                    )
+                .col.s4
+                    label Type 1
+                    select-type.slim-select(
+                        '[(ngModel)]'='entry.type1'
+                        '[disabled]'='disabled'
+                    )
+                .col.s4
+                    label Type 2
+                    select-type.slim-select(
+                        '[(ngModel)]'='entry.type2'
+                        '[disabled]'='disabled'
+                    )
+
+        a.btn-floating.btn.waves-effect.btn-add.btn-floating-icon-normal.stick.br(
+                *ngIf='addBtn'
+                '(click)'='onAddClick()'
+            )
+                span.im.im-plus3
+
+        a.btn-floating.btn.waves-effect.btn-rem.btn-floating-icon-normal.stick.br(
+                *ngIf='remBtn'
+                '(click)'='onRemClick()'
+            )
+                span.im.im-delete

@@ -40,3 +40,11 @@
         line-height: 1.75;
     }
 }
+
+// Allows containers above to remove the space set by pr-container
+.pr-ns {
+    .pr-container {
+        padding: 0;
+        margin: 0;
+    }
+}

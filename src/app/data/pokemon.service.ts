@@ -37,7 +37,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x72
     },
     {
-        name: "Nidoran M",
+        name: "Nidoran<GM>",
         ind: 0x03,
         pokedex: 0x1F
     },
@@ -97,7 +97,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x5D
     },
     {
-        name: "Nidoran F",
+        name: "Nidoran<GF>",
         ind: 0x0F,
         pokedex: 0x1C
     },
@@ -177,12 +177,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x71
     },
     {
-        name: "Missingno 1F",
+        name: "Missing1F",
         ind: 0x1F,
         glitch: true
     },
     {
-        name: "Missingno 20",
+        name: "Missing20",
         ind: 0x20,
         glitch: true
     },
@@ -232,7 +232,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x42
     },
     {
-        name: "Mr. Mime",
+        name: "Mr.Mime",
         ind: 0x2A,
         pokedex: 0x79
     },
@@ -272,7 +272,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x4B
     },
     {
-        name: "Missingno 32",
+        name: "Missing32",
         ind: 0x32,
         glitch: true
     },
@@ -282,7 +282,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x7D
     },
     {
-        name: "Missingno 34",
+        name: "Missing34",
         ind: 0x34,
         glitch: true
     },
@@ -302,7 +302,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x6C
     },
     {
-        name: "Missingno 38",
+        name: "Missing38",
         ind: 0x38,
         glitch: true
     },
@@ -327,17 +327,17 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x7F
     },
     {
-        name: "Missingno 3D",
+        name: "Missing3D",
         ind: 0x3D,
         glitch: true
     },
     {
-        name: "Missingno 3E",
+        name: "Missing3E",
         ind: 0x3E,
         glitch: true
     },
     {
-        name: "Missingno 3F",
+        name: "Missing3F",
         ind: 0x3F,
         glitch: true
     },
@@ -357,17 +357,17 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x94
     },
     {
-        name: "Missingno 43",
+        name: "Missing43",
         ind: 0x43,
         glitch: true
     },
     {
-        name: "Missingno 44",
+        name: "Missing44",
         ind: 0x44,
         glitch: true
     },
     {
-        name: "Missingno 45",
+        name: "Missing45",
         ind: 0x45,
         glitch: true
     },
@@ -417,17 +417,17 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x61
     },
     {
-        name: "Missingno 4F",
+        name: "Missing4F",
         ind: 0x4F,
         glitch: true
     },
     {
-        name: "Missingno 50",
+        name: "Missing50",
         ind: 0x50,
         glitch: true
     },
     {
-        name: "Missingno 51",
+        name: "Missing51",
         ind: 0x51,
         glitch: true
     },
@@ -452,12 +452,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x19
     },
     {
-        name: "Missingno 56",
+        name: "Missing56",
         ind: 0x56,
         glitch: true
     },
     {
-        name: "Missingno 57",
+        name: "Missing57",
         ind: 0x57,
         glitch: true
     },
@@ -492,12 +492,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x74
     },
     {
-        name: "Missingno 5E",
+        name: "Missing5E",
         ind: 0x5E,
         glitch: true
     },
     {
-        name: "Missingno 5F",
+        name: "Missing5F",
         ind: 0x5F,
         glitch: true
     },
@@ -597,7 +597,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x0E
     },
     {
-        name: "Missingno 73",
+        name: "Missing73",
         ind: 0x73,
         glitch: true
     },
@@ -627,12 +627,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x56
     },
     {
-        name: "Missingno 79",
+        name: "Missing79",
         ind: 0x79,
         glitch: true
     },
     {
-        name: "Missingno 7A",
+        name: "Missing7A",
         ind: 0x7A,
         glitch: true
     },
@@ -657,7 +657,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x43
     },
     {
-        name: "Missingno 7F",
+        name: "Missing7F",
         ind: 0x7F,
         glitch: true
     },
@@ -692,12 +692,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x80
     },
     {
-        name: "Missingno 86",
+        name: "Missing86",
         ind: 0x86,
         glitch: true
     },
     {
-        name: "Missingno 87",
+        name: "Missing87",
         ind: 0x87,
         glitch: true
     },
@@ -707,7 +707,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x58
     },
     {
-        name: "Missingno 89",
+        name: "Missing89",
         ind: 0x89,
         glitch: true
     },
@@ -722,7 +722,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x5A
     },
     {
-        name: "Missingno 8C",
+        name: "Missing8C",
         ind: 0x8C,
         glitch: true
     },
@@ -752,7 +752,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x68
     },
     {
-        name: "Missingno 92",
+        name: "Missing92",
         ind: 0x92,
         glitch: true
     },
@@ -802,7 +802,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x48
     },
     {
-        name: "Missingno 9C",
+        name: "Missing9C",
         ind: 0x9C,
         glitch: true
     },
@@ -817,22 +817,22 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x76
     },
     {
-        name: "Missingno 9F",
+        name: "Missing9F",
         ind: 0x9F,
         glitch: true
     },
     {
-        name: "Missingno A0",
+        name: "MissingA0",
         ind: 0xA0,
         glitch: true
     },
     {
-        name: "Missingno A1",
+        name: "MissingA1",
         ind: 0xA1,
         glitch: true
     },
     {
-        name: "Missingno A2",
+        name: "MissingA2",
         ind: 0xA2,
         glitch: true
     },
@@ -882,7 +882,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x8D
     },
     {
-        name: "Missingno AC",
+        name: "MissingAC",
         ind: 0xAC,
         glitch: true
     },
@@ -892,12 +892,12 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x50
     },
     {
-        name: "Missingno AE",
+        name: "MissingAE",
         ind: 0xAE,
         glitch: true
     },
     {
-        name: "Missingno AF",
+        name: "MissingAF",
         ind: 0xAF,
         glitch: true
     },
@@ -927,7 +927,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x05
     },
     {
-        name: "Missingno B5",
+        name: "MissingB5",
         ind: 0xB5,
         glitch: true
     },

@@ -1,0 +1,8 @@
+.progress
+    .determinate.accent-3(
+        '[class.green]'='percent > 50 && !disabled'
+        '[class.amber]'='percent > 20 && percent <= 50 && !disabled'
+        '[class.red]'='percent <= 20 && !disabled'
+        '[class.grey]'='disabled'
+        '[style.width.%]'='percent'
+    )

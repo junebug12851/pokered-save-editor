@@ -1,0 +1,11 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='254', '[disabled]'='true') Choose Type
+    option('[value]'='255') ---
+    option(
+        *ngFor='let types of typesList',
+        '[value]'='types.ind',
+        '[disabled]'='types.disable'
+    ) {{types.name}}
