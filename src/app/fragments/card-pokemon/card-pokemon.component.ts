@@ -1,3 +1,4 @@
+import { AfterViewInit } from '@angular/core';
 // @ts-ignore
 import { NicknameInputBoxComponent } from './../nickname-input-box/nickname-input-box.component';
 import { EventEmitter, OnInit, ViewChild } from '@angular/core';
@@ -28,12 +29,16 @@ declare var $: any;
     templateUrl: './card-pokemon.component.pug',
     styleUrls: ['./card-pokemon.component.scss'],
 })
-export class CardPokemonComponent implements OnInit {
+export class CardPokemonComponent implements OnInit, AfterViewInit {
 
     constructor() { }
 
     ngOnInit() {
         M.updateTextFields();
+        $('.tabs').tabs();
+    }
+
+    ngAfterViewInit() {
         $('.tabs').tabs();
     }
 

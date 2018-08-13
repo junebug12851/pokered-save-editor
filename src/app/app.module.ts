@@ -47,6 +47,8 @@ import { SelectStatusComponent } from './fragments/select-status/select-status.c
 // Scrapped
 // import { NicknameInputBoxComponent } from './fragments/nickname-input-box/nickname-input-box.component';
 
+import { SelectMovesComponent } from './fragments/select-moves/select-moves.component';
+
 // Layout
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { SidenavComponent } from './layouts/sidenav/sidenav.component';
@@ -80,6 +82,7 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         SelectTypeComponent,
         SelectStatusComponent,
         //NicknameInputBoxComponent // Scrapped
+        SelectMovesComponent
     ],
     imports: [
         BrowserModule,

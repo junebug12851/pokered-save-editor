@@ -95,6 +95,142 @@
                                 '[disabled]'='disabled'
                             )
 
+            div(id='pokemon-{{entry.index}}-moves')
+                .row
+                    .col.s4
+                        label.align-center Move
+                    .col.s4
+                        label.align-center PP
+                    .col.s4
+                        label.align-center PP Up
+
+                .row(*ngFor='let move of entry.moves; let i = index')
+
+                    .col.s4
+                        select-moves(
+                            '[(ngModel)]'='entry.moves[i].moveID'
+                            '[disabled]'='disabled'
+                        )
+                    .col.s4
+                        input(
+                            type='number'
+                            '[(ngModel)]'='entry.moves[i].pp'
+                            '[disabled]'='disabled'
+                        )
+                    .col.s4
+                        input(
+                            type='number'
+                            '[(ngModel)]'='entry.moves[i].ppUp'
+                            '[disabled]'='disabled'
+                        )
+
+            div(id='pokemon-{{entry.index}}-stats')
+                .row
+                    .col.s3
+                        label Attack
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.attack'
+                                '[disabled]'='disabled || entry.attack === undefined'
+                            )
+                    .col.s3
+                        label Defense
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.defense'
+                                '[disabled]'='disabled || entry.defense === undefined'
+                            )
+                    .col.s3
+                        label Speed
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.speed'
+                                '[disabled]'='disabled || entry.speed === undefined'
+                            )
+                    .col.s3
+                        label Special
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.special'
+                                '[disabled]'='disabled || entry.special === undefined'
+                            )
+
+            div(id='pokemon-{{entry.index}}-exp')
+                .row
+                    .col.s3
+                        label Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.exp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label HP Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.hpExp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Attack Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.attackExp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Defense Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.defenseExp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Speed Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.speedExp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Special Exp
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.specialExp'
+                                '[disabled]'='disabled'
+                            )
+
+            div(id='pokemon-{{entry.index}}-iv')
+                .row
+                    .col.s3
+                        label Attack IV
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.dv.attack'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Defense IV
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.dv.defense'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Speed IV
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.dv.speed'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s3
+                        label Special IV
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.dv.special'
+                                '[disabled]'='disabled'
+                            )
+
         a.btn-floating.btn.waves-effect.btn-add.btn-floating-icon-normal.stick.br(
                 *ngIf='addBtn'
                 '(click)'='onAddClick()'
