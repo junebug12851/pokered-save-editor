@@ -1,5 +1,3 @@
-import { EntryItemComponent } from './fragments/entry-item/entry-item.component';
-import { SelectItemComponent } from './fragments/select-item/select-item.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -38,6 +36,12 @@ import { NameInputComponent } from './fragments/name-input/name-input.component'
 import { NameInputBoxComponent } from './fragments/name-input-box/name-input-box.component';
 import { NameBoxComponent } from './fragments/name-box/name-box.component';
 import { SelectStarterComponent } from './fragments/select-starter/select-starter.component';
+import { HPBarComponent } from './fragments/hp-bar/hp-bar.component';
+import { EntryItemComponent } from './fragments/entry-item/entry-item.component';
+import { SelectItemComponent } from './fragments/select-item/select-item.component';
+import { CardPokemonComponent } from './fragments/card-pokemon/card-pokemon.component';
+import { SelectSpeciesComponent } from './fragments/select-species/select-species.component';
+import { SelectTypeComponent } from './fragments/select-type/select-type.component';
 
 // Layout
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -65,7 +69,11 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         NameInputBoxComponent,
         SelectStarterComponent,
         SelectItemComponent,
-        EntryItemComponent
+        EntryItemComponent,
+        HPBarComponent,
+        CardPokemonComponent,
+        SelectSpeciesComponent,
+        SelectTypeComponent
     ],
     imports: [
         BrowserModule,

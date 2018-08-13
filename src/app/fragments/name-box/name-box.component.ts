@@ -48,10 +48,10 @@ export class NameBoxComponent implements OnInit, OnChanges {
     public maxLength: number = 10;
 
     @Input()
-    public bg: boolean = true;
+    public bg: boolean = false;
 
     @Input()
-    public textBlack: boolean = true;
+    public textBlack: boolean = false;
 
     // The template contains 3 parts to it
     // 1. A gameboy string to give context to the text from the textbox
@@ -67,7 +67,7 @@ export class NameBoxComponent implements OnInit, OnChanges {
     // <<>> - Inserts a variable, there is only 1 variable, t, the textbox value
     // <<<>>> - Inserts variable escaped, there if you ever need it
     @Input()
-    public template: string = "";
+    public template: string = "<<t>>";
 
     // Latest HTML representation
     @Input()

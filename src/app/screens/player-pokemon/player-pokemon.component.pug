@@ -1,314 +1,276 @@
-.row
-    .col.s6(*ngFor='let entry of entries')
-        .card.grey.darken-3
-            .card-content.ns
-                .progress
-                    .determinate.teal.accent-3('[style.width]'="getHpPercent(entry) + '%'")
-                .row.ns-b.s-t.s-lr
-                    .col.s6
-                        .card-title
-                            .pr-container.pr-white('innerHTML'='{{getPokemonHTML(entry)}}') //--{{entry.nickname}}
-
-                    .col.s1.offset-s3.right-align
-                        label.active Level
-                    .col.s2.right-align
-                        input(
-                            type='number'
-                            '[(ngModel)]'='entry.level'
-                        )
-                .row.s-lr
-                    .col.s4
-                        label Species
-                        select.browser-default.black-text(
-                            '[(ngModel)]'='entry.species'
-                        )
-                            option([value]='0', disabled='') Choose Species
-                            option(
-                                *ngFor='let pokemonSpecies of speciesList',
-                                '[value]'='pokemonSpecies.ind',
-                                '[disabled]'='pokemonSpecies.disable'
-                            ) {{pokemonSpecies.name}}
-                    .col.s4
-                        label Type 1
-                        select.browser-default.black-text(
-                            '[(ngModel)]'='entry.type1'
-                        )
-                            option([value]='254', disabled='') Choose Type
-                            option(
-                                *ngFor='let pokemonTypes of typeList',
-                                '[value]'='pokemonTypes.ind'
-                            ) {{pokemonTypes.name}}
-                    .col.s4
-                        label Type 2
-                        select.browser-default.black-text(
-                            '[(ngModel)]'='entry.type2'
-                        )
-                            option([value]='254', disabled='') Choose Type
-                            option([value]='255') ---
-                            option(
-                                *ngFor='let pokemonTypes of typeList',
-                                '[value]'='pokemonTypes.ind'
-                            ) {{pokemonTypes.name}}
-            .card-tabs
-                ul.tabs.tabs-fixed-width
-                    li.tab
-                        a(href="#pokemon-0-basic") Basic
-                    li.tab
-                        a(href="#pokemon-0-moves") Moves
-                    li.tab
-                        a(href="#pokemon-0-stats") Stats
-                    li.tab
-                        a(href="#pokemon-0-exp") Exp
-                    li.tab
-                        a(href="#pokemon-0-iv") IV
-                    li.tab
-                        a(href="#pokemon-0-misc") Misc
-            .card-content
-                #pokemon-0-basic
-                    .row
-                        .col.s4
-                            label HP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.hp'
-                                )
-                        .col.s4
-                            label Max HP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.maxHP'
-                                )
-                        .col.s4
-                            label Status
-                            select.browser-default.black-text(
-                                '[(ngModel)]'='entry.statusCode'
-                                '(change)'='forceUpdate()'
-                            )
-                                option([value]='255', disabled='') Choose Status
-                                option([value]='0') ---
-                                option([value]='1') Sleep
-                                option([value]='2') Poisoned
-                                option([value]='3') Burned
-                                option([value]='4') Frozen
-                                option([value]='5') Paralyzed
-                    .row
-                        .col.s1
-                            label.right-align
-                                input(type="checkbox" '[(ngModel)]'='entry.nicknameEdit' '(change)'='nickEnabledChange(entry)')
-                                span &nbsp;
-                        .col.s7
-                            label Nickname
-                            input(
-                                type='text'
-                                '[(ngModel)]'='entry.nickname'
-                                '[disabled]'="!entry.nicknameEdit"
-                                '(ngModelChange)'='textUpdateChange(entry)'
-                            )
-                        .col.s4
-                            label Sleep Turns
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.status.SLP'
-                                    '[disabled]'="entry.statusCode != 1"
-                                )
-                    .row
-                        .pr-container.pr-textbox.pr-black('innerHTML'='{{getPoisonText(entry)}}')
-                #pokemon-0-moves
-                    .row
-                        .col.s6
-                            label Move 1
-                            select.browser-default.black-text(
-                                '[(ngModel)]'='entry.moves[0].moveID'
-                            )
-                                option([value]='255', disabled='') Choose Move
-                                option([value]='0') ----
-                                option(
-                                    *ngFor='let move of movesList',
-                                    '[value]'='move.ind',
-                                    '[disabled]'='move.disable'
-                                ) {{move.name}}
-                        .col.s3
-                            label PP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[0].pp'
-                                )
-                        .col.s3
-                            label PP UP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[0].ppUp'
-                                )
-                    .row
-                        .col.s6
-                            label Move 2
-                            select.browser-default.black-text(
-                                '[(ngModel)]'='entry.moves[1].moveID'
-                            )
-                                option([value]='255', disabled='') Choose Move
-                                option([value]='0') ----
-                                option(
-                                    *ngFor='let move of movesList',
-                                    '[value]'='move.ind',
-                                    '[disabled]'='move.disable'
-                                ) {{move.name}}
-                        .col.s3
-                            label PP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[1].pp'
-                                )
-                        .col.s3
-                            label PP UP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[1].ppUp'
-                                )
-                    .row
-                        .col.s6
-                            label Move 3
-                            select.browser-default.black-text(
-                                '[(ngModel)]'='entry.moves[2].moveID'
-                            )
-                                option([value]='255', disabled='') Choose Move
-                                option([value]='0') ----
-                                option(
-                                    *ngFor='let move of movesList',
-                                    '[value]'='move.ind',
-                                    '[disabled]'='move.disable'
-                                ) {{move.name}}
-                        .col.s3
-                            label PP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[2].pp'
-                                )
-                        .col.s3
-                            label PP UP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[2].ppUp'
-                                )
-                    .row
-                        .col.s6
-                            label Move 3
-                            select.browser-default.black-text(
-                                '[(ngModel)]'='entry.moves[3].moveID'
-                            )
-                                option([value]='255', disabled='') Choose Move
-                                option([value]='0') ----
-                                option(
-                                    *ngFor='let move of movesList',
-                                    '[value]'='move.ind',
-                                    '[disabled]'='move.disable'
-                                ) {{move.name}}
-                        .col.s3
-                            label PP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[3].pp'
-                                )
-                        .col.s3
-                            label PP UP
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.moves[3].ppUp'
-                                )
-                #pokemon-0-stats
-                    .row
-                        .col.s3
-                            label Attack
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.attack'
-                                )
-                        .col.s3
-                            label Defense
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.defense'
-                                )
-                        .col.s3
-                            label Speed
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.speed'
-                                )
-                        .col.s3
-                            label Special
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.special'
-                                )
-                #pokemon-0-exp
-                    .row
-                        .col.s3
-                            label Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.exp'
-                                )
-                        .col.s3
-                            label HP Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.hpExp'
-                                )
-                        .col.s3
-                            label Attack Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.attackExp'
-                                )
-                        .col.s3
-                            label Defense Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.defenseExp'
-                                )
-                        .col.s3
-                            label Speed Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.speedExp'
-                                )
-                        .col.s3
-                            label Special Exp
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.specialExp'
-                                )
-                #pokemon-0-iv
-                    .row
-                        .col.s3
-                            label Attack IV
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.attack'
-                                )
-                        .col.s3
-                            label Defense IV
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.defense'
-                                )
-                        .col.s3
-                            label Speed IV
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.speed'
-                                )
-                        .col.s3
-                            label Special IV
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.special'
-                                )
-                #pokemon-0-misc
-                    .row
-                        .col.s3
-                            label Catch Rate
-                            input(
-                                    type='number'
-                                    '[(ngModel)]'='entry.catchRate'
-                                )
+.row.sticky
+    card-pokemon(
+        *ngFor='let entry of entries; let i = index'
+        '[entry]'='entries[i]'
+        '[remBtn]'='true'
+        '(onRem)'='onRem(i)'
+    )
+    card-pokemon(
+        *ngIf='entries.length <= 5'
+        '[disabled]'='true'
+        '[addBtn]'='true'
+        '(onAdd)'='onAdd()'
+    )
+//-             .card-tabs
+//-                 ul.tabs.tabs-fixed-width
+//-                     li.tab
+//-                         a(href="#pokemon-0-basic") Basic
+//-                     li.tab
+//-                         a(href="#pokemon-0-moves") Moves
+//-                     li.tab
+//-                         a(href="#pokemon-0-stats") Stats
+//-                     li.tab
+//-                         a(href="#pokemon-0-exp") Exp
+//-                     li.tab
+//-                         a(href="#pokemon-0-iv") IV
+//-                     li.tab
+//-                         a(href="#pokemon-0-misc") Misc
+//-             .card-content
+//-                 #pokemon-0-basic
+//-                     .row
+//-                         .col.s4
+//-                             label HP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].hp'
+//-                                 )
+//-                         .col.s4
+//-                             label Max HP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].maxHP'
+//-                                 )
+//-                         .col.s4
+//-                             label Status
+//-                             select.browser-default.black-text(
+//-                                 '[(ngModel)]'='entries[i].statusCode'
+//-                                 '(change)'='forceUpdate()'
+//-                             )
+//-                                 option([value]='255', disabled='') Choose Status
+//-                                 option([value]='0') ---
+//-                                 option([value]='1') Sleep
+//-                                 option([value]='2') Poisoned
+//-                                 option([value]='3') Burned
+//-                                 option([value]='4') Frozen
+//-                                 option([value]='5') Paralyzed
+//-                     .row
+//-                         .col.s1
+//-                             label.right-align
+//-                                 input(type="checkbox" '[(ngModel)]'='entries[i].nicknameEdit' '(change)'='nickEnabledChange(entries[i])')
+//-                                 span &nbsp;
+//-                         .col.s7
+//-                             label Nickname
+//-                             input(
+//-                                 type='text'
+//-                                 '[(ngModel)]'='entries[i].nickname'
+//-                                 '[disabled]'="!entries[i].nicknameEdit"
+//-                                 '(ngModelChange)'='textUpdateChange(entries[i])'
+//-                             )
+//-                         .col.s4
+//-                             label Sleep Turns
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].status.SLP'
+//-                                     '[disabled]'="entries[i].statusCode != 1"
+//-                                 )
+//-                     .row
+//-                         .pr-container.pr-textbox.pr-black('innerHTML'='{{getPoisonText(entries[i])}}')
+//-                 #pokemon-0-moves
+//-                     .row
+//-                         .col.s6
+//-                             label Move 1
+//-                             select.browser-default.black-text(
+//-                                 '[(ngModel)]'='entries[i].moves[0].moveID'
+//-                             )
+//-                                 option([value]='255', disabled='') Choose Move
+//-                                 option([value]='0') ----
+//-                                 option(
+//-                                     *ngFor='let move of movesList',
+//-                                     '[value]'='move.ind',
+//-                                     '[disabled]'='move.disable'
+//-                                 ) {{move.name}}
+//-                         .col.s3
+//-                             label PP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[0].pp'
+//-                                 )
+//-                         .col.s3
+//-                             label PP UP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[0].ppUp'
+//-                                 )
+//-                     .row
+//-                         .col.s6
+//-                             label Move 2
+//-                             select.browser-default.black-text(
+//-                                 '[(ngModel)]'='entries[i].moves[1].moveID'
+//-                             )
+//-                                 option([value]='255', disabled='') Choose Move
+//-                                 option([value]='0') ----
+//-                                 option(
+//-                                     *ngFor='let move of movesList',
+//-                                     '[value]'='move.ind',
+//-                                     '[disabled]'='move.disable'
+//-                                 ) {{move.name}}
+//-                         .col.s3
+//-                             label PP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[1].pp'
+//-                                 )
+//-                         .col.s3
+//-                             label PP UP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[1].ppUp'
+//-                                 )
+//-                     .row
+//-                         .col.s6
+//-                             label Move 3
+//-                             select.browser-default.black-text(
+//-                                 '[(ngModel)]'='entries[i].moves[2].moveID'
+//-                             )
+//-                                 option([value]='255', disabled='') Choose Move
+//-                                 option([value]='0') ----
+//-                                 option(
+//-                                     *ngFor='let move of movesList',
+//-                                     '[value]'='move.ind',
+//-                                     '[disabled]'='move.disable'
+//-                                 ) {{move.name}}
+//-                         .col.s3
+//-                             label PP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[2].pp'
+//-                                 )
+//-                         .col.s3
+//-                             label PP UP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[2].ppUp'
+//-                                 )
+//-                     .row
+//-                         .col.s6
+//-                             label Move 3
+//-                             select.browser-default.black-text(
+//-                                 '[(ngModel)]'='entries[i].moves[3].moveID'
+//-                             )
+//-                                 option([value]='255', disabled='') Choose Move
+//-                                 option([value]='0') ----
+//-                                 option(
+//-                                     *ngFor='let move of movesList',
+//-                                     '[value]'='move.ind',
+//-                                     '[disabled]'='move.disable'
+//-                                 ) {{move.name}}
+//-                         .col.s3
+//-                             label PP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[3].pp'
+//-                                 )
+//-                         .col.s3
+//-                             label PP UP
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].moves[3].ppUp'
+//-                                 )
+//-                 #pokemon-0-stats
+//-                     .row
+//-                         .col.s3
+//-                             label Attack
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].attack'
+//-                                 )
+//-                         .col.s3
+//-                             label Defense
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].defense'
+//-                                 )
+//-                         .col.s3
+//-                             label Speed
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].speed'
+//-                                 )
+//-                         .col.s3
+//-                             label Special
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].special'
+//-                                 )
+//-                 #pokemon-0-exp
+//-                     .row
+//-                         .col.s3
+//-                             label Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].exp'
+//-                                 )
+//-                         .col.s3
+//-                             label HP Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].hpExp'
+//-                                 )
+//-                         .col.s3
+//-                             label Attack Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].attackExp'
+//-                                 )
+//-                         .col.s3
+//-                             label Defense Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].defenseExp'
+//-                                 )
+//-                         .col.s3
+//-                             label Speed Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].speedExp'
+//-                                 )
+//-                         .col.s3
+//-                             label Special Exp
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].specialExp'
+//-                                 )
+//-                 #pokemon-0-iv
+//-                     .row
+//-                         .col.s3
+//-                             label Attack IV
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].dv.attack'
+//-                                 )
+//-                         .col.s3
+//-                             label Defense IV
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].dv.defense'
+//-                                 )
+//-                         .col.s3
+//-                             label Speed IV
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].dv.speed'
+//-                                 )
+//-                         .col.s3
+//-                             label Special IV
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].dv.special'
+//-                                 )
+//-                 #pokemon-0-misc
+//-                     .row
+//-                         .col.s3
+//-                             label Catch Rate
+//-                             input(
+//-                                     type='number'
+//-                                     '[(ngModel)]'='entries[i].catchRate'
+//-                                 )

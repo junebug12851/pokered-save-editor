@@ -9,7 +9,9 @@ export class PokemonParty extends PokemonBox {
         otNameStartOffset: number,
         index: number) {
 
-        super(saveFile, offset, nicknameStartOffset, otNameStartOffset, index);
+        // Mark record size at end to the expanded size of 0x2C
+        // Pokemon Party has expanded data
+        super(saveFile, offset, nicknameStartOffset, otNameStartOffset, index, 0x2C);
 
         const it: SaveFileIterator = this.it;
         this.level = it.getByte();
@@ -20,7 +22,16 @@ export class PokemonParty extends PokemonBox {
         this.special = it.getWord();
     }
 
-    public level: number;
+    static get emptyData() {
+        const parent: any = PokemonBox.emptyData;
+        parent.maxHP = 0;
+        parent.attack = 0;
+        parent.defense = 0;
+        parent.speed = 0;
+        parent.special = 0;
+        return parent;
+    }
+
     public maxHP: number;
     public attack: number;
     public defense: number;

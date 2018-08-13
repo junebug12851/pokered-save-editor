@@ -1,0 +1,10 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='0', '[disabled]'='true') Choose Species
+    option(
+        *ngFor='let species of speciesList',
+        '[value]'='species.ind',
+        '[disabled]'='species.disable'
+    ) {{species.name}}
