@@ -49,7 +49,6 @@ export class Player {
             this.bagItems.push({
                 id: it.getByte(),
                 amount: it.getByte(),
-                index: this.bagItems.length
             });
         }
 
@@ -91,8 +90,7 @@ export class Player {
     public pokedexSeen: boolean[];
     public bagItems: {
         id: number,
-        amount: number,
-        index: number
+        amount: number
     }[];
     public playerParty: PokemonParty[];
     public money: number;
