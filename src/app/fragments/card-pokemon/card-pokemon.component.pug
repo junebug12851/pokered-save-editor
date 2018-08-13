@@ -42,6 +42,59 @@
                         '[disabled]'='disabled'
                     )
 
+        .card-tabs
+            ul.tabs.tabs-fixed-width
+                li.tab('[class.disabled]'='disabled')
+                    a(href="#pokemon-{{entry.index}}-basic") Basic
+                li.tab('[class.disabled]'='disabled')
+                    a(href="#pokemon-{{entry.index}}-moves") Moves
+                li.tab('[class.disabled]'='disabled')
+                    a(href="#pokemon-{{entry.index}}-stats") Stats
+                li.tab('[class.disabled]'='disabled')
+                    a(href="#pokemon-{{entry.index}}-exp") Exp
+                li.tab('[class.disabled]'='disabled')
+                    a(href="#pokemon-{{entry.index}}-iv") IV
+
+        .card-content
+            div(id='pokemon-{{entry.index}}-basic')
+                .row
+                    .col.s4
+                        label HP
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.hp'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s4
+                        label Max HP
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.maxHP'
+                                '[disabled]'='disabled || entry.maxHP === undefined'
+                            )
+                    .col.s4
+                        label Status
+                        select-status.black-text(
+                            '[(ngModel)]'='entry.status'
+                            '[disabled]'='disabled'
+                        )
+                .row
+                    .col.s8(style="padding-top: 22px;")
+                        name-input-box(
+                            '[label]'='Nickname'
+                            '[(ngModel)]'='entry.nickname'
+                            '[disabled]'='disabled'
+                            'template'='<<t>><<c("\'s")>><br><<c("hurt by poison!")>>'
+                        )
+
+                    .col.s4
+                        label Catch Rate
+                        input(
+                                type='number'
+                                '[(ngModel)]'='entry.catchRate'
+                                '[disabled]'='disabled'
+                            )
+
         a.btn-floating.btn.waves-effect.btn-add.btn-floating-icon-normal.stick.br(
                 *ngIf='addBtn'
                 '(click)'='onAddClick()'

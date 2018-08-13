@@ -26,7 +26,7 @@ export class PokemonBox {
         this.hp = it.getWord();
         this.level = it.getByte();
 
-        this.statusByte = it.getByte();
+        this.status = it.getByte();
 
         this.type1 = it.getByte();
         this.type2 = it.getByte();
@@ -50,7 +50,7 @@ export class PokemonBox {
         // Restore offset to start of moves and move past the moves
         it.pop().offsetBy(0x4);
 
-        this.otID = it.getHex(2, false, 4);
+        this.otID = it.getHex(2, false);
 
         // Exp is 3 bytes so it's a bit tricky
         const expRaw = it.getRange(3);
@@ -181,7 +181,7 @@ export class PokemonBox {
     // 16 - Burned
     // 32 - Frozen
     // 64 - Paralyzed
-    public statusByte: number;
+    public status: number;
 
     public type1: number;
     public type2: number;

@@ -60,6 +60,9 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
     @Input()
     public label: string = "";
 
+    @Input()
+    public disabled: boolean = false;
+
     // Latest value
     @Output()
     public onChangeValue = new EventEmitter<string>();

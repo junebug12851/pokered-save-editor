@@ -932,17 +932,17 @@ export const rawEntries: RawEntry[] = [
         glitch: true
     },
     {
-        name: "Fossil kabutops",
+        name: "_Kabutops",
         ind: 0xB6,
         glitch: true
     },
     {
-        name: "Fossil aerodactyl",
+        name: "_Aerodacty",
         ind: 0xB7,
         glitch: true
     },
     {
-        name: "Mon Ghost",
+        name: "Ghost",
         ind: 0xB8,
         glitch: true
     },

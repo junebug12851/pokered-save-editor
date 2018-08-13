@@ -16,7 +16,7 @@ import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
    limitations under the License.
  */
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import {
     NG_VALUE_ACCESSOR,
@@ -44,6 +44,9 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
     @Input()
     public disabled: boolean = false;
 
+    @Output()
+    public speciesChange: EventEmitter<number> = new EventEmitter();
+
     get speciesList() {
         let speciesListPokedex = this.pokemonService.lookupPokedex;
 
@@ -60,5 +63,9 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
             { name: "--- Glitch Species ---", ind: 0x00, disable: true },
             ...speciesListGlitch,
         ];
+    }
+
+    public onSpeciesChange(val: number) {
+        this.speciesChange.emit(val);
     }
 }
