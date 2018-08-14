@@ -50,7 +50,7 @@ import { SelectStatusComponent } from './fragments/select-status/select-status.c
 import { SelectMovesComponent } from './fragments/select-moves/select-moves.component';
 
 // Layout
-import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { KeyboardsComponent } from './layouts/keyboards/keyboards.component';
 import { SidenavComponent } from './layouts/sidenav/sidenav.component';
 
 // Screens
@@ -67,7 +67,7 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         PlayerPokedexComponent,
         PlayerItemsComponent,
         GymButtonComponent,
-        NavbarComponent,
+        KeyboardsComponent,
         SidenavComponent,
         PlayerPokemonComponent,
         NameBoxComponent,

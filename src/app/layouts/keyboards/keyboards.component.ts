@@ -15,10 +15,9 @@ import { SaveFileService } from './../../data/savefile.service';
    limitations under the License.
  */
 
-declare var $: any;
-
 declare var window: {
     require: any;
+    keyboards: any;
 };
 
 import { TextService, RawTransArrEntry } from './../../data/text.service';
@@ -27,22 +26,44 @@ const _: any = window.require("lodash");
 
 const { clipboard } = window.require('electron');
 
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.pug',
-    styleUrls: ['./navbar.component.scss']
+    selector: 'app-keyboards',
+    templateUrl: './keyboards.component.pug',
+    styleUrls: ['./keyboards.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class KeyboardsComponent {
 
     constructor(
         public textService: TextService,
-        public saveFile: SaveFileService) { }
+        public saveFile: SaveFileService,
+        public zone: NgZone) {
+        window.keyboards = this;
+    }
 
-    ngOnInit() {
-        $(".dropdown-btn").dropdown();
-        $('.modal').modal();
+    public closeKeyboard() {
+        this.zone.run(() => {
+            this.activeKeyboard = 0;
+        }, this);
+    }
+
+    public openBasicKeyboard() {
+        this.zone.run(() => {
+            this.activeKeyboard = 1;
+        }, this);
+    }
+
+    public openFullKeyboard() {
+        this.zone.run(() => {
+            this.activeKeyboard = 2;
+        }, this);
+    }
+
+    public openPicKeyboard() {
+        this.zone.run(() => {
+            this.activeKeyboard = 3;
+        }, this);
     }
 
     get controlKeys() {
@@ -173,4 +194,6 @@ export class NavbarComponent implements OnInit {
     copyChar(code: string) {
         clipboard.writeText(code);
     }
+
+    public activeKeyboard: number = 0;
 }

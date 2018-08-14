@@ -27,10 +27,22 @@ a:hover {
 }
 
 .sidenav {
-    box-shadow: none !important;
+    //box-shadow: none !important;
     //margin-top: 64px;
-    padding-top: 10px;
+    //padding-top: 10px;
     //padding-bottom: 150px;
+
+    position: static;
+    width: 200px;
+    left: unset;
+    top: unset;
+    transform: translateX(0%);
+    height: 100vh;
+    z-index: 1;
+    will-change: unset;
+    backface-visibility: unset;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .active {
