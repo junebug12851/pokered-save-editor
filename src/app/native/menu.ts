@@ -90,17 +90,20 @@ const template = [{
     submenu: [{
         label: 'Basic',
         click: () => {
-            M.Modal.getInstance($("#char-basic-modal")[0]).open();
+            // @ts-ignore
+            window.keyboards.openBasicKeyboard();
         }
     }, {
         label: 'Full',
         click: () => {
-            M.Modal.getInstance($("#char-full-modal")[0]).open();
+            // @ts-ignore
+            window.keyboards.openFullKeyboard();
         }
     }, {
         label: 'Picture',
         click: () => {
-            M.Modal.getInstance($("#char-pic-modal")[0]).open();
+            // @ts-ignore
+            window.keyboards.openPicKeyboard();
         }
     }]
 }, {
