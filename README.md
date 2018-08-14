@@ -4,7 +4,11 @@ This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
 
-This project is deep in development however it's turning promising results. Here's a gif and some images of the new keyboard system that nearly a hundred hours went into:
+This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving. Here's a gif of a created but hilarious Pokemon destroying Bruno
+
+![editedPokemon](https://thumbs.gfycat.com/DependentSpottedButterfly-size_restricted.gif)
+
+Here's a gif and some images of the new keyboard system that nearly a hundred hours went into:
 
 ![keyboardgif1](https://thumbs.gfycat.com/NearRevolvingIcelandicsheepdog-size_restricted.gif)
 
