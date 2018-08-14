@@ -1,6 +1,8 @@
+// We're going to have to seriously work on performance
+// It's just way to much stuff rendered at once and kept in the DOM
 .col.s6
     .card.grey.darken-3.sticky
-        .card-content.ns
+        .card-content.ns.clicky('(click)'='toggleEntry()')
             hp-bar(
                 '[curHP]'='entry.hp'
                 '[maxHP]'='entry.maxHP || 1'
@@ -42,21 +44,22 @@
                         '[disabled]'='disabled'
                     )
 
-        .card-tabs
+        .spacer(*ngIf='!activeEntry')
+        .card-tabs(*ngIf='activeEntry')
             ul.tabs.tabs-fixed-width
                 li.tab('[class.disabled]'='disabled')
-                    a(href="#pokemon-{{entry.index}}-basic") Basic
+                    a('(click)'='setActiveTab(0)' '[class.active]'='activeTab == 0') Basic
                 li.tab('[class.disabled]'='disabled')
-                    a(href="#pokemon-{{entry.index}}-moves") Moves
+                    a('(click)'='setActiveTab(1)' '[class.active]'='activeTab == 1') Moves
                 li.tab('[class.disabled]'='disabled')
-                    a(href="#pokemon-{{entry.index}}-stats") Stats
+                    a('(click)'='setActiveTab(2)' '[class.active]'='activeTab == 2') Stats
                 li.tab('[class.disabled]'='disabled')
-                    a(href="#pokemon-{{entry.index}}-exp") Exp
+                    a('(click)'='setActiveTab(3)' '[class.active]'='activeTab == 3') Exp
                 li.tab('[class.disabled]'='disabled')
-                    a(href="#pokemon-{{entry.index}}-iv") IV
+                    a('(click)'='setActiveTab(4)' '[class.active]'='activeTab == 4') IV
 
-        .card-content
-            div(id='pokemon-{{entry.index}}-basic')
+        .card-content(*ngIf='activeEntry')
+            div(*ngIf='activeTab == 0')
                 .row
                     .col.s4
                         label HP
@@ -95,7 +98,7 @@
                                 '[disabled]'='disabled'
                             )
 
-            div(id='pokemon-{{entry.index}}-moves')
+            div(*ngIf='activeTab == 1')
                 .row
                     .col.s4
                         label.align-center Move
@@ -124,7 +127,7 @@
                             '[disabled]'='disabled'
                         )
 
-            div(id='pokemon-{{entry.index}}-stats')
+            div(*ngIf='activeTab == 2')
                 .row
                     .col.s3
                         label Attack
@@ -155,7 +158,7 @@
                                 '[disabled]'='disabled || entry.special === undefined'
                             )
 
-            div(id='pokemon-{{entry.index}}-exp')
+            div(*ngIf='activeTab == 3')
                 .row
                     .col.s3
                         label Exp
@@ -200,7 +203,7 @@
                                 '[disabled]'='disabled'
                             )
 
-            div(id='pokemon-{{entry.index}}-iv')
+            div(*ngIf='activeTab == 4')
                 .row
                     .col.s3
                         label Attack IV

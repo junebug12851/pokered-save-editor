@@ -1,7 +1,6 @@
-import { AfterViewInit } from '@angular/core';
 // @ts-ignore
 import { NicknameInputBoxComponent } from './../nickname-input-box/nickname-input-box.component';
-import { EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { EventEmitter, OnInit } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
 
@@ -22,24 +21,18 @@ import { Component, Input, Output } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 
 declare var M: any;
-declare var $: any;
 
 @Component({
     selector: 'card-pokemon',
     templateUrl: './card-pokemon.component.pug',
     styleUrls: ['./card-pokemon.component.scss'],
 })
-export class CardPokemonComponent implements OnInit, AfterViewInit {
+export class CardPokemonComponent implements OnInit {
 
     constructor() { }
 
     ngOnInit() {
         M.updateTextFields();
-        $('.tabs').tabs();
-    }
-
-    ngAfterViewInit() {
-        $('.tabs').tabs();
     }
 
     @Input()
@@ -60,9 +53,6 @@ export class CardPokemonComponent implements OnInit, AfterViewInit {
     @Output()
     public onRem: EventEmitter<boolean> = new EventEmitter();
 
-    //@ts-ignore
-    @ViewChild(NicknameInputBoxComponent) nicknameInputBox: NicknameInputBoxComponent;
-
     onAddClick() {
         this.onAdd.emit(true);
     }
@@ -70,4 +60,18 @@ export class CardPokemonComponent implements OnInit, AfterViewInit {
     onRemClick() {
         this.onRem.emit(true);
     }
+
+    toggleEntry() {
+        this.activeEntry = !this.activeEntry;
+    }
+
+    setActiveTab(val: number) {
+        this.activeTab = val;
+    }
+
+    // Load the Pokemon Body Contents into the DOM at all?
+    public activeEntry: boolean = false;
+
+    // Which tab contents to load into the DOM
+    public activeTab: number = 0;
 }
