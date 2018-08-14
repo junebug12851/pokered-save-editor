@@ -1,0 +1,70 @@
+.row
+    .col.s12
+        h5 Storage
+
+.row
+    .col.s12
+        ul.tabs.tabs-fixed-width
+            li.tab
+                a('(click)'='setActiveTab(0)' '[class.active]'='activeTab == 0') Items
+            li.tab
+                a('(click)'='setActiveTab(1)' '[class.active]'='activeTab == 1') Box 1
+            li.tab
+                a('(click)'='setActiveTab(2)' '[class.active]'='activeTab == 2') Box 2
+            li.tab
+                a('(click)'='setActiveTab(3)' '[class.active]'='activeTab == 3') Box 3
+            li.tab
+                a('(click)'='setActiveTab(4)' '[class.active]'='activeTab == 4') Box 4
+            li.tab
+                a('(click)'='setActiveTab(5)' '[class.active]'='activeTab == 5') Box 5
+            li.tab
+                a('(click)'='setActiveTab(6)' '[class.active]'='activeTab == 6') Box 6
+            li.tab
+                a('(click)'='setActiveTab(7)' '[class.active]'='activeTab == 7') Box 7
+            li.tab
+                a('(click)'='setActiveTab(8)' '[class.active]'='activeTab == 8') Box 8
+            li.tab
+                a('(click)'='setActiveTab(9)' '[class.active]'='activeTab == 9') Box 9
+            li.tab
+                a('(click)'='setActiveTab(10)' '[class.active]'='activeTab == 10') Box 10
+            li.tab
+                a('(click)'='setActiveTab(11)' '[class.active]'='activeTab == 11') Box 11
+            li.tab
+                a('(click)'='setActiveTab(12)' '[class.active]'='activeTab == 12') Box 12
+
+.row(*ngIf="activeTab == 0")
+    .col.s12
+
+        ul.collection.items.slim-list.sticky
+
+            entry-item(
+                *ngFor='let item of boxItems; let i = index'
+                '[data]'='boxItems[i]'
+                '[disabled]'='false'
+                '(remove)'='remBoxItem(i)'
+            )
+
+            entry-item(
+                *ngIf='boxItems.length == 0'
+                '[disabled]'='true'
+            )
+
+            a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.br(
+                '(click)'='addBoxItem()'
+                '[class.disabled]'='entriesCount >= 50'
+            )
+                span.im.im-plus3
+
+.row.sticky(*ngIf="activeTab > 0")
+    card-pokemon(
+        *ngFor='let pokemon of boxPokemon; let i = index'
+        '[entry]'='boxPokemon[i]'
+        '[remBtn]'='true'
+        '(onRem)'='remPokemon(i)'
+    )
+    card-pokemon(
+        *ngIf='boxPokemon.length <= 19'
+        '[disabled]'='true'
+        '[addBtn]'='true'
+        '(onAdd)'='addPokemon()'
+    )

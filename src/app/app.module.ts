@@ -60,6 +60,7 @@ import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
 import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
+import { StorageAllComponent } from './screens/storage-all/storage-all.component';
 
 @NgModule({
     declarations: [
@@ -84,7 +85,8 @@ import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.compon
         SelectStatusComponent,
         //NicknameInputBoxComponent // Scrapped
         SelectMovesComponent,
-        RivalBasicsComponent
+        RivalBasicsComponent,
+        StorageAllComponent
     ],
     imports: [
         BrowserModule,
