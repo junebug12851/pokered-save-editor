@@ -59,6 +59,7 @@ import { FormsModule } from '@angular/forms';
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
+import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
 
 @NgModule({
     declarations: [
@@ -82,7 +83,8 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
         SelectTypeComponent,
         SelectStatusComponent,
         //NicknameInputBoxComponent // Scrapped
-        SelectMovesComponent
+        SelectMovesComponent,
+        RivalBasicsComponent
     ],
     imports: [
         BrowserModule,

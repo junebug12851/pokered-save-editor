@@ -182,3 +182,7 @@
 .slim-select select {
     height: 28px;
 }
+
+[disabled], select {
+    color: black !important;
+}
