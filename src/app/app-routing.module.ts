@@ -20,12 +20,14 @@ import { PlayerBasicsComponent } from "./screens/player-basics/player-basics.com
 import { PlayerPokedexComponent } from './screens/player-pokedex/player-pokedex.component';
 import { PlayerItemsComponent } from './screens/player-items/player-items.component';
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
+import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
     { path: 'player-pokedex', component: PlayerPokedexComponent },
     { path: 'player-items', component: PlayerItemsComponent },
     { path: 'player-pokemon', component: PlayerPokemonComponent },
+    { path: 'rival-basics', component: RivalBasicsComponent },
     {
         path: '',
         redirectTo: '/player-basics',
