@@ -4,7 +4,13 @@ This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
 
-This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving. Here's a gif of a created but hilarious Pokemon destroying Bruno
+This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving. 
+
+Here we have a created Pokemon, Magikarp, wich happens to be Level 100 and has an epic move set. Shown below is Magikarp in the Pokemon editor
+
+![editedPokemonUI](https://thumbs.gfycat.com/FirsthandLikableGlobefish-size_restricted.gif)
+
+and the same one destroying Bruno
 
 ![editedPokemon](https://thumbs.gfycat.com/DependentSpottedButterfly-size_restricted.gif)
 
