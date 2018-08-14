@@ -14,7 +14,8 @@ export class SaveFileExpanded {
         this.rival = new Rival(saveFile);
         this.storage = new Storage(saveFile);
 
-        for (let i = 0; i < 50; i++) {
+        const hofRecordCount = saveFile.fileData[0x284E];
+        for (let i = 0; i < hofRecordCount && i < 50; i++) {
             this.hallOfFame.push(new HoFRecord(saveFile, i));
         }
 

@@ -31,6 +31,7 @@ declare var Buffer: any;
 
 import { Injectable, NgZone } from '@angular/core';
 import { TextService } from "./text.service";
+import { writeBack } from './savefile-expanded/WriteBack';
 
 // @ts-ignore
 const { app, Menu, MenuItem, BrowserWindow } = window.require('electron').remote;
@@ -367,7 +368,13 @@ export class SaveFileService {
 
     // Write Buffer to file
     protected async writeSaveFile(_filePath: string = this.filePath) {
+        // Write values back from the expanded file to this file
+        writeBack(this);
+
+        // Recalculate all checksums
         this.recalcChecksums();
+
+        // Save
         await fs2.writeFileAsync(_filePath, this.fileData);
     }
 
