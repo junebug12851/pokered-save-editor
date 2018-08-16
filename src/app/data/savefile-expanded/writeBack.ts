@@ -60,11 +60,15 @@ function pokemonBoxEntry(
     it.setByte(data.moves[2].pp | (data.moves[2].ppUp << 6));
     it.setByte(data.moves[3].pp | (data.moves[3].ppUp << 6));
 
+    it.push();
+
     it.offsetTo((index * 0xB) + nameStart);
     it.setStr(0xB, 10, data.nickname);
 
     it.offsetTo((index * 0xB) + otNameStart);
     it.setStr(0xB, 10, data.otName);
+
+    it.pop();
 }
 
 function pokemonBox(
@@ -413,7 +417,7 @@ export function writeBack(file: SaveFileService) {
     // Set Box Items
     // Allow no more than 50 items
     it.setByte(full.storage.boxItems.length); // 27E6
-    it.offsetTo(0x25CA); // 27E7
+    it.offsetTo(0x27E7); // 27E7
     for (let i = 0; i < full.storage.boxItems.length && i < 50; i++) {
         const item = full.storage.boxItems[i];
 
@@ -882,10 +886,10 @@ export function writeBack(file: SaveFileService) {
         );
     }
 
-    for (let i = 6; i < 12; i++) {
+    for (let i = 0; i < 6; i++) {
         pokemonBox(
             0x6000 + (i * 0x462),
-            full.storage.pokemonBoxes[i],
+            full.storage.pokemonBoxes[i + 6],
             it
         );
     }

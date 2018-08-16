@@ -31,7 +31,7 @@ declare var Buffer: any;
 
 import { Injectable, NgZone } from '@angular/core';
 import { TextService } from "./text.service";
-import { writeBack } from './savefile-expanded/WriteBack';
+import { writeBack } from './savefile-expanded/writeBack';
 
 // @ts-ignore
 const { app, Menu, MenuItem, BrowserWindow } = window.require('electron').remote;
@@ -125,7 +125,7 @@ export class SaveFileService {
         if (bigEndian)
             data = data.reverse();
 
-        for (let i = from, j = 0; i < (from + size) || j < data.length; i++ , j++) {
+        for (let i = from, j = 0; j < data.length && i < (from + size); i++ , j++) {
             this.fileData[i] = data[j];
         }
     }
@@ -247,7 +247,7 @@ export class SaveFileService {
     public setWord(from: number, value: number, bigEndian: boolean = false): void {
 
         const byteL = value & 0x00FF;
-        const byteH = value & 0xFF00;
+        const byteH = (value & 0xFF00) >> 8;
 
         this.copyRange(from, 2, new Uint8Array([byteH, byteL]), bigEndian);
     }
