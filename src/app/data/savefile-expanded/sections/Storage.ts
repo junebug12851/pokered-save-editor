@@ -163,7 +163,7 @@ export class Storage {
 
         // Wipe current box data and re-insert from scratch latest box data for
         // that box
-        this.pokemonBoxes[curBox] = [];
+        this.pokemonBoxes[curBox - 1] = [];
         for (let i = 0; i < saveFile.getByte(0x30C0) && i < 20; i++) {
             this.pokemonBoxes[curBox].push(new PokemonBox(
                 saveFile,

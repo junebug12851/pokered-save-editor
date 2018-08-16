@@ -3,7 +3,7 @@ import { SaveFileService } from './../savefile.service';
 import { PokemonBox } from './fragments/PokemonBox';
 import { PokemonParty } from './fragments/PokemonParty';
 
-function pokemonBox(
+function pokemonBoxEntry(
     start: number,
     nameStart: number,
     otNameStart: number,
@@ -67,7 +67,36 @@ function pokemonBox(
     it.setStr(0xB, 10, data.otName);
 }
 
-function pokemonParty(
+function pokemonBox(
+    start: number,
+    data: PokemonBox[],
+    it: SaveFileIterator,
+) {
+    it.offsetTo(start);
+    it.setByte(data.length);
+
+    it.push();
+    for (let i = 0; i < data.length && i < 20; i++) {
+        const party = data[i];
+        it.setByte(party.species);
+    }
+    it.setByte(0xFF);
+    it.pop().offsetBy(21);
+
+    // 2F34
+    for (let i = 0; i < data.length && i < 20; i++) {
+        pokemonBoxEntry(
+            it.offset,
+            it.offset + 0x294 + 0xDC,
+            it.offset + 0x294,
+            data[i],
+            it,
+            i
+        );
+    }
+}
+
+function pokemonPartyEntry(
     start: number,
     nameStart: number,
     otNameStart: number,
@@ -75,7 +104,7 @@ function pokemonParty(
     it: SaveFileIterator,
     index: number,
 ) {
-    pokemonBox(
+    pokemonBoxEntry(
         start,
         nameStart,
         otNameStart,
@@ -772,7 +801,7 @@ export function writeBack(file: SaveFileService) {
 
     // 2CF5 (Only if day-care is in use)
     if (full.world.dayCare !== null)
-        pokemonBox(
+        pokemonBoxEntry(
             0x2D0B,
             0x2CF5,
             0x2D00,
@@ -808,5 +837,56 @@ export function writeBack(file: SaveFileService) {
         it.setByte(full.area.extendedSpriteData[i].grassPriority);
         it.setByte(full.area.extendedSpriteData[i].movementDelay, 5);
         it.setByte(full.area.extendedSpriteData[i].imageBaseOffset, 1);
+    }
+
+    // 2F2C
+    it.offsetTo(0x2F2C);
+    it.setByte(full.player.playerParty.length); // 2F2C
+    // 2F2D
+    for (let i = 0; i < full.player.playerParty.length && i < 6; i++) {
+        const party = full.player.playerParty[i];
+        it.setByte(party.species);
+    }
+    it.setByte(0xFF);
+
+    // 2F34
+    it.offsetTo(0x2F34);
+    for (let i = 0; i < full.player.playerParty.length && i < 6; i++) {
+        const party = full.player.playerParty[i];
+        pokemonPartyEntry(
+            0x2F34,
+            0x307E,
+            0x303C,
+            party,
+            it,
+            i
+        );
+    }
+
+    // 30C0
+    const curBox = full.storage.pokemonBoxes[full.storage.curBox - 1];
+    pokemonBox(
+        0x30C0,
+        curBox,
+        it
+    );
+
+    it.offsetTo(0x3522);
+    it.setByte(full.area.tilesetType);
+
+    for (let i = 0; i < 6; i++) {
+        pokemonBox(
+            0x4000 + (i * 0x462),
+            full.storage.pokemonBoxes[i],
+            it
+        );
+    }
+
+    for (let i = 6; i < 12; i++) {
+        pokemonBox(
+            0x6000 + (i * 0x462),
+            full.storage.pokemonBoxes[i],
+            it
+        );
     }
 }
