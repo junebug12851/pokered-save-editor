@@ -3,7 +3,9 @@ import { SaveFileService } from '../../savefile.service';
 
 export class Storage {
     constructor(saveFile: SaveFileService) {
-        let curBox = this.curBox = (saveFile.getByte(0x284C) + 1);
+        let curBox = this.curBox = (saveFile.getByte(0x284C) & 0b01111111);
+        curBox = this.curBox += 1;
+        this.changedBoxesBefore = saveFile.getBit(0x284C, 0x1, 7);
 
         const it = saveFile.iterator.offsetTo(0x27E7);
         this.boxItems = [];
@@ -173,6 +175,7 @@ export class Storage {
     }
 
     public curBox: number;
+    public changedBoxesBefore: boolean;
     public boxItems: {
         id: number,
         amount: number

@@ -45,6 +45,7 @@ export class Area {
         for (let i = 0; i < saveFile.getByte(0x265A) && i < 32; i++) {
             this.warpData.push(new WarpData(saveFile, i));
         }
+        this.warpDest = saveFile.getByte(0x26DB);
 
         this.signData = [];
         for (let i = 0; i < saveFile.getByte(0x275C) && i < 16; i++) {
@@ -183,6 +184,7 @@ export class Area {
     public spriteSetId: number;
     public outOfBoundsTile: number;
     public warpData: WarpData[];
+    public warpDest: number;
     public signData: SignData[];
     public spriteData: SpriteData[];
     public yOffsetSinceLastSpecialWarp: number;
