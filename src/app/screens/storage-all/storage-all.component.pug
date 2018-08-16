@@ -12,6 +12,14 @@
             min='1'
         )
 
+    .col.s3
+        label
+            input(
+                type='checkbox'
+                '[(ngModel)]'='fileService.fileDataExpanded.storage.changedBoxesBefore'
+            )
+            span Don't Format Boxes
+
 .row
     .col.s12
         ul.tabs.tabs-fixed-width
