@@ -1,7 +1,6 @@
 import { SaveFileService } from './../savefile.service';
 import { World } from './sections/World';
 import { Area } from './sections/Area';
-import { Enemy } from './sections/Enemy';
 import { Storage } from './sections/Storage';
 import { Rival } from './sections/Rival';
 import { HoFRecord } from './fragments/HoF';
@@ -19,7 +18,6 @@ export class SaveFileExpanded {
             this.hallOfFame.push(new HoFRecord(saveFile, i));
         }
 
-        this.enemy = new Enemy(saveFile);
         this.area = new Area(saveFile);
         this.world = new World(saveFile);
     }
@@ -35,9 +33,6 @@ export class SaveFileExpanded {
 
     // Related to the Hall of Fame
     public hallOfFame: HoFRecord[] = [];
-
-    // Related to or equipped with the current enemy
-    public enemy: Enemy;
 
     // Related to the current map the player is on and will be destroyed when
     // player leaves

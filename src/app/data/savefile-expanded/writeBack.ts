@@ -43,42 +43,34 @@ export function writeBack(file: SaveFileService) {
 
     // Offset To Player Name and write
     it.offsetTo(0x2598);
-    it.setStr(0xB, 7, full.player.playerName);
+    it.setStr(0xB, 7, full.player.playerName); // 0x2598
 
-    // Set Pokedex Owned
-    it.offsetTo(0x25A3);
-
+    // Set Pokedex Owned // 0x25A3
     for (let i = 0; i < 0x13; i++) {
-        it.setBit(0x1, 0, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 1, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 2, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 3, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 4, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 5, full.player.pokedexOwned[i]);
-        it.setBit(0x1, 6, full.player.pokedexOwned[i]);
-
-        // The last bit is unused
-        if (i !== 0x12)
-            it.setBit(0x1, 7, full.player.pokedexOwned[i]);
+        it.setBit(0x1, 0, full.player.pokedexOwned[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.player.pokedexOwned[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.player.pokedexOwned[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.player.pokedexOwned[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.player.pokedexOwned[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.player.pokedexOwned[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.player.pokedexOwned[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.player.pokedexOwned[(8 * i) + 7]);
 
         it.inc();
     }
 
     // Set Pokedex Seen
-    it.offsetTo(0x25B6);
+    it.offsetTo(0x25B6); // 25B6
 
     for (let i = 0; i < 0x13; i++) {
-        it.setBit(0x1, 0, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 1, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 2, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 3, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 4, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 5, full.player.pokedexSeen[i]);
-        it.setBit(0x1, 6, full.player.pokedexSeen[i]);
-
-        // The last bit is unused
-        if (i !== 0x12)
-            it.setBit(0x1, 7, full.player.pokedexSeen[i]);
+        it.setBit(0x1, 0, full.player.pokedexSeen[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.player.pokedexSeen[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.player.pokedexSeen[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.player.pokedexSeen[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.player.pokedexSeen[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.player.pokedexSeen[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.player.pokedexSeen[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.player.pokedexSeen[(8 * i) + 7]);
 
         it.inc();
     }
@@ -86,7 +78,7 @@ export function writeBack(file: SaveFileService) {
     // Set Bag Items
     // Allow no more than 20 items
     file.fileData[0x25C9] = full.player.bagItems.length; // Bag Items Count
-    it.offsetTo(0x25CA);
+    it.offsetTo(0x25CA); // 25CA
     for (let i = 0; i < full.player.bagItems.length && i < 20; i++) {
         const item = full.player.bagItems[i];
 
@@ -99,14 +91,10 @@ export function writeBack(file: SaveFileService) {
 
     // Set Money
     it.offsetTo(0x25F3);
-    it.setBCD(0x3, full.player.money);
+    it.setBCD(0x3, full.player.money); // 25F3
 
     // Set Rival Name
-    it.offsetTo(0x25F6);
-    it.setStr(0xB, 7, full.rival.rivalName);
-
-    // Set Options
-    it.offsetTo(0x2601);
+    it.setStr(0xB, 7, full.rival.rivalName); // 25F6
 
     // Set Text speed first
     let byte = it.getByte();
@@ -117,10 +105,10 @@ export function writeBack(file: SaveFileService) {
     // Now set other 2 options
     it.dec();
     it.setBit(0x1, 6, full.world.options.battleStyleSet);
-    it.setBit(0x1, 7, full.world.options.battleAnimOff);
+    it.setBit(0x1, 7, full.world.options.battleAnimOff); // 2601
+    it.inc(); // 2602
 
     // Set Badges
-    it.offsetTo(0x2602);
     it.setBit(0x1, 0, full.player.badges.boulder);
     it.setBit(0x1, 1, full.player.badges.cascade);
     it.setBit(0x1, 2, full.player.badges.thunder);
@@ -129,13 +117,421 @@ export function writeBack(file: SaveFileService) {
     it.setBit(0x1, 5, full.player.badges.marsh);
     it.setBit(0x1, 6, full.player.badges.volcano);
     it.setBit(0x1, 7, full.player.badges.earth);
+    it.inc(); // 2603
+    it.inc(); // 2604
 
     // Set Letter Delay
-    it.offsetTo(0x2604);
     it.setBit(0x1, 0, full.world.letterDelay.normalDelay);
     it.setBit(0x1, 1, full.world.letterDelay.dontDelay);
+    it.inc(); // 2605
 
     // Player ID
-    it.offsetTo(0x2605);
-    it.setHex(0x2, full.player.playerID, false);
+    it.setHex(0x2, full.player.playerID, false); // 2605-2607
+
+    // Music
+    it.setByte(full.area.musicID); // 2607
+    it.setByte(full.area.musicBank); // 2608
+    it.setByte(full.area.contrast); // 2609
+    it.setByte(full.area.curMap); // 260A
+    it.setWord(full.area.currentTileBlockMapViewPointer); // 260B-260C
+    it.setByte(full.area.yCoord); // 260D
+    it.setByte(full.area.xCoord); // 260E
+    it.setByte(full.area.yBlockCoord); // 260F
+    it.setByte(full.area.xBlockCoord); // 2610
+    it.setByte(full.world.lastMap, 1); // 2611-2612
+    it.setByte(full.area.curTileset); // 2613
+    it.setByte(full.area.mapHeight); // 2614
+    it.setByte(full.area.mapWidth); // 2615
+
+    it.setWord(full.area.mapDataPtr); // 2616-2617
+    it.setWord(full.area.mapTextPtr); // 2618-2619
+    it.setWord(full.area.mapScriptPtr); // 261A-261B
+
+    it.setBit(0x1, 0, full.area.mapConn.east);
+    it.setBit(0x1, 1, full.area.mapConn.west);
+    it.setBit(0x1, 2, full.area.mapConn.south);
+    it.setBit(0x1, 3, full.area.mapConn.north);
+    it.inc(); // 261C
+
+    // Connection Data North
+    it.setByte(full.area.mapConnData.north.mapPtr); // 261D
+    it.setWord(full.area.mapConnData.north.stripSrc); // 261E-F
+    it.setWord(full.area.mapConnData.north.stripDest); // 2620-2621
+    it.setByte(full.area.mapConnData.north.stripWidth); // 2622
+    it.setByte(full.area.mapConnData.north.width); // 2623
+    it.setByte(full.area.mapConnData.north.yAlign); // 2624
+    it.setByte(full.area.mapConnData.north.xAlign); // 2625
+    it.setWord(full.area.mapConnData.north.viewPtr); // 2626-2627
+
+    // Connection Data South
+    it.setByte(full.area.mapConnData.south.mapPtr); // 2628
+    it.setWord(full.area.mapConnData.south.stripSrc); // 2629-A
+    it.setWord(full.area.mapConnData.south.stripDest); // 262B-C
+    it.setByte(full.area.mapConnData.south.stripWidth); // 262D
+    it.setByte(full.area.mapConnData.south.width); // 262E
+    it.setByte(full.area.mapConnData.south.yAlign); // 262F
+    it.setByte(full.area.mapConnData.south.xAlign); // 2630
+    it.setWord(full.area.mapConnData.south.viewPtr); // 2631-2
+
+    // Connection Data West
+    it.setByte(full.area.mapConnData.west.mapPtr); // 2633
+    it.setWord(full.area.mapConnData.west.stripSrc); // 2634-5
+    it.setWord(full.area.mapConnData.west.stripDest); // 2636-7
+    it.setByte(full.area.mapConnData.west.stripWidth); // 2638
+    it.setByte(full.area.mapConnData.west.width); // 2639
+    it.setByte(full.area.mapConnData.west.yAlign); // 263A
+    it.setByte(full.area.mapConnData.west.xAlign); // 263B
+    it.setWord(full.area.mapConnData.west.viewPtr); // 263C-D
+
+    // Connection Data East
+    it.setByte(full.area.mapConnData.east.mapPtr); // 263E
+    it.setWord(full.area.mapConnData.east.stripSrc); // 263F-2640
+    it.setWord(full.area.mapConnData.east.stripDest); // 2641-2
+    it.setByte(full.area.mapConnData.east.stripWidth); // 2643
+    it.setByte(full.area.mapConnData.east.width); // 2644
+    it.setByte(full.area.mapConnData.east.yAlign); // 2645
+    it.setByte(full.area.mapConnData.east.xAlign); // 2646
+    it.setWord(full.area.mapConnData.east.viewPtr); // 2647-8
+
+    // Sprite Set
+    for (let i = 0; i < 11; i++) {
+        it.setByte(full.area.spriteSet[i]);
+    }
+
+    // Realign after for loop
+    it.offsetTo(0x2654);
+
+    it.setByte(full.area.spriteSetId, 4); // 2654 (Skip +4)
+    it.setByte(full.area.outOfBoundsTile); // 2659
+
+    // Warp Data
+    it.setByte(full.area.warpData.length); // 265A
+
+    // 265B
+    for (let i = 0; i < full.area.warpData.length && i < 32; i++) {
+        const warpData = full.area.warpData[i];
+
+        // Warp data consists of only 4 bytes, there can be no more than 32
+        // entries
+        it.setByte(warpData.y);
+        it.setByte(warpData.x);
+        it.setByte(warpData.destWarp);
+        it.setByte(warpData.destMap);
+    }
+
+    // Re-position
+    it.offsetTo(0x26DB); // 26DB
+    it.setByte(full.area.warpDest); // 26DB
+
+    // Re-position after long set of padding
+    it.offsetTo(0x275C); // 275C
+    it.setByte(full.area.signData.length); // 275C
+
+    // Sign coords are split into 2 sections in the save file
+    for (let i = 0; i < full.area.signData.length && i < 16; i++) {
+        const signData = full.area.signData[i];
+
+        // Sign Data Part 1 consists of only 2 bytes, Y and X
+        it.setByte(signData.y);
+        it.setByte(signData.x);
+    }
+
+    it.offsetTo(0x277D); // 277D
+    for (let i = 0; i < full.area.signData.length && i < 16; i++) {
+        const signData = full.area.signData[i];
+
+        // Sign Data Part 2 cosnists of text id's
+        it.setByte(signData.text);
+    }
+
+    it.offsetTo(0x278D); // 278D
+    it.setByte(full.area.spriteData.length); // 278D
+
+    it.setByte(full.area.yOffsetSinceLastSpecialWarp); // 278E
+    it.setByte(full.area.xOffsetSinceLastSpecialWarp); // 278F
+
+    // 2790
+    // Sprite Data is split into 2 sections in the save file
+    // Section 1
+    for (let i = 0; i < full.area.spriteData.length && i < 16; i++) {
+        const sprData = full.area.spriteData[i];
+        it.setByte(sprData.movementByte);
+        it.setByte(sprData.textID);
+    }
+
+    // Section 2
+    it.offsetTo(0x27B0); // 27B0
+    for (let i = 0; i < full.area.spriteData.length && i < 16; i++) {
+        const sprData = full.area.spriteData[i];
+        it.setByte(sprData.trainerClassOrItemID);
+        it.setByte(sprData.trainerSetID);
+    }
+
+    it.offsetTo(0x27D0); // 27D0
+    it.setByte(full.area.map2x2Height); // 27D0
+    it.setByte(full.area.map2x2Width); // 27D1
+
+    it.setWord(full.area.mapViewVRAMPointer); // 27D2-3
+
+    it.setByte(full.area.playerMoveDir); // 27D4
+    it.setByte(full.area.playerLastStopDir); // 27D5
+    it.setByte(full.area.playerCurDir); // 27D6
+
+    it.setByte(full.area.tilesetBank); // 27D7
+    it.setWord(full.area.tilesetBlockPtr); // 27D8-9
+    it.setWord(full.area.tilesetGfxPtr); // 27DA-B
+    it.setWord(full.area.tilesetCollPtr); // 27DC-D
+
+    // 27DE-27E0
+    it.copyRange(0x3, new Uint8Array(full.area.tilesetTalkingOverTiles));
+
+    // 27E1-27E5
+    it.copyRange(0x5, new Uint8Array(full.area.tilesetGrassTiles));
+
+    // Set Box Items
+    // Allow no more than 50 items
+    it.setByte(full.storage.boxItems.length); // 27E6
+    it.offsetTo(0x25CA); // 27E7
+    for (let i = 0; i < full.storage.boxItems.length && i < 50; i++) {
+        const item = full.storage.boxItems[i];
+
+        it.setByte(item.id);
+        it.setByte(item.amount);
+    }
+
+    it.setByte(0xFF);
+
+    it.offsetTo(0x284C); // 284C
+    it.setByte((full.storage.curBox - 1) & 0b01111111); // 284C
+    it.dec(); // 284C
+    it.setBit(0x1, 7, full.storage.changedBoxesBefore); // 284C
+
+    it.offsetTo(0x284E); // 284E
+    it.setByte(full.hallOfFame.length, 1); // 284E + 1 Padding
+
+    it.setBCD(0x2, full.player.coins); // 2850-2851
+
+    // 2852
+    for (let i = 0; i < 32; i++) {
+        // Push bits in order of this byte
+        it.setBit(0x1, 0, full.world.missableObjectFlags[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.missableObjectFlags[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.missableObjectFlags[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.missableObjectFlags[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.missableObjectFlags[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.missableObjectFlags[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.missableObjectFlags[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.missableObjectFlags[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x287A); // 287A
+    // 287A
+    for (let i = 0; i < full.area.missableList.length && i < 17; i++) {
+        const val = full.area.missableList[i];
+
+        it.setByte(val.spriteID);
+        it.setByte(val.missableIndex);
+    }
+    it.setByte(0xFF);
+
+    it.offsetTo(0x289C); // 289C
+    it.setByte(full.world.currentScriptProgress.oaksLab);
+    it.setByte(full.world.currentScriptProgress.paletteTown, 1);
+    it.setByte(full.world.currentScriptProgress.rivalsHouse);
+    it.setByte(full.world.currentScriptProgress.viridianCity, 2);
+    it.setByte(full.world.currentScriptProgress.pewterCity);
+    it.setByte(full.world.currentScriptProgress.route3);
+    it.setByte(full.world.currentScriptProgress.route4, 1);
+    it.setByte(full.world.currentScriptProgress.viridianGym);
+    it.setByte(full.world.currentScriptProgress.pewterGym);
+    it.setByte(full.world.currentScriptProgress.ceruleanGym);
+    it.setByte(full.world.currentScriptProgress.vermillionGym);
+    it.setByte(full.world.currentScriptProgress.celadonGym);
+    it.setByte(full.world.currentScriptProgress.route6);
+    it.setByte(full.world.currentScriptProgress.route8);
+    it.setByte(full.world.currentScriptProgress.route24);
+    it.setByte(full.world.currentScriptProgress.route25);
+    it.setByte(full.world.currentScriptProgress.route9);
+    it.setByte(full.world.currentScriptProgress.route10);
+    it.setByte(full.world.currentScriptProgress.mtMoon1);
+    it.setByte(full.world.currentScriptProgress.mtMoon3);
+    it.setByte(full.world.currentScriptProgress.ssAnne8);
+    it.setByte(full.world.currentScriptProgress.ssAnne9);
+    it.setByte(full.world.currentScriptProgress.route22, 1);
+    it.setByte(full.world.currentScriptProgress.playersHouse2);
+    it.setByte(full.world.currentScriptProgress.viridianMarket);
+    it.setByte(full.world.currentScriptProgress.route22Gate);
+    it.setByte(full.world.currentScriptProgress.ceruleanCity, 7);
+    it.setByte(full.world.currentScriptProgress.ssAnne5);
+    it.setByte(full.world.currentScriptProgress.viridianForest);
+    it.setByte(full.world.currentScriptProgress.museum1);
+    it.setByte(full.world.currentScriptProgress.route13);
+    it.setByte(full.world.currentScriptProgress.route14);
+    it.setByte(full.world.currentScriptProgress.route17);
+    it.setByte(full.world.currentScriptProgress.route19);
+    it.setByte(full.world.currentScriptProgress.route21);
+    it.setByte(full.world.currentScriptProgress.safariZoneEntrance);
+    it.setByte(full.world.currentScriptProgress.rockTunnel2);
+    it.setByte(full.world.currentScriptProgress.rockTunnel1, 1);
+    it.setByte(full.world.currentScriptProgress.route11);
+    it.setByte(full.world.currentScriptProgress.route12);
+    it.setByte(full.world.currentScriptProgress.route15);
+    it.setByte(full.world.currentScriptProgress.route16);
+    it.setByte(full.world.currentScriptProgress.route18);
+    it.setByte(full.world.currentScriptProgress.route20);
+    it.setByte(full.world.currentScriptProgress.ssAnne10);
+    it.setByte(full.world.currentScriptProgress.vermillionCity);
+    it.setByte(full.world.currentScriptProgress.pokemonTower2);
+    it.setByte(full.world.currentScriptProgress.pokemonTower3);
+    it.setByte(full.world.currentScriptProgress.pokemonTower4);
+    it.setByte(full.world.currentScriptProgress.pokemonTower5);
+    it.setByte(full.world.currentScriptProgress.pokemonTower6);
+    it.setByte(full.world.currentScriptProgress.pokemonTower7);
+    it.setByte(full.world.currentScriptProgress.rocketHideout1);
+    it.setByte(full.world.currentScriptProgress.rocketHideout2);
+    it.setByte(full.world.currentScriptProgress.rocketHideout3);
+    it.setWord(full.world.currentScriptProgress.rocketHideout4);
+    it.setByte(full.world.currentScriptProgress.route6Gate);
+    it.setWord(full.world.currentScriptProgress.route8Gate);
+    it.setByte(full.world.currentScriptProgress.cinnabarIsland);
+    it.setWord(full.world.currentScriptProgress.mansion1);
+    it.setByte(full.world.currentScriptProgress.mansion2);
+    it.setByte(full.world.currentScriptProgress.mansion3);
+    it.setByte(full.world.currentScriptProgress.mansion4);
+    it.setByte(full.world.currentScriptProgress.victoryRoad2);
+    it.setWord(full.world.currentScriptProgress.victoryRoad3);
+    it.setByte(full.world.currentScriptProgress.fightingDojo);
+    it.setByte(full.world.currentScriptProgress.silphCo2);
+    it.setByte(full.world.currentScriptProgress.silphCo3);
+    it.setByte(full.world.currentScriptProgress.silphCo4);
+    it.setByte(full.world.currentScriptProgress.silphCo5);
+    it.setByte(full.world.currentScriptProgress.silphCo6);
+    it.setByte(full.world.currentScriptProgress.silphCo7);
+    it.setByte(full.world.currentScriptProgress.silphCo8);
+    it.setByte(full.world.currentScriptProgress.silphCo9);
+    it.setByte(full.world.currentScriptProgress.hofRoom);
+    it.setByte(full.world.currentScriptProgress.rival);
+    it.setByte(full.world.currentScriptProgress.lorelei);
+    it.setByte(full.world.currentScriptProgress.bruno);
+    it.setByte(full.world.currentScriptProgress.agatha);
+    it.setByte(full.world.currentScriptProgress.unknownDungeon3);
+    it.setByte(full.world.currentScriptProgress.victoryRoad1, 1);
+    it.setByte(full.world.currentScriptProgress.lance, 4);
+    it.setByte(full.world.currentScriptProgress.silphCo10);
+    it.setByte(full.world.currentScriptProgress.silphCo11, 1);
+    it.setByte(full.world.currentScriptProgress.fuchsiaGym);
+    it.setByte(full.world.currentScriptProgress.saffronGym, 1);
+    it.setByte(full.world.currentScriptProgress.cinnabarGym);
+    it.setByte(full.world.currentScriptProgress.celadonGameCorner);
+    it.setByte(full.world.currentScriptProgress.route16Gate);
+    it.setByte(full.world.currentScriptProgress.billsHouse);
+    it.setByte(full.world.currentScriptProgress.route5Gate);
+    it.setByte(full.world.currentScriptProgress.powerPlantRoute7Gate, 1);
+    it.setByte(full.world.currentScriptProgress.ssAnne2);
+    it.setByte(full.world.currentScriptProgress.seafoamIslands4);
+    it.setByte(full.world.currentScriptProgress.route23);
+    it.setByte(full.world.currentScriptProgress.seafoamIslands5);
+    it.setByte(full.world.currentScriptProgress.route18Gate);
+
+    it.offsetTo(0x299C); // 299C
+    for (let i = 0; i < 14; i++) {
+        it.setBit(0x1, 0, full.world.ownedHidenItems[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.ownedHidenItems[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.ownedHidenItems[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.ownedHidenItems[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.ownedHidenItems[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.ownedHidenItems[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.ownedHidenItems[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.ownedHidenItems[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x29AA); // 29AA
+    for (let i = 0; i < 14; i++) {
+        it.setBit(0x1, 0, full.world.ownedHiddenCoins[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.ownedHiddenCoins[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.ownedHiddenCoins[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.ownedHiddenCoins[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.ownedHiddenCoins[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.ownedHiddenCoins[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.ownedHiddenCoins[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.ownedHiddenCoins[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x29AC); // 29AC
+    it.setByte(full.area.walkBikeSurf, 10); // 29AC
+
+    it.offsetTo(0x29B7); // 29B7
+    for (let i = 0; i < 14; i++) {
+        it.setBit(0x1, 0, full.world.visitedTowns[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.visitedTowns[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.visitedTowns[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.visitedTowns[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.visitedTowns[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.visitedTowns[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.visitedTowns[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.visitedTowns[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x29B9); // 29B9
+    it.setWord(full.area.safariSteps); // 29B9-A
+
+    it.setByte(full.world.fossilItemGiven); // 29BB
+    it.setByte(full.world.fossilPkmnResult, 2); // 29BC + 2 padding
+    it.inc(); // Skip enemy stuff // 29BF
+    it.setByte(full.area.playerJumpingYScrnCoords); // 29C0
+    it.setHex(0x1, full.rival.rivalStarter, false, 1); // 29C1 + 1 Padding
+    it.setHex(0x1, full.player.playerStarter, false); // 29C3
+    it.setByte(full.area.boulderSpriteIndex); // 29C4
+    it.setByte(full.world.lastBlackoutMap); // 29C5
+    it.setByte(full.area.destinationMap, 1); // 29C6 + 1 Padding
+
+    it.setByte(full.area.tileFrontBoulderColl); // 29C8
+    it.setByte(full.area.dungeonWarpDest); // 29C9
+    it.setByte(full.area.whichDungeonWarp, 9); // 29CA + 9 Padding
+
+    // 29D4
+    // Various Flags 1
+    it.setBit(0x1, 0, full.area.strengthOutsideBattle);
+    it.setBit(0x1, 1, full.area.surfingAllowed);
+    it.setBit(0x1, 3, full.world.obtainedOldRod);
+    it.setBit(0x1, 4, full.world.obtainedGoodRod);
+    it.setBit(0x1, 5, full.world.obtainedSuperRod);
+    it.setBit(0x1, 6, full.world.satisfiedSaffronGuards);
+    it.setBit(0x1, 7, full.area.usedCardKey);
+    it.inc(); // 29D5
+    it.inc(); // 29D6 (Skip Padding)
+
+    // Defeated Gyms (Copy of Badges Obtained)
+    // 29D6
+    it.setBit(0x1, 0, full.player.badges.boulder);
+    it.setBit(0x1, 1, full.player.badges.cascade);
+    it.setBit(0x1, 2, full.player.badges.thunder);
+    it.setBit(0x1, 3, full.player.badges.rainbow);
+    it.setBit(0x1, 4, full.player.badges.soul);
+    it.setBit(0x1, 5, full.player.badges.marsh);
+    it.setBit(0x1, 6, full.player.badges.volcano);
+    it.setBit(0x1, 7, full.player.badges.earth);
+    it.inc(); // 29D7
+    it.inc(); // 29D8 (Skip Padding)
+
+    // 29D8
+    // Various Flags 2
+    it.setBit(0x1, 0, full.area.pauseWildEncounters3Steps);
+    it.setBit(0x1, 1, full.area.noAudioFadeout);
+    it.inc(); // 29D9
+
+    // 29D9
+    // Various Flags 3
 }
