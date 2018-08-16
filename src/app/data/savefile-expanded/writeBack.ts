@@ -1,4 +1,97 @@
+import { SaveFileIterator } from './SaveFileIterator';
 import { SaveFileService } from './../savefile.service';
+import { PokemonBox } from './fragments/PokemonBox';
+import { PokemonParty } from './fragments/PokemonParty';
+
+function pokemonBox(
+    start: number,
+    nameStart: number,
+    otNameStart: number,
+    data: PokemonBox,
+    it: SaveFileIterator,
+    index: number,
+    recordSize: number = 0x21) {
+
+    const offset = (recordSize * index) + start;
+
+    it.offsetTo(offset);
+    it.setByte(data.species);
+    it.setWord(data.hp);
+    it.setByte(data.level);
+    it.setByte(data.status);
+    it.setByte(data.type1);
+
+    if (data.type2 == 0xFF)
+        it.setByte(data.type1);
+    else
+        it.setByte(data.type2);
+
+    it.setByte(data.catchRate);
+
+    it.setByte(data.moves[0].moveID);
+    it.setByte(data.moves[1].moveID);
+    it.setByte(data.moves[2].moveID);
+    it.setByte(data.moves[3].moveID);
+
+    it.setHex(0x2, data.otID, false);
+
+    const exp = data.exp;
+    const expArr = [];
+    expArr.push((exp & 0xFF0000) >> 16);
+    expArr.push((exp & 0x00FF00) >> 8);
+    expArr.push(exp & 0x0000FF);
+    it.copyRange(0x3, new Uint8Array(expArr));
+
+    it.setWord(data.hpExp);
+    it.setWord(data.attackExp);
+    it.setWord(data.defenseExp);
+    it.setWord(data.speedExp);
+    it.setWord(data.specialExp);
+
+    let dvs = 0;
+    dvs |= ((data.dv.attack) << 12);
+    dvs |= ((data.dv.defense) << 8);
+    dvs |= ((data.dv.speed) << 4);
+    dvs |= data.dv.special;
+    it.setWord(dvs);
+
+    it.setByte(data.moves[0].pp | (data.moves[0].ppUp << 6));
+    it.setByte(data.moves[1].pp | (data.moves[1].ppUp << 6));
+    it.setByte(data.moves[2].pp | (data.moves[2].ppUp << 6));
+    it.setByte(data.moves[3].pp | (data.moves[3].ppUp << 6));
+
+    it.offsetTo((index * 0xB) + nameStart);
+    it.setStr(0xB, 10, data.nickname);
+
+    it.offsetTo((index * 0xB) + otNameStart);
+    it.setStr(0xB, 10, data.otName);
+}
+
+function pokemonParty(
+    start: number,
+    nameStart: number,
+    otNameStart: number,
+    data: PokemonParty,
+    it: SaveFileIterator,
+    index: number,
+) {
+    pokemonBox(
+        start,
+        nameStart,
+        otNameStart,
+        data,
+        it,
+        index,
+        0x2C
+    );
+
+    it.setByte(data.level);
+    it.setWord(data.maxHP);
+    it.setWord(data.attack);
+    it.setWord(data.defense);
+    it.setWord(data.speed);
+    it.setWord(data.special);
+}
 
 // Writes all the expanded data back to the save file, it only overwrites used
 // portions of the save file
@@ -452,7 +545,7 @@ export function writeBack(file: SaveFileService) {
     }
 
     it.offsetTo(0x29AA); // 29AA
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 2; i++) {
         it.setBit(0x1, 0, full.world.ownedHiddenCoins[(8 * i) + 0]);
         it.setBit(0x1, 1, full.world.ownedHiddenCoins[(8 * i) + 1]);
         it.setBit(0x1, 2, full.world.ownedHiddenCoins[(8 * i) + 2]);
@@ -470,7 +563,7 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.area.walkBikeSurf, 10); // 29AC
 
     it.offsetTo(0x29B7); // 29B7
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 2; i++) {
         it.setBit(0x1, 0, full.world.visitedTowns[(8 * i) + 0]);
         it.setBit(0x1, 1, full.world.visitedTowns[(8 * i) + 1]);
         it.setBit(0x1, 2, full.world.visitedTowns[(8 * i) + 2]);
@@ -534,4 +627,186 @@ export function writeBack(file: SaveFileService) {
 
     // 29D9
     // Various Flags 3
+    it.setBit(0x1, 0, full.area.tradeCenterSpritesFaced);
+    it.setBit(0x1, 3, full.area.warpToLavenderTown);
+    it.setBit(0x1, 4, full.area.isDungeonWarp);
+    it.setBit(0x1, 5, full.area.npcsFaceAway);
+    it.setBit(0x1, 6, full.area.isBattle);
+    it.setBit(0x1, 7, full.area.isTrainerBattle);
+    it.inc(); // 29DA
+
+    // 29DA
+    // Various Flags 4
+    it.setBit(0x1, 0, full.world.obtainedLapras);
+    it.setBit(0x1, 2, full.world.everHealedPokemon);
+    it.setBit(0x1, 3, full.world.obtainedStarterPokemon);
+    it.setBit(0x1, 4, full.area.noBattles);
+    it.setBit(0x1, 5, full.area.battleEndedOrBlackout);
+    it.setBit(0x1, 6, full.area.usingLinkCable);
+    it.setBit(0x1, 7, full.area.scriptedNPCMovement);
+    it.inc(); // 29DB
+    it.inc(); // 29DC
+
+    // 29DC
+    // Various Flags 5
+    it.setBit(0x1, 0, full.area.npcSpriteMovement);
+    it.setBit(0x1, 5, full.area.ignoreJoypad);
+    it.setBit(0x1, 6, full.area.noLetterDelay);
+    it.setBit(0x1, 7, full.area.joypadSimulation);
+    it.inc(); // 29DD
+    it.inc(); // 29DE
+
+    // 29DE
+    // Various Flags 6
+    it.setBit(0x1, 0, full.area.countPlaytime);
+    it.setBit(0x1, 1, full.world.debugMode);
+    it.setBit(0x1, 2, full.area.flyOrDungeonWarp);
+    it.setBit(0x1, 3, full.area.flyWarp);
+    it.setBit(0x1, 4, full.area.dungeonWarp);
+    it.setBit(0x1, 5, full.area.forceBikeRide);
+    it.setBit(0x1, 6, full.area.blackoutDest);
+    it.inc(); // 29DF
+
+    // 29DF
+    // Various Flags 7
+    it.setBit(0x1, 0, full.area.runningTestBattle);
+    it.setBit(0x1, 1, full.area.preventMusicChange);
+    it.setBit(0x1, 2, full.area.skipJoypadCheckWarps);
+    it.setBit(0x1, 3, full.area.isTrainerBattle);
+    it.setBit(0x1, 4, full.area.curMapNextFrame);
+    it.setBit(0x1, 7, full.area.flyOutofBattle);
+    it.inc(); // 29E0
+
+    // 29E0
+    it.setBit(0x1, 1, full.world.defeatedLorelei);
+    it.inc(); // 29E1
+    it.inc(); // 29E2
+
+    // 29E2
+    // Various Flags 8
+    it.setBit(0x1, 0, full.area.standingOnDoor);
+    it.setBit(0x1, 1, full.area.movingThroughDoor);
+    it.setBit(0x1, 2, full.area.standingOnWarp);
+    it.setBit(0x1, 6, full.area.finalLedgeJumping);
+    it.setBit(0x1, 7, full.area.spinPlayer);
+    it.inc(); // 29E3
+
+    // 29E3
+    for (let i = 0; i < 2; i++) {
+        it.setBit(0x1, 0, full.world.inGameTrades[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.inGameTrades[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.inGameTrades[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.inGameTrades[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.inGameTrades[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.inGameTrades[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.inGameTrades[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.inGameTrades[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x29E7); // 29E7
+    it.setByte(full.area.warpedFromWarp); // 29E7
+    it.setByte(full.area.warpedfromMap, 2); // 29E8 + 2 Padding
+
+    // 29EB
+    it.setByte(full.area.cardKeyDoorY); // 29EB
+    it.setByte(full.area.cardKeyDoorX, 2); // 29EC + 2 Padding
+
+    // 29EF
+    it.setByte(full.area.firstTrashcanLock); // 29EF
+    it.setByte(full.area.secondTrashcanLock, 2); // 29F0 + 2 Padding
+
+    // 29F3
+    for (let i = 0; i < 320; i++) {
+        it.setBit(0x1, 0, full.world.completedEvents[(8 * i) + 0]);
+        it.setBit(0x1, 1, full.world.completedEvents[(8 * i) + 1]);
+        it.setBit(0x1, 2, full.world.completedEvents[(8 * i) + 2]);
+        it.setBit(0x1, 3, full.world.completedEvents[(8 * i) + 3]);
+        it.setBit(0x1, 4, full.world.completedEvents[(8 * i) + 4]);
+        it.setBit(0x1, 5, full.world.completedEvents[(8 * i) + 5]);
+        it.setBit(0x1, 6, full.world.completedEvents[(8 * i) + 6]);
+        it.setBit(0x1, 7, full.world.completedEvents[(8 * i) + 7]);
+
+        // Increment iterator
+        it.inc();
+    }
+
+    it.offsetTo(0x2B33); // 2B33
+    it.setByte(full.area.grassRate); // 2B33
+
+    // 2B34
+    it.copyRange(20, full.area.grassPokemon);
+
+    // Skip Enemy Stuff
+
+    it.offsetTo(0x2B50); // 2B50
+    it.setByte(full.area.waterPokemonRate); // 2B50
+    it.copyRange(20, full.area.waterPokemon);
+
+    // Skip Enemy Stuff
+
+    it.offsetTo(0x2CDC); // 2CDC
+    it.setWord(full.area.trainerHeaderPtr, 6); // 2CDC-D + 6 Padding
+
+    //2CE4
+    it.setByte(full.area.oppAfterWrongAnsw); // 2CE4
+    it.setByte(full.area.curMapScript, 7); // 2CE5 + 7 Padding
+
+    // 2CED
+    it.setByte(full.world.playtime.hours); // 2CED
+    it.setByte(full.world.playtime.maxed); // 2CEE
+    it.setByte(full.world.playtime.minutes); // 2CEF
+    it.setByte(full.world.playtime.seconds); // 2CF0
+    it.setByte(full.world.playtime.frames); // 2CF1
+
+    it.setByte(full.area.safariGameOver); // 2CF2
+    it.setByte(full.area.safariBallCount); // 2CF3
+
+    // 2CF4 (Daycare in-use)
+    if (full.world.dayCare === null)
+        it.setByte(0x00);
+    else
+        it.setByte(0x01);
+
+    // 2CF5 (Only if day-care is in use)
+    if (full.world.dayCare !== null)
+        pokemonBox(
+            0x2D0B,
+            0x2CF5,
+            0x2D00,
+            full.world.dayCare,
+            it,
+            0
+        );
+
+    // 2D2C
+    it.offsetTo(0x2D2C);
+    for (let i = 0; i < 16; i++) {
+        it.setByte(full.area.extendedSpriteData[i].pictureID);
+        it.setByte(full.area.extendedSpriteData[i].movementStatus);
+        it.setByte(full.area.extendedSpriteData[i].imageIndex);
+        it.setByte(full.area.extendedSpriteData[i].yStepVector);
+        it.setByte(full.area.extendedSpriteData[i].yPixels);
+        it.setByte(full.area.extendedSpriteData[i].xStepVector);
+        it.setByte(full.area.extendedSpriteData[i].xPixels);
+        it.setByte(full.area.extendedSpriteData[i].intraAnimationFrameCounter);
+        it.setByte(full.area.extendedSpriteData[i].animFrameCounter);
+        it.setByte(full.area.extendedSpriteData[i].faceDir, 6);
+    }
+
+    // 2E2C
+    it.offsetTo(0x2E2C);
+    for (let i = 0; i < 16; i++) {
+        it.setByte(full.area.extendedSpriteData[i].walkAnimationCounter, 1);
+        it.setByte(full.area.extendedSpriteData[i].yDisp);
+        it.setByte(full.area.extendedSpriteData[i].xDisp);
+        it.setByte(full.area.extendedSpriteData[i].mapY);
+        it.setByte(full.area.extendedSpriteData[i].mapX);
+        it.setByte(full.area.extendedSpriteData[i].movementByte);
+        it.setByte(full.area.extendedSpriteData[i].grassPriority);
+        it.setByte(full.area.extendedSpriteData[i].movementDelay, 5);
+        it.setByte(full.area.extendedSpriteData[i].imageBaseOffset, 1);
+    }
 }
