@@ -87,12 +87,15 @@ function pokemonBox(
     it.setByte(0xFF);
     it.pop().offsetBy(21);
 
-    // 2F34
+    const recordStart = it.offset,
+        nameStart = it.offset + 0x294 + 0xDC,
+        otNameStart = it.offset + 0x294;
+
     for (let i = 0; i < data.length && i < 20; i++) {
         pokemonBoxEntry(
-            it.offset,
-            it.offset + 0x294 + 0xDC,
-            it.offset + 0x294,
+            recordStart,
+            nameStart,
+            otNameStart,
             data[i],
             it,
             i

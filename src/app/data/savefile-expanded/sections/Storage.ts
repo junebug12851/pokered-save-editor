@@ -165,7 +165,7 @@ export class Storage {
         // that box
         this.pokemonBoxes[curBox - 1] = [];
         for (let i = 0; i < saveFile.getByte(0x30C0) && i < 20; i++) {
-            this.pokemonBoxes[curBox].push(new PokemonBox(
+            this.pokemonBoxes[curBox - 1].push(new PokemonBox(
                 saveFile,
                 0x30D6,
                 0x3446,
