@@ -57,6 +57,8 @@
                     a('(click)'='setActiveTab(3)' '[class.active]'='activeTab == 3') Exp
                 li.tab('[class.disabled]'='disabled')
                     a('(click)'='setActiveTab(4)' '[class.active]'='activeTab == 4') IV
+                li.tab('[class.disabled]'='disabled')
+                    a('(click)'='setActiveTab(5)' '[class.active]'='activeTab == 5') OT
 
         .card-content(*ngIf='activeEntry')
             div(*ngIf='activeTab == 0')
@@ -231,6 +233,22 @@
                         input(
                                 type='number'
                                 '[(ngModel)]'='entry.dv.special'
+                                '[disabled]'='disabled'
+                            )
+            div(*ngIf='activeTab == 5')
+                .row
+                    .col.s3
+                        label OT ID
+                        input(
+                                type='text'
+                                '[(ngModel)]'='entry.otID'
+                                '[disabled]'='disabled'
+                            )
+                    .col.s9
+                        label OT Name
+                        input(
+                                type='text'
+                                '[(ngModel)]'='entry.otName'
                                 '[disabled]'='disabled'
                             )
 
