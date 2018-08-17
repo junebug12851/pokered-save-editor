@@ -270,7 +270,11 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.area.yBlockCoord); // 260F
     it.setByte(full.area.xBlockCoord); // 2610
     it.setByte(full.world.lastMap, 1); // 2611-2612
-    it.setByte(full.area.curTileset); // 2613
+
+    const tileset = full.area.tileset;
+    const tilesetArr = tileset.split("_");
+
+    it.setHex(0x1, tilesetArr[1], false); // 2613
     it.setByte(full.area.mapHeight); // 2614
     it.setByte(full.area.mapWidth); // 2615
 
@@ -333,7 +337,7 @@ export function writeBack(file: SaveFileService) {
     it.offsetTo(0x2654);
 
     it.setByte(full.area.spriteSetId, 4); // 2654 (Skip +4)
-    it.setByte(full.area.outOfBoundsTile); // 2659
+    it.setHex(0x1, full.area.outOfBoundsTile, false); // 2659
 
     // Warp Data
     it.setByte(full.area.warpData.length); // 265A
@@ -408,16 +412,21 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.area.playerLastStopDir); // 27D5
     it.setByte(full.area.playerCurDir); // 27D6
 
-    it.setByte(full.area.tilesetBank); // 27D7
-    it.setWord(full.area.tilesetBlockPtr); // 27D8-9
-    it.setWord(full.area.tilesetGfxPtr); // 27DA-B
-    it.setWord(full.area.tilesetCollPtr); // 27DC-D
+    it.setHex(0x1, tilesetArr[0], false); // 27D7
+    it.setHex(0x2, tilesetArr[3], false, 0, true); // 27D8-9
+    it.setHex(0x2, tilesetArr[2], false, 0, true); // 27DA-B
+    it.setHex(0x2, tilesetArr[4], false, 0, true); // 27DC-D
 
     // 27DE-27E0
-    it.copyRange(0x3, new Uint8Array(full.area.tilesetTalkingOverTiles));
+    const counterTiles = full.area.tilesetTalkingOverTiles;
+    it.copyRange(0x3, new Uint8Array([
+        parseInt(counterTiles[0], 16),
+        parseInt(counterTiles[1], 16),
+        parseInt(counterTiles[2], 16),
+    ]));
 
-    // 27E1-27E5
-    it.copyRange(0x5, new Uint8Array(full.area.tilesetGrassTiles));
+    // 27E1 + 4 padding -> 27E5
+    it.setHex(0x1, full.area.tilesetGrassTile, false, 4);
 
     // Set Box Items
     // Allow no more than 50 items
@@ -628,7 +637,7 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.world.lastBlackoutMap); // 29C5
     it.setByte(full.area.destinationMap, 1); // 29C6 + 1 Padding
 
-    it.setByte(full.area.tileFrontBoulderColl); // 29C8
+    it.setHex(0x1, full.area.tileFrontBoulderColl, false); // 29C8
     it.setByte(full.area.dungeonWarpDest); // 29C9
     it.setByte(full.area.whichDungeonWarp, 9); // 29CA + 9 Padding
 
@@ -881,7 +890,7 @@ export function writeBack(file: SaveFileService) {
     );
 
     it.offsetTo(0x3522);
-    it.setByte(full.area.tilesetType);
+    it.setHex(0x1, full.area.tilesetType, false);
 
     for (let i = 0; i < 6; i++) {
         pokemonBox(

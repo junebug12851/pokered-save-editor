@@ -523,9 +523,8 @@ export class TextService {
             const char = charCodes[i];
 
             if (this.indToEng[char].useTilemap)
-                fontStr.push(`<div class="pr pr-pic-overworld pr-${char.toString(16).toUpperCase().padStart(2, "0")}"></div>`);
+                fontStr.push(`<div class="pr pr-pic pr-${char.toString(16).toUpperCase().padStart(2, "0")}"></div>`);
             else
-                // pr-pic-overworld
                 fontStr.push(`<div class="pr pr-${char.toString(16).toUpperCase().padStart(2, "0")}"></div>`);
         }
 

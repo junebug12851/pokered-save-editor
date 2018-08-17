@@ -1,3 +1,4 @@
+import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
 /**
@@ -34,6 +35,7 @@ const routes: Routes = [
     { path: 'storage-all', component: StorageAllComponent },
     { path: 'area-general', component: AreaGeneralComponent },
     { path: 'area-audio', component: AreaAudioComponent },
+    { path: 'area-tilesets', component: AreaTilesetsComponent },
     {
         path: '',
         redirectTo: '/player-basics',

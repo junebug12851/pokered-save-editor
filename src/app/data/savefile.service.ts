@@ -166,11 +166,13 @@ export class SaveFileService {
 
         // Convert to number
         let hexValue = parseInt(hex, 16);
+        const hexValueOrig = hexValue;
         let hexArr = [];
 
         // Break apart number into seperate bytes and store them in an
         // array. This also places it big-endian style which is how the
         // save data is structured
+
         if (hexValue === 0)
             hexArr.push(0);
         else
@@ -178,6 +180,11 @@ export class SaveFileService {
                 hexArr.push(hexValue & 0xFF);
                 hexValue >>= 8;
             }
+
+        // Account for bug where 16-bit value under 0xFF still needs to take up
+        // 16-bits
+        if (hexValueOrig <= 0xFF && size == 2)
+            hexArr.push(0x00);
 
         // Copy to save data
         this.copyRange(from, size, new Uint8Array(hexArr), !bigEndian);
