@@ -1,0 +1,72 @@
+.row
+  .col.s12
+    h5 Area Audio
+
+.row
+    .col.s3
+        label Music
+        select.browser-default(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.music'
+        )
+            option('[value]'='"0"', disabled='') Select Music
+            option('[value]'='"02_BA"') Pallet Town
+            option('[value]'='"02_BD"') Pokemon Center
+            option('[value]'='"02_C0"') Gym
+            option('[value]'='"02_C3"') Cities A
+            option('[value]'='"02_C7"') Cities B
+            option('[value]'='"02_CA"') Celadon City
+            option('[value]'='"02_CD"') Cinnabar Island
+            option('[value]'='"02_D0"') Vermillion City
+            option('[value]'='"02_D4"') Lavender Town
+            option('[value]'='"02_D8"') SS Anne
+            option('[value]'='"02_DB"') Meet Prof. Oak
+            option('[value]'='"02_DE"') Meet Rival
+            option('[value]'='"02_E1"') Follow Me
+            option('[value]'='"02_E5"') Safari Zone
+            option('[value]'='"02_E8"') Pokemon Healed
+            option('[value]'='"02_EB"') Routes A
+            option('[value]'='"02_EF"') Routes B
+            option('[value]'='"02_F3"') Routes C
+            option('[value]'='"02_F7"') Routes D
+            option('[value]'='"02_FB"') Indigo Plateau
+            option('[value]'='"08_EA"') Gym Leader Battle
+            option('[value]'='"08_ED"') Trainer Battle
+            option('[value]'='"08_F0"') Wild Battle
+            option('[value]'='"08_F3"') Final Battle
+            option('[value]'='"08_F6"') Defeated Trainer
+            option('[value]'='"08_F9"') Defeated Wild Pokemon
+            option('[value]'='"08_FC"') Defeated Champion
+            option('[value]'='"1F_C3"') Title Screen
+            option('[value]'='"1F_C7"') Credits
+            option('[value]'='"1F_CA"') Hall of fame
+            option('[value]'='"1F_CD"') Oak's Lab
+            option('[value]'='"1F_D0"') Jigglypuff Song
+            option('[value]'='"1F_D2"') Bike Riding
+            option('[value]'='"1F_D6"') Surfing
+            option('[value]'='"1F_D9"') Came Corner
+            option('[value]'='"1F_DC"') Intro Battle
+            option('[value]'='"1F_DF"') Dungeon 1
+            option('[value]'='"1F_E3"') Dungeon 2
+            option('[value]'='"1F_E7"') Dungeon 3
+            option('[value]'='"1F_EB"') Cinnabar Mansion
+            option('[value]'='"1F_EF"') Pokemon Tower
+            option('[value]'='"1F_F2"') Silph Co.
+            option('[value]'='"1F_F5"') Meet Evil Trainer
+            option('[value]'='"1F_F8"') Meet Female Trainer
+            option('[value]'='"1F_FB"') Meet Male Trainer
+            option('[value]'='"1F_FF"') No Music
+
+    .col.s2
+        label
+            input(
+                type='checkbox'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.noAudioFadeout'
+            )
+            span No Audio Fadeout
+    .col.s3
+        label
+            input(
+                type='checkbox'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.preventMusicChange'
+            )
+            span Prevent Music Change

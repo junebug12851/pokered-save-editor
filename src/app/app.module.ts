@@ -62,6 +62,7 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
 import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
 import { StorageAllComponent } from './screens/storage-all/storage-all.component';
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
+import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 
 @NgModule({
     declarations: [
@@ -89,6 +90,7 @@ import { AreaGeneralComponent } from './screens/area-general/area-general.compon
         RivalBasicsComponent,
         StorageAllComponent,
         AreaGeneralComponent,
+        AreaAudioComponent,
     ],
     imports: [
         BrowserModule,
