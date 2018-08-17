@@ -258,8 +258,10 @@ export function writeBack(file: SaveFileService) {
     it.setHex(0x2, full.player.playerID, false); // 2605-2607
 
     // Music
-    it.setByte(full.area.musicID); // 2607
-    it.setByte(full.area.musicBank); // 2608
+    const music = full.area.music;
+    const musicArr = music.split("_");
+    it.setHex(0x1, musicArr[1], false); // 2607
+    it.setHex(0x1, musicArr[0], false); // 2608
     it.setByte(full.area.contrast); // 2609
     it.setByte(full.area.curMap); // 260A
     it.setWord(full.area.currentTileBlockMapViewPointer); // 260B-260C

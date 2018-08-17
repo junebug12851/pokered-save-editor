@@ -4,11 +4,15 @@ import { Missable } from '../fragments/Missable';
 import { SignData } from '../fragments/SignData';
 import { WarpData } from '../fragments/WarpData';
 import { SpriteData } from '../fragments/SpriteData';
+import { SaveFileService } from '../../savefile.service';
 
 export class Area {
-    constructor(saveFile: any) {
-        this.musicID = saveFile.getByte(0x2607);
-        this.musicBank = saveFile.getByte(0x2608);
+    constructor(saveFile: SaveFileService) {
+        const musicID = saveFile.getHex(0x2607, 0x1).padStart(2, "0").toUpperCase();
+        const musicBank = saveFile.getHex(0x2608, 0x1).padStart(2, "0").toUpperCase();
+
+        this.music = `${musicBank}_${musicID}`;
+
         this.contrast = saveFile.getByte(0x2609);
         this.curMap = saveFile.getByte(0x260A);
         this.currentTileBlockMapViewPointer = saveFile.getWord(0x260B);
@@ -159,8 +163,7 @@ export class Area {
     public countPlaytime: boolean;
 
     // Audio
-    public musicID: number;
-    public musicBank: number;
+    public music: string;
     public noAudioFadeout: boolean;
     public preventMusicChange: boolean;
 
