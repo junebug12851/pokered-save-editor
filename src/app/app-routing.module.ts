@@ -1,3 +1,4 @@
+import { AreaGeneralComponent } from './screens/area-general/area-general.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'player-pokemon', component: PlayerPokemonComponent },
     { path: 'rival-basics', component: RivalBasicsComponent },
     { path: 'storage-all', component: StorageAllComponent },
+    { path: 'area-general', component: AreaGeneralComponent },
     {
         path: '',
         redirectTo: '/player-basics',

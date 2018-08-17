@@ -183,6 +183,7 @@ export class Area {
     public spriteData: SpriteData[];
     public tradeCenterSpritesFaced: boolean;
     public extendedSpriteData: SpriteDataExtended[];
+    public missableList: Missable[];
 
     // Warps
     public warpData: WarpData[];
@@ -255,16 +256,11 @@ export class Area {
     public map2x2Height: number;
     public map2x2Width: number;
     public mapViewVRAMPointer: number;
-    public pauseWildEncounters3Steps: boolean;
     public forceBikeRide: boolean;
     public blackoutDest: boolean;
     public curMapNextFrame: boolean;
     public cardKeyDoorY: number;
     public cardKeyDoorX: number;
-    public grassRate: number;
-    public grassPokemon: Uint8Array;
-    public waterPokemonRate: number;
-    public waterPokemon: Uint8Array; // 20 entries
     public curMapScript: number;
 
     // NPC
@@ -277,8 +273,12 @@ export class Area {
     public trainerWantsBattle: boolean;
     public trainerHeaderPtr: number;
 
-    // Missable
-    public missableList: Missable[];
+    // Pokemon
+    public grassRate: number;
+    public grassPokemon: Uint8Array;
+    public waterPokemonRate: number;
+    public waterPokemon: Uint8Array;
+    public pauseWildEncounters3Steps: boolean;
 
     // Puzzle
     public firstTrashcanLock: number;

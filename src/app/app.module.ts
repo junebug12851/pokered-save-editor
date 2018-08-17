@@ -61,6 +61,7 @@ import { PlayerItemsComponent } from './screens/player-items/player-items.compon
 import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.component';
 import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
 import { StorageAllComponent } from './screens/storage-all/storage-all.component';
+import { AreaGeneralComponent } from './screens/area-general/area-general.component';
 
 @NgModule({
     declarations: [
@@ -86,7 +87,8 @@ import { StorageAllComponent } from './screens/storage-all/storage-all.component
         //NicknameInputBoxComponent // Scrapped
         SelectMovesComponent,
         RivalBasicsComponent,
-        StorageAllComponent
+        StorageAllComponent,
+        AreaGeneralComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,42 @@
+.row
+  .col.s12
+    h5 Area General
+
+.row
+    .col.s3
+        label Contrast
+        select.browser-default(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.contrast'
+        )
+            option('[value]'='255', disabled='') Select Contrast Level
+            option('[value]'='0') Normal Contrast
+            option('[value]'='3') -1 Contrast
+            option('[value]'='6') -2 Contrast (Needs Flash)
+            option('[value]'='9') -3 Contrast (Solid Black)
+            option('[value]'='255', disabled='') Glitch Contrast Levels
+            option('[value]'='1') -1a Contrast
+            option('[value]'='2') -1b Contrast
+            option('[value]'='4') -2a Contrast
+            option('[value]'='5') -2b Contrast
+            option('[value]'='7') -3a Contrast
+            option('[value]'='8') -3b Contrast
+
+    .col.s3
+        label
+            input(
+                type='checkbox'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.noLetterDelay'
+            )
+            span No Letter Delay
+    .col.s3
+        label
+            input(
+                type='checkbox'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.countPlaytime'
+            )
+            span Count Playtime
+.row
+    .col.s12
+        img(
+            '[src]'='contrastImgUrl'
+        )
