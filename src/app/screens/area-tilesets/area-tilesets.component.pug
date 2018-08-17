@@ -1,0 +1,109 @@
+.row
+  .col.s12
+    h5 Area Tilesets
+
+.row
+    .col.s4
+        img('[src]'='tilesetUrl', style='width: 256px;')
+    .col.s1
+        label Invalid
+        div('[class]'='containerClass')
+            div('[class]'='invalidClass')
+    .col.s1
+        label Grass
+        div('[class]'='containerClass')
+            div('[class]'='grassClass')
+    .col.s1
+        label Counter 1
+        div('[class]'='containerClass')
+            div('[class]'='getCounterClass(0)')
+    .col.s1
+        label Counter 2
+        div('[class]'='containerClass')
+            div('[class]'='getCounterClass(1)')
+    .col.s1
+        label Counter 3
+        div('[class]'='containerClass')
+            div('[class]'='getCounterClass(2)')
+
+.row
+    .col.s3
+        label Tileset
+        select.browser-default(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tileset'
+        )
+            option('[value]'='"0"', disabled='') Select Tileset
+            option('[value]'='"19_00_4000_45E0_1735"') Overworld
+            option('[value]'='"19_01_4DE0_5270_1749"') Players House 1
+            option('[value]'='"1A_02_4DBF_53BF_1753"') Mart
+            option('[value]'='"1A_03_63FF_69FF_1765"') Forest
+            option('[value]'='"19_04_4DE0_5270_1749"') Players House 2
+            option('[value]'='"1A_05_407F_467F_1759"') Dojo
+            option('[value]'='"1A_06_4DBF_53BF_1753"') Pokemon Center
+            option('[value]'='"1A_07_407F_467F_1759"') Gym
+            option('[value]'='"19_08_53A0_5980_1775"') House
+            option('[value]'='"1A_09_560F_5BFF_177F"') Forest Gate
+            option('[value]'='"1A_0A_560F_5BFF_177F"') Museum
+            option('[value]'='"1B_0B_7D60_7EF0_172F"') Underground
+            option('[value]'='"1A_0C_560F_5BFF_177F"') Gate
+            option('[value]'='"1B_0D_6390_6930_178A"') Ship
+            option('[value]'='"19_0E_6610_6BF0_1795"') Ship Port
+            option('[value]'='"1B_0F_4000_45C0_179A"') Cemetery
+            option('[value]'='"19_10_6D60_7350_17A2"') Interior
+            option('[value]'='"1B_11_4CA0_50C0_17AC"') Cavern
+            option('[value]'='"1B_12_58C0_5EA0_17BB"') Lobby
+            option('[value]'='"19_13_5BB0_6190_17C0"') Mansion
+            option('[value]'='"1B_14_6D10_72D0_17CA"') Lab
+            option('[value]'='"1B_15_7670_7B20_17D1"') Club
+            option('[value]'='"1A_16_71FF_77FF_17DD"') Facility
+            option('[value]'='"19_17_76F0_7B50_17F0"') Plateau
+.row
+    .col.s1
+        label Type
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetType'
+        )
+    .col.s1
+        label Invalid
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.outOfBoundsTile'
+        )
+    .col.s1
+        label Grass
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetGrassTile'
+        )
+    .col.s1
+        label Colliding
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tileFrontBoulderColl'
+        )
+    .col.s1
+        label Boulder
+        input(
+            type='number'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.boulderSpriteIndex'
+        )
+.row
+    .col.s1
+        label Counter 1
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[0]'
+        )
+    .col.s1
+        label Counter 2
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[1]'
+        )
+    .col.s1
+        label Counter 3
+        input(
+            type='text'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[2]'
+        )

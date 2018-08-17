@@ -13,6 +13,15 @@ export class Area {
 
         this.music = `${musicBank}_${musicID}`;
 
+        const curTileset = saveFile.getHex(0x2613, 0x1).padStart(2, "0").toUpperCase();
+        const tilesetBank = saveFile.getHex(0x27D7, 0x1).padStart(2, "0").toUpperCase();
+
+        const tilesetBlockPtr = saveFile.getWord(0x27D8, true).toString(16).padStart(4, "0").toUpperCase();
+        const tilesetGfxPtr = saveFile.getWord(0x27DA, true).toString(16).padStart(4, "0").toUpperCase();
+        const tilesetCollPtr = saveFile.getWord(0x27DC, true).toString(16).padStart(4, "0").toUpperCase();
+
+        this.tileset = `${tilesetBank}_${curTileset}_${tilesetGfxPtr}_${tilesetBlockPtr}_${tilesetCollPtr}`;
+
         this.contrast = saveFile.getByte(0x2609);
         this.curMap = saveFile.getByte(0x260A);
         this.currentTileBlockMapViewPointer = saveFile.getWord(0x260B);
@@ -20,7 +29,6 @@ export class Area {
         this.xCoord = saveFile.getByte(0x260E);
         this.yBlockCoord = saveFile.getByte(0x260F);
         this.xBlockCoord = saveFile.getByte(0x2610);
-        this.curTileset = saveFile.getByte(0x2613);
         this.mapHeight = saveFile.getByte(0x2614);
         this.mapWidth = saveFile.getByte(0x2615);
         this.mapDataPtr = saveFile.getWord(0x2616);
@@ -43,7 +51,7 @@ export class Area {
 
         this.spriteSet = saveFile.getRange(0x2649, 0xB);
         this.spriteSetId = saveFile.getByte(0x2654);
-        this.outOfBoundsTile = saveFile.getByte(0x2659);
+        this.outOfBoundsTile = saveFile.getHex(0x2659, 0x1).padStart(2, "0").toUpperCase();
 
         this.warpData = [];
         for (let i = 0; i < saveFile.getByte(0x265A) && i < 32; i++) {
@@ -69,12 +77,13 @@ export class Area {
         this.playerMoveDir = saveFile.getByte(0x27D4);
         this.playerLastStopDir = saveFile.getByte(0x27D5);
         this.playerCurDir = saveFile.getByte(0x27D6);
-        this.tilesetBank = saveFile.getByte(0x27D7);
-        this.tilesetBlockPtr = saveFile.getWord(0x27D8);
-        this.tilesetGfxPtr = saveFile.getWord(0x27DA);
-        this.tilesetCollPtr = saveFile.getWord(0x27DC);
-        this.tilesetTalkingOverTiles = saveFile.getRange(0x27DE, 0x3);
-        this.tilesetGrassTiles = saveFile.getRange(0x27E1, 0x5);
+        const tilesetTalkingOverTiles = saveFile.getRange(0x27DE, 0x3);
+        this.tilesetTalkingOverTiles = [
+            tilesetTalkingOverTiles[0].toString(16).padStart(2, "0").toUpperCase(),
+            tilesetTalkingOverTiles[1].toString(16).padStart(2, "0").toUpperCase(),
+            tilesetTalkingOverTiles[2].toString(16).padStart(2, "0").toUpperCase(),
+        ];
+        this.tilesetGrassTile = saveFile.getByte(0x27E1).toString(16).padStart(2, "0").toUpperCase();
 
         this.missableList = [];
         for (let i = 0; i < 17; i++) {
@@ -89,7 +98,7 @@ export class Area {
         this.safariSteps = saveFile.getWord(0x29B9);
         this.playerJumpingYScrnCoords = saveFile.getByte(0x29C0);
         this.boulderSpriteIndex = saveFile.getByte(0x29C4);
-        this.tileFrontBoulderColl = saveFile.getByte(0x29C8);
+        this.tileFrontBoulderColl = saveFile.getByte(0x29C8).toString(16).padStart(2, "0").toUpperCase();
         this.dungeonWarpDest = saveFile.getByte(0x29C9);
         this.destinationMap = saveFile.getByte(0x29C6);
         this.whichDungeonWarp = saveFile.getByte(0x29CA);
@@ -154,7 +163,7 @@ export class Area {
             this.extendedSpriteData.push(new SpriteDataExtended(saveFile, i));
         }
 
-        this.tilesetType = saveFile.getByte(0x3522);
+        this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
     }
 
     // General
@@ -168,17 +177,13 @@ export class Area {
     public preventMusicChange: boolean;
 
     // Tileset
-    public curTileset: number;
-    public tilesetBank: number;
-    public outOfBoundsTile: number;
-    public tilesetBlockPtr: number;
-    public tilesetGfxPtr: number;
-    public tilesetCollPtr: number;
-    public tilesetTalkingOverTiles: Uint8Array;
-    public tilesetGrassTiles: Uint8Array;
+    public tileset: string;
+    public outOfBoundsTile: string;
+    public tilesetTalkingOverTiles: string[];
+    public tilesetGrassTile: string;
     public boulderSpriteIndex: number;
-    public tileFrontBoulderColl: number;
-    public tilesetType: number;
+    public tileFrontBoulderColl: string;
+    public tilesetType: string;
 
     // Sprites
     public spriteSet: Uint8Array;

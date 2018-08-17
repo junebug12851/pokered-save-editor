@@ -1,144 +1,71 @@
 @import "pokered_font_utils";
 
-.pr-pic-cavern .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/cavern.png');
-}
-
-.pr-pic-cemetery .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/cemetery.png');
-}
-
-.pr-pic-club .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/club.png');
-}
-
-.pr-pic-facility .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/facility.png');
-}
-
-.pr-pic-forest .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/forest.png');
-}
-
-.pr-pic-gate .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/gate.png');
-}
-
-.pr-pic-gym .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/gym.png');
-}
-
-.pr-pic-house .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/house.png');
-}
-
-.pr-pic-interior .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/interior.png');
-}
-
-.pr-pic-lab .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/lab.png');
-}
-
-.pr-pic-lobby .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/lobby.png');
-}
-
-.pr-pic-mansion .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/mansion.png');
-}
-
-.pr-pic-overworld .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/overworld.png');
-}
-
-.pr-pic-plateau .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/plateau.png');
-}
-
-.pr-pic-pokecenter .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/pokecenter.png');
-}
-
-.pr-pic-reds_house .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/reds_house.png');
-}
-
-.pr-pic-ship_port .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/ship_port.png');
-}
-
-.pr-pic-ship .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/ship.png');
-}
-
-.pr-pic-underground .pr.pr-pic {
-    background-image: url('assets/pokered-font/pic-tilesets/underground.png');
-}
-
 .pr-container {
-
     //////////
     // Row 0
     /////////
 
-    .pr.pr-01 {
+    .pr.pr-raw-00 {
+        background-position: off(0px) off(0px);
+    }
+
+    .pr.pr-raw-01 {
         background-position: off(1px) off(0px);
     }
 
-    .pr.pr-02 {
+    .pr.pr-raw-02 {
         background-position: off(2px) off(0px);
     }
 
-    .pr.pr-03 {
+    .pr.pr-raw-03 {
         background-position: off(3px) off(0px);
     }
 
-    .pr.pr-04 {
+    .pr.pr-raw-04 {
         background-position: off(4px) off(0px);
     }
 
-    .pr.pr-05 {
+    .pr.pr-raw-05 {
         background-position: off(5px) off(0px);
     }
 
-    .pr.pr-06 {
+    .pr.pr-raw-06 {
         background-position: off(6px) off(0px);
     }
 
-    .pr.pr-07 {
+    .pr.pr-raw-07 {
         background-position: off(7px) off(0px);
     }
 
-    .pr.pr-08 {
+    .pr.pr-raw-08 {
         background-position: off(8px) off(0px);
     }
 
-    .pr.pr-09 {
+    .pr.pr-raw-09 {
         background-position: off(9px) off(0px);
     }
 
-    .pr.pr-0A {
+    .pr.pr-raw-0A {
         background-position: off(10px) off(0px);
     }
 
-    .pr.pr-0B {
+    .pr.pr-raw-0B {
         background-position: off(11px) off(0px);
     }
 
-    .pr.pr-0C {
+    .pr.pr-raw-0C {
         background-position: off(12px) off(0px);
     }
 
-    .pr.pr-0D {
+    .pr.pr-raw-0D {
         background-position: off(13px) off(0px);
     }
 
-    .pr.pr-0E {
+    .pr.pr-raw-0E {
         background-position: off(14px) off(0px);
     }
 
-    .pr.pr-0F {
+    .pr.pr-raw-0F {
         background-position: off(15px) off(0px);
     }
 
@@ -146,67 +73,67 @@
     // Row 1
     /////////
 
-    .pr.pr-10 {
+    .pr.pr-raw-10 {
         background-position: off(0px) off(1px);
     }
 
-    .pr.pr-11 {
+    .pr.pr-raw-11 {
         background-position: off(1px) off(1px);
     }
 
-    .pr.pr-12 {
+    .pr.pr-raw-12 {
         background-position: off(2px) off(1px);
     }
 
-    .pr.pr-13 {
+    .pr.pr-raw-13 {
         background-position: off(3px) off(1px);
     }
 
-    .pr.pr-14 {
+    .pr.pr-raw-14 {
         background-position: off(4px) off(1px);
     }
 
-    .pr.pr-15 {
+    .pr.pr-raw-15 {
         background-position: off(5px) off(1px);
     }
 
-    .pr.pr-16 {
+    .pr.pr-raw-16 {
         background-position: off(6px) off(1px);
     }
 
-    .pr.pr-17 {
+    .pr.pr-raw-17 {
         background-position: off(7px) off(1px);
     }
 
-    .pr.pr-18 {
+    .pr.pr-raw-18 {
         background-position: off(8px) off(1px);
     }
 
-    .pr.pr-19 {
+    .pr.pr-raw-19 {
         background-position: off(9px) off(1px);
     }
 
-    .pr.pr-1A {
+    .pr.pr-raw-1A {
         background-position: off(10px) off(1px);
     }
 
-    .pr.pr-1B {
+    .pr.pr-raw-1B {
         background-position: off(11px) off(1px);
     }
 
-    .pr.pr-1C {
+    .pr.pr-raw-1C {
         background-position: off(12px) off(1px);
     }
 
-    .pr.pr-1D {
+    .pr.pr-raw-1D {
         background-position: off(13px) off(1px);
     }
 
-    .pr.pr-1E {
+    .pr.pr-raw-1E {
         background-position: off(14px) off(1px);
     }
 
-    .pr.pr-1F {
+    .pr.pr-raw-1F {
         background-position: off(15px) off(1px);
     }
 
@@ -214,67 +141,67 @@
     // Row 2
     /////////
 
-    .pr.pr-20 {
+    .pr.pr-raw-20 {
         background-position: off(0px) off(2px);
     }
 
-    .pr.pr-21 {
+    .pr.pr-raw-21 {
         background-position: off(1px) off(2px);
     }
 
-    .pr.pr-22 {
+    .pr.pr-raw-22 {
         background-position: off(2px) off(2px);
     }
 
-    .pr.pr-23 {
+    .pr.pr-raw-23 {
         background-position: off(3px) off(2px);
     }
 
-    .pr.pr-24 {
+    .pr.pr-raw-24 {
         background-position: off(4px) off(2px);
     }
 
-    .pr.pr-25 {
+    .pr.pr-raw-25 {
         background-position: off(5px) off(2px);
     }
 
-    .pr.pr-26 {
+    .pr.pr-raw-26 {
         background-position: off(6px) off(2px);
     }
 
-    .pr.pr-27 {
+    .pr.pr-raw-27 {
         background-position: off(7px) off(2px);
     }
 
-    .pr.pr-28 {
+    .pr.pr-raw-28 {
         background-position: off(8px) off(2px);
     }
 
-    .pr.pr-29 {
+    .pr.pr-raw-29 {
         background-position: off(9px) off(2px);
     }
 
-    .pr.pr-2A {
+    .pr.pr-raw-2A {
         background-position: off(10px) off(2px);
     }
 
-    .pr.pr-2B {
+    .pr.pr-raw-2B {
         background-position: off(11px) off(2px);
     }
 
-    .pr.pr-2C {
+    .pr.pr-raw-2C {
         background-position: off(12px) off(2px);
     }
 
-    .pr.pr-2D {
+    .pr.pr-raw-2D {
         background-position: off(13px) off(2px);
     }
 
-    .pr.pr-2E {
+    .pr.pr-raw-2E {
         background-position: off(14px) off(2px);
     }
 
-    .pr.pr-2F {
+    .pr.pr-raw-2F {
         background-position: off(15px) off(2px);
     }
 
@@ -282,67 +209,67 @@
     // Row 3
     /////////
 
-    .pr.pr-30 {
+    .pr.pr-raw-30 {
         background-position: off(0px) off(3px);
     }
 
-    .pr.pr-31 {
+    .pr.pr-raw-31 {
         background-position: off(1px) off(3px);
     }
 
-    .pr.pr-32 {
+    .pr.pr-raw-32 {
         background-position: off(2px) off(3px);
     }
 
-    .pr.pr-33 {
+    .pr.pr-raw-33 {
         background-position: off(3px) off(3px);
     }
 
-    .pr.pr-34 {
+    .pr.pr-raw-34 {
         background-position: off(4px) off(3px);
     }
 
-    .pr.pr-35 {
+    .pr.pr-raw-35 {
         background-position: off(5px) off(3px);
     }
 
-    .pr.pr-36 {
+    .pr.pr-raw-36 {
         background-position: off(6px) off(3px);
     }
 
-    .pr.pr-37 {
+    .pr.pr-raw-37 {
         background-position: off(7px) off(3px);
     }
 
-    .pr.pr-38 {
+    .pr.pr-raw-38 {
         background-position: off(8px) off(3px);
     }
 
-    .pr.pr-39 {
+    .pr.pr-raw-39 {
         background-position: off(9px) off(3px);
     }
 
-    .pr.pr-3A {
+    .pr.pr-raw-3A {
         background-position: off(10px) off(3px);
     }
 
-    .pr.pr-3B {
+    .pr.pr-raw-3B {
         background-position: off(11px) off(3px);
     }
 
-    .pr.pr-3C {
+    .pr.pr-raw-3C {
         background-position: off(12px) off(3px);
     }
 
-    .pr.pr-3D {
+    .pr.pr-raw-3D {
         background-position: off(13px) off(3px);
     }
 
-    .pr.pr-3E {
+    .pr.pr-raw-3E {
         background-position: off(14px) off(3px);
     }
 
-    .pr.pr-3F {
+    .pr.pr-raw-3F {
         background-position: off(15px) off(3px);
     }
 
@@ -350,43 +277,135 @@
     // Row 4
     /////////
 
-    .pr.pr-40 {
+    .pr.pr-raw-40 {
         background-position: off(0px) off(4px);
     }
 
-    .pr.pr-41 {
+    .pr.pr-raw-41 {
         background-position: off(1px) off(4px);
     }
 
-    .pr.pr-42 {
+    .pr.pr-raw-42 {
         background-position: off(2px) off(4px);
     }
 
-    .pr.pr-43 {
+    .pr.pr-raw-43 {
         background-position: off(3px) off(4px);
     }
 
-    .pr.pr-44 {
+    .pr.pr-raw-44 {
         background-position: off(4px) off(4px);
     }
 
-    .pr.pr-45 {
+    .pr.pr-raw-45 {
         background-position: off(5px) off(4px);
     }
 
-    .pr.pr-46 {
+    .pr.pr-raw-46 {
         background-position: off(6px) off(4px);
     }
 
-    .pr.pr-47 {
+    .pr.pr-raw-47 {
         background-position: off(7px) off(4px);
     }
 
-    .pr.pr-48 {
+    .pr.pr-raw-48 {
         background-position: off(8px) off(4px);
     }
 
-    .pr.pr-4D {
+    .pr.pr-raw-49 {
+        background-position: off(9px) off(4px);
+    }
+
+    .pr.pr-raw-4A {
+        background-position: off(10px) off(4px);
+    }
+
+    .pr.pr-raw-4B {
+        background-position: off(11px) off(4px);
+    }
+
+    .pr.pr-raw-4C {
+        background-position: off(12px) off(4px);
+    }
+
+    .pr.pr-raw-4D {
         background-position: off(13px) off(4px);
+    }
+
+    .pr.pr-raw-4E {
+        background-position: off(14px) off(4px);
+    }
+
+    .pr.pr-raw-4F {
+        background-position: off(15px) off(4px);
+    }
+
+    //////////
+    // Row 5
+    /////////
+
+    .pr.pr-raw-50 {
+        background-position: off(0px) off(5px);
+    }
+
+    .pr.pr-raw-51 {
+        background-position: off(1px) off(5px);
+    }
+
+    .pr.pr-raw-52 {
+        background-position: off(2px) off(5px);
+    }
+
+    .pr.pr-raw-53 {
+        background-position: off(3px) off(5px);
+    }
+
+    .pr.pr-raw-54 {
+        background-position: off(4px) off(5px);
+    }
+
+    .pr.pr-raw-55 {
+        background-position: off(5px) off(5px);
+    }
+
+    .pr.pr-raw-56 {
+        background-position: off(6px) off(5px);
+    }
+
+    .pr.pr-raw-57 {
+        background-position: off(7px) off(5px);
+    }
+
+    .pr.pr-raw-58 {
+        background-position: off(8px) off(5px);
+    }
+
+    .pr.pr-raw-59 {
+        background-position: off(9px) off(5px);
+    }
+
+    .pr.pr-raw-5A {
+        background-position: off(10px) off(5px);
+    }
+
+    .pr.pr-raw-5B {
+        background-position: off(11px) off(5px);
+    }
+
+    .pr.pr-raw-5C {
+        background-position: off(12px) off(5px);
+    }
+
+    .pr.pr-raw-5D {
+        background-position: off(13px) off(5px);
+    }
+
+    .pr.pr-raw-5E {
+        background-position: off(14px) off(5px);
+    }
+
+    .pr.pr-raw-5F {
+        background-position: off(15px) off(5px);
     }
 }

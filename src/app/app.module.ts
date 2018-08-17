@@ -63,6 +63,7 @@ import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.compon
 import { StorageAllComponent } from './screens/storage-all/storage-all.component';
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
+import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 
 @NgModule({
     declarations: [
@@ -91,6 +92,7 @@ import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
         StorageAllComponent,
         AreaGeneralComponent,
         AreaAudioComponent,
+        AreaTilesetsComponent
     ],
     imports: [
         BrowserModule,

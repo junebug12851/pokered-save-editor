@@ -24,7 +24,7 @@
 
     &.pr-large {
         .pr {
-            transform: scale(1.5, 1.5);
+            transform: scale(2.5, 2.5);
             margin-right: 4px;
         }
     }
@@ -34,7 +34,8 @@
     &.pr-textbox {
         background-image: url('assets/pokered-font/in-game-context/textbox.png');
         background-repeat: no-repeat;
-        height: 100px;
+        height: 96px;
+        min-width: 320px;
         padding-left: 18px;
         padding-top: 30px;
         line-height: 1.75;

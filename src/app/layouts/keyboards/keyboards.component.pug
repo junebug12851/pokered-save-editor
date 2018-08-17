@@ -5,7 +5,7 @@
                 Basic Keyboard containing only keys found normally in game. Click to copy.
 
             .special-char(*ngFor='let char of basicKeys')
-                span.preview.pr-container.pr-white.pr-small(
+                span.preview.pr-container.pr-white.pr-small.pr-pic-overworld(
                     'innerHTML'='{{char.html}}'
                     '(click)'='copyChar(char.copyCode)'
                 )
@@ -30,7 +30,7 @@
             br
 
             .special-char(*ngFor='let char of multiCharKeys')
-                span.preview.pr-container.pr-white.pr-small(
+                span.preview.pr-container.pr-white.pr-small.pr-pic-overworld(
                     'innerHTML'='{{char.html}}'
                     '(click)'='copyChar(char.copyCode)'
                     )
@@ -59,7 +59,7 @@
                 | These pictures will not stay consistent and are based on the map, menu,
                 | or gameplay your in.
             .special-char(*ngFor='let char of picKeys')
-                span.preview.pr-container.pr-white(
+                span.preview.pr-container.pr-white.pr-pic-overworld(
                     'innerHTML'='{{char.html}}'
                     '(click)'='copyChar(char.copyCode)'
                     )
