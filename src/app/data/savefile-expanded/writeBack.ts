@@ -1,3 +1,4 @@
+import { SpriteData } from './fragments/SpriteData';
 import { SaveFileIterator } from './SaveFileIterator';
 import { SaveFileService } from './../savefile.service';
 import { PokemonBox } from './fragments/PokemonBox';
@@ -388,18 +389,36 @@ export function writeBack(file: SaveFileService) {
     // 2790
     // Sprite Data is split into 2 sections in the save file
     // Section 1
-    for (let i = 0; i < full.area.spriteData.length && i < 16; i++) {
+    // Skip Player Sprite (Sprite 0)
+    for (let i = 1; i < full.area.spriteData.length && i < 16; i++) {
         const sprData = full.area.spriteData[i];
-        it.setByte(sprData.movementByte);
-        it.setByte(sprData.textID);
+
+        // The data will be there if it's beyond index 0, if not we need a
+        // definitive error because somethings broken somewhere and that's
+        // going to happen anyways, so, sorry typescript, ignore
+
+        // @ts-ignore
+        it.setByte(sprData.npData.movementByte);
+
+        // @ts-ignore
+        it.setByte(sprData.npData.textID);
     }
 
     // Section 2
     it.offsetTo(0x27B0); // 27B0
-    for (let i = 0; i < full.area.spriteData.length && i < 16; i++) {
+    // Skip Player Sprite (Sprite 0)
+    for (let i = 1; i < full.area.spriteData.length && i < 16; i++) {
         const sprData = full.area.spriteData[i];
-        it.setByte(sprData.trainerClassOrItemID);
-        it.setByte(sprData.trainerSetID);
+
+        // The data will be there if it's beyond index 0, if not we need a
+        // definitive error because somethings broken somewhere and that's
+        // going to happen anyways, so, sorry typescript, ignore
+
+        // @ts-ignore
+        it.setByte(sprData.npData.trainerClassOrItemID);
+
+        // @ts-ignore
+        it.setByte(sprData.npData.trainerSetID);
     }
 
     it.offsetTo(0x27D0); // 27D0
@@ -469,11 +488,18 @@ export function writeBack(file: SaveFileService) {
 
     it.offsetTo(0x287A); // 287A
     // 287A
-    for (let i = 0; i < full.area.missableList.length && i < 17; i++) {
-        const val = full.area.missableList[i];
+    for (let i = 0; i < SpriteData.missableList.length && i < 16; i++) {
+        const val = SpriteData.missableList[i];
 
-        it.setByte(val.spriteID);
-        it.setByte(val.missableIndex);
+        // @ts-ignore
+        it.setByte(val.missable.id);
+
+        // The data will be there if it's beyond index 0, if not we need a
+        // definitive error because somethings broken somewhere and that's
+        // going to happen anyways, so, sorry typescript, ignore
+
+        // @ts-ignore
+        it.setByte(val.missable.index);
     }
     it.setByte(0xFF);
 
@@ -830,31 +856,35 @@ export function writeBack(file: SaveFileService) {
 
     // 2D2C
     it.offsetTo(0x2D2C);
-    for (let i = 0; i < 16; i++) {
-        it.setByte(full.area.extendedSpriteData[i].pictureID);
-        it.setByte(full.area.extendedSpriteData[i].movementStatus);
-        it.setByte(full.area.extendedSpriteData[i].imageIndex);
-        it.setByte(full.area.extendedSpriteData[i].yStepVector);
-        it.setByte(full.area.extendedSpriteData[i].yPixels);
-        it.setByte(full.area.extendedSpriteData[i].xStepVector);
-        it.setByte(full.area.extendedSpriteData[i].xPixels);
-        it.setByte(full.area.extendedSpriteData[i].intraAnimationFrameCounter);
-        it.setByte(full.area.extendedSpriteData[i].animFrameCounter);
-        it.setByte(full.area.extendedSpriteData[i].faceDir, 6);
+    for (let i = 0; i < full.area.spriteData.length; i++) {
+        const sprData = full.area.spriteData[i];
+
+        it.setByte(sprData.pictureID);
+        it.setByte(sprData.movementStatus);
+        it.setByte(sprData.imageIndex);
+        it.setByte(sprData.yStepVector);
+        it.setByte(sprData.yPixels);
+        it.setByte(sprData.xStepVector);
+        it.setByte(sprData.xPixels);
+        it.setByte(sprData.intraAnimationFrameCounter);
+        it.setByte(sprData.animFrameCounter);
+        it.setByte(sprData.faceDir, 6);
     }
 
     // 2E2C
     it.offsetTo(0x2E2C);
-    for (let i = 0; i < 16; i++) {
-        it.setByte(full.area.extendedSpriteData[i].walkAnimationCounter, 1);
-        it.setByte(full.area.extendedSpriteData[i].yDisp);
-        it.setByte(full.area.extendedSpriteData[i].xDisp);
-        it.setByte(full.area.extendedSpriteData[i].mapY);
-        it.setByte(full.area.extendedSpriteData[i].mapX);
-        it.setByte(full.area.extendedSpriteData[i].movementByte);
-        it.setByte(full.area.extendedSpriteData[i].grassPriority);
-        it.setByte(full.area.extendedSpriteData[i].movementDelay, 5);
-        it.setByte(full.area.extendedSpriteData[i].imageBaseOffset, 1);
+    for (let i = 0; i < full.area.spriteData.length; i++) {
+        const sprData = full.area.spriteData[i];
+
+        it.setByte(sprData.walkAnimationCounter, 1);
+        it.setByte(sprData.yDisp);
+        it.setByte(sprData.xDisp);
+        it.setByte(sprData.mapY);
+        it.setByte(sprData.mapX);
+        it.setByte(sprData.movementByte);
+        it.setByte(sprData.grassPriority);
+        it.setByte(sprData.movementDelay, 5);
+        it.setByte(sprData.imageBaseOffset, 1);
     }
 
     // 2F2C

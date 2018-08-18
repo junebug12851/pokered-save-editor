@@ -1,6 +1,4 @@
 import { MapConnData } from './../fragments/MapConnData';
-import { SpriteDataExtended } from '../fragments/SpriteDataExt';
-import { Missable } from '../fragments/Missable';
 import { SignData } from '../fragments/SignData';
 import { WarpData } from '../fragments/WarpData';
 import { SpriteData } from '../fragments/SpriteData';
@@ -21,6 +19,16 @@ export class Area {
         const tilesetCollPtr = saveFile.getWord(0x27DC, true).toString(16).padStart(4, "0").toUpperCase();
 
         this.tileset = `${tilesetBank}_${curTileset}_${tilesetGfxPtr}_${tilesetBlockPtr}_${tilesetCollPtr}`;
+
+        // Reset Missable List
+        SpriteData.missableList = [];
+
+        // Get total sprite count and increment by 1 to include player
+        const spriteCount = saveFile.getByte(0x278D) + 1;
+        this.spriteData = [];
+        for (let i = 0; i < spriteCount && i < 16; i++) {
+            this.spriteData.push(new SpriteData(saveFile, i));
+        }
 
         this.contrast = saveFile.getByte(0x2609);
         this.curMap = saveFile.getByte(0x260A);
@@ -64,11 +72,6 @@ export class Area {
             this.signData.push(new SignData(saveFile, i));
         }
 
-        this.spriteData = [];
-        for (let i = 0; i < saveFile.getByte(0x278D) && i < 16; i++) {
-            this.spriteData.push(new SpriteData(saveFile, i));
-        }
-
         this.yOffsetSinceLastSpecialWarp = saveFile.getByte(0x278E);
         this.xOffsetSinceLastSpecialWarp = saveFile.getByte(0x278F);
         this.map2x2Height = saveFile.getByte(0x27D0);
@@ -84,15 +87,6 @@ export class Area {
             tilesetTalkingOverTiles[2].toString(16).padStart(2, "0").toUpperCase(),
         ];
         this.tilesetGrassTile = saveFile.getByte(0x27E1).toString(16).padStart(2, "0").toUpperCase();
-
-        this.missableList = [];
-        for (let i = 0; i < 17; i++) {
-            // Stop when reach list terminator
-            if ((saveFile.getByte(0x2 * i) + 0x287A) == 0xFF)
-                break;
-
-            this.missableList.push(new Missable(saveFile, i));
-        }
 
         this.walkBikeSurf = saveFile.getByte(0x29AC);
         this.safariSteps = saveFile.getWord(0x29B9);
@@ -158,11 +152,6 @@ export class Area {
         this.safariGameOver = saveFile.getByte(0x2CF2);
         this.safariBallCount = saveFile.getByte(0x2CF3);
 
-        this.extendedSpriteData = [];
-        for (let i = 0; i < 16; i++) {
-            this.extendedSpriteData.push(new SpriteDataExtended(saveFile, i));
-        }
-
         this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
     }
 
@@ -185,13 +174,13 @@ export class Area {
     public tileFrontBoulderColl: string;
     public tilesetType: string;
 
-    // Sprites
+    // Cached Sprites (Complete)
     public spriteSet: Uint8Array;
     public spriteSetId: number;
+
+    // Sprites
     public spriteData: SpriteData[];
     public tradeCenterSpritesFaced: boolean;
-    public extendedSpriteData: SpriteDataExtended[];
-    public missableList: Missable[];
 
     // Warps
     public warpData: WarpData[];
