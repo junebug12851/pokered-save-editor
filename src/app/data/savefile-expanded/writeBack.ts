@@ -381,7 +381,7 @@ export function writeBack(file: SaveFileService) {
     }
 
     it.offsetTo(0x278D); // 278D
-    it.setByte(full.area.spriteData.length); // 278D
+    it.setByte(full.area.spriteData.length - 1); // 278D
 
     it.setByte(full.area.yOffsetSinceLastSpecialWarp); // 278E
     it.setByte(full.area.xOffsetSinceLastSpecialWarp); // 278F

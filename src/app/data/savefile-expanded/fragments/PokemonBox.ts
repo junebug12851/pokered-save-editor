@@ -90,7 +90,7 @@ export class PokemonBox {
             this.moves.push({
                 moveID,
                 pp: pp & 0b00111111,
-                ppUp: (pp & 0b1100000000) >> 6
+                ppUp: (pp & 0b11000000) >> 6
             });
         }
 
