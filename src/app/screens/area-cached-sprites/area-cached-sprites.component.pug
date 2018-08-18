@@ -1,0 +1,25 @@
+.row
+    .col.s6.offset-s3
+        label Pre-load initially from built-in list
+        select.browser-default(
+            '[(ngModel)]'='this.fileService.fileDataExpanded.area.spriteSetId'
+            )
+            option('[value]'='255', '[disabled]'='true') Choose Pre-loaded sprites
+            option(
+                *ngFor='let entry of preloadFromList',
+                '[value]'='entry.value',
+            ) {{entry.name}}
+
+.row
+    .col.s6.offset-s3
+
+        label Current list of cached sprites
+        ul.collection
+
+            li(
+                *ngFor='let entry of entries; let i = index; trackBy: spriteSetTrackBy;'
+            )
+                select-sprite(
+                        '[(ngModel)]'='entries[i]'
+                        '[disabled]'='disabled'
+                    )

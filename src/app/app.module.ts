@@ -48,6 +48,7 @@ import { SelectStatusComponent } from './fragments/select-status/select-status.c
 // import { NicknameInputBoxComponent } from './fragments/nickname-input-box/nickname-input-box.component';
 
 import { SelectMovesComponent } from './fragments/select-moves/select-moves.component';
+import { SelectSpriteComponent } from './fragments/select-sprite/select-sprite.component';
 
 // Layout
 import { KeyboardsComponent } from './layouts/keyboards/keyboards.component';
@@ -64,6 +65,7 @@ import { StorageAllComponent } from './screens/storage-all/storage-all.component
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
+import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
 
 @NgModule({
     declarations: [
@@ -92,7 +94,9 @@ import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.com
         StorageAllComponent,
         AreaGeneralComponent,
         AreaAudioComponent,
-        AreaTilesetsComponent
+        AreaTilesetsComponent,
+        SelectSpriteComponent,
+        AreaCachedSpritesComponent
     ],
     imports: [
         BrowserModule,

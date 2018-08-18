@@ -1,0 +1,10 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='0', '[disabled]'='true') Choose Sprite
+    option(
+        *ngFor='let sprite of spriteList',
+        '[value]'='sprite.ind',
+        '[disabled]'='sprite.disabled'
+    ) {{sprite.name}}
