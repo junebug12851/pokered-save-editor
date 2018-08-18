@@ -491,8 +491,9 @@ export function writeBack(file: SaveFileService) {
     for (let i = 0; i < SpriteData.missableList.length && i < 16; i++) {
         const val = SpriteData.missableList[i];
 
+        // Missables start with id 1, not 0. Offset accordingly
         // @ts-ignore
-        it.setByte(val.missable.id);
+        it.setByte(val.id + 1);
 
         // The data will be there if it's beyond index 0, if not we need a
         // definitive error because somethings broken somewhere and that's
