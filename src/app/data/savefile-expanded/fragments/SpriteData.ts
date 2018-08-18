@@ -84,7 +84,6 @@ export class SpriteData {
             // Save bit index this missable refers to and add to missable
             // array for quick reference
             this.missable.index = mIndex;
-            this.missable.id = mId;
             SpriteData.missableList.push(this);
         }
     }
@@ -123,7 +122,6 @@ export class SpriteData {
 
     public missable = {
         index: null as number | null,
-        id: null as number | null,
     }
 
     // Local copy
