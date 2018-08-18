@@ -1,3 +1,4 @@
+import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: 'area-general', component: AreaGeneralComponent },
     { path: 'area-audio', component: AreaAudioComponent },
     { path: 'area-tilesets', component: AreaTilesetsComponent },
+    { path: 'area-cached-sprites', component: AreaCachedSpritesComponent },
     {
         path: '',
         redirectTo: '/player-basics',

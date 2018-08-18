@@ -166,17 +166,17 @@ export class Area {
         this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
     }
 
-    // General
+    // General (Complete)
     public contrast: number;
     public noLetterDelay: boolean;
     public countPlaytime: boolean;
 
-    // Audio
+    // Audio (Complete)
     public music: string;
     public noAudioFadeout: boolean;
     public preventMusicChange: boolean;
 
-    // Tileset
+    // Tileset (Complete)
     public tileset: string;
     public outOfBoundsTile: string;
     public tilesetTalkingOverTiles: string[];
