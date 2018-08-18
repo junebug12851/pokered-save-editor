@@ -57,13 +57,16 @@
             option('[value]'='"1B_15_7670_7B20_17D1"') Club
             option('[value]'='"1A_16_71FF_77FF_17DD"') Facility
             option('[value]'='"19_17_76F0_7B50_17F0"') Plateau
-.row
-    .col.s1
+    .col.s2
         label Type
-        input(
-            type='text'
+        select.browser-default(
             '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetType'
         )
+            option('[value]'='"255"', disabled='') Select Type
+            option('[value]'='"00"') Indoor
+            option('[value]'='"01"') Cave
+            option('[value]'='"02"') Outdoor
+.row
     .col.s1
         label Invalid
         input(
