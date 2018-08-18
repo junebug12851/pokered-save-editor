@@ -4,11 +4,6 @@ export class SpriteData {
     // Load data all sprites on the map have
     constructor(savefile: SaveFileService, index: number) {
 
-        // Save this sprite id offset by player
-        // player will be -1 and
-        // all sprites afterwards will be non-player sprites
-        this.id = index - 1;
-
         let offsetCtr = (0x10 * index) + 0x2D2C;
         this.pictureID = savefile.getByte(offsetCtr); offsetCtr += 1;
         this.movementStatus = savefile.getByte(offsetCtr); offsetCtr += 1;
@@ -51,12 +46,12 @@ export class SpriteData {
         index -= 1;
 
         let offsetCtr = (2 * index) + 0x2790;
-        this.npData.movementByte = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.npData.textID = savefile.getByte(offsetCtr); offsetCtr += 1;
+        this.rangeDirByte = savefile.getByte(offsetCtr); offsetCtr += 1;
+        this.textID = savefile.getByte(offsetCtr); offsetCtr += 1;
 
         offsetCtr = (2 * index) + 0x27B0;
-        this.npData.trainerClassOrItemID = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.npData.trainerSetID = savefile.getByte(offsetCtr);
+        this.trainerClassOrItemID = savefile.getByte(offsetCtr); offsetCtr += 1;
+        this.trainerSetID = savefile.getByte(offsetCtr);
     }
 
     // Scan missable list to see if this sprite is in it
@@ -83,50 +78,95 @@ export class SpriteData {
 
             // Save bit index this missable refers to and add to missable
             // array for quick reference
-            this.missable.index = mIndex;
-            SpriteData.missableList.push(this);
+            this.missableIndex = mIndex;
         }
     }
 
-    // All sprites contain this data
-    public id: number;
+    /**
+     * Sprite data that applies to all sprites
+     */
 
+    // Actual sprite image shown
     public pictureID: number;
+
+    // (0: uninitialized, 1: ready, 2: delayed, 3: moving)
     public movementStatus: number;
+
+    // Basically, in the sprite sheet strip, which "pane" or "tile" is it at
+    // 0xFF if not on the screen
     public imageIndex: number;
+
+    // When the sprite moves, exactly how far or how much is that?
     public yStepVector: number;
+
+    // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)
     public yPixels: number;
+
+    // When the sprite moves, exactly how far or how much is that?
     public xStepVector: number;
+
+    // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)
     public xPixels: number;
+
+    // Counter that helps delay between animation frames so things aren't so instant and fast
     public intraAnimationFrameCounter: number;
+
+    // Animation frame counter
     public animFrameCounter: number;
+
+    // (0: down, 4: up, 8: left, $c: right)
     public faceDir: number;
 
+    // Tracks movement & wandering, sprites are given 0x10 and it's decremented
     public walkAnimationCounter: number;
+
+    // Keep sprites from wandering too far however it's noted that it's bugged
+    // to begin with. Both are init to 0x8
     public yDisp: number;
     public xDisp: number;
+
+    // Placement in 2x2 grid steps
+    // Origin (Top or Left) has a value of 4
     public mapY: number;
     public mapX: number;
+
+    // (0xFF not moving, 0xFE random movements, others unknown)
     public movementByte: number;
+
+    // (0x80 in grass, 0x00 otherwise) - Prioritizing grass drawn around sprite
     public grassPriority: number;
+
+    // Delay until next movement, counts downward and flags movementStatus ready
+    // once reached
     public movementDelay: number;
+
+    // Used to help compute imageIndex based on vram
     public imageBaseOffset: number;
 
-    // If sprite is not sprite 0, the player sprite, this data applies as well
-    public npData = {
-        movementByte: null as number | null,
-        textID: null as number | null,
-        trainerClassOrItemID: null as number | null,
-        trainerSetID: null as number | null,
-    };
+    /**
+     * Sprite data that applies to all non-player sprites
+     * (All sprites that aren't sprite #0)
+     */
 
-    public missable = {
-        index: null as number | null,
-    }
+    // How far a walking sprite can wander, or if still the facing direction
+    // A walking sprite having a value of 0 faces all directions
+    public rangeDirByte: number | null = null;
 
-    // Local copy
-    public _missableList = SpriteData.missableList;
+    // Text id when this sprite is interacted with
+    public textID: number | null = null;
 
-    // Special variable to hold missable list data in the corect order
-    public static missableList: SpriteData[] = [];
+    // If this is an item sprite, the item id, otherwise the trainer class
+    public trainerClassOrItemID: null | number = null;
+
+    // Trainer data id
+    public trainerSetID: null | number = null;
+
+    /**
+     * Sprite data that applies to all non-player missable sprites
+     * (All sprites that aren't sprite #0 and have an associated index in the
+     * global missable list which determine if it's rendered or not)
+     */
+    // If this is not null, then this sprite is a missable and it's appearance
+    // is determined by the flag in the global missable index this points to
+    public missableIndex: null | number = null;
 }

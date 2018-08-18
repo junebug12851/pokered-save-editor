@@ -1,4 +1,3 @@
-import { SpriteData } from './fragments/SpriteData';
 import { SaveFileIterator } from './SaveFileIterator';
 import { SaveFileService } from './../savefile.service';
 import { PokemonBox } from './fragments/PokemonBox';
@@ -398,10 +397,10 @@ export function writeBack(file: SaveFileService) {
         // going to happen anyways, so, sorry typescript, ignore
 
         // @ts-ignore
-        it.setByte(sprData.npData.movementByte);
+        it.setByte(sprData.rangeDirByte);
 
         // @ts-ignore
-        it.setByte(sprData.npData.textID);
+        it.setByte(sprData.textID);
     }
 
     // Section 2
@@ -415,10 +414,10 @@ export function writeBack(file: SaveFileService) {
         // going to happen anyways, so, sorry typescript, ignore
 
         // @ts-ignore
-        it.setByte(sprData.npData.trainerClassOrItemID);
+        it.setByte(sprData.trainerClassOrItemID);
 
         // @ts-ignore
-        it.setByte(sprData.npData.trainerSetID);
+        it.setByte(sprData.trainerSetID);
     }
 
     it.offsetTo(0x27D0); // 27D0
@@ -488,19 +487,24 @@ export function writeBack(file: SaveFileService) {
 
     it.offsetTo(0x287A); // 287A
     // 287A
-    for (let i = 0; i < SpriteData.missableList.length && i < 16; i++) {
-        const val = SpriteData.missableList[i];
+    for (let i = 0; i < full.area.spriteData.length && i < 16; i++) {
+        const val = full.area.spriteData[i];
 
-        // Missables start with id 1, not 0. Offset accordingly
-        // @ts-ignore
-        it.setByte(val.id + 1);
+        // Skip all sprites that aren't missables
+        if (val.missableIndex === null)
+            continue;
+
+        // Missables start with id 1, not 0. The index works out because index
+        // 0 is always the player and the player is never a missable so it
+        // offsets all accordingly
+        it.setByte(i);
 
         // The data will be there if it's beyond index 0, if not we need a
         // definitive error because somethings broken somewhere and that's
         // going to happen anyways, so, sorry typescript, ignore
 
         // @ts-ignore
-        it.setByte(val.missable.index);
+        it.setByte(val.missableIndex);
     }
     it.setByte(0xFF);
 

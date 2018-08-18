@@ -20,9 +20,6 @@ export class Area {
 
         this.tileset = `${tilesetBank}_${curTileset}_${tilesetGfxPtr}_${tilesetBlockPtr}_${tilesetCollPtr}`;
 
-        // Reset Missable List
-        SpriteData.missableList = [];
-
         // Get total sprite count and increment by 1 to include player
         const spriteCount = saveFile.getByte(0x278D) + 1;
         this.spriteData = [];
