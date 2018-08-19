@@ -491,7 +491,7 @@ export function writeBack(file: SaveFileService) {
         const val = full.area.spriteData[i];
 
         // Skip all sprites that aren't missables
-        if (val.missableIndex === null)
+        if (val.missableIndex === null || !(val.missableIndex >= 0))
             continue;
 
         // Missables start with id 1, not 0. The index works out because index

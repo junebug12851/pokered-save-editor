@@ -1,0 +1,10 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='0', '[disabled]'='!noneSelectable') Choose Trainer
+    option(
+        *ngFor='let trainer of trainerList',
+        '[value]'='trainer.ind',
+        '[disabled]'='trainer.disable'
+    ) {{trainer.name}}

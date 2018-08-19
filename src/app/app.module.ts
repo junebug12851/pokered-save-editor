@@ -49,6 +49,8 @@ import { SelectStatusComponent } from './fragments/select-status/select-status.c
 
 import { SelectMovesComponent } from './fragments/select-moves/select-moves.component';
 import { SelectSpriteComponent } from './fragments/select-sprite/select-sprite.component';
+import { SelectTrainerComponent } from './fragments/select-trainer/select-trainer.component';
+import { CardSpriteComponent } from './fragments/card-sprite/card-sprite.component';
 
 // Layout
 import { KeyboardsComponent } from './layouts/keyboards/keyboards.component';
@@ -66,6 +68,7 @@ import { AreaGeneralComponent } from './screens/area-general/area-general.compon
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
+import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.component';
 
 @NgModule({
     declarations: [
@@ -96,7 +99,10 @@ import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-c
         AreaAudioComponent,
         AreaTilesetsComponent,
         SelectSpriteComponent,
-        AreaCachedSpritesComponent
+        AreaCachedSpritesComponent,
+        SelectTrainerComponent,
+        CardSpriteComponent,
+        AreaSpritesComponent
     ],
     imports: [
         BrowserModule,
