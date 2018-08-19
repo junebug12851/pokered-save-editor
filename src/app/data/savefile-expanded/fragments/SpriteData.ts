@@ -40,6 +40,9 @@ export class SpriteData {
     // Load data all sprites but the player (Non-Player Data) have
     loadNpData(savefile: SaveFileService, index: number) {
 
+        // Init missable index to non-player value
+        this.missableIndex = -1;
+
         // Correct this index
         // Non-Player Data starts zero-based exlcuding the first sprite
         // (The Player)
@@ -82,6 +85,64 @@ export class SpriteData {
         }
     }
 
+    public static get emptyPlayerData() {
+        return {
+            pictureID: 0,
+            movementStatus: 0,
+            imageIndex: 0,
+            yStepVector: 0,
+            yPixels: 0,
+            xStepVector: 0,
+            xPixels: 0,
+            intraAnimationFrameCounter: 0,
+            animFrameCounter: 0,
+            faceDir: 0,
+            walkAnimationCounter: 0,
+            yDisp: 0,
+            xDisp: 0,
+            mapY: 0,
+            mapX: 0,
+            movementByte: 0,
+            grassPriority: 0,
+            movementDelay: 0,
+            imageBaseOffset: 0,
+            rangeDirByte: null,
+            textID: null,
+            trainerClassOrItemID: null,
+            trainerSetID: null,
+            missableIndex: null
+        }
+    }
+
+    public static get emptyNonPlayerData() {
+        return {
+            pictureID: 0,
+            movementStatus: 0,
+            imageIndex: 0,
+            yStepVector: 0,
+            yPixels: 0,
+            xStepVector: 0,
+            xPixels: 0,
+            intraAnimationFrameCounter: 0,
+            animFrameCounter: 0,
+            faceDir: 0,
+            walkAnimationCounter: 0,
+            yDisp: 0,
+            xDisp: 0,
+            mapY: 0,
+            mapX: 0,
+            movementByte: 0,
+            grassPriority: 0,
+            movementDelay: 0,
+            imageBaseOffset: 0,
+            rangeDirByte: 0,
+            textID: 0,
+            trainerClassOrItemID: 0,
+            trainerSetID: 0,
+            missableIndex: -1
+        }
+    }
+
     /**
      * Sprite data that applies to all sprites
      */
@@ -97,12 +158,14 @@ export class SpriteData {
     public imageIndex: number;
 
     // When the sprite moves, exactly how far or how much is that?
+    //(-1, 0 or 1)
     public yStepVector: number;
 
     // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)
     public yPixels: number;
 
     // When the sprite moves, exactly how far or how much is that?
+    //(-1, 0 or 1)
     public xStepVector: number;
 
     // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)

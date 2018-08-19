@@ -1,0 +1,13 @@
+.row.sticky
+    card-sprite(
+        *ngFor='let entry of entries; let i = index'
+        '[entry]'='entries[i]'
+        '[remBtn]'='i != 0'
+        '(onRem)'='onRem(i)'
+    )
+    card-sprite(
+        *ngIf='entries.length <= 15'
+        '[disabled]'='true'
+        '[addBtn]'='true'
+        '(onAdd)'='onAdd()'
+    )

@@ -49,6 +49,9 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
     @Input()
     public disabled: boolean = false;
 
+    @Input()
+    public noneSelectable: boolean = false;
+
     get itemList() {
         let itemListCommon = _.filter(itemEntries, (value: ItemEntry) => {
             if (value.normal && value.typical)
