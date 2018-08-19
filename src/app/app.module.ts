@@ -43,6 +43,7 @@ import { CardPokemonComponent } from './fragments/card-pokemon/card-pokemon.comp
 import { SelectSpeciesComponent } from './fragments/select-species/select-species.component';
 import { SelectTypeComponent } from './fragments/select-type/select-type.component';
 import { SelectStatusComponent } from './fragments/select-status/select-status.component';
+import { SelectMissableComponent } from './fragments/select-missable/select-missable.component';
 
 // Scrapped
 // import { NicknameInputBoxComponent } from './fragments/nickname-input-box/nickname-input-box.component';
@@ -102,7 +103,8 @@ import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.compon
         AreaCachedSpritesComponent,
         SelectTrainerComponent,
         CardSpriteComponent,
-        AreaSpritesComponent
+        AreaSpritesComponent,
+        SelectMissableComponent
     ],
     imports: [
         BrowserModule,

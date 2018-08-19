@@ -5,13 +5,13 @@
                 .col.s6
                     .card-title.
                         {{spriteName}}
-                .col.s2.offset-s2.right-align
-                    label.active.label-title Missable
                 .col.s2.right-align
-                    input(
-                        type='number'
+                    label.active.label-title Missable
+                .col.s4.right-align
+                    select-missable.slim-select(
                         '[(ngModel)]'='entry.missableIndex'
                         '[disabled]'='disabled || isPlayerSprite'
+                        '[noneSelectable]'='true'
                     )
 
             .row.s-lr

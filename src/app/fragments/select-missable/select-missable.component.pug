@@ -1,0 +1,9 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='-1', '[disabled]'='!noneSelectable') &nbsp;
+    option(
+        *ngFor='let missable of missableList; let i = index',
+        '[value]'='missable.ind'
+    ) {{missable.name}}
