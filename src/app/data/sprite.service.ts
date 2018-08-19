@@ -19,19 +19,20 @@ import { Injectable } from '@angular/core';
 export interface SpriteEntry {
     name: string,
     ind: number,
+    disabled?: boolean
 };
 
 export const spriteEntries: SpriteEntry[] = [
-    { name: "Pokemon", ind: 0x0 },
-    { name: "Player or Pokeball", ind: 0x01 },
-    { name: "Rival or Helix", ind: 0x02 },
-    { name: "Prof. Oak or Fairy", ind: 0x03 },
-    { name: "Bug Catcher or Bird", ind: 0x04 },
-    { name: "Slowbro or Water", ind: 0x05 },
-    { name: "Lass or Bug", ind: 0x06 },
-    { name: "Black Hair Boy 1 or Grass", ind: 0x07 },
-    { name: "Little Girl or Snake", ind: 0x08 },
-    { name: "Bird or Quadruped", ind: 0x09 },
+    { name: "", ind: 0x0, disabled: true },
+    { name: "Player", ind: 0x01 },
+    { name: "Rival", ind: 0x02 },
+    { name: "Prof. Oak", ind: 0x03 },
+    { name: "Bug Catcher", ind: 0x04 },
+    { name: "Slowbro", ind: 0x05 },
+    { name: "Lass", ind: 0x06 },
+    { name: "Black Hair Boy 1", ind: 0x07 },
+    { name: "Little Girl", ind: 0x08 },
+    { name: "Bird", ind: 0x09 },
     { name: "Fat Bald Guy", ind: 0x0a },
     { name: "Gambler", ind: 0x0b },
     { name: "Black Hair Boy 2", ind: 0x0c },
