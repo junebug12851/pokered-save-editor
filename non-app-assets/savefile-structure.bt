@@ -228,6 +228,18 @@ struct PARTY_NAME {
     char pokemon[11]<format=hex,name="Pokemon">;
 };
 
+struct PP {
+    char pp: 6<format=hex,name="PP">;
+    char ppUp: 2<format=hex,name="PP Up">;
+};
+
+struct IV {
+    char defense: 4<format=hex,name="Defense">;
+    char attack: 4<format=hex,name="Attack">;
+    char special: 4<format=hex,name="Special">;
+    char speed: 4<format=hex,name="Speed">;
+};
+
 struct BOX_MON {
     char species<format=hex,name="Species">;
     char hp[2]<format=hex,name="HP">;
@@ -236,12 +248,7 @@ struct BOX_MON {
     char type1<format=hex,name="Type 1">;
     char type2<format=hex,name="Type 2">;
     char catchRate<format=hex,name="Catch Rate">;
-    struct BOX_MOVES {
-        char move1 <format=hex,name="Move 1">;
-        char move2 <format=hex,name="Move 2">;
-        char move3 <format=hex,name="Move 3">;
-        char move4 <format=hex,name="Move 4">;
-    } moves<name="Moves">;
+    char moves[4]<format=hex,name="Moves">;
     char ot[2]<format=hex,name="Original Trainer">;
     char exp[3]<format=hex,name="Exp">;
     char hpExp[2]<format=hex,name="HP Exp">;
@@ -249,43 +256,12 @@ struct BOX_MON {
     char defenseExp[2]<format=hex,name="Defense Exp">;
     char speedExp[2]<format=hex,name="Speed Exp">;
     char specialExp[2]<format=hex,name="Special Exp">;
-    char dvs[2]<format=hex,name="DVs">;
-    struct BOX_PP {
-        char pp1 <format=hex,name="PP 1">;
-        char pp2 <format=hex,name="PP 2">;
-        char pp3 <format=hex,name="PP 3">;
-        char pp4 <format=hex,name="PP 4">;
-    } pp<name="PP">;
+    IV iv<name="IVs">;
+    PP pp[4]<optimize=false,name="PP">;
 };
 
 struct PARTY_MON {
-    char species<format=hex,name="Species">;
-    char hp[2]<format=hex,name="HP">;
-    char boxLevel<format=hex,name="Box Level">;
-    char status<format=hex,name="Status">;
-    char type1<format=hex,name="Type 1">;
-    char type2<format=hex,name="Type 2">;
-    char catchRate<format=hex,name="Catch Rate">;
-    struct PARTY_MOVES {
-        char move1 <format=hex,name="Move 1">;
-        char move2 <format=hex,name="Move 2">;
-        char move3 <format=hex,name="Move 3">;
-        char move4 <format=hex,name="Move 4">;
-    } moves<name="Moves">;
-    char ot[2]<format=hex,name="Original Trainer">;
-    char exp[3]<format=hex,name="Exp">;
-    char hpExp[2]<format=hex,name="HP Exp">;
-    char attackExp[2]<format=hex,name="Attack Exp">;
-    char defenseExp[2]<format=hex,name="Defense Exp">;
-    char speedExp[2]<format=hex,name="Speed Exp">;
-    char specialExp[2]<format=hex,name="Special Exp">;
-    char dvs[2]<format=hex,name="DVs">;
-    struct PARTY_PP {
-        char pp1 <format=hex,name="PP 1">;
-        char pp2 <format=hex,name="PP 2">;
-        char pp3 <format=hex,name="PP 3">;
-        char pp4 <format=hex,name="PP 4">;
-    } pp<name="PP">;
+    BOX_MON boxData<name="Box Data">;
     char level<format=hex,name="Level">;
     char maxHP[2]<format=hex,name="Max HP">;
     char attack[2]<format=hex,name="Attack">;
@@ -326,7 +302,7 @@ struct SPRITE_DATA_EXTRA_ENTRY {
 struct BOX_DATA_SEC {
     char count<format=hex,name="Count">;
     char species[21]<format=hex,name="Species">;
-    BOX_MON pokemon[20]<format=hex,name="Pokemon">;
+    BOX_MON pokemon[20]<optimize=false,format=hex,name="Pokemon">;
 
     PARTY_NAME partyMonOT[20]<format=hex,name="Pokemon Orig Trainers">;
     PARTY_NAME partyMonNicks[20]<format=hex,name="Pokemon Nicknames">;
@@ -337,6 +313,11 @@ struct WARP_ENTRY {
     char x<format=hex,name="X">;
     char destWarp<format=hex,name="Dest Warp">;
     char destMap<format=hex,name="Dest Map">;
+};
+
+struct CUR_BOX {
+    char number: 7<format=hex,name="Cur Box Num">;
+    char dontFormat: 1<format=hex,name="Dont Format Box Data">;
 };
 
 struct FILE {
@@ -506,7 +487,8 @@ struct FILE {
             } boxItems<name="Box Items">;
 
 
-            char curBox[2]<format=hex,name="Cur Box">;
+            CUR_BOX curBox<name="Cur Box">;
+            char padding2<format=hex,name="Padding">;
             char hofRecordCount<format=hex,name="HOF Record Count">;
             char unused<format=hex,name="Unused">;
             char coins[2]<format=hex,name="Slot Coins">;
@@ -800,7 +782,7 @@ struct FILE {
                 } waterMon<name="Water Pokemon">;
 
                 struct ENEMY_MON { // 44 bytes per party struct
-                    PARTY_MON enemyMon[6]<format=hex,name="Enemy Pokemon">;
+                    PARTY_MON enemyMon[6]<optimize=false,name="Enemy Pokemon">;
                     PARTY_NAMES enemyMonOT<format=hex,name="Enemy Pokemon Orig Trainers">;
                     PARTY_NAMES enemyMonNicks<format=hex,name="Enemy Pokemon Nicknames">;
                 } enemyMon<name="Enemy Pokemon">;

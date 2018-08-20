@@ -1,0 +1,102 @@
+.row
+    .col.s12
+        h5 Pre-Warp
+
+.row
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.scriptedWarp')
+            span Scripted Warp
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.isDungeonWarp')
+            span Is Dungeon Warp
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.skipJoypadCheckWarps')
+            span Skip Joypad
+
+.row
+    .col.s12
+        h5 Warping
+
+.row
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.flyOrDungeonWarp')
+            span Non-Normal Warp
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.flyWarp')
+            span Special Warp
+    .col.s2
+        label
+            input(type="checkbox" '[(ngModel)]'='fileService.fileDataExpanded.area.dungeonWarp')
+            span Dungeon Warp
+.row
+    .col.s1
+        label To Warp
+        input(
+            type="number"
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warpDest'
+        )
+    .col.s2
+        label Dungeon Warp Where
+        select-map.slim-select(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.dungeonWarpDestMap'
+        )
+    .col.s2
+        label Special Warp Where
+        select-map.slim-select(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.specialWarpDestMap'
+        )
+
+.row
+    .col.s12
+        h5 Warped
+
+.row
+    .col.s1
+        label From Warp
+        input(
+            type="number"
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warpedFromWarp'
+        )
+    .col.s2
+        label From Dungeon Warp
+        input(
+            type="number"
+            '[(ngModel)]'='fileService.fileDataExpanded.area.whichDungeonWarp'
+        )
+    .col.s2
+        label From Map
+        select-map.slim-select(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warpedfromMap'
+        )
+
+.row
+    .col.s12
+        h5 Warp Points
+
+.row
+    .col.s12
+
+        ul.collection.items.slim-list.sticky
+
+            warp-item(
+                *ngFor='let warp of warpPoints; let i = index'
+                '[data]'='warpPoints[i]'
+                '[disabled]'='false'
+                '(remove)'='remListItem(i)'
+            )
+
+            warp-item(
+                *ngIf='warpPoints.length == 0'
+                '[disabled]'='true'
+            )
+
+            a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.br(
+                '(click)'='addListItem()'
+                '[class.disabled]'='entriesCount >= 32'
+            )
+                span.im.im-plus3

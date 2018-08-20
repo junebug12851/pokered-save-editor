@@ -1,3 +1,4 @@
+import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
 import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.component';
 import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
     { path: 'area-tilesets', component: AreaTilesetsComponent },
     { path: 'area-cached-sprites', component: AreaCachedSpritesComponent },
     { path: 'area-sprites', component: AreaSpritesComponent },
+    { path: 'area-warps', component: AreaWarpsComponent },
     {
         path: '',
         redirectTo: '/player-basics',

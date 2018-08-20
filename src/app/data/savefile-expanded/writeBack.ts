@@ -666,10 +666,10 @@ export function writeBack(file: SaveFileService) {
     it.setHex(0x1, full.player.playerStarter, false); // 29C3
     it.setByte(full.area.boulderSpriteIndex); // 29C4
     it.setByte(full.world.lastBlackoutMap); // 29C5
-    it.setByte(full.area.destinationMap, 1); // 29C6 + 1 Padding
+    it.setByte(full.area.specialWarpDestMap, 1); // 29C6 + 1 Padding
 
     it.setHex(0x1, full.area.tileFrontBoulderColl, false); // 29C8
-    it.setByte(full.area.dungeonWarpDest); // 29C9
+    it.setByte(full.area.dungeonWarpDestMap); // 29C9
     it.setByte(full.area.whichDungeonWarp, 9); // 29CA + 9 Padding
 
     // 29D4
@@ -706,7 +706,7 @@ export function writeBack(file: SaveFileService) {
     // 29D9
     // Various Flags 3
     it.setBit(0x1, 0, full.area.tradeCenterSpritesFaced);
-    it.setBit(0x1, 3, full.area.warpToLavenderTown);
+    it.setBit(0x1, 3, full.area.scriptedWarp);
     it.setBit(0x1, 4, full.area.isDungeonWarp);
     it.setBit(0x1, 5, full.area.npcsFaceAway);
     it.setBit(0x1, 6, full.area.isBattle);

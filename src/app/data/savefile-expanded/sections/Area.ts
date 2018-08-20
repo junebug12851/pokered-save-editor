@@ -90,8 +90,8 @@ export class Area {
         this.playerJumpingYScrnCoords = saveFile.getByte(0x29C0);
         this.boulderSpriteIndex = saveFile.getByte(0x29C4);
         this.tileFrontBoulderColl = saveFile.getByte(0x29C8).toString(16).padStart(2, "0").toUpperCase();
-        this.dungeonWarpDest = saveFile.getByte(0x29C9);
-        this.destinationMap = saveFile.getByte(0x29C6);
+        this.dungeonWarpDestMap = saveFile.getByte(0x29C9);
+        this.specialWarpDestMap = saveFile.getByte(0x29C6);
         this.whichDungeonWarp = saveFile.getByte(0x29CA);
 
         this.strengthOutsideBattle = saveFile.getBit(0x29D4, 1, 0);
@@ -100,7 +100,7 @@ export class Area {
         this.pauseWildEncounters3Steps = saveFile.getBit(0x29D8, 1, 0);
         this.noAudioFadeout = saveFile.getBit(0x29D8, 1, 1);
         this.tradeCenterSpritesFaced = saveFile.getBit(0x29D9, 1, 0);
-        this.warpToLavenderTown = saveFile.getBit(0x29D9, 1, 3);
+        this.scriptedWarp = saveFile.getBit(0x29D9, 1, 3);
         this.isDungeonWarp = saveFile.getBit(0x29D9, 1, 4);
         this.npcsFaceAway = saveFile.getBit(0x29D9, 1, 5);
         this.isBattle = saveFile.getBit(0x29D9, 1, 6);
@@ -175,24 +175,33 @@ export class Area {
     public spriteSet: Uint8Array;
     public spriteSetId: number;
 
-    // Sprites
+    // Sprites (Complete)
     public spriteData: SpriteData[];
     public tradeCenterSpritesFaced: boolean;
 
-    // Warps
-    public warpData: WarpData[];
-    public warpDest: number;
-    public dungeonWarpDest: number;
-    public destinationMap: number;
-    public whichDungeonWarp: number;
-    public warpToLavenderTown: boolean;
-    public isDungeonWarp: boolean;
-    public flyOrDungeonWarp: boolean;
-    public flyWarp: boolean;
-    public dungeonWarp: boolean;
-    public skipJoypadCheckWarps: boolean;
-    public warpedFromWarp: number;
-    public warpedfromMap: number;
+    /**
+     * Warps
+     */
+    // Pre-Warp
+    public scriptedWarp: boolean; // Do a scripted warp
+    public isDungeonWarp: boolean; // On a dungeon warp
+    public skipJoypadCheckWarps: boolean; // Skips check for warp after not collided (Forced Warp)??
+
+    // Warping
+    public warpDest: number; // Warp actively warping to or 0xFF to warp to same position
+    public dungeonWarpDestMap: number; // Destination Map for dungeon warps
+    public specialWarpDestMap: number; // Destination Map for special warps
+    public flyOrDungeonWarp: boolean; // Is a fly or dungeon warp
+    public flyWarp: boolean; // Is a fly warp
+    public dungeonWarp: boolean; // Is a dungeon warp
+
+    // Warped
+    public whichDungeonWarp: number; // Warped from which dungeon warp
+    public warpedFromWarp: number; // Warped from which warp
+    public warpedfromMap: number; // Warped from which map
+
+    // Warp Points
+    public warpData: WarpData[]; // Warp entries
 
     // Signs
     public signData: SignData[];
