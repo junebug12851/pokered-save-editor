@@ -1,0 +1,34 @@
+li.collection-item
+    .row
+        .col.s1.offset-s2
+            label X
+            input(
+                type='number'
+                '[(ngModel)]'='data.x'
+                '[disabled]'='disabled'
+            )
+        .col.s1
+            label Y
+            input(
+                type='number'
+                '[(ngModel)]'='data.y'
+                '[disabled]'='disabled'
+            )
+        .col.s3
+            label To Map
+            select-map(
+                '[(ngModel)]'='data.destMap'
+                '[disabled]'='disabled'
+            )
+        .col.s2
+            label To Warp
+            input(
+                type='number'
+                '[(ngModel)]'='data.destWarp'
+                '[disabled]'='disabled'
+            )
+        a.btn-small.waves-effect.col.s1(
+            '(click)'='remListItem()'
+            '[class.disabled]'='disabled'
+        )
+            span.im.im-delete

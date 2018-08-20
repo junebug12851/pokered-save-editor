@@ -52,6 +52,8 @@ import { SelectMovesComponent } from './fragments/select-moves/select-moves.comp
 import { SelectSpriteComponent } from './fragments/select-sprite/select-sprite.component';
 import { SelectTrainerComponent } from './fragments/select-trainer/select-trainer.component';
 import { CardSpriteComponent } from './fragments/card-sprite/card-sprite.component';
+import { SelectMapComponent } from './fragments/select-map/select-map.component';
+import { WarpItemComponent } from './fragments/warp-item/warp-item.component';
 
 // Layout
 import { KeyboardsComponent } from './layouts/keyboards/keyboards.component';
@@ -70,6 +72,7 @@ import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
 import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.component';
+import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
 
 @NgModule({
     declarations: [
@@ -104,7 +107,10 @@ import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.compon
         SelectTrainerComponent,
         CardSpriteComponent,
         AreaSpritesComponent,
-        SelectMissableComponent
+        SelectMissableComponent,
+        SelectMapComponent,
+        WarpItemComponent,
+        AreaWarpsComponent,
     ],
     imports: [
         BrowserModule,

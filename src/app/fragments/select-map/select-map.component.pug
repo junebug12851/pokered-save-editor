@@ -1,0 +1,10 @@
+select.browser-default(
+    '[(ngModel)]'='value'
+    '[disabled]'='disabled'
+    )
+    option('[value]'='0', '[disabled]'='!noneSelectable') Choose Map
+    option(
+        *ngFor='let map of mapList',
+        '[value]'='map.ind',
+        '[disabled]'='map.disable'
+    ) {{map.name}}
