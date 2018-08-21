@@ -66,7 +66,7 @@ export class AreaTilesetsComponent {
             return "assets/pokered-font/pic-tilesets/interior.png"
         else if (tileset == "1B_11_4CA0_50C0_17AC")
             return "assets/pokered-font/pic-tilesets/cavern.png"
-        else if (tileset == "1B_12_58C0_5EA0_17BB")
+        else if (tileset == "1B_12_58C0_5EA0_17B8")
             return "assets/pokered-font/pic-tilesets/lobby.png"
         else if (tileset == "19_13_5BB0_6190_17C0")
             return "assets/pokered-font/pic-tilesets/mansion.png"
@@ -120,7 +120,7 @@ export class AreaTilesetsComponent {
             return "pr-container pr-large pr-pic-interior"
         else if (tileset == "1B_11_4CA0_50C0_17AC")
             return "pr-container pr-large pr-pic-cavern"
-        else if (tileset == "1B_12_58C0_5EA0_17BB")
+        else if (tileset == "1B_12_58C0_5EA0_17B8")
             return "pr-container pr-large pr-pic-lobby"
         else if (tileset == "19_13_5BB0_6190_17C0")
             return "pr-container pr-large pr-pic-mansion"
