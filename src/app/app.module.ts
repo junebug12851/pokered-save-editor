@@ -18,6 +18,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Angular Material
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
 
@@ -73,6 +76,7 @@ import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.com
 import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-cached-sprites.component';
 import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.component';
 import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -117,6 +121,8 @@ import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
         AppRoutingModule,
         FormsModule,
         FontawesomeModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
     ],
     providers: [
         SaveFileService

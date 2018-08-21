@@ -14,17 +14,15 @@
    limitations under the License.
  */
 
-@import "../../../styles/materialize/env";
-
 .gym-btn {
     height: 60px;
     width: 100px;
     line-height: 1.70;
     text-transform: none;
-    background-color: color("grey", "lighten-1");
+    background-color: hsl(0, 0%, 74.1%);
     border-radius: 10px;
     text-align: center;
-    color: color("grey", "darken-4");
+    color: hsl(0, 0%, 12.9%);
     margin-right: 15px;
     margin-top: 15px;
     display: inline-block;

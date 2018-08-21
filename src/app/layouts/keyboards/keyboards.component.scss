@@ -14,9 +14,6 @@
    limitations under the License.
  */
 
-// Color
-@import "../../../styles/materialize/env";
-
 .keyboard-container {
     position: absolute;
     bottom: 0px;
@@ -33,11 +30,11 @@
     margin: 0 auto;
     z-index: 1001;
     /////////
-    background-color: darken(color("grey", "darken-4"), 5%);
-    color: color("grey", "lighten-4");
+    background-color: darken(hsl(0, 0%, 12.9%), 5%);
+    color: hsl(0, 0%, 96.1%);
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
-    border: 3px groove $secondary-color;
+    border: 3px groove hsl(339.6, 82.2%, 51.6%);
     border-bottom: none;
 }
 
@@ -52,7 +49,7 @@
 
 .special-char {
     display: inline-block;
-    border: 1px solid rgba(color("grey", "darken-4"), .5);
+    border: 1px solid rgba(hsl(0, 0%, 12.9%), .5);
     padding: 5px;
     margin: 5px;
     cursor: pointer;
@@ -60,7 +57,7 @@
 }
 
 .special-char:hover {
-    background-color: darken($secondary-color, 15%);
+    background-color: darken(hsl(339.6, 82.2%, 51.6%), 15%);
 }
 
 .special-char > .preview {

@@ -5,7 +5,6 @@
 const { app, Menu, MenuItem } = window.require('electron').remote;
 
 declare var $: any;
-declare var M: any;
 
 const template = [{
     label: 'File',

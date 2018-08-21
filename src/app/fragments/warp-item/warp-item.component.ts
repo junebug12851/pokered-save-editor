@@ -21,8 +21,6 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-declare var M: any;
-
 @Component({
     selector: 'warp-item',
     templateUrl: './warp-item.component.pug',
@@ -38,7 +36,7 @@ export class WarpItemComponent extends ValueAccessorBase<string> implements OnIn
     }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 
     @Input()

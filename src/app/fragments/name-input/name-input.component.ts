@@ -23,8 +23,6 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-declare var M: any;
-
 @Component({
     selector: 'name-input',
     templateUrl: './name-input.component.pug',
@@ -43,7 +41,7 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
     }
 
     ngOnInit() {
-        M.updateTextFields();
+
         this.doOnChange("");
     }
 

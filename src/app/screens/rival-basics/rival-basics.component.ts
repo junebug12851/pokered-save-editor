@@ -17,8 +17,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
-declare var M: any;
-
 @Component({
     selector: 'screen-rival-basics',
     templateUrl: './rival-basics.component.pug',
@@ -32,6 +30,6 @@ export class RivalBasicsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 }

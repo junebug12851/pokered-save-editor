@@ -20,8 +20,6 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { Component, Input, Output } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 
-declare var M: any;
-
 @Component({
     selector: 'card-pokemon',
     templateUrl: './card-pokemon.component.pug',
@@ -32,7 +30,7 @@ export class CardPokemonComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 
     @Input()

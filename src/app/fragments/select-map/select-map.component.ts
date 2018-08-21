@@ -44,7 +44,7 @@ export class SelectMapComponent extends ValueAccessorBase<string> implements OnI
     }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 
     @Input()

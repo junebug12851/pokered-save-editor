@@ -14,14 +14,12 @@
    limitations under the License.
  */
 
-@import "../../../styles/materialize/env";
-
 a:hover {
-    background-color: darken($primary-color, 15%) !important;
+    background-color: darken(hsl(291.2, 63.7%, 42.2%), 15%) !important;
 }
 
 .subheader {
-    color: color("grey", "lighten-2");
+    color: hsl(0, 0%, 87.8%);
     text-align: left;
     padding-left: 15px;
 }
@@ -46,5 +44,5 @@ a:hover {
 }
 
 .active {
-    background-color: darken($secondary-color, 10%);
+    background-color: darken(hsl(339.6, 82.2%, 51.6%), 10%);
 }
