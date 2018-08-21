@@ -43,7 +43,7 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
     }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 
     @Input()

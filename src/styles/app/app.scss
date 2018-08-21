@@ -1,7 +1,42 @@
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+// Basics that can be overridden
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+* {
+    box-sizing: border-box !important;
+}
+
+div, p, span, a, ul, li {
+    user-select: none;
+}
+
+a:focus, button:focus {
+    outline: 0 !important;
+}
+
+html, body {
+    background-color: hsl(0, 0%, 12.9%);
+    color: hsl(0, 0%, 96.1%);
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+    width: .4em;
+    height: .25em;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(339.6, 82.2%, 51.6%);
+    width: 5px;
+    height: 5px;
+    border: none;
+    border-radius: 4px;
 }
 
 .sticky {
@@ -30,72 +65,6 @@
         bottom: 0;
         right: 0;
     }
-}
-
-.slim-list {
-    width: 45%;
-    margin: 0 auto;
-    min-width: 500px;
-
-    span,p,div {
-        line-height: 32px;
-    }
-
-    select {
-        height: 32px;
-    }
-
-    .row {
-        margin-bottom: 0;
-    }
-}
-
-.btn-floating-icon-large {
-    line-height: 56px;
-    font-size: 20px;
-    padding-top: 2px !important;
-}
-
-.btn-floating-icon-normal {
-    line-height: 30px;
-    font-size: 20px;
-    padding-top: 4px !important;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    &.flex-horz {
-        flex-direction: row;
-
-        .flex-item {
-            margin-right: 5px;
-            margin-left: 5px;
-        }
-    }
-
-    &.flex-vert {
-        flex-direction: column;
-
-        .flex-item {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-    }
-}
-
-.container {
-    padding-top: 15px;
-}
-
-.fix-margins-name {
-    margin-top: 0;
-}
-
-.fix-margins-name input {
-    margin-top: -6px !important;
 }
 
 .ns {
@@ -169,20 +138,4 @@
     & {
         padding: 20px !important;
     }
-}
-
-.auto-width {
-    width: auto !important;
-}
-
-.gap-r {
-    margin-right: 10px;
-}
-
-.slim-select select {
-    height: 28px;
-}
-
-[disabled], select {
-    color: black !important;
 }

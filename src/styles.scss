@@ -14,15 +14,12 @@
    limitations under the License.
  */
 
- // Low priority styles
-@import "./styles/fixes/init_fixes";
+/*
+ * Font Icons
+*/
 
-// Materialize
-@import "./styles/materialize/materialize";
-
-// Post higher priority styles in general and to materialize
-@import "./styles/fixes/materialize_fixes";
-@import "./styles/fixes/post_fixes";
+// Material Icons
+@import "./styles/fonts/material/style.scss";
 
 // Ico-Moon Font Icons
 @import "./styles/fonts/icomoon/icomoon.css";
@@ -30,8 +27,23 @@
 // Pokered Font
 @import "./styles/fonts/pokered/pokered_all";
 
+/*
+ * Theme
+*/
+
+// Angular Theme
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*
+ * App Main
+*/
+
 // App-Wide
 @import "./styles/app/app";
+
+/*
+ * Debug
+*/
 
 // Debug
 @import "./styles/debug/debug";

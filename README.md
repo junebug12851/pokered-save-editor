@@ -4,7 +4,7 @@ This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
 
-This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving. 
+This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving.
 
 Here we have a created Pokemon, Magikarp, wich happens to be Level 100 and has an epic move set. Shown below is Magikarp in the Pokemon editor
 
@@ -44,7 +44,7 @@ Contributions are definately welcome, just fork and send a pull request.
 * PokeRed Team (Pokemon Red/Blue Source Code) - Public Domain, All the
   information I have came from those awesome people and their years of hard
   work.
-* Pokemon Red Bitmap Font Sprite Sheet (Pokemon Red/Blue Source Code) - Also came 
+* Pokemon Red Bitmap Font Sprite Sheet (Pokemon Red/Blue Source Code) - Also came
   from the pokered team.
 * Electron (Desktop Platform) - License MIT, this is a desktop only app and this
   makes it possible very elegantly
@@ -56,6 +56,7 @@ Contributions are definately welcome, just fork and send a pull request.
   heavy lifting.
 * SASS (UI Language) - License MIT, CSS improved
 * Typescript (Scripting language) - Apache 2 License, Eh, it comes with Angular
+* Google Material Icons - (More Icons!) - License Apache 2 License
 
 ## Development Instructions
 

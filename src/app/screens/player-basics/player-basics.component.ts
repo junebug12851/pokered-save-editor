@@ -17,8 +17,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
-declare var M: any;
-
 @Component({
     selector: 'screen-player-basics',
     templateUrl: './player-basics.component.pug',
@@ -32,6 +30,6 @@ export class PlayerBasicsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 }

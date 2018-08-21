@@ -18,8 +18,6 @@ import { PokemonBox } from './../../data/savefile-expanded/fragments/PokemonBox'
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
-declare var M: any;
-
 @Component({
     selector: 'screen-storage-all',
     templateUrl: './storage-all.component.pug',
@@ -62,7 +60,7 @@ export class StorageAllComponent implements OnInit {
     }
 
     ngOnInit() {
-        M.updateTextFields();
+
     }
 
     setActiveTab(val: number) {
