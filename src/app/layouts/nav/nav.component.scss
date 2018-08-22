@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.disabled {
+    cursor: initial !important;
+    color: darken(white, 25%);
+}
+
+a.mat-list-item {
+    margin-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+a.subheader {
+    margin-left: inherit;
+    border-radius: 0;
+    @extend .disabled;
+}
+
+a.active, a.active:hover, a.active:active {
+    background-color: hsla(340, 82%, 59%, 1) !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
