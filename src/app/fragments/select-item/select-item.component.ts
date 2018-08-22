@@ -89,4 +89,9 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
             ...itemListGlitch
         ];
     }
+
+    // @ts-ignore
+    optionsTracking(index: number, item: any) {
+        return index; // or item.id
+    }
 }

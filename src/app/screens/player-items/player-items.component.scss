@@ -14,15 +14,19 @@
    limitations under the License.
  */
 
-ul.sticky {
-    overflow: visible;
+.mat-list {
+    width: 600px;
+    margin: 0 auto;
 }
 
-.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-}
+// .mat-list-item {
+//     border-bottom: 1px solid transparent;
+//     border-image: linear-gradient(
 
-.waves-effect {
-    overflow: inherit;
-}
+//         to right,
+//         hsla(0,0%,100%,0) 0%,
+//         hsla(0,0%,100%,.5) 50%,
+//         hsla(0,0%,100%,0) 100%)
+
+//         .5 .001%;
+// }

@@ -1,10 +1,12 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '[disabled]'='disabled'
+mat-form-field
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
+        required=''
     )
-    option('[value]'='0', '[disabled]'='!noneSelectable') Choose Item
-    option(
-        *ngFor='let itemOption of itemList',
-        '[value]'='itemOption.ind',
-        '[disabled]'='itemOption.disable'
-    ) {{itemOption.name}}
+        mat-option(value="0" '[disabled]'='!noneSelectable') Choose Item
+        mat-option(
+            *ngFor='let itemOption of itemList; trackBy: optionsTracking',
+            '[value]'='itemOption.ind',
+            '[disabled]'='itemOption.disable'
+        ) {{itemOption.name}}
