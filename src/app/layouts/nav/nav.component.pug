@@ -1,0 +1,64 @@
+mat-sidenav-container.sidenav-container
+    mat-sidenav.sidenav(
+        '#drawer'='',
+        fixedinviewport='true',
+        '[attr.role]'="(isHandset$ | async) ? 'dialog' : 'navigation'",
+        '[mode]'="(isHandset$ | async) ? 'over' : 'side'",
+        '[opened]'='!(isHandset$ | async)'
+    )
+
+        mat-nav-list
+            // Player
+            a.subheader(mat-list-item='') Player
+
+            a(mat-list-item='', routerLink='/player-basics' '[routerLinkActive]'="['active']") Basics
+            a(mat-list-item='', routerLink='/player-pokedex' '[routerLinkActive]'="['active']") Pokedex
+            a(mat-list-item='', routerLink='/player-items' '[routerLinkActive]'="['active']") Items
+            a(mat-list-item='', routerLink='/player-pokemon' '[routerLinkActive]'="['active']") Pokemon
+
+            // Rival
+            a.subheader(mat-list-item='') Rival
+
+            a(mat-list-item='', routerLink='/rival-basics' '[routerLinkActive]'="['active']") Basics
+
+            // Storage
+            a.subheader(mat-list-item='') Storage
+
+            a(mat-list-item='', routerLink='/storage-all' '[routerLinkActive]'="['active']") All
+
+            // Area
+            a.subheader(mat-list-item='') Area
+
+            a(mat-list-item='', routerLink='/area-general' '[routerLinkActive]'="['active']") General
+            a(mat-list-item='', routerLink='/area-audio' '[routerLinkActive]'="['active']") Audio
+            a(mat-list-item='', routerLink='/area-tilesets' '[routerLinkActive]'="['active']") Tileset
+            a(mat-list-item='', routerLink='/area-cached-sprites' '[routerLinkActive]'="['active']") Cached Sprites
+            a(mat-list-item='', routerLink='/area-sprites' '[routerLinkActive]'="['active']") Sprites
+            a(mat-list-item='', routerLink='/area-warps' '[routerLinkActive]'="['active']") Warps
+            a.disabled(mat-list-item='') Signs
+            a.disabled(mat-list-item='') Player
+            a.disabled(mat-list-item='') Map
+            a.disabled(mat-list-item='') NPC
+            a.disabled(mat-list-item='') Pokemon
+            a.disabled(mat-list-item='') Puzzle
+
+            // World
+            a.subheader(mat-list-item='') World
+
+            a.disabled(mat-list-item='') Progress
+            a.disabled(mat-list-item='') Areas
+            a.disabled(mat-list-item='') Options
+            a.disabled(mat-list-item='') Flags
+            a.disabled(mat-list-item='') Time
+            a.disabled(mat-list-item='') Hall of Fame
+
+    mat-sidenav-content
+        button(
+            type='button',
+            aria-label='Toggle sidenav',
+            mat-icon-button='',
+            '(click)'='drawer.toggle()',
+            *ngIf='isHandset$ | async'
+        )
+            mat-icon(aria-label='Side nav toggle icon') menu
+        ng-content

@@ -60,7 +60,7 @@ import { WarpItemComponent } from './fragments/warp-item/warp-item.component';
 
 // Layout
 import { KeyboardsComponent } from './layouts/keyboards/keyboards.component';
-import { SidenavComponent } from './layouts/sidenav/sidenav.component';
+import { NavComponent } from './layouts/nav/nav.component';
 
 // Screens
 import { PlayerBasicsComponent } from './screens/player-basics/player-basics.component';
@@ -77,6 +77,8 @@ import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-c
 import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.component';
 import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -86,7 +88,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PlayerItemsComponent,
         GymButtonComponent,
         KeyboardsComponent,
-        SidenavComponent,
         PlayerPokemonComponent,
         NameBoxComponent,
         NameInputComponent,
@@ -115,6 +116,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         SelectMapComponent,
         WarpItemComponent,
         AreaWarpsComponent,
+        NavComponent,
     ],
     imports: [
         BrowserModule,
@@ -123,6 +125,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FontawesomeModule,
         BrowserAnimationsModule,
         MatSidenavModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
     ],
     providers: [
         SaveFileService

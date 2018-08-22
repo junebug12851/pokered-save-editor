@@ -1,6 +1,10 @@
 // Basics that can be overridden
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
 
 * {
     box-sizing: border-box !important;
@@ -14,29 +18,39 @@ a:focus, button:focus {
     outline: 0 !important;
 }
 
-html, body {
-    background-color: hsl(0, 0%, 12.9%);
-    color: hsl(0, 0%, 96.1%);
-}
-
 // Custom Scrollbar
 ::-webkit-scrollbar {
-    width: .4em;
-    height: .25em;
+  width: 6px;
+  height: 6px;
 }
-
-::-webkit-scrollbar,
-::-webkit-scrollbar-thumb {
-  overflow:visible;
-  border-radius: 4px;
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
-
 ::-webkit-scrollbar-thumb {
-    background-color: hsl(339.6, 82.2%, 51.6%);
-    width: 5px;
-    height: 5px;
-    border: none;
-    border-radius: 4px;
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: darken(#e1e1e1, 15%);
+}
+::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 0%, 0);
+  border: 0px none hsla(0, 0%, 0%, 0);
+  border-radius: 56px;
+}
+::-webkit-scrollbar-track:hover {
+  background: hsla(0, 0%, 0%, 0);
+}
+::-webkit-scrollbar-track:active {
+  background: hsla(0, 0%, 0%, 0);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .sticky {
