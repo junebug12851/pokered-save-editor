@@ -1,56 +1,38 @@
--
-    var btnClasses = [
-        'waves-effect',
-        'waves-light',
-        'btn-small',
-        'btn-normalize',
-        'darken-2'
-    ]
+mat-list
+    mat-list-item
+        .container
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getSeen(0) ? "primary" : ""'
+                    '(click)'='toggleAllSeen()'
+                )
+                    | Seen
+            .s6.center-align
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getOwn(0) ? "primary" : ""'
+                    '(click)'='toggleAllOwn()'
+                )
+                    | Own
 
-.row
-    .col.s12
-
-        ul.collection.slim-list
-
-            li.collection-item.clearfix
-
-                span.left
-                    a(class=btnClasses
-
-                        '[class.grey]'='!getSeen(0)'
-                        '[class.green]'='getSeen(0)'
-                        '(click)'='toggleAllSeen()'
-                        ) Seen
-
-                .center-align
-                    | Toggle All
-
-                    span.right
-                        a(class=btnClasses
-
-                            '[class.grey]'='!getOwn(0)'
-                            '[class.green]'='getOwn(0)'
-
-                            '(click)'='toggleAllOwn()'
-                        ) Own
-
-            li.collection-item.clearfix(*ngFor='let entry of entries')
-
-                span.left
-                    a(class=btnClasses
-
-                        '[class.grey]'='!getSeen(entry.pokedex)'
-                        '[class.green]'='getSeen(entry.pokedex)'
-                        '(click)'='toggleSeen(entry.pokedex)'
-                        ) Seen
-
-                .center-align
-                    | # {{entry.pokedex + 1}} {{entry.name}}
-
-                    span.right
-                        a(class=btnClasses
-
-                            '[class.grey]'='!getOwn(entry.pokedex)'
-                            '[class.green]'='getOwn(entry.pokedex)'
-                            '(click)'='toggleOwn(entry.pokedex)'
-                        ) Own
+    mat-list-item(*ngFor='let entry of entries')
+        .container
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getSeen(entry.pokedex) ? "primary" : ""'
+                    '(click)'='toggleSeen(entry.pokedex)'
+                )
+                    | Seen
+            .s6.center-align
+                | # {{entry.pokedex + 1}} {{entry.name}}
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getOwn(entry.pokedex) ? "primary" : ""'
+                    '(click)'='toggleOwn(entry.pokedex)'
+                )
+                    | Own

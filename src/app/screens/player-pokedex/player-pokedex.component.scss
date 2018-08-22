@@ -13,3 +13,24 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+
+.mat-list {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.mat-list-item {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+
+        to right,
+        hsla(0,0%,100%,0) 0%,
+        hsla(0,0%,100%,.5) 50%,
+        hsla(0,0%,100%,0) 100%)
+
+        .5 .001%;
+}
+
+// .mat-list>.mat-list-item:nth-child(2) {
+//     background-color: color("grey", "darken-4");
+// }
