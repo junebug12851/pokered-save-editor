@@ -1,7 +1,10 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-)
-    option(value="00" disabled='' style='color: black;') Choose Starter
-    option(value="99") Bulbasaur
-    option(value="B0") Charmander
-    option(value="B1") Squirtle
+mat-form-field
+    mat-label Select Starter
+    mat-select(
+        '[(ngModel)]'='value'
+        required=''
+    )
+        mat-option(value="00" disabled='') Choose Starter
+        mat-option(value="99") Bulbasaur
+        mat-option(value="B0") Charmander
+        mat-option(value="B1") Squirtle

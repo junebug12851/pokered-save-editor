@@ -1,8 +1,11 @@
-label {{label}}
-
-input(
+mat-form-field
+    mat-label {{label}}
+    input(
+        matInput=''
+        placeholder='Player ID'
         type='text'
         '[(ngModel)]'='value'
         '(ngModelChange)'='doOnChange($event)'
         '[disabled]'='disabled'
-)
+        required=''
+    )
