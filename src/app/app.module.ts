@@ -21,6 +21,8 @@ import { NgModule } from '@angular/core';
 // Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -79,7 +81,7 @@ import { AreaSpritesComponent } from './screens/area-sprites/area-sprites.compon
 import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -132,6 +134,8 @@ import { MatToolbarModule, MatButtonModule, MatIconModule, MatListModule } from 
         MatIconModule,
         MatListModule,
         MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
     ],
     providers: [
         SaveFileService

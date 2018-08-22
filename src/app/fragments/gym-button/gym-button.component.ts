@@ -45,4 +45,11 @@ export class GymButtonComponent implements OnInit {
     toggle() {
         this.value = !this.value;
     }
+
+    get color() {
+        if (this.value)
+            return "primary";
+        else
+            return "";
+    }
 }
