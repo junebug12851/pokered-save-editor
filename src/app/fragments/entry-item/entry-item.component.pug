@@ -1,18 +1,28 @@
-li.collection-item.item.flex-container.flex-horz
-    select-item.flex-item(
-        '[(ngModel)]'='data.id'
-        '[disabled]'='disabled'
-    )
-    input.flex-item(
-        placeholder='Amount'
-        type='number'
-        '[(ngModel)]'='data.amount'
-        max='99'
-        min='0'
-        '[disabled]'='disabled'
-    )
-    a.btn-small.waves-effect.flex-item(
-        '(click)'='remListItem()'
-        '[class.disabled]'='disabled'
-    )
-        span.im.im-delete
+mat-list-item
+    .container
+        .s4
+            select-item(
+                '[(ngModel)]'='data.id'
+                '[disabled]'='disabled'
+            )
+        .s2
+            mat-form-field(style="width: 100%;")
+                mat-label Amount
+                input(
+                    matInput=''
+                    placeholder='Amount'
+                    type='number'
+                    '[(ngModel)]'='data.amount'
+                    required=''
+                    max='99'
+                    min='1'
+                    '[disabled]'='disabled'
+                )
+        .s2
+            button(
+                mat-raised-button=''
+                '(click)'='remListItem()'
+                '[disabled]'='disabled'
+                color="accent"
+            )
+                span.im.im-delete

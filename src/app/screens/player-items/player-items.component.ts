@@ -48,4 +48,9 @@ export class PlayerItemsComponent {
     remListItem(index: number) {
         this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
     }
+
+    // @ts-ignore
+    entriesTracking(index: number, item: any) {
+        return index; // or item.id
+    }
 }

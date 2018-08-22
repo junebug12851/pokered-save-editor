@@ -1,22 +1,24 @@
-.row
-    .col.s12
+mat-list(style="padding-top: 35px")
+    entry-item(
+        *ngFor='let entry of entries; let i = index; trackBy: entriesTracking'
+        '[data]'='entries[i]'
+        '[disabled]'='false'
+        '(remove)'='remListItem(i)'
+    )
 
-        ul.collection.items.slim-list.sticky
+    entry-item(
+        *ngIf='entriesCount == 0'
+        '[disabled]'='true'
+    )
 
-            entry-item(
-                *ngFor='let entry of entries; let i = index'
-                '[data]'='entries[i]'
-                '[disabled]'='false'
-                '(remove)'='remListItem(i)'
-            )
-
-            entry-item(
-                *ngIf='entriesCount == 0'
-                '[disabled]'='true'
-            )
-
-            a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.br(
-                '(click)'='addListItem()'
-                '[class.disabled]'='entriesCount >= 20'
-            )
-                span.im.im-plus3
+    mat-list-item
+        .container
+            .s8
+                button(
+                    mat-raised-button=''
+                    '(click)'='addListItem()'
+                    '[disabled]'='entriesCount >= 20'
+                    color="primary"
+                    style="width: 100%;"
+                )
+                    span.im.im-plus3
