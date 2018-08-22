@@ -20,6 +20,7 @@ import { NgModule } from '@angular/core';
 
 // Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -130,6 +131,7 @@ import { MatToolbarModule, MatButtonModule, MatIconModule, MatListModule } from 
         MatButtonModule,
         MatIconModule,
         MatListModule,
+        MatInputModule,
     ],
     providers: [
         SaveFileService
