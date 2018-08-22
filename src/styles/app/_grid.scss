@@ -18,7 +18,7 @@
     //height: 100%;
     width: 100%;
     display: grid;
-    grid-gap: 3px;
+    grid-gap: 15px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     padding: 15px;
@@ -29,6 +29,10 @@
         max-width: 1280px;
         width: 90%;
         //border: 1px solid yellow;
+    }
+
+    &.dense {
+        grid-auto-flow: dense;
     }
 
     &.tiles {

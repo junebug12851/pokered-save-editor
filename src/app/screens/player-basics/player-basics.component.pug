@@ -1,16 +1,3 @@
-//-     .row.s12
-//-         h5 Badges
-
-
-//-     gym-button.row.s1(gymLeader='Brock' gymBadge='Boulder')
-//-     gym-button.s1(gymLeader='Misty' gymBadge='Cascade')
-//-     gym-button.s1(gymLeader='Lt. Surge' gymBadge='Thunder')
-//-     gym-button.s1(gymLeader='Erika' gymBadge='Rainbow')
-//-     gym-button.s1(gymLeader='Koga' gymBadge='Soul')
-//-     gym-button.s1(gymLeader='Sabrina' gymBadge='Marsh')
-//-     gym-button.s1(gymLeader='Blaine' gymBadge='Volcano')
-//-     gym-button.s1(gymLeader='Giovanni' gymBadge='Earth')
-
 .container.wrapper
     .row.s12
         h5 Player Basics
@@ -23,35 +10,43 @@
             'template'='<<t>><<c("! I\'ll show")>><br><<c("you how a real")>>'
             '[(ngModel)]'='fileService.fileDataExpanded.player.playerName'
         )
-    .s3
-        label Player ID
-        input(
-            placeholder='ID'
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.player.playerID'
-            required=''
-            pattern='[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]'
-            minlength='4'
-            maxlength='4'
-        )
-    .s3
-        label Money
-        input(
-            placeholder='Money'
-            type='number'
-            '[(ngModel)]'='fileService.fileDataExpanded.player.money'
-            max='999999'
-            min='0'
-        )
-    .s3
-        label Casino Coins
-        input(
-            placeholder='Coins'
-            type='number'
-            '[(ngModel)]'='fileService.fileDataExpanded.player.coins'
-            max='9999'
-            min='0'
-        )
+    .s6.m4.l3
+        mat-form-field
+            mat-label Player ID
+            input(
+                matInput=''
+                placeholder='Player ID'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.playerID'
+                required=''
+                pattern='[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]'
+                minlength='4'
+                maxlength='4'
+            )
+    .s6.m4.l3
+        mat-form-field
+            mat-label Money
+            input(
+                matInput=''
+                placeholder='Money'
+                type='number'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.money'
+                required=''
+                max='999999'
+                min='0'
+            )
+    .s6.m4.l3
+        mat-form-field
+            mat-label Casino Coins
+            input(
+                matInput=''
+                placeholder='Coins'
+                type='number'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.coins'
+                required=''
+                max='9999'
+                min='0'
+            )
     .s3
         select-starter('[(ngModel)]'='fileService.fileDataExpanded.player.playerStarter')
     .row.s12
