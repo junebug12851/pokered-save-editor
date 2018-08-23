@@ -187,54 +187,8 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                     '[(ngModel)]'='entry.special'
                                     '[disabled]'='disabled || entry.special === undefined'
                                 )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Attack IV
-                                input(
-                                    matInput=''
-                                    placeholder='Attack IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.attack'
-                                    '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
-                                )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Defense IV
-                                input(
-                                    matInput=''
-                                    placeholder='Defense IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.defense'
-                                    '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
-                                )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Speed IV
-                                input(
-                                    matInput=''
-                                    placeholder='Speed IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.speed'
-                                    '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
-                                )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Special IV
-                                input(
-                                    matInput=''
-                                    placeholder='Special IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.special'
-                                    '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
-                                )
+                mat-tab(label="Exp", '[disabled]'='disabled')
+                    .container
                         .s3
                             mat-form-field(style='width: 100%')
                                 mat-label Exp
@@ -294,4 +248,54 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                     type='number'
                                     '[(ngModel)]'='entry.specialExp'
                                     '[disabled]'='disabled'
+                                )
+                mat-tab(label="IV", '[disabled]'='disabled')
+                    .container
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Attack IV
+                                input(
+                                    matInput=''
+                                    placeholder='Attack IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.attack'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Defense IV
+                                input(
+                                    matInput=''
+                                    placeholder='Defense IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.defense'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Speed IV
+                                input(
+                                    matInput=''
+                                    placeholder='Speed IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.speed'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Special IV
+                                input(
+                                    matInput=''
+                                    placeholder='Special IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.special'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
                                 )
