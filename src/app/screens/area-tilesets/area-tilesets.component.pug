@@ -1,112 +1,137 @@
-.row
-  .col.s12
-    h5 Area Tilesets
+.container.wrapper
+    .row.s12
+        h5 Area Tilesets
 
-.row
-    .col.s4
+    .row.s12
         img('[src]'='tilesetUrl', style='width: 256px;')
-    .col.s1
-        label Invalid
-        div('[class]'='containerClass')
-            div('[class]'='invalidClass')
-    .col.s1
-        label Grass
-        div('[class]'='containerClass')
-            div('[class]'='grassClass')
-    .col.s1
-        label Counter 1
-        div('[class]'='containerClass')
-            div('[class]'='getCounterClass(0)')
-    .col.s1
-        label Counter 2
-        div('[class]'='containerClass')
-            div('[class]'='getCounterClass(1)')
-    .col.s1
-        label Counter 3
-        div('[class]'='containerClass')
-            div('[class]'='getCounterClass(2)')
 
-.row
-    .col.s3
-        label Tileset
-        select.browser-default(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tileset'
-        )
-            option('[value]'='"0"', disabled='') Select Tileset
-            option('[value]'='"19_00_4000_45E0_1735"') Overworld
-            option('[value]'='"19_01_4DE0_5270_1749"') Players House 1
-            option('[value]'='"1A_02_4DBF_53BF_1753"') Mart
-            option('[value]'='"1A_03_63FF_69FF_1765"') Forest
-            option('[value]'='"19_04_4DE0_5270_1749"') Players House 2
-            option('[value]'='"1A_05_407F_467F_1759"') Dojo
-            option('[value]'='"1A_06_4DBF_53BF_1753"') Pokemon Center
-            option('[value]'='"1A_07_407F_467F_1759"') Gym
-            option('[value]'='"19_08_53A0_5980_1775"') House
-            option('[value]'='"1A_09_560F_5BFF_177F"') Forest Gate
-            option('[value]'='"1A_0A_560F_5BFF_177F"') Museum
-            option('[value]'='"1B_0B_7D60_7EF0_172F"') Underground
-            option('[value]'='"1A_0C_560F_5BFF_177F"') Gate
-            option('[value]'='"1B_0D_6390_6930_178A"') Ship
-            option('[value]'='"19_0E_6610_6BF0_1795"') Ship Port
-            option('[value]'='"1B_0F_4000_45C0_179A"') Cemetery
-            option('[value]'='"19_10_6D60_7350_17A2"') Interior
-            option('[value]'='"1B_11_4CA0_50C0_17AC"') Cavern
-            option('[value]'='"1B_12_58C0_5EA0_17B8"') Lobby
-            option('[value]'='"19_13_5BB0_6190_17C0"') Mansion
-            option('[value]'='"1B_14_6D10_72D0_17CA"') Lab
-            option('[value]'='"1B_15_7670_7B20_17D1"') Club
-            option('[value]'='"1A_16_71FF_77FF_17DD"') Facility
-            option('[value]'='"19_17_76F0_7B50_17F0"') Plateau
-    .col.s2
-        label Type
-        select.browser-default(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetType'
-        )
-            option('[value]'='"255"', disabled='') Select Type
-            option('[value]'='"00"') Indoor
-            option('[value]'='"01"') Cave
-            option('[value]'='"02"') Outdoor
-.row
-    .col.s1
-        label Invalid
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.outOfBoundsTile'
-        )
-    .col.s1
-        label Grass
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetGrassTile'
-        )
-    .col.s1
-        label Colliding
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tileFrontBoulderColl'
-        )
-    .col.s1
-        label Boulder
-        input(
-            type='number'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.boulderSpriteIndex'
-        )
-.row
-    .col.s1
-        label Counter 1
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[0]'
-        )
-    .col.s1
-        label Counter 2
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[1]'
-        )
-    .col.s1
-        label Counter 3
-        input(
-            type='text'
-            '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[2]'
-        )
+    .row.s1
+        mat-form-field(style="width: 100%")
+            mat-label Tileset
+            mat-select(
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tileset'
+                required=''
+            )
+                mat-option('[value]'='"0"', disabled='') Select Tileset
+                mat-option('[value]'='"19_00_4000_45E0_1735"') Overworld
+                mat-option('[value]'='"19_01_4DE0_5270_1749"') Players House 1
+                mat-option('[value]'='"1A_02_4DBF_53BF_1753"') Mart
+                mat-option('[value]'='"1A_03_63FF_69FF_1765"') Forest
+                mat-option('[value]'='"19_04_4DE0_5270_1749"') Players House 2
+                mat-option('[value]'='"1A_05_407F_467F_1759"') Dojo
+                mat-option('[value]'='"1A_06_4DBF_53BF_1753"') Pokemon Center
+                mat-option('[value]'='"1A_07_407F_467F_1759"') Gym
+                mat-option('[value]'='"19_08_53A0_5980_1775"') House
+                mat-option('[value]'='"1A_09_560F_5BFF_177F"') Forest Gate
+                mat-option('[value]'='"1A_0A_560F_5BFF_177F"') Museum
+                mat-option('[value]'='"1B_0B_7D60_7EF0_172F"') Underground
+                mat-option('[value]'='"1A_0C_560F_5BFF_177F"') Gate
+                mat-option('[value]'='"1B_0D_6390_6930_178A"') Ship
+                mat-option('[value]'='"19_0E_6610_6BF0_1795"') Ship Port
+                mat-option('[value]'='"1B_0F_4000_45C0_179A"') Cemetery
+                mat-option('[value]'='"19_10_6D60_7350_17A2"') Interior
+                mat-option('[value]'='"1B_11_4CA0_50C0_17AC"') Cavern
+                mat-option('[value]'='"1B_12_58C0_5EA0_17B8"') Lobby
+                mat-option('[value]'='"19_13_5BB0_6190_17C0"') Mansion
+                mat-option('[value]'='"1B_14_6D10_72D0_17CA"') Lab
+                mat-option('[value]'='"1B_15_7670_7B20_17D1"') Club
+                mat-option('[value]'='"1A_16_71FF_77FF_17DD"') Facility
+                mat-option('[value]'='"19_17_76F0_7B50_17F0"') Plateau
+    .s1
+        mat-form-field(style="width: 100%")
+            mat-label Type
+            mat-select(
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetType'
+                required=''
+            )
+                mat-option('[value]'='"255"', disabled='') Select Type
+                mat-option('[value]'='"00"') Indoor
+                mat-option('[value]'='"01"') Cave
+                mat-option('[value]'='"02"') Outdoor
+
+    .row.xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Invalid
+            input(
+                matInput=''
+                required=''
+                placeholder='Invalid'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.outOfBoundsTile'
+            )
+            span(matSuffix='')
+                div('[class]'='containerClass')
+                    div('[class]'='invalidClass')
+    .xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Grass
+            input(
+                matInput=''
+                required=''
+                placeholder='Grass'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetGrassTile'
+            )
+            span(matSuffix='')
+                div('[class]'='containerClass')
+                    div('[class]'='grassClass')
+    .xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Colliding
+            input(
+                matInput=''
+                required=''
+                placeholder='Colliding'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tileFrontBoulderColl'
+            )
+    .row.xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Boulder
+            input(
+                matInput=''
+                required=''
+                placeholder='Boulder'
+                type='number'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.boulderSpriteIndex'
+            )
+
+    .xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Counter 1
+            input(
+                matInput=''
+                required=''
+                placeholder='Counter 1'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[0]'
+            )
+            span(matSuffix='')
+                div('[class]'='containerClass')
+                    div('[class]'='getCounterClass(0)')
+    .xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Counter 2
+            input(
+                matInput=''
+                required=''
+                placeholder='Counter 2'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[1]'
+            )
+            span(matSuffix='')
+                div('[class]'='containerClass')
+                    div('[class]'='getCounterClass(1)')
+    .row.xl1.l2.m4.s6
+        mat-form-field(style='width: 100%;')
+            mat-label Counter 3
+            input(
+                matInput=''
+                required=''
+                placeholder='Counter 3'
+                type='text'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[2]'
+            )
+            span(matSuffix='')
+                div('[class]'='containerClass')
+                    div('[class]'='getCounterClass(2)')
