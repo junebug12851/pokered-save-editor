@@ -1,72 +1,70 @@
-.row
-  .col.s12
-    h5 Area Audio
+.container.wrapper
+    .row.s12
+        h5 Area Audio
 
-.row
-    .col.s3
-        label Music
-        select.browser-default(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.music'
+    .row.l3.s12
+        mat-form-field(style="width: 100%")
+            mat-label Music
+            mat-select(
+                '[(ngModel)]'='fileService.fileDataExpanded.area.music'
+                required=''
+            )
+                mat-option('[value]'='"0"', disabled='') Select Music
+                mat-option('[value]'='"02_BA"') Pallet Town
+                mat-option('[value]'='"02_BD"') Pokemon Center
+                mat-option('[value]'='"02_C0"') Gym
+                mat-option('[value]'='"02_C3"') Cities A
+                mat-option('[value]'='"02_C7"') Cities B
+                mat-option('[value]'='"02_CA"') Celadon City
+                mat-option('[value]'='"02_CD"') Cinnabar Island
+                mat-option('[value]'='"02_D0"') Vermillion City
+                mat-option('[value]'='"02_D4"') Lavender Town
+                mat-option('[value]'='"02_D8"') SS Anne
+                mat-option('[value]'='"02_DB"') Meet Prof. Oak
+                mat-option('[value]'='"02_DE"') Meet Rival
+                mat-option('[value]'='"02_E1"') Follow Me
+                mat-option('[value]'='"02_E5"') Safari Zone
+                mat-option('[value]'='"02_E8"') Pokemon Healed
+                mat-option('[value]'='"02_EB"') Routes A
+                mat-option('[value]'='"02_EF"') Routes B
+                mat-option('[value]'='"02_F3"') Routes C
+                mat-option('[value]'='"02_F7"') Routes D
+                mat-option('[value]'='"02_FB"') Indigo Plateau
+                mat-option('[value]'='"08_EA"') Gym Leader Battle
+                mat-option('[value]'='"08_ED"') Trainer Battle
+                mat-option('[value]'='"08_F0"') Wild Battle
+                mat-option('[value]'='"08_F3"') Final Battle
+                mat-option('[value]'='"08_F6"') Defeated Trainer
+                mat-option('[value]'='"08_F9"') Defeated Wild Pokemon
+                mat-option('[value]'='"08_FC"') Defeated Champion
+                mat-option('[value]'='"1F_C3"') Title Screen
+                mat-option('[value]'='"1F_C7"') Credits
+                mat-option('[value]'='"1F_CA"') Hall of fame
+                mat-option('[value]'='"1F_CD"') Oak's Lab
+                mat-option('[value]'='"1F_D0"') Jigglypuff Song
+                mat-option('[value]'='"1F_D2"') Bike Riding
+                mat-option('[value]'='"1F_D6"') Surfing
+                mat-option('[value]'='"1F_D9"') Game Corner
+                mat-option('[value]'='"1F_DC"') Intro Battle
+                mat-option('[value]'='"1F_DF"') Dungeon 1
+                mat-option('[value]'='"1F_E3"') Dungeon 2
+                mat-option('[value]'='"1F_E7"') Dungeon 3
+                mat-option('[value]'='"1F_EB"') Cinnabar Mansion
+                mat-option('[value]'='"1F_EF"') Pokemon Tower
+                mat-option('[value]'='"1F_F2"') Silph Co.
+                mat-option('[value]'='"1F_F5"') Meet Evil Trainer
+                mat-option('[value]'='"1F_F8"') Meet Female Trainer
+                mat-option('[value]'='"1F_FB"') Meet Male Trainer
+                mat-option('[value]'='"1F_FF"') No Music
+
+    .xl2.l4.m6.s12
+        mat-checkbox(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.noAudioFadeout'
         )
-            option('[value]'='"0"', disabled='') Select Music
-            option('[value]'='"02_BA"') Pallet Town
-            option('[value]'='"02_BD"') Pokemon Center
-            option('[value]'='"02_C0"') Gym
-            option('[value]'='"02_C3"') Cities A
-            option('[value]'='"02_C7"') Cities B
-            option('[value]'='"02_CA"') Celadon City
-            option('[value]'='"02_CD"') Cinnabar Island
-            option('[value]'='"02_D0"') Vermillion City
-            option('[value]'='"02_D4"') Lavender Town
-            option('[value]'='"02_D8"') SS Anne
-            option('[value]'='"02_DB"') Meet Prof. Oak
-            option('[value]'='"02_DE"') Meet Rival
-            option('[value]'='"02_E1"') Follow Me
-            option('[value]'='"02_E5"') Safari Zone
-            option('[value]'='"02_E8"') Pokemon Healed
-            option('[value]'='"02_EB"') Routes A
-            option('[value]'='"02_EF"') Routes B
-            option('[value]'='"02_F3"') Routes C
-            option('[value]'='"02_F7"') Routes D
-            option('[value]'='"02_FB"') Indigo Plateau
-            option('[value]'='"08_EA"') Gym Leader Battle
-            option('[value]'='"08_ED"') Trainer Battle
-            option('[value]'='"08_F0"') Wild Battle
-            option('[value]'='"08_F3"') Final Battle
-            option('[value]'='"08_F6"') Defeated Trainer
-            option('[value]'='"08_F9"') Defeated Wild Pokemon
-            option('[value]'='"08_FC"') Defeated Champion
-            option('[value]'='"1F_C3"') Title Screen
-            option('[value]'='"1F_C7"') Credits
-            option('[value]'='"1F_CA"') Hall of fame
-            option('[value]'='"1F_CD"') Oak's Lab
-            option('[value]'='"1F_D0"') Jigglypuff Song
-            option('[value]'='"1F_D2"') Bike Riding
-            option('[value]'='"1F_D6"') Surfing
-            option('[value]'='"1F_D9"') Game Corner
-            option('[value]'='"1F_DC"') Intro Battle
-            option('[value]'='"1F_DF"') Dungeon 1
-            option('[value]'='"1F_E3"') Dungeon 2
-            option('[value]'='"1F_E7"') Dungeon 3
-            option('[value]'='"1F_EB"') Cinnabar Mansion
-            option('[value]'='"1F_EF"') Pokemon Tower
-            option('[value]'='"1F_F2"') Silph Co.
-            option('[value]'='"1F_F5"') Meet Evil Trainer
-            option('[value]'='"1F_F8"') Meet Female Trainer
-            option('[value]'='"1F_FB"') Meet Male Trainer
-            option('[value]'='"1F_FF"') No Music
-
-    .col.s2
-        label
-            input(
-                type='checkbox'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.noAudioFadeout'
-            )
             span No Audio Fadeout
-    .col.s3
-        label
-            input(
-                type='checkbox'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.preventMusicChange'
-            )
+
+    .xl3.l5.m6.s12
+        mat-checkbox(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.preventMusicChange'
+        )
             span Prevent Music Change
