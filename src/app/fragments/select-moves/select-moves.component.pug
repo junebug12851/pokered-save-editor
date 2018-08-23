@@ -1,11 +1,13 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '[disabled]'='disabled'
+mat-form-field(style="width: 100%")
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
+        required=''
     )
-    option([value]='255', disabled='') Choose Move
-    option([value]='0') ----
-    option(
-        *ngFor='let move of movesList',
-        '[value]'='move.ind',
-        '[disabled]'='move.disable'
-    ) {{move.name}}
+        mat-option('[value]'="255" '[disabled]'='') Choose Move
+        mat-option('[value]'="0") ----
+        mat-option(
+            *ngFor='let move of movesList; trackBy: movesTracking',
+            '[value]'='move.ind',
+            '[disabled]'='move.disable'
+        ) {{move.name}}

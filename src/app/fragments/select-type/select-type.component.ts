@@ -47,4 +47,9 @@ export class SelectTypeComponent extends ValueAccessorBase<string> {
     get typesList() {
         return this.typeService.rawTypes;
     }
+
+    // @ts-ignore
+    typesTracking(index: number, item: any) {
+        return index; // or item.id
+    }
 }

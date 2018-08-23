@@ -1,0 +1,68 @@
+mat-card.sticky.ns(style='margin-bottom: 15px !important')
+    .container.ns
+        .row.s12
+            hp-bar(
+                '[curHP]'='entry.hp'
+                '[maxHP]'='entry.maxHP || 1'
+                '[disabled]'='disabled'
+            )
+        .row.s9
+            name-box(
+                '[value]'='entry.nickname'
+            )
+        .s3.right-align
+            mat-form-field(style='width: 100%')
+                mat-label Level
+                input(
+                    matInput=''
+                    placeholder='Level'
+                    type='number'
+                    '[(ngModel)]'='entry.level'
+                    required=''
+                    min='1'
+                    max='100'
+                    '[disabled]'='disabled'
+                )
+        .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
+            select-species(
+                '[(ngModel)]'='entry.species'
+                '[disabled]'='disabled'
+                style='width: 100%;'
+            )
+        .s4
+            select-type(
+                '[(ngModel)]'='entry.type1'
+                '[disabled]'='disabled'
+                style='width: 100%'
+            )
+        .s4
+            select-type(
+                '[(ngModel)]'='entry.type2'
+                '[disabled]'='disabled'
+                style='width: 100%'
+            )
+
+    button.stick.br(
+        mat-mini-fab='',
+        color='accent',
+        *ngIf='addBtn',
+        '(click)'='onAddClick()'
+    )
+        span.im.im-plus3
+
+    button.stick.br(
+        mat-mini-fab='',
+        color='warn',
+        *ngIf='remBtn',
+        '(click)'='onRemClick()'
+    )
+        span.im.im-delete
+
+    button.stick.bl(
+        mat-mini-fab='',
+        color='accent',
+        *ngIf='fullViewBtn',
+        '(click)'='onFullViewClick()'
+    )
+        span(*ngIf='fullViewActive == true').im.im-keyboard_arrow_right
+        span(*ngIf='fullViewActive == false').im.im-keyboard_arrow_left

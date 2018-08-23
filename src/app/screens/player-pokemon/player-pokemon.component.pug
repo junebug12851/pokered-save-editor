@@ -1,13 +1,24 @@
-.row.sticky
-    card-pokemon(
-        *ngFor='let entry of entries; let i = index'
-        '[entry]'='entries[i]'
-        '[remBtn]'='true'
-        '(onRem)'='onRem(i)'
-    )
-    card-pokemon(
-        *ngIf='entries.length <= 5'
-        '[disabled]'='true'
-        '[addBtn]'='true'
-        '(onAdd)'='onAdd()'
-    )
+.container
+    .l8.s12
+        .container.wrapper.ns-t
+            .s12
+                card-pokemon(
+                    *ngIf='fullView != null'
+                    '[entry]'='fullView'
+                )
+    .l4.s12
+        card-pokemon-header(
+            *ngFor='let entry of entries; let i = index'
+            '[entry]'='entries[i]'
+            '[remBtn]'='true'
+            '[fullViewBtn]'='true'
+            '[fullViewActive]'='fullView == entries[i]'
+            '(onRem)'='onRem(i)'
+            '(onFullView)'='onFullView(entries[i])'
+        )
+        card-pokemon-header(
+            *ngIf='entries.length <= 5'
+            '[disabled]'='true'
+            '[addBtn]'='true'
+            '(onAdd)'='onAdd()'
+        )

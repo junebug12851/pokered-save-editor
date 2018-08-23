@@ -1,265 +1,297 @@
-// We're going to have to seriously work on performance
-// It's just way to much stuff rendered at once and kept in the DOM
-.col.s6
-    .card.grey.darken-3.sticky
-        .card-content.ns.clicky('(click)'='toggleEntry()')
+mat-card.ns(style='margin-bottom: 15px !important')
+    .container.ns
+        .row.s12
             hp-bar(
                 '[curHP]'='entry.hp'
                 '[maxHP]'='entry.maxHP || 1'
                 '[disabled]'='disabled'
             )
-
-            .row.ns-b.s-lr
-                .col.s6
-                    .card-title
-                        name-box.pr-ns(
-                            '[value]'='entry.nickname'
-                        )
-                .col.s1.offset-s3.right-align
-                    label.active.label-title Level
-                .col.s2.right-align
-                    input(
-                        type='number'
-                        '[(ngModel)]'='entry.level'
-                        '[disabled]'='disabled'
-                    )
-
-            .row.s-lr
-                .col.s4
-                    label Species
-                    select-species.slim-select(
-                        '[(ngModel)]'='entry.species'
-                        '[disabled]'='disabled'
-                    )
-                .col.s4
-                    label Type 1
-                    select-type.slim-select(
-                        '[(ngModel)]'='entry.type1'
-                        '[disabled]'='disabled'
-                    )
-                .col.s4
-                    label Type 2
-                    select-type.slim-select(
-                        '[(ngModel)]'='entry.type2'
-                        '[disabled]'='disabled'
-                    )
-
-        .spacer(*ngIf='!activeEntry')
-        .card-tabs(*ngIf='activeEntry')
-            ul.tabs.tabs-fixed-width
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(0)' '[class.active]'='activeTab == 0') Basic
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(1)' '[class.active]'='activeTab == 1') Moves
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(2)' '[class.active]'='activeTab == 2') Stats
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(3)' '[class.active]'='activeTab == 3') Exp
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(4)' '[class.active]'='activeTab == 4') IV
-                li.tab('[class.disabled]'='disabled')
-                    a('(click)'='setActiveTab(5)' '[class.active]'='activeTab == 5') OT
-
-        .card-content(*ngIf='activeEntry')
-            div(*ngIf='activeTab == 0')
-                .row
-                    .col.s4
-                        label HP
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.hp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s4
-                        label Max HP
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.maxHP'
-                                '[disabled]'='disabled || entry.maxHP === undefined'
-                            )
-                    .col.s4
-                        label Status
-                        select-status.black-text(
-                            '[(ngModel)]'='entry.status'
-                            '[disabled]'='disabled'
-                        )
-                .row
-                    .col.s8(style="padding-top: 22px;")
-                        name-input-box(
-                            '[label]'='Nickname'
-                            '[(ngModel)]'='entry.nickname'
-                            '[disabled]'='disabled'
-                            'template'='<<t>><<c("\'s")>><br><<c("hurt by poison!")>>'
-                        )
-
-                    .col.s4
-                        label Catch Rate
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.catchRate'
-                                '[disabled]'='disabled'
-                            )
-
-            div(*ngIf='activeTab == 1')
-                .row
-                    .col.s4
-                        label.align-center Move
-                    .col.s4
-                        label.align-center PP
-                    .col.s4
-                        label.align-center PP Up
-
-                .row(*ngFor='let move of entry.moves; let i = index')
-
-                    .col.s4
-                        select-moves(
-                            '[(ngModel)]'='entry.moves[i].moveID'
-                            '[disabled]'='disabled'
-                        )
-                    .col.s4
-                        input(
-                            type='number'
-                            '[(ngModel)]'='entry.moves[i].pp'
-                            '[disabled]'='disabled'
-                        )
-                    .col.s4
-                        input(
-                            type='number'
-                            '[(ngModel)]'='entry.moves[i].ppUp'
-                            '[disabled]'='disabled'
-                        )
-
-            div(*ngIf='activeTab == 2')
-                .row
-                    .col.s3
-                        label Attack
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.attack'
-                                '[disabled]'='disabled || entry.attack === undefined'
-                            )
-                    .col.s3
-                        label Defense
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.defense'
-                                '[disabled]'='disabled || entry.defense === undefined'
-                            )
-                    .col.s3
-                        label Speed
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.speed'
-                                '[disabled]'='disabled || entry.speed === undefined'
-                            )
-                    .col.s3
-                        label Special
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.special'
-                                '[disabled]'='disabled || entry.special === undefined'
-                            )
-
-            div(*ngIf='activeTab == 3')
-                .row
-                    .col.s3
-                        label Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.exp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label HP Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.hpExp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Attack Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.attackExp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Defense Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.defenseExp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Speed Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.speedExp'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Special Exp
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.specialExp'
-                                '[disabled]'='disabled'
-                            )
-
-            div(*ngIf='activeTab == 4')
-                .row
-                    .col.s3
-                        label Attack IV
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.dv.attack'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Defense IV
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.dv.defense'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Speed IV
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.dv.speed'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s3
-                        label Special IV
-                        input(
-                                type='number'
-                                '[(ngModel)]'='entry.dv.special'
-                                '[disabled]'='disabled'
-                            )
-            div(*ngIf='activeTab == 5')
-                .row
-                    .col.s3
-                        label OT ID
-                        input(
-                                type='text'
-                                '[(ngModel)]'='entry.otID'
-                                '[disabled]'='disabled'
-                            )
-                    .col.s9
-                        label OT Name
-                        input(
-                                type='text'
-                                '[(ngModel)]'='entry.otName'
-                                '[disabled]'='disabled'
-                            )
-
-        a.btn-floating.btn.waves-effect.btn-add.btn-floating-icon-normal.stick.br(
-                *ngIf='addBtn'
-                '(click)'='onAddClick()'
+        .row.s9
+            name-box(
+                '[value]'='entry.nickname'
             )
-                span.im.im-plus3
-
-        a.btn-floating.btn.waves-effect.btn-rem.btn-floating-icon-normal.stick.br(
-                *ngIf='remBtn'
-                '(click)'='onRemClick()'
+        .s3.right-align
+            mat-form-field(style='width: 100%')
+                mat-label Level
+                input(
+                    matInput=''
+                    placeholder='Level'
+                    type='number'
+                    '[(ngModel)]'='entry.level'
+                    required=''
+                    min='1'
+                    max='100'
+                    '[disabled]'='disabled'
+                )
+        .row.s4.s-lr
+            select-species(
+                '[(ngModel)]'='entry.species'
+                '[disabled]'='disabled'
+                style='width: 100%;'
             )
-                span.im.im-delete
+        .s4
+            select-type(
+                '[(ngModel)]'='entry.type1'
+                '[disabled]'='disabled'
+                style='width: 100%'
+            )
+        .s4
+            select-type(
+                '[(ngModel)]'='entry.type2'
+                '[disabled]'='disabled'
+                style='width: 100%'
+            )
+        .row.s12
+            mat-tab-group
+                mat-tab(label="Basic", '[disabled]'='disabled')
+                    .container
+                        .row.s4
+                            mat-form-field(style='width: 100%')
+                                mat-label Cur HP
+                                input(
+                                    matInput=''
+                                    placeholder='Cur HP'
+                                    type='number'
+                                    '[(ngModel)]'='entry.hp'
+                                    required=''
+                                    '[disabled]'='disabled'
+                                )
+                        .s4
+                            mat-form-field(style='width: 100%')
+                                mat-label Max HP
+                                input(
+                                    matInput=''
+                                    placeholder='Max HP'
+                                    type='number'
+                                    '[(ngModel)]'='entry.maxHP'
+                                    required=''
+                                    '[disabled]'='disabled || entry.maxHP === undefined'
+                                )
+                        .s4
+                            select-status(
+                                '[(ngModel)]'='entry.status'
+                                '[disabled]'='disabled'
+                                style='width: 100%'
+                            )
+                        .row.s3
+                            mat-form-field(style='width: 100%')
+                                mat-label OT ID
+                                input(
+                                    matInput=''
+                                    placeholder='OT ID'
+                                    type='text'
+                                    '[(ngModel)]'='entry.otID'
+                                    required=''
+                                    '[disabled]'='disabled'
+                                    minlength='4'
+                                    maxlength='4'
+                                    pattern='[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]'
+                                )
+                        .s8
+                            mat-form-field(style='width: 100%')
+                                mat-label OT Name
+                                input(
+                                    matInput=''
+                                    placeholder='OT Name'
+                                    type='text'
+                                    '[(ngModel)]'='entry.otName'
+                                    '[disabled]'='disabled'
+                                )
+                        .row.s7
+                            name-input-box(
+                                'label'='Nickname'
+                                '[(ngModel)]'='entry.nickname'
+                                '[disabled]'='disabled'
+                                'template'='<<t>><<c("\'s")>><br><<c("hurt by poison!")>>'
+                            )
+                        .s5
+                            mat-form-field(style='width: 100%')
+                                mat-label Catch Rate
+                                input(
+                                    matInput=''
+                                    placeholder='Catch Rate'
+                                    type='number'
+                                    '[(ngModel)]'='entry.catchRate'
+                                    required=''
+                                    '[disabled]'='disabled'
+                                )
+                mat-tab(label="Moves", '[disabled]'='disabled')
+                    .container(*ngFor='let move of entry.moves; let i = index')
+                        .row.s4
+                            select-moves(
+                                '[(ngModel)]'='entry.moves[i].moveID'
+                                '[disabled]'='disabled'
+                            )
+                        .s4
+                            mat-form-field(style='width: 100%')
+                                mat-label Cur PP
+                                input(
+                                    matInput=''
+                                    placeholder='Cur PP'
+                                    type='number'
+                                    '[(ngModel)]'='entry.moves[i].pp'
+                                    required=''
+                                    '[disabled]'='disabled'
+                                )
+                        .s4
+                            mat-form-field(style='width: 100%')
+                                mat-label PP Up
+                                input(
+                                    matInput=''
+                                    placeholder='PP Up'
+                                    type='number'
+                                    '[(ngModel)]'='entry.moves[i].ppUp'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='3'
+                                )
+                mat-tab(label="Stats", '[disabled]'='disabled')
+                    .container
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Attack
+                                input(
+                                    matInput=''
+                                    placeholder='Attack'
+                                    type='number'
+                                    '[(ngModel)]'='entry.attack'
+                                    '[disabled]'='disabled || entry.attack === undefined'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Defense
+                                input(
+                                    matInput=''
+                                    placeholder='Defense'
+                                    type='number'
+                                    '[(ngModel)]'='entry.defense'
+                                    '[disabled]'='disabled || entry.defense === undefined'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Speed
+                                input(
+                                    matInput=''
+                                    placeholder='Speed'
+                                    type='number'
+                                    '[(ngModel)]'='entry.speed'
+                                    '[disabled]'='disabled || entry.speed === undefined'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Special
+                                input(
+                                    matInput=''
+                                    placeholder='Special'
+                                    type='number'
+                                    '[(ngModel)]'='entry.special'
+                                    '[disabled]'='disabled || entry.special === undefined'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Attack IV
+                                input(
+                                    matInput=''
+                                    placeholder='Attack IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.attack'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Defense IV
+                                input(
+                                    matInput=''
+                                    placeholder='Defense IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.defense'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Speed IV
+                                input(
+                                    matInput=''
+                                    placeholder='Speed IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.speed'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Special IV
+                                input(
+                                    matInput=''
+                                    placeholder='Special IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.dv.special'
+                                    '[disabled]'='disabled'
+                                    min='0'
+                                    max='15'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Exp
+                                input(
+                                    matInput=''
+                                    placeholder='Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.exp'
+                                    '[disabled]'='disabled'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label HP Exp
+                                input(
+                                    matInput=''
+                                    placeholder='HP Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.hpExp'
+                                    '[disabled]'='disabled'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Attack Exp
+                                input(
+                                    matInput=''
+                                    placeholder='Attack Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.attackExp'
+                                    '[disabled]'='disabled'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Defense Exp
+                                input(
+                                    matInput=''
+                                    placeholder='Defense Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.defenseExp'
+                                    '[disabled]'='disabled'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Speed Exp
+                                input(
+                                    matInput=''
+                                    placeholder='Speed Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.speedExp'
+                                    '[disabled]'='disabled'
+                                )
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label Special Exp
+                                input(
+                                    matInput=''
+                                    placeholder='Special Exp'
+                                    type='number'
+                                    '[(ngModel)]'='entry.specialExp'
+                                    '[disabled]'='disabled'
+                                )

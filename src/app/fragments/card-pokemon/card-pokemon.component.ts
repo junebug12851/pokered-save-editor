@@ -1,6 +1,5 @@
-// @ts-ignore
-import { NicknameInputBoxComponent } from './../nickname-input-box/nickname-input-box.component';
-import { EventEmitter, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
+
 /**
    Copyright 2018 June Hanabi
 
@@ -17,7 +16,7 @@ import { EventEmitter, OnInit } from '@angular/core';
    limitations under the License.
  */
 
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 
 @Component({
@@ -38,38 +37,4 @@ export class CardPokemonComponent implements OnInit {
 
     @Input()
     public disabled: boolean = false;
-
-    @Input()
-    public addBtn: boolean = false;
-
-    @Input()
-    public remBtn: boolean = false;
-
-    @Output()
-    public onAdd: EventEmitter<boolean> = new EventEmitter();
-
-    @Output()
-    public onRem: EventEmitter<boolean> = new EventEmitter();
-
-    onAddClick() {
-        this.onAdd.emit(true);
-    }
-
-    onRemClick() {
-        this.onRem.emit(true);
-    }
-
-    toggleEntry() {
-        this.activeEntry = !this.activeEntry;
-    }
-
-    setActiveTab(val: number) {
-        this.activeTab = val;
-    }
-
-    // Load the Pokemon Body Contents into the DOM at all?
-    public activeEntry: boolean = false;
-
-    // Which tab contents to load into the DOM
-    public activeTab: number = 0;
 }

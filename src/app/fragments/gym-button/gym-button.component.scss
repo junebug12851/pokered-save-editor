@@ -14,24 +14,12 @@
    limitations under the License.
  */
 
-// .gym-btn {
-//     height: 60px;
-//     width: 100px;
-//     line-height: 1.70;
-//     text-transform: none;
-//     background-color: hsl(0, 0%, 74.1%);
-//     border-radius: 10px;
-//     text-align: center;
-//     color: hsl(0, 0%, 12.9%);
-//     margin-right: 15px;
-//     margin-top: 15px;
-//     display: inline-block;
-// }
-
 button {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 .gym-btn .gym-leader {

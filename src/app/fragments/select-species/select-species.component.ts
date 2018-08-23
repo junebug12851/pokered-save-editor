@@ -68,4 +68,9 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
     public onSpeciesChange(val: number) {
         this.speciesChange.emit(val);
     }
+
+    // @ts-ignore
+    speciesTracking(index: number, item: any) {
+        return index; // or item.id
+    }
 }
