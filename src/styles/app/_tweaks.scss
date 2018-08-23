@@ -19,7 +19,7 @@
 }
 
 .stick {
-    position: absolute;
+    position: absolute !important;
 
     &.tl {
         top: 0;

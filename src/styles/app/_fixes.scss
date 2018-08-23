@@ -1,3 +1,23 @@
 .mat-form-field-label-wrapper {
     height: 35px !important;
 }
+
+.mat-progress-bar.green .mat-progress-bar-fill::after,
+.mat-progress-bar.green .mat-progress-bar-element {
+    background-color: color("green", "accent-3");
+}
+
+.mat-progress-bar.amber .mat-progress-bar-fill::after,
+.mat-progress-bar.amber .mat-progress-bar-element {
+    background-color: color("amber", "accent-3");
+}
+
+.mat-progress-bar.red .mat-progress-bar-fill::after,
+.mat-progress-bar.red .mat-progress-bar-element {
+    background-color: color("red", "accent-3");
+}
+
+.mat-progress-bar.grey .mat-progress-bar-fill::after,
+.mat-progress-bar.grey .mat-progress-bar-element {
+    background-color: color("grey", "darken-2");
+}

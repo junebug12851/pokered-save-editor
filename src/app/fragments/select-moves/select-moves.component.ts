@@ -71,4 +71,9 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
             ...moveListGlitch,
         ];
     }
+
+    // @ts-ignore
+    movesTracking(index: number, item: any) {
+        return index; // or item.id
+    }
 }

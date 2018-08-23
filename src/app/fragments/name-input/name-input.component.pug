@@ -1,8 +1,8 @@
-mat-form-field
+mat-form-field(style='width: 100%;')
     mat-label {{label}}
     input(
         matInput=''
-        placeholder='Player ID'
+        '[placeholder]'='label'
         type='text'
         '[(ngModel)]'='value'
         '(ngModelChange)'='doOnChange($event)'

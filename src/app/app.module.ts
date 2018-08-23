@@ -1,3 +1,4 @@
+import { CardPokemonHeader } from './fragments/card-pokemon-header/card-pokemon-header.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -24,6 +25,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -121,6 +125,7 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
         WarpItemComponent,
         AreaWarpsComponent,
         NavComponent,
+        CardPokemonHeader
     ],
     imports: [
         BrowserModule,
@@ -137,6 +142,9 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        MatCardModule,
+        MatProgressBarModule,
+        MatTabsModule,
     ],
     providers: [
         SaveFileService

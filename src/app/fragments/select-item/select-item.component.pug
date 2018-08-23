@@ -4,7 +4,7 @@ mat-form-field
         '[disabled]'='disabled'
         required=''
     )
-        mat-option(value="0" '[disabled]'='!noneSelectable') Choose Item
+        mat-option('[value]'="0" '[disabled]'='!noneSelectable') Choose Item
         mat-option(
             *ngFor='let itemOption of itemList; trackBy: optionsTracking',
             '[value]'='itemOption.ind',

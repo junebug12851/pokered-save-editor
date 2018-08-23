@@ -1,11 +1,13 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '[disabled]'='disabled'
+mat-form-field(style="width: 100%")
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
+        required=''
     )
-    option('[value]'='254', '[disabled]'='true') Choose Type
-    option('[value]'='255') ---
-    option(
-        *ngFor='let types of typesList',
-        '[value]'='types.ind',
-        '[disabled]'='types.disable'
-    ) {{types.name}}
+        mat-option('[value]'="0" '[disabled]'='true') Type
+        mat-option('[value]'="255") ---
+        mat-option(
+            *ngFor='let types of typesList; trackBy: typesTracking',
+            '[value]'='types.ind',
+            '[disabled]'='types.disable'
+        ) {{types.name}}

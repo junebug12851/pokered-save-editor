@@ -81,11 +81,11 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
         itemListGlitch = _.sortBy(itemListGlitch, ['name']);
 
         return [
-            { name: "--- Common Items ---", ind: 0x00, disable: true },
+            { name: "--- Common Items ---", ind: 0x100, disable: true },
             ...itemListCommon,
-            { name: "--- Special Items ---", ind: 0x00, disable: true },
+            { name: "--- Special Items ---", ind: 0x100, disable: true },
             ...itemListSpecial,
-            { name: "--- Glitch Items ---", ind: 0x00, disable: true },
+            { name: "--- Glitch Items ---", ind: 0x100, disable: true },
             ...itemListGlitch
         ];
     }

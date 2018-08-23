@@ -1,11 +1,13 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '(ngModelChange)'='onSpeciesChange($event)'
-    '[disabled]'='disabled'
+mat-form-field(style="width: 100%")
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
+        '(ngModelChange)'='onSpeciesChange($event)'
+        required=''
     )
-    option('[value]'='0', '[disabled]'='true') Choose Species
-    option(
-        *ngFor='let species of speciesList',
-        '[value]'='species.ind',
-        '[disabled]'='species.disable'
-    ) {{species.name}}
+        mat-option('[value]'="0" '[disabled]'='true') Species
+        mat-option(
+            *ngFor='let species of speciesList; trackBy: speciesTracking',
+            '[value]'='species.ind',
+            '[disabled]'='species.disable'
+        ) {{species.name}}
