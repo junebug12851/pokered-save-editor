@@ -1,20 +1,14 @@
-.row
-  .col.s12
-    h5 Rival Basics
-
-.row
-  .input-field.col.s4.fix-margins-name
-    name-input-box(
-        '[maxLength]'="7"
-        label="Rival Name"
-        '[bg]'="true"
-        '[textBlack]'="true"
-        'template'='<<t>><<c(": Yeah! Am")>><br><<c("I great or what?")>>'
-        '[(ngModel)]'='fileService.fileDataExpanded.rival.rivalName'
-    )
-
-  .input-field.col.s6.m2
-    select-starter(
-        '[(ngModel)]'='fileService.fileDataExpanded.rival.rivalStarter'
-        style='color: black !important;'
+.container.wrapper
+    .row.s12
+        h5 Rival Basics
+    .row.s12.m4
+        name-input-box(
+            '[maxLength]'="7"
+            label="Rival Name"
+            '[bg]'="true"
+            '[textBlack]'="true"
+            'template'='<<t>><<c(": Yeah! Am")>><br><<c("I great or what?")>>'
+            '[(ngModel)]'='fileService.fileDataExpanded.rival.rivalName'
         )
+    .s3.m3
+        select-starter('[(ngModel)]'='fileService.fileDataExpanded.rival.rivalStarter')
