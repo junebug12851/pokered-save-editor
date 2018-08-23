@@ -46,27 +46,44 @@ export class StorageAllComponent implements OnInit {
 
     ////////////////////////////////
 
-    get boxPokemon() {
-        return this.fileService.fileDataExpanded.storage.pokemonBoxes[this.activeTab - 1];
+    getBoxPokemon(boxNum: number) {
+        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1];
     }
 
-    remPokemon(i: number) {
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[this.activeTab - 1].splice(i, 1);
+    remPokemon(boxNum: number, i: number) {
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].splice(i, 1);
     }
 
-    addPokemon() {
+    addPokemon(boxNum: number) {
         // @ts-ignore
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[this.activeTab - 1].push(PokemonBox.emptyData);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(PokemonBox.emptyData);
     }
 
     ngOnInit() {
 
     }
 
-    setActiveTab(val: number) {
-        this.activeTab = val;
+    onFullView(entry: PokemonBox) {
+        if (this.fullView == entry)
+            this.fullView = null;
+        else
+            this.fullView = entry;
     }
 
-    // Which tab contents to load into the DOM
-    public activeTab: number = 0;
+    // @ts-ignore
+    trackItems(index: number, item: any) {
+        return index;
+    }
+
+    // @ts-ignore
+    trackBoxPokemon(index: number, item: any) {
+        return index;
+    }
+
+    // @ts-ignore
+    trackBoxTabs(index: number, item: any) {
+        return index;
+    }
+
+    public fullView: PokemonBox | null = null;
 }

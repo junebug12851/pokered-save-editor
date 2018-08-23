@@ -28,6 +28,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -145,6 +146,7 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
         MatCardModule,
         MatProgressBarModule,
         MatTabsModule,
+        MatCheckboxModule,
     ],
     providers: [
         SaveFileService
