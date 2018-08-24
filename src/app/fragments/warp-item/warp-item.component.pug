@@ -1,34 +1,46 @@
-li.collection-item
-    .row
-        .col.s1.offset-s2
-            label X
+.container
+    .xl1.l2.m4.s12
+        mat-form-field(style="width: 100%")
+            mat-label X
             input(
+                matInput=''
                 type='number'
                 '[(ngModel)]'='data.x'
+                required=''
                 '[disabled]'='disabled'
             )
-        .col.s1
-            label Y
+    .xl1.l2.m4.s12
+        mat-form-field(style="width: 100%")
+            mat-label Y
             input(
+                matInput=''
                 type='number'
                 '[(ngModel)]'='data.y'
+                required=''
                 '[disabled]'='disabled'
             )
-        .col.s3
-            label To Map
-            select-map(
-                '[(ngModel)]'='data.destMap'
-                '[disabled]'='disabled'
-            )
-        .col.s2
-            label To Warp
+    .xl3.l4.m8.s12
+        select-map(
+            '[(ngModel)]'='data.destMap'
+            label='To Map'
+            '[disabled]'='disabled'
+        )
+    .xl2.l3.m6.s12
+        mat-form-field(style="width: 100%")
+            mat-label To Warp
             input(
+                matInput=''
                 type='number'
                 '[(ngModel)]'='data.destWarp'
+                required=''
                 '[disabled]'='disabled'
             )
-        a.btn-small.waves-effect.col.s1(
+    .xl1.l12.m12.s12
+        button(
+            mat-raised-button=''
             '(click)'='remListItem()'
-            '[class.disabled]'='disabled'
+            '[disabled]'='disabled'
+            color="warn"
+            style="width: 100%;"
         )
             span.im.im-delete

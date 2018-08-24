@@ -1,10 +1,12 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '[disabled]'='disabled'
+mat-form-field(style="width: 100%")
+    mat-label {{label}}
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
     )
-    option('[value]'='0', '[disabled]'='!noneSelectable') Choose Map
-    option(
-        *ngFor='let map of mapList',
-        '[value]'='map.ind',
-        '[disabled]'='map.disable'
-    ) {{map.name}}
+        mat-option('[value]'='0', '[disabled]'='!noneSelectable') Choose Map
+        mat-option(
+            *ngFor='let map of mapList; trackBy: trackByFn',
+            '[value]'='map.ind',
+            '[disabled]'='map.disable'
+        ) {{map.name}}

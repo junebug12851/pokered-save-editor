@@ -46,4 +46,8 @@ export class AreaWarpsComponent {
     remListItem(index: number) {
         this.fileService.fileDataExpanded.area.warpData.splice(index, 1);
     }
+
+    trackByFn(index: number) {
+        return index;
+    }
 }
