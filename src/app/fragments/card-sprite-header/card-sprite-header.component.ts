@@ -1,7 +1,5 @@
-import { SpriteService } from './../../data/sprite.service';
-import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
 // @ts-ignore
-import { OnInit, EventEmitter } from '@angular/core';
+import { EventEmitter, OnInit } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
 
@@ -18,14 +16,16 @@ import { OnInit, EventEmitter } from '@angular/core';
    limitations under the License.
  */
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { SpriteService } from './../../data/sprite.service';
+import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
 
 @Component({
-    selector: 'card-sprite',
-    templateUrl: './card-sprite.component.pug',
-    styleUrls: ['./card-sprite.component.scss'],
+    selector: 'card-sprite-header',
+    templateUrl: './card-sprite-header.component.pug',
+    styleUrls: ['./card-sprite-header.component.scss'],
 })
-export class CardSpriteComponent implements OnInit {
+export class CardSpriteHeader implements OnInit {
 
     constructor(
         public spriteService: SpriteService
@@ -36,11 +36,43 @@ export class CardSpriteComponent implements OnInit {
     }
 
     @Input()
-    // @ts-ignore
     public entry: any = SpriteData.emptyNonPlayerData;
 
     @Input()
     public disabled: boolean = false;
+
+    @Input()
+    public addBtn: boolean = false;
+
+    @Input()
+    public remBtn: boolean = false;
+
+    @Input()
+    public fullViewBtn: boolean = false;
+
+    @Input()
+    public fullViewActive: boolean = false;
+
+    @Output()
+    public onAdd: EventEmitter<boolean> = new EventEmitter();
+
+    @Output()
+    public onRem: EventEmitter<boolean> = new EventEmitter();
+
+    @Output()
+    public onFullView: EventEmitter<boolean> = new EventEmitter();
+
+    onAddClick() {
+        this.onAdd.emit(true);
+    }
+
+    onRemClick() {
+        this.onRem.emit(true);
+    }
+
+    onFullViewClick() {
+        this.onFullView.emit(true);
+    }
 
     public get spriteName() {
         const data = this.spriteService.indToName[this.entry.pictureID];

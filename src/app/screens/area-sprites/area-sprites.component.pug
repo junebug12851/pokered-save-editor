@@ -1,13 +1,24 @@
-.row.sticky
-    card-sprite(
-        *ngFor='let entry of entries; let i = index'
-        '[entry]'='entries[i]'
-        '[remBtn]'='i != 0'
-        '(onRem)'='onRem(i)'
-    )
-    card-sprite(
-        *ngIf='entries.length <= 15'
-        '[disabled]'='true'
-        '[addBtn]'='true'
-        '(onAdd)'='onAdd()'
-    )
+.container
+    .l8.s12
+        .container.wrapper.ns-t
+            .s12
+                card-sprite(
+                    *ngIf='fullView != null'
+                    '[entry]'='fullView'
+                )
+    .l4.s12
+        card-sprite-header(
+            *ngFor='let entry of entries; let i = index'
+            '[entry]'='entries[i]'
+            '[remBtn]'='i != 0'
+            '[fullViewBtn]'='true'
+            '[fullViewActive]'='fullView == entries[i]'
+            '(onRem)'='onRem(i)'
+            '(onFullView)'='onFullView(entries[i])'
+        )
+        card-sprite-header(
+            *ngIf='entries.length <= 15'
+            '[disabled]'='true'
+            '[addBtn]'='true'
+            '(onAdd)'='onAdd()'
+        )

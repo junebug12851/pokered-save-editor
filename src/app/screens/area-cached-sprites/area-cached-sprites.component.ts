@@ -64,4 +64,9 @@ export class AreaCachedSpritesComponent {
     spriteSetTrackBy(index: number, item: SpriteEntry) {
         return index * item.ind;
     }
+
+    // @ts-ignore
+    spriteListTrackBy(index: number, item: any) {
+        return index;
+    }
 }

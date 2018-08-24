@@ -40,4 +40,13 @@ export class AreaSpritesComponent {
     onRem(i: number) {
         this.fileService.fileDataExpanded.area.spriteData.splice(i, 1);
     }
+
+    onFullView(entry: any) {
+        if (this.fullView == entry)
+            this.fullView = null;
+        else
+            this.fullView = entry;
+    }
+
+    public fullView: any | null = null;
 }

@@ -1,25 +1,20 @@
-.row
-    .col.s6.offset-s3
-        label Pre-load initially from built-in list
-        select.browser-default(
-            '[(ngModel)]'='this.fileService.fileDataExpanded.area.spriteSetId'
+.container.wrapper(style="width: 400px")
+    .row.s12
+        mat-label Pre-load initially from built-in list
+        mat-form-field(style="width: 100%;")
+            mat-select(
+                '[(ngModel)]'='this.fileService.fileDataExpanded.area.spriteSetId'
             )
-            option('[value]'='255', '[disabled]'='true') Choose Pre-loaded sprites
-            option(
-                *ngFor='let entry of preloadFromList',
-                '[value]'='entry.value',
-            ) {{entry.name}}
-
-.row
-    .col.s6.offset-s3
-
-        label Current list of cached sprites
-        ul.collection
-
-            li(
-                *ngFor='let entry of entries; let i = index; trackBy: spriteSetTrackBy;'
-            )
-                select-sprite(
-                        '[(ngModel)]'='entries[i]'
-                        '[disabled]'='disabled'
-                    )
+                mat-option('[value]'='255', '[disabled]'='true') Choose Pre-loaded sprites
+                mat-option(
+                    *ngFor='let entry of preloadFromList; trackBy: spriteListTrackBy',
+                    '[value]'='entry.value',
+                ) {{entry.name}}
+    .row.s12
+        mat-label Current list of cached sprites
+    .row.s12.ns(*ngFor='let entry of entries; let i = index; trackBy: spriteSetTrackBy;')
+        select-sprite.ns(
+            '[(ngModel)]'='entries[i]'
+            '[disabled]'='disabled'
+            style="width: 100%;"
+        )

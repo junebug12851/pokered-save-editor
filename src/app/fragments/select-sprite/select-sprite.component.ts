@@ -44,4 +44,9 @@ export class SelectSpriteComponent extends ValueAccessorBase<string> {
     get spriteList() {
         return this.spriteService.indToName;
     }
+
+    // @ts-ignore
+    spriteListTrackBy(index: number, item: any) {
+        return index;
+    }
 }

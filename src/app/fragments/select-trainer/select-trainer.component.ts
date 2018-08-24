@@ -51,4 +51,8 @@ export class SelectTrainerComponent extends ValueAccessorBase<string> {
         const rawOppTrainers = this.trainerService.rawOppTrainers;
         return _.sortBy(rawOppTrainers, ['name']);
     }
+
+    trackByFn(index: number) {
+        return index;
+    }
 }
