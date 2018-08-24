@@ -1,3 +1,4 @@
+import { CardSpriteHeader } from './fragments/card-sprite-header/card-sprite-header.component';
 import { CardPokemonHeader } from './fragments/card-pokemon-header/card-pokemon-header.component';
 /**
    Copyright 2018 June Hanabi
@@ -126,7 +127,8 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
         WarpItemComponent,
         AreaWarpsComponent,
         NavComponent,
-        CardPokemonHeader
+        CardPokemonHeader,
+        CardSpriteHeader,
     ],
     imports: [
         BrowserModule,

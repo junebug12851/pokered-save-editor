@@ -51,4 +51,8 @@ export class SelectMissableComponent extends ValueAccessorBase<string> {
         const missableList = this.missableService.namePairs;
         return _.sortBy(missableList, ["name"]);
     }
+
+    trackBy(index: number) {
+        return index;
+    }
 }

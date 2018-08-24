@@ -1,9 +1,10 @@
-select.browser-default(
-    '[(ngModel)]'='value'
-    '[disabled]'='disabled'
+mat-form-field(style="width: 100%")
+    mat-select(
+        '[(ngModel)]'='value'
+        '[disabled]'='disabled'
     )
-    option('[value]'='-1', '[disabled]'='!noneSelectable') &nbsp;
-    option(
-        *ngFor='let missable of missableList; let i = index',
-        '[value]'='missable.ind'
-    ) {{missable.name}}
+        mat-option('[value]'='-1', '[disabled]'='!noneSelectable') &nbsp;
+        mat-option(
+            *ngFor='let missable of missableList; let i = index; trackBy: trackBy',
+            '[value]'='missable.ind'
+        ) {{missable.name}}
