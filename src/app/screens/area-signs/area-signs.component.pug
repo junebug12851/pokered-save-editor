@@ -1,0 +1,25 @@
+.container.wrapper
+    .s12
+        h5 Signs
+
+    .row.s12(*ngFor='let sign of signs; let i = index; trackBy: trackByFn')
+        sign-item(
+            '[data]'='signs[i]'
+            '[disabled]'='false'
+            '(remove)'='signs(i)'
+        )
+
+    .row.s12(*ngIf='signs.length == 0')
+        sign-item(
+            '[disabled]'='true'
+        )
+
+    .row.s12
+        button(
+            mat-raised-button=''
+            '(click)'='addListItem()'
+            '[disabled]'='signs.length >= 16'
+            color="primary"
+            style="width: 100%;"
+        )
+            span.im.im-plus3
