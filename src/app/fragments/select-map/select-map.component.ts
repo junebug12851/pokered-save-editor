@@ -53,6 +53,9 @@ export class SelectMapComponent extends ValueAccessorBase<string> implements OnI
     @Input()
     public noneSelectable: boolean = false;
 
+    @Input()
+    public label: string = "Select Map";
+
     get mapList() {
         let mapListNormal: RawMap[] = _.filter(rawMaps, (value: RawMap) => {
             if (!value.glitch)
@@ -78,5 +81,9 @@ export class SelectMapComponent extends ValueAccessorBase<string> implements OnI
             { name: "--- Glitch Maps ---", ind: 0x100, disable: true },
             ...mapListGlitch
         ];
+    }
+
+    trackByFn(index: number) {
+        return index;
     }
 }
