@@ -146,7 +146,7 @@ export class Area {
         this.trainerHeaderPtr = saveFile.getWord(0x2CDC);
         this.oppAfterWrongAnsw = saveFile.getByte(0x2CE4);
         this.curMapScript = saveFile.getByte(0x2CE5);
-        this.safariGameOver = saveFile.getByte(0x2CF2);
+        this.safariGameOver = saveFile.getByte(0x2CF2) == 1;
         this.safariBallCount = saveFile.getByte(0x2CF3);
 
         this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
@@ -206,37 +206,71 @@ export class Area {
     // Signs
     public signData: SignData[];
 
-    // Player
+    /**
+     * Player
+    */
+
+    // Direction
+    // if the player is moving, the current direction
+    // if the player is not moving, zero
+    // None     0
+    // Right    1
+    // Left     2
+    // Down     4
+    // Up       8
     public playerMoveDir: number;
+
+    // the direction in which the player was moving before the player last stopped
     public playerLastStopDir: number;
+
+    // if the player is moving, the current direction
+    // if the player is not moving, the last the direction in which the player moved
     public playerCurDir: number;
+
+    // Coords
     public yCoord: number;
     public xCoord: number;
     public yBlockCoord: number;
     public xBlockCoord: number;
-    public yOffsetSinceLastSpecialWarp: number;
-    public xOffsetSinceLastSpecialWarp: number;
-    public walkBikeSurf: number;
-    public safariSteps: number;
     public playerJumpingYScrnCoords: number;
+
+    // Safari
+    public safariGameOver: boolean;
+    public safariBallCount: number;
+    public safariSteps: number;
+
+    // HMs
     public strengthOutsideBattle: boolean;
     public surfingAllowed: boolean;
-    public usedCardKey: boolean;
+    public flyOutofBattle: boolean;
+
+    // Battle
     public isBattle: boolean;
     public isTrainerBattle: boolean;
     public noBattles: boolean;
     public battleEndedOrBlackout: boolean;
-    public usingLinkCable: boolean;
-    public flyOutofBattle: boolean;
+
+    // Warps
+    public yOffsetSinceLastSpecialWarp: number;
+    public xOffsetSinceLastSpecialWarp: number;
     public standingOnDoor: boolean;
     public movingThroughDoor: boolean;
     public standingOnWarp: boolean;
+
+    // Misc
+
+    // 0x00 = walking
+    // 0x01 = biking
+    // 0x02 = surfing
+    public walkBikeSurf: number;
     public finalLedgeJumping: boolean;
     public spinPlayer: boolean;
-    public safariGameOver: number;
-    public safariBallCount: number;
+    public usedCardKey: boolean;
+    public usingLinkCable: boolean;
 
-    // Map
+    /**
+     * Map
+     */
     public curMap: number;
     public currentTileBlockMapViewPointer: number;
     public mapHeight: number;

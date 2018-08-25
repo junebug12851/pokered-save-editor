@@ -1,0 +1,11 @@
+mat-form-field(style="width: 100%;")
+    mat-label {{label}}
+    mat-select(
+        '[(ngModel)]'='value'
+        required=''
+    )
+        mat-option('[value]'="0") None
+        mat-option('[value]'="1") Right
+        mat-option('[value]'="2") Left
+        mat-option('[value]'="4") Down
+        mat-option('[value]'="8") Up

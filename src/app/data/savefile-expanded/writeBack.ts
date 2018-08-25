@@ -839,6 +839,7 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.world.playtime.seconds); // 2CF0
     it.setByte(full.world.playtime.frames); // 2CF1
 
+    // @ts-ignore
     it.setByte(full.area.safariGameOver); // 2CF2
     it.setByte(full.area.safariBallCount); // 2CF3
 
