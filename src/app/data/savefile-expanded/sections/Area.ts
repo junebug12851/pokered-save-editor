@@ -36,9 +36,9 @@ export class Area {
         this.xBlockCoord = saveFile.getByte(0x2610);
         this.mapHeight = saveFile.getByte(0x2614);
         this.mapWidth = saveFile.getByte(0x2615);
-        this.mapDataPtr = saveFile.getWord(0x2616);
-        this.mapTextPtr = saveFile.getWord(0x2618);
-        this.mapScriptPtr = saveFile.getWord(0x261A);
+        this.mapDataPtr = saveFile.getWord(0x2616, true);
+        this.mapTextPtr = saveFile.getWord(0x2618, true);
+        this.mapScriptPtr = saveFile.getWord(0x261A, true);
 
         this.mapConn = {
             east: saveFile.getBit(0x261C, 1, 0),
@@ -271,13 +271,23 @@ export class Area {
     /**
      * Map
      */
+
+    // Combine
     public curMap: number;
-    public currentTileBlockMapViewPointer: number;
     public mapHeight: number;
     public mapWidth: number;
     public mapDataPtr: number;
     public mapTextPtr: number;
     public mapScriptPtr: number;
+    public map2x2Height: number;
+    public map2x2Width: number;
+
+    // Screen related pointers
+    // Do nothing with
+    public currentTileBlockMapViewPointer: number;
+    public mapViewVRAMPointer: number;
+
+    // Connection Data
     public mapConn: {
         east: boolean,
         west: boolean,
@@ -290,9 +300,7 @@ export class Area {
         west: MapConnData,
         east: MapConnData,
     };
-    public map2x2Height: number;
-    public map2x2Width: number;
-    public mapViewVRAMPointer: number;
+
     public forceBikeRide: boolean;
     public blackoutDest: boolean;
     public curMapNextFrame: boolean;
