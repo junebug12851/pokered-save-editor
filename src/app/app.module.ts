@@ -1,3 +1,4 @@
+import { AreaPlayerComponent } from './screens/area-player/area-player.component';
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
 import { CardSpriteHeader } from './fragments/card-sprite-header/card-sprite-header.component';
 import { CardPokemonHeader } from './fragments/card-pokemon-header/card-pokemon-header.component';
@@ -91,6 +92,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { SignItemComponent } from './fragments/sign-item/sign-item.component';
+import { SelectPlayerDirectionComponent } from './fragments/select-player-direction/select-player-directionr.component';
 
 @NgModule({
     declarations: [
@@ -133,6 +135,8 @@ import { SignItemComponent } from './fragments/sign-item/sign-item.component';
         CardSpriteHeader,
         SignItemComponent,
         AreaSignsComponent,
+        SelectPlayerDirectionComponent,
+        AreaPlayerComponent,
     ],
     imports: [
         BrowserModule,
