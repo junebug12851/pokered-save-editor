@@ -44,26 +44,26 @@ export const rawMaps: RawMap[] = [
     { name: "Route 6", ind: 0x11, height: 18, width: 10, dataPtr: 0x4079, scriptPtr: 0x50B0, textPtr: 0x50C9 },
     { name: "Route 7", ind: 0x12, height: 9, width: 10, dataPtr: 0x4051, scriptPtr: 0x4152, textPtr: 0x4155 },
     { name: "Route 8", ind: 0x13, height: 9, width: 30, dataPtr: 0x41C6, scriptPtr: 0x51B6, textPtr: 0x51CF }, // 20
-    { name: "Route 9", ind: 0x14, height: 9, width: 30 },
-    { name: "Route 10", ind: 0x15, height: 36, width: 10 },
-    { name: "Route 11", ind: 0x16, height: 9, width: 30 },
-    { name: "Route 12", ind: 0x17, height: 54, width: 10 },
-    { name: "Route 13", ind: 0x18, height: 9, width: 30 },
-    { name: "Route 14", ind: 0x19, height: 27, width: 10 },
-    { name: "Route 15", ind: 0x1a, height: 9, width: 30 },
-    { name: "Route 16", ind: 0x1b, height: 9, width: 20 },
-    { name: "Route 17", ind: 0x1c, height: 72, width: 10 },
-    { name: "Route 18", ind: 0x1d, height: 9, width: 25 }, // 30
-    { name: "Route 19", ind: 0x1e, height: 27, width: 10 },
-    { name: "Route 20", ind: 0x1f, height: 9, width: 50 },
-    { name: "Route 21", ind: 0x20, height: 45, width: 10 },
-    { name: "Route 22", ind: 0x21, height: 9, width: 20 },
-    { name: "Route 23", ind: 0x22, height: 72, width: 10 },
-    { name: "Route 24", ind: 0x23, height: 18, width: 10 },
-    { name: "Route 25", ind: 0x24, height: 9, width: 30 },
-    { name: "Reds House 1f", ind: 0x25, height: 4, width: 4 },
-    { name: "Reds House 2f", ind: 0x26, height: 4, width: 4 },
-    { name: "Blues House", ind: 0x27, height: 4, width: 4 },
+    { name: "Route 9", ind: 0x14, height: 9, width: 30, dataPtr: 0x46FE, scriptPtr: 0x56BC, textPtr: 0x56D5 },
+    { name: "Route 10", ind: 0x15, height: 36, width: 10, dataPtr: 0x4356, scriptPtr: 0x5336, textPtr: 0x534F },
+    { name: "Route 11", ind: 0x16, height: 9, width: 30, dataPtr: 0x455F, scriptPtr: 0x544C, textPtr: 0x5465 },
+    { name: "Route 12", ind: 0x17, height: 54, width: 10, dataPtr: 0x4710, scriptPtr: 0x55F3, textPtr: 0x5675 },
+    { name: "Route 13", ind: 0x18, height: 9, width: 30, dataPtr: 0x488B, scriptPtr: 0x581E, textPtr: 0x5837 },
+    { name: "Route 14", ind: 0x19, height: 27, width: 10, dataPtr: 0x4A12, scriptPtr: 0x59D3, textPtr: 0x59EC },
+    { name: "Route 15", ind: 0x1a, height: 9, width: 30, dataPtr: 0x49CC, scriptPtr: 0x57AE, textPtr: 0x57C7 },
+    { name: "Route 16", ind: 0x1b, height: 9, width: 20, dataPtr: 0x4B84, scriptPtr: 0x5933, textPtr: 0x59B9 },
+    { name: "Route 17", ind: 0x1c, height: 72, width: 10, dataPtr: 0x4BA8, scriptPtr: 0x5B7A, textPtr: 0x5B93 },
+    { name: "Route 18", ind: 0x1d, height: 9, width: 25, dataPtr: 0x4C9C, scriptPtr: 0x5AC7, textPtr: 0x5AE0 }, // 30
+    { name: "Route 19", ind: 0x1e, height: 27, width: 10, dataPtr: 0x4EF1, scriptPtr: 0x5D44, textPtr: 0x5D5D },
+    { name: "Route 20", ind: 0x1f, height: 9, width: 50, dataPtr: 0x417D, scriptPtr: 0x4CA9, textPtr: 0x4D22 },
+    { name: "Route 21", ind: 0x20, height: 45, width: 10, dataPtr: 0x506D, scriptPtr: 0x5EEB, textPtr: 0x5F04 },
+    { name: "Route 22", ind: 0x21, height: 9, width: 20, dataPtr: 0x403D, scriptPtr: 0x4EB2, textPtr: 0x5175 },
+    { name: "Route 23", ind: 0x22, height: 72, width: 10, dataPtr: 0x43B2, scriptPtr: 0x51DA, textPtr: 0x52F7 },
+    { name: "Route 24", ind: 0x23, height: 18, width: 10, dataPtr: 0x46E7, scriptPtr: 0x53AD, textPtr: 0x544B },
+    { name: "Route 25", ind: 0x24, height: 9, width: 30, dataPtr: 0x4810, scriptPtr: 0x55CB, textPtr: 0x5628 },
+    { name: "Reds House 1f", ind: 0x25, height: 4, width: 4, dataPtr: 0x4209, scriptPtr: 0x4168, textPtr: 0x416B },
+    { name: "Reds House 2f", ind: 0x26, height: 4, width: 4, dataPtr: 0x4010, scriptPtr: 0x40B0, textPtr: 0x40CF },
+    { name: "Blues House", ind: 0x27, height: 4, width: 4, dataPtr: 0x5BF6, scriptPtr: 0x5B3B, textPtr: 0x5B57 }, // 40
     { name: "Oaks Lab", ind: 0x28, height: 6, width: 5 },
     { name: "Viridian Pokecenter", ind: 0x29, height: 4, width: 7 },
     { name: "Viridian Mart", ind: 0x2a, height: 4, width: 4 },
@@ -73,7 +73,7 @@ export const rawMaps: RawMap[] = [
     { name: "Digletts Cave Exit", ind: 0x2e, height: 4, width: 4 },
     { name: "Viridian Forest Exit", ind: 0x2f, height: 4, width: 5 },
     { name: "Route 2 House", ind: 0x30, height: 4, width: 4 },
-    { name: "Route 2 Gate", ind: 0x31, height: 4, width: 5 },
+    { name: "Route 2 Gate", ind: 0x31, height: 4, width: 5 }, // 50
     { name: "Viridian Forest Entrance", ind: 0x32, height: 4, width: 5 },
     { name: "Viridian Forest", ind: 0x33, height: 24, width: 17 },
     { name: "Museum 1f", ind: 0x34, height: 4, width: 10 },
@@ -83,7 +83,7 @@ export const rawMaps: RawMap[] = [
     { name: "Pewter Mart", ind: 0x38, height: 4, width: 4 },
     { name: "Pewter House 2", ind: 0x39, height: 4, width: 4 },
     { name: "Pewter Pokecenter", ind: 0x3a, height: 4, width: 7 },
-    { name: "Mt. Moon 1", ind: 0x3b, height: 18, width: 20 },
+    { name: "Mt. Moon 1", ind: 0x3b, height: 18, width: 20 }, // 60
     { name: "Mt. Moon 2", ind: 0x3c, height: 14, width: 14 },
     { name: "Mt. Moon 3", ind: 0x3d, height: 18, width: 20 },
     { name: "Trashed House", ind: 0x3e, height: 4, width: 4 },
@@ -281,9 +281,50 @@ export const rawMaps: RawMap[] = [
 export class MapService {
 
     constructor() {
+
+        // Pointer cache for error checking
+        const ptrCache = {};
+
+        // Prepare lots of initialization and other stuff
         for (var i = 0; i < rawMaps.length; i++) {
+
+            // Grab the map entry
             const rawEntry = rawMaps[i];
 
+            // Check pointers for duplicate in cache
+            // Out of all the script, text, and data pointers combined, there should
+            // be no duplicates
+            // If not a duplicate, register it in the cache, if duplicate found
+            // crash immidiately with message on duplicate pointer and of type
+
+            if (rawEntry.dataPtr) {
+                // @ts-ignore
+                if (ptrCache[rawEntry.dataPtr] !== undefined)
+                    throw new Error("Duplicate Data Pointer " + rawEntry.dataPtr.toString(16).toUpperCase());
+
+                // @ts-ignore
+                ptrCache[rawEntry.dataPtr] = true;
+            }
+
+            if (rawEntry.scriptPtr) {
+                // @ts-ignore
+                if (ptrCache[rawEntry.scriptPtr] !== undefined)
+                    throw new Error("Duplicate Script Pointer " + rawEntry.scriptPtr.toString(16).toUpperCase());
+
+                // @ts-ignore
+                ptrCache[rawEntry.scriptPtr] = true;
+            }
+
+            if (rawEntry.textPtr) {
+                // @ts-ignore
+                if (ptrCache[rawEntry.textPtr] !== undefined)
+                    throw new Error("Duplicate Text Pointer " + rawEntry.textPtr.toString(16).toUpperCase());
+
+                // @ts-ignore
+                ptrCache[rawEntry.textPtr] = true;
+            }
+
+            // Pointers have been verified
             // Pre-calc 2x2 width and height
             if (rawEntry.height)
                 rawEntry.height2x2 = rawEntry.height * 2;
@@ -291,6 +332,7 @@ export class MapService {
             if (rawEntry.width)
                 rawEntry.width2x2 = rawEntry.width * 2;
 
+            // Normal stuff, just book-keeping and indexing
             const ind = rawEntry.ind;
             const name = rawEntry.name;
 
