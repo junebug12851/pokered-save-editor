@@ -1,3 +1,6 @@
+import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
+import { ConnectionItemComponent } from './fragments/connection-item/connection-item.component';
+import { SelectMapWidthComponent } from './fragments/select-map-width/select-map-width.component';
 import { AreaPlayerComponent } from './screens/area-player/area-player.component';
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
 import { CardSpriteHeader } from './fragments/card-sprite-header/card-sprite-header.component';
@@ -93,6 +96,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { SignItemComponent } from './fragments/sign-item/sign-item.component';
 import { SelectPlayerDirectionComponent } from './fragments/select-player-direction/select-player-directionr.component';
+import { SelectMapFullComponent } from './fragments/select-map-full/select-map-full.component';
 
 @NgModule({
     declarations: [
@@ -137,6 +141,10 @@ import { SelectPlayerDirectionComponent } from './fragments/select-player-direct
         AreaSignsComponent,
         SelectPlayerDirectionComponent,
         AreaPlayerComponent,
+        SelectMapFullComponent,
+        SelectMapWidthComponent,
+        ConnectionItemComponent,
+        AreaMapsComponent,
     ],
     imports: [
         BrowserModule,

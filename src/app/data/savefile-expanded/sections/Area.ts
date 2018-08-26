@@ -27,18 +27,23 @@ export class Area {
             this.spriteData.push(new SpriteData(saveFile, i));
         }
 
+        const curMap = saveFile.getByte(0x260A).toString(16).padStart(2, "0").toUpperCase();
+        const mapHeight = saveFile.getByte(0x2614).toString().padStart(2, "0");
+        const mapWidth = saveFile.getByte(0x2615).toString().padStart(2, "0");
+        const mapDataPtr = saveFile.getWord(0x2616, true).toString(16).padStart(4, "0").toUpperCase();
+        const mapTextPtr = saveFile.getWord(0x2618, true).toString(16).padStart(4, "0").toUpperCase();
+        const mapScriptPtr = saveFile.getWord(0x261A, true).toString(16).padStart(4, "0").toUpperCase();
+        const map2x2Height = saveFile.getByte(0x27D0).toString().padStart(2, "0");
+        const map2x2Width = saveFile.getByte(0x27D1).toString().padStart(2, "0");
+
+        this.curMap = `${curMap}_${mapHeight}_${mapWidth}_${map2x2Height}_${map2x2Width}_${mapDataPtr}_${mapTextPtr}_${mapScriptPtr}`;
+
         this.contrast = saveFile.getByte(0x2609);
-        this.curMap = saveFile.getByte(0x260A);
-        this.currentTileBlockMapViewPointer = saveFile.getWord(0x260B);
+        this.currentTileBlockMapViewPointer = saveFile.getWord(0x260B, true).toString(16).padStart(2, "0").toUpperCase();
         this.yCoord = saveFile.getByte(0x260D);
         this.xCoord = saveFile.getByte(0x260E);
         this.yBlockCoord = saveFile.getByte(0x260F);
         this.xBlockCoord = saveFile.getByte(0x2610);
-        this.mapHeight = saveFile.getByte(0x2614);
-        this.mapWidth = saveFile.getByte(0x2615);
-        this.mapDataPtr = saveFile.getWord(0x2616, true);
-        this.mapTextPtr = saveFile.getWord(0x2618, true);
-        this.mapScriptPtr = saveFile.getWord(0x261A, true);
 
         this.mapConn = {
             east: saveFile.getBit(0x261C, 1, 0),
@@ -47,12 +52,32 @@ export class Area {
             north: saveFile.getBit(0x261C, 1, 3),
         };
 
-        this.mapConnData = {
-            north: new MapConnData(saveFile, 0x261D),
-            south: new MapConnData(saveFile, 0x2628),
-            west: new MapConnData(saveFile, 0x2633),
-            east: new MapConnData(saveFile, 0x263E),
-        };
+        // @ts-ignore
+        this.mapConnData = {};
+
+        if (this.mapConn.north)
+            this.mapConnData.north = new MapConnData(saveFile, 0x261D);
+        else
+            // @ts-ignore
+            this.mapConnData.north = MapConnData.empty;
+
+        if (this.mapConn.south)
+            this.mapConnData.south = new MapConnData(saveFile, 0x2628);
+        else
+            // @ts-ignore
+            this.mapConnData.south = MapConnData.empty;
+
+        if (this.mapConn.west)
+            this.mapConnData.west = new MapConnData(saveFile, 0x2633);
+        else
+            // @ts-ignore
+            this.mapConnData.west = MapConnData.empty;
+
+        if (this.mapConn.east)
+            this.mapConnData.east = new MapConnData(saveFile, 0x263E);
+        else
+            // @ts-ignore
+            this.mapConnData.east = MapConnData.empty;
 
         this.spriteSet = saveFile.getRange(0x2649, 0xB);
         this.spriteSetId = saveFile.getByte(0x2654);
@@ -71,9 +96,7 @@ export class Area {
 
         this.yOffsetSinceLastSpecialWarp = saveFile.getByte(0x278E);
         this.xOffsetSinceLastSpecialWarp = saveFile.getByte(0x278F);
-        this.map2x2Height = saveFile.getByte(0x27D0);
-        this.map2x2Width = saveFile.getByte(0x27D1);
-        this.mapViewVRAMPointer = saveFile.getWord(0x27D2);
+        this.mapViewVRAMPointer = saveFile.getWord(0x27D2, true).toString(16).padStart(2, "0").toUpperCase();
         this.playerMoveDir = saveFile.getByte(0x27D4);
         this.playerLastStopDir = saveFile.getByte(0x27D5);
         this.playerCurDir = saveFile.getByte(0x27D6);
@@ -180,7 +203,7 @@ export class Area {
     public tradeCenterSpritesFaced: boolean;
 
     /**
-     * Warps
+     * Warps (Complete)
      */
     // Pre-Warp
     public scriptedWarp: boolean; // Do a scripted warp
@@ -207,7 +230,7 @@ export class Area {
     public signData: SignData[];
 
     /**
-     * Player
+     * Player (Complete)
     */
 
     // Direction
@@ -272,22 +295,24 @@ export class Area {
      * Map
      */
 
-    // Combine
-    public curMap: number;
-    public mapHeight: number;
-    public mapWidth: number;
-    public mapDataPtr: number;
-    public mapTextPtr: number;
-    public mapScriptPtr: number;
-    public map2x2Height: number;
-    public map2x2Width: number;
+    // Area In
+    public curMap: string;
 
-    // Screen related pointers
-    // Do nothing with
-    public currentTileBlockMapViewPointer: number;
-    public mapViewVRAMPointer: number;
+    // pointer to the upper left corner of the current view in the tile block map
+    public currentTileBlockMapViewPointer: string;
 
-    // Connection Data
+    // the address of the upper left corner of the visible portion of the BG tile map in VRAM
+    public mapViewVRAMPointer: string;
+
+    // index of current map script, mostly used as index for function pointer array
+    // mostly copied from map - specific map script pointer and written back later
+    public curMapScript: number;
+
+    // use variable "Current Map Script" instead of the index for next frame's
+    // map script
+    public curMapNextFrame: boolean;
+
+    // Area Around
     public mapConn: {
         east: boolean,
         west: boolean,
@@ -301,14 +326,17 @@ export class Area {
         east: MapConnData,
     };
 
+    // Misc
     public forceBikeRide: boolean;
+
+    // Map destination is last blackout map
     public blackoutDest: boolean;
-    public curMapNextFrame: boolean;
     public cardKeyDoorY: number;
     public cardKeyDoorX: number;
-    public curMapScript: number;
 
-    // NPC
+    /**
+     * NPC
+     */
     public npcsFaceAway: boolean;
     public scriptedNPCMovement: boolean;
     public npcSpriteMovement: boolean;

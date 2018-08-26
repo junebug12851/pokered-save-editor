@@ -1,3 +1,4 @@
+import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
 import { AreaPlayerComponent } from './screens/area-player/area-player.component';
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
 import { AreaWarpsComponent } from './screens/area-warps/area-warps.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
     { path: 'area-warps', component: AreaWarpsComponent },
     { path: 'area-signs', component: AreaSignsComponent },
     { path: 'area-player', component: AreaPlayerComponent },
+    { path: 'area-maps', component: AreaMapsComponent },
     {
         path: '',
         redirectTo: '/player-basics',
