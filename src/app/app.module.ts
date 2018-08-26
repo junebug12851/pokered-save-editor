@@ -1,3 +1,4 @@
+import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
 import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
 import { ConnectionItemComponent } from './fragments/connection-item/connection-item.component';
 import { SelectMapWidthComponent } from './fragments/select-map-width/select-map-width.component';
@@ -145,6 +146,7 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
         SelectMapWidthComponent,
         ConnectionItemComponent,
         AreaMapsComponent,
+        AreaNpcsComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,3 +1,4 @@
+import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
 import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
 import { AreaPlayerComponent } from './screens/area-player/area-player.component';
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
     { path: 'area-signs', component: AreaSignsComponent },
     { path: 'area-player', component: AreaPlayerComponent },
     { path: 'area-maps', component: AreaMapsComponent },
+    { path: 'area-npcs', component: AreaNpcsComponent },
     {
         path: '',
         redirectTo: '/player-basics',

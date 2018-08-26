@@ -1,3 +1,4 @@
+import { WildPokemon } from './sections/Area';
 import { SaveFileIterator } from './SaveFileIterator';
 import { SaveFileService } from './../savefile.service';
 import { PokemonBox } from './fragments/PokemonBox';
@@ -850,18 +851,38 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.area.grassRate); // 2B33
 
     // 2B34
-    it.copyRange(20, full.area.grassPokemon);
+    //it.copyRange(20, full.area.grassPokemon);
+    it.offsetTo(0x2B34);
+    for (let i = 0; i < full.area.grassPokemon.length && i < 10; i++) {
+        const pokemon: WildPokemon = full.area.grassPokemon[i];
+        it.setByte(pokemon.level);
+        it.setByte(pokemon.pokemon);
+    }
+
+    // Add early terminator if Pokemon list not full
+    if (full.area.grassPokemon.length < 10)
+        it.setByte(0x00);
 
     // Skip Enemy Stuff
 
     it.offsetTo(0x2B50); // 2B50
     it.setByte(full.area.waterPokemonRate); // 2B50
-    it.copyRange(20, full.area.waterPokemon);
+
+    it.offsetTo(0x2B51);
+    for (let i = 0; i < full.area.waterPokemon.length && i < 10; i++) {
+        const pokemon: WildPokemon = full.area.waterPokemon[i];
+        it.setByte(pokemon.level);
+        it.setByte(pokemon.pokemon);
+    }
+
+    // Add early terminator if Pokemon list not full
+    if (full.area.waterPokemon.length < 10)
+        it.setByte(0x00);
 
     // Skip Enemy Stuff
 
     it.offsetTo(0x2CDC); // 2CDC
-    it.setWord(full.area.trainerHeaderPtr, 6); // 2CDC-D + 6 Padding
+    it.setHex(0x2, full.area.trainerHeaderPtr, false, 6, true); // 2CDC-D + 6 Padding
 
     //2CE4
     it.setByte(full.area.oppAfterWrongAnsw); // 2CE4
