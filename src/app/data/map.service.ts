@@ -2784,6 +2784,19 @@ export const rawMaps: RawMap[] = [
     }
 ];
 
+for (var i = 0; i < rawMaps.length; i++) {
+
+    // Grab the map entry
+    const rawEntry = rawMaps[i];
+
+    // Pre-calc 2x2 width and height
+    if (rawEntry.height)
+        rawEntry.height2x2 = rawEntry.height * 2;
+
+    if (rawEntry.width)
+        rawEntry.width2x2 = rawEntry.width * 2;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -2796,13 +2809,6 @@ export class MapService {
 
             // Grab the map entry
             const rawEntry = rawMaps[i];
-
-            // Pre-calc 2x2 width and height
-            if (rawEntry.height)
-                rawEntry.height2x2 = rawEntry.height * 2;
-
-            if (rawEntry.width)
-                rawEntry.width2x2 = rawEntry.width * 2;
 
             // Normal stuff, just book-keeping and indexing
             const ind = rawEntry.ind;

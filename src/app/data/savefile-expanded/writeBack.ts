@@ -263,8 +263,21 @@ export function writeBack(file: SaveFileService) {
     it.setHex(0x1, musicArr[1], false); // 2607
     it.setHex(0x1, musicArr[0], false); // 2608
     it.setByte(full.area.contrast); // 2609
-    it.setByte(full.area.curMap); // 260A
-    it.setWord(full.area.currentTileBlockMapViewPointer); // 260B-260C
+
+    // Lots of map variables which are hardcoded into the game for each map
+    // 0 curMap - Hex
+    // 1 mapHeight
+    // 2 mapWidth
+    // 3 map2x2Height
+    // 4 map2x2Width
+    // 5 mapDataPtr - Hex
+    // 6 mapTextPtr - Hex
+    // 7 mapScriptPtr - Hex
+    const curMap = full.area.curMap;
+    const curMapArr = curMap.split("_");
+
+    it.setHex(0x1, curMapArr[0], false); // 260A
+    it.setHex(0x2, full.area.currentTileBlockMapViewPointer, false, 0, true); // 260B-260C
     it.setByte(full.area.yCoord); // 260D
     it.setByte(full.area.xCoord); // 260E
     it.setByte(full.area.yBlockCoord); // 260F
@@ -275,12 +288,12 @@ export function writeBack(file: SaveFileService) {
     const tilesetArr = tileset.split("_");
 
     it.setHex(0x1, tilesetArr[1], false); // 2613
-    it.setByte(full.area.mapHeight); // 2614
-    it.setByte(full.area.mapWidth); // 2615
+    it.setByte(parseInt(curMapArr[1])); // 2614
+    it.setByte(parseInt(curMapArr[2])); // 2615
 
-    it.setWord(full.area.mapDataPtr); // 2616-2617
-    it.setWord(full.area.mapTextPtr); // 2618-2619
-    it.setWord(full.area.mapScriptPtr); // 261A-261B
+    it.setHex(0x2, curMapArr[5], false, 0, true); // 2616-2617
+    it.setHex(0x2, curMapArr[6], false, 0, true); // 2618-2619
+    it.setHex(0x2, curMapArr[7], false, 0, true); // 261A-261B
 
     it.setBit(0x1, 0, full.area.mapConn.east);
     it.setBit(0x1, 1, full.area.mapConn.west);
@@ -289,44 +302,66 @@ export function writeBack(file: SaveFileService) {
     it.inc(); // 261C
 
     // Connection Data North
-    it.setByte(full.area.mapConnData.north.mapPtr); // 261D
-    it.setWord(full.area.mapConnData.north.stripSrc); // 261E-F
-    it.setWord(full.area.mapConnData.north.stripDest); // 2620-2621
-    it.setByte(full.area.mapConnData.north.stripWidth); // 2622
-    it.setByte(full.area.mapConnData.north.width); // 2623
-    it.setByte(full.area.mapConnData.north.yAlign); // 2624
-    it.setByte(full.area.mapConnData.north.xAlign); // 2625
-    it.setWord(full.area.mapConnData.north.viewPtr); // 2626-2627
+    it.offsetTo(0x261D);
+    if (full.area.mapConn.north) {
+        const mapNorth = full.area.mapConnData.north.map;
+        const mapNorthArr = mapNorth.split("_");
+        it.setHex(0x1, mapNorthArr[0], false); // 261D
+        it.setWord(full.area.mapConnData.north.stripSrc); // 261E-F
+        it.setWord(full.area.mapConnData.north.stripDest); // 2620-2621
+        it.setByte(full.area.mapConnData.north.stripWidth); // 2622
+        it.setByte(parseInt(mapNorthArr[1])); // 2623
+        it.setByte(full.area.mapConnData.north.yAlign); // 2624
+        it.setByte(full.area.mapConnData.north.xAlign); // 2625
+        it.setWord(full.area.mapConnData.north.viewPtr, 0, true); // 2626-2627
+    }
 
     // Connection Data South
-    it.setByte(full.area.mapConnData.south.mapPtr); // 2628
-    it.setWord(full.area.mapConnData.south.stripSrc); // 2629-A
-    it.setWord(full.area.mapConnData.south.stripDest); // 262B-C
-    it.setByte(full.area.mapConnData.south.stripWidth); // 262D
-    it.setByte(full.area.mapConnData.south.width); // 262E
-    it.setByte(full.area.mapConnData.south.yAlign); // 262F
-    it.setByte(full.area.mapConnData.south.xAlign); // 2630
-    it.setWord(full.area.mapConnData.south.viewPtr); // 2631-2
+    it.offsetTo(0x2628);
+    if (full.area.mapConn.south) {
+        const mapSouth = full.area.mapConnData.south.map;
+        const mapSouthArr = mapSouth.split("_");
+        it.setHex(0x1, mapSouthArr[0], false); // 2628
+        it.setWord(full.area.mapConnData.south.stripSrc); // 2629-A
+        it.setWord(full.area.mapConnData.south.stripDest); // 262B-C
+        it.setByte(full.area.mapConnData.south.stripWidth); // 262D
+        it.setByte(parseInt(mapSouthArr[1])); // 262E
+        it.setByte(full.area.mapConnData.south.yAlign); // 262F
+        it.setByte(full.area.mapConnData.south.xAlign); // 2630
+        it.setWord(full.area.mapConnData.south.viewPtr, 0, true); // 2631-2
+    }
 
     // Connection Data West
-    it.setByte(full.area.mapConnData.west.mapPtr); // 2633
-    it.setWord(full.area.mapConnData.west.stripSrc); // 2634-5
-    it.setWord(full.area.mapConnData.west.stripDest); // 2636-7
-    it.setByte(full.area.mapConnData.west.stripWidth); // 2638
-    it.setByte(full.area.mapConnData.west.width); // 2639
-    it.setByte(full.area.mapConnData.west.yAlign); // 263A
-    it.setByte(full.area.mapConnData.west.xAlign); // 263B
-    it.setWord(full.area.mapConnData.west.viewPtr); // 263C-D
+    it.offsetTo(0x2633);
+    if (full.area.mapConn.west) {
+        const mapWest = full.area.mapConnData.west.map;
+        const mapWestArr = mapWest.split("_");
+        it.setHex(0x1, mapWestArr[0], false); // 2633
+        it.setWord(full.area.mapConnData.west.stripSrc); // 2634-5
+        it.setWord(full.area.mapConnData.west.stripDest); // 2636-7
+        it.setByte(full.area.mapConnData.west.stripWidth); // 2638
+        it.setByte(parseInt(mapWestArr[1])); // 2639
+        it.setByte(full.area.mapConnData.west.yAlign); // 263A
+        it.setByte(full.area.mapConnData.west.xAlign); // 263B
+        it.setWord(full.area.mapConnData.west.viewPtr, 0, true); // 263C-D
+    }
 
     // Connection Data East
-    it.setByte(full.area.mapConnData.east.mapPtr); // 263E
-    it.setWord(full.area.mapConnData.east.stripSrc); // 263F-2640
-    it.setWord(full.area.mapConnData.east.stripDest); // 2641-2
-    it.setByte(full.area.mapConnData.east.stripWidth); // 2643
-    it.setByte(full.area.mapConnData.east.width); // 2644
-    it.setByte(full.area.mapConnData.east.yAlign); // 2645
-    it.setByte(full.area.mapConnData.east.xAlign); // 2646
-    it.setWord(full.area.mapConnData.east.viewPtr); // 2647-8
+    it.offsetTo(0x263E);
+    if (full.area.mapConn.east) {
+        const mapEast = full.area.mapConnData.east.map;
+        const mapEastArr = mapEast.split("_");
+        it.setHex(0x1, mapEastArr[0], false); // 263E
+        it.setWord(full.area.mapConnData.east.stripSrc); // 263F-2640
+        it.setWord(full.area.mapConnData.east.stripDest); // 2641-2
+        it.setByte(full.area.mapConnData.east.stripWidth); // 2643
+        it.setByte(parseInt(mapEastArr[1])); // 2644
+        it.setByte(full.area.mapConnData.east.yAlign); // 2645
+        it.setByte(full.area.mapConnData.east.xAlign); // 2646
+        it.setWord(full.area.mapConnData.east.viewPtr, 0, true); // 2647-8
+    }
+
+    it.offsetTo(0x2649); // 2649
 
     // Sprite Set
     for (let i = 0; i < 11; i++) {
@@ -421,10 +456,10 @@ export function writeBack(file: SaveFileService) {
     }
 
     it.offsetTo(0x27D0); // 27D0
-    it.setByte(full.area.map2x2Height); // 27D0
-    it.setByte(full.area.map2x2Width); // 27D1
+    it.setByte(parseInt(curMapArr[3])); // 27D0
+    it.setByte(parseInt(curMapArr[4])); // 27D1
 
-    it.setWord(full.area.mapViewVRAMPointer); // 27D2-3
+    it.setHex(0x2, full.area.mapViewVRAMPointer, false, 0, true); // 27D2-3
 
     it.setByte(full.area.playerMoveDir); // 27D4
     it.setByte(full.area.playerLastStopDir); // 27D5
