@@ -1,0 +1,37 @@
+.container.wrapper
+    .s12
+        h5 Vermillion Gym
+
+    .xl2.l3.m6.s12
+        mat-form-field(style="width: 100%")
+            mat-label Trashcan 1 Switch
+            input(
+                matInput
+                type='number'
+                required=''
+                '[(ngModel)]'='fileService.fileDataExpanded.area.firstTrashcanLock'
+            )
+
+    .xl2.l3.m6.s12
+        mat-form-field(style="width: 100%")
+            mat-label Trashcan 2 Switch
+            input(
+                matInput
+                type='number'
+                required=''
+                '[(ngModel)]'='fileService.fileDataExpanded.area.secondTrashcanLock'
+            )
+
+    .s12
+        h5 Cinnabar Gym
+
+    .xl2.l3.m6.s12
+        .xl2.l3.m6.s12
+        mat-form-field(style="width: 100%")
+            mat-label Next Wrong Answer Opponent
+            input(
+                matInput
+                type='number'
+                required=''
+                '[(ngModel)]'='fileService.fileDataExpanded.area.oppAfterWrongAnsw'
+            )
