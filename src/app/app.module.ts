@@ -104,6 +104,7 @@ import { SelectPlayerDirectionComponent } from './fragments/select-player-direct
 import { SelectMapFullComponent } from './fragments/select-map-full/select-map-full.component';
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
 import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
+import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
 
 @NgModule({
     declarations: [
@@ -158,6 +159,7 @@ import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.compon
         AreaPuzzleComponent,
         WorldEventsComponent,
         WorldHiddenComponent,
+        WorldTradesComponent,
     ],
     imports: [
         BrowserModule,

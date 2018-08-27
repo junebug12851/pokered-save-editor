@@ -1,0 +1,29 @@
+.container.wrapper
+    .s12
+        h5 Trades
+
+mat-list
+    mat-list-item
+        .container
+            .s9
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getTrade(0) ? "primary" : ""'
+                    '(click)'='toggleAllTrades()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of trades; let i = index')
+        .container
+            .s9
+                | {{entry.give}} for {{entry.get}} ({{entry.nickname}})
+
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getTrade(i) ? "primary" : ""'
+                    '(click)'='toggleTrade(i)'
+                )
+                    span.im.im-checkmark4

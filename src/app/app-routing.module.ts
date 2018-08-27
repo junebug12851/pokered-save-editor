@@ -36,6 +36,7 @@ import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.compon
 import { StorageAllComponent } from './screens/storage-all/storage-all.component';
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
 import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
+import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
@@ -58,6 +59,7 @@ const routes: Routes = [
     { path: 'area-puzzle', component: AreaPuzzleComponent },
     { path: 'world-events', component: WorldEventsComponent },
     { path: 'world-hidden', component: WorldHiddenComponent },
+    { path: 'world-trades', component: WorldTradesComponent },
     {
         path: '',
         redirectTo: '/player-basics',
