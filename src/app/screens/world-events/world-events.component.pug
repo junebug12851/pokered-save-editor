@@ -1,0 +1,31 @@
+mat-list
+    mat-list-item
+        .container
+            .s6
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getEvent(0) ? "primary" : ""'
+                    '(click)'='toggleAllEvents()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of paginatedEntries')
+        .container
+            .s6
+                | {{entry.name}}
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getEvent(entry.ind) ? "primary" : ""'
+                    '(click)'='toggleEvent(entry.ind)'
+                )
+                    span.im.im-checkmark4
+mat-paginator(
+    '[length]'='entries.length'
+    '[pageSize]'='50'
+    '[pageSizeOptions]'="[25, 50, 100]"
+    '[showFirstLastButtons]'='true'
+    '(page)'='paginatorChange($event)'
+)

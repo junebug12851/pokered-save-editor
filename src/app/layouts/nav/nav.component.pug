@@ -45,7 +45,7 @@ mat-sidenav-container.sidenav-container
             // World
             a.subheader(mat-list-item='') World
 
-            a.disabled(mat-list-item='') Events
+            a(mat-list-item='', routerLink='/world-events' '[routerLinkActive]'="['active']") Events
             a.disabled(mat-list-item='') Hidden
             a.disabled(mat-list-item='') Trades
             a.disabled(mat-list-item='') Towns

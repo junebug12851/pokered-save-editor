@@ -39,6 +39,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -101,6 +102,7 @@ import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { SignItemComponent } from './fragments/sign-item/sign-item.component';
 import { SelectPlayerDirectionComponent } from './fragments/select-player-direction/select-player-directionr.component';
 import { SelectMapFullComponent } from './fragments/select-map-full/select-map-full.component';
+import { WorldEventsComponent } from './screens/world-events/world-events.component';
 
 @NgModule({
     declarations: [
@@ -152,7 +154,8 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
         AreaNpcsComponent,
         WildPokemonItemComponent,
         AreaPokemonComponent,
-        AreaPuzzleComponent
+        AreaPuzzleComponent,
+        WorldEventsComponent,
     ],
     imports: [
         BrowserModule,
@@ -173,6 +176,7 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
         MatProgressBarModule,
         MatTabsModule,
         MatCheckboxModule,
+        MatPaginatorModule,
     ],
     providers: [
         SaveFileService
