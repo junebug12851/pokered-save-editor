@@ -1,3 +1,5 @@
+import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
+import { WildPokemonItemComponent } from './fragments/wild-pokemon-item/wild-pokemon-item.component';
 import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
 import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
 import { ConnectionItemComponent } from './fragments/connection-item/connection-item.component';
@@ -147,6 +149,8 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
         ConnectionItemComponent,
         AreaMapsComponent,
         AreaNpcsComponent,
+        WildPokemonItemComponent,
+        AreaPokemonComponent,
     ],
     imports: [
         BrowserModule,
