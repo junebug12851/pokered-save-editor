@@ -253,18 +253,36 @@ export class World {
             this.dayCare = null;
     }
 
-    public options: {
-        textSpeedSlowness: number,
-        battleStyleSet: boolean,
-        battleAnimOff: boolean,
-    };
+    /**
+     * Events
+     */
+    public completedEvents: boolean[];
 
-    public letterDelay: {
-        normalDelay: boolean,
-        dontDelay: boolean,
-    }
+    /**
+     * Hidden
+     */
 
-    // Points to next script
+    public ownedHidenItems: boolean[];
+    public ownedHiddenCoins: boolean[];
+
+    /**
+     * Trades
+     */
+    public inGameTrades: boolean[];
+
+    /**
+     * Towns
+     */
+    public visitedTowns: boolean[];
+
+    /**
+     * Missables
+     */
+    public missableObjectFlags: boolean[];
+
+    /**
+     * Next Script
+     */
     public currentScriptProgress: {
         oaksLab: number,
         paletteTown: number,
@@ -365,26 +383,44 @@ export class World {
         route18Gate: number,
     };
 
-    public missableObjectFlags: boolean[];
-    public ownedHidenItems: boolean[];
-    public ownedHiddenCoins: boolean[];
-    public visitedTowns: boolean[];
-    public fossilItemGiven: number;
-    public fossilPkmnResult: number;
-    public lastBlackoutMap: number;
-    public lastMap: number;
-
+    /**
+     * Completed
+     */
     public obtainedOldRod: boolean;
     public obtainedGoodRod: boolean;
     public obtainedSuperRod: boolean;
     public satisfiedSaffronGuards: boolean;
     public obtainedLapras: boolean;
-    public everHealedPokemon: boolean;
     public obtainedStarterPokemon: boolean;
-    public debugMode: boolean;
+    public everHealedPokemon: boolean;
     public defeatedLorelei: boolean;
-    public inGameTrades: boolean[];
-    public completedEvents: boolean[];
+
+    /**
+     * Daycare
+     */
+    public dayCare: PokemonBox | null;
+
+    /**
+     * General
+     */
+    public options: {
+        textSpeedSlowness: number,
+        battleStyleSet: boolean,
+        battleAnimOff: boolean,
+    };
+
+    public letterDelay: {
+        normalDelay: boolean,
+        dontDelay: boolean,
+    }
+
+    public lastBlackoutMap: number;
+    public lastMap: number;
+
+    /**
+     * Other
+     */
+    public debugMode: boolean;
 
     public playtime: {
         hours: number,
@@ -394,5 +430,6 @@ export class World {
         frames: number
     };
 
-    public dayCare: PokemonBox | null;
+    public fossilItemGiven: number;
+    public fossilPkmnResult: number;
 }
