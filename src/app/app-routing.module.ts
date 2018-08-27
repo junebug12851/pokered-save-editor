@@ -1,3 +1,4 @@
+import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
 import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
 import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
 import { AreaMapsComponent } from './screens/area-maps/area-maps.component';
@@ -52,6 +53,7 @@ const routes: Routes = [
     { path: 'area-maps', component: AreaMapsComponent },
     { path: 'area-npcs', component: AreaNpcsComponent },
     { path: 'area-pokemon', component: AreaPokemonComponent },
+    { path: 'area-puzzle', component: AreaPuzzleComponent },
     {
         path: '',
         redirectTo: '/player-basics',

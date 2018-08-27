@@ -1,3 +1,4 @@
+import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
 import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
 import { WildPokemonItemComponent } from './fragments/wild-pokemon-item/wild-pokemon-item.component';
 import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
@@ -151,6 +152,7 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
         AreaNpcsComponent,
         WildPokemonItemComponent,
         AreaPokemonComponent,
+        AreaPuzzleComponent
     ],
     imports: [
         BrowserModule,
