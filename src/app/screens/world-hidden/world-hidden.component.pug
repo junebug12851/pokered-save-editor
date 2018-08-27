@@ -1,0 +1,61 @@
+.container.wrapper
+    .s12
+        h5 Hidden Items
+
+mat-list
+    mat-list-item
+        .container
+            .s7
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getItem(0) ? "primary" : ""'
+                    '(click)'='toggleAllItems()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of items; let i = index')
+        .container
+            .s4
+                | {{entry.map}}
+            .s3
+                | {{entry.x}},{{entry.y}}
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getItem(i) ? "primary" : ""'
+                    '(click)'='toggleItem(i)'
+                )
+                    span.im.im-checkmark4
+
+.container.wrapper
+    .s12
+        h5 Hidden Coins
+
+mat-list
+    mat-list-item
+        .container
+            .s7
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getCoin(0) ? "primary" : ""'
+                    '(click)'='toggleAllCoins()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of coins; let i = index')
+        .container
+            .s4
+                | {{entry.map}}
+            .s3
+                | {{entry.x}},{{entry.y}}
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getCoin(i) ? "primary" : ""'
+                    '(click)'='toggleCoin(i)'
+                )
+                    span.im.im-checkmark4

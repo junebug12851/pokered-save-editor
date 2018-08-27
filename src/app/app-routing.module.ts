@@ -35,6 +35,7 @@ import { PlayerPokemonComponent } from './screens/player-pokemon/player-pokemon.
 import { RivalBasicsComponent } from './screens/rival-basics/rival-basics.component';
 import { StorageAllComponent } from './screens/storage-all/storage-all.component';
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
+import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
@@ -56,6 +57,7 @@ const routes: Routes = [
     { path: 'area-pokemon', component: AreaPokemonComponent },
     { path: 'area-puzzle', component: AreaPuzzleComponent },
     { path: 'world-events', component: WorldEventsComponent },
+    { path: 'world-hidden', component: WorldHiddenComponent },
     {
         path: '',
         redirectTo: '/player-basics',

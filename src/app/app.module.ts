@@ -103,6 +103,7 @@ import { SignItemComponent } from './fragments/sign-item/sign-item.component';
 import { SelectPlayerDirectionComponent } from './fragments/select-player-direction/select-player-directionr.component';
 import { SelectMapFullComponent } from './fragments/select-map-full/select-map-full.component';
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
+import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
 
 @NgModule({
     declarations: [
@@ -156,6 +157,7 @@ import { WorldEventsComponent } from './screens/world-events/world-events.compon
         AreaPokemonComponent,
         AreaPuzzleComponent,
         WorldEventsComponent,
+        WorldHiddenComponent,
     ],
     imports: [
         BrowserModule,
