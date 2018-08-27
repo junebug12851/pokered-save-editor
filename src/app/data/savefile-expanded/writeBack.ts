@@ -853,11 +853,12 @@ export function writeBack(file: SaveFileService) {
     // 2B34
     //it.copyRange(20, full.area.grassPokemon);
     it.offsetTo(0x2B34);
-    for (let i = 0; i < full.area.grassPokemon.length && i < 10; i++) {
-        const pokemon: WildPokemon = full.area.grassPokemon[i];
-        it.setByte(pokemon.level);
-        it.setByte(pokemon.pokemon);
-    }
+    if (full.area.grassRate > 0)
+        for (let i = 0; i < full.area.grassPokemon.length && i < 10; i++) {
+            const pokemon: WildPokemon = full.area.grassPokemon[i];
+            it.setByte(pokemon.level);
+            it.setByte(pokemon.pokemon);
+        }
 
     // Add early terminator if Pokemon list not full
     if (full.area.grassPokemon.length < 10)
@@ -869,11 +870,12 @@ export function writeBack(file: SaveFileService) {
     it.setByte(full.area.waterPokemonRate); // 2B50
 
     it.offsetTo(0x2B51);
-    for (let i = 0; i < full.area.waterPokemon.length && i < 10; i++) {
-        const pokemon: WildPokemon = full.area.waterPokemon[i];
-        it.setByte(pokemon.level);
-        it.setByte(pokemon.pokemon);
-    }
+    if (full.area.waterPokemonRate > 0)
+        for (let i = 0; i < full.area.waterPokemon.length && i < 10; i++) {
+            const pokemon: WildPokemon = full.area.waterPokemon[i];
+            it.setByte(pokemon.level);
+            it.setByte(pokemon.pokemon);
+        }
 
     // Add early terminator if Pokemon list not full
     if (full.area.waterPokemon.length < 10)

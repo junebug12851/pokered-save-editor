@@ -167,41 +167,43 @@ export class Area {
         this.firstTrashcanLock = saveFile.getByte(0x29EF);
         this.secondTrashcanLock = saveFile.getByte(0x29F0);
 
-        const gr = this.grassRate = saveFile.getByte(0x2B33);
+        this.grassRate = saveFile.getByte(0x2B33);
         const grassPokemon = saveFile.getRange(0x2B34, 20);
 
         this.grassPokemon = [];
-        if (gr > 0)
-            for (let i = 0; i < 20; i += 2) {
+        //if (gr > 0) // Unverified
+        for (let i = 0; i < 20; i += 2) {
 
-                // List ends with 0x00 or until 10 is reached
-                if (grassPokemon[i] == 0x00 || grassPokemon[i + 1] == 0x00)
-                    break;
+            // List ends with 0x00 or until 10 is reached
+            // Unverified
+            // if (grassPokemon[i] == 0x00 || grassPokemon[i + 1] == 0x00)
+            //     break;
 
-                // Add Grass Pokemon
-                this.grassPokemon.push({
-                    level: grassPokemon[i],
-                    pokemon: grassPokemon[i + 1],
-                });
-            }
+            // Add Grass Pokemon
+            this.grassPokemon.push({
+                level: grassPokemon[i],
+                pokemon: grassPokemon[i + 1],
+            });
+        }
 
-        const wr = this.waterPokemonRate = saveFile.getByte(0x2B50);
+        this.waterPokemonRate = saveFile.getByte(0x2B50);
         const waterPokemon = saveFile.getRange(0x2B51, 20);
 
         this.waterPokemon = [];
-        if (wr > 0)
-            for (let i = 0; i < 20; i += 2) {
+        //if (wr > 0) // Unverified
+        for (let i = 0; i < 20; i += 2) {
 
-                // List ends with 0x00 or until 10 is reached
-                if (waterPokemon[i] == 0x00 || waterPokemon[i + 1] == 0x00)
-                    break;
+            // List ends with 0x00 or until 10 is reached
+            // Unverified
+            // if (waterPokemon[i] == 0x00 || waterPokemon[i + 1] == 0x00)
+            //     break;
 
-                // Add Water Pokemon
-                this.waterPokemon.push({
-                    level: waterPokemon[i],
-                    pokemon: waterPokemon[i + 1],
-                });
-            }
+            // Add Water Pokemon
+            this.waterPokemon.push({
+                level: waterPokemon[i],
+                pokemon: waterPokemon[i + 1],
+            });
+        }
 
         this.trainerHeaderPtr = saveFile.getHex(0x2CDC, 0x2, false, true);
         this.oppAfterWrongAnsw = saveFile.getByte(0x2CE4);
@@ -392,7 +394,7 @@ export class Area {
     /**
      * Pokemon
      *
-     * Grass rate is how likely to encounter Pokemon
+     * Rate is how likely to encounter Pokemon
      * higher number = higher chance
      * A rate of 0 means no wild pokemon on map
      *
