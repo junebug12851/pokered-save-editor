@@ -1,0 +1,29 @@
+.container.wrapper
+    .s12
+        h5 Towns
+
+mat-list
+    mat-list-item
+        .container
+            .s9
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getTown(0) ? "primary" : ""'
+                    '(click)'='toggleAllTowns()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of towns; let i = index')
+        .container
+            .s9
+                | {{entry}}
+
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getTown(i) ? "primary" : ""'
+                    '(click)'='toggleTown(i)'
+                )
+                    span.im.im-checkmark4

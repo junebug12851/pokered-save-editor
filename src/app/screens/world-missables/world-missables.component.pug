@@ -1,0 +1,29 @@
+.container.wrapper
+    .s12
+        h5 Missables
+
+mat-list
+    mat-list-item
+        .container
+            .s9
+                | Toggle All
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getMissable(0) ? "primary" : ""'
+                    '(click)'='toggleAllMissables()'
+                )
+                    span.im.im-checkmark4
+
+    mat-list-item(*ngFor='let entry of missables; let i = index')
+        .container
+            .s9
+                | {{entry}}
+
+            .s3
+                button(
+                    mat-raised-button=''
+                    '[color]'='getMissable(i) ? "primary" : ""'
+                    '(click)'='toggleMissable(i)'
+                )
+                    span.im.im-checkmark4

@@ -246,6 +246,8 @@ export const indToName: string[] = ["Pallet Town Oak",
     "Seafoam Islands 5 Boulder 2",
     "Articuno"];
 
+export const missables = indToName;
+
 @Injectable({
     providedIn: 'root'
 })
