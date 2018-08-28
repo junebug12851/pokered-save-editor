@@ -19,6 +19,9 @@ import { SaveFileService } from "../../data/savefile.service";
 import { PageEvent } from '@angular/material';
 import { events } from "../../data/events";
 
+//@ts-ignore
+const _ = window.require("lodash");
+
 @Component({
     selector: 'screen-world-events',
     templateUrl: './world-events.component.pug',
@@ -35,13 +38,20 @@ export class WorldEventsComponent implements OnInit {
     }
 
     get entries() {
-        return events;
+        if (this.search == "")
+            return events;
+
+        return _.filter(events, (el: any) => {
+            const nameUpper = _.upperCase(el.name);
+            const searchUpper = _.upperCase(this.search);
+            return nameUpper.includes(searchUpper);
+        });
     }
 
     get paginatedEntries() {
         const start = this.pageIndex * this.pageSize;
         const end = start + this.pageSize;
-        return events.slice(start, end);
+        return this.entries.slice(start, end);
     }
 
     getEvent(index: number): boolean {
@@ -72,5 +82,6 @@ export class WorldEventsComponent implements OnInit {
     }
 
     public pageIndex: number = 0;
-    public pageSize: number = 50;
+    public pageSize: number = 25;
+    public search: string = "";
 }
