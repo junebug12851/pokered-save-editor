@@ -37,7 +37,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x72
     },
     {
-        name: "Nidoran<GM>",
+        name: "Nidoran<m>",
         ind: 0x03,
         pokedex: 0x1F
     },
@@ -97,7 +97,7 @@ export const rawEntries: RawEntry[] = [
         pokedex: 0x5D
     },
     {
-        name: "Nidoran<GF>",
+        name: "Nidoran<f>",
         ind: 0x0F,
         pokedex: 0x1C
     },
