@@ -108,6 +108,7 @@ import { WorldEventsComponent } from './screens/world-events/world-events.compon
 import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
 import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
 import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
+import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
 
 @NgModule({
     declarations: [
@@ -166,6 +167,7 @@ import { WorldTownsComponent } from './screens/world-towns/world-towns.component
         WorldTownsComponent,
         WorldMissablesComponent,
         WorldScriptsComponent,
+        WorldCompletedComponent,
     ],
     imports: [
         BrowserModule,
