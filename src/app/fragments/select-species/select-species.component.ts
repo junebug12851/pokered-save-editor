@@ -44,6 +44,9 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
     @Input()
     public disabled: boolean = false;
 
+    @Input()
+    public label: string = "";
+
     @Output()
     public speciesChange: EventEmitter<number> = new EventEmitter();
 

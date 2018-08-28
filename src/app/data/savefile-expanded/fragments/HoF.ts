@@ -41,6 +41,13 @@ export class HoFRecord {
 
         this.pokemon = [];
         for (let i = 0; i < 6; i++) {
+
+            // If Pokemon doesn't exist then don't proceed any further
+            const pokemonOffset = (0x10 * i) + this.offset
+            const speciesByte = saveFile.getRange(pokemonOffset + 0, 1)[0];
+            if (speciesByte == 0)
+                break;
+
             this.pokemon.push(new HoFPokemon(saveFile, this.offset, i));
         }
     }
