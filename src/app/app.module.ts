@@ -1,3 +1,4 @@
+import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
 import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
 import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
 import { WildPokemonItemComponent } from './fragments/wild-pokemon-item/wild-pokemon-item.component';
@@ -105,6 +106,7 @@ import { SelectMapFullComponent } from './fragments/select-map-full/select-map-f
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
 import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
 import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
+import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
 
 @NgModule({
     declarations: [
@@ -160,6 +162,8 @@ import { WorldTradesComponent } from './screens/world-trades/world-trades.compon
         WorldEventsComponent,
         WorldHiddenComponent,
         WorldTradesComponent,
+        WorldTownsComponent,
+        WorldMissablesComponent,
     ],
     imports: [
         BrowserModule,

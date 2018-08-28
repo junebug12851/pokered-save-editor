@@ -1,3 +1,5 @@
+import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
+import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
 import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
 import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
 import { AreaNpcsComponent } from './screens/area-npcs/area-npcs.component';
@@ -60,6 +62,8 @@ const routes: Routes = [
     { path: 'world-events', component: WorldEventsComponent },
     { path: 'world-hidden', component: WorldHiddenComponent },
     { path: 'world-trades', component: WorldTradesComponent },
+    { path: 'world-towns', component: WorldTownsComponent },
+    { path: 'world-missables', component: WorldMissablesComponent },
     {
         path: '',
         redirectTo: '/player-basics',
