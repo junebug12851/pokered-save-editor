@@ -1,3 +1,4 @@
+import { RootDaycareComponent } from './screens/root-daycare/root-daycarel.component';
 import { WorldOtherComponent } from './screens/world-other/world-other.component';
 import { WorldGeneralComponent } from './screens/world-general/world-general.component';
 import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
@@ -112,6 +113,7 @@ import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.compon
 import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
 import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
 import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
+import { RootHoFComponent } from './screens/root-hof/root-hof.component';
 
 @NgModule({
     declarations: [
@@ -173,6 +175,8 @@ import { WorldCompletedComponent } from './screens/world-completed/world-complet
         WorldCompletedComponent,
         WorldGeneralComponent,
         WorldOtherComponent,
+        RootDaycareComponent,
+        RootHoFComponent,
     ],
     imports: [
         BrowserModule,

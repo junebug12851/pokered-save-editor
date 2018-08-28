@@ -51,8 +51,8 @@ mat-sidenav-container.sidenav-container
             a(mat-list-item='', routerLink='/world-general' '[routerLinkActive]'="['active']") General
             a(mat-list-item='', routerLink='/world-other' '[routerLinkActive]'="['active']") Other
 
-            a.root.disabled(mat-list-item='') Daycare
-            a.root.disabled(mat-list-item='') Hall of Fame
+            a.root(mat-list-item='', routerLink='/root-daycare' '[routerLinkActive]'="['active']") Daycare
+            a.root(mat-list-item='', routerLink='/root-hof' '[routerLinkActive]'="['active']") Hall of Fame
 
     mat-sidenav-content
         button(

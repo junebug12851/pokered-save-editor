@@ -1,3 +1,4 @@
+import { RootHoFComponent } from './screens/root-hof/root-hof.component';
 import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
 import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
 import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
@@ -43,6 +44,7 @@ import { WorldTradesComponent } from './screens/world-trades/world-trades.compon
 import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 import { WorldGeneralComponent } from './screens/world-general/world-general.component';
 import { WorldOtherComponent } from './screens/world-other/world-other.component';
+import { RootDaycareComponent } from './screens/root-daycare/root-daycarel.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
@@ -72,6 +74,8 @@ const routes: Routes = [
     { path: 'world-completed', component: WorldCompletedComponent },
     { path: 'world-general', component: WorldGeneralComponent },
     { path: 'world-other', component: WorldOtherComponent },
+    { path: 'root-daycare', component: RootDaycareComponent },
+    { path: 'root-hof', component: RootHoFComponent },
     {
         path: '',
         redirectTo: '/player-basics',
