@@ -1,9 +1,8 @@
 mat-form-field
-    mat-label Select Item
+    mat-label {{label}}
     mat-select(
         '[(ngModel)]'='value'
         '[disabled]'='disabled'
-        required=''
     )
         mat-option('[value]'="0" '[disabled]'='!noneSelectable') Choose Item
         mat-option(

@@ -50,6 +50,9 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
     public disabled: boolean = false;
 
     @Input()
+    public label: string = "Select Item";
+
+    @Input()
     public noneSelectable: boolean = false;
 
     get itemList() {
