@@ -1,3 +1,4 @@
+import { WorldGeneralComponent } from './screens/world-general/world-general.component';
 import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
 import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
@@ -42,6 +43,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -168,6 +170,7 @@ import { WorldCompletedComponent } from './screens/world-completed/world-complet
         WorldMissablesComponent,
         WorldScriptsComponent,
         WorldCompletedComponent,
+        WorldGeneralComponent,
     ],
     imports: [
         BrowserModule,
@@ -189,6 +192,7 @@ import { WorldCompletedComponent } from './screens/world-completed/world-complet
         MatTabsModule,
         MatCheckboxModule,
         MatPaginatorModule,
+        MatButtonToggleModule,
     ],
     providers: [
         SaveFileService

@@ -404,6 +404,11 @@ export class World {
     /**
      * General
      */
+    // Maps
+    public lastBlackoutMap: number;
+    public lastMap: number;
+
+    // Options
     public options: {
         textSpeedSlowness: number,
         battleStyleSet: boolean,
@@ -414,9 +419,6 @@ export class World {
         normalDelay: boolean,
         dontDelay: boolean,
     }
-
-    public lastBlackoutMap: number;
-    public lastMap: number;
 
     /**
      * Other
