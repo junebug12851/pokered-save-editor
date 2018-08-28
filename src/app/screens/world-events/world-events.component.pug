@@ -1,4 +1,19 @@
-mat-list
+mat-list(style="margin-top: 75px;")
+    mat-list-item
+        .container
+            .s12
+                mat-form-field(
+                    style="width: 100%;"
+                    )
+                    //mat-label(style="height: 36px;") Search
+                    span(matPrefix='')
+                        span.im.im-search3 &nbsp;
+                    input(
+                        matInput=''
+                        type='text'
+                        '[(ngModel)]'='search'
+                    )
+
     mat-list-item
         .container
             .s6
@@ -24,7 +39,7 @@ mat-list
                     span.im.im-checkmark4
 mat-paginator(
     '[length]'='entries.length'
-    '[pageSize]'='50'
+    '[pageSize]'='25'
     '[pageSizeOptions]'="[25, 50, 100]"
     '[showFirstLastButtons]'='true'
     '(page)'='paginatorChange($event)'
