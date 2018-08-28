@@ -1,3 +1,4 @@
+import { WorldOtherComponent } from './screens/world-other/world-other.component';
 import { WorldGeneralComponent } from './screens/world-general/world-general.component';
 import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
@@ -171,6 +172,7 @@ import { WorldCompletedComponent } from './screens/world-completed/world-complet
         WorldScriptsComponent,
         WorldCompletedComponent,
         WorldGeneralComponent,
+        WorldOtherComponent,
     ],
     imports: [
         BrowserModule,

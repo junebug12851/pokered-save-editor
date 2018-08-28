@@ -42,6 +42,7 @@ import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.compon
 import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
 import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 import { WorldGeneralComponent } from './screens/world-general/world-general.component';
+import { WorldOtherComponent } from './screens/world-other/world-other.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
@@ -70,6 +71,7 @@ const routes: Routes = [
     { path: 'world-scripts', component: WorldScriptsComponent },
     { path: 'world-completed', component: WorldCompletedComponent },
     { path: 'world-general', component: WorldGeneralComponent },
+    { path: 'world-other', component: WorldOtherComponent },
     {
         path: '',
         redirectTo: '/player-basics',
