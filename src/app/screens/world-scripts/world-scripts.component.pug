@@ -1,0 +1,13 @@
+.container.wrapper
+    .s12
+        h5 Next Script
+
+mat-list
+    mat-list-item(*ngFor='let entry of scripts; let i = index')
+        mat-form-field(style='width: 100%;')
+            mat-label {{entry[1]}}
+            input(
+                matInput
+                type='number'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.currentScriptProgress[scripts[i][0]]'
+            )

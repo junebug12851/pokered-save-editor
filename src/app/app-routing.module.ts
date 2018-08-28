@@ -39,6 +39,7 @@ import { StorageAllComponent } from './screens/storage-all/storage-all.component
 import { WorldEventsComponent } from './screens/world-events/world-events.component';
 import { WorldHiddenComponent } from './screens/world-hidden/world-hidden.component';
 import { WorldTradesComponent } from './screens/world-trades/world-trades.component';
+import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 
 const routes: Routes = [
     { path: 'player-basics', component: PlayerBasicsComponent },
@@ -64,6 +65,7 @@ const routes: Routes = [
     { path: 'world-trades', component: WorldTradesComponent },
     { path: 'world-towns', component: WorldTownsComponent },
     { path: 'world-missables', component: WorldMissablesComponent },
+    { path: 'world-scripts', component: WorldScriptsComponent },
     {
         path: '',
         redirectTo: '/player-basics',

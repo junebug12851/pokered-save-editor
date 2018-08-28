@@ -1,3 +1,4 @@
+import { WorldScriptsComponent } from './screens/world-scripts/world-scripts.component';
 import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
 import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
 import { AreaPokemonComponent } from './screens/area-pokemon/area-pokemon.component';
@@ -164,6 +165,7 @@ import { WorldTownsComponent } from './screens/world-towns/world-towns.component
         WorldTradesComponent,
         WorldTownsComponent,
         WorldMissablesComponent,
+        WorldScriptsComponent,
     ],
     imports: [
         BrowserModule,
