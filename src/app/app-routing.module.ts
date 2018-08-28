@@ -1,3 +1,4 @@
+import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
 import { WorldMissablesComponent } from './screens/world-missables/world-missables.component';
 import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
 import { AreaPuzzleComponent } from './screens/area-puzzle/area-puzzle.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
     { path: 'world-towns', component: WorldTownsComponent },
     { path: 'world-missables', component: WorldMissablesComponent },
     { path: 'world-scripts', component: WorldScriptsComponent },
+    { path: 'world-completed', component: WorldCompletedComponent },
     {
         path: '',
         redirectTo: '/player-basics',

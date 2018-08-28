@@ -386,19 +386,20 @@ export class World {
     /**
      * Completed
      */
+
+    // Rods
     public obtainedOldRod: boolean;
     public obtainedGoodRod: boolean;
     public obtainedSuperRod: boolean;
-    public satisfiedSaffronGuards: boolean;
+
+    // Pokemon
     public obtainedLapras: boolean;
     public obtainedStarterPokemon: boolean;
     public everHealedPokemon: boolean;
-    public defeatedLorelei: boolean;
 
-    /**
-     * Daycare
-     */
-    public dayCare: PokemonBox | null;
+    // Other
+    public satisfiedSaffronGuards: boolean;
+    public defeatedLorelei: boolean;
 
     /**
      * General
@@ -432,4 +433,9 @@ export class World {
 
     public fossilItemGiven: number;
     public fossilPkmnResult: number;
+
+    /**
+     * Daycare
+     */
+    public dayCare: PokemonBox | null;
 }
