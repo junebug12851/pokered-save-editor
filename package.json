@@ -11,101 +11,17 @@
         "name": "June Hanabi"
     },
     "license": "Apache-2.0",
-    "build": {
-        "appId": "com.gmail.junehanabi.pokered-save-editor",
-        "productName": "Pokered Save Editor",
-        "copyright": "Copyright © 2018 June Hanabi",
-        "directories": {
-            "buildResources": "dist",
-            "output": "build"
-        },
-        "files": [
-            "./dist/**/*",
-            "./main.js"
-        ],
-        "mac": {
-            "category": "public.app-category.utilities",
-            "target": [
-                {
-                    "target": "dmg",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/icns/web_hi_res_512_1024x1024.icns",
-            "identity": null
-        },
-        "dmg": {
-            "background": "./dist/pokered-save-editor/assets/splash/DMGSplash.png",
-            "icon": "./pokered-save-editor/assets/icons/icns/web_hi_res_512_1024x1024.icns",
-            "title": "Pokered Save Editor"
-        },
-        "win": {
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "portable",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico"
-        },
-        "nsis": {
-            "installerIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
-            "uninstallerIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
-            "installerHeaderIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
-            "deleteAppDataOnUninstall": true
-        },
-        "linux": {
-            "target": [
-                {
-                    "target": "AppImage",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/png/web_hi_res_512_256x256.png",
-            "synopsis": "Pokemon Red/Blue Save Editor",
-            "category": "Utility"
-        },
-        "appImage": {
-            "synopsis": "Pokemon Red/Blue Save Editor",
-            "category": "Utility"
-        }
-    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build:prod": "ng build --prod --build-optimizer",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "electron-builder install-app-deps",
         "postinstall:dev": "node ./ng-add-pug-loader.js",
         "desktop": "cross-env DEV=true electron .",
-        "desktop:prod": "electron .",
-        "deploy": "npm run deploy:ng && npm run deploy:dist",
-        "deploy:ng": "ng build --prod --build-optimizer",
-        "deploy:pack": "electron-builder --dir",
-        "deploy:dist": "electron-builder -wlm --x64 --ia32"
+        "desktop:prod": "electron ."
     },
     "main": "main.js",
     "private": true,
@@ -150,7 +66,6 @@
         "codelyzer": "~4.2.1",
         "cross-env": "^5.2.0",
         "electron": "^2.0.6",
-        "electron-builder": "^20.28.3",
         "jasmine-core": "~2.99.1",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~1.7.1",
