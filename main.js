@@ -14,8 +14,17 @@
    limitations under the License.
  */
 const { app, BrowserWindow } = require('electron');
+const path = require("path");
 
 let win;
+
+const isDev = process.env.DEV
+    ? (process.env.DEV.trim() == "true")
+    : false;
+
+const icon = (isDev)
+    ? path.join(__dirname, 'src/assets/icons/png/mipmap-xhdpi/ic_launcher.png')
+    : path.join(__dirname, 'dist/pokered-save-editor/assets/icons/png/mipmap-xhdpi/ic_launcher.png');
 
 function createWindow() {
     const { screen } = require('electron');
@@ -29,9 +38,13 @@ function createWindow() {
             //webSecurity: false,
             //allowRunningInsecureContent: true
         },
+        icon
     });
 
-    win.loadURL('http://localhost:4200');
+    if (isDev)
+        win.loadURL('http://localhost:4200');
+    else
+        win.loadFile('./dist/pokered-save-editor/index.html');
 
     win.on('closed', () => {
         win = null;

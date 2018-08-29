@@ -43,7 +43,7 @@
                                         button(
                                             mat-raised-button=''
                                             '(click)'='addBoxItem()'
-                                            '[disabled]'='entriesCount >= 50'
+                                            '[disabled]'='boxItems.length >= 50'
                                             color="primary"
                                             style="width: 100%;"
                                         )

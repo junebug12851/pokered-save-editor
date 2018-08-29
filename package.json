@@ -1,71 +1,168 @@
 {
-  "name": "pokered-save-editor",
-  "productName": "Pokered Save Editor",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "node ./ng-add-pug-loader.js",
-    "desktop": "electron ."
-  },
-  "main": "main.js",
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "^6.1.3",
-    "@angular/cdk": "^6.4.6",
-    "@angular/common": "^6.1.0",
-    "@angular/compiler": "^6.1.0",
-    "@angular/core": "^6.1.0",
-    "@angular/flex-layout": "^6.0.0-beta.17",
-    "@angular/forms": "^6.1.0",
-    "@angular/http": "^6.1.0",
-    "@angular/material": "^6.4.6",
-    "@angular/platform-browser": "^6.1.0",
-    "@angular/platform-browser-dynamic": "^6.1.0",
-    "@angular/router": "^6.1.0",
-    "@fortawesome/angular-fontawesome": "^0.1.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.2",
-    "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "@fortawesome/free-regular-svg-icons": "^5.2.0",
-    "@fortawesome/free-solid-svg-icons": "^5.2.0",
-    "bluebird": "^3.5.1",
-    "core-js": "^2.5.4",
-    "hammerjs": "^2.0.8",
-    "jquery": "^3.3.1",
-    "lodash": "^4.17.10",
-    "ng-cli-pug-loader": "^0.1.3",
-    "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.2.2",
-    "sortablejs": "^1.7.0",
-    "zone.js": "~0.8.26"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.7.0",
-    "@angular/cli": "~6.1.1",
-    "@angular/compiler-cli": "^6.1.0",
-    "@angular/language-service": "^6.1.0",
-    "@types/jasmine": "~2.8.6",
-    "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
-    "apply-loader": "^2.0.0",
-    "codelyzer": "~4.2.1",
-    "electron": "^2.0.6",
-    "jasmine-core": "~2.99.1",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~1.7.1",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.0",
-    "karma-jasmine": "~1.1.1",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.3.0",
-    "pug": "^2.0.3",
-    "pug-loader": "^2.4.0",
-    "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
-  }
+    "name": "pokered-save-editor",
+    "productName": "Pokered Save Editor",
+    "description": "Pokemon Red/Blue Save Editor",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/junebug12851/pokered-save-editor.git"
+    },
+    "author": {
+        "name": "June Hanabi"
+    },
+    "license": "Apache-2.0",
+    "build": {
+        "appId": "com.gmail.junehanabi.pokered-save-editor",
+        "productName": "Pokered Save Editor",
+        "copyright": "Copyright © 2018 June Hanabi",
+        "directories": {
+            "buildResources": "dist",
+            "output": "build"
+        },
+        "files": [
+            "./dist/**/*",
+            "./main.js"
+        ],
+        "mac": {
+            "category": "public.app-category.utilities",
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "./pokered-save-editor/assets/icons/icns/web_hi_res_512_1024x1024.icns",
+            "identity": null
+        },
+        "dmg": {
+            "background": "./dist/pokered-save-editor/assets/splash/DMGSplash.png",
+            "icon": "./pokered-save-editor/assets/icons/icns/web_hi_res_512_1024x1024.icns",
+            "title": "Pokered Save Editor"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                },
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ],
+            "icon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico"
+        },
+        "nsis": {
+            "installerIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
+            "uninstallerIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
+            "installerHeaderIcon": "./pokered-save-editor/assets/icons/ico/web_hi_res_512_256x256.ico",
+            "deleteAppDataOnUninstall": true
+        },
+        "linux": {
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ],
+            "icon": "./pokered-save-editor/assets/icons/png/web_hi_res_512_256x256.png",
+            "synopsis": "Pokemon Red/Blue Save Editor",
+            "category": "Utility"
+        },
+        "appImage": {
+            "synopsis": "Pokemon Red/Blue Save Editor",
+            "category": "Utility"
+        }
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e",
+        "postinstall": "electron-builder install-app-deps",
+        "postinstall:dev": "node ./ng-add-pug-loader.js",
+        "desktop": "cross-env DEV=true electron .",
+        "desktop:prod": "electron .",
+        "deploy": "npm run deploy:ng && npm run deploy:dist",
+        "deploy:ng": "ng build --prod --build-optimizer",
+        "deploy:pack": "electron-builder --dir",
+        "deploy:dist": "electron-builder -wlm --x64 --ia32"
+    },
+    "main": "main.js",
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^6.1.3",
+        "@angular/cdk": "^6.4.6",
+        "@angular/common": "^6.1.0",
+        "@angular/compiler": "^6.1.0",
+        "@angular/core": "^6.1.0",
+        "@angular/flex-layout": "^6.0.0-beta.17",
+        "@angular/forms": "^6.1.0",
+        "@angular/http": "^6.1.0",
+        "@angular/material": "^6.4.6",
+        "@angular/platform-browser": "^6.1.0",
+        "@angular/platform-browser-dynamic": "^6.1.0",
+        "@angular/router": "^6.1.0",
+        "@fortawesome/angular-fontawesome": "^0.1.1",
+        "@fortawesome/fontawesome-svg-core": "^1.2.2",
+        "@fortawesome/free-brands-svg-icons": "^5.2.0",
+        "@fortawesome/free-regular-svg-icons": "^5.2.0",
+        "@fortawesome/free-solid-svg-icons": "^5.2.0",
+        "bluebird": "^3.5.1",
+        "core-js": "^2.5.4",
+        "hammerjs": "^2.0.8",
+        "jquery": "^3.3.1",
+        "lodash": "^4.17.10",
+        "ng-cli-pug-loader": "^0.1.3",
+        "rxjs": "^6.0.0",
+        "rxjs-compat": "^6.2.2",
+        "sortablejs": "^1.7.0",
+        "zone.js": "~0.8.26"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~0.7.0",
+        "@angular/cli": "~6.1.1",
+        "@angular/compiler-cli": "^6.1.0",
+        "@angular/language-service": "^6.1.0",
+        "@types/jasmine": "~2.8.6",
+        "@types/jasminewd2": "~2.0.3",
+        "@types/node": "~8.9.4",
+        "apply-loader": "^2.0.0",
+        "codelyzer": "~4.2.1",
+        "cross-env": "^5.2.0",
+        "electron": "^2.0.6",
+        "electron-builder": "^20.28.3",
+        "jasmine-core": "~2.99.1",
+        "jasmine-spec-reporter": "~4.2.1",
+        "karma": "~1.7.1",
+        "karma-chrome-launcher": "~2.2.0",
+        "karma-coverage-istanbul-reporter": "~2.0.0",
+        "karma-jasmine": "~1.1.1",
+        "karma-jasmine-html-reporter": "^0.2.2",
+        "protractor": "~5.3.0",
+        "pug": "^2.0.3",
+        "pug-loader": "^2.4.0",
+        "ts-node": "~5.0.1",
+        "tslint": "~5.9.1",
+        "typescript": "~2.7.2"
+    }
 }
