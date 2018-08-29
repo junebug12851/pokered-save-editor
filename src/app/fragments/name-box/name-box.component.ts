@@ -74,7 +74,7 @@ export class NameBoxComponent implements OnInit, OnChanges {
     public value: string = "";
 
     protected compiled = null;
-    protected writing = "";
+    public writing = "";
 
     public doOnChangeHTML() {
         let rivalName = this.saveFile.fileDataExpanded.rival.rivalName;
