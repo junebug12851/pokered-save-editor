@@ -1,24 +1,76 @@
+# We want Mac targets to run on Mac and all other non-mac targets run on Linux
+matrix:
+  include:
+    # I'm told xcode9.0 is required
+    - os: osx
+      osx_image: xcode9.0
+
+      # Just focus on building Mac targets, all mac targets are 64-bit
+      # Bad things happen when trying to build 32-bit for mac
+      # Also we chain it like this because we want one to prceed after the other
+      # Otherwise they'd both run at the same time which would be bad
+      script:
+        - npx ng build --prod --build-optimizer && npx electron-builder -m --x64
+
+      # So here we want everything else, all Windows and Linux targets
+      # It handles and does more so much more dependencies need to be setup
+      # I'm told trusty is required
+    - os: linux
+      sudo: required
+      dist: trusty
+
+      before_install:
+        # Install dependencies to make rpm, pacman, and whatever libopenjp2-tools
+        # is for.
+        - sudo apt-get install --no-install-recommends -y libopenjp2-tools rpm bsdtar
+
+        # Here we install the latest and greatest wine needed for Windows builds
+        - wget -nc https://dl.winehq.org/wine-builds/Release.key
+        - sudo apt-key add Release.key
+        - sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+        - sudo apt-get update
+        - sudo apt-get install --install-recommends winehq-stable
+
+      # Similar to above we build first then package for 32-bit and 64-bit non-mac targets
+      script:
+        - npx ng build --prod --build-optimizer && npx electron-builder -wl --x64 --ia32
+
+# Have Nodejs enviroment installed into both systems with latest NodeJS
 language: node_js
-node_js:
-  - node
-os: osx
-git:
-  depth: 3
-branches:
-  only:
-    - master
-before_install:
-  - brew update
-  - brew install rpm
+node_js: node
+
+# Something to do with electron-build caching and whatnot to work correctly
+env:
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
+# Install everything in NPM
 install:
   - npm install
   - npm run postinstall:dev
+
+# Track only the master branch
+branches:
+  only:
+    - master
+
+# Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
+git:
+  depth: 3
+
+# Wipe wine cache in electron-builder cache, something to do with preventing
+# build errors or wine errors
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+
+# Cache everything that needs caching
 cache:
   directories:
     - node_modules
-script:
-  - rm -rf /Users/travis/Library/Caches/electron-builder
-  - npm run deploy
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+
+# If tagged then ship it out to GitHub on success
 deploy:
   provider: releases
   api_key:
