@@ -22,7 +22,7 @@ matrix:
       before_install:
         # Install dependencies to make rpm, pacman, and whatever libopenjp2-tools
         # is for.
-        - sudo apt-get install --no-install-recommends -y libopenjp2-tools rpm bsdtar
+        - sudo apt-get install --no-install-recommends -y openjpeg2 rpm bsdtar
 
         # Here we install the latest and greatest wine needed for Windows builds
         - wget -nc https://dl.winehq.org/wine-builds/Release.key
@@ -41,8 +41,9 @@ node_js: node
 
 # Something to do with electron-build caching and whatnot to work correctly
 env:
-  - ELECTRON_CACHE=$HOME/.cache/electron
-  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+  global:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 # Install everything in NPM
 install:
