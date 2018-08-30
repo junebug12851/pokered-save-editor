@@ -8,7 +8,8 @@ branches:
   only:
     - master
 before_install:
-  - brew install wine rpm
+  - brew update
+  - brew install rpm
 install:
   - npm install
   - npm run postinstall:dev
@@ -16,6 +17,7 @@ cache:
   directories:
     - node_modules
 script:
+  - rm -rf /Users/travis/Library/Caches/electron-builder
   - npm run deploy
 deploy:
   provider: releases
