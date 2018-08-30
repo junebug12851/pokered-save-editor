@@ -17,7 +17,6 @@
         "productName": "Pokered Save Editor",
         "copyright": "Copyright © 2018 June Hanabi",
         "artifactName": "${productName} ${os} ${arch}.${ext}",
-        "asar": false,
         "directories": {
             "buildResources": "dist",
             "output": "build"
