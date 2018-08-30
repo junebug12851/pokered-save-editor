@@ -1,8 +1,8 @@
-Icond Generated At:
+Icons Generated At:
 http://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
 
 Using Font Icons By:
 Google Material Icons / Apache2
 
 Converted to ICO and ICNS At:
-https://findicons.com/convert
+iconverticons.com
