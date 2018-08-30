@@ -17,9 +17,16 @@ matrix:
       # I'm told trusty is required
     - os: linux
       sudo: required
-      #dist: trusty
+      dist: trusty
+      services:
+        - docker
 
       before_install:
+        # We want the latest ubuntu, not Trusty, Bionic
+        # Trusty doesn't have openjpeg2 declared as needed by electron-builder
+        # - docker pull ubuntu:latest
+        # - docer run -d ubuntu:latest /bin/sh -c ""
+
         # Here we install the latest and greatest wine needed for Windows builds
         - wget -nc https://dl.winehq.org/wine-builds/Release.key
         - sudo apt-key add Release.key
@@ -28,8 +35,8 @@ matrix:
         - sudo apt-get install --install-recommends winehq-stable
 
         # Install dependencies to make rpm, pacman, and whatever libopenjp2-tools
-        # is for.
-        - sudo apt-get install --no-install-recommends -y openjpeg2 rpm bsdtar
+        # is for. # openjpeg2
+        - sudo apt-get install --no-install-recommends -y rpm bsdtar
 
       # Similar to above we build first then package for 32-bit and 64-bit non-mac targets
       script:
