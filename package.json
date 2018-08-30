@@ -173,8 +173,8 @@
         "desktop:prod": "electron .",
         "deploy": "npm run deploy:ng && npm run deploy:dist",
         "deploy:ng": "ng build --prod --build-optimizer",
-        "deploy:pack": "electron-builder --dir",
-        "deploy:dist": "electron-builder -wlm --x64 --ia32"
+        "deploy:pack": "cross-env USE_SYSTEM_WINE=true electron-builder --dir",
+        "deploy:dist": "cross-env USE_SYSTEM_WINE=true electron-builder -wlm --x64 --ia32"
     },
     "main": "main.js",
     "private": true,
