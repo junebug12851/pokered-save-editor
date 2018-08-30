@@ -3,7 +3,7 @@ matrix:
   include:
     # I'm told xcode9.0 is required
     - os: osx
-      osx_image: xcode9.0
+      #osx_image: xcode9.0
 
       # Just focus on building Mac targets, all mac targets are 64-bit
       # Bad things happen when trying to build 32-bit for mac
@@ -17,19 +17,19 @@ matrix:
       # I'm told trusty is required
     - os: linux
       sudo: required
-      dist: trusty
+      #dist: trusty
 
       before_install:
-        # Install dependencies to make rpm, pacman, and whatever libopenjp2-tools
-        # is for.
-        - sudo apt-get install --no-install-recommends -y openjpeg2 rpm bsdtar
-
         # Here we install the latest and greatest wine needed for Windows builds
         - wget -nc https://dl.winehq.org/wine-builds/Release.key
         - sudo apt-key add Release.key
         - sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
         - sudo apt-get update
         - sudo apt-get install --install-recommends winehq-stable
+
+        # Install dependencies to make rpm, pacman, and whatever libopenjp2-tools
+        # is for.
+        - sudo apt-get install --no-install-recommends -y openjpeg2 rpm bsdtar
 
       # Similar to above we build first then package for 32-bit and 64-bit non-mac targets
       script:
