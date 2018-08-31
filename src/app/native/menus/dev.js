@@ -1,72 +1,68 @@
-// Going to try an expirement with using a native menu which will be more
-// responsive
+const { app } = window.require('electron').remote;
 
-// @ts-ignore
-const { app, Menu, MenuItem } = window.require('electron').remote;
-
-declare var $: any;
-
-const template = [{
+export const devMenu = [{
     label: 'File',
     submenu: [
         {
+            label: 'New',
+            click: () => {
+                window.saveFile.closeFile();
+            },
+            accelerator: "CommandOrControl+N"
+        },
+        {
             label: 'Open',
             click: () => {
-                // @ts-ignore
                 window.saveFile.openFile();
-            }
+            },
+            accelerator: "CommandOrControl+O"
+        },
+        {
+            label: 'Re-open',
+            click: () => {
+                window.saveFile.reOpenFile();
+            },
+            accelerator: "CommandOrControl+Shift+O"
         },
         {
             label: 'Recent Files',
-            submenu: [
-                { role: 'recentDocuments' },
-                { role: 'clearRecentDocuments' },
-            ]
+            submenu: [{
+                label: "Clear List",
+                click: () => {
+                    window.saveFile.clearRecentDocs();
+                },
+                accelerator: "CommandOrControl+Shift+-"
+            }]
         },
         { type: 'separator' },
         {
             label: 'Save',
             click: () => {
-                // @ts-ignore
                 window.saveFile.saveFile();
-            }
+            },
+            accelerator: "CommandOrControl+S"
         },
         {
             label: 'Save As...',
             click: () => {
-                // @ts-ignore
                 window.saveFile.saveAsFile();
-            }
+            },
+            accelerator: "CommandOrControl+Shift+S"
         },
         {
             label: 'Save Copy As...',
             click: () => {
-                // @ts-ignore
                 window.saveFile.saveAsCopyFile();
-            }
-        },
-        { type: 'separator' },
-        {
-            label: 'Reload From Disk',
-            click: () => {
-                // @ts-ignore
-                window.saveFile.reOpenFile();
-            }
-        },
-        {
-            label: 'Close File',
-            click: () => {
-                // @ts-ignore
-                window.saveFile.closeFile();
-            }
+            },
+            accelerator: "CommandOrControl+Alt+S"
         },
         { type: 'separator' },
         {
             label: 'Wipe Unused Space',
             click: () => {
-                // @ts-ignore
                 window.saveFile.wipeUnusedSpace();
-            }
+            },
+            accelerator: "CommandOrControl+Shift+W"
         },
     ]
 }, {
@@ -89,38 +85,30 @@ const template = [{
     submenu: [{
         label: 'Basic',
         click: () => {
-            // @ts-ignore
             window.keyboards.openBasicKeyboard();
-        }
+        },
+        accelerator: "CommandOrControl+Alt+B"
     }, {
         label: 'Full',
         click: () => {
-            // @ts-ignore
             window.keyboards.openFullKeyboard();
-        }
+        },
+        accelerator: "CommandOrControl+Alt+F"
     }, {
         label: 'Picture',
         click: () => {
-            // @ts-ignore
             window.keyboards.openPicKeyboard();
-        }
+        },
+        accelerator: "CommandOrControl+Alt+P"
     }]
 }, {
     role: 'windowMenu'
-}, {
-    role: 'help',
-    submenu: [
-        {
-            label: 'Learn More',
-            click() { /*require('electron').shell.openExternal('https://electronjs.org')*/ }
-        }]
 }];
 
-// @ts-ignore
+// If OSX, Add Initial OSX Menu Item
+// And recent items menu entry
 if (process.platform === 'darwin') {
-    // Add menu to beginning of app
-    // @ts-ignore
-    template.unshift({
+    devMenu.unshift({
         label: app.getName(),
         submenu: [
             { role: 'about' },
@@ -134,29 +122,13 @@ if (process.platform === 'darwin') {
             { role: 'quit' }
         ]
     });
-
-    // Edit menu
-    // @ts-ignore
-    // template[2].submenu.push(
-    //     { type: 'separator' },
-    //     {
-    //         label: 'Speech',
-    //         submenu: [
-    //             { role: 'startspeaking' },
-    //             { role: 'stopspeaking' }
-    //         ]
-    //     }
-    // )
-
-    // Window menu
-    // template[3].submenu = [
-    //     { role: 'close' },
-    //     { role: 'minimize' },
-    //     { role: 'zoom' },
-    //     { type: 'separator' },
-    //     { role: 'front' }
-    // ]
 }
-
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+else {
+    devMenu[0].submenu.splice(devMenu[0].submenu.length - 1, 0, {
+        label: 'Exit',
+        click: () => {
+            window.keyboards.openPicKeyboard();
+        },
+        accelerator: "Alt+F4"
+    });
+}

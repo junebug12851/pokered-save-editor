@@ -1,0 +1,41 @@
+extends: "./base.yml"
+
+artifactName: "${productName} Portable ${os} ${arch}.${ext}"
+
+win:
+  target:
+    - target: "portable"
+      arch:
+        - "x64"
+        - "ia32"
+    - target: "zip"
+      arch:
+        - "x64"
+        - "ia32"
+
+  icon: "./pokered-save-editor/assets/icons/icon.ico"
+
+mac:
+  category: "public.app-category.utilities"
+  target:
+    - target: "zip"
+      arch:
+        - "x64"
+
+  icon: "./pokered-save-editor/assets/icons/icon.icns"
+  identity: null
+
+linux:
+  target:
+    - target: "zip"
+      arch:
+        - "x64"
+        - "ia32"
+    - target: "tar.xz"
+      arch:
+        - "x64"
+        - "ia32"
+
+  icon: "./pokered-save-editor/assets/icons"
+  synopsis: "Pokemon Red/Blue Save Editor"
+  category: "Utility"

@@ -12,164 +12,6 @@
         "email": "junehanabi@gmail.com"
     },
     "license": "Apache-2.0",
-    "build": {
-        "appId": "com.gmail.junehanabi.pokered-save-editor",
-        "productName": "Pokered Save Editor",
-        "copyright": "Copyright © 2018 June Hanabi",
-        "directories": {
-            "buildResources": "dist",
-            "output": "build"
-        },
-        "files": [
-            "./dist/**/*",
-            "./main.js",
-            "!**/node_modules/@angular/**/*",
-            "!**/node_modules/@angular-devkit/**/*",
-            "!**/node_modules/@angular-types/**/*",
-            "!**/node_modules/@fortawesome/**/*",
-            "!**/node_modules/core-js/**/*",
-            "!**/node_modules/hammerjs/**/*",
-            "!**/node_modules/jquery/**/*",
-            "!**/node_modules/ng-cli-pug-loader/**/*",
-            "!**/node_modules/rxjs/**/*",
-            "!**/node_modules/rxjs-compat/**/*",
-            "!**/node_modules/sortablejs/**/*",
-            "!**/node_modules/zone.js/**/*"
-        ],
-        "mac": {
-            "category": "public.app-category.utilities",
-            "target": [
-                {
-                    "target": "dmg",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/icns/all.icns",
-            "identity": null
-        },
-        "dmg": {
-            "background": "./dist/pokered-save-editor/assets/splash/DMGSplash.png",
-            "icon": "./pokered-save-editor/assets/icons/icns/all.icns",
-            "title": "Pokered Save Editor",
-            "contents": [
-                {
-                    "x": 117,
-                    "y": 225
-                },
-                {
-                    "x": 417,
-                    "y": 225,
-                    "type": "link",
-                    "path": "/Applications"
-                }
-            ]
-        },
-        "win": {
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "portable",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/ico/all.ico"
-        },
-        "nsis": {
-            "installerIcon": "./pokered-save-editor/assets/icons/ico/all.ico",
-            "uninstallerIcon": "./pokered-save-editor/assets/icons/ico/all.ico",
-            "installerHeaderIcon": "./pokered-save-editor/assets/icons/ico/all.ico",
-            "deleteAppDataOnUninstall": true
-        },
-        "linux": {
-            "target": [
-                {
-                    "target": "AppImage",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "deb",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "rpm",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "pacman",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                },
-                {
-                    "target": "tar.xz",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ],
-            "icon": "./pokered-save-editor/assets/icons/png/256x256.png",
-            "synopsis": "Pokemon Red/Blue Save Editor",
-            "category": "Utility"
-        },
-        "appImage": {
-            "synopsis": "Pokemon Red/Blue Save Editor",
-            "category": "Utility"
-        },
-        "deb": {
-            "packageCategory": "utils",
-            "priority": "optional"
-        },
-        "rpm": {
-            "icon": "./pokered-save-editor/assets/icons/png/256x256.png",
-            "packageCategory": "Applications/Editors"
-        },
-        "pacman": {
-            "icon": "./pokered-save-editor/assets/icons/png/256x256.png",
-            "packageCategory": "Applications/Editors"
-        }
-    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -177,14 +19,16 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "electron-builder install-app-deps",
-        "postinstall:dev": "node ./ng-add-pug-loader.js",
+        "postinstall": "electron-builder install-app-deps && node ./ng-add-pug-loader.js",
         "desktop": "cross-env DEV=true electron .",
         "desktop:prod": "electron .",
         "deploy": "npm run deploy:ng && npm run deploy:dist",
         "deploy:ng": "ng build --prod --build-optimizer",
-        "deploy:pack": "electron-builder --dir",
-        "deploy:dist": "electron-builder -wlm --x64 --ia32"
+        "deploy:pack": "electron-builder --config ./base.yml --dir",
+        "deploy:dist": "npm run deploy:dist1 && npm run deploy:dist2 && npm run deploy:dist3",
+        "deploy:dist1": "electron-builder --config ./targets1.yml -wl --x64 --ia32",
+        "deploy:dist2": "electron-builder --config ./targets2.yml -wlm --x64 --ia32",
+        "deploy:dist3": "electron-builder --config ./targets3.yml -m --x64"
     },
     "main": "main.js",
     "private": true,
@@ -208,6 +52,7 @@
         "@fortawesome/free-solid-svg-icons": "^5.2.0",
         "bluebird": "^3.5.1",
         "core-js": "^2.5.4",
+        "electron-store": "^2.0.0",
         "hammerjs": "^2.0.8",
         "jquery": "^3.3.1",
         "lodash": "^4.17.10",

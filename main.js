@@ -14,6 +14,9 @@
    limitations under the License.
  */
 const { app, BrowserWindow } = require('electron');
+const Store = require('electron-store')
+const store = new Store()
+
 const path = require("path");
 
 let win;
@@ -30,8 +33,8 @@ function createWindow() {
     const { screen } = require('electron');
 
     win = new BrowserWindow({
-        width: screen.getPrimaryDisplay().workAreaSize.width * .85,
-        height: screen.getPrimaryDisplay().workAreaSize.height * .85,
+        width: screen.getPrimaryDisplay().workAreaSize.width,
+        height: screen.getPrimaryDisplay().workAreaSize.height,
         show: false,
         simpleFullscreen: true,
         webPreferences: {
