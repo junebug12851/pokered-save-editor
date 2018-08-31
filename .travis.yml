@@ -5,11 +5,14 @@ language: node_js
 node_js: node
 
 # Track only the master branch
+# and tags that begin with a v and have one or more numbers seperated by periods
+# ex: v1 v1.0 v1.0.0 v1.0.0.0
 branches:
   only:
     - master
+    - /^v(?:\d+\.?){1,}$/
 
-  # Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
+# Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
 git:
   depth: 3
 
