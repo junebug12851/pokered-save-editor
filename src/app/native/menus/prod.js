@@ -123,7 +123,7 @@ if (process.platform === 'darwin') {
     });
 }
 else {
-    devMenu[0].submenu.splice(devMenu[0].submenu.length - 1, 0, {
+    prodMenu[0].submenu.splice(prodMenu[0].submenu.length - 1, 0, {
         label: 'Exit',
         click: () => {
             window.keyboards.openPicKeyboard();

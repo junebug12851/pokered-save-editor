@@ -13,7 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-const { app, BrowserWindow } = require('electron');
+const { app, globalShortcut, BrowserWindow } = require('electron');
 const Store = require('electron-store')
 const store = new Store()
 
@@ -42,6 +42,15 @@ function createWindow() {
             //allowRunningInsecureContent: true
         },
         icon
+    });
+
+    // Always allow opening dev tools in any build or platform
+    // In production the dev tools menu item will be removed but the dev tools
+    // themselves will always be openable with the same shortcut.
+    // This means your average user won't have to concern over it but developers
+    // or tinkerers can still access it if desired
+    globalShortcut.register('CommandOrControl+Shift+I', () => {
+        win.webContents.toggleDevTools();
     });
 
     if (isDev)
