@@ -25,6 +25,7 @@ import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 declare var window: {
     saveFile: SaveFileService
     require: any
+    electronStore: any
 }
 
 declare var Buffer: any;
@@ -44,6 +45,28 @@ const fs: any = window.require("fs");
 const electron: any = window.require("electron").remote;
 const { dialog } = electron;
 const fs2 = BluePromise.promisifyAll(fs);
+
+let store = window.electronStore;
+if (store === undefined) {
+    const Store = window.require('electron-store');
+    store = window.electronStore = new Store();
+}
+
+const _ = window.require("lodash");
+
+// Adds a file to the list of recent documents which is persistent
+// Only 10 unique non-duplicate files are kept meaning each entry will be
+// a different file, the samefile will remain in the same slot
+// They are added to the top, oldest at the bottom
+// They are accessible via CommandOrControl+Shift+# <0-9>
+function addRecentDocument(path: string) {
+    let recentDocs: any[] = store.get('recentDocs', []);
+    recentDocs.unshift(path);
+    recentDocs = _.uniq(recentDocs);
+    if (recentDocs.length > 10)
+        recentDocs.length = 10;
+    store.set('recentDocs', recentDocs);
+}
 
 @Injectable({
     providedIn: 'root'
@@ -367,10 +390,17 @@ export class SaveFileService {
         this.fileDataExpanded = new SaveFileExpanded(this);
 
         // Add to OS recent docs
-        app.addRecentDocument(filePath);
+        addRecentDocument(filePath);
+        //app.addRecentDocument(filePath);
 
         // Add to window title
         curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
+    }
+
+    public async externalReadSaveFile(filePath: string) {
+        await this.ng.run<any>(async () => {
+            await this.readSaveFile(filePath);
+        });
     }
 
     // Write Buffer to file
@@ -383,6 +413,10 @@ export class SaveFileService {
 
         // Save
         await fs2.writeFileAsync(_filePath, this.fileData);
+    }
+
+    public clearRecentDocs() {
+        store.set('recentDocs', []);
     }
 
     // Initiates an open file dialog to open save file
@@ -447,7 +481,8 @@ export class SaveFileService {
 
             this.filePath = fileName;
             await this.saveFile();
-            app.addRecentDocument(fileName);
+            addRecentDocument(fileName);
+            //app.addRecentDocument(fileName);
             curWindow.setTitle(`Pokered Save Editor - ${fileName}`);
         });
     }

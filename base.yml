@@ -1,0 +1,23 @@
+appId: "com.gmail.junehanabi.pokered-save-editor"
+productName: "Pokered Save Editor"
+copyright: "Copyright © 2018 June Hanabi"
+
+directories:
+  buildResources: "dist"
+  output: "build"
+
+files:
+  - "./dist/**/*"
+  - "./main.js"
+  - "!**/node_modules/@angular/**/*"
+  - "!**/node_modules/@angular-devkit/**/*"
+  - "!**/node_modules/@angular-types/**/*"
+  - "!**/node_modules/@fortawesome/**/*"
+  - "!**/node_modules/core-js/**/*"
+  - "!**/node_modules/hammerjs/**/*"
+  - "!**/node_modules/jquery/**/*"
+  - "!**/node_modules/ng-cli-pug-loader/**/*"
+  - "!**/node_modules/rxjs/**/*"
+  - "!**/node_modules/rxjs-compat/**/*"
+  - "!**/node_modules/sortablejs/**/*"
+  - "!**/node_modules/zone.js/**/*"

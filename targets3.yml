@@ -1,0 +1,25 @@
+extends: "./base.yml"
+
+artifactName: "${productName} ${os} ${arch}.${ext}"
+
+mac:
+  category: "public.app-category.utilities"
+  target:
+    - target: "dmg"
+      arch:
+        - "x64"
+
+  icon: "./pokered-save-editor/assets/icons/icon.icns"
+  identity: null
+
+dmg:
+  background: "./dist/pokered-save-editor/assets/splash/DMGSplash.png"
+  icon: "./pokered-save-editor/assets/icons/icon.icns"
+  title: "Pokered Save Editor"
+  contents:
+    - x: 117
+      y: 225
+    - x: 417
+      y: 225
+      type: "link"
+      path: "/Applications"
