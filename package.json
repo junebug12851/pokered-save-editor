@@ -26,9 +26,9 @@
         "deploy:ng": "ng build --prod --build-optimizer",
         "deploy:pack": "electron-builder --config ./base.yml --dir",
         "deploy:dist": "npm run deploy:dist1 && npm run deploy:dist2 && npm run deploy:dist3",
-        "deploy:dist1": "electron-builder --config ./targets1.yml -wl --x64 --ia32",
-        "deploy:dist2": "electron-builder --config ./targets2.yml -wlm --x64 --ia32",
-        "deploy:dist3": "electron-builder --config ./targets3.yml -m --x64"
+        "deploy:dist1": "electron-builder --config ./targets1.yml -wl --x64 --ia32 --publish=never",
+        "deploy:dist2": "electron-builder --config ./targets2.yml -wlm --x64 --ia32 --publish=never",
+        "deploy:dist3": "electron-builder --config ./targets3.yml -m --x64 --publish=never"
     },
     "main": "main.js",
     "private": true,
