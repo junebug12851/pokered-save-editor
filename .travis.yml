@@ -1,0 +1,60 @@
+# Language and enviroment
+os: osx
+
+language: node_js
+node_js: node
+
+# Track only the master branch
+branches:
+  only:
+    - master
+
+  # Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
+git:
+  depth: 3
+
+# Something to do with electron-build caching and whatnot to work correctly
+env:
+  global:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
+# Wipe wine cache in electron-builder cache, something to do with preventing
+# build errors or wine errors
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+
+# Install everything in NPM
+install:
+  - npm install
+
+# Cache everything that needs caching
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+
+# Build, Optimize, and Package
+# Some of these build steps can take a while
+script:
+  - travis_wait 20 npm run deploy
+
+# If tagged then ship it out to GitHub on success
+deploy:
+  provider: releases
+  api_key:
+    secure: DNjzANF11SKjNatxQVNbHQXh2T8xic28nD/ogaWN4pRPq2oN+SI4Von21bGkuifQ7l9tLnCSvBnuUHZtwWtXJKH8DREzbfAF5nV73c0K0n3WTg29NjZi4s09OMI7frQ/4TjdRYMusbN+nwEQudj0vFsscxuFSmCMNAsBUipnElEzEs6//z6Janx1++Xm+XP/MhXN7gK3wgOkrtLrchhPG3kuhimPmJf55XwJzEtwb9QqS5F5+yuq+y9G+oejAetV+936zJCF60djREXukoTN+UiuX2oZ+0HhmklwtSMcIDNo30S9WvrcnFLuip7nqFbGqLeQaCt/iv8QM2L58snE3SWyv9bIeJiecLHZu3N5Tz4wTO7gteZY4IF3ysUcYrJWZNap6BP8L7D/319usbhaOfLfQ6YR8CdrIkH4KINKIa+QYoC84Pn5EffHpcg5HcOge6yTO0twx+jmGDQ/ro3gAfPe1mpJC8+6xHCLm11OqdWHecTZqcx/r2DJK6cgj/JctJIwuKgC/aQDSI3fyrCw5nJeNgNtrbHNr714vlcO+pVBjXR5llwYE+EgcDE7GTfVEaZUstm5XGLQ5F3DBXPQ/Hror+9TPfSJEq/EVGld4zsVnw55vlCJyXBjRtA5B+uwXrq/yywxSC3/5OpiRN2p9+DfctUAglhkhw47vlnfMSU=
+  file_glob: true
+  skip_cleanup: true
+  file:
+    - "build/*.exe"
+    - "build/*.zip"
+    - "build/*.dmg"
+    - "build/*.AppImage"
+    - "build/*.deb"
+    - "build/*.rpm"
+    - "build/*.pacman"
+    - "build/*.tar.xz"
+  on:
+    tags: true
