@@ -1,3 +1,4 @@
+import { Map } from './../../../assets/data/maps.d';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -20,12 +21,11 @@ declare var window: {
 }
 
 import { Component, OnInit, Input } from '@angular/core';
+import { GameDataService } from './../../data/gameData.service';
 
 import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
-
-import { RawMap, rawMaps } from '../../data/map.service';
 
 const _: any = window.require("lodash");
 
@@ -39,7 +39,9 @@ const _: any = window.require("lodash");
 })
 export class SelectMapWidthComponent extends ValueAccessorBase<string> implements OnInit {
 
-    constructor() {
+    constructor(
+        public gd: GameDataService
+    ) {
         super();
     }
 
@@ -58,6 +60,8 @@ export class SelectMapWidthComponent extends ValueAccessorBase<string> implement
 
     get mapList() {
 
+        const maps: Map[] = this.gd.file("maps").data;
+
         const b = (val: number | any) => {
             return val.toString(16).padStart(2, "0").toUpperCase();
         }
@@ -66,20 +70,26 @@ export class SelectMapWidthComponent extends ValueAccessorBase<string> implement
             return val.toString().padStart(2, "0");
         }
 
-        let maps: any = [];
+        let _maps: {
+            name: string,
+            glitch: boolean | undefined,
+            special: boolean | undefined,
+            value: string
+        }[] = [];
 
-        rawMaps.forEach((el: RawMap) => {
+        maps.forEach((el: Map) => {
             if (el.special === true)
                 return;
 
-            maps.push({
+            _maps.push({
                 name: el.name,
                 glitch: el.glitch,
+                special: el.special,
                 value: `${b(el.ind)}_${a(el.width)}`,
             });
         });
 
-        let mapListNormal: RawMap[] = _.filter(maps, (value: RawMap) => {
+        let mapListNormal: Map[] = _.filter(_maps, (value: Map) => {
             if (!value.glitch && !value.special)
                 return true;
 
@@ -88,7 +98,7 @@ export class SelectMapWidthComponent extends ValueAccessorBase<string> implement
 
         mapListNormal = _.sortBy(mapListNormal, ['name']);
 
-        let mapListGlitch = _.filter(maps, (value: RawMap) => {
+        let mapListGlitch: Map[] = _.filter(_maps, (value: Map) => {
             if (value.glitch && !value.special)
                 return true;
 

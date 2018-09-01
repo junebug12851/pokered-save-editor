@@ -1,4 +1,4 @@
-import { missables } from './../../data/missable.service';
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -27,6 +27,7 @@ export class WorldMissablesComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -34,7 +35,7 @@ export class WorldMissablesComponent implements OnInit {
     }
 
     get missables() {
-        return missables;
+        return this.gd.file("missables").data;
     }
 
     getMissable(index: number): boolean {
@@ -52,7 +53,7 @@ export class WorldMissablesComponent implements OnInit {
     toggleAllMissables() {
         const missable0 = this.getMissable(0);
 
-        const count = missables.length;
+        const count = this.gd.file("missables").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setMissable(i, !missable0);

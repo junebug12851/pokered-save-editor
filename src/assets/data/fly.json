@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Pallet Town",
+        "ind": 0
+    },
+    {
+        "name": "Viridian City",
+        "ind": 1
+    },
+    {
+        "name": "Pewter City",
+        "ind": 2
+    },
+    {
+        "name": "Cerulean City",
+        "ind": 3
+    },
+    {
+        "name": "Vermillion City",
+        "ind": 4
+    },
+    {
+        "name": "Lavender Town",
+        "ind": 5
+    },
+    {
+        "name": "Celadon City",
+        "ind": 6
+    },
+    {
+        "name": "Saffron City",
+        "ind": 7
+    },
+    {
+        "name": "Fuchsia City",
+        "ind": 8
+    },
+    {
+        "name": "Cinnabar Island",
+        "ind": 9
+    },
+    {
+        "name": "Indigo Plateau",
+        "ind": 10
+    }
+]

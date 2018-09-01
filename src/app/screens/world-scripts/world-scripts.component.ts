@@ -1,3 +1,4 @@
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -16,7 +17,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
-import { scripts } from '../../data/scripts';
 
 @Component({
     selector: 'screen-world-scripts',
@@ -27,6 +27,7 @@ export class WorldScriptsComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -34,6 +35,6 @@ export class WorldScriptsComponent implements OnInit {
     }
 
     get scripts() {
-        return scripts;
+        return this.gd.file("scripts").data;
     }
 }

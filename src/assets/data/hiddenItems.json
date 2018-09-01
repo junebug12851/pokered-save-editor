@@ -1,0 +1,272 @@
+[
+    {
+        "map": "Viridian Forest",
+        "x": 1,
+        "y": 18
+    },
+    {
+        "map": "Viridian Forest",
+        "x": 16,
+        "y": 42
+    },
+    {
+        "map": "Mt. Moon 3",
+        "x": 18,
+        "y": 12
+    },
+    {
+        "map": "Route 25",
+        "x": 38,
+        "y": 3
+    },
+    {
+        "map": "Route 9",
+        "x": 14,
+        "y": 7
+    },
+    {
+        "map": "S.S. Anne 6",
+        "x": 13,
+        "y": 9
+    },
+    {
+        "map": "S.S. Anne 10",
+        "x": 3,
+        "y": 1
+    },
+    {
+        "map": "Route 10",
+        "x": 9,
+        "y": 17
+    },
+    {
+        "map": "Route 10",
+        "x": 16,
+        "y": 53
+    },
+    {
+        "map": "Rocket Hideout 1",
+        "x": 21,
+        "y": 15
+    },
+    {
+        "map": "Rocket Hideout 3",
+        "x": 27,
+        "y": 17
+    },
+    {
+        "map": "Rocket Hideout 4",
+        "x": 25,
+        "y": 1
+    },
+    {
+        "map": "Pokemon Tower 5",
+        "x": 4,
+        "y": 12
+    },
+    {
+        "map": "Route 13",
+        "x": 1,
+        "y": 14
+    },
+    {
+        "map": "Route 13",
+        "x": 16,
+        "y": 13
+    },
+    {
+        "map": "Mansion 4",
+        "x": 1,
+        "y": 9
+    },
+    {
+        "map": "Safari Zone Entrance",
+        "x": 10,
+        "y": 1
+    },
+    {
+        "map": "Safari Zone West",
+        "x": 6,
+        "y": 5
+    },
+    {
+        "map": "Silph Co 5F",
+        "x": 12,
+        "y": 3
+    },
+    {
+        "map": "Silph Co 9F",
+        "x": 2,
+        "y": 15
+    },
+    {
+        "map": "Copycats House 2F",
+        "x": 1,
+        "y": 1
+    },
+    {
+        "map": "Unknown Dungeon 1",
+        "x": 14,
+        "y": 11
+    },
+    {
+        "map": "Unknown Dungeon 3",
+        "x": 27,
+        "y": 3
+    },
+    {
+        "map": "Power Plant",
+        "x": 17,
+        "y": 16
+    },
+    {
+        "map": "Power Plant",
+        "x": 12,
+        "y": 1
+    },
+    {
+        "map": "Seafoam Islands 3",
+        "x": 15,
+        "y": 15
+    },
+    {
+        "map": "Seafoam Islands 5",
+        "x": 25,
+        "y": 17
+    },
+    {
+        "map": "Mansion 1",
+        "x": 8,
+        "y": 16
+    },
+    {
+        "map": "Mansion 3",
+        "x": 1,
+        "y": 9
+    },
+    {
+        "map": "Route 23",
+        "x": 9,
+        "y": 44
+    },
+    {
+        "map": "Route 23",
+        "x": 19,
+        "y": 70
+    },
+    {
+        "map": "Route 23",
+        "x": 8,
+        "y": 90
+    },
+    {
+        "map": "Victory Road 2",
+        "x": 5,
+        "y": 2
+    },
+    {
+        "map": "Victory Road 2",
+        "x": 26,
+        "y": 7
+    },
+    {
+        "map": "Unused Map 6F",
+        "x": 14,
+        "y": 11
+    },
+    {
+        "map": "Viridian City",
+        "x": 14,
+        "y": 4
+    },
+    {
+        "map": "Route 11",
+        "x": 48,
+        "y": 5
+    },
+    {
+        "map": "Route 12",
+        "x": 2,
+        "y": 63
+    },
+    {
+        "map": "Route 17",
+        "x": 15,
+        "y": 14
+    },
+    {
+        "map": "Route 17",
+        "x": 8,
+        "y": 45
+    },
+    {
+        "map": "Route 17",
+        "x": 17,
+        "y": 72
+    },
+    {
+        "map": "Route 17",
+        "x": 4,
+        "y": 91
+    },
+    {
+        "map": "Route 17",
+        "x": 8,
+        "y": 121
+    },
+    {
+        "map": "Underground Path NS",
+        "x": 3,
+        "y": 4
+    },
+    {
+        "map": "Underground Path NS",
+        "x": 4,
+        "y": 34
+    },
+    {
+        "map": "Underground Path WE",
+        "x": 12,
+        "y": 2
+    },
+    {
+        "map": "Underground Path WE",
+        "x": 21,
+        "y": 5
+    },
+    {
+        "map": "Celadon City",
+        "x": 48,
+        "y": 15
+    },
+    {
+        "map": "Route 25",
+        "x": 10,
+        "y": 1
+    },
+    {
+        "map": "Mt Moon 3",
+        "x": 33,
+        "y": 9
+    },
+    {
+        "map": "Seafoam Islands 4",
+        "x": 9,
+        "y": 16
+    },
+    {
+        "map": "Vermilion City",
+        "x": 14,
+        "y": 11
+    },
+    {
+        "map": "Cerulean City",
+        "x": 15,
+        "y": 8
+    },
+    {
+        "map": "Route 4",
+        "x": 40,
+        "y": 3
+    }
+]

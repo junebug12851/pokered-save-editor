@@ -1,4 +1,3 @@
-import { MapService } from './../../data/map.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -26,8 +25,7 @@ import { SaveFileService } from "../../data/savefile.service";
 export class AreaWarpsComponent {
 
     constructor(
-        public fileService: SaveFileService,
-        public mapService: MapService
+        public fileService: SaveFileService
     ) { }
 
     get warpPoints() {

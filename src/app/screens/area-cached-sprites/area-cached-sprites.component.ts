@@ -1,4 +1,4 @@
-import { SpriteEntry } from './../../data/sprite.service';
+import { Sprite } from './../../../assets/data/sprites.d';
 /**
    Copyright 2018 June Hanabi
 
@@ -61,12 +61,11 @@ export class AreaCachedSpritesComponent {
         ]
     }
 
-    spriteSetTrackBy(index: number, item: SpriteEntry) {
+    spriteSetTrackBy(index: number, item: Sprite) {
         return index * item.ind;
     }
 
-    // @ts-ignore
-    spriteListTrackBy(index: number, item: any) {
+    spriteListTrackBy(index: number) {
         return index;
     }
 }

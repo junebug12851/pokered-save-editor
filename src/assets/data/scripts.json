@@ -1,0 +1,390 @@
+[
+    {
+        "varName": "oaksLab",
+        "readableName": "Oaks Lab"
+    },
+    {
+        "varName": "paletteTown",
+        "readableName": "Palette Town"
+    },
+    {
+        "varName": "rivalsHouse",
+        "readableName": "Rivals House"
+    },
+    {
+        "varName": "viridianCity",
+        "readableName": "Viridian City"
+    },
+    {
+        "varName": "pewterCity",
+        "readableName": "Pewter City"
+    },
+    {
+        "varName": "route3",
+        "readableName": "Route 3"
+    },
+    {
+        "varName": "route4",
+        "readableName": "Route 4"
+    },
+    {
+        "varName": "viridianGym",
+        "readableName": "Viridian Gym"
+    },
+    {
+        "varName": "pewterGym",
+        "readableName": "Pewter Gym"
+    },
+    {
+        "varName": "ceruleanGym",
+        "readableName": "Cerulean Gym"
+    },
+    {
+        "varName": "vermillionGym",
+        "readableName": "Vermillion Gym"
+    },
+    {
+        "varName": "celadonGym",
+        "readableName": "Celadon Gym"
+    },
+    {
+        "varName": "route6",
+        "readableName": "Route 6"
+    },
+    {
+        "varName": "route8",
+        "readableName": "Route 8"
+    },
+    {
+        "varName": "route24",
+        "readableName": "Route 24"
+    },
+    {
+        "varName": "route25",
+        "readableName": "Route 25"
+    },
+    {
+        "varName": "route9",
+        "readableName": "Route 9"
+    },
+    {
+        "varName": "route10",
+        "readableName": "Route 10"
+    },
+    {
+        "varName": "mtMoon1",
+        "readableName": "Mt. Moon 1"
+    },
+    {
+        "varName": "mtMoon3",
+        "readableName": "Mt. Moon 3"
+    },
+    {
+        "varName": "ssAnne8",
+        "readableName": "S.S. Anne 8"
+    },
+    {
+        "varName": "ssAnne9",
+        "readableName": "S.S. Anne 9"
+    },
+    {
+        "varName": "route22",
+        "readableName": "Route 22"
+    },
+    {
+        "varName": "playersHouse2",
+        "readableName": "Players House 2"
+    },
+    {
+        "varName": "viridianMarket",
+        "readableName": "Viridian Market"
+    },
+    {
+        "varName": "route22Gate",
+        "readableName": "Route 22 Gate"
+    },
+    {
+        "varName": "ceruleanCity",
+        "readableName": "Cerulean City"
+    },
+    {
+        "varName": "ssAnne5",
+        "readableName": "S.S. Anne 5"
+    },
+    {
+        "varName": "viridianForest",
+        "readableName": "Viridian Forest"
+    },
+    {
+        "varName": "museum1",
+        "readableName": "Museum 1"
+    },
+    {
+        "varName": "route13",
+        "readableName": "Route 13"
+    },
+    {
+        "varName": "route14",
+        "readableName": "Route 14"
+    },
+    {
+        "varName": "route17",
+        "readableName": "Route 17"
+    },
+    {
+        "varName": "route19",
+        "readableName": "Route 19"
+    },
+    {
+        "varName": "route21",
+        "readableName": "Route 21"
+    },
+    {
+        "varName": "safariZoneEntrance",
+        "readableName": "Safari Zone Entrance"
+    },
+    {
+        "varName": "rockTunnel2",
+        "readableName": "Rock Tunnel 2"
+    },
+    {
+        "varName": "rockTunnel1",
+        "readableName": "Rock Tunnel 1"
+    },
+    {
+        "varName": "route11",
+        "readableName": "Route 11"
+    },
+    {
+        "varName": "route12",
+        "readableName": "Route 12"
+    },
+    {
+        "varName": "route15",
+        "readableName": "Route 15"
+    },
+    {
+        "varName": "route16",
+        "readableName": "Route 16"
+    },
+    {
+        "varName": "route18",
+        "readableName": "Route 18"
+    },
+    {
+        "varName": "route20",
+        "readableName": "Route 20"
+    },
+    {
+        "varName": "ssAnne10",
+        "readableName": "S.S. Anne 10"
+    },
+    {
+        "varName": "vermillionCity",
+        "readableName": "Vermillion City"
+    },
+    {
+        "varName": "pokemonTower2",
+        "readableName": "Pokemon Tower 2"
+    },
+    {
+        "varName": "pokemonTower3",
+        "readableName": "Pokemon Tower 3"
+    },
+    {
+        "varName": "pokemonTower4",
+        "readableName": "Pokemon Tower 4"
+    },
+    {
+        "varName": "pokemonTower5",
+        "readableName": "Pokemon Tower 5"
+    },
+    {
+        "varName": "pokemonTower6",
+        "readableName": "Pokemon Tower 6"
+    },
+    {
+        "varName": "pokemonTower7",
+        "readableName": "Pokemon Tower 7"
+    },
+    {
+        "varName": "rocketHideout1",
+        "readableName": "Rocket Hideout 1"
+    },
+    {
+        "varName": "rocketHideout2",
+        "readableName": "Rocket Hideout 2"
+    },
+    {
+        "varName": "rocketHideout3",
+        "readableName": "Rocket Hideout 3"
+    },
+    {
+        "varName": "rocketHideout4",
+        "readableName": "Rocket Hideout 4"
+    },
+    {
+        "varName": "route6Gate",
+        "readableName": "Route 6 Gate"
+    },
+    {
+        "varName": "route8Gate",
+        "readableName": "Route 8 Gate"
+    },
+    {
+        "varName": "cinnabarIsland",
+        "readableName": "Cinnabar Island"
+    },
+    {
+        "varName": "mansion1",
+        "readableName": "Mansion 1"
+    },
+    {
+        "varName": "mansion2",
+        "readableName": "Mansion 2"
+    },
+    {
+        "varName": "mansion3",
+        "readableName": "Mansion 3"
+    },
+    {
+        "varName": "mansion4",
+        "readableName": "Mansion 4"
+    },
+    {
+        "varName": "victoryRoad2",
+        "readableName": "Victory Road 2"
+    },
+    {
+        "varName": "victoryRoad3",
+        "readableName": "Victory Road 3"
+    },
+    {
+        "varName": "fightingDojo",
+        "readableName": "Fighting Dojo"
+    },
+    {
+        "varName": "silphCo2",
+        "readableName": "Silph Co 2"
+    },
+    {
+        "varName": "silphCo3",
+        "readableName": "Silph Co 3"
+    },
+    {
+        "varName": "silphCo4",
+        "readableName": "Silph Co 4"
+    },
+    {
+        "varName": "silphCo5",
+        "readableName": "Silph Co 5"
+    },
+    {
+        "varName": "silphCo6",
+        "readableName": "Silph Co 6"
+    },
+    {
+        "varName": "silphCo7",
+        "readableName": "Silph Co 7"
+    },
+    {
+        "varName": "silphCo8",
+        "readableName": "Silph Co 8"
+    },
+    {
+        "varName": "silphCo9",
+        "readableName": "Silph Co 9"
+    },
+    {
+        "varName": "hofRoom",
+        "readableName": "Hof Room"
+    },
+    {
+        "varName": "rival",
+        "readableName": "Rival"
+    },
+    {
+        "varName": "lorelei",
+        "readableName": "Lorelei"
+    },
+    {
+        "varName": "bruno",
+        "readableName": "Bruno"
+    },
+    {
+        "varName": "agatha",
+        "readableName": "Agatha"
+    },
+    {
+        "varName": "unknownDungeon3",
+        "readableName": "Unknown Dungeon 3"
+    },
+    {
+        "varName": "victoryRoad1",
+        "readableName": "Victory Road 1"
+    },
+    {
+        "varName": "lance",
+        "readableName": "Lance"
+    },
+    {
+        "varName": "silphCo10",
+        "readableName": "Silph Co 10"
+    },
+    {
+        "varName": "silphCo11",
+        "readableName": "Silph Co 11"
+    },
+    {
+        "varName": "fuchsiaGym",
+        "readableName": "Fuchsia Gym"
+    },
+    {
+        "varName": "saffronGym",
+        "readableName": "Saffron Gym"
+    },
+    {
+        "varName": "cinnabarGym",
+        "readableName": "Cinnabar Gym"
+    },
+    {
+        "varName": "celadonGameCorner",
+        "readableName": "Celadon Game Corner"
+    },
+    {
+        "varName": "route16Gate",
+        "readableName": "Route 16 Gate"
+    },
+    {
+        "varName": "billsHouse",
+        "readableName": "Bills House"
+    },
+    {
+        "varName": "route5Gate",
+        "readableName": "Route 5 Gate"
+    },
+    {
+        "varName": "powerPlantRoute7Gate",
+        "readableName": "Power Plant / Route 7 Gate"
+    },
+    {
+        "varName": "ssAnne2",
+        "readableName": "S.S. Anne 2"
+    },
+    {
+        "varName": "seafoamIslands4",
+        "readableName": "Seafoam Islands 4"
+    },
+    {
+        "varName": "route23",
+        "readableName": "Route 23"
+    },
+    {
+        "varName": "seafoamIslands5",
+        "readableName": "Seafoam Islands 5"
+    },
+    {
+        "varName": "route18Gate",
+        "readableName": "Route 18 Gate"
+    }
+]

@@ -1,0 +1,290 @@
+[
+    {
+        "name": "Player",
+        "ind": 1
+    },
+    {
+        "name": "Rival",
+        "ind": 2
+    },
+    {
+        "name": "Prof. Oak",
+        "ind": 3
+    },
+    {
+        "name": "Bug Catcher",
+        "ind": 4
+    },
+    {
+        "name": "Slowbro",
+        "ind": 5
+    },
+    {
+        "name": "Lass",
+        "ind": 6
+    },
+    {
+        "name": "Black Hair Boy 1",
+        "ind": 7
+    },
+    {
+        "name": "Little Girl",
+        "ind": 8
+    },
+    {
+        "name": "Bird",
+        "ind": 9
+    },
+    {
+        "name": "Fat Bald Guy",
+        "ind": 10
+    },
+    {
+        "name": "Gambler",
+        "ind": 11
+    },
+    {
+        "name": "Black Hair Boy 2",
+        "ind": 12
+    },
+    {
+        "name": "Girl",
+        "ind": 13
+    },
+    {
+        "name": "Hiker",
+        "ind": 14
+    },
+    {
+        "name": "Foulard Woman",
+        "ind": 15
+    },
+    {
+        "name": "Gentleman",
+        "ind": 16
+    },
+    {
+        "name": "Daisy",
+        "ind": 17
+    },
+    {
+        "name": "Biker",
+        "ind": 18
+    },
+    {
+        "name": "Sailor",
+        "ind": 19
+    },
+    {
+        "name": "Cook",
+        "ind": 20
+    },
+    {
+        "name": "Bike Shop Guy",
+        "ind": 21
+    },
+    {
+        "name": "Mr. Fuji",
+        "ind": 22
+    },
+    {
+        "name": "Giovanni",
+        "ind": 23
+    },
+    {
+        "name": "Rocket",
+        "ind": 24
+    },
+    {
+        "name": "Medium",
+        "ind": 25
+    },
+    {
+        "name": "Waiter",
+        "ind": 26
+    },
+    {
+        "name": "Erika",
+        "ind": 27
+    },
+    {
+        "name": "Mom Geisha",
+        "ind": 28
+    },
+    {
+        "name": "Brunette Girl",
+        "ind": 29
+    },
+    {
+        "name": "Lance",
+        "ind": 30
+    },
+    {
+        "name": "Oak Scientist Aide",
+        "ind": 31
+    },
+    {
+        "name": "Oak Aide",
+        "ind": 32
+    },
+    {
+        "name": "Rocker",
+        "ind": 33
+    },
+    {
+        "name": "Swimmer",
+        "ind": 34
+    },
+    {
+        "name": "White Player",
+        "ind": 35
+    },
+    {
+        "name": "Gym Helper",
+        "ind": 36
+    },
+    {
+        "name": "Old Person",
+        "ind": 37
+    },
+    {
+        "name": "Mart Guy",
+        "ind": 38
+    },
+    {
+        "name": "Fisher",
+        "ind": 39
+    },
+    {
+        "name": "Old Medium Woman",
+        "ind": 40
+    },
+    {
+        "name": "Nurse",
+        "ind": 41
+    },
+    {
+        "name": "Cable Club Woman",
+        "ind": 42
+    },
+    {
+        "name": "Mr. Masterball",
+        "ind": 43
+    },
+    {
+        "name": "Lapras Giver",
+        "ind": 44
+    },
+    {
+        "name": "Warden",
+        "ind": 45
+    },
+    {
+        "name": "SS. Captain",
+        "ind": 46
+    },
+    {
+        "name": "Fisher 2",
+        "ind": 47
+    },
+    {
+        "name": "Blackbelt",
+        "ind": 48
+    },
+    {
+        "name": "Guard",
+        "ind": 49
+    },
+    {
+        "name": "Cop Guard",
+        "ind": 50
+    },
+    {
+        "name": "Mom",
+        "ind": 51
+    },
+    {
+        "name": "Balding Guy",
+        "ind": 52
+    },
+    {
+        "name": "Young Boy",
+        "ind": 53
+    },
+    {
+        "name": "Gameboy Kid",
+        "ind": 54
+    },
+    {
+        "name": "Gameboy Kid Copy",
+        "ind": 55
+    },
+    {
+        "name": "Clefairy",
+        "ind": 56
+    },
+    {
+        "name": "Agatha",
+        "ind": 57
+    },
+    {
+        "name": "Bruno",
+        "ind": 58
+    },
+    {
+        "name": "Lorelei",
+        "ind": 59
+    },
+    {
+        "name": "Seel",
+        "ind": 60
+    },
+    {
+        "name": "Pokeball",
+        "ind": 61
+    },
+    {
+        "name": "Omanyte",
+        "ind": 62
+    },
+    {
+        "name": "Boulder",
+        "ind": 63
+    },
+    {
+        "name": "Paper Sheet",
+        "ind": 64
+    },
+    {
+        "name": "Book Map Dex",
+        "ind": 65
+    },
+    {
+        "name": "Clipboard",
+        "ind": 66
+    },
+    {
+        "name": "Snorlax",
+        "ind": 67
+    },
+    {
+        "name": "Old Amber Copy",
+        "ind": 68
+    },
+    {
+        "name": "Old Amber",
+        "ind": 69
+    },
+    {
+        "name": "Lying Old Man Unused 1",
+        "ind": 70
+    },
+    {
+        "name": "Lying Old Man Unused 2",
+        "ind": 71
+    },
+    {
+        "name": "Lying Old Man",
+        "ind": 72
+    }
+]

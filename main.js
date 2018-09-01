@@ -25,9 +25,12 @@ const isDev = process.env.DEV
     ? (process.env.DEV.trim() == "true")
     : false;
 
-const icon = (isDev)
-    ? path.join(__dirname, 'src/assets/icons/png/mipmap-xhdpi/ic_launcher.png')
-    : path.join(__dirname, 'dist/pokered-save-editor/assets/icons/png/mipmap-xhdpi/ic_launcher.png');
+if (isDev)
+    process.chdir(path.join(__dirname, 'src'));
+else
+    process.chdir(path.join(__dirname, 'dist/pokered-save-editor'));
+
+const icon = 'assets/icons/512x512.png';
 
 function createWindow() {
     const { screen } = require('electron');

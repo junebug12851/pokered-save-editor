@@ -1,3 +1,5 @@
+import { Sprite } from '../../../assets/data/sprites.d';
+import { GameDataService } from './../../data/gameData.service';
 // @ts-ignore
 import { EventEmitter, OnInit } from '@angular/core';
 /**
@@ -17,8 +19,10 @@ import { EventEmitter, OnInit } from '@angular/core';
  */
 
 import { Component, Input, Output } from '@angular/core';
-import { SpriteService } from './../../data/sprite.service';
 import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
+
+// @ts-ignore
+const _ = window.require("lodash");
 
 @Component({
     selector: 'card-sprite-header',
@@ -28,11 +32,14 @@ import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData'
 export class CardSpriteHeader implements OnInit {
 
     constructor(
-        public spriteService: SpriteService
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
-
+        const sprites: Sprite[] = this.gd.file("sprites").data;
+        sprites.forEach((el: Sprite) => {
+            this.sprites[el.ind] = el;
+        });
     }
 
     @Input()
@@ -75,7 +82,7 @@ export class CardSpriteHeader implements OnInit {
     }
 
     public get spriteName() {
-        const data = this.spriteService.indToName[this.entry.pictureID];
+        const data = this.sprites[this.entry.pictureID];
         if (data === null || data === undefined || !(this.entry.pictureID > 0))
             return "";
         else
@@ -124,4 +131,6 @@ export class CardSpriteHeader implements OnInit {
         // @ts-ignore
         return this.entry.missableIndex > -1;
     }
+
+    public sprites: any[] = [];
 }

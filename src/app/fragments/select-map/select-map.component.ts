@@ -25,7 +25,8 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-import { RawMap, rawMaps } from '../../data/map.service';
+import { GameDataService } from './../../data/gameData.service';
+import { Map } from '../../../assets/data/maps.d';
 
 const _: any = window.require("lodash");
 
@@ -39,7 +40,9 @@ const _: any = window.require("lodash");
 })
 export class SelectMapComponent extends ValueAccessorBase<string> implements OnInit {
 
-    constructor() {
+    constructor(
+        public gd: GameDataService
+    ) {
         super();
     }
 
@@ -57,7 +60,9 @@ export class SelectMapComponent extends ValueAccessorBase<string> implements OnI
     public label: string = "Select Map";
 
     get mapList() {
-        let mapListNormal: RawMap[] = _.filter(rawMaps, (value: RawMap) => {
+        const maps: Map[] = this.gd.file("maps").data;
+
+        let mapListNormal: Map[] = _.filter(maps, (value: Map) => {
             if (!value.glitch)
                 return true;
 
@@ -66,7 +71,7 @@ export class SelectMapComponent extends ValueAccessorBase<string> implements OnI
 
         mapListNormal = _.sortBy(mapListNormal, ['name']);
 
-        let mapListGlitch = _.filter(rawMaps, (value: RawMap) => {
+        let mapListGlitch: Map[] = _.filter(maps, (value: Map) => {
             if (value.glitch)
                 return true;
 

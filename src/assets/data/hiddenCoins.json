@@ -1,0 +1,62 @@
+[
+    {
+        "map": "Game Corner",
+        "x": 0,
+        "y": 8
+    },
+    {
+        "map": "Game Corner",
+        "x": 1,
+        "y": 16
+    },
+    {
+        "map": "Game Corner",
+        "x": 3,
+        "y": 11
+    },
+    {
+        "map": "Game Corner",
+        "x": 3,
+        "y": 14
+    },
+    {
+        "map": "Game Corner",
+        "x": 4,
+        "y": 12
+    },
+    {
+        "map": "Game Corner",
+        "x": 9,
+        "y": 12
+    },
+    {
+        "map": "Game Corner",
+        "x": 9,
+        "y": 15
+    },
+    {
+        "map": "Game Corner",
+        "x": 16,
+        "y": 14
+    },
+    {
+        "map": "Game Corner",
+        "x": 10,
+        "y": 16
+    },
+    {
+        "map": "Game Corner",
+        "x": 11,
+        "y": 7
+    },
+    {
+        "map": "Game Corner",
+        "x": 15,
+        "y": 8
+    },
+    {
+        "map": "Game Corner",
+        "x": 12,
+        "y": 15
+    }
+]

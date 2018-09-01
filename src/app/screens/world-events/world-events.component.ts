@@ -1,3 +1,4 @@
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -17,7 +18,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 import { PageEvent } from '@angular/material';
-import { events } from "../../data/events";
 
 //@ts-ignore
 const _ = window.require("lodash");
@@ -31,6 +31,7 @@ export class WorldEventsComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -38,6 +39,8 @@ export class WorldEventsComponent implements OnInit {
     }
 
     get entries() {
+        const events = this.gd.file("events").data;
+
         if (this.search == "")
             return events;
 

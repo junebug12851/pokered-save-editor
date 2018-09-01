@@ -1,4 +1,4 @@
-import { TrainerService } from './../../data/trainer.service';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -36,7 +36,7 @@ const _ = window.require("lodash");
 export class SelectTrainerComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public trainerService: TrainerService
+        public gd: GameDataService
     ) {
         super();
     }
@@ -48,7 +48,7 @@ export class SelectTrainerComponent extends ValueAccessorBase<string> {
     public noneSelectable: boolean = false;
 
     get trainerList() {
-        const rawOppTrainers = this.trainerService.rawOppTrainers;
+        const rawOppTrainers = this.gd.file("trainers").data.slice(47);
         return _.sortBy(rawOppTrainers, ['name']);
     }
 

@@ -1,4 +1,4 @@
-import { TypeServiceB } from './../../data/type.service';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -36,7 +36,7 @@ const _ = window.require("lodash");
 export class SelectTypeComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public typeService: TypeServiceB
+        public gd: GameDataService
     ) {
         super();
     }
@@ -45,7 +45,7 @@ export class SelectTypeComponent extends ValueAccessorBase<string> {
     public disabled: boolean = false;
 
     get typesList() {
-        return this.typeService.rawTypes;
+        return this.gd.file("types").data;
     }
 
     // @ts-ignore

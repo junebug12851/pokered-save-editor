@@ -1,0 +1,839 @@
+[
+    {
+        "name": "Master Ball",
+        "ind": 1,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Ultra Ball",
+        "ind": 2,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Great Ball",
+        "ind": 3,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Poke Ball",
+        "ind": 4,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Town Map",
+        "ind": 5,
+        "normal": true
+    },
+    {
+        "name": "Bicycle",
+        "ind": 6,
+        "normal": true
+    },
+    {
+        "name": "Surfboard",
+        "ind": 7
+    },
+    {
+        "name": "Safari Ball",
+        "ind": 8
+    },
+    {
+        "name": "Pokedex",
+        "ind": 9
+    },
+    {
+        "name": "Moon Stone",
+        "ind": 10,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Antidote",
+        "ind": 11,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Burn Heal",
+        "ind": 12,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Ice Heal",
+        "ind": 13,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Awakening",
+        "ind": 14,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Parlyz Heal",
+        "ind": 15,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Full Restore",
+        "ind": 16,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Max Potion",
+        "ind": 17,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Hyper Potion",
+        "ind": 18,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Super Potion",
+        "ind": 19,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Potion",
+        "ind": 20,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Boulder Badge",
+        "ind": 21
+    },
+    {
+        "name": "Cascade Badge",
+        "ind": 22
+    },
+    {
+        "name": "Thunder Badge",
+        "ind": 23
+    },
+    {
+        "name": "Rainbow Badge",
+        "ind": 24
+    },
+    {
+        "name": "Soul Badge",
+        "ind": 25
+    },
+    {
+        "name": "Marsh Badge",
+        "ind": 26
+    },
+    {
+        "name": "Volcano Badge",
+        "ind": 27
+    },
+    {
+        "name": "Earth Badge",
+        "ind": 28
+    },
+    {
+        "name": "Escape Rope",
+        "ind": 29,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Repel",
+        "ind": 30,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Old Amber",
+        "ind": 31,
+        "normal": true
+    },
+    {
+        "name": "Fire Stone",
+        "ind": 32,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Thunder Stone",
+        "ind": 33,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Water Stone",
+        "ind": 34,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "HP Up",
+        "ind": 35,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Protein",
+        "ind": 36,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Iron",
+        "ind": 37,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Carbos",
+        "ind": 38,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Calcium",
+        "ind": 39,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Rare Candy",
+        "ind": 40,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Dome Fossil",
+        "ind": 41,
+        "normal": true
+    },
+    {
+        "name": "Helix Fossil",
+        "ind": 42,
+        "normal": true
+    },
+    {
+        "name": "Secret Key",
+        "ind": 43,
+        "normal": true
+    },
+    {
+        "name": "Unused Item",
+        "ind": 44
+    },
+    {
+        "name": "Bike Voucher",
+        "ind": 45,
+        "normal": true
+    },
+    {
+        "name": "X Accuracy",
+        "ind": 46,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Leaf Stone",
+        "ind": 47,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Card Key",
+        "ind": 48,
+        "normal": true
+    },
+    {
+        "name": "Nugget",
+        "ind": 49,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "PP Up 2",
+        "ind": 50,
+        "normal": true
+    },
+    {
+        "name": "Poke Doll",
+        "ind": 51,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Full Heal",
+        "ind": 52,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Revive",
+        "ind": 53,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Max Revive",
+        "ind": 54,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Guard Spec",
+        "ind": 55,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Super Repel",
+        "ind": 56,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Max Repel",
+        "ind": 57,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Dire Hit",
+        "ind": 58,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Coin",
+        "ind": 59
+    },
+    {
+        "name": "Fresh Water",
+        "ind": 60,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Soda Pop",
+        "ind": 61,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Lemonade",
+        "ind": 62,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "S.S. Ticket",
+        "ind": 63,
+        "normal": true
+    },
+    {
+        "name": "Gold Teeth",
+        "ind": 64,
+        "normal": true
+    },
+    {
+        "name": "X Attack",
+        "ind": 65,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "X Defend",
+        "ind": 66,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "X Speed",
+        "ind": 67,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "X Special",
+        "ind": 68,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Coin Case",
+        "ind": 69,
+        "normal": true
+    },
+    {
+        "name": "Oaks Parcel",
+        "ind": 70,
+        "normal": true
+    },
+    {
+        "name": "Item Finder",
+        "ind": 71,
+        "normal": true
+    },
+    {
+        "name": "Silph Scope",
+        "ind": 72,
+        "normal": true
+    },
+    {
+        "name": "Poke Flute",
+        "ind": 73,
+        "normal": true
+    },
+    {
+        "name": "Lift Key",
+        "ind": 74,
+        "normal": true
+    },
+    {
+        "name": "Exp All",
+        "ind": 75,
+        "normal": true
+    },
+    {
+        "name": "Old Rod",
+        "ind": 76,
+        "normal": true
+    },
+    {
+        "name": "Good Rod",
+        "ind": 77,
+        "normal": true
+    },
+    {
+        "name": "Super Rod",
+        "ind": 78,
+        "normal": true
+    },
+    {
+        "name": "PP Up",
+        "ind": 79,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Ether",
+        "ind": 80,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Max Ether",
+        "ind": 81,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Elixer",
+        "ind": 82,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Max Elixer",
+        "ind": 83,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "Floor B2F",
+        "ind": 84
+    },
+    {
+        "name": "Floor B1F",
+        "ind": 85
+    },
+    {
+        "name": "Floor 1F",
+        "ind": 86
+    },
+    {
+        "name": "Floor 2F",
+        "ind": 87
+    },
+    {
+        "name": "Floor 3F",
+        "ind": 88
+    },
+    {
+        "name": "Floor 4F",
+        "ind": 89
+    },
+    {
+        "name": "Floor 5F",
+        "ind": 90
+    },
+    {
+        "name": "Floor 6F",
+        "ind": 91
+    },
+    {
+        "name": "Floor 7F",
+        "ind": 92
+    },
+    {
+        "name": "Floor 8F",
+        "ind": 93
+    },
+    {
+        "name": "Floor 9F",
+        "ind": 94
+    },
+    {
+        "name": "Floor 10F",
+        "ind": 95
+    },
+    {
+        "name": "Floor 11F",
+        "ind": 96
+    },
+    {
+        "name": "Floor B4F",
+        "ind": 97
+    },
+    {
+        "name": "HM 01",
+        "ind": 196,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "HM 02",
+        "ind": 197,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "HM 03",
+        "ind": 198,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "HM 04",
+        "ind": 199,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "HM 05",
+        "ind": 200,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 01",
+        "ind": 201,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 02",
+        "ind": 202,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 03",
+        "ind": 203,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 04",
+        "ind": 204,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 05",
+        "ind": 205,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 06",
+        "ind": 206,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 07",
+        "ind": 207,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 08",
+        "ind": 208,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 09",
+        "ind": 209,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 10",
+        "ind": 210,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 11",
+        "ind": 211,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 12",
+        "ind": 212,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 13",
+        "ind": 213,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 14",
+        "ind": 214,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 15",
+        "ind": 215,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 16",
+        "ind": 216,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 17",
+        "ind": 217,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 18",
+        "ind": 218,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 19",
+        "ind": 219,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 20",
+        "ind": 220,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 21",
+        "ind": 221,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 22",
+        "ind": 222,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 23",
+        "ind": 223,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 24",
+        "ind": 224,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 25",
+        "ind": 225,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 26",
+        "ind": 226,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 27",
+        "ind": 227,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 28",
+        "ind": 228,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 29",
+        "ind": 229,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 30",
+        "ind": 230,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 31",
+        "ind": 231,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 32",
+        "ind": 232,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 33",
+        "ind": 233,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 34",
+        "ind": 234,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 35",
+        "ind": 235,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 36",
+        "ind": 236,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 37",
+        "ind": 237,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 38",
+        "ind": 238,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 39",
+        "ind": 239,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 40",
+        "ind": 240,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 41",
+        "ind": 241,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 42",
+        "ind": 242,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 43",
+        "ind": 243,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 44",
+        "ind": 244,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 45",
+        "ind": 245,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 46",
+        "ind": 246,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 47",
+        "ind": 247,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 48",
+        "ind": 248,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 49",
+        "ind": 249,
+        "normal": true,
+        "typical": true
+    },
+    {
+        "name": "TM 50",
+        "ind": 250,
+        "normal": true,
+        "typical": true
+    }
+]
