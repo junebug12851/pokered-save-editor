@@ -1,4 +1,4 @@
-# Pokered Save Editor
+# Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor)
 
 _100th Commit!!!_
 
