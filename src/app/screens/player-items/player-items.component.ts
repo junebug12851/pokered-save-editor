@@ -16,7 +16,6 @@
 
 import { Component } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
-import { ItemService } from '../../data/item.service';
 
 @Component({
     selector: 'screen-player-items',
@@ -26,8 +25,7 @@ import { ItemService } from '../../data/item.service';
 export class PlayerItemsComponent {
 
     constructor(
-        public fileService: SaveFileService,
-        public itemService: ItemService
+        public fileService: SaveFileService
     ) { }
 
     get entries() {

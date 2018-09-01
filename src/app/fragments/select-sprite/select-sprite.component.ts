@@ -1,4 +1,5 @@
-import { SpriteService } from './../../data/sprite.service';
+import { Sprite } from './../../../assets/data/sprites.d';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -18,6 +19,9 @@ import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 
 import { Component, Input } from '@angular/core';
 
+//@ts-ignore
+const _ = window.require("lodash");
+
 import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
@@ -33,7 +37,7 @@ import {
 export class SelectSpriteComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public spriteService: SpriteService
+        public gd: GameDataService
     ) {
         super();
     }
@@ -42,7 +46,8 @@ export class SelectSpriteComponent extends ValueAccessorBase<string> {
     public disabled: boolean = false;
 
     get spriteList() {
-        return this.spriteService.indToName;
+        const sprites: Sprite[] = _.sortBy(this.gd.file("sprites").data, ["ind"]);
+        return sprites;
     }
 
     // @ts-ignore

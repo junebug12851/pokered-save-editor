@@ -1,3 +1,4 @@
+import { Text } from './../../../assets/data/text.d';
 import { SaveFileService } from './../../data/savefile.service';
 /**
    Copyright 2018 June Hanabi
@@ -20,7 +21,7 @@ declare var window: {
     keyboards: any;
 };
 
-import { TextService, RawTransArrEntry } from './../../data/text.service';
+import { TextService } from './../../data/text.service';
 
 const _: any = window.require("lodash");
 
@@ -67,7 +68,7 @@ export class KeyboardsComponent {
     }
 
     get controlKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (value.control)
                 return true;
 
@@ -75,7 +76,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,
@@ -87,7 +88,7 @@ export class KeyboardsComponent {
     }
 
     get multiCharKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (value.multiChar)
                 return true;
 
@@ -95,7 +96,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,
@@ -107,7 +108,7 @@ export class KeyboardsComponent {
     }
 
     get singleCharKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (value.singleChar)
                 return true;
 
@@ -115,7 +116,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,
@@ -132,7 +133,7 @@ export class KeyboardsComponent {
     // 3) Graphic Keyboard containing only graphic keys
 
     get basicKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (value.normal)
                 return true;
 
@@ -140,7 +141,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,
@@ -152,7 +153,7 @@ export class KeyboardsComponent {
     }
 
     get fullKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (!value.picture)
                 return true;
 
@@ -160,7 +161,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,
@@ -172,7 +173,7 @@ export class KeyboardsComponent {
     }
 
     get picKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: RawTransArrEntry) => {
+        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
             if (value.picture)
                 return true;
 
@@ -180,7 +181,7 @@ export class KeyboardsComponent {
         });
 
         for (let i = 0; i < chars.length; i++) {
-            const rawEntry: RawTransArrEntry = chars[i];
+            const rawEntry: Text = chars[i];
             const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
             chars[i] = {
                 html,

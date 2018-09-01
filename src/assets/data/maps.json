@@ -1,89 +1,4 @@
-// Map Data imported from 2 files in the PokeRed project and carefully merged
-// by my own code here
-// https://codepen.io/junebug12851/pen/yxewaa?editors=0012
-
-// For a modded game or a different version, the pointers may be off so you'll
-// have to recalculate with a symbol file
-
-// 1) grep the symbol file to make it more slim
-// grep -E "(Blocks|Script|TextPointers)$" <symbol file>.sym > <symbol file>.sym.mapPointers
-// This assumes all map objects are labeled with the suffix Blocks, Script, and TextPointers
-// Adjust for different suffixes if different and if suffixes are incosnistent then
-// none of this can work
-
-// 2) Convert it to JSON
-// Find ^(..):(....).(.*)
-// Replace {bank: 0x$1, address: 0x$2, name: "$3"},
-
-// 3) Insert it into the "symbols" variable at the codepen link above
-
-// 4) Insert the below map data into the "mapData" variable at the codepen link
-//    above, adjust if needed or desired such as a different game version
-
-// 5) Convert map constants file to json
-// Find ^\tmapconst (.*?),.*?([0-9].*?),.*?([0-9].*?) ; \$(.*)
-// Replace {name: "$1", ind: 0x$4, height: $2, width: $3},
-// This assumes map constants are all in a file where each line looks like
-// 	mapconst PALLET_TOWN,                 9, 10 ; $00
-// Adjust accordingly if needed
-
-// 6) Paste it in the "moreMapData" variable in the codepen link above
-
-// It'll spit out a giant JSON string, here's your JSON data below
-
-// Aliases might need to be played around with if the map name in symbols
-// differs from the map name in constants, special and glitch maps need to be
-// marked as so so they're not looked up in the symbol file, valid copies
-// (Map names ending with "Copy" and which are in the symbol file) need to be
-// marked as so
-
-import { Injectable } from '@angular/core';
-
-export interface RawMap {
-
-    // Map Name
-    name: string,
-
-    // Map ID/Index
-    ind: number,
-
-    // A glitch map?
-    glitch?: boolean,
-
-    // A scripted / psuedo map
-    special?: boolean,
-
-    // Map Size
-    height?: number,
-    width?: number,
-
-    // Map Symbol name found in the symbol file in the PokeRed project
-    // Used to lookup pointer data
-    symbol?: string,
-
-    // Bank number found in the symbol file, could be useful
-    bank?: number,
-
-    // There are 2 files in the PokeRed project and sometimes the same map will
-    // be listed under 2 dfferent names, alias is the name listed in the symbol
-    // file for map pointers and bank # as opposed to the name in map constants
-    // which is has the map width, height, and index number
-    alias?: string,
-
-    // Map pointers
-    dataPtr?: number,
-    scriptPtr?: number,
-    textPtr?: number,
-
-    // Map size multiplied by 2
-    height2x2?: number,
-    width2x2?: number,
-
-    // Side Note: You know I must really love doing this because this is a
-    // magnificent amount of work ..o.>_<.o..
-}
-
-export const rawMaps: RawMap[] = [
+[
     {
         "name": "Pallet Town",
         "ind": 0,
@@ -93,7 +8,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20059,
         "textPtr": 20360,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Viridian City",
@@ -104,7 +21,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20465,
         "textPtr": 20708,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Pewter City",
@@ -115,7 +34,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21047,
         "textPtr": 21387,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Cerulean City",
@@ -126,7 +47,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21632,
         "textPtr": 22061,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Lavender Town",
@@ -137,7 +60,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16651,
         "textPtr": 16654,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Vermilion City",
@@ -148,7 +73,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22433,
         "textPtr": 22639,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Celadon City",
@@ -159,7 +86,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22870,
         "textPtr": 22886,
         "width": 25,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 50
     },
     {
         "name": "Fuchsia City",
@@ -170,7 +99,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23083,
         "textPtr": 23086,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Cinnabar Island",
@@ -181,7 +112,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18969,
         "textPtr": 19073,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Indigo Plateau",
@@ -192,7 +125,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18741,
         "textPtr": 18742,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Saffron City",
@@ -203,14 +138,18 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19456,
         "textPtr": 19459,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Unused Map 0B",
         "ind": 11,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Route 1",
@@ -221,7 +160,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19119,
         "textPtr": 19122,
         "width": 10,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 20
     },
     {
         "name": "Route 2",
@@ -232,7 +173,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21731,
         "textPtr": 21734,
         "width": 10,
-        "height": 36
+        "height": 36,
+        "height2x2": 72,
+        "width2x2": 20
     },
     {
         "name": "Route 3",
@@ -243,7 +186,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21752,
         "textPtr": 21777,
         "width": 35,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 70
     },
     {
         "name": "Route 4",
@@ -254,7 +199,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22104,
         "textPtr": 22129,
         "width": 45,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 90
     },
     {
         "name": "Route 5",
@@ -265,7 +212,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22194,
         "textPtr": 22197,
         "width": 10,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 20
     },
     {
         "name": "Route 6",
@@ -276,7 +225,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20656,
         "textPtr": 20681,
         "width": 10,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 20
     },
     {
         "name": "Route 7",
@@ -287,7 +238,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16722,
         "textPtr": 16725,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Route 8",
@@ -298,7 +251,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20918,
         "textPtr": 20943,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Route 9",
@@ -309,7 +264,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22204,
         "textPtr": 22229,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Route 10",
@@ -320,7 +277,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21302,
         "textPtr": 21327,
         "width": 10,
-        "height": 36
+        "height": 36,
+        "height2x2": 72,
+        "width2x2": 20
     },
     {
         "name": "Route 11",
@@ -331,7 +290,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21580,
         "textPtr": 21605,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Route 12",
@@ -342,7 +303,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22003,
         "textPtr": 22133,
         "width": 10,
-        "height": 54
+        "height": 54,
+        "height2x2": 108,
+        "width2x2": 20
     },
     {
         "name": "Route 13",
@@ -353,7 +316,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22558,
         "textPtr": 22583,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Route 14",
@@ -364,7 +329,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22995,
         "textPtr": 23020,
         "width": 10,
-        "height": 27
+        "height": 27,
+        "height2x2": 54,
+        "width2x2": 20
     },
     {
         "name": "Route 15",
@@ -375,7 +342,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22446,
         "textPtr": 22471,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Route 16",
@@ -386,7 +355,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22835,
         "textPtr": 22969,
         "width": 20,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 40
     },
     {
         "name": "Route 17",
@@ -397,7 +368,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23418,
         "textPtr": 23443,
         "width": 10,
-        "height": 72
+        "height": 72,
+        "height2x2": 144,
+        "width2x2": 20
     },
     {
         "name": "Route 18",
@@ -408,7 +381,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23239,
         "textPtr": 23264,
         "width": 25,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 50
     },
     {
         "name": "Route 19",
@@ -419,7 +394,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23876,
         "textPtr": 23901,
         "width": 10,
-        "height": 27
+        "height": 27,
+        "height2x2": 54,
+        "width2x2": 20
     },
     {
         "name": "Route 20",
@@ -430,7 +407,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19625,
         "textPtr": 19746,
         "width": 50,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 100
     },
     {
         "name": "Route 21",
@@ -441,7 +420,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24299,
         "textPtr": 24324,
         "width": 10,
-        "height": 45
+        "height": 45,
+        "height2x2": 90,
+        "width2x2": 20
     },
     {
         "name": "Route 22",
@@ -452,7 +433,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20146,
         "textPtr": 20853,
         "width": 20,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 40
     },
     {
         "name": "Route 23",
@@ -463,7 +446,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20954,
         "textPtr": 21239,
         "width": 10,
-        "height": 72
+        "height": 72,
+        "height2x2": 144,
+        "width2x2": 20
     },
     {
         "name": "Route 24",
@@ -474,7 +459,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21421,
         "textPtr": 21579,
         "width": 10,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 20
     },
     {
         "name": "Route 25",
@@ -485,7 +472,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21963,
         "textPtr": 22056,
         "width": 30,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 60
     },
     {
         "name": "Reds House 1F",
@@ -496,7 +485,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16744,
         "textPtr": 16747,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Reds House 2F",
@@ -507,7 +498,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16560,
         "textPtr": 16591,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Blues House",
@@ -518,7 +511,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23355,
         "textPtr": 23383,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Oaks Lab",
@@ -529,7 +524,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19214,
         "textPtr": 20610,
         "width": 5,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 10
     },
     {
         "name": "Viridian Pokecenter",
@@ -540,7 +537,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16989,
         "textPtr": 16995,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Viridian Mart",
@@ -551,7 +550,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21614,
         "textPtr": 21728,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Viridian School",
@@ -563,7 +564,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21839,
         "alias": "School",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Viridian House",
@@ -574,7 +577,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21898,
         "textPtr": 21901,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Viridian Gym",
@@ -585,7 +590,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18595,
         "textPtr": 18924,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Digletts Cave Exit",
@@ -597,7 +604,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 24248,
         "alias": "Digletts Cave Route 2",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Viridian Forest Exit",
@@ -608,7 +617,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21895,
         "textPtr": 21898,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Route 2 House",
@@ -619,7 +630,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24301,
         "textPtr": 24304,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 2 Gate",
@@ -630,7 +643,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21972,
         "textPtr": 21975,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Viridian Forest Entrance",
@@ -641,7 +656,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22108,
         "textPtr": 22111,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Viridian Forest",
@@ -652,7 +669,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20749,
         "textPtr": 20774,
         "width": 17,
-        "height": 24
+        "height": 24,
+        "height2x2": 48,
+        "width2x2": 34
     },
     {
         "name": "Museum 1F",
@@ -663,7 +682,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16631,
         "textPtr": 16683,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Museum 2F",
@@ -674,7 +695,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17175,
         "textPtr": 17178,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Pewter Gym",
@@ -685,7 +708,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17287,
         "textPtr": 17461,
         "width": 5,
-        "height": 7
+        "height": 7,
+        "height2x2": 14,
+        "width2x2": 10
     },
     {
         "name": "Pewter House 1",
@@ -696,7 +721,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22003,
         "textPtr": 22006,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Pewter Mart",
@@ -707,7 +734,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19629,
         "textPtr": 19638,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Pewter House 2",
@@ -718,7 +747,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22088,
         "textPtr": 22091,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Pewter Pokecenter",
@@ -729,7 +760,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17799,
         "textPtr": 17805,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Mt. Moon 1",
@@ -740,7 +773,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22984,
         "textPtr": 23009,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Mt. Moon 2",
@@ -751,7 +786,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23106,
         "textPtr": 23110,
         "width": 14,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 28
     },
     {
         "name": "Mt. Moon 3",
@@ -762,7 +799,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23819,
         "textPtr": 24116,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Trashed House",
@@ -774,7 +813,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22153,
         "alias": "Cerulean House Trashed",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cerulean House 1",
@@ -785,7 +826,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22262,
         "textPtr": 22265,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cerulean Pokecenter",
@@ -796,7 +839,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17989,
         "textPtr": 17995,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Cerulean Gym",
@@ -807,7 +852,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18099,
         "textPtr": 18250,
         "width": 5,
-        "height": 7
+        "height": 7,
+        "height2x2": 14,
+        "width2x2": 10
     },
     {
         "name": "Bike Shop",
@@ -818,7 +865,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22332,
         "textPtr": 22335,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cerulean Mart",
@@ -829,7 +878,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18581,
         "textPtr": 18584,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Mt. Moon Pokecenter",
@@ -840,7 +891,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21199,
         "textPtr": 21205,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Trashed House Copy",
@@ -852,7 +905,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22153,
         "alias": "Cerulean House Trashed",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 5 Gate",
@@ -863,7 +918,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24371,
         "textPtr": 24484,
         "width": 4,
-        "height": 3
+        "height": 3,
+        "height2x2": 6,
+        "width2x2": 8
     },
     {
         "name": "Path Entrance Route 5",
@@ -875,7 +932,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22192,
         "alias": "Underground Path Entrance Route 5",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Daycare",
@@ -887,7 +946,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25170,
         "alias": "Day Care M",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 6 Gate",
@@ -898,7 +959,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24637,
         "textPtr": 24760,
         "width": 4,
-        "height": 3
+        "height": 3,
+        "height2x2": 6,
+        "width2x2": 8
     },
     {
         "name": "Path Entrance Route 6",
@@ -910,7 +973,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22263,
         "alias": "Underground Path Entrance Route 6",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Path Entrance Route 6 Copy",
@@ -922,7 +987,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22263,
         "alias": "Underground Path Entrance Route 6",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 7 Gate",
@@ -933,7 +1000,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24832,
         "textPtr": 24959,
         "width": 3,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 6
     },
     {
         "name": "Path Entrance Route 7",
@@ -945,7 +1014,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22324,
         "alias": "Underground Path Entrance Route 7",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Path Entrance Route 7 Copy",
@@ -957,7 +1028,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22383,
         "alias": "Underground Path Entrance Route 7 Copy",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 8 Gate",
@@ -968,7 +1041,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25031,
         "textPtr": 25153,
         "width": 3,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 6
     },
     {
         "name": "Path Entrance Route 8",
@@ -980,7 +1055,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25233,
         "alias": "Underground Path Entrance Route 8",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Rock Tunnel Pokecenter",
@@ -991,7 +1068,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21434,
         "textPtr": 21440,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Rock Tunnel 1",
@@ -1002,7 +1081,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17628,
         "textPtr": 17653,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Power Plant",
@@ -1013,7 +1094,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25286,
         "textPtr": 25311,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Route 11 Gate 1F",
@@ -1025,7 +1108,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21519,
         "alias": "Route 11 Gate",
         "width": 4,
-        "height": 5
+        "height": 5,
+        "height2x2": 10,
+        "width2x2": 8
     },
     {
         "name": "Digletts Cave Entrance",
@@ -1037,7 +1122,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 26051,
         "alias": "Digletts Cave Entrance Route 11",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 11 Gate 2F",
@@ -1049,7 +1136,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21591,
         "alias": "Route 11 Gate Upstairs",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 12 Gate 1F",
@@ -1061,7 +1150,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21767,
         "alias": "Route 12 Gate",
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Bills House",
@@ -1072,7 +1163,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 26474,
         "textPtr": 26676,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Vermilion Pokecenter",
@@ -1083,7 +1176,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18831,
         "textPtr": 18837,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Pokemon Fan Club",
@@ -1095,7 +1190,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23428,
         "alias": "Fan Club",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Vermilion Mart",
@@ -1106,7 +1203,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18913,
         "textPtr": 18916,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Vermilion Gym",
@@ -1117,7 +1216,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18982,
         "textPtr": 19176,
         "width": 5,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 10
     },
     {
         "name": "Vermilion House 1",
@@ -1128,7 +1229,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23292,
         "textPtr": 23296,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Vermilion Dock",
@@ -1139,7 +1242,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23378,
         "textPtr": 23743,
         "width": 14,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 28
     },
     {
         "name": "S.S. Anne 1",
@@ -1150,7 +1255,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21093,
         "textPtr": 21097,
         "width": 20,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 40
     },
     {
         "name": "S.S. Anne 2",
@@ -1161,7 +1268,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21407,
         "textPtr": 21723,
         "width": 20,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 40
     },
     {
         "name": "S.S. Anne 3",
@@ -1172,7 +1281,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18738,
         "textPtr": 18741,
         "width": 10,
-        "height": 3
+        "height": 3,
+        "height2x2": 6,
+        "width2x2": 20
     },
     {
         "name": "S.S. Anne 4",
@@ -1183,7 +1294,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22062,
         "textPtr": 22065,
         "width": 15,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 30
     },
     {
         "name": "S.S. Anne 5",
@@ -1194,7 +1307,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22190,
         "textPtr": 22215,
         "width": 10,
-        "height": 7
+        "height": 7,
+        "height2x2": 14,
+        "width2x2": 20
     },
     {
         "name": "S.S. Anne 6",
@@ -1205,7 +1320,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22451,
         "textPtr": 22455,
         "width": 7,
-        "height": 8
+        "height": 8,
+        "height2x2": 16,
+        "width2x2": 14
     },
     {
         "name": "S.S. Anne 7",
@@ -1216,7 +1333,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22677,
         "textPtr": 22695,
         "width": 3,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 6
     },
     {
         "name": "S.S. Anne 8",
@@ -1227,7 +1346,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22902,
         "textPtr": 22927,
         "width": 12,
-        "height": 8
+        "height": 8,
+        "height2x2": 16,
+        "width2x2": 24
     },
     {
         "name": "S.S. Anne 9",
@@ -1238,7 +1359,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23371,
         "textPtr": 23402,
         "width": 12,
-        "height": 8
+        "height": 8,
+        "height2x2": 16,
+        "width2x2": 24
     },
     {
         "name": "S.S. Anne 10",
@@ -1249,28 +1372,36 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23893,
         "textPtr": 23918,
         "width": 12,
-        "height": 8
+        "height": 8,
+        "height2x2": 16,
+        "width2x2": 24
     },
     {
         "name": "Unused Map 69",
         "ind": 105,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 6A",
         "ind": 106,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 6B",
         "ind": 107,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Victory Road 1",
@@ -1281,35 +1412,45 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23050,
         "textPtr": 23135,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Unused Map 6D",
         "ind": 109,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 6E",
         "ind": 110,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 6F",
         "ind": 111,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 70",
         "ind": 112,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Lances Room",
@@ -1321,35 +1462,45 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25493,
         "alias": "Lance",
         "width": 13,
-        "height": 13
+        "height": 13,
+        "height2x2": 26,
+        "width2x2": 26
     },
     {
         "name": "Unused Map 72",
         "ind": 114,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 73",
         "ind": 115,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 74",
         "ind": 116,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map 75",
         "ind": 117,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Hall of Fame",
@@ -1361,7 +1512,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25962,
         "alias": "Hall of Fame Room",
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Underground Path NS",
@@ -1372,7 +1525,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24358,
         "textPtr": 24361,
         "width": 4,
-        "height": 24
+        "height": 24,
+        "height2x2": 48,
+        "width2x2": 8
     },
     {
         "name": "Champions Room",
@@ -1384,7 +1539,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 24790,
         "alias": "Gary",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Underground Path WE",
@@ -1395,7 +1552,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24394,
         "textPtr": 24397,
         "width": 25,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 50
     },
     {
         "name": "Celadon Mart 1",
@@ -1406,7 +1565,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20358,
         "textPtr": 20361,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart 2",
@@ -1417,7 +1578,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24821,
         "textPtr": 24824,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart 3",
@@ -1428,7 +1591,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 16933,
         "textPtr": 16936,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart 4",
@@ -1439,7 +1604,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17238,
         "textPtr": 17241,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart Roof",
@@ -1450,7 +1617,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17365,
         "textPtr": 17755,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart Elevator",
@@ -1461,7 +1630,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17920,
         "textPtr": 18012,
         "width": 2,
-        "height": 2
+        "height": 2,
+        "height2x2": 4,
+        "width2x2": 4
     },
     {
         "name": "Celadon Mansion 1",
@@ -1472,7 +1643,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18068,
         "textPtr": 18071,
         "width": 4,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 8
     },
     {
         "name": "Celadon Mansion 2",
@@ -1483,7 +1656,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18234,
         "textPtr": 18238,
         "width": 4,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 8
     },
     {
         "name": "Celadon Mansion 3",
@@ -1494,7 +1669,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18320,
         "textPtr": 18323,
         "width": 4,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 8
     },
     {
         "name": "Celadon Mansion 4",
@@ -1505,7 +1682,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18539,
         "textPtr": 18542,
         "width": 4,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 8
     },
     {
         "name": "Celadon Mansion 5",
@@ -1516,7 +1695,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23866,
         "textPtr": 23869,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Celadon Pokecenter",
@@ -1527,7 +1708,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18616,
         "textPtr": 18622,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Celadon Gym",
@@ -1538,7 +1721,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18698,
         "textPtr": 18854,
         "width": 5,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 10
     },
     {
         "name": "Game Corner",
@@ -1550,7 +1735,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 19594,
         "alias": "Celadon Game Corner",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Celadon Mart 5",
@@ -1561,7 +1748,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20585,
         "textPtr": 20588,
         "width": 10,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 20
     },
     {
         "name": "Celadon Prize Room",
@@ -1572,7 +1761,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20720,
         "textPtr": 20723,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Celadon Diner",
@@ -1583,7 +1774,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20817,
         "textPtr": 20821,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Celadon House",
@@ -1594,7 +1787,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21006,
         "textPtr": 21010,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Celadon Hotel",
@@ -1605,7 +1800,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21097,
         "textPtr": 21100,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Lavender Pokecenter",
@@ -1616,7 +1813,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18650,
         "textPtr": 18656,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Pokemontower 1",
@@ -1628,7 +1827,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 17455,
         "alias": "Pokemon Tower 1",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 2",
@@ -1640,7 +1841,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 17883,
         "alias": "Pokemon Tower 2",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 3",
@@ -1652,7 +1855,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 18149,
         "alias": "Pokemon Tower 3",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 4",
@@ -1664,7 +1869,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 18447,
         "alias": "Pokemon Tower 4",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 5",
@@ -1676,7 +1883,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 18843,
         "alias": "Pokemon Tower 5",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 6",
@@ -1688,7 +1897,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 19377,
         "alias": "Pokemon Tower 6",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Pokemontower 7",
@@ -1700,7 +1911,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 20031,
         "alias": "Pokemon Tower 7",
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Lavender House 1",
@@ -1711,7 +1924,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22696,
         "textPtr": 22700,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Lavender Mart",
@@ -1722,7 +1937,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18732,
         "textPtr": 18735,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Lavender House 2",
@@ -1733,7 +1950,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22958,
         "textPtr": 22962,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Fuchsia Mart",
@@ -1744,7 +1963,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23944,
         "textPtr": 23947,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Fuchsia House 1",
@@ -1755,7 +1976,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20504,
         "textPtr": 20508,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Fuchsia Pokecenter",
@@ -1766,7 +1989,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20579,
         "textPtr": 20585,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Fuchsia House 2",
@@ -1777,7 +2002,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20661,
         "textPtr": 20664,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Safari Zone Entrance",
@@ -1788,7 +2015,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20941,
         "textPtr": 21177,
         "width": 4,
-        "height": 3
+        "height": 3,
+        "height2x2": 6,
+        "width2x2": 8
     },
     {
         "name": "Fuchsia Gym",
@@ -1799,7 +2028,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21565,
         "textPtr": 21717,
         "width": 5,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 10
     },
     {
         "name": "Fuchsia Meeting Room",
@@ -1810,7 +2041,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22243,
         "textPtr": 22247,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Seafoam Islands 2",
@@ -1821,7 +2054,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25365,
         "textPtr": 25458,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Seafoam Islands 3",
@@ -1832,7 +2067,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25681,
         "textPtr": 25774,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Seafoam Islands 4",
@@ -1843,7 +2080,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25997,
         "textPtr": 26266,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Seafoam Islands 5",
@@ -1854,7 +2093,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 26521,
         "textPtr": 26748,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Vermilion House 2",
@@ -1865,7 +2106,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24688,
         "textPtr": 24691,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Fuchsia House 3",
@@ -1876,7 +2119,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24956,
         "textPtr": 24959,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Mansion 1",
@@ -1887,7 +2132,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 17071,
         "textPtr": 17196,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Cinnabar Gym",
@@ -1898,7 +2145,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22346,
         "textPtr": 22687,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Cinnabar Lab 1",
@@ -1910,7 +2159,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23440,
         "alias": "Lab 1",
         "width": 9,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 18
     },
     {
         "name": "Cinnabar Lab 2",
@@ -1922,7 +2173,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23588,
         "alias": "Lab 2",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cinnabar Lab 3",
@@ -1934,7 +2187,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23690,
         "alias": "Lab 3",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cinnabar Lab 4",
@@ -1946,7 +2201,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23860,
         "alias": "Lab 4",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cinnabar Pokecenter",
@@ -1957,7 +2214,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24108,
         "textPtr": 24114,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Cinnabar Mart",
@@ -1968,7 +2227,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24190,
         "textPtr": 24193,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cinnabar Mart Copy",
@@ -1979,7 +2240,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24190,
         "textPtr": 24193,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Indigo Plateau Lobby",
@@ -1990,7 +2253,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23643,
         "textPtr": 23679,
         "width": 8,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 16
     },
     {
         "name": "Copycats House 1F",
@@ -2001,7 +2266,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24259,
         "textPtr": 24262,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Copycats House 2F",
@@ -2012,7 +2279,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19569,
         "textPtr": 19572,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Fighting Dojo",
@@ -2023,7 +2292,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19805,
         "textPtr": 19971,
         "width": 5,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 10
     },
     {
         "name": "Saffron Gym",
@@ -2034,7 +2305,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20493,
         "textPtr": 20651,
         "width": 10,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 20
     },
     {
         "name": "Saffron House 1",
@@ -2045,7 +2318,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24029,
         "textPtr": 24032,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Saffron Mart",
@@ -2056,7 +2331,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21513,
         "textPtr": 21516,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Silph Co 1F",
@@ -2068,7 +2345,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21609,
         "alias": "Silph Co 1",
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Saffron Pokecenter",
@@ -2079,7 +2358,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21813,
         "textPtr": 21819,
         "width": 7,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 14
     },
     {
         "name": "Saffron House 2",
@@ -2090,7 +2371,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24124,
         "textPtr": 24127,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 15 Gate 1F",
@@ -2102,7 +2385,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22021,
         "alias": "Route 15 Gate",
         "width": 4,
-        "height": 5
+        "height": 5,
+        "height2x2": 10,
+        "width2x2": 8
     },
     {
         "name": "Route 15 Gate 2F",
@@ -2114,7 +2399,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22093,
         "alias": "Route 15 Gate Upstairs",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 16 Gate 1F",
@@ -2126,7 +2413,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22362,
         "alias": "Route 16 Gate",
         "width": 4,
-        "height": 7
+        "height": 7,
+        "height2x2": 14,
+        "width2x2": 8
     },
     {
         "name": "Route 16 Gate 2F",
@@ -2138,7 +2427,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22542,
         "alias": "Route 16 Gate Upstairs",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 16 House",
@@ -2149,7 +2440,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 26104,
         "textPtr": 26107,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 12 House",
@@ -2160,7 +2453,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25727,
         "textPtr": 25730,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Route 18 Gate 1F",
@@ -2172,7 +2467,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22797,
         "alias": "Route 18 Gate",
         "width": 4,
-        "height": 5
+        "height": 5,
+        "height2x2": 10,
+        "width2x2": 8
     },
     {
         "name": "Route 18 Gate 2F",
@@ -2184,7 +2481,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22904,
         "alias": "Route 18 Gate Upstairs",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Seafoam Islands 1",
@@ -2195,7 +2494,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18409,
         "textPtr": 18507,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Route 22 Gate",
@@ -2206,7 +2507,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 26243,
         "textPtr": 26335,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Victory Road 2",
@@ -2217,7 +2520,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22429,
         "textPtr": 22555,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Route 12 Gate 2F",
@@ -2229,7 +2534,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 21859,
         "alias": "Route 12 Gate Upstairs",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Vermilion House 3",
@@ -2240,7 +2547,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23570,
         "textPtr": 23573,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Digletts Cave",
@@ -2251,7 +2560,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24430,
         "textPtr": 24433,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Victory Road 3",
@@ -2262,7 +2573,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 18816,
         "textPtr": 18980,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Rocket Hideout 1",
@@ -2273,7 +2586,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19402,
         "textPtr": 19476,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Rocket Hideout 2",
@@ -2284,7 +2599,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 20007,
         "textPtr": 20679,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Rocket Hideout 3",
@@ -2295,7 +2612,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21029,
         "textPtr": 21242,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Rocket Hideout 4",
@@ -2306,7 +2625,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 21597,
         "textPtr": 21761,
         "width": 15,
-        "height": 12
+        "height": 12,
+        "height2x2": 24,
+        "width2x2": 30
     },
     {
         "name": "Rocket Hideout Elevator",
@@ -2317,28 +2638,36 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22288,
         "textPtr": 22379,
         "width": 3,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 6
     },
     {
         "name": "Unused Map CC",
         "ind": 204,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map CD",
         "ind": 205,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map CE",
         "ind": 206,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Silph Co 2F",
@@ -2350,7 +2679,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23942,
         "alias": "Silph Co 2",
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Silph Co 3F",
@@ -2362,7 +2693,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 24516,
         "alias": "Silph Co 3",
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Silph Co 4F",
@@ -2374,7 +2707,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23968,
         "alias": "Silph Co 4",
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Silph Co 5F",
@@ -2386,7 +2721,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 24508,
         "alias": "Silph Co 5",
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Silph Co 6F",
@@ -2398,7 +2735,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25078,
         "alias": "Silph Co 6",
         "width": 13,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 26
     },
     {
         "name": "Silph Co 7F",
@@ -2410,7 +2749,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23871,
         "alias": "Silph Co 7",
         "width": 13,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 26
     },
     {
         "name": "Silph Co 8F",
@@ -2422,7 +2763,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25981,
         "alias": "Silph Co 8",
         "width": 13,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 26
     },
     {
         "name": "Mansion 2",
@@ -2433,7 +2776,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24536,
         "textPtr": 24653,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Mansion 3",
@@ -2444,7 +2789,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25070,
         "textPtr": 25226,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Mansion 4",
@@ -2455,7 +2802,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25529,
         "textPtr": 25654,
         "width": 15,
-        "height": 14
+        "height": 14,
+        "height2x2": 28,
+        "width2x2": 30
     },
     {
         "name": "Safari Zone East",
@@ -2466,7 +2815,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22635,
         "textPtr": 22638,
         "width": 15,
-        "height": 13
+        "height": 13,
+        "height2x2": 26,
+        "width2x2": 30
     },
     {
         "name": "Safari Zone North",
@@ -2477,7 +2828,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22955,
         "textPtr": 22958,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Safari Zone West",
@@ -2488,7 +2841,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25013,
         "textPtr": 25016,
         "width": 15,
-        "height": 13
+        "height": 13,
+        "height2x2": 26,
+        "width2x2": 30
     },
     {
         "name": "Safari Zone Center",
@@ -2499,7 +2854,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23474,
         "textPtr": 23477,
         "width": 15,
-        "height": 13
+        "height": 13,
+        "height2x2": 26,
+        "width2x2": 30
     },
     {
         "name": "Safari Zone Rest House 1",
@@ -2510,7 +2867,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23789,
         "textPtr": 23792,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Safari Zone Secret House",
@@ -2521,7 +2880,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 25367,
         "textPtr": 25370,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Safari Zone Rest House 2",
@@ -2532,7 +2893,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23850,
         "textPtr": 23854,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Safari Zone Rest House 3",
@@ -2543,7 +2906,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 23925,
         "textPtr": 23929,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Safari Zone Rest House 4",
@@ -2554,7 +2919,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24000,
         "textPtr": 24004,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Unknown Dungeon 2",
@@ -2565,7 +2932,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24075,
         "textPtr": 24078,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Unknown Dungeon 3",
@@ -2576,7 +2945,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24304,
         "textPtr": 24329,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Unknown Dungeon 1",
@@ -2587,7 +2958,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19724,
         "textPtr": 19727,
         "width": 15,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 30
     },
     {
         "name": "Name Raters House",
@@ -2599,7 +2972,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 23124,
         "alias": "Name Rater",
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Cerulean House 2",
@@ -2610,14 +2985,18 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 19977,
         "textPtr": 19987,
         "width": 4,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 8
     },
     {
         "name": "Unused Map E7",
         "ind": 231,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Rock Tunnel 2",
@@ -2628,7 +3007,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 24555,
         "textPtr": 24580,
         "width": 20,
-        "height": 18
+        "height": 18,
+        "height2x2": 36,
+        "width2x2": 40
     },
     {
         "name": "Silph Co 9F",
@@ -2640,7 +3021,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 22667,
         "alias": "Silph Co 9",
         "width": 13,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 26
     },
     {
         "name": "Silph Co 10F",
@@ -2652,7 +3035,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 24966,
         "alias": "Silph Co 10",
         "width": 8,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 16
     },
     {
         "name": "Silph Co 11F",
@@ -2664,7 +3049,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25271,
         "alias": "Silph Co 11",
         "width": 9,
-        "height": 9
+        "height": 9,
+        "height2x2": 18,
+        "width2x2": 18
     },
     {
         "name": "Silph Co Elevator",
@@ -2675,21 +3062,27 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 22464,
         "textPtr": 22579,
         "width": 2,
-        "height": 2
+        "height": 2,
+        "height2x2": 4,
+        "width2x2": 4
     },
     {
         "name": "Unused Map ED",
         "ind": 237,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map EE",
         "ind": 238,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Trade Center",
@@ -2700,7 +3093,9 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 32016,
         "textPtr": 32076,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Colosseum",
@@ -2711,35 +3106,45 @@ export const rawMaps: RawMap[] = [
         "scriptPtr": 32125,
         "textPtr": 32128,
         "width": 5,
-        "height": 4
+        "height": 4,
+        "height2x2": 8,
+        "width2x2": 10
     },
     {
         "name": "Unused Map F1",
         "ind": 241,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map F2",
         "ind": 242,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map F3",
         "ind": 243,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Unused Map F4",
         "ind": 244,
         "glitch": true,
         "width": 0,
-        "height": 0
+        "height": 0,
+        "height2x2": 0,
+        "width2x2": 0
     },
     {
         "name": "Loreleis Room",
@@ -2751,7 +3156,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25169,
         "alias": "Lorelei",
         "width": 5,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 10
     },
     {
         "name": "Brunos Room",
@@ -2763,7 +3170,9 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25512,
         "alias": "Bruno",
         "width": 5,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 10
     },
     {
         "name": "Agathas Room",
@@ -2775,60 +3184,13 @@ export const rawMaps: RawMap[] = [
         "textPtr": 25861,
         "alias": "Agatha",
         "width": 5,
-        "height": 6
+        "height": 6,
+        "height2x2": 12,
+        "width2x2": 10
     },
     {
         "name": "Last Map",
         "ind": 255,
         "special": true
     }
-];
-
-for (var i = 0; i < rawMaps.length; i++) {
-
-    // Grab the map entry
-    const rawEntry = rawMaps[i];
-
-    // Pre-calc 2x2 width and height
-    if (rawEntry.height)
-        rawEntry.height2x2 = rawEntry.height * 2;
-
-    if (rawEntry.width)
-        rawEntry.width2x2 = rawEntry.width * 2;
-}
-
-@Injectable({
-    providedIn: 'root'
-})
-export class MapService {
-
-    constructor() {
-
-        // Prepare lots of initialization and other stuff
-        for (var i = 0; i < rawMaps.length; i++) {
-
-            // Grab the map entry
-            const rawEntry = rawMaps[i];
-
-            // Normal stuff, just book-keeping and indexing
-            const ind = rawEntry.ind;
-            const name = rawEntry.name;
-
-            this.nameToInd[name] = rawEntry;
-
-            this.indToName = [];
-            this.indToName[ind] = rawEntry;
-        };
-    }
-
-    // Generated list of Pokemon in same order as above but lookup index by name
-    public nameToInd: {
-        [key: string]: RawMap
-    } = {};
-
-    // Generated list of Pokemon in same order as above but lookup name by index
-    // @ts-ignore - It's clearly defined above, I don't understand what your comaplining about
-    public indToName: RawMap[];
-
-    public rawTypes = rawMaps;
-}
+]

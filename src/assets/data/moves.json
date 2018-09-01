@@ -1,0 +1,849 @@
+[
+    {
+        "name": "Pound",
+        "ind": 1
+    },
+    {
+        "name": "Karate chop",
+        "ind": 2
+    },
+    {
+        "name": "Doubleslap",
+        "ind": 3
+    },
+    {
+        "name": "Comet punch",
+        "ind": 4
+    },
+    {
+        "name": "Mega punch",
+        "ind": 5
+    },
+    {
+        "name": "Pay day",
+        "ind": 6
+    },
+    {
+        "name": "Fire punch",
+        "ind": 7
+    },
+    {
+        "name": "Ice punch",
+        "ind": 8
+    },
+    {
+        "name": "Thunderpunch",
+        "ind": 9
+    },
+    {
+        "name": "Scratch",
+        "ind": 10
+    },
+    {
+        "name": "Vicegrip",
+        "ind": 11
+    },
+    {
+        "name": "Guillotine",
+        "ind": 12
+    },
+    {
+        "name": "Razor wind",
+        "ind": 13
+    },
+    {
+        "name": "Swords dance",
+        "ind": 14
+    },
+    {
+        "name": "Cut",
+        "ind": 15
+    },
+    {
+        "name": "Gust",
+        "ind": 16
+    },
+    {
+        "name": "Wing attack",
+        "ind": 17
+    },
+    {
+        "name": "Whirlwind",
+        "ind": 18
+    },
+    {
+        "name": "Fly",
+        "ind": 19
+    },
+    {
+        "name": "Bind",
+        "ind": 20
+    },
+    {
+        "name": "Slam",
+        "ind": 21
+    },
+    {
+        "name": "Vine whip",
+        "ind": 22
+    },
+    {
+        "name": "Stomp",
+        "ind": 23
+    },
+    {
+        "name": "Double kick",
+        "ind": 24
+    },
+    {
+        "name": "Mega kick",
+        "ind": 25
+    },
+    {
+        "name": "Jump kick",
+        "ind": 26
+    },
+    {
+        "name": "Rolling kick",
+        "ind": 27
+    },
+    {
+        "name": "Sand attack",
+        "ind": 28
+    },
+    {
+        "name": "Headbutt",
+        "ind": 29
+    },
+    {
+        "name": "Horn attack",
+        "ind": 30
+    },
+    {
+        "name": "Fury attack",
+        "ind": 31
+    },
+    {
+        "name": "Horn drill",
+        "ind": 32
+    },
+    {
+        "name": "Tackle",
+        "ind": 33
+    },
+    {
+        "name": "Body slam",
+        "ind": 34
+    },
+    {
+        "name": "Wrap",
+        "ind": 35
+    },
+    {
+        "name": "Take down",
+        "ind": 36
+    },
+    {
+        "name": "Thrash",
+        "ind": 37
+    },
+    {
+        "name": "Double edge",
+        "ind": 38
+    },
+    {
+        "name": "Tail whip",
+        "ind": 39
+    },
+    {
+        "name": "Poison sting",
+        "ind": 40
+    },
+    {
+        "name": "Twineedle",
+        "ind": 41
+    },
+    {
+        "name": "Pin missile",
+        "ind": 42
+    },
+    {
+        "name": "Leer",
+        "ind": 43
+    },
+    {
+        "name": "Bite",
+        "ind": 44
+    },
+    {
+        "name": "Growl",
+        "ind": 45
+    },
+    {
+        "name": "Roar",
+        "ind": 46
+    },
+    {
+        "name": "Sing",
+        "ind": 47
+    },
+    {
+        "name": "Supersonic",
+        "ind": 48
+    },
+    {
+        "name": "Sonicboom",
+        "ind": 49
+    },
+    {
+        "name": "Disable",
+        "ind": 50
+    },
+    {
+        "name": "Acid",
+        "ind": 51
+    },
+    {
+        "name": "Ember",
+        "ind": 52
+    },
+    {
+        "name": "Flamethrower",
+        "ind": 53
+    },
+    {
+        "name": "Mist",
+        "ind": 54
+    },
+    {
+        "name": "Water gun",
+        "ind": 55
+    },
+    {
+        "name": "Hydro pump",
+        "ind": 56
+    },
+    {
+        "name": "Surf",
+        "ind": 57
+    },
+    {
+        "name": "Ice beam",
+        "ind": 58
+    },
+    {
+        "name": "Blizzard",
+        "ind": 59
+    },
+    {
+        "name": "Psybeam",
+        "ind": 60
+    },
+    {
+        "name": "Bubblebeam",
+        "ind": 61
+    },
+    {
+        "name": "Aurora beam",
+        "ind": 62
+    },
+    {
+        "name": "Hyper beam",
+        "ind": 63
+    },
+    {
+        "name": "Peck",
+        "ind": 64
+    },
+    {
+        "name": "Drill peck",
+        "ind": 65
+    },
+    {
+        "name": "Submission",
+        "ind": 66
+    },
+    {
+        "name": "Low kick",
+        "ind": 67
+    },
+    {
+        "name": "Counter",
+        "ind": 68
+    },
+    {
+        "name": "Seismic toss",
+        "ind": 69
+    },
+    {
+        "name": "Strength",
+        "ind": 70
+    },
+    {
+        "name": "Absorb",
+        "ind": 71
+    },
+    {
+        "name": "Mega drain",
+        "ind": 72
+    },
+    {
+        "name": "Leech seed",
+        "ind": 73
+    },
+    {
+        "name": "Growth",
+        "ind": 74
+    },
+    {
+        "name": "Razor leaf",
+        "ind": 75
+    },
+    {
+        "name": "Solarbeam",
+        "ind": 76
+    },
+    {
+        "name": "Poisonpowder",
+        "ind": 77
+    },
+    {
+        "name": "Stun spore",
+        "ind": 78
+    },
+    {
+        "name": "Sleep powder",
+        "ind": 79
+    },
+    {
+        "name": "Petal dance",
+        "ind": 80
+    },
+    {
+        "name": "String shot",
+        "ind": 81
+    },
+    {
+        "name": "Dragon rage",
+        "ind": 82
+    },
+    {
+        "name": "Fire spin",
+        "ind": 83
+    },
+    {
+        "name": "Thundershock",
+        "ind": 84
+    },
+    {
+        "name": "Thunderbolt",
+        "ind": 85
+    },
+    {
+        "name": "Thunder wave",
+        "ind": 86
+    },
+    {
+        "name": "Thunder",
+        "ind": 87
+    },
+    {
+        "name": "Rock throw",
+        "ind": 88
+    },
+    {
+        "name": "Earthquake",
+        "ind": 89
+    },
+    {
+        "name": "Fissure",
+        "ind": 90
+    },
+    {
+        "name": "Dig",
+        "ind": 91
+    },
+    {
+        "name": "Toxic",
+        "ind": 92
+    },
+    {
+        "name": "Confusion",
+        "ind": 93
+    },
+    {
+        "name": "Psychic m",
+        "ind": 94
+    },
+    {
+        "name": "Hypnosis",
+        "ind": 95
+    },
+    {
+        "name": "Meditate",
+        "ind": 96
+    },
+    {
+        "name": "Agility",
+        "ind": 97
+    },
+    {
+        "name": "Quick attack",
+        "ind": 98
+    },
+    {
+        "name": "Rage",
+        "ind": 99
+    },
+    {
+        "name": "Teleport",
+        "ind": 100
+    },
+    {
+        "name": "Night shade",
+        "ind": 101
+    },
+    {
+        "name": "Mimic",
+        "ind": 102
+    },
+    {
+        "name": "Screech",
+        "ind": 103
+    },
+    {
+        "name": "Double team",
+        "ind": 104
+    },
+    {
+        "name": "Recover",
+        "ind": 105
+    },
+    {
+        "name": "Harden",
+        "ind": 106
+    },
+    {
+        "name": "Minimize",
+        "ind": 107
+    },
+    {
+        "name": "Smokescreen",
+        "ind": 108
+    },
+    {
+        "name": "Confuse ray",
+        "ind": 109
+    },
+    {
+        "name": "Withdraw",
+        "ind": 110
+    },
+    {
+        "name": "Defense curl",
+        "ind": 111
+    },
+    {
+        "name": "Barrier",
+        "ind": 112
+    },
+    {
+        "name": "Light screen",
+        "ind": 113
+    },
+    {
+        "name": "Haze",
+        "ind": 114
+    },
+    {
+        "name": "Reflect",
+        "ind": 115
+    },
+    {
+        "name": "Focus energy",
+        "ind": 116
+    },
+    {
+        "name": "Bide",
+        "ind": 117
+    },
+    {
+        "name": "Metronome",
+        "ind": 118
+    },
+    {
+        "name": "Mirror move",
+        "ind": 119
+    },
+    {
+        "name": "Selfdestruct",
+        "ind": 120
+    },
+    {
+        "name": "Egg bomb",
+        "ind": 121
+    },
+    {
+        "name": "Lick",
+        "ind": 122
+    },
+    {
+        "name": "Smog",
+        "ind": 123
+    },
+    {
+        "name": "Sludge",
+        "ind": 124
+    },
+    {
+        "name": "Bone club",
+        "ind": 125
+    },
+    {
+        "name": "Fire blast",
+        "ind": 126
+    },
+    {
+        "name": "Waterfall",
+        "ind": 127
+    },
+    {
+        "name": "Clamp",
+        "ind": 128
+    },
+    {
+        "name": "Swift",
+        "ind": 129
+    },
+    {
+        "name": "Skull bash",
+        "ind": 130
+    },
+    {
+        "name": "Spike cannon",
+        "ind": 131
+    },
+    {
+        "name": "Constrict",
+        "ind": 132
+    },
+    {
+        "name": "Amnesia",
+        "ind": 133
+    },
+    {
+        "name": "Kinesis",
+        "ind": 134
+    },
+    {
+        "name": "Softboiled",
+        "ind": 135
+    },
+    {
+        "name": "Hi jump kick",
+        "ind": 136
+    },
+    {
+        "name": "Glare",
+        "ind": 137
+    },
+    {
+        "name": "Dream eater",
+        "ind": 138
+    },
+    {
+        "name": "Poison gas",
+        "ind": 139
+    },
+    {
+        "name": "Barrage",
+        "ind": 140
+    },
+    {
+        "name": "Leech life",
+        "ind": 141
+    },
+    {
+        "name": "Lovely kiss",
+        "ind": 142
+    },
+    {
+        "name": "Sky attack",
+        "ind": 143
+    },
+    {
+        "name": "Transform",
+        "ind": 144
+    },
+    {
+        "name": "Bubble",
+        "ind": 145
+    },
+    {
+        "name": "Dizzy punch",
+        "ind": 146
+    },
+    {
+        "name": "Spore",
+        "ind": 147
+    },
+    {
+        "name": "Flash",
+        "ind": 148
+    },
+    {
+        "name": "Psywave",
+        "ind": 149
+    },
+    {
+        "name": "Splash",
+        "ind": 150
+    },
+    {
+        "name": "Acid armor",
+        "ind": 151
+    },
+    {
+        "name": "Crabhammer",
+        "ind": 152
+    },
+    {
+        "name": "Explosion",
+        "ind": 153
+    },
+    {
+        "name": "Fury swipes",
+        "ind": 154
+    },
+    {
+        "name": "Bonemerang",
+        "ind": 155
+    },
+    {
+        "name": "Rest",
+        "ind": 156
+    },
+    {
+        "name": "Rock slide",
+        "ind": 157
+    },
+    {
+        "name": "Hyper fang",
+        "ind": 158
+    },
+    {
+        "name": "Sharpen",
+        "ind": 159
+    },
+    {
+        "name": "Conversion",
+        "ind": 160
+    },
+    {
+        "name": "Tri attack",
+        "ind": 161
+    },
+    {
+        "name": "Super fang",
+        "ind": 162
+    },
+    {
+        "name": "Slash",
+        "ind": 163
+    },
+    {
+        "name": "Substitute",
+        "ind": 164,
+        "glitch": true
+    },
+    {
+        "name": "Struggle",
+        "ind": 165,
+        "glitch": true
+    },
+    {
+        "name": "Showpic anim",
+        "ind": 166,
+        "glitch": true
+    },
+    {
+        "name": "Status affected anim",
+        "ind": 167,
+        "glitch": true
+    },
+    {
+        "name": "Anim a8",
+        "ind": 168,
+        "glitch": true
+    },
+    {
+        "name": "Anim a9",
+        "ind": 169,
+        "glitch": true
+    },
+    {
+        "name": "Trade ball drop anim",
+        "ind": 170,
+        "glitch": true
+    },
+    {
+        "name": "Trade ball shake anim",
+        "ind": 171,
+        "glitch": true
+    },
+    {
+        "name": "Trade ball tilt anim",
+        "ind": 172,
+        "glitch": true
+    },
+    {
+        "name": "Trade ball poof anim",
+        "ind": 173,
+        "glitch": true
+    },
+    {
+        "name": "Xstatitem anim",
+        "ind": 174,
+        "glitch": true
+    },
+    {
+        "name": "Anim af",
+        "ind": 175,
+        "glitch": true
+    },
+    {
+        "name": "Anim b0",
+        "ind": 176,
+        "glitch": true
+    },
+    {
+        "name": "Anim b1",
+        "ind": 177,
+        "glitch": true
+    },
+    {
+        "name": "Anim b2",
+        "ind": 178,
+        "glitch": true
+    },
+    {
+        "name": "Anim b3",
+        "ind": 179,
+        "glitch": true
+    },
+    {
+        "name": "Anim b4",
+        "ind": 180,
+        "glitch": true
+    },
+    {
+        "name": "Anim b5",
+        "ind": 181,
+        "glitch": true
+    },
+    {
+        "name": "Anim b6",
+        "ind": 182,
+        "glitch": true
+    },
+    {
+        "name": "Anim b7",
+        "ind": 183,
+        "glitch": true
+    },
+    {
+        "name": "Anim b8",
+        "ind": 184,
+        "glitch": true
+    },
+    {
+        "name": "Anim b9",
+        "ind": 185,
+        "glitch": true
+    },
+    {
+        "name": "Burn psn anim",
+        "ind": 186,
+        "glitch": true
+    },
+    {
+        "name": "Anim bb",
+        "ind": 187,
+        "glitch": true
+    },
+    {
+        "name": "Anim bc",
+        "ind": 188,
+        "glitch": true
+    },
+    {
+        "name": "Slp anim",
+        "ind": 189,
+        "glitch": true
+    },
+    {
+        "name": "Anim be",
+        "ind": 190,
+        "glitch": true
+    },
+    {
+        "name": "Conf anim",
+        "ind": 191,
+        "glitch": true
+    },
+    {
+        "name": "Anim c0",
+        "ind": 192,
+        "glitch": true
+    },
+    {
+        "name": "Toss anim",
+        "ind": 193,
+        "glitch": true
+    },
+    {
+        "name": "Shake anim",
+        "ind": 194,
+        "glitch": true
+    },
+    {
+        "name": "Poof anim",
+        "ind": 195,
+        "glitch": true
+    },
+    {
+        "name": "Blockball anim",
+        "ind": 196,
+        "glitch": true
+    },
+    {
+        "name": "Greattoss anim",
+        "ind": 197,
+        "glitch": true
+    },
+    {
+        "name": "Ultratoss anim",
+        "ind": 198,
+        "glitch": true
+    },
+    {
+        "name": "Anim c7",
+        "ind": 199,
+        "glitch": true
+    },
+    {
+        "name": "Hidepic anim",
+        "ind": 200,
+        "glitch": true
+    },
+    {
+        "name": "Rock anim",
+        "ind": 201,
+        "glitch": true
+    },
+    {
+        "name": "Bait anim",
+        "ind": 202,
+        "glitch": true
+    }
+]

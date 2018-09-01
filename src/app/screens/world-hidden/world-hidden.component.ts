@@ -1,4 +1,4 @@
-import { hiddenItems, hiddenCoins } from './../../data/hidden';
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -27,6 +27,7 @@ export class WorldHiddenComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -34,11 +35,11 @@ export class WorldHiddenComponent implements OnInit {
     }
 
     get items() {
-        return hiddenItems;
+        return this.gd.file("hiddenItems").data;
     }
 
     get coins() {
-        return hiddenCoins;
+        return this.gd.file("hiddenCoins").data;
     }
 
     getItem(index: number): boolean {
@@ -68,7 +69,7 @@ export class WorldHiddenComponent implements OnInit {
     toggleAllItems() {
         const item0 = this.getItem(0);
 
-        const count = hiddenItems.length;
+        const count = this.gd.file("hiddenItems").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setItem(i, !item0);
@@ -78,7 +79,7 @@ export class WorldHiddenComponent implements OnInit {
     toggleAllCoins() {
         const coin0 = this.getCoin(0);
 
-        const count = hiddenCoins.length;
+        const count = this.gd.file("hiddenCoins").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setCoin(i, !coin0);

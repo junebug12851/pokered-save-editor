@@ -1,4 +1,4 @@
-import { townOrder } from './../../data/townOrder';
+import { GameDataService } from './../../data/gameData.service';
 
 /**
    Copyright 2018 June Hanabi
@@ -28,6 +28,7 @@ export class WorldTownsComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -35,7 +36,7 @@ export class WorldTownsComponent implements OnInit {
     }
 
     get towns() {
-        return townOrder;
+        return this.gd.file("fly").data;
     }
 
     getTown(index: number): boolean {
@@ -53,7 +54,7 @@ export class WorldTownsComponent implements OnInit {
     toggleAllTowns() {
         const town0 = this.getTown(0);
 
-        const count = townOrder.length;
+        const count = this.gd.file("fly").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setTown(i, !town0);

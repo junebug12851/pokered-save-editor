@@ -1,4 +1,5 @@
-import { SpriteService } from './../../data/sprite.service';
+import { Sprite } from './../../../assets/data/sprites.d';
+import { GameDataService } from './../../data/gameData.service';
 import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
 // @ts-ignore
 import { OnInit, EventEmitter } from '@angular/core';
@@ -28,11 +29,14 @@ import { Component, Input } from '@angular/core';
 export class CardSpriteComponent implements OnInit {
 
     constructor(
-        public spriteService: SpriteService
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
-
+        const sprites: Sprite[] = this.gd.file("sprites").data;
+        sprites.forEach((el: Sprite) => {
+            this.sprites[el.ind] = el;
+        });
     }
 
     @Input()
@@ -43,7 +47,7 @@ export class CardSpriteComponent implements OnInit {
     public disabled: boolean = false;
 
     public get spriteName() {
-        const data = this.spriteService.indToName[this.entry.pictureID];
+        const data = this.sprites[this.entry.pictureID];
         if (data === null || data === undefined || !(this.entry.pictureID > 0))
             return "";
         else
@@ -92,4 +96,6 @@ export class CardSpriteComponent implements OnInit {
         // @ts-ignore
         return this.entry.missableIndex > -1;
     }
+
+    public sprites: any[] = [];
 }

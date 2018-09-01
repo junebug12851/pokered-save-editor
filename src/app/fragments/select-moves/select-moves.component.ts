@@ -1,4 +1,5 @@
-import { MoveService, RawMove } from './../../data/moves.service';
+import { Move } from './../../../assets/data/moves.d';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 
 /**
@@ -37,7 +38,7 @@ const _ = window.require("lodash");
 export class SelectMovesComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public moveService: MoveService
+        public gd: GameDataService
     ) {
         super();
     }
@@ -46,7 +47,9 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
     public disabled: boolean = false;
 
     get movesList() {
-        let moveListReg = _.filter(this.moveService.rawMoves, (value: RawMove) => {
+        const moves = this.gd.file("moves").data;
+
+        let moveListReg = _.filter(moves, (value: Move) => {
             if (!value.glitch)
                 return true;
 
@@ -55,7 +58,7 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
 
         moveListReg = _.sortBy(moveListReg, ['name']);
 
-        let moveListGlitch = _.filter(this.moveService.rawMoves, (value: RawMove) => {
+        let moveListGlitch = _.filter(moves, (value: Move) => {
             if (value.glitch)
                 return true;
 
@@ -72,8 +75,7 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
         ];
     }
 
-    // @ts-ignore
-    movesTracking(index: number, item: any) {
-        return index; // or item.id
+    movesTracking(index: number) {
+        return index;
     }
 }

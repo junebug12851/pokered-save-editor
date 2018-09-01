@@ -1,4 +1,4 @@
-export const events = [
+[
     {
         "name": "Followed oak into lab",
         "ind": 0,

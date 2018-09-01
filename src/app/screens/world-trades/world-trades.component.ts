@@ -1,4 +1,4 @@
-import { trades } from './../../data/trades';
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -27,6 +27,7 @@ export class WorldTradesComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
@@ -34,7 +35,7 @@ export class WorldTradesComponent implements OnInit {
     }
 
     get trades() {
-        return trades;
+        return this.gd.file("trades").data;
     }
 
     getTrade(index: number): boolean {
@@ -52,7 +53,7 @@ export class WorldTradesComponent implements OnInit {
     toggleAllTrades() {
         const trade0 = this.getTrade(0);
 
-        const count = trades.length;
+        const count = this.gd.file("trades").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setTrade(i, !trade0);

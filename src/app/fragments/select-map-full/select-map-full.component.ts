@@ -1,3 +1,4 @@
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -24,8 +25,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
-
-import { RawMap, rawMaps } from '../../data/map.service';
+import { Map } from '../../../assets/data/maps.d';
 
 const _: any = window.require("lodash");
 
@@ -39,7 +39,9 @@ const _: any = window.require("lodash");
 })
 export class SelectMapFullComponent extends ValueAccessorBase<string> implements OnInit {
 
-    constructor() {
+    constructor(
+        public gd: GameDataService
+    ) {
         super();
     }
 
@@ -57,6 +59,7 @@ export class SelectMapFullComponent extends ValueAccessorBase<string> implements
     public label: string = "Select Map";
 
     get mapList() {
+        const maps: Map[] = this.gd.file("maps").data;
 
         const b = (val: number | any) => {
             return val.toString(16).padStart(2, "0").toUpperCase();
@@ -70,21 +73,24 @@ export class SelectMapFullComponent extends ValueAccessorBase<string> implements
             return val.toString().padStart(2, "0");
         }
 
-        let maps: any = [];
+        let _maps: {
+            name: string,
+            value: string
+        }[] = [];
 
-        rawMaps.forEach((el: RawMap) => {
+        maps.forEach((el: Map) => {
             if (el.glitch === true || el.special === true)
                 return;
 
-            maps.push({
+            _maps.push({
                 name: el.name,
                 value: `${b(el.ind)}_${a(el.height)}_${a(el.width)}_${a(el.height2x2)}_${a(el.width2x2)}_${w(el.dataPtr)}_${w(el.textPtr)}_${w(el.scriptPtr)}`,
             });
         });
 
-        maps = _.sortBy(maps, ['name']);
+        _maps = _.sortBy(_maps, ['name']);
 
-        return maps;
+        return _maps;
     }
 
     trackByFn(index: number) {

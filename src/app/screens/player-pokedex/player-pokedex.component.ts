@@ -1,4 +1,5 @@
-import { PokemonService } from './../../data/pokemon.service';
+import { Pokemon } from './../../../assets/data/pokemon.d';
+import { GameDataService } from './../../data/gameData.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -18,6 +19,9 @@ import { PokemonService } from './../../data/pokemon.service';
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
+// @ts-ignore
+const _ = window.require("lodash");
+
 @Component({
     selector: 'screen-pokedex',
     templateUrl: './player-pokedex.component.pug',
@@ -27,15 +31,21 @@ export class PlayerPokedexComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
-        public pokemonService: PokemonService
+        public gd: GameDataService
     ) { }
 
     ngOnInit() {
+        this.gd.file("pokemon").data.forEach((el: Pokemon) => {
+            // @ts-ignore
+            if (!isNaN(el.pokedex))
+                this.pokedexPokemon.push(el);
+        });
 
+        this.pokedexPokemon = _.sortBy(this.pokedexPokemon, ["pokedex"]);
     }
 
     get entries() {
-        return this.pokemonService.lookupPokedex;
+        return this.pokedexPokemon;
     }
 
     getSeen(index: number): boolean {
@@ -65,7 +75,7 @@ export class PlayerPokedexComponent implements OnInit {
     toggleAllSeen() {
         const item0 = this.getSeen(0);
 
-        const count = this.fileService.fileDataExpanded.player.pokedexSeen.length;
+        const count = this.gd.file("pokemon").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setSeen(i, !item0);
@@ -75,10 +85,12 @@ export class PlayerPokedexComponent implements OnInit {
     toggleAllOwn() {
         const item0 = this.getOwn(0);
 
-        const count = this.fileService.fileDataExpanded.player.pokedexOwned.length;
+        const count = this.gd.file("pokemon").data.length;
 
         for (let i = 0; i < count; i++) {
             this.setOwn(i, !item0);
         }
     }
+
+    public pokedexPokemon: Pokemon[] = [];
 }

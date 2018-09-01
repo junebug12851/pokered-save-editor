@@ -1,4 +1,4 @@
-import { MissableService } from './../../data/missable.service';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -36,7 +36,7 @@ const _ = window.require("lodash");
 export class SelectMissableComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public missableService: MissableService
+        public gd: GameDataService
     ) {
         super();
     }
@@ -48,7 +48,7 @@ export class SelectMissableComponent extends ValueAccessorBase<string> {
     public noneSelectable: boolean = false;
 
     get missableList() {
-        const missableList = this.missableService.namePairs;
+        const missableList = this.gd.file("missables").data;
         return _.sortBy(missableList, ["name"]);
     }
 

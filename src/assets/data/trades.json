@@ -1,0 +1,62 @@
+[
+    {
+        "give": "Nidorino",
+        "get": "Nidorina",
+        "textId": 0,
+        "nickname": "TERRY"
+    },
+    {
+        "give": "Abra",
+        "get": "Mr.Mime",
+        "textId": 0,
+        "nickname": "MARCEL"
+    },
+    {
+        "give": "Butterfree",
+        "get": "Beedrill",
+        "textId": 2,
+        "nickname": "CHIKUCHIKU"
+    },
+    {
+        "give": "Ponyta",
+        "get": "Seel",
+        "textId": 0,
+        "nickname": "SAILOR"
+    },
+    {
+        "give": "Spearow",
+        "get": "Farfetchd",
+        "textId": 2,
+        "nickname": "DUX"
+    },
+    {
+        "give": "Slowbro",
+        "get": "Lickitung",
+        "textId": 0,
+        "nickname": "MARC"
+    },
+    {
+        "give": "Poliwhirl",
+        "get": "Jynx",
+        "textId": 1,
+        "nickname": "LOLA"
+    },
+    {
+        "give": "Raichu",
+        "get": "Electrode",
+        "textId": 1,
+        "nickname": "DORIS"
+    },
+    {
+        "give": "Venonat",
+        "get": "Tangela",
+        "textId": 2,
+        "nickname": "CRINKLES"
+    },
+    {
+        "give": "Nidoran M",
+        "get": "Nidoran F",
+        "textId": 2,
+        "nickname": "SPOT"
+    }
+]

@@ -1,4 +1,5 @@
-import { PokemonService, RawEntry } from './../../data/pokemon.service';
+import { Pokemon } from './../../../assets/data/pokemon.d';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -36,7 +37,7 @@ const _ = window.require("lodash");
 export class SelectSpeciesComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public pokemonService: PokemonService
+        public gd: GameDataService
     ) {
         super();
     }
@@ -51,9 +52,18 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
     public speciesChange: EventEmitter<number> = new EventEmitter();
 
     get speciesList() {
-        let speciesListPokedex = this.pokemonService.lookupPokedex;
+        const pokemon: Pokemon = this.gd.file("pokemon").data;
 
-        let speciesListGlitch = _.filter(this.pokemonService.rawEntries, (value: RawEntry) => {
+        let speciesListPokedex: Pokemon[] = _.filter(pokemon, (value: Pokemon) => {
+            if (value.pokedex !== undefined)
+                return true;
+
+            return false;
+        });
+
+        speciesListPokedex = _.sortBy(speciesListPokedex, ['pokedex']);
+
+        let speciesListGlitch = _.filter(pokemon, (value: Pokemon) => {
             if (value.glitch)
                 return true;
 

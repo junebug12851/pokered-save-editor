@@ -1,3 +1,5 @@
+import { Item } from './../../../assets/data/items.d';
+import { GameDataService } from './../../data/gameData.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -20,7 +22,6 @@ declare var window: {
 }
 
 import { Component, OnInit, Input } from '@angular/core';
-import { itemEntries, ItemEntry } from '../../data/item.service';
 
 import {
     NG_VALUE_ACCESSOR,
@@ -38,7 +39,9 @@ const _: any = window.require("lodash");
 })
 export class SelectItemComponent extends ValueAccessorBase<string> implements OnInit {
 
-    constructor() {
+    constructor(
+        public gd: GameDataService
+    ) {
         super();
     }
 
@@ -56,7 +59,9 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
     public noneSelectable: boolean = false;
 
     get itemList() {
-        let itemListCommon = _.filter(itemEntries, (value: ItemEntry) => {
+        const itemEntries: Item[] = this.gd.file("items").data;
+
+        let itemListCommon = _.filter(itemEntries, (value: Item) => {
             if (value.normal && value.typical)
                 return true;
 
@@ -65,7 +70,7 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
 
         itemListCommon = _.sortBy(itemListCommon, ['name']);
 
-        let itemListSpecial = _.filter(itemEntries, (value: ItemEntry) => {
+        let itemListSpecial = _.filter(itemEntries, (value: Item) => {
             if (value.normal && !value.typical)
                 return true;
 
@@ -74,7 +79,7 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
 
         itemListSpecial = _.sortBy(itemListSpecial, ['name']);
 
-        let itemListGlitch = _.filter(itemEntries, (value: ItemEntry) => {
+        let itemListGlitch = _.filter(itemEntries, (value: Item) => {
             if (!value.normal)
                 return true;
 
@@ -93,8 +98,7 @@ export class SelectItemComponent extends ValueAccessorBase<string> implements On
         ];
     }
 
-    // @ts-ignore
-    optionsTracking(index: number, item: any) {
-        return index; // or item.id
+    optionsTracking(index: number) {
+        return index;
     }
 }

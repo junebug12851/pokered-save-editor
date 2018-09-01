@@ -1,0 +1,425 @@
+[
+    {
+        "name": "Youngster",
+        "ind": 1
+    },
+    {
+        "name": "Bug Catcher",
+        "ind": 2
+    },
+    {
+        "name": "Lass",
+        "ind": 3
+    },
+    {
+        "name": "Sailor",
+        "ind": 4
+    },
+    {
+        "name": "Jr. Trainer M",
+        "ind": 5
+    },
+    {
+        "name": "Jr Trainer F",
+        "ind": 6
+    },
+    {
+        "name": "Pokemaniac",
+        "ind": 7
+    },
+    {
+        "name": "Super Nerd",
+        "ind": 8
+    },
+    {
+        "name": "Hiker",
+        "ind": 9
+    },
+    {
+        "name": "Biker",
+        "ind": 10
+    },
+    {
+        "name": "Burglar",
+        "ind": 11
+    },
+    {
+        "name": "Engineer",
+        "ind": 12
+    },
+    {
+        "name": "Juggler X",
+        "ind": 13
+    },
+    {
+        "name": "Fisher",
+        "ind": 14
+    },
+    {
+        "name": "Swimmer",
+        "ind": 15
+    },
+    {
+        "name": "Cue_ball",
+        "ind": 16
+    },
+    {
+        "name": "Gambler",
+        "ind": 17
+    },
+    {
+        "name": "Beauty",
+        "ind": 18
+    },
+    {
+        "name": "Psychic Trainer",
+        "ind": 19
+    },
+    {
+        "name": "Rocker",
+        "ind": 20
+    },
+    {
+        "name": "Juggler",
+        "ind": 21
+    },
+    {
+        "name": "Tamer",
+        "ind": 22
+    },
+    {
+        "name": "Bird Keeper",
+        "ind": 23
+    },
+    {
+        "name": "Blackbelt",
+        "ind": 24
+    },
+    {
+        "name": "Rival 1",
+        "ind": 25
+    },
+    {
+        "name": "Prof Oak",
+        "ind": 26
+    },
+    {
+        "name": "Chief",
+        "ind": 27
+    },
+    {
+        "name": "Scientist",
+        "ind": 28
+    },
+    {
+        "name": "Giovanni",
+        "ind": 29
+    },
+    {
+        "name": "Rocket",
+        "ind": 30
+    },
+    {
+        "name": "Cooltrainer M",
+        "ind": 31
+    },
+    {
+        "name": "Cooltrainer F",
+        "ind": 32
+    },
+    {
+        "name": "Bruno",
+        "ind": 33
+    },
+    {
+        "name": "Brock",
+        "ind": 34
+    },
+    {
+        "name": "Misty",
+        "ind": 35
+    },
+    {
+        "name": "Lt Surge",
+        "ind": 36
+    },
+    {
+        "name": "Erika",
+        "ind": 37
+    },
+    {
+        "name": "Koga",
+        "ind": 38
+    },
+    {
+        "name": "Blaine",
+        "ind": 39
+    },
+    {
+        "name": "Sabrina",
+        "ind": 40
+    },
+    {
+        "name": "Gentleman",
+        "ind": 41
+    },
+    {
+        "name": "Rival 2",
+        "ind": 42
+    },
+    {
+        "name": "Rival 3",
+        "ind": 43
+    },
+    {
+        "name": "Lorelei",
+        "ind": 44
+    },
+    {
+        "name": "Channeler",
+        "ind": 45
+    },
+    {
+        "name": "Agatha",
+        "ind": 46
+    },
+    {
+        "name": "Lance",
+        "ind": 47
+    },
+    {
+        "name": "Youngster",
+        "ind": 201,
+        "opp": true
+    },
+    {
+        "name": "Bug Catcher",
+        "ind": 202,
+        "opp": true
+    },
+    {
+        "name": "Lass",
+        "ind": 203,
+        "opp": true
+    },
+    {
+        "name": "Sailor",
+        "ind": 204,
+        "opp": true
+    },
+    {
+        "name": "Jr. Trainer M",
+        "ind": 205,
+        "opp": true
+    },
+    {
+        "name": "Jr Trainer F",
+        "ind": 206,
+        "opp": true
+    },
+    {
+        "name": "Pokemaniac",
+        "ind": 207,
+        "opp": true
+    },
+    {
+        "name": "Super Nerd",
+        "ind": 208,
+        "opp": true
+    },
+    {
+        "name": "Hiker",
+        "ind": 209,
+        "opp": true
+    },
+    {
+        "name": "Biker",
+        "ind": 210,
+        "opp": true
+    },
+    {
+        "name": "Burglar",
+        "ind": 211,
+        "opp": true
+    },
+    {
+        "name": "Engineer",
+        "ind": 212,
+        "opp": true
+    },
+    {
+        "name": "Juggler X",
+        "ind": 213,
+        "opp": true
+    },
+    {
+        "name": "Fisher",
+        "ind": 214,
+        "opp": true
+    },
+    {
+        "name": "Swimmer",
+        "ind": 215,
+        "opp": true
+    },
+    {
+        "name": "Cue_ball",
+        "ind": 216,
+        "opp": true
+    },
+    {
+        "name": "Gambler",
+        "ind": 217,
+        "opp": true
+    },
+    {
+        "name": "Beauty",
+        "ind": 218,
+        "opp": true
+    },
+    {
+        "name": "Psychic Trainer",
+        "ind": 219,
+        "opp": true
+    },
+    {
+        "name": "Rocker",
+        "ind": 220,
+        "opp": true
+    },
+    {
+        "name": "Juggler",
+        "ind": 221,
+        "opp": true
+    },
+    {
+        "name": "Tamer",
+        "ind": 222,
+        "opp": true
+    },
+    {
+        "name": "Bird Keeper",
+        "ind": 223,
+        "opp": true
+    },
+    {
+        "name": "Blackbelt",
+        "ind": 224,
+        "opp": true
+    },
+    {
+        "name": "Rival 1",
+        "ind": 225,
+        "opp": true
+    },
+    {
+        "name": "Prof Oak",
+        "ind": 226,
+        "opp": true
+    },
+    {
+        "name": "Chief",
+        "ind": 227,
+        "opp": true
+    },
+    {
+        "name": "Scientist",
+        "ind": 228,
+        "opp": true
+    },
+    {
+        "name": "Giovanni",
+        "ind": 229,
+        "opp": true
+    },
+    {
+        "name": "Rocket",
+        "ind": 230,
+        "opp": true
+    },
+    {
+        "name": "Cooltrainer M",
+        "ind": 231,
+        "opp": true
+    },
+    {
+        "name": "Cooltrainer F",
+        "ind": 232,
+        "opp": true
+    },
+    {
+        "name": "Bruno",
+        "ind": 233,
+        "opp": true
+    },
+    {
+        "name": "Brock",
+        "ind": 234,
+        "opp": true
+    },
+    {
+        "name": "Misty",
+        "ind": 235,
+        "opp": true
+    },
+    {
+        "name": "Lt Surge",
+        "ind": 236,
+        "opp": true
+    },
+    {
+        "name": "Erika",
+        "ind": 237,
+        "opp": true
+    },
+    {
+        "name": "Koga",
+        "ind": 238,
+        "opp": true
+    },
+    {
+        "name": "Blaine",
+        "ind": 239,
+        "opp": true
+    },
+    {
+        "name": "Sabrina",
+        "ind": 240,
+        "opp": true
+    },
+    {
+        "name": "Gentleman",
+        "ind": 241,
+        "opp": true
+    },
+    {
+        "name": "Rival 2",
+        "ind": 242,
+        "opp": true
+    },
+    {
+        "name": "Rival 3",
+        "ind": 243,
+        "opp": true
+    },
+    {
+        "name": "Lorelei",
+        "ind": 244,
+        "opp": true
+    },
+    {
+        "name": "Channeler",
+        "ind": 245,
+        "opp": true
+    },
+    {
+        "name": "Agatha",
+        "ind": 246,
+        "opp": true
+    },
+    {
+        "name": "Lance",
+        "ind": 247,
+        "opp": true
+    }
+]
