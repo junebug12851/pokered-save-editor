@@ -45,7 +45,10 @@ module.exports = class AppMenu {
 
             if (obj.trigger !== undefined) {
                 obj.click = () => {
-                    this.app.emit(`menu-${obj.trigger}`, obj.triggerData);
+                    if (Array.isArray(obj.triggerData))
+                        this.app.emit(`menu-${obj.trigger}`, ...obj.triggerData);
+                    else
+                        this.app.emit(`menu-${obj.trigger}`, obj.triggerData);
                 }
             }
 
