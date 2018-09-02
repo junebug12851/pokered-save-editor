@@ -37,6 +37,11 @@ module.exports = class Window {
         this.win.webContents.toggleDevTools();
     }
 
+    reOpen() {
+        if (this.win.isMinimized()) this.win.restore();
+        this.win.focus();
+    }
+
     onClosed() {
         this.win = null;
     }

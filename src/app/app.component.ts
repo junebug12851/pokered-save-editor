@@ -1,6 +1,4 @@
 import { OnInit } from '@angular/core';
-import "./native/app";
-import "./native/menu.js";
 
 /**
    Copyright 2018 June Hanabi
