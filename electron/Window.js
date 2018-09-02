@@ -31,6 +31,7 @@ module.exports = class Window {
         // Hook into events
         win.on('closed', this.onClosed.bind(this));
         win.once('ready-to-show', this.onReadyToShow.bind(this));
+        this.app.on('ipcTo', this.onIpcTo.bind(this));
     }
 
     toggleDevTools() {
@@ -40,6 +41,10 @@ module.exports = class Window {
     reOpen() {
         if (this.win.isMinimized()) this.win.restore();
         this.win.focus();
+    }
+
+    onIpcTo(event, ...args) {
+        this.win.webContents.send(event, ...args);
     }
 
     onClosed() {

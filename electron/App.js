@@ -1,9 +1,10 @@
-const { app } = require('electron');
+const { app, ipcMain } = require('electron');
 const path = require("path");
 const Window = require("./Window");
 const AppMenu = require("./AppMenu");
 const Store = require('electron-store');
 const EventEmitter = require('events');
+const SaveFile = require('./SaveFile');
 
 /**
  * App Singleton (Wrapper around electron app singleton var)
@@ -34,6 +35,7 @@ module.exports = class App extends EventEmitter {
             process.chdir(path.join(__dirname, '../dist/pokered-save-editor'));
 
         this.store = new Store();
+        this.saveFile = new SaveFile(this);
 
         // App Icon
         this.icon = 'assets/icons/512x512.png';
@@ -44,6 +46,12 @@ module.exports = class App extends EventEmitter {
         // App events to hook into for wrapper
         app.on('ready', this.createWindow.bind(this));
         app.on('window-all-closed', this.quit.bind(this));
+
+        ipcMain.on('ipcFrom', this.onIpcFrom.bind(this));
+    }
+
+    onIpcFrom(event, ...args) {
+        this.emit(`ipcFrom-${event}`, ...args);
     }
 
     onSecondInstance(argv, cwd) {

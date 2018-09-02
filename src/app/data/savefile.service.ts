@@ -25,7 +25,6 @@ import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 declare var window: {
     saveFile: SaveFileService
     require: any
-    electronStore: any
 }
 
 declare var Buffer: any;
@@ -34,39 +33,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { TextService } from "./text.service";
 import { writeBack } from './savefile-expanded/writeBack';
 
-// @ts-ignore
-const { app, Menu, MenuItem, BrowserWindow } = window.require('electron').remote;
-// @ts-ignore
-const remote = window.require('electron').remote;
-const curWindow = remote.getCurrentWindow();
-
-const BluePromise: any = window.require("bluebird");
-const fs: any = window.require("fs");
-const electron: any = window.require("electron").remote;
-const { dialog } = electron;
-const fs2 = BluePromise.promisifyAll(fs);
-
-let store = window.electronStore;
-if (store === undefined) {
-    const Store = window.require('electron-store');
-    store = window.electronStore = new Store();
-}
-
-const _ = window.require("lodash");
-
-// Adds a file to the list of recent documents which is persistent
-// Only 10 unique non-duplicate files are kept meaning each entry will be
-// a different file, the samefile will remain in the same slot
-// They are added to the top, oldest at the bottom
-// They are accessible via CommandOrControl+Shift+# <0-9>
-function addRecentDocument(path: string) {
-    let recentDocs: any[] = store.get('recentDocs', []);
-    recentDocs.unshift(path);
-    recentDocs = _.uniq(recentDocs);
-    if (recentDocs.length > 10)
-        recentDocs.length = 10;
-    store.set('recentDocs', recentDocs);
-}
+const { ipcRenderer } = window.require('electron');
 
 @Injectable({
     providedIn: 'root'
@@ -76,19 +43,33 @@ export class SaveFileService {
     constructor(public saveText: TextService,
         public ng: NgZone) {
         this.fileDataExpanded = new SaveFileExpanded(this);
-
         window.saveFile = this;
 
-        curWindow.setTitle(`Pokered Save Editor - New File`);
-
-        // @ts-ignore
-        curWindow.on('open-file', (...args) => {
-            console.log(args);
-        })
+        ipcRenderer.on("dataChange", this.onDataChange.bind(this));
+        ipcRenderer.on("dataUpdate", this.onDataUpdate.bind(this));
     }
 
     public get iterator(): SaveFileIterator {
         return new SaveFileIterator(this);
+    }
+
+    public onDataChange(data: Uint8Array) {
+        this.ng.run<any>(async () => {
+            this.fileData = data;
+            this.fileDataExpanded = new SaveFileExpanded(this);
+        });
+    }
+
+    public onDataUpdate() {
+        this.ng.run<any>(async () => {
+            // Write values back from the expanded file to this file
+            writeBack(this);
+
+            // Recalculate all checksums
+            this.recalcChecksums();
+
+            ipcRenderer.send("ipcFrom", "dataUpdate", this.fileData, true);
+        });
     }
 
     /*
@@ -334,188 +315,6 @@ export class SaveFileService {
         // Bank 3 Checksum
         this.fileData[0x7A4C] = this.getChecksum(0x7A4D, 0x7A53);
     }
-
-    // Handles Open File Dialog
-    // We want this to use es6 async/await and since it never throws an error
-    // we can't use Bluebird so we need to promisfy it manually
-    protected openOpenFileDialog(title: string): Promise<string[]> {
-        return new Promise((resolve) => {
-            dialog.showOpenDialog({
-                title,
-                buttonLabel: "Open",
-                filters: [
-                    { name: 'SAV Files', extensions: ['sav'] },
-                    { name: 'All Files', extensions: ['*'] },
-                ],
-                properties: [
-                    "openFile",
-                    "treatPackageAsDirectory",
-                ],
-            }, (files: string[]) => {
-                resolve(files);
-            });
-        });
-    }
-
-    // Handles Save File Dialog
-    // We want this to use es6 async/await and since it never throws an error
-    // we can't use Bluebird so we need to promisfy it manually
-    protected openSaveFileDialog(title: string): Promise<string> {
-        return new Promise((resolve) => {
-            dialog.showSaveDialog({
-                title,
-                buttonLabel: "Save",
-                filters: [
-                    { name: 'SAV Files', extensions: ['sav'] },
-                    { name: 'All Files', extensions: ['*'] },
-                ],
-            }, (file: string) => {
-                resolve(file);
-            });
-        });
-    }
-
-    // Handles loading file into memory
-    protected async readSaveFile(filePath: string) {
-        // Read file
-        const data = await fs2.readFileAsync(filePath);
-
-        // Update file path
-        this.filePath = filePath;
-
-        // Save file data
-        this.fileData = data;
-
-        // Expand file data
-        this.fileDataExpanded = new SaveFileExpanded(this);
-
-        // Add to OS recent docs
-        addRecentDocument(filePath);
-        //app.addRecentDocument(filePath);
-
-        // Add to window title
-        curWindow.setTitle(`Pokered Save Editor - ${filePath}`);
-    }
-
-    public async externalReadSaveFile(filePath: string) {
-        await this.ng.run<any>(async () => {
-            await this.readSaveFile(filePath);
-        });
-    }
-
-    // Write Buffer to file
-    protected async writeSaveFile(_filePath: string = this.filePath) {
-        // Write values back from the expanded file to this file
-        writeBack(this);
-
-        // Recalculate all checksums
-        this.recalcChecksums();
-
-        // Save
-        await fs2.writeFileAsync(_filePath, this.fileData);
-    }
-
-    public clearRecentDocs() {
-        store.set('recentDocs', []);
-    }
-
-    // Initiates an open file dialog to open save file
-    public async openFile() {
-        await this.ng.run<any>(async () => {
-            const fileNames = await this.openOpenFileDialog("Open Save File");
-
-            if (fileNames === undefined) {
-                return;
-            }
-
-            const filePath = fileNames[0];
-            await this.readSaveFile(filePath);
-        });
-    }
-
-    // Reloads file from disk erasing unsaved changes, if no open file is
-    // present just resets buffer
-    public async reOpenFile() {
-        await this.ng.run<any>(async () => {
-            // If theres no open file then reload an empty array
-            if (this.filePath === "") {
-                this.fileData = new Uint8Array(0x8000);
-                this.fileDataExpanded = new SaveFileExpanded(this);
-                return;
-            }
-
-            await this.readSaveFile(this.filePath);
-        });
-    }
-
-    // Closes file in memory and erases buffer
-    public closeFile() {
-        this.ng.run<any>(() => {
-            this.filePath = "";
-            this.fileData = new Uint8Array(0x8000);
-            this.fileDataExpanded = new SaveFileExpanded(this);
-            curWindow.setTitle(`Pokered Save Editor - New File`);
-        });
-    }
-
-    // Save file
-    public async saveFile() {
-        await this.ng.run<any>(async () => {
-            if (this.filePath === "") {
-                await this.saveAsFile();
-                return;
-            }
-
-            await this.writeSaveFile();
-        });
-    }
-
-    // Save file as...
-    public async saveAsFile() {
-        await this.ng.run<any>(async () => {
-            const fileName: string = await this.openSaveFileDialog("Save File As...");
-
-            if (fileName === undefined) {
-                return;
-            }
-
-            this.filePath = fileName;
-            await this.saveFile();
-            addRecentDocument(fileName);
-            //app.addRecentDocument(fileName);
-            curWindow.setTitle(`Pokered Save Editor - ${fileName}`);
-        });
-    }
-
-    // Save copy of file
-    public async saveAsCopyFile() {
-        await this.ng.run<any>(async () => {
-            const fileName = await this.openSaveFileDialog("Save Copy As...");
-
-            if (fileName === undefined) {
-                return;
-            }
-
-            await this.writeSaveFile(fileName);
-        });
-    }
-
-    // This erases the raw internal data completely leaving the file all zeroes
-    // Normally the expanded copy will overwrite only the used bytes and leave
-    // everything else as-is however with this method the expanded copy will
-    // still do the same but will be writing back to a clean slate thus blasting
-    // away all unused values
-    public wipeUnusedSpace(val = 0x00) {
-        this.ng.run<any>(() => {
-            // We fill the array from start to end with a fill value, default 0x00
-            // We do this because we don't want to change the array instance only
-            // the array contents
-            this.fileData.fill(val);
-        });
-    }
-
-    // Current file path
-    public filePath: string = "";
 
     // Buffered file data
     public fileData: Uint8Array = new Uint8Array(0x8000);

@@ -1,6 +1,6 @@
 [
     {
-        "label": "<appName>",
+        "label": "Pokered Save Editor",
         "platform": "darwin",
         "submenu": [
             {
@@ -56,7 +56,7 @@
                 "submenu": [
                     {
                         "label": "Clear List",
-                        "trigger": "clearRecent",
+                        "trigger": "clearRecentDocs",
                         "accelerator": "CommandOrControl+Shift+-"
                     },
                     {
