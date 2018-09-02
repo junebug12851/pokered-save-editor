@@ -1,0 +1,167 @@
+[
+    {
+        "label": "<appName>",
+        "platform": "darwin",
+        "submenu": [
+            {
+                "role": "about"
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "role": "services",
+                "submenu": []
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "role": "hide"
+            },
+            {
+                "role": "hideothers"
+            },
+            {
+                "role": "unhide"
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "role": "quit"
+            }
+        ]
+    },
+    {
+        "label": "File",
+        "submenu": [
+            {
+                "label": "New",
+                "trigger": "new",
+                "accelerator": "CommandOrControl+N"
+            },
+            {
+                "label": "Open",
+                "trigger": "open",
+                "accelerator": "CommandOrControl+O"
+            },
+            {
+                "label": "Re-open",
+                "trigger": "reopen",
+                "accelerator": "CommandOrControl+Shift+O"
+            },
+            {
+                "label": "Recent Files",
+                "submenu": [
+                    {
+                        "label": "Clear List",
+                        "trigger": "clearRecent",
+                        "accelerator": "CommandOrControl+Shift+-"
+                    },
+                    {
+                        "placeholder": "recentList"
+                    }
+                ]
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "label": "Save",
+                "trigger": "save",
+                "accelerator": "CommandOrControl+S"
+            },
+            {
+                "label": "Save As...",
+                "trigger": "saveAs",
+                "accelerator": "CommandOrControl+Shift+S"
+            },
+            {
+                "label": "Save Copy As...",
+                "trigger": "saveAsCopy",
+                "accelerator": "CommandOrControl+Alt+S"
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "label": "Wipe Unused Space",
+                "trigger": "wipe",
+                "accelerator": "CommandOrControl+Shift+W"
+            },
+            {
+                "type": "separator",
+                "notPlatform": "darwin"
+            },
+            {
+                "label": "Exit",
+                "trigger": "exit",
+                "accelerator": "Alt+F4",
+                "notPlatform": "darwin"
+            }
+        ]
+    },
+    {
+        "role": "editMenu"
+    },
+    {
+        "label": "View",
+        "submenu": [
+            {
+                "role": "reload",
+                "env": "dev"
+            },
+            {
+                "role": "forcereload",
+                "env": "dev"
+            },
+            {
+                "role": "toggledevtools",
+                "env": "dev"
+            },
+            {
+                "type": "separator",
+                "env": "dev"
+            },
+            {
+                "role": "resetzoom"
+            },
+            {
+                "role": "zoomin"
+            },
+            {
+                "role": "zoomout"
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "role": "togglefullscreen"
+            }
+        ]
+    },
+    {
+        "label": "Keyboards",
+        "submenu": [
+            {
+                "label": "Basic",
+                "trigger": "keyboardBasic",
+                "accelerator": "CommandOrControl+Alt+B"
+            },
+            {
+                "label": "Full",
+                "trigger": "keyboardFull",
+                "accelerator": "CommandOrControl+Alt+F"
+            },
+            {
+                "label": "Picture",
+                "trigger": "keyboardPic",
+                "accelerator": "CommandOrControl+Alt+P"
+            }
+        ]
+    },
+    {
+        "role": "windowMenu"
+    }
+]

@@ -1,12 +1,21 @@
 const { app } = require('electron');
 const path = require("path");
 const Window = require("./Window");
+const AppMenu = require("./AppMenu");
+const Store = require('electron-store');
+const EventEmitter = require('events');
 
 /**
  * App Singleton (Wrapper around electron app singleton var)
  */
-module.exports = class App {
+module.exports = class App extends EventEmitter {
     constructor() {
+        super();
+
+        // Make Single Instance and ensure single instance
+        if (app.makeSingleInstance(this.onSecondInstance.bind(this)))
+            this.quit();
+
         // Electron app var
         this.app = app;
 
@@ -24,19 +33,30 @@ module.exports = class App {
         else
             process.chdir(path.join(__dirname, '../dist/pokered-save-editor'));
 
+        this.store = new Store();
+
         // App Icon
         this.icon = 'assets/icons/512x512.png';
+
+        // Set Name
+        app.setName("Pokered Save Editor");
 
         // App events to hook into for wrapper
         app.on('ready', this.createWindow.bind(this));
         app.on('window-all-closed', this.quit.bind(this));
     }
 
+    onSecondInstance(argv, cwd) {
+        if (this.mainWindow)
+            this.mainWindow.reOpen();
+    }
+
     createWindow() {
+        this.menu = new AppMenu(this);
         this.mainWindow = new Window(this);
     }
 
     quit() {
-        this.app.quit();
+        app.quit();
     }
 }
