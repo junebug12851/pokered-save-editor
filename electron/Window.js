@@ -52,7 +52,7 @@ module.exports = class Window {
         // Jump in on certain events
         if (event === "pathChange" && args[0] !== "")
             this.win.setTitle(`${appName} - ${args[0]}`);
-        else
+        else if (event === "pathChange")
             this.win.setTitle(`${appName} - New File`);
 
         this.win.webContents.send(event, ...args);

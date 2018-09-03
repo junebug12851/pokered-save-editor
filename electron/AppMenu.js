@@ -1,5 +1,5 @@
 const { Menu } = require('electron');
-const menuStructure = require("./menu.json");
+const menuStructure = require("./data/menu.json");
 const _ = require("lodash");
 
 module.exports = class AppMenu {
