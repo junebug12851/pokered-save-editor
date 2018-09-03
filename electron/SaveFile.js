@@ -1,13 +1,11 @@
-import { thisExpression } from "babel-types";
-
 const BluePromise = require("bluebird");
 const fs = require("fs");
 const electron = require("electron");
 const { dialog } = electron;
 const fs2 = BluePromise.promisifyAll(fs);
-const _ = window.require("lodash");
+const _ = require("lodash");
 
-export class SaveFile {
+module.exports = class SaveFile {
     constructor(app) {
         this.app = app;
 
@@ -25,20 +23,19 @@ export class SaveFile {
         this.app.on("menu-wipe", this.wipeUnusedSpace.bind(this));
 
         this.app.on("ipcFrom-dataUpdate", this.onDataChange.bind(this));
+
+        this.app.on("window-ready", this.onWindowReady.bind(this));
+    }
+
+    onWindowReady() {
+        this.onPathChange(this.filePath);
     }
 
     onPathChange(path = "") {
-        let _path = path;
-
-        if (path === "")
-            _path = "New File";
-        else
+        if (path !== "")
             this.addRecentDocument(path);
 
-        const appName = this.app.app.getName();
-        this.app.mainWindow.win.setTitle(`${appName} - ${_path}`);
         this.filePath = path;
-
         this.app.emit("ipcTo", "pathChange", path);
     }
 
