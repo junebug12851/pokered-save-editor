@@ -4,12 +4,17 @@ os: osx
 language: node_js
 node_js: node
 
-# Track only the master branch
+# Track only a few branches
+# Master Branch which holds release-level code
+# Test branch which holds code in testing (alpha level changes)
+# Next branch which holds code awaiting release (beta level changes)
 # and tags that begin with a v and have one or more numbers seperated by periods
 # ex: v1 v1.0 v1.0.0 v1.0.0.0
 branches:
   only:
     - master
+    - test
+    - next
     - /^v(?:\d+\.?){1,}$/
 
 # Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
