@@ -14,6 +14,7 @@ module.exports = class SaveFile {
         this.onDataChange();
 
         this.app.on("menu-clearRecentDocs", this.clearRecentDocs.bind(this));
+        this.app.on("menu-openRecentDocs", this.openRecentDocs.bind(this));
         this.app.on("menu-open", this.openFile.bind(this));
         this.app.on("menu-reopen", this.reOpenFile.bind(this));
         this.app.on("menu-new", this.closeFile.bind(this));
@@ -39,11 +40,11 @@ module.exports = class SaveFile {
         this.app.emit("ipcTo", "pathChange", path);
     }
 
-    onDataChange(data = new Uint8Array(0x8000), fromRender = false) {
+    onDataChange(data = new Uint8Array(0x8000), fromRender = false, internalOnly = false) {
         this.fileData = data;
 
         if (!fromRender)
-            this.app.emit("ipcTo", "dataChange", data);
+            this.app.emit("ipcTo", "dataChange", data, internalOnly);
 
         if (fromRender && this.pendingSave)
             this._writeSaveFile();
@@ -60,7 +61,12 @@ module.exports = class SaveFile {
         recentDocs = _.uniq(recentDocs);
         if (recentDocs.length > 10)
             recentDocs.length = 10;
-        store.set('recentDocs', recentDocs);
+        this.app.store.set('recentDocs', recentDocs);
+    }
+
+    openRecentDocs(index) {
+        let recentDocs = this.app.store.get('recentDocs', []);
+        this.readSaveFile(recentDocs[index]);
     }
 
     // Handles Open File Dialog
@@ -195,10 +201,9 @@ module.exports = class SaveFile {
     // everything else as-is however with this method the expanded copy will
     // still do the same but will be writing back to a clean slate thus blasting
     // away all unused values
-    wipeUnusedSpace(val = 0x00) {
-        // We fill the array from start to end with a fill value, default 0x00
-        // We do this because we don't want to change the array instance only
-        // the array contents
-        this.fileData.fill(val);
+    wipeUnusedSpace() {
+        // Mark internal only to be true so that the render doesn't treat it like
+        // a new file, all existing data is kept
+        this.onDataChange(undefined, false, true);
     }
 }
