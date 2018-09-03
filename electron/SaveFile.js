@@ -40,6 +40,12 @@ module.exports = class SaveFile {
         this.app.emit("ipcTo", "pathChange", path);
     }
 
+    /**
+     * This should be the only method to be called to change data
+     * @param {Uint8Array} data New data to apply
+     * @param {boolean} fromRender Is this data from the render?
+     * @param {boolean} internalOnly Should this data silently change?
+     */
     onDataChange(data = new Uint8Array(0x8000), fromRender = false, internalOnly = false) {
         this.fileData = data;
 
@@ -121,6 +127,7 @@ module.exports = class SaveFile {
     // Cache and save requested data update
     async _writeSaveFile() {
         await fs2.writeFileAsync(this.pendingSave, this.fileData);
+        this.pendingSave = null;
     }
 
     // Request data update

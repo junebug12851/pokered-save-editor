@@ -50,7 +50,7 @@ module.exports = class App extends EventEmitter {
         ipcMain.on('ipcFrom', this.onIpcFrom.bind(this));
     }
 
-    onIpcFrom(event, ...args) {
+    onIpcFrom(sender, event, ...args) {
         this.emit(`ipcFrom-${event}`, ...args);
     }
 
