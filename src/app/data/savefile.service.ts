@@ -53,10 +53,13 @@ export class SaveFileService {
         return new SaveFileIterator(this);
     }
 
-    public onDataChange(data: Uint8Array) {
+    // @ts-ignore
+    public onDataChange(sender: any, data: Uint8Array, internalOnly: boolean = false) {
         this.ng.run<any>(async () => {
             this.fileData = data;
-            this.fileDataExpanded = new SaveFileExpanded(this);
+
+            if (!internalOnly)
+                this.fileDataExpanded = new SaveFileExpanded(this);
         });
     }
 
