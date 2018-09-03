@@ -3,6 +3,8 @@ const { globalShortcut, BrowserWindow } = require('electron');
 module.exports = class Window {
     constructor(app) {
 
+        this.app = app;
+
         // Load screen data
         const { screen } = require('electron');
 
@@ -31,7 +33,7 @@ module.exports = class Window {
         // Hook into events
         win.on('closed', this.onClosed.bind(this));
         win.once('ready-to-show', this.onReadyToShow.bind(this));
-        this.app.on('ipcTo', this.onIpcTo.bind(this));
+        app.on('ipcTo', this.onIpcTo.bind(this));
     }
 
     toggleDevTools() {
@@ -44,6 +46,13 @@ module.exports = class Window {
     }
 
     onIpcTo(event, ...args) {
+
+        const appName = this.app.app.getName();
+
+        // Jump in on certain events
+        if (event === "pathChange")
+            this.win.setTitle(`${appName} - ${args[0]}`);
+
         this.win.webContents.send(event, ...args);
     }
 
@@ -53,5 +62,6 @@ module.exports = class Window {
 
     onReadyToShow() {
         this.win.show();
+        this.app.emit("window-ready");
     }
 }
