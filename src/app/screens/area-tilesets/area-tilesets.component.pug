@@ -3,7 +3,7 @@
         h5 Area Tilesets
 
     .row.s12
-        img('[src]'='tilesetUrl', style='width: 256px;')
+        img('[src]'='containerTileset.tileset', style='width: 256px;')
 
     .row.s1
         mat-form-field(style="width: 100%")
@@ -60,7 +60,7 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.area.outOfBoundsTile'
             )
             span(matSuffix='')
-                div('[class]'='containerClass')
+                div('[class]'='containerTileset.container')
                     div('[class]'='invalidClass')
     .xl1.l2.m4.s6
         mat-form-field(style='width: 100%;')
@@ -73,7 +73,7 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetGrassTile'
             )
             span(matSuffix='')
-                div('[class]'='containerClass')
+                div('[class]'='containerTileset.container')
                     div('[class]'='grassClass')
     .xl1.l2.m4.s6
         mat-form-field(style='width: 100%;')
@@ -107,7 +107,7 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[0]'
             )
             span(matSuffix='')
-                div('[class]'='containerClass')
+                div('[class]'='containerTileset.container')
                     div('[class]'='getCounterClass(0)')
     .xl1.l2.m4.s6
         mat-form-field(style='width: 100%;')
@@ -120,7 +120,7 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[1]'
             )
             span(matSuffix='')
-                div('[class]'='containerClass')
+                div('[class]'='containerTileset.container')
                     div('[class]'='getCounterClass(1)')
     .row.xl1.l2.m4.s6
         mat-form-field(style='width: 100%;')
@@ -133,5 +133,5 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[2]'
             )
             span(matSuffix='')
-                div('[class]'='containerClass')
+                div('[class]'='containerTileset.container')
                     div('[class]'='getCounterClass(2)')
