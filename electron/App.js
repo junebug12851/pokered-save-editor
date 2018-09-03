@@ -60,6 +60,7 @@ module.exports = class App extends EventEmitter {
     }
 
     createWindow() {
+        // Menu must be called around this time so it's placed here
         this.menu = new AppMenu(this);
         this.mainWindow = new Window(this);
     }
