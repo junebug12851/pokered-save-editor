@@ -10,24 +10,35 @@ module.exports = class AppMenu {
         app.store.onDidChange('recentDocs', this.onRecentDocsChange.bind(this));
     }
 
+    // Determines if a menu item can completely skip check or not
+    doMenuItemSkip(obj) {
+        // Is it not the wrong platform
+        if (obj.platform !== undefined &&
+            process.platform !== obj.platform)
+            return true;
+
+        if (obj.notPlatform !== undefined &&
+            process.platform === obj.notPlatform)
+            return true;
+
+        // Is it the wrong build
+        if (obj.env === "dev" &&
+            this.app.isDev !== true)
+            return true;
+
+        if (obj.env === "prod" &&
+            this.app.isDev === true)
+            return true;
+
+        return false;
+    }
+
     _rebuildMenu(arr) {
         for (var i = 0; i < arr.length; i++) {
             const obj = arr[i];
 
             // Is not designated platform
-            if ((obj.platform !== undefined &&
-                process.platform !== obj.platform) ||
-
-                // Or platform designated against
-                (obj.notPlatform !== undefined &&
-                    process.platform === obj.notPlatform) ||
-
-                // Or wrong designated enviroments
-                (obj.env === "dev" &&
-                    this.app.isDev !== true) ||
-                (obj.env === "prod" &&
-                    this.app.isDev === true)
-            ) {
+            if (this.doMenuItemSkip(obj)) {
                 arr.splice(i, 1);
                 i--;
                 continue;
