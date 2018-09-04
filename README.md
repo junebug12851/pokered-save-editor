@@ -1,28 +1,60 @@
 # Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor)
 
-_100th Commit!!!_
-
 This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
 
-This project is deep in development (So much more work needs to be done and theres far too many UI issues currently) however it's turning promising results and things are slowly improving.
+The first version has been released and all used areas of the save file are editable. There are currently varying UI glitches such as overlapping controls in some cases and a couple of misc features which don't work like the virtual keyboards but the overall the app has accomplished it's first goal of many which is to provide easy and intuitive editing to the entirety of the useable Save File.
 
-Here we have a created Pokemon, Magikarp, wich happens to be Level 100 and has an epic move set. Shown below is Magikarp in the Pokemon editor
+Here are some of the features
 
-![editedPokemonUI](https://thumbs.gfycat.com/FirsthandLikableGlobefish-size_restricted.gif)
+### Player
 
-and the same one destroying Bruno
+![Player Name](https://thumbs.gfycat.com/PassionatePracticalGeese-size_restricted.gif)
 
-![editedPokemon](https://thumbs.gfycat.com/DependentSpottedButterfly-size_restricted.gif)
+![Player Id and Money](https://thumbs.gfycat.com/DifferentFastDrafthorse-size_restricted.gif)
 
-Here's a gif and some images of the new keyboard system that nearly a hundred hours went into:
+![Player Badges](https://thumbs.gfycat.com/UnnaturalFewDinosaur-size_restricted.gif)
 
-![keyboardgif1](https://thumbs.gfycat.com/NearRevolvingIcelandicsheepdog-size_restricted.gif)
+### Pokedex
 
-![keyboard2](https://i.imgur.com/u9Gf8tk.png)
+![Pokedex](https://thumbs.gfycat.com/DistortedSnoopyGodwit-size_restricted.gif)
 
-![keyboard3](https://i.imgur.com/OSehFlP.png)
+### Items
+
+![Bag Items](https://thumbs.gfycat.com/BareJaggedBagworm-size_restricted.gif)
+
+### Pokemon
+
+![Party Pokemon](https://thumbs.gfycat.com/RegularInbornBassethound-size_restricted.gif)
+
+### Area
+
+![Contrast](https://thumbs.gfycat.com/AshamedHomelyBandicoot-size_restricted.gif)
+
+![Music](https://thumbs.gfycat.com/HandyWhichAiredaleterrier-size_restricted.gif)
+
+![Sprites](https://thumbs.gfycat.com/SillyGrouchyAbalone-size_restricted.gif)
+
+![Wild Pokemon](https://thumbs.gfycat.com/SkinnySpeedyGrouse-size_restricted.gif)
+
+### World
+
+![Events](https://thumbs.gfycat.com/AnimatedFirsthandCuttlefish-size_restricted.gif)
+
+![Hidden Items](https://thumbs.gfycat.com/AbleBigHerald-size_restricted.gif)
+
+![Towns](https://thumbs.gfycat.com/WeeWateryAsianlion-size_restricted.gif)
+
+![Options](https://thumbs.gfycat.com/SeparateOrganicKillerwhale-size_restricted.gif)
+
+### Hall of Fame
+
+![HoF](https://thumbs.gfycat.com/ZealousGenerousAmericantoad-size_restricted.gif)
+
+### Other UI
+
+![Options](https://thumbs.gfycat.com/FeistyLongIcelandgull-size_restricted.gif)
 
 ## License
 
