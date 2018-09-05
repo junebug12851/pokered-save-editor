@@ -34,7 +34,7 @@ export class CardPokemonHeader implements OnInit {
     }
 
     @Input()
-    public entry: any = PokemonParty.emptyData;
+    public entry: any = PokemonParty.empty;
 
     @Input()
     public disabled: boolean = false;
