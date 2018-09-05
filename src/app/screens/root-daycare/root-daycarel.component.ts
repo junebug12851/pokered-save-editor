@@ -33,7 +33,7 @@ export class RootDaycareComponent {
         const daycare = this.fileService.fileDataExpanded.world.dayCare;
         if (daycare == null)
             // @ts-ignore
-            this.fileService.fileDataExpanded.world.dayCare = PokemonBox.emptyData;
+            this.fileService.fileDataExpanded.world.dayCare = PokemonBox.empty;
         else
             this.fileService.fileDataExpanded.world.dayCare = null;
     }

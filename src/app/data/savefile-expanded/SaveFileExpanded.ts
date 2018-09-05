@@ -3,7 +3,7 @@ import { World } from './sections/World';
 import { Area } from './sections/Area';
 import { Storage } from './sections/Storage';
 import { Rival } from './sections/Rival';
-import { HoFRecord } from './fragments/HoF';
+import { HoFRecord } from "./fragments/HoFRecord";
 import { Player } from './sections/Player';
 
 export class SaveFileExpanded {

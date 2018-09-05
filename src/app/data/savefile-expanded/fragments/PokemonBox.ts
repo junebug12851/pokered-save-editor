@@ -1,7 +1,39 @@
 import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
 
-export class PokemonBox {
+export interface PokemonBoxData {
+    species: number;
+    hp: number;
+    level: number;
+
+    status: number;
+
+    type1: number;
+    type2: number;
+    catchRate: number;
+    moves: {
+        moveID: number;
+        pp: number;
+        ppUp: number;
+    }[];
+    otID: string;
+    exp: number;
+    hpExp: number;
+    attackExp: number;
+    defenseExp: number;
+    speedExp: number;
+    specialExp: number;
+    dv: {
+        attack: number,
+        defense: number,
+        speed: number,
+        special: number
+    };
+    otName: string;
+    nickname: string;
+}
+
+export class PokemonBox implements PokemonBoxData {
     constructor(saveFile: SaveFileService,
         startOffset: number,
         nicknameStartOffset: number,
@@ -16,6 +48,7 @@ export class PokemonBox {
         this.otNameStartOffset = otNameStartOffset;
         this.index = index;
         this.saveFile = saveFile;
+        this.recordSize = recordSize;
 
         // Calculate record offset
         this.offset = (recordSize * index) + startOffset;
@@ -103,39 +136,41 @@ export class PokemonBox {
         // implemented in sometimes arbitrary spots outside of the data sructure
         const otNameOffset = (index * 0xB) + otNameStartOffset;
         this.otName = saveFile.getStr(otNameOffset, 0xB, 7);
+        this.otNameOffset = otNameOffset;
 
         const nicknameOffset = (index * 0xB) + nicknameStartOffset;
         this.nickname = saveFile.getStr(nicknameOffset, 0xB, 10);
+        this.nicknameOffset = nicknameOffset;
 
         // Pokemon box data structure complete, Ready for Pokemon Party to
         // takeover
     }
 
-    public static get emptyData() {
+    public static get empty(): PokemonBoxData {
         return {
             species: 0,
             hp: 0,
             level: 0,
-            statusByte: 0,
+            status: 0,
             type1: 0,
             type2: 0,
             catchRate: 0,
             moves: [{
                 moveID: 0,
                 pp: 0,
-                ppUP: 0,
+                ppUp: 0,
             }, {
                 moveID: 0,
                 pp: 0,
-                ppUP: 0,
+                ppUp: 0,
             }, {
                 moveID: 0,
                 pp: 0,
-                ppUP: 0,
+                ppUp: 0,
             }, {
                 moveID: 0,
                 pp: 0,
-                ppUP: 0,
+                ppUp: 0,
             }],
             otID: "0000",
             exp: 0,
@@ -155,13 +190,79 @@ export class PokemonBox {
         };
     }
 
+    public save(): SaveFileIterator {
+        // Retrieve stored internals
+        const saveFile = this.saveFile;
+        const offset = this.offset;
+        const it: SaveFileIterator = saveFile.iterator.offsetTo(offset);
+        const otNameOffset = this.otNameOffset;
+        const nicknameOffset = this.nicknameOffset;
+
+        // Re-save back
+        it.setByte(this.species);
+        it.setWord(this.hp);
+        it.setByte(this.level);
+        it.setByte(this.status);
+        it.setByte(this.type1);
+
+        if (this.type2 == 0xFF)
+            it.setByte(this.type1);
+        else
+            it.setByte(this.type2);
+
+        it.setByte(this.catchRate);
+
+        for (let i = 0; i < 4; i++) {
+            it.setByte(this.moves[i].moveID);
+        }
+
+        it.setHex(2, this.otID, false);
+
+        let exp = this.exp;
+
+        it.setByte(exp & 0xFF);
+        exp >>= 8;
+
+        it.setByte(exp & 0xFF);
+        exp >>= 8;
+
+        it.setByte(exp & 0xFF);
+
+        it.setWord(this.hpExp);
+        it.setWord(this.attackExp);
+        it.setWord(this.defenseExp);
+        it.setWord(this.speedExp);
+        it.setWord(this.specialExp);
+
+        let dv = 0;
+        dv |= (this.dv.attack << 12);
+        dv |= (this.dv.defense << 8);
+        dv |= (this.dv.speed << 4);
+        dv |= this.dv.special;
+        it.setWord(dv);
+
+        for (let i = 0; i < 4; i++) {
+            const move = this.moves[i];
+            const ppCombined = (move.ppUp << 6) | move.pp;
+            it.setByte(ppCombined);
+        }
+
+        saveFile.setStr(otNameOffset, 0xB, 10, this.otName);
+        saveFile.setStr(nicknameOffset, 0xB, 10, this.nickname);
+
+        return it;
+    }
+
     public startOffset: number;
     public offset: number;
     public nicknameStartOffset: number;
     public otNameStartOffset: number;
     public index: number;
     public it: SaveFileIterator;
-    public saveFile: any;
+    public saveFile: SaveFileService;
+    public recordSize: number;
+    public otNameOffset: number;
+    public nicknameOffset: number;
 
     public species: number;
     public hp: number;

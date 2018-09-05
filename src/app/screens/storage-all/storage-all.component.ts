@@ -56,7 +56,7 @@ export class StorageAllComponent implements OnInit {
 
     addPokemon(boxNum: number) {
         // @ts-ignore
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(PokemonBox.emptyData);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(PokemonBox.empty);
     }
 
     ngOnInit() {

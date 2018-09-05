@@ -33,7 +33,7 @@ export class PlayerPokemonComponent {
     }
 
     onAdd() {
-        this.fileService.fileDataExpanded.player.playerParty.push(PokemonParty.emptyData);
+        this.fileService.fileDataExpanded.player.playerParty.push(PokemonParty.empty);
     }
 
     onRem(i: number) {

@@ -22,8 +22,8 @@ export class PokemonParty extends PokemonBox {
         this.special = it.getWord();
     }
 
-    static get emptyData() {
-        const parent: any = PokemonBox.emptyData;
+    static get empty() {
+        const parent: any = PokemonBox.empty;
         parent.maxHP = 0;
         parent.attack = 0;
         parent.defense = 0;
