@@ -1,8 +1,16 @@
 import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
-import { PokemonBox } from './PokemonBox';
+import { PokemonBox, PokemonBoxData } from './PokemonBox';
 
-export class PokemonParty extends PokemonBox {
+export interface PokemonPartyData extends PokemonBoxData {
+    maxHP: number;
+    attack: number;
+    defense: number;
+    speed: number;
+    special: number;
+}
+
+export class PokemonParty extends PokemonBox implements PokemonPartyData {
     constructor(saveFile: SaveFileService,
         offset: number,
         nicknameStartOffset: number,
@@ -22,7 +30,7 @@ export class PokemonParty extends PokemonBox {
         this.special = it.getWord();
     }
 
-    static get empty() {
+    static get empty(): PokemonPartyData {
         const parent: any = PokemonBox.empty;
         parent.maxHP = 0;
         parent.attack = 0;
@@ -30,6 +38,17 @@ export class PokemonParty extends PokemonBox {
         parent.speed = 0;
         parent.special = 0;
         return parent;
+    }
+
+    public save(): SaveFileIterator {
+        const it = super.save();
+        it.setByte(this.level);
+        it.setWord(this.maxHP);
+        it.setWord(this.attack);
+        it.setWord(this.defense);
+        it.setWord(this.speed);
+        it.setWord(this.special);
+        return it;
     }
 
     public maxHP: number;

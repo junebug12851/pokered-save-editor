@@ -1,75 +1,123 @@
 import { SaveFileService } from './../../savefile.service';
 
-export class SpriteData {
+export interface SpriteDataData {
+    pictureID: number;
+    movementStatus: number;
+    imageIndex: number;
+    yStepVector: number;
+    yPixels: number;
+    xStepVector: number;
+    xPixels: number;
+    intraAnimationFrameCounter: number;
+    animFrameCounter: number;
+    faceDir: number;
+    walkAnimationCounter: number;
+    yDisp: number;
+    xDisp: number;
+    mapY: number;
+    mapX: number;
+    movementByte: number;
+    grassPriority: number;
+    movementDelay: number;
+    imageBaseOffset: number;
+    rangeDirByte: number | null;
+    textID: number | null;
+    trainerClassOrItemID: null | number;
+    trainerSetID: null | number;
+    missableIndex: null | number;
+}
+
+export class SpriteData implements SpriteDataData {
     // Load data all sprites on the map have
     constructor(savefile: SaveFileService, index: number) {
 
-        let offsetCtr = (0x10 * index) + 0x2D2C;
-        this.pictureID = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.movementStatus = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.imageIndex = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.yStepVector = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.yPixels = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.xStepVector = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.xPixels = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.intraAnimationFrameCounter = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.animFrameCounter = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.faceDir = savefile.getByte(offsetCtr); offsetCtr += 1;
+        this.saveFile = savefile;
+        this.index = index;
 
-        offsetCtr = (0x10 * index) + 0x2E2C;
-        this.walkAnimationCounter = savefile.getByte(offsetCtr); offsetCtr += 1;
-        offsetCtr += 1; // Padding
-        this.yDisp = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.xDisp = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.mapY = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.mapX = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.movementByte = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.grassPriority = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.movementDelay = savefile.getByte(offsetCtr); offsetCtr += 1;
-        offsetCtr += 5; // Padding
-        this.imageBaseOffset = savefile.getByte(offsetCtr); offsetCtr += 1;
+        // Grab sprite data 1 and 2 which applies to all sprites
+        this.grabSpriteData1();
+        this.grabSpriteData2();
 
         // If this isn't the player sprite then load additional non-player data
         // and check to see if it's missable
         if (index > 0) {
-            this.loadNpData(savefile, index);
-            this.checkMissable(savefile, index);
+            this.grabSpriteDataNPC();
+            this.checkMissable();
         }
     }
 
-    // Load data all sprites but the player (Non-Player Data) have
-    loadNpData(savefile: SaveFileService, index: number) {
+    grabSpriteData1() {
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 0
+        const index = this.index;
+
+        const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2D2C);
+        this.pictureID = it.getByte();
+        this.movementStatus = it.getByte();
+        this.imageIndex = it.getByte();
+        this.yStepVector = it.getByte();
+        this.yPixels = it.getByte();
+        this.xStepVector = it.getByte();
+        this.xPixels = it.getByte();
+        this.intraAnimationFrameCounter = it.getByte();
+        this.animFrameCounter = it.getByte();
+        this.faceDir = it.getByte();
+    }
+
+    grabSpriteData2() {
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 0
+        const index = this.index;
+
+        const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2E2C);
+        this.walkAnimationCounter = it.getByte(1);
+        this.yDisp = it.getByte();
+        this.xDisp = it.getByte();
+        this.mapY = it.getByte();
+        this.mapX = it.getByte();
+        this.movementByte = it.getByte();
+        this.grassPriority = it.getByte();
+        this.movementDelay = it.getByte(5);
+        this.imageBaseOffset = it.getByte();
+    }
+
+    grabSpriteDataNPC() {
+        const saveFile = this.saveFile;
+
+        // Correct index, this data starts sprite 0 at sprite 1
+        const index = this.index - 1;
 
         // Init missable index to non-player value
         this.missableIndex = -1;
 
-        // Correct this index
-        // Non-Player Data starts zero-based exlcuding the first sprite
-        // (The Player)
-        index -= 1;
+        const it = saveFile.iterator.offsetTo((2 * index) + 0x2790);
+        this.rangeDirByte = it.getByte();
+        this.textID = it.getByte();
 
-        let offsetCtr = (2 * index) + 0x2790;
-        this.rangeDirByte = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.textID = savefile.getByte(offsetCtr); offsetCtr += 1;
-
-        offsetCtr = (2 * index) + 0x27B0;
-        this.trainerClassOrItemID = savefile.getByte(offsetCtr); offsetCtr += 1;
-        this.trainerSetID = savefile.getByte(offsetCtr);
+        it.offsetTo((2 * index) + 0x27B0);
+        this.trainerClassOrItemID = it.getByte();
+        this.trainerSetID = it.getByte();
     }
 
     // Scan missable list to see if this sprite is in it
     // If a match is found load missable data making this sprite a missable
     // sprite and therefore have it's appearance controlled by the global
     // missable flags
-    checkMissable(saveFile: SaveFileService, index: number) {
+    checkMissable() {
 
-        // Don't correct this index
-        // Missables start at index 1, not 0
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 1
+        const index = this.index;
+
+        const it = saveFile.iterator;
 
         for (let i = 0; i < 17; i++) {
-            const offset = (0x2 * i) + 0x287A;
-            const mId = saveFile.getByte(offset);
-            const mIndex = saveFile.getByte(offset + 1);
+            it.offsetTo((0x2 * i) + 0x287A);
+            const mId = it.getByte();
+            const mIndex = it.getByte();
 
             // Stop when reach list terminator
             if (mId == 0xFF)
@@ -82,10 +130,11 @@ export class SpriteData {
             // Save bit index this missable refers to and add to missable
             // array for quick reference
             this.missableIndex = mIndex;
+            break;
         }
     }
 
-    public static get emptyPlayerData() {
+    public static get emptyPlayer(): SpriteDataData {
         return {
             pictureID: 0,
             movementStatus: 0,
@@ -114,7 +163,7 @@ export class SpriteData {
         }
     }
 
-    public static get emptyNonPlayerData() {
+    public static get emptyNPC(): SpriteDataData {
         return {
             pictureID: 0,
             movementStatus: 0,
@@ -143,68 +192,148 @@ export class SpriteData {
         }
     }
 
+    saveSpriteData1() {
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 0
+        const index = this.index;
+
+        const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2D2C);
+        it.setByte(this.pictureID)
+        it.setByte(this.movementStatus)
+        it.setByte(this.imageIndex)
+        it.setByte(this.yStepVector)
+        it.setByte(this.yPixels)
+        it.setByte(this.xStepVector)
+        it.setByte(this.xPixels)
+        it.setByte(this.intraAnimationFrameCounter)
+        it.setByte(this.animFrameCounter)
+        it.setByte(this.faceDir)
+    }
+
+    saveSpriteData2() {
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 0
+        const index = this.index;
+
+        const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2E2C);
+        it.setByte(this.walkAnimationCounter, 1);
+        it.setByte(this.yDisp)
+        it.setByte(this.xDisp)
+        it.setByte(this.mapY)
+        it.setByte(this.mapX)
+        it.setByte(this.movementByte)
+        it.setByte(this.grassPriority)
+        it.setByte(this.movementDelay, 5);
+        it.setByte(this.imageBaseOffset)
+    }
+
+    saveSpriteDataNPC() {
+        const saveFile = this.saveFile;
+
+        // Don't correct index, this data starts at sprite 0
+        const index = this.index;
+
+        const it = saveFile.iterator.offsetTo((2 * index) + 0x2790);
+        it.setByte(this.rangeDirByte as number);
+        it.setByte(this.textID as number);
+
+        it.offsetTo((2 * index) + 0x27B0);
+        it.setByte(this.trainerClassOrItemID as number);
+        it.setByte(this.trainerSetID as number);
+    }
+
+    static saveMissables(saveFile: SaveFileService, spriteData: SpriteData[]) {
+        const it = saveFile.iterator;
+
+        it.offsetTo(0x287A);
+        for (let i = 0; i < spriteData.length && i < 16; i++) {
+            const val = spriteData[i];
+
+            // Skip all sprites that aren't missables
+            if (val.missableIndex === null || !(val.missableIndex >= 0))
+                continue;
+
+            // Save sprite index that's missable
+            // Don't correct index, this data starts at sprite 1
+            it.setByte(i);
+
+            // Save missable index this sprite connects to
+            it.setByte(val.missableIndex);
+        }
+        it.setByte(0xFF);
+    }
+
+    /**
+     * Internal Data
+     */
+
+    public saveFile: SaveFileService;
+    public index: number;
+
     /**
      * Sprite data that applies to all sprites
      */
 
     // Actual sprite image shown
-    public pictureID: number;
+    public pictureID: number = 0;
 
     // (0: uninitialized, 1: ready, 2: delayed, 3: moving)
-    public movementStatus: number;
+    public movementStatus: number = 0;
 
     // Basically, in the sprite sheet strip, which "pane" or "tile" is it at
     // 0xFF if not on the screen
-    public imageIndex: number;
+    public imageIndex: number = 0;
 
     // When the sprite moves, exactly how far or how much is that?
     //(-1, 0 or 1)
-    public yStepVector: number;
+    public yStepVector: number = 0;
 
     // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)
-    public yPixels: number;
+    public yPixels: number = 0;
 
     // When the sprite moves, exactly how far or how much is that?
     //(-1, 0 or 1)
-    public xStepVector: number;
+    public xStepVector: number = 0;
 
     // Screen position in pixels aligned to 4 pixels offset from the grid (To appear centered)
-    public xPixels: number;
+    public xPixels: number = 0;
 
     // Counter that helps delay between animation frames so things aren't so instant and fast
-    public intraAnimationFrameCounter: number;
+    public intraAnimationFrameCounter: number = 0;
 
     // Animation frame counter
-    public animFrameCounter: number;
+    public animFrameCounter: number = 0;
 
     // (0: down, 4: up, 8: left, $c: right)
-    public faceDir: number;
+    public faceDir: number = 0;
 
     // Tracks movement & wandering, sprites are given 0x10 and it's decremented
-    public walkAnimationCounter: number;
+    public walkAnimationCounter: number = 0;
 
     // Keep sprites from wandering too far however it's noted that it's bugged
     // to begin with. Both are init to 0x8
-    public yDisp: number;
-    public xDisp: number;
+    public yDisp: number = 0;
+    public xDisp: number = 0;
 
     // Placement in 2x2 grid steps
     // Origin (Top or Left) has a value of 4
-    public mapY: number;
-    public mapX: number;
+    public mapY: number = 0;
+    public mapX: number = 0;
 
     // (0xFF not moving, 0xFE random movements, others unknown)
-    public movementByte: number;
+    public movementByte: number = 0;
 
     // (0x80 in grass, 0x00 otherwise) - Prioritizing grass drawn around sprite
-    public grassPriority: number;
+    public grassPriority: number = 0;
 
     // Delay until next movement, counts downward and flags movementStatus ready
     // once reached
-    public movementDelay: number;
+    public movementDelay: number = 0;
 
     // Used to help compute imageIndex based on vram
-    public imageBaseOffset: number;
+    public imageBaseOffset: number = 0;
 
     /**
      * Sprite data that applies to all non-player sprites

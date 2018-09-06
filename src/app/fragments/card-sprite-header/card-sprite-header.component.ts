@@ -43,7 +43,7 @@ export class CardSpriteHeader implements OnInit {
     }
 
     @Input()
-    public entry: any = SpriteData.emptyNonPlayerData;
+    public entry: any = SpriteData.emptyNPC;
 
     @Input()
     public disabled: boolean = false;

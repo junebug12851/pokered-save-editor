@@ -1,65 +1,45 @@
 import { SaveFileService } from '../../savefile.service';
 
-export interface HoFPokemonData {
-    species: number,
-    level: number,
-    name: string,
-};
+export class HoFPokemon {
+    constructor(saveFile?: SaveFileService, recordOffset?: number, index?: number) {
+        if (arguments.length >= 3)
+            this.load(
+                saveFile as SaveFileService,
+                recordOffset as number,
+                index as number
+            );
+    }
 
-export class HoFPokemon implements HoFPokemonData {
-    constructor(saveFile: SaveFileService, recordOffset: number, index: number) {
-
-        /**
-         * Record Internals
-         */
-
-        this.recordOffset = recordOffset;
-        this.index = index;
-        this.saveFile = saveFile;
+    public load(saveFile: SaveFileService, recordOffset: number, index: number) {
 
         // Calculate Pokemon Offset in the record
         // Records are 0x10 in size
         // Multiply record number with 0x10 (Record Size) and add to offset
         // record start
-        this.pokemonOffset = (0x10 * index) + recordOffset;
+        const pokemonOffset = (0x10 * index) + recordOffset;
 
         /**
          * Record Data
          */
 
         // Extract Pokemon Data
-        this.species = saveFile.getByte(this.pokemonOffset + 0);
-        this.level = saveFile.getByte(this.pokemonOffset + 1);
-        this.name = saveFile.getStr(this.pokemonOffset + 2, 0xB, 10);
+        this.species = saveFile.getByte(pokemonOffset + 0);
+        this.level = saveFile.getByte(pokemonOffset + 1);
+        this.name = saveFile.getStr(pokemonOffset + 2, 0xB, 10);
     }
 
-    static get empty(): HoFPokemonData {
-        return {
-            species: 0,
-            level: 0,
-            name: "",
-        };
-    }
+    public save(saveFile: SaveFileService, recordOffset: number, index: number) {
+        const pokemonOffset = (0x10 * index) + recordOffset;
 
-    public save() {
-        const saveFile = this.saveFile;
-        saveFile.setByte(this.pokemonOffset + 0, this.species);
-        saveFile.setByte(this.pokemonOffset + 1, this.level);
-        saveFile.setStr(this.pokemonOffset + 2, 0xB, 10, this.name);
+        saveFile.setByte(pokemonOffset + 0, this.species);
+        saveFile.setByte(pokemonOffset + 1, this.level);
+        saveFile.setStr(pokemonOffset + 2, 0xB, 10, this.name);
     }
-
-    /**
-     * Record Internals
-     */
-    public index: number;
-    public recordOffset: number;
-    public pokemonOffset: number;
-    public saveFile: SaveFileService;
 
     /**
      * Record Data
      */
-    public species: number;
-    public level: number;
-    public name: string;
+    public species: number = 0;
+    public level: number = 0;
+    public name: string = "";
 }
