@@ -1,28 +1,12 @@
 import { SaveFileService } from './../../savefile.service';
 
-export interface MapConnDataData {
-    // Connected Map
-    map: string;
+export class MapConnData {
+    constructor(saveFile?: SaveFileService, offset?: number) {
+        if (arguments.length >= 2)
+            this.load(saveFile as SaveFileService, offset as number);
+    }
 
-    // Pointer to upper left corner of map without adjustment for X position
-    viewPtr: number;
-
-    // Strip
-    stripSrc: number;
-    stripDest: number;
-    stripWidth: number;
-
-    // Strip Alignment
-    yAlign: number;
-    xAlign: number;
-}
-
-export class MapConnData implements MapConnDataData {
-    constructor(saveFile: SaveFileService, offset: number) {
-
-        this.saveFile = saveFile;
-        this.offset = offset;
-
+    public load(saveFile: SaveFileService, offset: number) {
         const it = saveFile.iterator.offsetTo(offset);
 
         const mapPtr = it.getByte();
@@ -37,22 +21,7 @@ export class MapConnData implements MapConnDataData {
         this.map = `${mapPtr.toString(16).padStart(2, "0").toUpperCase()}_${width}`;
     }
 
-    static get empty(): MapConnDataData {
-        return {
-            map: "",
-            viewPtr: 0,
-            stripSrc: 0,
-            stripDest: 0,
-            stripWidth: 0,
-            yAlign: 0,
-            xAlign: 0,
-        }
-    }
-
-    public save() {
-        const saveFile = this.saveFile;
-        const offset = this.offset;
-
+    public save(saveFile: SaveFileService, offset: number) {
         const it = saveFile.iterator.offsetTo(offset);
         const map = this.map.split("_");
 
@@ -66,21 +35,18 @@ export class MapConnData implements MapConnDataData {
         it.setWord(this.viewPtr, 0, true);
     }
 
-    public saveFile: SaveFileService;
-    public offset: number;
-
     // Connected Map
-    public map: string;
+    public map: string = "";
 
     // Pointer to upper left corner of map without adjustment for X position
-    public viewPtr: number;
+    public viewPtr: number = 0;
 
     // Strip
-    public stripSrc: number;
-    public stripDest: number;
-    public stripWidth: number;
+    public stripSrc: number = 0;
+    public stripDest: number = 0;
+    public stripWidth: number = 0;
 
     // Strip Alignment
-    public yAlign: number;
-    public xAlign: number;
+    public yAlign: number = 0;
+    public xAlign: number = 0;
 }

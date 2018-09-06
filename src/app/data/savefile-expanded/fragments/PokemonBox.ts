@@ -1,59 +1,41 @@
 import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
 
-export interface PokemonBoxData {
-    species: number;
-    hp: number;
-    level: number;
+export class PokemonBox {
+    constructor(saveFile?: SaveFileService,
+        startOffset?: number,
+        nicknameStartOffset?: number,
+        otNameStartOffset?: number,
+        index?: number,
+        recordSize?: number) {
 
-    status: number;
+        if (arguments.length >= 6)
+            this.load(
+                saveFile as SaveFileService,
+                startOffset as number,
+                nicknameStartOffset as number,
+                otNameStartOffset as number,
+                index as number,
+                recordSize as number
+            );
 
-    type1: number;
-    type2: number;
-    catchRate: number;
-    moves: {
-        moveID: number;
-        pp: number;
-        ppUp: number;
-    }[];
-    otID: string;
-    exp: number;
-    hpExp: number;
-    attackExp: number;
-    defenseExp: number;
-    speedExp: number;
-    specialExp: number;
-    dv: {
-        attack: number,
-        defense: number,
-        speed: number,
-        special: number
-    };
-    otName: string;
-    nickname: string;
-}
+        // Pokemon box data structure complete, Ready for Pokemon Party to
+        // takeover
+    }
 
-export class PokemonBox implements PokemonBoxData {
-    constructor(saveFile: SaveFileService,
+    public load(saveFile: SaveFileService,
         startOffset: number,
         nicknameStartOffset: number,
         otNameStartOffset: number,
         index: number,
 
         // Unless overridden, the record size for box data is 0x21
-        recordSize: number = 0x21) {
-
-        this.startOffset = startOffset;
-        this.nicknameStartOffset = nicknameStartOffset;
-        this.otNameStartOffset = otNameStartOffset;
-        this.index = index;
-        this.saveFile = saveFile;
-        this.recordSize = recordSize;
+        recordSize: number = 0x21): SaveFileIterator {
 
         // Calculate record offset
-        this.offset = (recordSize * index) + startOffset;
+        const offset = (recordSize * index) + startOffset;
 
-        const it: SaveFileIterator = saveFile.iterator.offsetTo(this.offset);
+        const it: SaveFileIterator = saveFile.iterator.offsetTo(offset);
 
         this.species = it.getByte();
         this.hp = it.getWord();
@@ -130,73 +112,30 @@ export class PokemonBox implements PokemonBoxData {
         // Restore back to before PP and move past PP, save iterator to class
         // because PokemonParty may pick it up and continue since it extends
         it.pop().offsetBy(0x4);
-        this.it = it;
 
         // Now we must gather the OT names and Pokemon names whihc were poorly
         // implemented in sometimes arbitrary spots outside of the data sructure
         const otNameOffset = (index * 0xB) + otNameStartOffset;
         this.otName = saveFile.getStr(otNameOffset, 0xB, 7);
-        this.otNameOffset = otNameOffset;
 
         const nicknameOffset = (index * 0xB) + nicknameStartOffset;
         this.nickname = saveFile.getStr(nicknameOffset, 0xB, 10);
-        this.nicknameOffset = nicknameOffset;
 
-        // Pokemon box data structure complete, Ready for Pokemon Party to
-        // takeover
+        return it;
     }
 
-    public static get empty(): PokemonBoxData {
-        return {
-            species: 0,
-            hp: 0,
-            level: 0,
-            status: 0,
-            type1: 0,
-            type2: 0,
-            catchRate: 0,
-            moves: [{
-                moveID: 0,
-                pp: 0,
-                ppUp: 0,
-            }, {
-                moveID: 0,
-                pp: 0,
-                ppUp: 0,
-            }, {
-                moveID: 0,
-                pp: 0,
-                ppUp: 0,
-            }, {
-                moveID: 0,
-                pp: 0,
-                ppUp: 0,
-            }],
-            otID: "0000",
-            exp: 0,
-            hpExp: 0,
-            attackExp: 0,
-            defenseExp: 0,
-            speedExp: 0,
-            specialExp: 0,
-            dv: {
-                attack: 0,
-                defense: 0,
-                speed: 0,
-                special: 0,
-            },
-            otName: "",
-            nickname: ""
-        };
-    }
+    public save(saveFile: SaveFileService,
+        startOffset: number,
+        nicknameStartOffset: number,
+        otNameStartOffset: number,
+        index: number,
+        recordSize: number = 0x21): SaveFileIterator {
 
-    public save(): SaveFileIterator {
         // Retrieve stored internals
-        const saveFile = this.saveFile;
-        const offset = this.offset;
+        const offset = (recordSize * index) + startOffset;
         const it: SaveFileIterator = saveFile.iterator.offsetTo(offset);
-        const otNameOffset = this.otNameOffset;
-        const nicknameOffset = this.nicknameOffset;
+        const otNameOffset = (index * 0xB) + otNameStartOffset;
+        const nicknameOffset = (index * 0xB) + nicknameStartOffset;
 
         // Re-save back
         it.setByte(this.species);
@@ -253,20 +192,9 @@ export class PokemonBox implements PokemonBoxData {
         return it;
     }
 
-    public startOffset: number;
-    public offset: number;
-    public nicknameStartOffset: number;
-    public otNameStartOffset: number;
-    public index: number;
-    public it: SaveFileIterator;
-    public saveFile: SaveFileService;
-    public recordSize: number;
-    public otNameOffset: number;
-    public nicknameOffset: number;
-
-    public species: number;
-    public hp: number;
-    public level: number;
+    public species: number = 0;
+    public hp: number = 0;
+    public level: number = 0;
 
     // Pokemon Status codes are a bit weird
     // The game programatically allows one, more, or all status afflections to
@@ -282,29 +210,29 @@ export class PokemonBox implements PokemonBoxData {
     // 16 - Burned
     // 32 - Frozen
     // 64 - Paralyzed
-    public status: number;
+    public status: number = 0;
 
-    public type1: number;
-    public type2: number;
-    public catchRate: number;
+    public type1: number = 0;
+    public type2: number = 0;
+    public catchRate: number = 0;
     public moves: {
         moveID: number;
         pp: number;
         ppUp: number;
-    }[];
-    public otID: string;
-    public exp: number;
-    public hpExp: number;
-    public attackExp: number;
-    public defenseExp: number;
-    public speedExp: number;
-    public specialExp: number;
-    public dv: {
-        attack: number,
-        defense: number,
-        speed: number,
-        special: number
+    }[] = [];
+    public otID: string = "0000";
+    public exp: number = 0;
+    public hpExp: number = 0;
+    public attackExp: number = 0;
+    public defenseExp: number = 0;
+    public speedExp: number = 0;
+    public specialExp: number = 0;
+    public dv = {
+        attack: 0 as number,
+        defense: 0 as number,
+        speed: 0 as number,
+        special: 0 as number
     };
-    public otName: string;
-    public nickname: string;
+    public otName: string = "";
+    public nickname: string = "";
 }
