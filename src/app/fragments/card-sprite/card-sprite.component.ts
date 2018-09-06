@@ -41,7 +41,7 @@ export class CardSpriteComponent implements OnInit {
 
     @Input()
     // @ts-ignore
-    public entry: any = SpriteData.emptyNonPlayerData;
+    public entry: any = SpriteData.emptyNPC;
 
     @Input()
     public disabled: boolean = false;

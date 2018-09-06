@@ -34,7 +34,7 @@ export class AreaSpritesComponent {
 
     onAdd() {
         // @ts-ignore
-        this.fileService.fileDataExpanded.area.spriteData.push(SpriteData.emptyNonPlayerData);
+        this.fileService.fileDataExpanded.area.spriteData.push(SpriteData.emptyNPC);
     }
 
     onRem(i: number) {
