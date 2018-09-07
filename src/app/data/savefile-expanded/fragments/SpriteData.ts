@@ -1,9 +1,22 @@
 import { SaveFileService } from './../../savefile.service';
 
 export class SpriteData {
-    constructor(savefile?: SaveFileService, index?: number) {
+
+    /**
+     * 0 arguments or false - Empty player character
+     * 1 argument true - Empty NPC character
+     * 2 arguments - Load data with savefile and index
+     */
+    constructor(savefile?: SaveFileService | boolean, index?: number) {
         if (arguments.length >= 2)
             this.load(savefile as SaveFileService, index as number);
+        else if (arguments.length === 1 && savefile === true) {
+            this.rangeDirByte = 0;
+            this.textID = 0;
+            this.trainerClassOrItemID = 0;
+            this.trainerSetID = 0;
+            this.missableIndex = -1;
+        }
     }
 
     // Load data all sprites on the map have
