@@ -43,7 +43,7 @@ export class Area {
 
         this.curMap = `${curMap}_${mapHeight}_${mapWidth}_${map2x2Height}_${map2x2Width}_${mapDataPtr}_${mapTextPtr}_${mapScriptPtr}`;
 
-        this.contrast = saveFile.getByte(0x2609);
+
         this.currentTileBlockMapViewPointer = saveFile.getWord(0x260B, true).toString(16).padStart(2, "0").toUpperCase();
         this.yCoord = saveFile.getByte(0x260D);
         this.xCoord = saveFile.getByte(0x260E);
@@ -139,9 +139,7 @@ export class Area {
         this.scriptedNPCMovement = saveFile.getBit(0x29DA, 1, 7);
         this.npcSpriteMovement = saveFile.getBit(0x29DC, 1, 0);
         this.ignoreJoypad = saveFile.getBit(0x29DC, 1, 5);
-        this.noLetterDelay = saveFile.getBit(0x29DC, 1, 6);
         this.joypadSimulation = saveFile.getBit(0x29DC, 1, 7);
-        this.countPlaytime = saveFile.getBit(0x29DE, 1, 0);
         this.flyOrDungeonWarp = saveFile.getBit(0x29DE, 1, 2);
         this.flyWarp = saveFile.getBit(0x29DE, 1, 3);
         this.dungeonWarp = saveFile.getBit(0x29DE, 1, 4);
@@ -213,11 +211,6 @@ export class Area {
 
         this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
     }
-
-    // General (Complete)
-    public contrast: number;
-    public noLetterDelay: boolean;
-    public countPlaytime: boolean;
 
     // Audio (Complete)
     public music: string;
