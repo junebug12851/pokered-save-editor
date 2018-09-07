@@ -1,56 +1,28 @@
 import { SaveFileService } from './../../savefile.service';
 
-export interface SpriteDataData {
-    pictureID: number;
-    movementStatus: number;
-    imageIndex: number;
-    yStepVector: number;
-    yPixels: number;
-    xStepVector: number;
-    xPixels: number;
-    intraAnimationFrameCounter: number;
-    animFrameCounter: number;
-    faceDir: number;
-    walkAnimationCounter: number;
-    yDisp: number;
-    xDisp: number;
-    mapY: number;
-    mapX: number;
-    movementByte: number;
-    grassPriority: number;
-    movementDelay: number;
-    imageBaseOffset: number;
-    rangeDirByte: number | null;
-    textID: number | null;
-    trainerClassOrItemID: null | number;
-    trainerSetID: null | number;
-    missableIndex: null | number;
-}
+export class SpriteData {
+    constructor(savefile?: SaveFileService, index?: number) {
+        if (arguments.length >= 2)
+            this.load(savefile as SaveFileService, index as number);
+    }
 
-export class SpriteData implements SpriteDataData {
     // Load data all sprites on the map have
-    constructor(savefile: SaveFileService, index: number) {
-
-        this.saveFile = savefile;
-        this.index = index;
+    public load(savefile: SaveFileService, index: number) {
 
         // Grab sprite data 1 and 2 which applies to all sprites
-        this.grabSpriteData1();
-        this.grabSpriteData2();
+        this.grabSpriteData1(savefile, index);
+        this.grabSpriteData2(savefile, index);
 
         // If this isn't the player sprite then load additional non-player data
         // and check to see if it's missable
         if (index > 0) {
-            this.grabSpriteDataNPC();
-            this.checkMissable();
+            this.grabSpriteDataNPC(savefile, index);
+            this.checkMissable(savefile, index);
         }
     }
 
-    grabSpriteData1() {
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 0
-        const index = this.index;
+    // Don't correct index, this data starts at sprite 0
+    grabSpriteData1(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2D2C);
         this.pictureID = it.getByte();
@@ -65,11 +37,8 @@ export class SpriteData implements SpriteDataData {
         this.faceDir = it.getByte();
     }
 
-    grabSpriteData2() {
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 0
-        const index = this.index;
+    // Don't correct index, this data starts at sprite 0
+    grabSpriteData2(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2E2C);
         this.walkAnimationCounter = it.getByte(1);
@@ -83,11 +52,9 @@ export class SpriteData implements SpriteDataData {
         this.imageBaseOffset = it.getByte();
     }
 
-    grabSpriteDataNPC() {
-        const saveFile = this.saveFile;
-
-        // Correct index, this data starts sprite 0 at sprite 1
-        const index = this.index - 1;
+    // Correct index, this data starts sprite 0 at sprite 1
+    grabSpriteDataNPC(saveFile: SaveFileService, index: number) {
+        index--;
 
         // Init missable index to non-player value
         this.missableIndex = -1;
@@ -105,12 +72,9 @@ export class SpriteData implements SpriteDataData {
     // If a match is found load missable data making this sprite a missable
     // sprite and therefore have it's appearance controlled by the global
     // missable flags
-    checkMissable() {
 
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 1
-        const index = this.index;
+    // Don't correct index, this data starts at sprite 1
+    checkMissable(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator;
 
@@ -134,69 +98,21 @@ export class SpriteData implements SpriteDataData {
         }
     }
 
-    public static get emptyPlayer(): SpriteDataData {
-        return {
-            pictureID: 0,
-            movementStatus: 0,
-            imageIndex: 0,
-            yStepVector: 0,
-            yPixels: 0,
-            xStepVector: 0,
-            xPixels: 0,
-            intraAnimationFrameCounter: 0,
-            animFrameCounter: 0,
-            faceDir: 0,
-            walkAnimationCounter: 0,
-            yDisp: 0,
-            xDisp: 0,
-            mapY: 0,
-            mapX: 0,
-            movementByte: 0,
-            grassPriority: 0,
-            movementDelay: 0,
-            imageBaseOffset: 0,
-            rangeDirByte: null,
-            textID: null,
-            trainerClassOrItemID: null,
-            trainerSetID: null,
-            missableIndex: null
+    // Missables will have to be called seperate
+    public save(savefile: SaveFileService, index: number) {
+
+        // Grab sprite data 1 and 2 which applies to all sprites
+        this.saveSpriteData1(savefile, index);
+        this.saveSpriteData2(savefile, index);
+
+        // If this isn't the player sprite then load additional non-player data
+        // and check to see if it's missable
+        if (index > 0) {
+            this.saveSpriteDataNPC(savefile, index);
         }
     }
 
-    public static get emptyNPC(): SpriteDataData {
-        return {
-            pictureID: 0,
-            movementStatus: 0,
-            imageIndex: 0,
-            yStepVector: 0,
-            yPixels: 0,
-            xStepVector: 0,
-            xPixels: 0,
-            intraAnimationFrameCounter: 0,
-            animFrameCounter: 0,
-            faceDir: 0,
-            walkAnimationCounter: 0,
-            yDisp: 0,
-            xDisp: 0,
-            mapY: 0,
-            mapX: 0,
-            movementByte: 0,
-            grassPriority: 0,
-            movementDelay: 0,
-            imageBaseOffset: 0,
-            rangeDirByte: 0,
-            textID: 0,
-            trainerClassOrItemID: 0,
-            trainerSetID: 0,
-            missableIndex: -1
-        }
-    }
-
-    saveSpriteData1() {
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 0
-        const index = this.index;
+    saveSpriteData1(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2D2C);
         it.setByte(this.pictureID)
@@ -211,11 +127,7 @@ export class SpriteData implements SpriteDataData {
         it.setByte(this.faceDir)
     }
 
-    saveSpriteData2() {
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 0
-        const index = this.index;
+    saveSpriteData2(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator.offsetTo((0x10 * index) + 0x2E2C);
         it.setByte(this.walkAnimationCounter, 1);
@@ -229,11 +141,7 @@ export class SpriteData implements SpriteDataData {
         it.setByte(this.imageBaseOffset)
     }
 
-    saveSpriteDataNPC() {
-        const saveFile = this.saveFile;
-
-        // Don't correct index, this data starts at sprite 0
-        const index = this.index;
+    saveSpriteDataNPC(saveFile: SaveFileService, index: number) {
 
         const it = saveFile.iterator.offsetTo((2 * index) + 0x2790);
         it.setByte(this.rangeDirByte as number);
@@ -244,6 +152,7 @@ export class SpriteData implements SpriteDataData {
         it.setByte(this.trainerSetID as number);
     }
 
+    // Because missables is somewhat tricky, it needs to be called seperately
     static saveMissables(saveFile: SaveFileService, spriteData: SpriteData[]) {
         const it = saveFile.iterator;
 
@@ -264,13 +173,6 @@ export class SpriteData implements SpriteDataData {
         }
         it.setByte(0xFF);
     }
-
-    /**
-     * Internal Data
-     */
-
-    public saveFile: SaveFileService;
-    public index: number;
 
     /**
      * Sprite data that applies to all sprites
