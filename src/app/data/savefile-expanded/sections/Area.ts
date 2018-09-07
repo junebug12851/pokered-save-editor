@@ -1,7 +1,5 @@
 import { MapConnData } from './../fragments/MapConnData';
 import { SignData } from '../fragments/SignData';
-import { WarpData } from '../fragments/WarpData';
-import { SpriteData } from '../fragments/SpriteData';
 import { SaveFileService } from '../../savefile.service';
 
 export interface WildPokemon {
@@ -11,27 +9,6 @@ export interface WildPokemon {
 
 export class Area {
     constructor(saveFile: SaveFileService) {
-        const musicID = saveFile.getHex(0x2607, 0x1).padStart(2, "0").toUpperCase();
-        const musicBank = saveFile.getHex(0x2608, 0x1).padStart(2, "0").toUpperCase();
-
-        this.music = `${musicBank}_${musicID}`;
-
-        const curTileset = saveFile.getHex(0x2613, 0x1).padStart(2, "0").toUpperCase();
-        const tilesetBank = saveFile.getHex(0x27D7, 0x1).padStart(2, "0").toUpperCase();
-
-        const tilesetBlockPtr = saveFile.getWord(0x27D8, true).toString(16).padStart(4, "0").toUpperCase();
-        const tilesetGfxPtr = saveFile.getWord(0x27DA, true).toString(16).padStart(4, "0").toUpperCase();
-        const tilesetCollPtr = saveFile.getWord(0x27DC, true).toString(16).padStart(4, "0").toUpperCase();
-
-        this.tileset = `${tilesetBank}_${curTileset}_${tilesetGfxPtr}_${tilesetBlockPtr}_${tilesetCollPtr}`;
-
-        // Get total sprite count and increment by 1 to include player
-        const spriteCount = saveFile.getByte(0x278D) + 1;
-        this.spriteData = [];
-        for (let i = 0; i < spriteCount && i < 16; i++) {
-            this.spriteData.push(new SpriteData(saveFile, i));
-        }
-
         const curMap = saveFile.getByte(0x260A).toString(16).padStart(2, "0").toUpperCase();
         const mapHeight = saveFile.getByte(0x2614).toString().padStart(2, "0");
         const mapWidth = saveFile.getByte(0x2615).toString().padStart(2, "0");
@@ -84,16 +61,6 @@ export class Area {
             // @ts-ignore
             this.mapConnData.east = MapConnData.empty;
 
-        this.spriteSet = saveFile.getRange(0x2649, 0xB);
-        this.spriteSetId = saveFile.getByte(0x2654);
-        this.outOfBoundsTile = saveFile.getHex(0x2659, 0x1).padStart(2, "0").toUpperCase();
-
-        this.warpData = [];
-        for (let i = 0; i < saveFile.getByte(0x265A) && i < 32; i++) {
-            this.warpData.push(new WarpData(saveFile, i));
-        }
-        this.warpDest = saveFile.getByte(0x26DB);
-
         this.signData = [];
         for (let i = 0; i < saveFile.getByte(0x275C) && i < 16; i++) {
             this.signData.push(new SignData(saveFile, i));
@@ -105,31 +72,14 @@ export class Area {
         this.playerMoveDir = saveFile.getByte(0x27D4);
         this.playerLastStopDir = saveFile.getByte(0x27D5);
         this.playerCurDir = saveFile.getByte(0x27D6);
-        const tilesetTalkingOverTiles = saveFile.getRange(0x27DE, 0x3);
-        this.tilesetTalkingOverTiles = [
-            tilesetTalkingOverTiles[0].toString(16).padStart(2, "0").toUpperCase(),
-            tilesetTalkingOverTiles[1].toString(16).padStart(2, "0").toUpperCase(),
-            tilesetTalkingOverTiles[2].toString(16).padStart(2, "0").toUpperCase(),
-        ];
-        this.tilesetGrassTile = saveFile.getByte(0x27E1).toString(16).padStart(2, "0").toUpperCase();
-
         this.walkBikeSurf = saveFile.getByte(0x29AC);
         this.safariSteps = saveFile.getWord(0x29B9);
         this.playerJumpingYScrnCoords = saveFile.getByte(0x29C0);
-        this.boulderSpriteIndex = saveFile.getByte(0x29C4);
-        this.tileFrontBoulderColl = saveFile.getByte(0x29C8).toString(16).padStart(2, "0").toUpperCase();
-        this.dungeonWarpDestMap = saveFile.getByte(0x29C9);
-        this.specialWarpDestMap = saveFile.getByte(0x29C6);
-        this.whichDungeonWarp = saveFile.getByte(0x29CA);
-
         this.strengthOutsideBattle = saveFile.getBit(0x29D4, 1, 0);
         this.surfingAllowed = saveFile.getBit(0x29D4, 1, 1);
         this.usedCardKey = saveFile.getBit(0x29D4, 1, 7);
         this.pauseWildEncounters3Steps = saveFile.getBit(0x29D8, 1, 0);
-        this.noAudioFadeout = saveFile.getBit(0x29D8, 1, 1);
         this.tradeCenterSpritesFaced = saveFile.getBit(0x29D9, 1, 0);
-        this.scriptedWarp = saveFile.getBit(0x29D9, 1, 3);
-        this.isDungeonWarp = saveFile.getBit(0x29D9, 1, 4);
         this.npcsFaceAway = saveFile.getBit(0x29D9, 1, 5);
         this.isBattle = saveFile.getBit(0x29D9, 1, 6);
         this.isTrainerBattle = saveFile.getBit(0x29D9, 1, 7);
@@ -140,14 +90,9 @@ export class Area {
         this.npcSpriteMovement = saveFile.getBit(0x29DC, 1, 0);
         this.ignoreJoypad = saveFile.getBit(0x29DC, 1, 5);
         this.joypadSimulation = saveFile.getBit(0x29DC, 1, 7);
-        this.flyOrDungeonWarp = saveFile.getBit(0x29DE, 1, 2);
-        this.flyWarp = saveFile.getBit(0x29DE, 1, 3);
-        this.dungeonWarp = saveFile.getBit(0x29DE, 1, 4);
         this.forceBikeRide = saveFile.getBit(0x29DE, 1, 5);
         this.blackoutDest = saveFile.getBit(0x29DE, 1, 6);
         this.runningTestBattle = saveFile.getBit(0x29DF, 1, 0);
-        this.preventMusicChange = saveFile.getBit(0x29DF, 1, 1);
-        this.skipJoypadCheckWarps = saveFile.getBit(0x29DF, 1, 2);
         this.trainerWantsBattle = saveFile.getBit(0x29DF, 1, 3);
         this.curMapNextFrame = saveFile.getBit(0x29DF, 1, 4);
         this.flyOutofBattle = saveFile.getBit(0x29DF, 1, 7);
@@ -156,10 +101,6 @@ export class Area {
         this.standingOnWarp = saveFile.getBit(0x29E2, 1, 2);
         this.finalLedgeJumping = saveFile.getBit(0x29E2, 1, 6);
         this.spinPlayer = saveFile.getBit(0x29E2, 1, 7);
-
-        this.warpedFromWarp = saveFile.getByte(0x29E7);
-        this.warpedfromMap = saveFile.getByte(0x29E8);
-
         this.cardKeyDoorY = saveFile.getByte(0x29EB);
         this.cardKeyDoorX = saveFile.getByte(0x29EC);
         this.firstTrashcanLock = saveFile.getByte(0x29EF);
@@ -208,55 +149,7 @@ export class Area {
         this.curMapScript = saveFile.getByte(0x2CE5);
         this.safariGameOver = saveFile.getByte(0x2CF2) == 1;
         this.safariBallCount = saveFile.getByte(0x2CF3);
-
-        this.tilesetType = saveFile.getByte(0x3522).toString(16).padStart(2, "0").toUpperCase();
     }
-
-    // Audio (Complete)
-    public music: string;
-    public noAudioFadeout: boolean;
-    public preventMusicChange: boolean;
-
-    // Tileset (Complete)
-    public tileset: string;
-    public outOfBoundsTile: string;
-    public tilesetTalkingOverTiles: string[];
-    public tilesetGrassTile: string;
-    public boulderSpriteIndex: number;
-    public tileFrontBoulderColl: string;
-    public tilesetType: string;
-
-    // Cached Sprites (Complete)
-    public spriteSet: Uint8Array;
-    public spriteSetId: number;
-
-    // Sprites (Complete)
-    public spriteData: SpriteData[];
-    public tradeCenterSpritesFaced: boolean;
-
-    /**
-     * Warps (Complete)
-     */
-    // Pre-Warp
-    public scriptedWarp: boolean; // Do a scripted warp
-    public isDungeonWarp: boolean; // On a dungeon warp
-    public skipJoypadCheckWarps: boolean; // Skips check for warp after not collided (Forced Warp)??
-
-    // Warping
-    public warpDest: number; // Warp actively warping to or 0xFF to warp to same position
-    public dungeonWarpDestMap: number; // Destination Map for dungeon warps
-    public specialWarpDestMap: number; // Destination Map for special warps
-    public flyOrDungeonWarp: boolean; // Is a fly or dungeon warp
-    public flyWarp: boolean; // Is a fly warp
-    public dungeonWarp: boolean; // Is a dungeon warp
-
-    // Warped
-    public whichDungeonWarp: number; // Warped from which dungeon warp
-    public warpedFromWarp: number; // Warped from which warp
-    public warpedfromMap: number; // Warped from which map
-
-    // Warp Points
-    public warpData: WarpData[]; // Warp entries
 
     // Signs
     public signData: SignData[];
@@ -374,6 +267,7 @@ export class Area {
     public npcsFaceAway: boolean;
     public scriptedNPCMovement: boolean;
     public npcSpriteMovement: boolean;
+    public tradeCenterSpritesFaced: boolean;
 
     // Controls
     public ignoreJoypad: boolean;
