@@ -4,7 +4,7 @@
 
     .xl2.l3.m6.s12
         select-map-full(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.curMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.curMap'
             label='Current Map'
         )
 
@@ -15,7 +15,7 @@
                 matInput
                 type='number'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.curMapScript'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.maps.curMapScript'
             )
 
     .xl2.l3.m6.s12
@@ -25,7 +25,7 @@
                 matInput
                 type='text'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.currentTileBlockMapViewPointer'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.maps.currentTileBlockMapViewPointer'
             )
 
     .xl2.l3.m6.s12
@@ -35,13 +35,13 @@
                 matInput
                 type='text'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.mapViewVRAMPointer'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.maps.mapViewVRAMPointer'
             )
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.curMapNextFrame'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.curMapNextFrame'
         )
             span Run Current Map Script Instead
 
@@ -52,13 +52,13 @@
         mat-checkbox(
             #isNorth=''
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.mapConn.north'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.mapConn.north'
         )
             span North
 
     .s12
         connection-item(
-            '[data]'='fileService.fileDataExpanded.area.mapConnData.north'
+            '[data]'='fileService.fileDataExpanded.area.maps.mapConnData.north'
             '[disabled]'='!isNorth.checked'
         )
 
@@ -66,13 +66,13 @@
         mat-checkbox(
             #isEast=''
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.mapConn.east'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.mapConn.east'
         )
             span East
 
     .s12
         connection-item(
-            '[data]'='fileService.fileDataExpanded.area.mapConnData.east'
+            '[data]'='fileService.fileDataExpanded.area.maps.mapConnData.east'
             '[disabled]'='!isEast.checked'
         )
 
@@ -80,13 +80,13 @@
         mat-checkbox(
             #isSouth=''
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.mapConn.south'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.mapConn.south'
         )
             span South
 
     .s12
         connection-item(
-            '[data]'='fileService.fileDataExpanded.area.mapConnData.south'
+            '[data]'='fileService.fileDataExpanded.area.maps.mapConnData.south'
             '[disabled]'='!isSouth.checked'
         )
 
@@ -94,13 +94,13 @@
         mat-checkbox(
             #isWest=''
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.mapConn.west'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.mapConn.west'
         )
             span West
 
     .s12
         connection-item(
-            '[data]'='fileService.fileDataExpanded.area.mapConnData.west'
+            '[data]'='fileService.fileDataExpanded.area.maps.mapConnData.west'
             '[disabled]'='!isWest.checked'
         )
 
@@ -110,14 +110,14 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.forceBikeRide'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.forceBikeRide'
         )
             span Force Bike Ride
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.blackoutDest'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.maps.blackoutDest'
         )
             span To Blackout Dest
 
@@ -128,7 +128,7 @@
                 matInput
                 type='number'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.cardKeyDoorX'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.maps.cardKeyDoorX'
             )
 
     .xl2.l3.m6.s12
@@ -138,5 +138,5 @@
                 matInput
                 type='number'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.cardKeyDoorY'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.maps.cardKeyDoorY'
             )

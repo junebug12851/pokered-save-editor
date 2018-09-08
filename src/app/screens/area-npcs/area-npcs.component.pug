@@ -5,21 +5,21 @@
     .xl3.l4.m8.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.npcsFaceAway'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.npcsFaceAway'
         )
             span Face Away on Interaction
 
     .xl3.l4.m8.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.scriptedNPCMovement'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.scriptedNPCMovement'
         )
             span Scripted Movement Init
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.npcSpriteMovement'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.npcSpriteMovement'
         )
             span Scripted Movement Running
 
@@ -29,14 +29,14 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.ignoreJoypad'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.ignoreJoypad'
         )
             span Ignore Controls
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.joypadSimulation'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.joypadSimulation'
         )
             span Scripted Controls
 
@@ -46,14 +46,14 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.runningTestBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.runningTestBattle'
         )
             span Scripted Battle
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.trainerWantsBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.trainerWantsBattle'
         )
             span Trainer Battle
 
@@ -64,5 +64,5 @@
                 matInput
                 type='text'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.trainerHeaderPtr'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.npcs.trainerHeaderPtr'
             )

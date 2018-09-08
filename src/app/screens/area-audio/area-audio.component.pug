@@ -6,7 +6,7 @@
         mat-form-field(style="width: 100%")
             mat-label Music
             mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.area.music'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.audio.music'
                 required=''
             )
                 mat-option('[value]'='"0"', disabled='') Select Music
@@ -59,12 +59,12 @@
 
     .xl2.l4.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.noAudioFadeout'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.audio.noAudioFadeout'
         )
             span No Audio Fadeout
 
     .xl3.l5.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.preventMusicChange'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.audio.preventMusicChange'
         )
             span Prevent Music Change

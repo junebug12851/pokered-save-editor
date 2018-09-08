@@ -4,19 +4,19 @@
 
     .xl2.l3.m6.s12
         select-player-direction(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.playerMoveDir'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.playerMoveDir'
             label='Moving'
         )
 
     .xl2.l3.m6.s12
         select-player-direction(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.playerLastStopDir'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.playerLastStopDir'
             label='Last Stop'
         )
 
     .xl2.l3.m6.s12
         select-player-direction(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.playerCurDir'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.playerCurDir'
             label='Current'
         )
 
@@ -31,7 +31,7 @@
                 type='number'
                 required=''
                 placeholder='X'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.xCoord'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.xCoord'
             )
 
     .xl2.l3.m6.s12
@@ -42,7 +42,7 @@
                 type='number'
                 required=''
                 placeholder='Y'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.yCoord'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.yCoord'
             )
 
     .xl2.l3.m6.s12
@@ -53,7 +53,7 @@
                 type='number'
                 required=''
                 placeholder='X Blocks'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.xBlockCoord'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.xBlockCoord'
             )
 
     .xl2.l3.m6.s12
@@ -64,7 +64,7 @@
                 type='number'
                 required=''
                 placeholder='Y Blocks'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.yBlockCoord'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.yBlockCoord'
             )
 
     .xl2.l3.m6.s12
@@ -75,7 +75,7 @@
                 type='number'
                 required=''
                 placeholder='Jumping Y'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.playerJumpingYScrnCoords'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.playerJumpingYScrnCoords'
             )
 
     .s12
@@ -84,7 +84,7 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.safariGameOver'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.safariGameOver'
         )
             span Game Over
 
@@ -96,7 +96,7 @@
                 type='number'
                 required=''
                 placeholder='Safari Balls'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.safariBallCount'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.safariBallCount'
             )
 
     .xl2.l3.m6.s12
@@ -107,7 +107,7 @@
                 type='number'
                 required=''
                 placeholder='Safari Steps'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.safariSteps'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.safariSteps'
             )
 
     .s12
@@ -116,21 +116,21 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.strengthOutsideBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.strengthOutsideBattle'
         )
             span Using Strength
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.flyOutofBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.flyOutofBattle'
         )
             span Using Fly
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.surfingAllowed'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.surfingAllowed'
         )
             span Surfing Allowed
 
@@ -140,28 +140,28 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.isBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.isBattle'
         )
             span Battle Ongoing
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.isTrainerBattle'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.isTrainerBattle'
         )
             span Trainer Battle
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.noBattles'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.noBattles'
         )
             span Prevent Battles
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.battleEndedOrBlackout'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.battleEndedOrBlackout'
         )
             span Battle Ended
 
@@ -175,7 +175,7 @@
                 matInput
                 type='number'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.yOffsetSinceLastSpecialWarp'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.yOffsetSinceLastSpecialWarp'
             )
 
     .xl2.l3.m6.s12
@@ -185,27 +185,27 @@
                 matInput
                 type='number'
                 required=''
-                '[(ngModel)]'='fileService.fileDataExpanded.area.xOffsetSinceLastSpecialWarp'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.xOffsetSinceLastSpecialWarp'
             )
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.standingOnDoor'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.standingOnDoor'
         )
             span Standing on Door
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.movingThroughDoor'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.movingThroughDoor'
         )
             span Moving through Door
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.standingOnWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.standingOnWarp'
         )
             span Standing on Warp
 
@@ -216,7 +216,7 @@
         mat-form-field(style="width: 100%;")
             mat-label Walk/Bike/Surf
             mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.area.walkBikeSurf'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.player.walkBikeSurf'
                 required=''
             )
                 mat-option('[value]'="0") Walking
@@ -226,27 +226,27 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.finalLedgeJumping'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.finalLedgeJumping'
         )
             span End Ledge Jump
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.spinPlayer'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.spinPlayer'
         )
             span Spin Player
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.usedCardKey'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.usedCardKey'
         )
             span Used Card Key
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.area.usingLinkCable'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.player.usingLinkCable'
         )
             span Using Link Cable
