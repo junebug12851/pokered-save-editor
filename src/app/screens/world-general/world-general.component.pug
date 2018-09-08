@@ -5,13 +5,13 @@
     .xl2.l3.m6.s12
         select-map(
             label='Last Map'
-            '[(ngModel)]'='fileService.fileDataExpanded.world.lastMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.lastMap'
         )
 
     .xl2.l3.m6.s12
         select-map(
             label='Last Blackout'
-            '[(ngModel)]'='fileService.fileDataExpanded.world.lastBlackoutMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.lastBlackoutMap'
         )
 
     .s12
@@ -23,13 +23,13 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.options.textSpeedSlowness'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.textSpeedSlowness'
             )
 
     .xl2.l3.m6.s12
         mat-label Battle Style
         mat-button-toggle-group(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.options.battleStyleSet'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleStyleSet'
         )
             mat-button-toggle('[value]'='false')
                 | Shift
@@ -39,7 +39,7 @@
     .xl2.l3.m6.s12
         mat-label Battle Animation
         mat-button-toggle-group(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.options.battleAnimOff'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleAnimOff'
         )
             mat-button-toggle('[value]'='true')
                 | Off
@@ -49,13 +49,13 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.world.letterDelay.normalDelay'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.letterDelay.normalDelay'
         )
             span Normal Text Speed
 
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.world.letterDelay.dontDelay'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.general.letterDelay.dontDelay'
         )
             span Fastest Text Speed
