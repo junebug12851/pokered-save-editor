@@ -1,3 +1,7 @@
+import { AreaNPC } from './AreaNPC';
+import { AreaMap } from './AreaMap';
+import { AreaPlayer } from './AreaPlayer';
+import { AreaSigns } from './AreaSigns';
 import { AreaWarps } from './AreaWarps';
 import { AreaCachedSprites } from './AreaCachedSprites';
 import { AreaTileset } from './AreaTileset';
@@ -17,6 +21,10 @@ export class Area {
         this.tileset = new AreaTileset(saveFile);
         this.cachedSprites = new AreaCachedSprites(saveFile);
         this.warps = new AreaWarps(saveFile);
+        this.signs = new AreaSigns(saveFile);
+        this.player = new AreaPlayer(saveFile);
+        this.map = new AreaMap(saveFile);
+        this.npc = new AreaNPC(saveFile);
     }
 
     public save(saveFile: SaveFileService) {
@@ -25,6 +33,10 @@ export class Area {
         this.tileset.save(saveFile);
         this.cachedSprites.save(saveFile);
         this.warps.save(saveFile);
+        this.signs.save(saveFile);
+        this.player.save(saveFile);
+        this.map.save(saveFile);
+        this.npc.save(saveFile);
     }
 
     public general: AreaGeneral = new AreaGeneral();
@@ -32,4 +44,8 @@ export class Area {
     public tileset: AreaTileset = new AreaTileset();
     public cachedSprites: AreaCachedSprites = new AreaCachedSprites();
     public warps: AreaWarps = new AreaWarps();
+    public signs: AreaSigns = new AreaSigns();
+    public player: AreaPlayer = new AreaPlayer();
+    public map: AreaMap = new AreaMap();
+    public npc: AreaNPC = new AreaNPC();
 }
