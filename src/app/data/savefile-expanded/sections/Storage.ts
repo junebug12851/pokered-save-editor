@@ -28,10 +28,10 @@ export class Storage {
         this.pokemonBoxes = [];
 
         // Load boxes 1-6
-        this.loadBoxes(saveFile, 0x4000);
+        this.loadBoxes(saveFile, 0x4000, 0);
 
         // Load boxes 7-12
-        this.loadBoxes(saveFile, 0x6000);
+        this.loadBoxes(saveFile, 0x6000, 1);
 
         // Overwrite box data of the current box with current box data
         // Pokemon Red and Blue save a copy of the current box locally in Bank 1
@@ -50,12 +50,16 @@ export class Storage {
     }
 
     // Loads 6 boxes in a bank offset adding to the existing boxes
-    loadBoxes(saveFile: SaveFileService, boxesOffset: number) {
-        for (let i = 0; i < 6; i++) {
-            this.pokemonBoxes.push([]);
+    loadBoxes(saveFile: SaveFileService, boxesOffset: number, boxSet: number) {
+        for (let i = boxSet * 6; i < (boxSet * 6) + 6; i++) {
+            // Skip current box (load only from cached box)
+            if (i == this.curBox)
+                continue;
+
+            this.pokemonBoxes[i] = [];
             this.loadBox(
                 saveFile,
-                this.pokemonBoxes.length - 1,
+                i,
                 (i * 0x462) + boxesOffset
             )
         }
@@ -128,6 +132,10 @@ export class Storage {
 
     saveBoxes(saveFile: SaveFileService, boxesOffset: number, boxSet: number) {
         for (let i = boxSet * 6; i < (boxSet * 6) + 6; i++) {
+            // Skip current box (save only to cached box)
+            if (i == this.curBox)
+                continue;
+
             this.saveBox(
                 saveFile,
                 i,
