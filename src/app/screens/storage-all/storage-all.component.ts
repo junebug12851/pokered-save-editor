@@ -47,15 +47,26 @@ export class StorageAllComponent implements OnInit {
     ////////////////////////////////
 
     getBoxPokemon(boxNum: number) {
-        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1];
+        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum];
+    }
+
+    // Should this box be marked as disabled?
+    // It's disabled if changedBoxesBefore is false and givenBoxNum is not the
+    // current box
+    getBoxDisabled(boxNum: number) {
+        if (!this.fileService.fileDataExpanded.storage.changedBoxesBefore &&
+            this.fileService.fileDataExpanded.storage.curBox != boxNum)
+            return true;
+
+        return false;
     }
 
     remPokemon(boxNum: number, i: number) {
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].splice(i, 1);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum].splice(i, 1);
     }
 
     addPokemon(boxNum: number) {
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(new PokemonBox());
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum].push(new PokemonBox());
     }
 
     ngOnInit() {

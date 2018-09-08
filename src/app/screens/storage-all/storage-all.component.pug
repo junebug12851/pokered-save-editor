@@ -10,14 +10,14 @@
                 type='number'
                 '[(ngModel)]'='fileService.fileDataExpanded.storage.curBox'
                 required=''
-                max='12'
+                max='11'
                 min='0'
             )
     .s3
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.storage.changedBoxesBefore'
         )
-            | Don't Format Boxes
+            | Other boxes are formatted
 
     .row.s12
         mat-tab-group
@@ -52,6 +52,7 @@
             mat-tab(
                 *ngFor='let key of [1,2,3,4,5,6,7,8,9,10,11,12]; trackBy: trackBoxTabs',
                 label="Box {{key}}"
+                '[disabled]'='getBoxDisabled(key-1)'
             )
                 .container
                     .l7.s12
@@ -63,17 +64,17 @@
                                 )
                     .l5.s12
                         card-pokemon-header(
-                            *ngFor='let pokemon of getBoxPokemon(key); let i = index; trackBy: trackBoxPokemon'
-                            '[entry]'='getBoxPokemon(key)[i]'
+                            *ngFor='let pokemon of getBoxPokemon(key-1); let i = index; trackBy: trackBoxPokemon'
+                            '[entry]'='getBoxPokemon(key-1)[i]'
                             '[remBtn]'='true'
                             '[fullViewBtn]'='true'
-                            '[fullViewActive]'='fullView == getBoxPokemon(key)[i]'
-                            '(onRem)'='remPokemon(key, i)'
-                            '(onFullView)'='onFullView(getBoxPokemon(key)[i])'
+                            '[fullViewActive]'='fullView == getBoxPokemon(key-1)[i]'
+                            '(onRem)'='remPokemon(key-1, i)'
+                            '(onFullView)'='onFullView(getBoxPokemon(key-1)[i])'
                         )
                         card-pokemon-header(
-                            *ngIf='getBoxPokemon(key).length <= 19'
+                            *ngIf='getBoxPokemon(key-1).length <= 19'
                             '[disabled]'='true'
                             '[addBtn]'='true'
-                            '(onAdd)'='addPokemon(key)'
+                            '(onAdd)'='addPokemon(key-1)'
                         )
