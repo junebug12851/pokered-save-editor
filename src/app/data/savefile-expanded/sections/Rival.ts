@@ -1,6 +1,6 @@
 import { SaveFileService } from '../../savefile.service';
 
-export class RivalBasics {
+export class Rival {
     constructor(saveFile?: SaveFileService) {
         if (arguments.length >= 1)
             this.load(saveFile as SaveFileService);
