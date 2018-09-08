@@ -113,11 +113,16 @@ export class Storage {
         this.saveBox(
             saveFile,
             this.curBox,
-            0x30C0
+            0x30C0,
+            true
         );
     }
 
-    saveBox(saveFile: SaveFileService, boxInd: number, boxOffset: number) {
+    saveBox(saveFile: SaveFileService, boxInd: number, boxOffset: number, force: boolean = false) {
+        // Don't write anything unless changedBoxesBefore is set unless forced
+        if (!this.changedBoxesBefore && !force)
+            return;
+
         saveFile.setByte(boxOffset, this.pokemonBoxes[boxInd].length);
         for (let i = 0; i < this.pokemonBoxes[boxInd].length && i < 20; i++) {
             this.pokemonBoxes[boxInd][i].save(

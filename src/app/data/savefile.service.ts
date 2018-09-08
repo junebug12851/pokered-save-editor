@@ -285,10 +285,17 @@ export class SaveFileService {
     }
 
     // Recalculates all checksums and sets them on the save data
-    public recalcChecksums() {
+    // Skips Pokemon box checksums unless marked as formatted or unless forced
+    public recalcChecksums(force: boolean = false) {
         // Bank 1 Checksum
         this.fileData[0x3523] = this.getChecksum(0x2598, 0x3523);
 
+        const boxesFormatted = (this.fileData[0x284C] & 0b10000000) > 0;
+        if (boxesFormatted || force)
+            this.recalcBoxesChecksums();
+    }
+
+    recalcBoxesChecksums() {
         // Bank 2 Checksums for Boxes 1-6
         const bank2IndvChecksums = [
             this.getChecksum(0x4000, 0x4462),
