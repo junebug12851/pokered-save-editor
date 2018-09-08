@@ -30,7 +30,7 @@ export class RootDaycareComponent {
     ) { }
 
     public dayCareUsedClick() {
-        const daycare = this.fileService.fileDataExpanded.daycare;
+        const daycare = this.fileService.fileDataExpanded.daycare.dayCare;
         if (daycare == null)
             this.fileService.fileDataExpanded.daycare.dayCare = new PokemonBox()
         else

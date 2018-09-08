@@ -219,7 +219,23 @@ export class PokemonBox {
         moveID: number;
         pp: number;
         ppUp: number;
-    }[] = [];
+    }[] = [{
+        moveID: 0,
+        pp: 0,
+        ppUp: 0
+    }, {
+        moveID: 0,
+        pp: 0,
+        ppUp: 0
+    }, {
+        moveID: 0,
+        pp: 0,
+        ppUp: 0
+    }, {
+        moveID: 0,
+        pp: 0,
+        ppUp: 0
+    }];
     public otID: string = "0000";
     public exp: number = 0;
     public hpExp: number = 0;
