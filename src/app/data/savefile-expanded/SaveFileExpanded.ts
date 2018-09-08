@@ -3,7 +3,6 @@ import { World } from './sections/World';
 import { Area } from './sections/Area';
 import { Storage } from './sections/Storage';
 import { Rival } from './sections/Rival';
-import { HoFRecord } from "./fragments/HoFRecord";
 import { Player } from './sections/Player';
 
 export class SaveFileExpanded {
@@ -13,10 +12,7 @@ export class SaveFileExpanded {
         this.rival = new Rival(saveFile);
         this.storage = new Storage(saveFile);
 
-        const hofRecordCount = saveFile.fileData[0x284E];
-        for (let i = 0; i < hofRecordCount && i < 50; i++) {
-            this.hallOfFame.push(new HoFRecord(saveFile, i));
-        }
+
 
         this.area = new Area(saveFile);
         this.world = new World(saveFile);
@@ -30,9 +26,6 @@ export class SaveFileExpanded {
 
     // Related to the PC Storage System
     public storage: Storage;
-
-    // Related to the Hall of Fame
-    public hallOfFame: HoFRecord[] = [];
 
     // Related to the current map the player is on and will be destroyed when
     // player leaves
