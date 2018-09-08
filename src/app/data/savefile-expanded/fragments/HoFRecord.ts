@@ -3,7 +3,7 @@ import { HoFPokemon } from './HoFPokemon';
 
 export class HoFRecord {
     constructor(saveFile?: SaveFileService, index?: number) {
-        if (arguments.length >= 2)
+        if (saveFile !== undefined)
             this.load(saveFile as SaveFileService, index as number);
     }
 

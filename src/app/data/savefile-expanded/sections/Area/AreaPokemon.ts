@@ -7,7 +7,7 @@ export interface WildPokemon {
 
 export class AreaPokemon {
     constructor(saveFile?: SaveFileService) {
-        if (arguments.length >= 1)
+        if (saveFile !== undefined)
             this.load(saveFile as SaveFileService);
     }
 

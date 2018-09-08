@@ -9,7 +9,7 @@ export class PokemonBox {
         index?: number,
         recordSize?: number) {
 
-        if (arguments.length >= 6)
+        if (saveFile !== undefined)
             this.load(
                 saveFile as SaveFileService,
                 startOffset as number,

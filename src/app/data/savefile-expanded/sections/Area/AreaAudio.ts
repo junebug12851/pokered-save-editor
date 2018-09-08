@@ -2,7 +2,7 @@ import { SaveFileService } from './../../../savefile.service';
 
 export class AreaAudio {
     constructor(saveFile?: SaveFileService) {
-        if (arguments.length >= 1)
+        if (saveFile !== undefined)
             this.load(saveFile as SaveFileService);
     }
 
