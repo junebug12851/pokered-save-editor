@@ -2,7 +2,7 @@ import { SaveFileService } from '../../savefile.service';
 
 export class HoFPokemon {
     constructor(saveFile?: SaveFileService, recordOffset?: number, index?: number) {
-        if (arguments.length >= 3)
+        if (saveFile !== undefined)
             this.load(
                 saveFile as SaveFileService,
                 recordOffset as number,

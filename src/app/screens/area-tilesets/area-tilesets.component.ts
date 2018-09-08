@@ -158,14 +158,14 @@ export class AreaTilesetsComponent {
     }
 
     get invalidClass() {
-        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tileset.outOfBoundsTile;
+        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tilesets.outOfBoundsTile;
     }
 
     get grassClass() {
-        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tileset.tilesetGrassTile;
+        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tilesets.tilesetGrassTile;
     }
 
     getCounterClass(val: number) {
-        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tileset.tilesetTalkingOverTiles[val];
+        return "pr pr-pic pr-raw-" + this.fileService.fileDataExpanded.area.tilesets.tilesetTalkingOverTiles[val];
     }
 }

@@ -3,7 +3,7 @@ import { toBitArray, fromBitArray } from '../../util/bitArray';
 
 export class WorldTowns {
     constructor(saveFile?: SaveFileService) {
-        if (arguments.length >= 1)
+        if (saveFile !== undefined)
             this.load(saveFile as SaveFileService);
     }
 

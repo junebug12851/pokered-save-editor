@@ -2,7 +2,7 @@ import { SaveFileService } from './../../savefile.service';
 
 export class MapConnData {
     constructor(saveFile?: SaveFileService, offset?: number) {
-        if (arguments.length >= 2)
+        if (saveFile !== undefined)
             this.load(saveFile as SaveFileService, offset as number);
     }
 

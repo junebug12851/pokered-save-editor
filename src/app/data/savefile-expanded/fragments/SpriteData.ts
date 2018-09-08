@@ -8,9 +8,9 @@ export class SpriteData {
      * 2 arguments - Load data with savefile and index
      */
     constructor(savefile?: SaveFileService | boolean, index?: number) {
-        if (arguments.length >= 2)
+        if ((typeof savefile === "object") && savefile !== null)
             this.load(savefile as SaveFileService, index as number);
-        else if (arguments.length === 1 && savefile === true) {
+        else if (savefile === true) {
             this.rangeDirByte = 0;
             this.textID = 0;
             this.trainerClassOrItemID = 0;

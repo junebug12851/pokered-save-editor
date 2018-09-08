@@ -2,7 +2,7 @@ import { SaveFileService } from './../../savefile.service';
 
 export class SignData {
     constructor(savefile?: SaveFileService, index?: number) {
-        if (arguments.length >= 2)
+        if (savefile !== undefined)
             this.load(savefile as SaveFileService, index as number);
     }
 
