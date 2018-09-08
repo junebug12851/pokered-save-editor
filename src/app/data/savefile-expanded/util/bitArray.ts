@@ -33,7 +33,7 @@ export function fromBitArray(
     fromArr: Array<boolean>
 ): SaveFileIterator {
     const it = saveFile.iterator.offsetTo(offset);
-    for (let i = 0; i < byteSize; i++) {
+    for (let i = 0; i < byteSize * 8; i += 8) {
         it.setBit(1, 0, fromArr[i + 0]);
         it.setBit(1, 1, fromArr[i + 1]);
         it.setBit(1, 2, fromArr[i + 2]);
