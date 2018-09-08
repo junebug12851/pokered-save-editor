@@ -58,11 +58,11 @@ export class WorldEventsComponent implements OnInit {
     }
 
     getEvent(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.completedEvents[index];
+        return this.fileService.fileDataExpanded.world.events.completedEvents[index];
     }
 
     setEvent(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.completedEvents[index] = value;
+        this.fileService.fileDataExpanded.world.events.completedEvents[index] = value;
     }
 
     toggleEvent(index: number) {
@@ -72,7 +72,7 @@ export class WorldEventsComponent implements OnInit {
     toggleAllEvents() {
         const item0 = this.getEvent(0);
 
-        const count = this.fileService.fileDataExpanded.world.completedEvents.length;
+        const count = this.fileService.fileDataExpanded.world.events.completedEvents.length;
 
         for (let i = 0; i < count; i++) {
             this.setEvent(i, !item0);

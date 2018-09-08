@@ -44,5 +44,5 @@ export class ConnectionItemComponent extends ValueAccessorBase<string> implement
     public disabled: boolean = false;
 
     @Input()
-    public data: any = MapConnData.empty;
+    public data: any = new MapConnData();
 }

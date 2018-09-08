@@ -40,11 +40,11 @@ export class WorldTownsComponent implements OnInit {
     }
 
     getTown(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.visitedTowns[index];
+        return this.fileService.fileDataExpanded.world.towns.visitedTowns[index];
     }
 
     setTown(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.visitedTowns[index] = value;
+        this.fileService.fileDataExpanded.world.towns.visitedTowns[index] = value;
     }
 
     toggleTown(index: number) {

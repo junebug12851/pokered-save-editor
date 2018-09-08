@@ -29,15 +29,15 @@ export class PlayerPokemonComponent {
     ) { }
 
     get entries() {
-        return this.fileService.fileDataExpanded.player.playerParty;
+        return this.fileService.fileDataExpanded.player.pokemon.playerParty;
     }
 
     onAdd() {
-        this.fileService.fileDataExpanded.player.playerParty.push(PokemonParty.empty);
+        this.fileService.fileDataExpanded.player.pokemon.playerParty.push(new PokemonParty());
     }
 
     onRem(i: number) {
-        this.fileService.fileDataExpanded.player.playerParty.splice(i, 1);
+        this.fileService.fileDataExpanded.player.pokemon.playerParty.splice(i, 1);
     }
 
     onFullView(entry: PokemonParty) {

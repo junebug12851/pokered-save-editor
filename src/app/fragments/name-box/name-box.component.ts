@@ -84,7 +84,7 @@ export class NameBoxComponent implements OnInit, OnChanges {
         if (rivalName == "")
             rivalName = "Blue"
 
-        let playerName = this.saveFile.fileDataExpanded.player.playerName;
+        let playerName = this.saveFile.fileDataExpanded.player.basics.playerName;
         if (playerName == "")
             playerName = "Red"
 

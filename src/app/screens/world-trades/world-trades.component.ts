@@ -39,11 +39,11 @@ export class WorldTradesComponent implements OnInit {
     }
 
     getTrade(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.inGameTrades[index];
+        return this.fileService.fileDataExpanded.world.trades.inGameTrades[index];
     }
 
     setTrade(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.inGameTrades[index] = value;
+        this.fileService.fileDataExpanded.world.trades.inGameTrades[index] = value;
     }
 
     toggleTrade(index: number) {

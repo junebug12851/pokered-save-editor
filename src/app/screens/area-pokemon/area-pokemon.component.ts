@@ -29,47 +29,47 @@ export class AreaPokemonComponent {
     ) { }
 
     get grassEntries() {
-        return this.fileService.fileDataExpanded.area.grassPokemon;
+        return this.fileService.fileDataExpanded.area.pokemon.grassPokemon;
     }
 
     get waterEntries() {
-        return this.fileService.fileDataExpanded.area.waterPokemon;
+        return this.fileService.fileDataExpanded.area.pokemon.waterPokemon;
     }
 
     addGrassEntry() {
-        this.fileService.fileDataExpanded.area.grassPokemon.push({
+        this.fileService.fileDataExpanded.area.pokemon.grassPokemon.push({
             level: 0,
             pokemon: 0,
         });
     }
 
     addWaterEntry() {
-        this.fileService.fileDataExpanded.area.waterPokemon.push({
+        this.fileService.fileDataExpanded.area.pokemon.waterPokemon.push({
             level: 0,
             pokemon: 0,
         });
     }
 
     remGrassEntry(index: number) {
-        this.fileService.fileDataExpanded.area.grassPokemon.splice(index, 1);
+        this.fileService.fileDataExpanded.area.pokemon.grassPokemon.splice(index, 1);
     }
 
     remWaterEntry(index: number) {
-        this.fileService.fileDataExpanded.area.grassPokemon.splice(index, 1);
+        this.fileService.fileDataExpanded.area.pokemon.grassPokemon.splice(index, 1);
     }
 
     grassRateClick() {
-        if (this.fileService.fileDataExpanded.area.grassRate > 0)
-            this.fileService.fileDataExpanded.area.grassRate = 0;
+        if (this.fileService.fileDataExpanded.area.pokemon.grassRate > 0)
+            this.fileService.fileDataExpanded.area.pokemon.grassRate = 0;
         else
-            this.fileService.fileDataExpanded.area.grassRate = 1;
+            this.fileService.fileDataExpanded.area.pokemon.grassRate = 1;
     }
 
     waterRateClick() {
-        if (this.fileService.fileDataExpanded.area.waterPokemonRate > 0)
-            this.fileService.fileDataExpanded.area.waterPokemonRate = 0;
+        if (this.fileService.fileDataExpanded.area.pokemon.waterPokemonRate > 0)
+            this.fileService.fileDataExpanded.area.pokemon.waterPokemonRate = 0;
         else
-            this.fileService.fileDataExpanded.area.waterPokemonRate = 1;
+            this.fileService.fileDataExpanded.area.pokemon.waterPokemonRate = 1;
     }
 
     entriesTracking(index: number) {

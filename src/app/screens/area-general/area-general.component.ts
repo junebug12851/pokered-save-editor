@@ -29,7 +29,7 @@ export class AreaGeneralComponent {
     ) { }
 
     get contrastImgUrl() {
-        const contrast = this.fileService.fileDataExpanded.area.contrast;
+        const contrast = this.fileService.fileDataExpanded.area.general.contrast;
 
         if (contrast == 0)
             return 'assets/pokered-contrast/contrast0.png';

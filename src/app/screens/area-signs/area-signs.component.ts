@@ -16,6 +16,7 @@
 
 import { Component } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
+import { SignData } from '../../data/savefile-expanded/fragments/SignData';
 
 @Component({
     selector: 'screen-area-signs',
@@ -29,19 +30,15 @@ export class AreaSignsComponent {
     ) { }
 
     get signs() {
-        return this.fileService.fileDataExpanded.area.signData;
+        return this.fileService.fileDataExpanded.area.signs.signData;
     }
 
     addListItem() {
-        this.fileService.fileDataExpanded.area.signData.push({
-            y: 0,
-            x: 0,
-            text: 0
-        });
+        this.fileService.fileDataExpanded.area.signs.signData.push(new SignData());
     }
 
     remListItem(index: number) {
-        this.fileService.fileDataExpanded.area.signData.splice(index, 1);
+        this.fileService.fileDataExpanded.area.signs.signData.splice(index, 1);
     }
 
     trackByFn(index: number) {

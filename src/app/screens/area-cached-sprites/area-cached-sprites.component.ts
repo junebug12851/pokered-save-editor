@@ -30,7 +30,7 @@ export class AreaCachedSpritesComponent {
     ) { }
 
     get entries() {
-        return this.fileService.fileDataExpanded.area.spriteSet;
+        return this.fileService.fileDataExpanded.area.cachedSprites.spriteSet;
     }
 
     get preloadFromList() {

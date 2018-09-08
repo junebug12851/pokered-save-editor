@@ -29,22 +29,22 @@ export class PlayerItemsComponent {
     ) { }
 
     get entries() {
-        return this.fileService.fileDataExpanded.player.bagItems;
+        return this.fileService.fileDataExpanded.player.items.bagItems;
     }
 
     get entriesCount() {
-        return this.fileService.fileDataExpanded.player.bagItems.length;
+        return this.fileService.fileDataExpanded.player.items.bagItems.length;
     }
 
     addListItem() {
-        this.fileService.fileDataExpanded.player.bagItems.push({
+        this.fileService.fileDataExpanded.player.items.bagItems.push({
             id: 0,
             amount: 1,
         });
     }
 
     remListItem(index: number) {
-        this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
+        this.fileService.fileDataExpanded.player.items.bagItems.splice(index, 1);
     }
 
     entriesTracking(index: number) {

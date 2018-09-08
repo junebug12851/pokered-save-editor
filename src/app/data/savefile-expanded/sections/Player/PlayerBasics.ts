@@ -54,15 +54,17 @@ export class PlayerBasics {
     public playerID: string = "0000";
     public money: number = 0;
     public coins: number = 0;
-    public badges = {
-        boulder: false as boolean,
-        cascade: false as boolean,
-        thunder: false as boolean,
-        rainbow: false as boolean,
-        soul: false as boolean,
-        marsh: false as boolean,
-        volcano: false as boolean,
-        earth: false as boolean
-    };
+    public badges: {
+        [index: string]: boolean
+    } = {
+            boulder: false as boolean,
+            cascade: false as boolean,
+            thunder: false as boolean,
+            rainbow: false as boolean,
+            soul: false as boolean,
+            marsh: false as boolean,
+            volcano: false as boolean,
+            earth: false as boolean,
+        };
     public playerStarter: string = "00";
 }
