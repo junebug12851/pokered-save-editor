@@ -72,8 +72,7 @@ export class AreaPokemonComponent {
             this.fileService.fileDataExpanded.area.waterPokemonRate = 1;
     }
 
-    // @ts-ignore
-    entriesTracking(index: number, item: any) {
+    entriesTracking(index: number) {
         return index; // or item.id
     }
 }

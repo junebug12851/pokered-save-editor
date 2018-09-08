@@ -55,8 +55,7 @@ export class StorageAllComponent implements OnInit {
     }
 
     addPokemon(boxNum: number) {
-        // @ts-ignore
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(PokemonBox.empty);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(new PokemonBox());
     }
 
     ngOnInit() {
@@ -70,18 +69,15 @@ export class StorageAllComponent implements OnInit {
             this.fullView = entry;
     }
 
-    // @ts-ignore
-    trackItems(index: number, item: any) {
+    trackItems(index: number) {
         return index;
     }
 
-    // @ts-ignore
-    trackBoxPokemon(index: number, item: any) {
+    trackBoxPokemon(index: number) {
         return index;
     }
 
-    // @ts-ignore
-    trackBoxTabs(index: number, item: any) {
+    trackBoxTabs(index: number) {
         return index;
     }
 

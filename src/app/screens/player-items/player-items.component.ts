@@ -47,8 +47,7 @@ export class PlayerItemsComponent {
         this.fileService.fileDataExpanded.player.bagItems.splice(index, 1);
     }
 
-    // @ts-ignore
-    entriesTracking(index: number, item: any) {
+    entriesTracking(index: number) {
         return index; // or item.id
     }
 }

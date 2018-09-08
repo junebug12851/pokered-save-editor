@@ -18,7 +18,10 @@ import { TextService } from './../../data/text.service';
 
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
-// @ts-ignore
+declare var window: {
+    require: any;
+};
+
 const _ = window.require("lodash");
 
 @Component({
