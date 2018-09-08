@@ -19,7 +19,10 @@ import { GameDataService } from './../../data/gameData.service';
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
-// @ts-ignore
+declare var window: {
+    require: any;
+};
+
 const _ = window.require("lodash");
 
 @Component({
@@ -36,8 +39,7 @@ export class PlayerPokedexComponent implements OnInit {
 
     ngOnInit() {
         this.gd.file("pokemon").data.forEach((el: Pokemon) => {
-            // @ts-ignore
-            if (!isNaN(el.pokedex))
+            if (!isNaN(el.pokedex as number))
                 this.pokedexPokemon.push(el);
         });
 

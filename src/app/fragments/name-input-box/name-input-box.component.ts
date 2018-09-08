@@ -23,9 +23,6 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-// @ts-ignore
-const _ = window.require("lodash");
-
 @Component({
     selector: 'name-input-box',
     templateUrl: './name-input-box.component.pug',

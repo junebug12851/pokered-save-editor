@@ -33,7 +33,7 @@ export class CardPokemonComponent implements OnInit {
     }
 
     @Input()
-    public entry: any = PokemonParty.empty;
+    public entry: any = new PokemonParty();
 
     @Input()
     public disabled: boolean = false;

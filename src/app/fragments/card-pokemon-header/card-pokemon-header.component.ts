@@ -1,5 +1,3 @@
-// @ts-ignore
-import { NicknameInputBoxComponent } from './../nickname-input-box/nickname-input-box.component';
 import { EventEmitter, OnInit } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
@@ -34,7 +32,7 @@ export class CardPokemonHeader implements OnInit {
     }
 
     @Input()
-    public entry: any = PokemonParty.empty;
+    public entry: any = new PokemonParty();
 
     @Input()
     public disabled: boolean = false;

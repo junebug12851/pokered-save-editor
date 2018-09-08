@@ -24,7 +24,10 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-// @ts-ignore
+declare var window: {
+    require: any;
+};
+
 const _ = window.require("lodash");
 
 @Component({

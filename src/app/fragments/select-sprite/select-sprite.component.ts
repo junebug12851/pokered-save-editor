@@ -50,8 +50,7 @@ export class SelectSpriteComponent extends ValueAccessorBase<string> {
         return sprites;
     }
 
-    // @ts-ignore
-    spriteListTrackBy(index: number, item: any) {
+    spriteListTrackBy(index: number) {
         return index;
     }
 }

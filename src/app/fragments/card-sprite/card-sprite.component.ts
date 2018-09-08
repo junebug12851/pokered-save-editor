@@ -1,8 +1,7 @@
 import { Sprite } from './../../../assets/data/sprites.d';
 import { GameDataService } from './../../data/gameData.service';
 import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
-// @ts-ignore
-import { OnInit, EventEmitter } from '@angular/core';
+import { OnInit } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
 
@@ -40,8 +39,7 @@ export class CardSpriteComponent implements OnInit {
     }
 
     @Input()
-    // @ts-ignore
-    public entry: any = SpriteData.emptyNPC;
+    public entry: any = new SpriteData(true);
 
     @Input()
     public disabled: boolean = false;
@@ -59,16 +57,12 @@ export class CardSpriteComponent implements OnInit {
     }
 
     public get isItem() {
-        // @ts-ignore
         return this.entry.trainerClassOrItemID > 0 &&
-            // @ts-ignore
             this.entry.trainerSetID == 0;
     }
 
     public get isTrainer() {
-        // @ts-ignore
         return this.entry.trainerClassOrItemID > 0 &&
-            // @ts-ignore
             this.entry.trainerSetID > 0;
     }
 
@@ -93,7 +87,6 @@ export class CardSpriteComponent implements OnInit {
     }
 
     public get isMissable() {
-        // @ts-ignore
         return this.entry.missableIndex > -1;
     }
 

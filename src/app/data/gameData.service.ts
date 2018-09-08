@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { utils } from './../utils/utils';
 
+declare var window: {
+    require: any;
+}
+
 /**
  * Represents a single game data file
  */
 class GameData {
     constructor(name: string) {
-        // @ts-ignore
         this.data = window.require(utils.getPath(`/assets/data/${name}.json`));
     }
 

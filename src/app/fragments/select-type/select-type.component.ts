@@ -22,9 +22,6 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-// @ts-ignore
-const _ = window.require("lodash");
-
 @Component({
     selector: 'select-type',
     templateUrl: './select-type.component.pug',
@@ -48,8 +45,7 @@ export class SelectTypeComponent extends ValueAccessorBase<string> {
         return this.gd.file("types").data;
     }
 
-    // @ts-ignore
-    typesTracking(index: number, item: any) {
+    typesTracking(index: number) {
         return index; // or item.id
     }
 }

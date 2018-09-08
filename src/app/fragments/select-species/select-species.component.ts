@@ -23,7 +23,10 @@ import {
     NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
-// @ts-ignore
+declare var window: {
+    require: any;
+};
+
 const _ = window.require("lodash");
 
 @Component({
@@ -82,8 +85,7 @@ export class SelectSpeciesComponent extends ValueAccessorBase<string> {
         this.speciesChange.emit(val);
     }
 
-    // @ts-ignore
-    speciesTracking(index: number, item: any) {
+    speciesTracking(index: number) {
         return index; // or item.id
     }
 }
