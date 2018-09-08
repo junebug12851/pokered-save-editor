@@ -51,11 +51,11 @@ export class PlayerPokedexComponent implements OnInit {
     }
 
     getSeen(index: number): boolean {
-        return this.fileService.fileDataExpanded.player.pokedexSeen[index];
+        return this.fileService.fileDataExpanded.player.pokedex.pokedexSeen[index];
     }
 
     setSeen(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.player.pokedexSeen[index] = value;
+        this.fileService.fileDataExpanded.player.pokedex.pokedexSeen[index] = value;
     }
 
     toggleSeen(index: number) {
@@ -63,11 +63,11 @@ export class PlayerPokedexComponent implements OnInit {
     }
 
     getOwn(index: number): boolean {
-        return this.fileService.fileDataExpanded.player.pokedexOwned[index];
+        return this.fileService.fileDataExpanded.player.pokedex.pokedexOwned[index];
     }
 
     setOwn(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.player.pokedexOwned[index] = value;
+        this.fileService.fileDataExpanded.player.pokedex.pokedexOwned[index] = value;
     }
 
     toggleOwn(index: number) {

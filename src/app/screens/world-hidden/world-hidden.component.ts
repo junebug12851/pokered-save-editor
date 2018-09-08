@@ -43,19 +43,19 @@ export class WorldHiddenComponent implements OnInit {
     }
 
     getItem(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.ownedHidenItems[index];
+        return this.fileService.fileDataExpanded.world.hidden.ownedHidenItems[index];
     }
 
     getCoin(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.ownedHiddenCoins[index];
+        return this.fileService.fileDataExpanded.world.hidden.ownedHiddenCoins[index];
     }
 
     setItem(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.ownedHidenItems[index] = value;
+        this.fileService.fileDataExpanded.world.hidden.ownedHidenItems[index] = value;
     }
 
     setCoin(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.ownedHiddenCoins[index] = value;
+        this.fileService.fileDataExpanded.world.hidden.ownedHiddenCoins[index] = value;
     }
 
     toggleItem(index: number) {

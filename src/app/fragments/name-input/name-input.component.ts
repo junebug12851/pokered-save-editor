@@ -95,7 +95,7 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
         if (rival == "")
             rival = "Blue";
 
-        let player = this.fileService.fileDataExpanded.player.playerName;
+        let player = this.fileService.fileDataExpanded.player.basics.playerName;
         if (player == "")
             player = "Red";
 

@@ -29,15 +29,15 @@ export class AreaSpritesComponent {
     ) { }
 
     get entries() {
-        return this.fileService.fileDataExpanded.area.spriteData;
+        return this.fileService.fileDataExpanded.area.sprites.spriteData;
     }
 
     onAdd() {
-        this.fileService.fileDataExpanded.area.spriteData.push(new SpriteData(true));
+        this.fileService.fileDataExpanded.area.sprites.spriteData.push(new SpriteData(true));
     }
 
     onRem(i: number) {
-        this.fileService.fileDataExpanded.area.spriteData.splice(i, 1);
+        this.fileService.fileDataExpanded.area.sprites.spriteData.splice(i, 1);
     }
 
     onFullView(entry: any) {

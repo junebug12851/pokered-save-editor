@@ -1,3 +1,4 @@
+import { AreaSprites } from './AreaSprites';
 import { AreaPuzzle } from './AreaPuzzle';
 import { AreaPokemon } from './AreaPokemon';
 import { AreaNPC } from './AreaNPC';
@@ -24,6 +25,7 @@ export class Area {
         this.cachedSprites = new AreaCachedSprites(saveFile);
         this.warps = new AreaWarps(saveFile);
         this.signs = new AreaSigns(saveFile);
+        this.sprites = new AreaSprites(saveFile);
         this.player = new AreaPlayer(saveFile);
         this.map = new AreaMap(saveFile);
         this.npc = new AreaNPC(saveFile);
@@ -38,6 +40,7 @@ export class Area {
         this.cachedSprites.save(saveFile);
         this.warps.save(saveFile);
         this.signs.save(saveFile);
+        this.sprites.save(saveFile);
         this.player.save(saveFile);
         this.map.save(saveFile);
         this.npc.save(saveFile);
@@ -51,6 +54,7 @@ export class Area {
     public cachedSprites: AreaCachedSprites = new AreaCachedSprites();
     public warps: AreaWarps = new AreaWarps();
     public signs: AreaSigns = new AreaSigns();
+    public sprites: AreaSprites = new AreaSprites();
     public player: AreaPlayer = new AreaPlayer();
     public map: AreaMap = new AreaMap();
     public npc: AreaNPC = new AreaNPC();

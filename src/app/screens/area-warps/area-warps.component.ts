@@ -16,6 +16,7 @@
 
 import { Component } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
+import { WarpData } from '../../data/savefile-expanded/fragments/WarpData';
 
 @Component({
     selector: 'screen-area-warps',
@@ -29,20 +30,15 @@ export class AreaWarpsComponent {
     ) { }
 
     get warpPoints() {
-        return this.fileService.fileDataExpanded.area.warpData;
+        return this.fileService.fileDataExpanded.area.warps.warpData;
     }
 
     addListItem() {
-        this.fileService.fileDataExpanded.area.warpData.push({
-            y: 0,
-            x: 0,
-            destWarp: 0,
-            destMap: 0,
-        });
+        this.fileService.fileDataExpanded.area.warps.warpData.push(new WarpData());
     }
 
     remListItem(index: number) {
-        this.fileService.fileDataExpanded.area.warpData.splice(index, 1);
+        this.fileService.fileDataExpanded.area.warps.warpData.splice(index, 1);
     }
 
     trackByFn(index: number) {

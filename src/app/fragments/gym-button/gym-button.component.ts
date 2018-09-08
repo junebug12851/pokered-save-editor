@@ -35,11 +35,11 @@ export class GymButtonComponent implements OnInit {
     public gymBadge: string = "Boulder";
 
     get value(): boolean {
-        return this.fileService.fileDataExpanded.player.badges[this.gymBadge.toLowerCase()];
+        return this.fileService.fileDataExpanded.player.basics.badges[this.gymBadge.toLowerCase()];
     }
 
     set value(val: boolean) {
-        this.fileService.fileDataExpanded.player.badges[this.gymBadge.toLowerCase()] = val;
+        this.fileService.fileDataExpanded.player.basics.badges[this.gymBadge.toLowerCase()] = val;
     }
 
     toggle() {

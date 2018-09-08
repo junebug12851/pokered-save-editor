@@ -30,10 +30,10 @@ export class RootDaycareComponent {
     ) { }
 
     public dayCareUsedClick() {
-        const daycare = this.fileService.fileDataExpanded.world.dayCare;
+        const daycare = this.fileService.fileDataExpanded.daycare;
         if (daycare == null)
-            this.fileService.fileDataExpanded.world.dayCare = new PokemonBox()
+            this.fileService.fileDataExpanded.daycare.dayCare = new PokemonBox()
         else
-            this.fileService.fileDataExpanded.world.dayCare = null;
+            this.fileService.fileDataExpanded.daycare.dayCare = null;
     }
 }

@@ -17,6 +17,7 @@
 import { SaveFileService } from './../../data/savefile.service';
 import { Component, OnInit } from '@angular/core';
 import { HoFPokemon } from '../../data/savefile-expanded/fragments/HoFPokemon';
+import { HoFRecord } from '../../data/savefile-expanded/fragments/HoFRecord';
 
 @Component({
     selector: 'screen-root-hof',
@@ -35,7 +36,7 @@ export class RootHoFComponent implements OnInit {
     }
 
     get records() {
-        return this.fileService.fileDataExpanded.hallOfFame;
+        return this.fileService.fileDataExpanded.hof.hallOfFame;
     }
 
     get pokemon() {
@@ -60,10 +61,7 @@ export class RootHoFComponent implements OnInit {
     }
 
     onRecordAdd() {
-        this.records.push({
-            pokemon: []
-        });
-
+        this.records.push(new HoFRecord());
         this.activeRecord = this.records.length - 1;
     }
 

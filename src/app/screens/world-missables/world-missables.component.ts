@@ -39,11 +39,11 @@ export class WorldMissablesComponent implements OnInit {
     }
 
     getMissable(index: number): boolean {
-        return this.fileService.fileDataExpanded.world.missableObjectFlags[index];
+        return this.fileService.fileDataExpanded.world.missables.missableObjectFlags[index];
     }
 
     setMissable(index: number, value: boolean) {
-        this.fileService.fileDataExpanded.world.missableObjectFlags[index] = value;
+        this.fileService.fileDataExpanded.world.missables.missableObjectFlags[index] = value;
     }
 
     toggleMissable(index: number) {
