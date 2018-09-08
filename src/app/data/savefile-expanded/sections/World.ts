@@ -1,5 +1,4 @@
 import { SaveFileIterator } from './../SaveFileIterator';
-import { PokemonBox } from '../fragments/PokemonBox';
 import { SaveFileService } from '../../savefile.service';
 
 export class World {
@@ -137,40 +136,6 @@ export class World {
             it.inc();
         }
 
-        this.ownedHidenItems = [];
-        it.offsetTo(0x299C);
-        for (let i = 0; i < 14; i++) {
-            // Push bits in order of this byte
-            this.ownedHidenItems.push(it.getBit(1, 0));
-            this.ownedHidenItems.push(it.getBit(1, 1));
-            this.ownedHidenItems.push(it.getBit(1, 2));
-            this.ownedHidenItems.push(it.getBit(1, 3));
-            this.ownedHidenItems.push(it.getBit(1, 4));
-            this.ownedHidenItems.push(it.getBit(1, 5));
-            this.ownedHidenItems.push(it.getBit(1, 6));
-            this.ownedHidenItems.push(it.getBit(1, 7));
-
-            // Increment iterator
-            it.inc();
-        }
-
-        this.ownedHiddenCoins = [];
-        it.offsetTo(0x29AA);
-        for (let i = 0; i < 2; i++) {
-            // Push bits in order of this byte
-            this.ownedHiddenCoins.push(it.getBit(1, 0));
-            this.ownedHiddenCoins.push(it.getBit(1, 1));
-            this.ownedHiddenCoins.push(it.getBit(1, 2));
-            this.ownedHiddenCoins.push(it.getBit(1, 3));
-            this.ownedHiddenCoins.push(it.getBit(1, 4));
-            this.ownedHiddenCoins.push(it.getBit(1, 5));
-            this.ownedHiddenCoins.push(it.getBit(1, 6));
-            this.ownedHiddenCoins.push(it.getBit(1, 7));
-
-            // Increment iterator
-            it.inc();
-        }
-
         this.visitedTowns = [];
         it.offsetTo(0x29B7);
         for (let i = 0; i < 2; i++) {
@@ -220,23 +185,6 @@ export class World {
             it.inc();
         }
 
-        this.completedEvents = [];
-        it.offsetTo(0x29F3);
-        for (let i = 0; i < 320; i++) {
-            // Push bits in order of this byte
-            this.completedEvents.push(it.getBit(1, 0));
-            this.completedEvents.push(it.getBit(1, 1));
-            this.completedEvents.push(it.getBit(1, 2));
-            this.completedEvents.push(it.getBit(1, 3));
-            this.completedEvents.push(it.getBit(1, 4));
-            this.completedEvents.push(it.getBit(1, 5));
-            this.completedEvents.push(it.getBit(1, 6));
-            this.completedEvents.push(it.getBit(1, 7));
-
-            // Increment iterator
-            it.inc();
-        }
-
         it.offsetTo(0x2CED);
         this.playtime = {
             hours: it.getByte(),
@@ -246,18 +194,6 @@ export class World {
             frames: it.getByte(),
         };
     }
-
-    /**
-     * Events
-     */
-    public completedEvents: boolean[];
-
-    /**
-     * Hidden
-     */
-
-    public ownedHidenItems: boolean[];
-    public ownedHiddenCoins: boolean[];
 
     /**
      * Trades
