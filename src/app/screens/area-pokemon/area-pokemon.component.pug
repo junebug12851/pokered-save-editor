@@ -1,7 +1,7 @@
 .container.wrapper
     .s12.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.pauseWildEncounters3Steps'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.pauseWildEncounters3Steps'
         )
             span Pause Encounters for 3 Steps
 
@@ -10,7 +10,7 @@
     .xl3.l4.m8.s12
         mat-checkbox(
             '(change)'='grassRateClick()'
-            '[checked]'='fileService.fileDataExpanded.area.grassRate != 0'
+            '[checked]'='fileService.fileDataExpanded.area.pokemon.grassRate != 0'
         )
             span Grass Pokemon
     .xl6.l7.s12
@@ -19,7 +19,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.grassRate'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.grassRate'
                 required=''
                 max='100'
                 min='0'
@@ -29,7 +29,7 @@
             wild-pokemon-item(
                 *ngFor='let entry of grassEntries; let i = index; trackBy: entriesTracking'
                 '[data]'='grassEntries[i]'
-                '[disabled]'='fileService.fileDataExpanded.area.grassRate == 0'
+                '[disabled]'='fileService.fileDataExpanded.area.pokemon.grassRate == 0'
                 '[index]'='i'
                 '(remove)'='remGrassEntry(i)'
             )
@@ -39,7 +39,7 @@
     .xl3.l4.m8.s12
         mat-checkbox(
             '(change)'='waterRateClick()'
-            '[checked]'='fileService.fileDataExpanded.area.waterPokemonRate != 0'
+            '[checked]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate != 0'
         )
             span Water Pokemon
     .xl6.l7.s12
@@ -48,7 +48,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.waterPokemonRate'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate'
                 required=''
                 max='100'
                 min='0'
@@ -58,7 +58,7 @@
             wild-pokemon-item(
                 *ngFor='let entry of waterEntries; let i = index; trackBy: entriesTracking'
                 '[data]'='waterEntries[i]'
-                '[disabled]'='fileService.fileDataExpanded.area.waterPokemonRate == 0'
+                '[disabled]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate == 0'
                 '[index]'='i'
                 '(remove)'='remWaterEntry(i)'
             )

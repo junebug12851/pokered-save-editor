@@ -2,6 +2,8 @@ declare var window: {
     require: any;
 }
 
+declare var process: any;
+
 const path = window.require("path");
 
 const isDev = process.env.DEV

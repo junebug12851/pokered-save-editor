@@ -3,7 +3,7 @@
         mat-label Pre-load initially from built-in list
         mat-form-field(style="width: 100%;")
             mat-select(
-                '[(ngModel)]'='this.fileService.fileDataExpanded.area.spriteSetId'
+                '[(ngModel)]'='this.fileService.fileDataExpanded.area.cachedSprites.spriteSetId'
             )
                 mat-option('[value]'='255', '[disabled]'='true') Choose Pre-loaded sprites
                 mat-option(

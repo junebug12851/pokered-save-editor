@@ -5,7 +5,7 @@
         mat-form-field(style="width: 100%")
             mat-label Contrast
             mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.area.contrast'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.general.contrast'
                 required=''
             )
                 mat-option('[value]'='255', disabled='') Select Contrast Level
@@ -22,13 +22,13 @@
                 mat-option('[value]'='8') -3b Contrast
     .xl2.l3.m4.s6
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.noLetterDelay'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.general.noLetterDelay'
         )
             span No Letter Delay
 
     .xl2.l3.m4.s6
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.countPlaytime'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.general.countPlaytime'
         )
             span Count Playtime
 

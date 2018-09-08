@@ -27,8 +27,8 @@ export class Area {
         this.signs = new AreaSigns(saveFile);
         this.sprites = new AreaSprites(saveFile);
         this.player = new AreaPlayer(saveFile);
-        this.map = new AreaMap(saveFile);
-        this.npc = new AreaNPC(saveFile);
+        this.maps = new AreaMap(saveFile);
+        this.npcs = new AreaNPC(saveFile);
         this.pokemon = new AreaPokemon(saveFile);
         this.puzzle = new AreaPuzzle(saveFile);
     }
@@ -42,8 +42,8 @@ export class Area {
         this.signs.save(saveFile);
         this.sprites.save(saveFile);
         this.player.save(saveFile);
-        this.map.save(saveFile);
-        this.npc.save(saveFile);
+        this.maps.save(saveFile);
+        this.npcs.save(saveFile);
         this.pokemon.save(saveFile);
         this.puzzle.save(saveFile);
     }
@@ -56,8 +56,8 @@ export class Area {
     public signs: AreaSigns = new AreaSigns();
     public sprites: AreaSprites = new AreaSprites();
     public player: AreaPlayer = new AreaPlayer();
-    public map: AreaMap = new AreaMap();
-    public npc: AreaNPC = new AreaNPC();
+    public maps: AreaMap = new AreaMap();
+    public npcs: AreaNPC = new AreaNPC();
     public pokemon: AreaPokemon = new AreaPokemon();
     public puzzle: AreaPuzzle = new AreaPuzzle();
 }

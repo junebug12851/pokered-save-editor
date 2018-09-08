@@ -1,5 +1,4 @@
 import { SaveFileService } from './../../../savefile.service';
-import { toBitArray, fromBitArray } from '../../util/bitArray';
 
 export class WorldGeneral {
     constructor(saveFile?: SaveFileService) {
@@ -36,18 +35,18 @@ export class WorldGeneral {
     }
 
     // Maps
-    public lastBlackoutMap: number;
-    public lastMap: number;
+    public lastBlackoutMap: number = 0;
+    public lastMap: number = 0;
 
     // Options
-    public options: {
-        textSpeedSlowness: number,
-        battleStyleSet: boolean,
-        battleAnimOff: boolean,
+    public options = {
+        textSpeedSlowness: 0 as number,
+        battleStyleSet: false as boolean,
+        battleAnimOff: false as boolean,
     };
 
-    public letterDelay: {
-        normalDelay: boolean,
-        dontDelay: boolean,
+    public letterDelay = {
+        normalDelay: false as boolean,
+        dontDelay: false as boolean,
     }
 }
