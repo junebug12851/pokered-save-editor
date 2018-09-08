@@ -1,3 +1,5 @@
+import { AreaPuzzle } from './AreaPuzzle';
+import { AreaPokemon } from './AreaPokemon';
 import { AreaNPC } from './AreaNPC';
 import { AreaMap } from './AreaMap';
 import { AreaPlayer } from './AreaPlayer';
@@ -25,6 +27,8 @@ export class Area {
         this.player = new AreaPlayer(saveFile);
         this.map = new AreaMap(saveFile);
         this.npc = new AreaNPC(saveFile);
+        this.pokemon = new AreaPokemon(saveFile);
+        this.puzzle = new AreaPuzzle(saveFile);
     }
 
     public save(saveFile: SaveFileService) {
@@ -37,6 +41,8 @@ export class Area {
         this.player.save(saveFile);
         this.map.save(saveFile);
         this.npc.save(saveFile);
+        this.pokemon.save(saveFile);
+        this.puzzle.save(saveFile);
     }
 
     public general: AreaGeneral = new AreaGeneral();
@@ -48,4 +54,6 @@ export class Area {
     public player: AreaPlayer = new AreaPlayer();
     public map: AreaMap = new AreaMap();
     public npc: AreaNPC = new AreaNPC();
+    public pokemon: AreaPokemon = new AreaPokemon();
+    public puzzle: AreaPuzzle = new AreaPuzzle();
 }
