@@ -9,7 +9,7 @@
         mat-form-field(style="width: 100%")
             mat-label Tileset
             mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tileset'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tileset'
                 required=''
             )
                 mat-option('[value]'='"0"', disabled='') Select Tileset
@@ -41,7 +41,7 @@
         mat-form-field(style="width: 100%")
             mat-label Type
             mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetType'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tilesetType'
                 required=''
             )
                 mat-option('[value]'='"255"', disabled='') Select Type
@@ -57,7 +57,7 @@
                 required=''
                 placeholder='Invalid'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.outOfBoundsTile'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.outOfBoundsTile'
             )
             span(matSuffix='')
                 div('[class]'='containerTileset.container')
@@ -70,7 +70,7 @@
                 required=''
                 placeholder='Grass'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetGrassTile'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tilesetGrassTile'
             )
             span(matSuffix='')
                 div('[class]'='containerTileset.container')
@@ -83,7 +83,7 @@
                 required=''
                 placeholder='Colliding'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tileFrontBoulderColl'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tileFrontBoulderColl'
             )
     .row.xl1.l2.m4.s6
         mat-form-field(style='width: 100%;')
@@ -93,7 +93,7 @@
                 required=''
                 placeholder='Boulder'
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.boulderSpriteIndex'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.boulderSpriteIndex'
             )
 
     .xl1.l2.m4.s6
@@ -104,7 +104,7 @@
                 required=''
                 placeholder='Counter 1'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[0]'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tilesetTalkingOverTiles[0]'
             )
             span(matSuffix='')
                 div('[class]'='containerTileset.container')
@@ -117,7 +117,7 @@
                 required=''
                 placeholder='Counter 2'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[1]'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tilesetTalkingOverTiles[1]'
             )
             span(matSuffix='')
                 div('[class]'='containerTileset.container')
@@ -130,7 +130,7 @@
                 required=''
                 placeholder='Counter 3'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesetTalkingOverTiles[2]'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.tilesets.tilesetTalkingOverTiles[2]'
             )
             span(matSuffix='')
                 div('[class]'='containerTileset.container')

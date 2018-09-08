@@ -8,7 +8,7 @@
             '[bg]'="true"
             '[textBlack]'="true"
             'template'='<<t>><<c("! I\'ll show")>><br><<c("you how a real")>>'
-            '[(ngModel)]'='fileService.fileDataExpanded.player.playerName'
+            '[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerName'
         )
     .s6.m4.l3
         mat-form-field
@@ -17,7 +17,7 @@
                 matInput=''
                 placeholder='Player ID'
                 type='text'
-                '[(ngModel)]'='fileService.fileDataExpanded.player.playerID'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerID'
                 required=''
                 pattern='[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]'
                 minlength='4'
@@ -30,7 +30,7 @@
                 matInput=''
                 placeholder='Money'
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.player.money'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.basics.money'
                 required=''
                 max='999999'
                 min='0'
@@ -42,13 +42,13 @@
                 matInput=''
                 placeholder='Coins'
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.player.coins'
+                '[(ngModel)]'='fileService.fileDataExpanded.player.basics.coins'
                 required=''
                 max='9999'
                 min='0'
             )
     .s3
-        select-starter('[(ngModel)]'='fileService.fileDataExpanded.player.playerStarter')
+        select-starter('[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerStarter')
     .row.s12
         h5 Badges
     .row.s12

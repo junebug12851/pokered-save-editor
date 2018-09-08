@@ -3,17 +3,17 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             '(change)'='dayCareUsedClick()'
-            '[checked]'='fileService.fileDataExpanded.world.dayCare != null'
+            '[checked]'='fileService.fileDataExpanded.daycare.dayCare != null'
         )
             span Daycare Used
 
     .s12
         card-pokemon(
             *ngIf='fileService.fileDataExpanded.world.dayCare != null'
-            '[entry]'='fileService.fileDataExpanded.world.dayCare'
+            '[entry]'='fileService.fileDataExpanded.daycare.dayCare'
         )
 
         card-pokemon(
-            *ngIf='fileService.fileDataExpanded.world.dayCare == null'
+            *ngIf='fileService.fileDataExpanded.daycare.dayCare == null'
             disabled='true'
         )

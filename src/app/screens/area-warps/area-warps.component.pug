@@ -4,19 +4,19 @@
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.scriptedWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.scriptedWarp'
         )
             span Scripted Warp
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.isDungeonWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.isDungeonWarp'
         )
             span Is Dungeon Warp
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.skipJoypadCheckWarps'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.skipJoypadCheckWarps'
         )
             span Skip Joypad
 
@@ -25,19 +25,19 @@
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.flyOrDungeonWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.flyOrDungeonWarp'
         )
             span Non-Normal Warp
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.flyWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.flyWarp'
         )
             span Special Warp
 
     .xl2.l3.m6.s12
         mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.dungeonWarp'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.dungeonWarp'
         )
             span Dungeon Warp
 
@@ -47,18 +47,18 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.warpDest'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.warps.warpDest'
                 required=''
             )
     .xl2.l3.m6.s12
         select-map(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.dungeonWarpDestMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.dungeonWarpDestMap'
             label='Dungeon Warp Where'
         )
 
     .xl2.l3.m6.s12
         select-map(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.specialWarpDestMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.specialWarpDestMap'
             label='Special Warp Where'
         )
 
@@ -71,7 +71,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.warpedFromWarp'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.warps.warpedFromWarp'
                 required=''
             )
 
@@ -81,13 +81,13 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.area.whichDungeonWarp'
+                '[(ngModel)]'='fileService.fileDataExpanded.area.warps.whichDungeonWarp'
                 required=''
             )
 
     .xl2.l3.m6.s12
         select-map(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.warpedfromMap'
+            '[(ngModel)]'='fileService.fileDataExpanded.area.warps.warpedfromMap'
             label='From Map'
         )
 

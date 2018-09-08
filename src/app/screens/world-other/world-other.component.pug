@@ -8,7 +8,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.playtime.maxed'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.maxed'
             )
 
     .xl2.l3.m6.s12
@@ -17,7 +17,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.playtime.hours'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.hours'
             )
 
     .xl2.l3.m6.s12
@@ -26,7 +26,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.playtime.minutes'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.minutes'
             )
 
     .xl2.l3.m6.s12
@@ -35,7 +35,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.playtime.seconds'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.seconds'
             )
 
     .xl2.l3.m6.s12
@@ -44,7 +44,7 @@
             input(
                 matInput=''
                 type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.playtime.frames'
+                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.frames'
             )
 
     .s12
@@ -53,7 +53,7 @@
     .xl3.l4.m8.s12
         mat-label Item Given
         select-item(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.fossilItemGiven'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.other.fossilItemGiven'
             '[noneSelectable]'='true'
             label=''
         )
@@ -61,7 +61,7 @@
     .xl3.l4.m8.s12
         mat-label Resulting Pokemon
         select-species(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.fossilPkmnResult'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.other.fossilPkmnResult'
         )
 
     .s12
@@ -70,6 +70,6 @@
     .xl2.l3.m6.s12
         mat-checkbox(
             style="width: 100%"
-            '[(ngModel)]'='fileService.fileDataExpanded.world.debugMode'
+            '[(ngModel)]'='fileService.fileDataExpanded.world.other.debugMode'
         )
             span Debug Mode
