@@ -1,5 +1,8 @@
 import { SaveFileIterator } from './savefile-expanded/SaveFileIterator';
 import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
+import { Injectable, NgZone } from '@angular/core';
+import { TextService } from "./text.service";
+
 /**
    Copyright 2018 June Hanabi
 
@@ -28,10 +31,6 @@ declare var window: {
 }
 
 declare var Buffer: any;
-
-import { Injectable, NgZone } from '@angular/core';
-import { TextService } from "./text.service";
-import { writeBack } from './savefile-expanded/writeBack';
 
 const { ipcRenderer } = window.require('electron');
 
@@ -66,7 +65,7 @@ export class SaveFileService {
     public onDataUpdate() {
         this.ng.run<any>(async () => {
             // Write values back from the expanded file to this file
-            writeBack(this);
+            this.fileDataExpanded.save(this);
 
             // Recalculate all checksums
             this.recalcChecksums();
