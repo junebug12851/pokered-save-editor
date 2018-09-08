@@ -1,3 +1,5 @@
+import { WorldOther } from './WorldOther';
+import { WorldGeneral } from './WorldGeneral';
 import { WorldCompleted } from './WorldCompleted';
 import { WorldScripts } from './WorldScripts';
 import { WorldMissables } from './WorldMissables';
@@ -21,6 +23,8 @@ export class World {
         this.missables = new WorldMissables(saveFile);
         this.scripts = new WorldScripts(saveFile);
         this.completed = new WorldCompleted(saveFile);
+        this.general = new WorldGeneral(saveFile);
+        this.other = new WorldOther(saveFile);
     }
 
     public save(saveFile: SaveFileService) {
@@ -31,6 +35,8 @@ export class World {
         this.missables.save(saveFile);
         this.scripts.save(saveFile);
         this.completed.save(saveFile);
+        this.general.save(saveFile);
+        this.other.save(saveFile);
     }
 
     public events: WorldEvents = new WorldEvents();
@@ -40,4 +46,6 @@ export class World {
     public missables: WorldMissables = new WorldMissables();
     public scripts: WorldScripts = new WorldScripts();
     public completed: WorldCompleted = new WorldCompleted();
+    public general: WorldGeneral = new WorldGeneral();
+    public other: WorldOther = new WorldOther();
 }
