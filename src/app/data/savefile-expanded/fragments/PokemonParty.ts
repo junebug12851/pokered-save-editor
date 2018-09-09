@@ -9,9 +9,22 @@ export class PokemonParty extends PokemonBox {
         otNameStartOffset?: number,
         index?: number) {
 
-        // Mark record size at end to the expanded size of 0x2C
-        // Pokemon Party has expanded data
-        super(saveFile, offset, nicknameStartOffset, otNameStartOffset, index, 0x2C);
+        // Due to an annoying attribute of typescript compiling variable
+        // declarations below the super call thus resetting child class to default
+        // after child and parent class have been initialized properly
+        // we have to work around this annoyance by initiating a blank parent
+        // and typescripts injected code for a blank child followed by the actual
+        // loading process handled by the child and delegated manually to the parent
+        // This annoyance took several hours to figure out why only the child
+        // kept resetting to default values after loading properly
+        super();
+
+        if (saveFile !== undefined)
+            this.load(saveFile as SaveFileService,
+                offset as number,
+                nicknameStartOffset as number,
+                otNameStartOffset as number,
+                index as number)
     }
 
     public load(saveFile: SaveFileService,
@@ -20,11 +33,14 @@ export class PokemonParty extends PokemonBox {
         otNameStartOffset: number,
         index: number): SaveFileIterator {
 
+        // Mark record size at end to the expanded size of 0x2C
+        // Pokemon Party has expanded data
         const it: SaveFileIterator = super.load(saveFile,
             offset,
             nicknameStartOffset,
             otNameStartOffset,
-            index);
+            index,
+            0x2C);
 
         this.level = it.getByte();
         this.maxHP = it.getWord();

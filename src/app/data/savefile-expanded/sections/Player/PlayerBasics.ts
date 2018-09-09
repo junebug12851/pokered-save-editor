@@ -25,6 +25,8 @@ export class PlayerBasics {
             volcano: it.getBit(1, 6),
             earth: it.getBit(1, 7),
         };
+
+        this.playerStarter = saveFile.getHex(0x29C3, 1).toUpperCase().padStart(2, "0");
     }
 
     public save(saveFile: SaveFileService) {
@@ -32,6 +34,7 @@ export class PlayerBasics {
         saveFile.setHex(0x2605, 2, this.playerID);
         saveFile.setBCD(0x25F3, 3, this.money);
         saveFile.setBCD(0x2850, 2, this.coins);
+        saveFile.setHex(0x29C3, 1, this.playerStarter);
 
         // Badges have to be duplicated on the save file
         this.setBadges(saveFile, 0x2602);
