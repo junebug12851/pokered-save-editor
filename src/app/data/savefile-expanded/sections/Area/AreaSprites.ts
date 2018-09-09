@@ -18,7 +18,8 @@ export class AreaSprites {
 
     public save(saveFile: SaveFileService) {
         // Save sprite count
-        saveFile.setByte(0x278D, this.spriteData.length);
+        // Subtract 1 to exclude player sprite
+        saveFile.setByte(0x278D, this.spriteData.length - 1);
 
         // Re-save sprite data
         for (let i = 0; i < this.spriteData.length && i < 16; i++) {

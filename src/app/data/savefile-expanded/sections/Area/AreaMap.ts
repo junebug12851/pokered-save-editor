@@ -51,16 +51,27 @@ export class AreaMap {
     }
 
     public save(saveFile: SaveFileService) {
+
+        /**
+         * 0    ${curMap}           Hex
+         * 1    ${mapHeight}        Number
+         * 2    ${mapWidth}         Number
+         * 3    ${map2x2Height}     Number
+         * 4    ${map2x2Width}      Number
+         * 5    ${mapDataPtr}       Hex
+         * 6    ${mapTextPtr}       Hex
+         * 7    ${mapScriptPtr}     Hex
+         */
         const curMapArr = this.curMap.split("_");
 
         saveFile.setHex(0x260A, 1, curMapArr[0]); // curMap
-        saveFile.setHex(0x2614, 1, curMapArr[1]); // mapHeight
-        saveFile.setHex(0x2615, 1, curMapArr[2]); // mapWidth
+        saveFile.setByte(0x2614, parseInt(curMapArr[1])); // mapHeight
+        saveFile.setByte(0x2615, parseInt(curMapArr[2])); // mapWidth
         saveFile.setHex(0x2616, 2, curMapArr[5], false, true); // mapDataPtr
         saveFile.setHex(0x2618, 2, curMapArr[6], false, true); // mapTextPtr
         saveFile.setHex(0x261A, 2, curMapArr[7], false, true); // mapScriptPtr
-        saveFile.setHex(0x27D0, 1, curMapArr[3]); // map2x2Height
-        saveFile.setHex(0x27D1, 1, curMapArr[4]); // map2x2Width
+        saveFile.setByte(0x27D0, parseInt(curMapArr[3])); // map2x2Height
+        saveFile.setByte(0x27D1, parseInt(curMapArr[4])); // map2x2Width
 
         saveFile.setHex(0x260B, 2, this.currentTileBlockMapViewPointer, false, true);
 
@@ -81,7 +92,7 @@ export class AreaMap {
         if (this.mapConn.east)
             this.mapConnData.east.save(saveFile, 0x263E);
 
-        saveFile.setHex(0x261A, 2, this.mapViewVRAMPointer, false, true);
+        saveFile.setHex(0x27D2, 2, this.mapViewVRAMPointer, false, true);
 
         saveFile.setBit(0x29DE, 1, 5, this.forceBikeRide);
         saveFile.setBit(0x29DE, 1, 6, this.blackoutDest);

@@ -146,6 +146,8 @@ export class PokemonBox {
         // which is don't touch any bits that don't need to be changed
         if (recordSize == 0x21)
             it.setByte(this.level);
+        else
+            it.inc();
 
         it.setByte(this.status);
         it.setByte(this.type1);
@@ -165,13 +167,9 @@ export class PokemonBox {
 
         let exp = this.exp;
 
-        it.setByte(exp & 0xFF);
-        exp >>= 8;
-
-        it.setByte(exp & 0xFF);
-        exp >>= 8;
-
-        it.setByte(exp & 0xFF);
+        it.setByte((exp & 0xFF0000) >> 16);
+        it.setByte((exp & 0x00FF00) >> 8);
+        it.setByte(exp & 0x0000FF);
 
         it.setWord(this.hpExp);
         it.setWord(this.attackExp);

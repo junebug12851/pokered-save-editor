@@ -118,8 +118,7 @@ export class SpriteData {
         this.saveSpriteData1(savefile, index);
         this.saveSpriteData2(savefile, index);
 
-        // If this isn't the player sprite then load additional non-player data
-        // and check to see if it's missable
+        // If this isn't the player sprite then save NPC data
         if (index > 0) {
             this.saveSpriteDataNPC(savefile, index);
         }
@@ -156,6 +155,8 @@ export class SpriteData {
 
     saveSpriteDataNPC(saveFile: SaveFileService, index: number) {
 
+        // Correct index, this data starts sprite 0 at sprite 1
+        index--;
         const it = saveFile.iterator.offsetTo((2 * index) + 0x2790);
         it.setByte(this.rangeDirByte as number);
         it.setByte(this.textID as number);
