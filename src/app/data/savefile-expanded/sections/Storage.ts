@@ -51,15 +51,18 @@ export class Storage {
 
     // Loads 6 boxes in a bank offset adding to the existing boxes
     loadBoxes(saveFile: SaveFileService, boxesOffset: number, boxSet: number) {
-        for (let i = boxSet * 6; i < (boxSet * 6) + 6; i++) {
+
+        // i = Box Number within set/bank (0-5)
+        // j = Box Number within all boxes (0-11)
+        for (let i = 0, j = boxSet * 6; j < (boxSet * 6) + 6; i++ , j++) {
             // Skip current box (load only from cached box)
-            if (i == this.curBox)
+            if (j == this.curBox)
                 continue;
 
-            this.pokemonBoxes[i] = [];
+            this.pokemonBoxes[j] = [];
             this.loadBox(
                 saveFile,
-                i,
+                j,
                 (i * 0x462) + boxesOffset
             )
         }
@@ -136,14 +139,16 @@ export class Storage {
     }
 
     saveBoxes(saveFile: SaveFileService, boxesOffset: number, boxSet: number) {
-        for (let i = boxSet * 6; i < (boxSet * 6) + 6; i++) {
+        // i = Box Number within set/bank (0-5)
+        // j = Box Number within all boxes (0-11)
+        for (let i = 0, j = boxSet * 6; j < (boxSet * 6) + 6; i++ , j++) {
             // Skip current box (save only to cached box)
-            if (i == this.curBox)
+            if (j == this.curBox)
                 continue;
 
             this.saveBox(
                 saveFile,
-                i,
+                j,
                 (i * 0x462) + boxesOffset
             )
         }

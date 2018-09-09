@@ -296,7 +296,7 @@ export class SaveFileService {
     }
 
     recalcBoxesChecksums() {
-        // Bank 2 Checksums for Boxes 1-6
+        // Bank 2 individual checksums for Boxes 1-6
         const bank2IndvChecksums = [
             this.getChecksum(0x4000, 0x4462),
             this.getChecksum(0x4462, 0x48C4),
@@ -307,8 +307,9 @@ export class SaveFileService {
         ];
         this.copyRange(0x5A4D, 0x6, new Uint8Array(bank2IndvChecksums));
 
-        // Bank 2 Checksum
-        this.fileData[0x5A4C] = this.getChecksum(0x5A4D, 0x5A53);
+        // Bank 2 checksum excluding individual checksums
+        // Similar to bank 1 checksum
+        this.fileData[0x5A4C] = this.getChecksum(0x4000, 0x5A4C);
 
         // Bank 3 Checksums for Boxes 7-12
         const bank3IndvChecksums = [
@@ -322,7 +323,7 @@ export class SaveFileService {
         this.copyRange(0x7A4D, 0x6, new Uint8Array(bank3IndvChecksums));
 
         // Bank 3 Checksum
-        this.fileData[0x7A4C] = this.getChecksum(0x7A4D, 0x7A53);
+        this.fileData[0x7A4C] = this.getChecksum(0x6000, 0x7A4C);
     }
 
     // Buffered file data

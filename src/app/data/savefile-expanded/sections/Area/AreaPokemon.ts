@@ -50,7 +50,7 @@ export class AreaPokemon {
             it.setByte(this.grassPokemon[i].pokemon);
         }
 
-        saveFile.setByte(0x2B50, this.grassRate);
+        saveFile.setByte(0x2B50, this.waterPokemonRate);
         it.offsetTo(0x2B51);
         for (let i = 0; i < 10; i++) {
             it.setByte(this.waterPokemon[i].level);
