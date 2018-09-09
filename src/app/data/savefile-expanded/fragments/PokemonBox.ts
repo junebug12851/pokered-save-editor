@@ -140,7 +140,13 @@ export class PokemonBox {
         // Re-save back
         it.setByte(this.species);
         it.setWord(this.hp);
-        it.setByte(this.level);
+
+        // Don't save level to BoxData if this is in the party
+        // This honors the global don't touch policy
+        // which is don't touch any bits that don't need to be changed
+        if (recordSize == 0x21)
+            it.setByte(this.level);
+
         it.setByte(this.status);
         it.setByte(this.type1);
 
