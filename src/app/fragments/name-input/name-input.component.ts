@@ -1,3 +1,4 @@
+import { KeyboardService } from './../../data/keyboard.service';
 import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
 /**
    Copyright 2018 June Hanabi
@@ -36,12 +37,12 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
     constructor(
         public fileService: SaveFileService,
         public textService: TextService,
+        public ks: KeyboardService
     ) {
         super();
     }
 
     ngOnInit() {
-
         this.doOnChange("");
     }
 

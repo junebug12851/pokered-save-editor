@@ -8,3 +8,11 @@ mat-form-field(style='width: 100%;')
         '(ngModelChange)'='doOnChange($event)'
         '[disabled]'='disabled'
     )
+    button(
+        'matSuffix'=''
+        'aria-label'="Keyboard"
+        style="width: 45px"
+        mat-icon-button
+        '(click)'='ks.toggle()'
+    )
+        span.im.im-keyboard4

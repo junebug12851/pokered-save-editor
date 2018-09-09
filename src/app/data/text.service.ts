@@ -1,3 +1,4 @@
+import { TextSearch } from './text/TextSearch';
 import { Text } from './../../assets/data/text.d';
 import { GameDataService } from './gameData.service';
 /**
@@ -33,6 +34,10 @@ import { GameDataService } from './gameData.service';
 
 import { Injectable } from '@angular/core';
 
+declare var window: {
+    text: any;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -41,6 +46,8 @@ export class TextService {
     constructor(
         public gd: GameDataService
     ) {
+        window.text = this;
+
         const text: Text[] = this.gd.file("text").data;
         this.rawTrans = text;
         for (let i = 0; i < text.length; i++) {
@@ -51,6 +58,10 @@ export class TextService {
             this.indToEng[transPair.code] = transPair;
             this.engToIndex[transPair.eng] = transPair;
         }
+    }
+
+    get search(): TextSearch {
+        return new TextSearch(this.gd.file("text").data);
     }
 
     // Converts a string filled with english typable in-game text code
