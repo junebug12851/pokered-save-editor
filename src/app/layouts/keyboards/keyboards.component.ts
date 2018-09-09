@@ -1,3 +1,4 @@
+import { Text } from './../../../assets/data/text.d';
 import { KeyboardService } from './../../data/keyboard.service';
 /**
    Copyright 2018 June Hanabi
@@ -36,6 +37,27 @@ export class KeyboardsComponent implements OnInit {
 
     public toggle() {
         this.opened = !this.opened;
+    }
+
+    getColSpan(text: Text) {
+        let length = text.length;
+
+        if (length > 12)
+            length = 12;
+        else if (length > 9)
+            length - 6;
+        else if (length > 6)
+            length - 5;
+        else if (length > 5)
+            length - 4;
+        else if (length > 2)
+            length - 1;
+
+        return length;
+    }
+
+    getRowSpan() {
+        return 1;
     }
 
     public opened: boolean = false;
