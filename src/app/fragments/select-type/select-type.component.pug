@@ -4,7 +4,7 @@ mat-form-field(style="width: 100%")
         '[disabled]'='disabled'
         required=''
     )
-        mat-option('[value]'="0" '[disabled]'='true') Type
+        mat-option('[value]'="256" '[disabled]'='true') Type
         mat-option('[value]'="255") ---
         mat-option(
             *ngFor='let types of typesList; trackBy: typesTracking',
