@@ -62,7 +62,8 @@ export class PokemonParty extends PokemonBox {
             offset,
             nicknameStartOffset,
             otNameStartOffset,
-            index);
+            index,
+            0x2C);
 
         it.setByte(this.level);
         it.setWord(this.maxHP);
