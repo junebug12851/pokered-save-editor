@@ -1,71 +1,28 @@
-.keyboard-container(*ngIf='activeKeyboard == 1')
-    .basic-keyboard.keyboard.sticky
-        .content
-            p.instr.center-align.
-                Basic Keyboard containing only keys found normally in game. Click to copy.
+mat-sidenav-container.sidenav-container
+    mat-sidenav.sidenav(
+        '#drawer'='',
+        fixedinviewport='true',
+        '[attr.role]'="(isHandset$ | async) ? 'dialog' : 'navigation'",
+        '[mode]'="(isHandset$ | async) ? 'over' : 'side'",
+        '[opened]'='opened'
+        'position'='end'
+    )
 
-            .special-char(*ngFor='let char of basicKeys')
-                span.preview.pr-container.pr-white.pr-small.pr-pic-overworld(
-                    'innerHTML'='{{char.html}}'
-                    '(click)'='copyChar(char.copyCode)'
+        mat-grid-list(
+            cols="10"
+            gutterSize='2px'
+        )
+            mat-grid-tile(
+                '*ngFor'='let key of ts.search.keys'
+                '[colspan]'='(key.multiChar) ? 5 : 1'
+            )
+                button(
+                    mat-button
                 )
-                span.code {{char.copyCode}}
-
-        a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.tr(
-                '(click)'='closeKeyboard()'
-        )
-            span.im.im-close
-
-.keyboard-container(*ngIf='activeKeyboard == 2')
-    .full-keyboard.keyboard.sticky
-        .content
-            p.instr.center-align.
-                Complete keyboard containing every possible non-picture key the game uses,
-                click to copy. All of these take 1 slot even if it's multiple
-                characters.
-
-            .special-char(*ngFor='let char of controlKeys')
-                span.preview((click)='copyChar(char.copyCode)')
-                span.code {{char.copyCode}}
-            br
-
-            .special-char(*ngFor='let char of multiCharKeys')
-                span.preview.pr-container.pr-white.pr-small.pr-pic-overworld(
-                    'innerHTML'='{{char.html}}'
-                    '(click)'='copyChar(char.copyCode)'
+                    name-box(
+                        '[maxLength]'='100'
+                        '[value]'='key.eng'
                     )
-                span.code {{char.copyCode}}
-            br
 
-            .special-char(*ngFor='let char of singleCharKeys')
-                span.preview.pr-container.pr-white.pr-small(
-                    'innerHTML'='{{char.html}}'
-                    '(click)'='copyChar(char.copyCode)'
-                    )
-                span.code {{char.copyCode}}
-
-        a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.tr(
-                '(click)'='closeKeyboard()'
-        )
-            span.im.im-close
-
-.keyboard-container(*ngIf='activeKeyboard == 3')
-    .pic-keyboard.keyboard.sticky
-        .content
-            p.instr.center-align
-                | Picture keyboard containing every picture you can insert that the game
-                | allows, click to copy.
-                br
-                | These pictures will not stay consistent and are based on the map, menu,
-                | or gameplay your in.
-            .special-char(*ngFor='let char of picKeys')
-                span.preview.pr-container.pr-white.pr-pic-overworld(
-                    'innerHTML'='{{char.html}}'
-                    '(click)'='copyChar(char.copyCode)'
-                    )
-                span.code {{char.copyCode}}
-
-        a.btn-floating.btn.waves-effect.btn-floating-icon-normal.stick.tr(
-                '(click)'='closeKeyboard()'
-        )
-            span.im.im-close
+    mat-sidenav-content
+        ng-content

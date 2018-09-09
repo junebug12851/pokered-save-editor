@@ -1,3 +1,4 @@
+import { KeyboardService } from './data/keyboard.service';
 import { RootDaycareComponent } from './screens/root-daycare/root-daycarel.component';
 import { WorldOtherComponent } from './screens/world-other/world-other.component';
 import { WorldGeneralComponent } from './screens/world-general/world-general.component';
@@ -46,6 +47,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -199,9 +201,11 @@ import { RootHoFComponent } from './screens/root-hof/root-hof.component';
         MatCheckboxModule,
         MatPaginatorModule,
         MatButtonToggleModule,
+        MatGridListModule
     ],
     providers: [
-        SaveFileService
+        SaveFileService,
+        KeyboardService
     ],
     bootstrap: [AppComponent]
 })

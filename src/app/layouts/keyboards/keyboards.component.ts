@@ -1,5 +1,4 @@
-import { Text } from './../../../assets/data/text.d';
-import { SaveFileService } from './../../data/savefile.service';
+import { KeyboardService } from './../../data/keyboard.service';
 /**
    Copyright 2018 June Hanabi
 
@@ -16,185 +15,28 @@ import { SaveFileService } from './../../data/savefile.service';
    limitations under the License.
  */
 
-declare var window: {
-    require: any;
-    keyboards: any;
-};
-
-import { TextService } from './../../data/text.service';
-
-const _: any = window.require("lodash");
-
-const { clipboard } = window.require('electron');
-
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { TextService } from '../../data/text.service';
 
 @Component({
     selector: 'app-keyboards',
     templateUrl: './keyboards.component.pug',
     styleUrls: ['./keyboards.component.scss']
 })
-export class KeyboardsComponent {
-
+export class KeyboardsComponent implements OnInit {
     constructor(
-        public textService: TextService,
-        public saveFile: SaveFileService,
-        public zone: NgZone) {
-        window.keyboards = this;
+        public zone: NgZone,
+        public ks: KeyboardService,
+        public ts: TextService
+    ) { }
+
+    ngOnInit() {
+        this.ks.registerKeyboard(this);
     }
 
-    public closeKeyboard() {
-        this.zone.run(() => {
-            this.activeKeyboard = 0;
-        }, this);
+    public toggle() {
+        this.opened = !this.opened;
     }
 
-    public openBasicKeyboard() {
-        this.zone.run(() => {
-            this.activeKeyboard = 1;
-        }, this);
-    }
-
-    public openFullKeyboard() {
-        this.zone.run(() => {
-            this.activeKeyboard = 2;
-        }, this);
-    }
-
-    public openPicKeyboard() {
-        this.zone.run(() => {
-            this.activeKeyboard = 3;
-        }, this);
-    }
-
-    get controlKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (value.control)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    get multiCharKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (value.multiChar)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    get singleCharKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (value.singleChar)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    // 3 Keyboards
-    // 1) Basic Keyboard containing only in-game provided keys
-    // 2) Full Keyboard contaning all keys except picture keys
-    // 3) Graphic Keyboard containing only graphic keys
-
-    get basicKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (value.normal)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    get fullKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (!value.picture)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    get picKeys() {
-        const chars: any = _.filter(this.textService.rawTrans, (value: Text) => {
-            if (value.picture)
-                return true;
-
-            return false;
-        });
-
-        for (let i = 0; i < chars.length; i++) {
-            const rawEntry: Text = chars[i];
-            const html = this.textService.convertEngToHTML(rawEntry.eng, 100);
-            chars[i] = {
-                html,
-                copyCode: rawEntry.eng
-            }
-        }
-
-        return chars;
-    }
-
-    copyChar(code: string) {
-        clipboard.writeText(code);
-    }
-
-    public activeKeyboard: number = 0;
+    public opened: boolean = false;
 }
