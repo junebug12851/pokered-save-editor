@@ -3,5 +3,21 @@
 }
 
 .sidenav {
-  width: 350px;
+  width: 325px;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25px);
+    grid-auto-flow: dense;
+    margin: 0 10px;
+
+    > .tile {
+        border: 1px solid red;
+    }
+
+    > .tile.title {
+        grid-row-start: 1;
+        grid-row-end: -1;
+    }
 }

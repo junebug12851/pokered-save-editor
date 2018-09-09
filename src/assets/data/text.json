@@ -4,1599 +4,1854 @@
         "eng": "<pic01>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 2,
         "eng": "<pic02>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 3,
         "eng": "<pic03>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 4,
         "eng": "<pic04>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 5,
         "eng": "<pic05>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 6,
         "eng": "<pic06>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 7,
         "eng": "<pic07>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 8,
         "eng": "<pic08>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 9,
         "eng": "<pic09>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 10,
         "eng": "<pic0A>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 11,
         "eng": "<pic0B>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 12,
         "eng": "<pic0C>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 13,
         "eng": "<pic0D>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 14,
         "eng": "<pic0E>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 15,
         "eng": "<pic0F>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 16,
         "eng": "<pic10>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 17,
         "eng": "<pic11>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 18,
         "eng": "<pic12>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 19,
         "eng": "<pic13>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 20,
         "eng": "<pic14>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 21,
         "eng": "<pic15>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 22,
         "eng": "<pic16>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 23,
         "eng": "<pic17>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 24,
         "eng": "<pic18>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 25,
         "eng": "<pic19>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 26,
         "eng": "<pic1A>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 27,
         "eng": "<pic1B>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 28,
         "eng": "<pic1C>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 29,
         "eng": "<pic1D>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 30,
         "eng": "<pic1E>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 31,
         "eng": "<pic1F>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 32,
         "eng": "<pic20>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 33,
         "eng": "<pic21>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 34,
         "eng": "<pic22>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 35,
         "eng": "<pic23>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 36,
         "eng": "<pic24>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 37,
         "eng": "<pic25>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 38,
         "eng": "<pic26>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 39,
         "eng": "<pic27>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 40,
         "eng": "<pic28>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 41,
         "eng": "<pic29>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 42,
         "eng": "<pic2A>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 43,
         "eng": "<pic2B>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 44,
         "eng": "<pic2C>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 45,
         "eng": "<pic2D>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 46,
         "eng": "<pic2E>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 47,
         "eng": "<pic2F>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 48,
         "eng": "<pic30>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 49,
         "eng": "<pic31>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 50,
         "eng": "<pic32>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 51,
         "eng": "<pic33>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 52,
         "eng": "<pic34>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 53,
         "eng": "<pic35>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 54,
         "eng": "<pic36>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 55,
         "eng": "<pic37>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 56,
         "eng": "<pic38>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 57,
         "eng": "<pic39>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 58,
         "eng": "<pic3A>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 59,
         "eng": "<pic3B>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 60,
         "eng": "<pic3C>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 61,
         "eng": "<pic3D>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 62,
         "eng": "<pic3E>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 63,
         "eng": "<pic3F>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 64,
         "eng": "<pic40>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 65,
         "eng": "<pic41>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 66,
         "eng": "<pic42>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 67,
         "eng": "<pic43>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 68,
         "eng": "<pic44>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 69,
         "eng": "<pic45>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 70,
         "eng": "<pic46>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 71,
         "eng": "<pic47>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 72,
         "eng": "<pic48>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 73,
         "eng": "<page>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 74,
         "eng": "<pkmn>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 2
     },
     {
         "code": 75,
         "eng": "<cont_>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 76,
         "eng": "<autocont>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 77,
         "eng": "<pic4D>",
         "shorthand": true,
         "picture": true,
-        "useTilemap": true
+        "useTilemap": true,
+        "length": 1
     },
     {
         "code": 78,
         "eng": "<next>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 79,
         "eng": "<line>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 80,
         "eng": "<end>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 81,
         "eng": "<para>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 82,
         "eng": "<player>",
         "shorthand": true,
         "multiChar": true,
-        "variable": true
+        "variable": true,
+        "length": 7
     },
     {
         "code": 83,
         "eng": "<rival>",
         "shorthand": true,
         "multiChar": true,
-        "variable": true
+        "variable": true,
+        "length": 7
     },
     {
         "code": 84,
         "eng": "<poke>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 4
     },
     {
         "code": 85,
         "eng": "<cont>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 86,
         "eng": "<......>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 2
     },
     {
         "code": 87,
         "eng": "<done>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 88,
         "eng": "<prompt>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 89,
         "eng": "<targ>",
         "shorthand": true,
         "multiChar": true,
-        "variable": true
+        "variable": true,
+        "length": 10
     },
     {
         "code": 90,
         "eng": "<user>",
         "shorthand": true,
         "multiChar": true,
-        "variable": true
+        "variable": true,
+        "length": 15
     },
     {
         "code": 91,
         "eng": "<pc>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 2
     },
     {
         "code": 92,
         "eng": "<tm>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 2
     },
     {
         "code": 93,
         "eng": "<trainer>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 7
     },
     {
         "code": 94,
         "eng": "<rocket>",
         "shorthand": true,
-        "multiChar": true
+        "multiChar": true,
+        "length": 6
     },
     {
         "code": 95,
         "eng": "<dex>",
         "shorthand": true,
-        "control": true
+        "control": true,
+        "length": 0
     },
     {
         "code": 96,
         "eng": "<A>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 97,
         "eng": "<B>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 98,
         "eng": "<C>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 99,
         "eng": "<D>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 100,
         "eng": "<E>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 101,
         "eng": "<F>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 102,
         "eng": "<G>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 103,
         "eng": "<H>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 104,
         "eng": "<I>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 105,
         "eng": "<V>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 106,
         "eng": "<S>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 107,
         "eng": "<L>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 108,
         "eng": "<M>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 109,
         "eng": "<:>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 110,
         "eng": "<ji>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 111,
         "eng": "<ju>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 112,
         "eng": "<o'>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 113,
         "eng": "<c'>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 114,
         "eng": "<o\">",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 115,
         "eng": "<c\">",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 116,
         "eng": "<mdot>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 117,
         "eng": "<...>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 118,
         "eng": "<ja>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 119,
         "eng": "<je>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 120,
         "eng": "<jo>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 121,
         "eng": "<ul>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 122,
         "eng": "<horz>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 123,
         "eng": "<ur>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 124,
         "eng": "<vert>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 125,
         "eng": "<bl>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 126,
         "eng": "<br>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 127,
         "eng": " ",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 128,
         "eng": "A",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 129,
         "eng": "B",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 130,
         "eng": "C",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 131,
         "eng": "D",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 132,
         "eng": "E",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 133,
         "eng": "F",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 134,
         "eng": "G",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 135,
         "eng": "H",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 136,
         "eng": "I",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 137,
         "eng": "J",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 138,
         "eng": "K",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 139,
         "eng": "L",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 140,
         "eng": "M",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 141,
         "eng": "N",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 142,
         "eng": "O",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 143,
         "eng": "P",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 144,
         "eng": "Q",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 145,
         "eng": "R",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 146,
         "eng": "S",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 147,
         "eng": "T",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 148,
         "eng": "U",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 149,
         "eng": "V",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 150,
         "eng": "W",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 151,
         "eng": "X",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 152,
         "eng": "Y",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 153,
         "eng": "Z",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 154,
         "eng": "(",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 155,
         "eng": ")",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 156,
         "eng": ":",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 157,
         "eng": ";",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 158,
         "eng": "[",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 159,
         "eng": "]",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 160,
         "eng": "a",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 161,
         "eng": "b",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 162,
         "eng": "c",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 163,
         "eng": "d",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 164,
         "eng": "e",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 165,
         "eng": "f",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 166,
         "eng": "g",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 167,
         "eng": "h",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 168,
         "eng": "i",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 169,
         "eng": "j",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 170,
         "eng": "k",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 171,
         "eng": "l",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 172,
         "eng": "m",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 173,
         "eng": "n",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 174,
         "eng": "o",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 175,
         "eng": "p",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 176,
         "eng": "q",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 177,
         "eng": "r",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 178,
         "eng": "s",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 179,
         "eng": "t",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 180,
         "eng": "u",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 181,
         "eng": "v",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 182,
         "eng": "w",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 183,
         "eng": "x",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 184,
         "eng": "y",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 185,
         "eng": "z",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 186,
         "eng": "<e>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 187,
         "eng": "<'d>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 188,
         "eng": "<'l>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 189,
         "eng": "<'s>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 190,
         "eng": "<'t>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 191,
         "eng": "<'v>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 192,
         "eng": "<picC0>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 193,
         "eng": "<picC1>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 194,
         "eng": "<picC2>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 195,
         "eng": "<picC3>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 196,
         "eng": "<picC4>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 197,
         "eng": "<picC5>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 198,
         "eng": "<picC6>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 199,
         "eng": "<picC7>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 200,
         "eng": "<picC8>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 201,
         "eng": "<picC9>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 202,
         "eng": "<picCA>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 203,
         "eng": "<picCB>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 204,
         "eng": "<picCC>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 205,
         "eng": "<picCD>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 206,
         "eng": "<picCE>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 207,
         "eng": "<picCF>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 208,
         "eng": "<picD0>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 209,
         "eng": "<picD1>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 210,
         "eng": "<picD2>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 211,
         "eng": "<picD3>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 212,
         "eng": "<picD4>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 213,
         "eng": "<picD5>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 214,
         "eng": "<picD6>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 215,
         "eng": "<picD7>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 216,
         "eng": "<picD8>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 217,
         "eng": "<picD9>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 218,
         "eng": "<picDA>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 219,
         "eng": "<picDB>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 220,
         "eng": "<picDC>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 221,
         "eng": "<picDD>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 222,
         "eng": "<picDE>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 223,
         "eng": "<picDF>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 224,
         "eng": "'",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 225,
         "eng": "<pk>",
         "shorthand": true,
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 226,
         "eng": "<mn>",
         "shorthand": true,
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 227,
         "eng": "-",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 228,
         "eng": "<'r>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 229,
         "eng": "<'m>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 230,
         "eng": "?",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 231,
         "eng": "!",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 232,
         "eng": ".",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 233,
         "eng": "<jka>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 234,
         "eng": "<jku>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 235,
         "eng": "<jke>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 236,
         "eng": "<arr-r2>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 237,
         "eng": "<arr-r>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 238,
         "eng": "<arr-d>",
         "shorthand": true,
-        "picture": true
+        "picture": true,
+        "length": 1
     },
     {
         "code": 239,
         "eng": "<m>",
         "shorthand": true,
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 240,
         "eng": "$",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 241,
         "eng": "<x>",
         "shorthand": true,
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 242,
         "eng": "<.>",
         "shorthand": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 243,
         "eng": "/",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 244,
         "eng": ",",
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 245,
         "eng": "<f>",
         "shorthand": true,
         "normal": true,
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 246,
         "eng": "0",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 247,
         "eng": "1",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 248,
         "eng": "2",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 249,
         "eng": "3",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 250,
         "eng": "4",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 251,
         "eng": "5",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 252,
         "eng": "6",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 253,
         "eng": "7",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 254,
         "eng": "8",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     },
     {
         "code": 255,
         "eng": "9",
-        "singleChar": true
+        "singleChar": true,
+        "length": 1
     }
 ]

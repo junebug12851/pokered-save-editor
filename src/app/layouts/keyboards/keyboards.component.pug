@@ -7,22 +7,20 @@ mat-sidenav-container.sidenav-container
         '[opened]'='opened'
         'position'='end'
     )
-
-        mat-grid-list(
-            cols="10"
-            gutterSize='2px'
+        //- .tiles
+        //-     .tile(
+        //-         '*ngFor'='let key of ts.search.keys'
+        //-     )
+        span(
+            '*ngFor'='let key of ts.search.keys'
         )
-            mat-grid-tile(
-                '*ngFor'='let key of ts.search.keys'
-                '[colspan]'='(key.multiChar) ? 5 : 1'
+            button(
+                mat-button
             )
-                button(
-                    mat-button
+                name-box(
+                    '[maxLength]'='100'
+                    '[value]'='key.eng'
                 )
-                    name-box(
-                        '[maxLength]'='100'
-                        '[value]'='key.eng'
-                    )
 
     mat-sidenav-content
         ng-content
