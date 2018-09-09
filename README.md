@@ -1,5 +1,15 @@
 # Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor)
 
+_Side Note_: SourceTree had royally messed up the git repo so a complete rebase
+including all tag recreations and all non-master branch recreations had to
+happen from scratch unfortunately. It made a few files a bit quirky but it's
+all cleaned up and I think I've caught all the quirks that happened in the
+various files and corrected them back hopefully. Theres no doubt more work to
+do to recover including getting Travis back on and the previous releases that
+were on Github.
+
+## About this project
+
 This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.

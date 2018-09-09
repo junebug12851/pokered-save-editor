@@ -29,7 +29,7 @@ export class AreaTilesetsComponent {
     ) { }
 
     get containerTileset() {
-        const tileset = this.fileService.fileDataExpanded.area.tileset;
+        const tileset = this.fileService.fileDataExpanded.area.tilesets.tileset;
         if (tileset == "19_00_4000_45E0_1735")
             return {
                 tileset: "assets/pokered-font/pic-tilesets/overworld.png",
