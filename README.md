@@ -1,4 +1,4 @@
-# Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor)
+# Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor) [![Maintainability](https://api.codeclimate.com/v1/badges/8c37042f5e7778a7aab0/maintainability)](https://codeclimate.com/github/junebug12851/pokered-save-editor/maintainability)
 
 ## About this project
 
