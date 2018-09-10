@@ -34,11 +34,6 @@ module.exports = class Window {
         win.on('closed', this.onClosed.bind(this));
         win.once('ready-to-show', this.onReadyToShow.bind(this));
         app.on('ipcTo', this.onIpcTo.bind(this));
-
-        // Relay keyboard requests to the window
-        app.on('menu-keyboardBasic', this.relayTo.bind(this));
-        app.on('menu-keyboardFull', this.relayTo.bind(this));
-        app.on('menu-keyboardPic', this.relayTo.bind(this));
     }
 
     // Certain events can be hooked into and echoed to the ipcTo channel

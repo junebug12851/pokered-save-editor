@@ -142,26 +142,6 @@
         ]
     },
     {
-        "label": "Keyboards",
-        "submenu": [
-            {
-                "label": "Basic",
-                "trigger": "keyboardBasic",
-                "accelerator": "CommandOrControl+Alt+B"
-            },
-            {
-                "label": "Full",
-                "trigger": "keyboardFull",
-                "accelerator": "CommandOrControl+Alt+F"
-            },
-            {
-                "label": "Picture",
-                "trigger": "keyboardPic",
-                "accelerator": "CommandOrControl+Alt+P"
-            }
-        ]
-    },
-    {
         "role": "windowMenu"
     }
 ]

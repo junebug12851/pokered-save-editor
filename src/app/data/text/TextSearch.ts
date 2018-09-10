@@ -1,4 +1,4 @@
-import { Text } from './../../../../dist/pokered-save-editor/assets/data/text.d';
+import { Text } from '../../../assets/data/text.d';
 
 declare var window: {
     require: any;
@@ -79,7 +79,7 @@ export class TextSearch {
     }
 
     get notMulti(): TextSearch {
-        return this.doExclusiveFilter("multichar");
+        return this.doExclusiveFilter("multiChar");
     }
 
     get andVar(): TextSearch {
