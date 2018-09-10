@@ -1,4 +1,5 @@
 import { Text } from './../../../assets/data/text.d';
+import { NameInputComponent } from './../../fragments/name-input/name-input.component';
 import { KeyboardService } from './../../data/keyboard.service';
 /**
    Copyright 2018 June Hanabi
@@ -35,30 +36,20 @@ export class KeyboardsComponent implements OnInit {
         this.ks.registerKeyboard(this);
     }
 
-    public toggle() {
-        this.opened = !this.opened;
+    public open(input: NameInputComponent) {
+        this.opened = true;
+        this.input = input;
     }
 
-    getColSpan(text: Text) {
-        let length = text.length;
-
-        if (length > 12)
-            length = 12;
-        else if (length > 9)
-            length - 6;
-        else if (length > 6)
-            length - 5;
-        else if (length > 5)
-            length - 4;
-        else if (length > 2)
-            length - 1;
-
-        return length;
+    public close() {
+        this.opened = false;
     }
 
-    getRowSpan() {
-        return 1;
+    public append(key: Text) {
+        if (this.input !== null)
+            this.input.value += key.eng;
     }
 
     public opened: boolean = false;
+    public input: NameInputComponent | null = null;
 }

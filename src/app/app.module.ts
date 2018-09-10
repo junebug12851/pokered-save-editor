@@ -48,6 +48,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -201,7 +202,8 @@ import { RootHoFComponent } from './screens/root-hof/root-hof.component';
         MatCheckboxModule,
         MatPaginatorModule,
         MatButtonToggleModule,
-        MatGridListModule
+        MatGridListModule,
+        MatTooltipModule
     ],
     providers: [
         SaveFileService,

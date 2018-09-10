@@ -1,26 +1,97 @@
-mat-sidenav-container.sidenav-container
+mat-sidenav-container.sidenav-container(
+    '(backdropClick)'='close()'
+)
     mat-sidenav.sidenav(
         '#drawer'='',
         fixedinviewport='true',
-        '[attr.role]'="(isHandset$ | async) ? 'dialog' : 'navigation'",
-        '[mode]'="(isHandset$ | async) ? 'over' : 'side'",
+        'mode'="over",
         '[opened]'='opened'
         'position'='end'
     )
-        //- .tiles
-        //-     .tile(
-        //-         '*ngFor'='let key of ts.search.keys'
-        //-     )
+
         span(
-            '*ngFor'='let key of ts.search.keys'
+            '*ngFor'='let key of ts.search.andNormal.keys'
         )
-            button(
+            button.button-non-uniform(
                 mat-button
+                '[matTooltip]'="key.eng"
+                matTooltipPosition="right"
+                matTooltipShowDelay="1000"
+                matTooltipHideDelay="0"
+                matTooltipClass="tooltip"
+                '(click)'='append(key)'
             )
                 name-box(
                     '[maxLength]'='100'
                     '[value]'='key.eng'
                 )
+
+        hr
+
+        span(
+            '*ngFor'='let key of ts.search.notNormal.notControl.notPic.notMulti.notVar.keys'
+        )
+            button.button-non-uniform(
+                mat-button
+                '[matTooltip]'="key.eng"
+                matTooltipPosition="right"
+                matTooltipShowDelay="1000"
+                matTooltipHideDelay="0"
+                matTooltipClass="tooltip"
+                '(click)'='append(key)'
+            )
+                name-box(
+                    '[maxLength]'='100'
+                    '[value]'='key.eng'
+                )
+
+        hr
+
+        span(
+            '*ngFor'='let key of ts.search.notNormal.andPic.keys'
+        )
+            button.button-non-uniform(
+                mat-button
+                '[matTooltip]'="key.eng"
+                matTooltipPosition="right"
+                matTooltipShowDelay="1000"
+                matTooltipHideDelay="0"
+                matTooltipClass="tooltip"
+                '(click)'='append(key)'
+            )
+                name-box(
+                    '[maxLength]'='100'
+                    '[value]'='key.eng'
+                )
+
+        hr
+
+        span(
+            '*ngFor'='let key of ts.search.notNormal.andMulti.keys'
+        )
+            button.button-non-uniform(
+                mat-button
+                '[matTooltip]'="key.eng"
+                matTooltipPosition="right"
+                matTooltipShowDelay="1000"
+                matTooltipHideDelay="0"
+                matTooltipClass="tooltip"
+                '(click)'='append(key)'
+            )
+                name-box(
+                    '[maxLength]'='100'
+                    '[value]'='key.eng'
+                )
+
+        hr
+
+        span(
+            '*ngFor'='let key of ts.search.notNormal.andControl.keys'
+        )
+            button(
+                mat-button
+            )
+                | {{key.eng}}
 
     mat-sidenav-content
         ng-content

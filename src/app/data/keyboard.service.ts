@@ -1,3 +1,4 @@
+import { NameInputComponent } from './../fragments/name-input/name-input.component';
 import { KeyboardsComponent } from './../layouts/keyboards/keyboards.component';
 /**
    Copyright 2018 June Hanabi
@@ -37,9 +38,9 @@ export class KeyboardService {
         this.keyboard = null;
     }
 
-    toggle() {
+    open(input: NameInputComponent) {
         if (this.keyboard !== null)
-            this.keyboard.toggle();
+            this.keyboard.open(input);
     }
 
     keyboard: KeyboardsComponent | null = null;

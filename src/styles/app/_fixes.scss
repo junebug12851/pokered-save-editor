@@ -25,3 +25,13 @@
 .label-padding .mat-form-field-infix {
     padding-top: 18px;
 }
+
+.button-non-uniform {
+    min-width: 0 !important;
+    width: min-content !important;
+    padding: 1px !important;
+}
+
+.mat-drawer-backdrop {
+    background-color: transparent !important;
+}

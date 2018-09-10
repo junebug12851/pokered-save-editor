@@ -76,6 +76,10 @@ export class NameInputComponent extends ValueAccessorBase<string> implements OnI
 
     public invalid: boolean = false;
 
+    onKeyboardClick() {
+        this.ks.open(this);
+    }
+
     doOnChange(event: any) {
         // Grab value
         const val = event;
