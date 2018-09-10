@@ -10,6 +10,10 @@ The first version has been released and all used areas of the save file are edit
 
 Here are some of the features
 
+### Optional Virtual Keyboard
+
+![Player Name](https://thumbs.gfycat.com/FarEasyCarpenterant-size_restricted.gif)
+
 ### Player
 
 ![Player Name](https://thumbs.gfycat.com/PassionatePracticalGeese-size_restricted.gif)
