@@ -1,0 +1,98 @@
+{
+    "19_00_4000_45E0_1735": {
+        "tileset": "assets/pokered-font/pic-tilesets/overworld.png",
+        "container": "pr-container pr-large pr-pic-overworld"
+    },
+    "19_01_4DE0_5270_1749": {
+        "tileset": "assets/pokered-font/pic-tilesets/reds_house.png",
+        "container": "pr-container pr-large pr-pic-reds_house"
+    },
+    "1A_02_4DBF_53BF_1753": {
+        "tileset": "assets/pokered-font/pic-tilesets/pokecenter.png",
+        "container": "pr-container pr-large pr-pic-pokecenter"
+    },
+    "1A_03_63FF_69FF_1765": {
+        "tileset": "assets/pokered-font/pic-tilesets/forest.png",
+        "container": "pr-container pr-large pr-pic-forest"
+    },
+    "19_04_4DE0_5270_1749": {
+        "tileset": "assets/pokered-font/pic-tilesets/reds_house.png",
+        "container": "pr-container pr-large pr-pic-reds_house"
+    },
+    "1A_05_407F_467F_1759": {
+        "tileset": "assets/pokered-font/pic-tilesets/gym.png",
+        "container": "pr-container pr-large pr-pic-gym"
+    },
+    "1A_06_4DBF_53BF_1753": {
+        "tileset": "assets/pokered-font/pic-tilesets/pokecenter.png",
+        "container": "pr-container pr-large pr-pic-pokecenter"
+    },
+    "1A_07_407F_467F_1759": {
+        "tileset": "assets/pokered-font/pic-tilesets/gym.png",
+        "container": "pr-container pr-large pr-pic-gym"
+    },
+    "19_08_53A0_5980_1775": {
+        "tileset": "assets/pokered-font/pic-tilesets/house.png",
+        "container": "pr-container pr-large pr-pic-house"
+    },
+    "1A_09_560F_5BFF_177F": {
+        "tileset": "assets/pokered-font/pic-tilesets/gate.png",
+        "container": "pr-container pr-large pr-pic-gate"
+    },
+    "1A_0A_560F_5BFF_177F": {
+        "tileset": "assets/pokered-font/pic-tilesets/gate.png",
+        "container": "pr-container pr-large pr-pic-gate"
+    },
+    "1B_0B_7D60_7EF0_172F": {
+        "tileset": "assets/pokered-font/pic-tilesets/underground.png",
+        "container": "pr-container pr-large pr-pic-underground"
+    },
+    "1A_0C_560F_5BFF_177F": {
+        "tileset": "assets/pokered-font/pic-tilesets/gate.png",
+        "container": "pr-container pr-large pr-pic-gate"
+    },
+    "1B_0D_6390_6930_178A": {
+        "tileset": "assets/pokered-font/pic-tilesets/ship.png",
+        "container": "pr-container pr-large pr-pic-ship"
+    },
+    "19_0E_6610_6BF0_1795": {
+        "tileset": "assets/pokered-font/pic-tilesets/ship_port.png",
+        "container": "pr-container pr-large pr-pic-ship_port"
+    },
+    "1B_0F_4000_45C0_179A": {
+        "tileset": "assets/pokered-font/pic-tilesets/cemetery.png",
+        "container": "pr-container pr-large pr-pic-cemetery"
+    },
+    "19_10_6D60_7350_17A2": {
+        "tileset": "assets/pokered-font/pic-tilesets/interior.png",
+        "container": "pr-container pr-large pr-pic-interior"
+    },
+    "1B_11_4CA0_50C0_17AC": {
+        "tileset": "assets/pokered-font/pic-tilesets/cavern.png",
+        "container": "pr-container pr-large pr-pic-cavern"
+    },
+    "1B_12_58C0_5EA0_17B8": {
+        "tileset": "assets/pokered-font/pic-tilesets/lobby.png",
+        "container": "pr-container pr-large pr-pic-lobby"
+    },
+    "19_13_5BB0_6190_17C0": {
+        "tileset": "assets/pokered-font/pic-tilesets/mansion.png",
+        "container": "pr-container pr-large pr-pic-mansion"
+    },
+    "1B_14_6D10_72D0_17CA": {
+        "tileset": "assets/pokered-font/pic-tilesets/lab.png",
+        "container": "pr-container pr-large pr-pic-lab"
+    },
+    "1B_15_7670_7B20_17D1": {
+        "tileset": "assets/pokered-font/pic-tilesets/club.png",
+        "container": "pr-container pr-large pr-pic-club"
+    },
+    "1A_16_71FF_77FF_17DD": {
+        "tileset": "assets/pokered-font/pic-tilesets/facility.png",
+        "container": "pr-container pr-large pr-pic-facility"
+    },
+    "19_17_76F0_7B50_17F0": {
+        "tileset": "assets/pokered-font/pic-tilesets/plateau.png",
+        "container": "pr-container pr-large pr-pic-plateau"
+    }
+}
