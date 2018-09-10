@@ -1,0 +1,401 @@
+[
+    {
+        "name": "oaksLab",
+        "size": 1
+    },
+    {
+        "name": "paletteTown",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "rivalsHouse",
+        "size": 1
+    },
+    {
+        "name": "viridianCity",
+        "size": 1,
+        "skip": 2
+    },
+    {
+        "name": "pewterCity",
+        "size": 1
+    },
+    {
+        "name": "route3",
+        "size": 1
+    },
+    {
+        "name": "route4",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "viridianGym",
+        "size": 1
+    },
+    {
+        "name": "pewterGym",
+        "size": 1
+    },
+    {
+        "name": "ceruleanGym",
+        "size": 1
+    },
+    {
+        "name": "vermillionGym",
+        "size": 1
+    },
+    {
+        "name": "celadonGym",
+        "size": 1
+    },
+    {
+        "name": "route6",
+        "size": 1
+    },
+    {
+        "name": "route8",
+        "size": 1
+    },
+    {
+        "name": "route24",
+        "size": 1
+    },
+    {
+        "name": "route25",
+        "size": 1
+    },
+    {
+        "name": "route9",
+        "size": 1
+    },
+    {
+        "name": "route10",
+        "size": 1
+    },
+    {
+        "name": "mtMoon1",
+        "size": 1
+    },
+    {
+        "name": "mtMoon3",
+        "size": 1
+    },
+    {
+        "name": "ssAnne8",
+        "size": 1
+    },
+    {
+        "name": "ssAnne9",
+        "size": 1
+    },
+    {
+        "name": "route22",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "playersHouse2",
+        "size": 1
+    },
+    {
+        "name": "viridianMarket",
+        "size": 1
+    },
+    {
+        "name": "route22Gate",
+        "size": 1
+    },
+    {
+        "name": "ceruleanCity",
+        "size": 1,
+        "skip": 7
+    },
+    {
+        "name": "ssAnne5",
+        "size": 1
+    },
+    {
+        "name": "viridianForest",
+        "size": 1
+    },
+    {
+        "name": "museum1",
+        "size": 1
+    },
+    {
+        "name": "route13",
+        "size": 1
+    },
+    {
+        "name": "route14",
+        "size": 1
+    },
+    {
+        "name": "route17",
+        "size": 1
+    },
+    {
+        "name": "route19",
+        "size": 1
+    },
+    {
+        "name": "route21",
+        "size": 1
+    },
+    {
+        "name": "safariZoneEntrance",
+        "size": 1
+    },
+    {
+        "name": "rockTunnel2",
+        "size": 1
+    },
+    {
+        "name": "rockTunnel1",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "route11",
+        "size": 1
+    },
+    {
+        "name": "route12",
+        "size": 1
+    },
+    {
+        "name": "route15",
+        "size": 1
+    },
+    {
+        "name": "route16",
+        "size": 1
+    },
+    {
+        "name": "route18",
+        "size": 1
+    },
+    {
+        "name": "route20",
+        "size": 1
+    },
+    {
+        "name": "ssAnne10",
+        "size": 1
+    },
+    {
+        "name": "vermillionCity",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower2",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower3",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower4",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower5",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower6",
+        "size": 1
+    },
+    {
+        "name": "pokemonTower7",
+        "size": 1
+    },
+    {
+        "name": "rocketHideout1",
+        "size": 1
+    },
+    {
+        "name": "rocketHideout2",
+        "size": 1
+    },
+    {
+        "name": "rocketHideout3",
+        "size": 1
+    },
+    {
+        "name": "rocketHideout4",
+        "size": 2
+    },
+    {
+        "name": "route6Gate",
+        "size": 1
+    },
+    {
+        "name": "route8Gate",
+        "size": 2
+    },
+    {
+        "name": "cinnabarIsland",
+        "size": 1
+    },
+    {
+        "name": "mansion1",
+        "size": 2
+    },
+    {
+        "name": "mansion2",
+        "size": 1
+    },
+    {
+        "name": "mansion3",
+        "size": 1
+    },
+    {
+        "name": "mansion4",
+        "size": 1
+    },
+    {
+        "name": "victoryRoad2",
+        "size": 1
+    },
+    {
+        "name": "victoryRoad3",
+        "size": 2
+    },
+    {
+        "name": "fightingDojo",
+        "size": 1
+    },
+    {
+        "name": "silphCo2",
+        "size": 1
+    },
+    {
+        "name": "silphCo3",
+        "size": 1
+    },
+    {
+        "name": "silphCo4",
+        "size": 1
+    },
+    {
+        "name": "silphCo5",
+        "size": 1
+    },
+    {
+        "name": "silphCo6",
+        "size": 1
+    },
+    {
+        "name": "silphCo7",
+        "size": 1
+    },
+    {
+        "name": "silphCo8",
+        "size": 1
+    },
+    {
+        "name": "silphCo9",
+        "size": 1
+    },
+    {
+        "name": "hofRoom",
+        "size": 1
+    },
+    {
+        "name": "rival",
+        "size": 1
+    },
+    {
+        "name": "lorelei",
+        "size": 1
+    },
+    {
+        "name": "bruno",
+        "size": 1
+    },
+    {
+        "name": "agatha",
+        "size": 1
+    },
+    {
+        "name": "unknownDungeon3",
+        "size": 1
+    },
+    {
+        "name": "victoryRoad1",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "lance",
+        "size": 1,
+        "skip": 4
+    },
+    {
+        "name": "silphCo10",
+        "size": 1
+    },
+    {
+        "name": "silphCo11",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "fuchsiaGym",
+        "size": 1
+    },
+    {
+        "name": "saffronGym",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "cinnabarGym",
+        "size": 1
+    },
+    {
+        "name": "celadonGameCorner",
+        "size": 1
+    },
+    {
+        "name": "route16Gate",
+        "size": 1
+    },
+    {
+        "name": "billsHouse",
+        "size": 1
+    },
+    {
+        "name": "route5Gate",
+        "size": 1
+    },
+    {
+        "name": "powerPlantRoute7Gate",
+        "size": 1,
+        "skip": 1
+    },
+    {
+        "name": "ssAnne2",
+        "size": 1
+    },
+    {
+        "name": "seafoamIslands4",
+        "size": 1
+    },
+    {
+        "name": "route23",
+        "size": 1
+    },
+    {
+        "name": "seafoamIslands5",
+        "size": 1
+    },
+    {
+        "name": "route18Gate",
+        "size": 1
+    }
+]
