@@ -1,5 +1,7 @@
 extends: "./base.yml"
 
+# This produces portable, standalone, and manual installation builds
+
 artifactName: "${productName} Portable ${os} ${arch}.${ext}"
 
 win:

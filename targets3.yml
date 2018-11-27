@@ -1,5 +1,7 @@
 extends: "./base.yml"
 
+# This is the Mac DMG Build
+
 artifactName: "${productName} ${os} ${arch}.${ext}"
 
 mac:
