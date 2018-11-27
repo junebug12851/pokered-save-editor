@@ -15,6 +15,7 @@ branches:
     - master
     - test
     - next
+    - dev
     - /^v(?:\d+\.?){1,}$/
 
 # Clone Depth, 1 is too small (according to docs) 3's about the usual suggested
