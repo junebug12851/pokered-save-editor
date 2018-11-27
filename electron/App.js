@@ -14,8 +14,11 @@ module.exports = class App extends EventEmitter {
         super();
 
         // Make Single Instance and ensure single instance
-        if (app.makeSingleInstance(this.onSecondInstance.bind(this)))
-            this.quit();
+        // if (app.requestSingleInstanceLock()) {
+        //     this.quit();
+        //     return;
+        // }
+        //app.on('second-instance', this.onSecondInstance.bind(this));
 
         // Electron app var
         this.app = app;

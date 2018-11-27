@@ -3,7 +3,7 @@ import { utils } from './../utils/utils';
 
 declare var window: {
     require: any;
-}
+};
 
 /**
  * Represents a single game data file
@@ -25,14 +25,15 @@ class GameData {
 })
 export class GameDataService {
 
-    file(name: string) {
-        if (this.cache[name] === undefined)
-            this.cache[name] = new GameData(name);
-
-        return this.cache[name];
-    }
-
     protected cache: {
         [key: string]: GameData
     } = {};
+
+    file(name: string) {
+        if (this.cache[name] === undefined) {
+            this.cache[name] = new GameData(name);
+        }
+
+        return this.cache[name];
+    }
 }

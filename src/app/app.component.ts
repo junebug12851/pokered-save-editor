@@ -17,6 +17,31 @@ import { OnInit } from '@angular/core';
  */
 
 import { Component } from '@angular/core';
+import { utils } from './utils/utils';
+
+declare var window: {
+    require: any;
+};
+
+declare var process: any;
+declare var __dirname: string;
+
+const path = window.require('path');
+
+const isDev = utils.isDev;
+
+// Adjust process working directory depending on dev enviroment or not
+
+// Used to the main process set this and it applied here but a recent update
+// made 2 interesting things happen. The main process cwd is now seperate
+// from the render process cwd and furthermore the render process cwd is now
+// deep inside it's own folder structure particulary when developing however
+// regardless both have to be set or the program won't behave properly.
+if (isDev) {
+    process.chdir(path.join(__dirname, '../../../../../../src'));
+} else {
+    process.chdir(path.join(__dirname, '../../dist/pokered-save-editor'));
+}
 
 @Component({
     selector: 'app-root',
@@ -24,7 +49,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    ngOnInit() {
-
-    }
+    ngOnInit() { }
 }

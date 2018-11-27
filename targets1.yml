@@ -1,6 +1,10 @@
 extends: "./base.yml"
 
+# This produces setup installers
+# Disabled pacman as it kept crashing the builder for no apparent reason
+
 artifactName: "${productName} Setup ${os} ${arch}.${ext}"
+icon: "./pokered-save-editor/assets/icons"
 
 win:
   target:
@@ -28,10 +32,10 @@ linux:
       arch:
         - "x64"
         - "ia32"
-    - target: "pacman"
-      arch:
-        - "x64"
-        - "ia32"
+    # - target: "pacman"
+    #   arch:
+    #     - "x64"
+    #     - "ia32"
 
   icon: "./pokered-save-editor/assets/icons"
   synopsis: "Pokemon Red/Blue Save Editor"
@@ -48,5 +52,5 @@ deb:
 rpm:
   packageCategory: "Applications/Editors"
 
-pacman:
-  packageCategory: "Applications/Editors"
+# pacman:
+#   packageCategory: "Applications/Editors"

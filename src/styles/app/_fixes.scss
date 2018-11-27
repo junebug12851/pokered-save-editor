@@ -35,3 +35,9 @@
 .mat-drawer-backdrop {
     background-color: transparent !important;
 }
+
+.hide-overflow-x {
+    .mat-drawer-inner-container {
+        overflow-x: hidden !important;
+    }
+}
