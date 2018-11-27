@@ -34,8 +34,8 @@ before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
 
 # Install RPM tools needed to build rpm files
-before_install:
-  - brew install rpm
+# before_install:
+#   - brew install rpm
 
 # Install everything in NPM
 install:

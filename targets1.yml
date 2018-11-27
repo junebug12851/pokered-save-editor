@@ -2,6 +2,7 @@ extends: "./base.yml"
 
 # This produces setup installers
 # Disabled pacman as it kept crashing the builder for no apparent reason
+# Disabled deb and rpm, honestly fpm seems to be really buggy lately
 
 artifactName: "${productName} Setup ${os} ${arch}.${ext}"
 icon: "./pokered-save-editor/assets/icons"
@@ -24,14 +25,14 @@ linux:
       arch:
         - "x64"
         - "ia32"
-    - target: "deb"
-      arch:
-        - "x64"
-        - "ia32"
-    - target: "rpm"
-      arch:
-        - "x64"
-        - "ia32"
+    # - target: "deb"
+    #   arch:
+    #     - "x64"
+    #     - "ia32"
+    # - target: "rpm"
+    #   arch:
+    #     - "x64"
+    #     - "ia32"
     # - target: "pacman"
     #   arch:
     #     - "x64"
@@ -45,12 +46,12 @@ appImage:
   synopsis: "Pokemon Red/Blue Save Editor"
   category: "Utility"
 
-deb:
-  packageCategory: "utils"
-  priority: "optional"
+# deb:
+#   packageCategory: "utils"
+#   priority: "optional"
 
-rpm:
-  packageCategory: "Applications/Editors"
+# rpm:
+#   packageCategory: "Applications/Editors"
 
 # pacman:
 #   packageCategory: "Applications/Editors"
