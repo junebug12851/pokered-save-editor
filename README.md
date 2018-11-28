@@ -5,12 +5,24 @@
 This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
+In other words the UI and UIX are first-class citizens and as such the editing
+ui is designed to be easy, intuitive, and a bit fun to use.
 
-The first version has been released and all used areas of the save file are editable. There are currently varying UI glitches such as overlapping controls in some cases and a couple of misc features which don't work like the virtual keyboards but the overall the app has accomplished it's first goal of many which is to provide easy and intuitive editing to the entirety of the useable Save File.
+The full save file made use by the game is editable, all bits and bytes,
+currently unused areas are not editable but this is a planned feature to
+implement.
 
 Here are some of the features
 
 ### Optional Virtual Keyboard
+
+Typing names is meant to be as easy as simply using the keys on your keyboard
+however the game allows up to 256 different tiles to be used for names including
+even control characters all of which are not directly typable on your keyboard.
+To keep from being unfair and leaving them out, shorthand syntax is used such
+as `<f>` or `<B>` to access all possible tile options. Even better, all 256
+tile options and thier corresponding keyboard key or shortcode is available in a
+full slide-out virtual keyboard.
 
 ![Player Name](https://thumbs.gfycat.com/FarEasyCarpenterant-size_restricted.gif)
 
@@ -60,7 +72,25 @@ Here are some of the features
 
 ### Other UI
 
+Make use of the menu as a lot of work has gone into both shortcuts and available
+options.
+
+One of them is `Wipe Unused Space` which re-formats the entire save-file to
+zeroes top-to-bottom afterwards writing only relevant bits and bytes back. The
+game internally doesn't do this so the save file can become quite cluttered
+over time. Furthermore if you suspect viruses or hi-jacking are embedded in the
+save file this would erase it.
+
 ![Options](https://thumbs.gfycat.com/FeistyLongIcelandgull-size_restricted.gif)
+
+## A quick disclaimer
+
+Despite significant work going into this project including countless sleepless
+nights and many many hours of planning and testing. I can't ever state this project
+is perfect and flawless. Things happen and things go wrong as with any app or
+game. I cannot be held liable for any damaged or corrupted games but I do want
+above anything to be told via the issue tracker if things do happen so I can try
+to find and issue a fix quickly.
 
 ## License
 
