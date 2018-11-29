@@ -16,7 +16,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "test": "ng test",
+        "test": "ng test --code-coverage --progress --watch=false",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "postinstall": "electron-builder install-app-deps && node ./ng-add-pug-loader.js",
