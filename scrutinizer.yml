@@ -7,7 +7,6 @@ build:
   environment:
     # Enviroment
     node: v11.3.0
-    ruby: 2.5.3
 
     # Really no reason, basically my timezone ~_^
     timezone: 'US/Eastern'
@@ -24,8 +23,8 @@ build:
         # Install dependencies
         - npm install
 
-        # Fully Test (Lint, Code Test, E2E Test, Coverage),
-        # Build, and Optimize also generate docs
+        # Just do a test Angular-only build, skip electron building
+        # Travis handles more of the heavy lifting such as this
         - npm run deploy:ng
 
         # Update cache
