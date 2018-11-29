@@ -1,0 +1,44 @@
+# Scrutinizer is a simple CI because it doesn't support everything Travis does
+# Yet it provides lots of internal checking Travis doesn't. It mainly supports
+# all the same stuff someone testing code on a local laptop dev enviroment
+# would have access to so we treat it as a local-dev contributor in a way ~_^
+
+build:
+  environment:
+    # Enviroment
+    node: v11.3.0
+    ruby: 2.5.3
+
+    # Really no reason, basically my timezone ~_^
+    timezone: 'US/Eastern'
+
+  nodes:
+    main:
+      # Full-on manual style
+      commands:
+        # Checkout and pull cache
+        - checkout-code ~/pokered-save-editor
+        - cd ~/pokered-save-editor
+        - restore-from-cache repository dependencies
+
+        # Install dependencies
+        - npm install
+
+        # Fully Test (Lint, Code Test, E2E Test, Coverage),
+        # Build, and Optimize also generate docs
+        - npm run deploy:ng
+
+        # Update cache
+        - store-in-cache repository dependencies node_modules/
+
+# Ignore these folders and mark one of them ignored but dependencies
+filter:
+  excluded_paths:
+    - ".vscode/"
+    - "build/"
+    - "dist/"
+    - "e2e/"
+    - "non-app-assets/"
+
+  dependency_paths:
+    - "node_modules/"
