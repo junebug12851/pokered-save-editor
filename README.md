@@ -1,5 +1,6 @@
 # Pokered Save Editor
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1eca05987a81454f869fd3401185ae50)](https://app.codacy.com/app/junebug12851/pokered-save-editor?utm_source=github.com&utm_medium=referral&utm_content=junebug12851/pokered-save-editor&utm_campaign=Badge_Grade_Dashboard)
 [![Travis (.org)](https://img.shields.io/travis/junebug12851/pokered-save-editor.svg?style=flat-square&label=full%20ci&logo=travis)](https://travis-ci.org/junebug12851/pokered-save-editor)
 [![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=simple%20ci&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/junebug12851/pokered-save-editor.svg?style=flat-square&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
