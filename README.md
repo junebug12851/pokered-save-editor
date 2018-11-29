@@ -4,6 +4,17 @@
 [![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=simple%20ci&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/junebug12851/pokered-save-editor.svg?style=flat-square&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=code%20quality&logo=lgtm)](https://lgtm.com/projects/g/junebug12851/pokered-save-editor/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c0922f3f615b4ef69e480d2e9d930837)](https://www.codacy.com/app/junebug12851/pokered-save-editor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=junebug12851/pokered-save-editor&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability-percentage/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
+[![Code Climate](https://img.shields.io/codeclimate/tech-debt/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
+[![GitHub issues](https://img.shields.io/github/issues/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub last commit](https://img.shields.io/github/last-commit/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub](https://img.shields.io/github/license/junebug12851/pokered-save-editor.svg?style=flat-square&colorB=blue)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
+[![GitHub package version](https://img.shields.io/github/package-json/v/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
 
 ## About this project
 
