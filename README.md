@@ -5,7 +5,7 @@
 This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
 simple to jump-in and use right away intuitively with a well-designed interface.
-In other words the UI and UIX are first-class citizens and as such the editing
+In other words the UI and UX are first-class citizens and as such the editing
 ui is designed to be easy, intuitive, and a bit fun to use.
 
 The full save file made use by the game is editable, all bits and bytes,
@@ -17,11 +17,11 @@ Here are some of the features
 ### Optional Virtual Keyboard
 
 Typing names is meant to be as easy as simply using the keys on your keyboard
-however the game allows up to 256 different tiles to be used for names including
-even control characters all of which are not directly typable on your keyboard.
+however the game allows up to 256 different tiles and control codes to be used for names
+all of which are not directly typable on your keyboard.
 To keep from being unfair and leaving them out, shorthand syntax is used such
 as `<f>` or `<B>` to access all possible tile options. Even better, all 256
-tile options and thier corresponding keyboard key or shortcode is available in a
+tiles and codes are available in a
 full slide-out virtual keyboard.
 
 ![Player Name](https://thumbs.gfycat.com/FarEasyCarpenterant-size_restricted.gif)
