@@ -3,6 +3,7 @@
 [![Travis (.org)](https://img.shields.io/travis/junebug12851/pokered-save-editor.svg?style=flat-square&label=full%20ci&logo=travis)](https://travis-ci.org/junebug12851/pokered-save-editor)
 [![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=simple%20ci&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/junebug12851/pokered-save-editor.svg?style=flat-square&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
+[![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=code%20quality&logo=lgtm)](https://lgtm.com/projects/g/junebug12851/pokered-save-editor/)
 
 ## About this project
 
