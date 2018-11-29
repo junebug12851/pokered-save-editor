@@ -1,4 +1,7 @@
-# Pokered Save Editor [![Build Status](https://travis-ci.org/junebug12851/pokered-save-editor.svg?branch=master)](https://travis-ci.org/junebug12851/pokered-save-editor) [![Maintainability](https://api.codeclimate.com/v1/badges/8c37042f5e7778a7aab0/maintainability)](https://codeclimate.com/github/junebug12851/pokered-save-editor/maintainability)
+# Pokered Save Editor
+
+[![Travis (.org)](https://img.shields.io/travis/junebug12851/pokered-save-editor.svg?style=flat-square&label=full%20ci&logo=travis)](https://travis-ci.org/junebug12851/pokered-save-editor)
+[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/junebug12851/pokered-save-editor.svg?style=flat-square&label=simple%20ci&logo=scrutinizer)](https://scrutinizer-ci.com/g/junebug12851/pokered-save-editor)
 
 ## About this project
 
