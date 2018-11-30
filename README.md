@@ -108,6 +108,29 @@ game. I cannot be held liable for any damaged or corrupted games but I do want
 above anything to be told via the issue tracker if things do happen so I can try
 to find and issue a fix quickly.
 
+### Repository Size Note for Contributors and Builders
+
+We try to keep the repository size as small as possible however you will find
+it's considered large for a git repo. This is a free and open source project
+and as such can't afford monthly costs or premium features. One
+of gits greatest creations is git-lfs which allows seamlessly seperating code
+from non-code and Github well supports this however Github, like 99% of other
+websites, want's to capitalize on this new feature and as such we can't use it.
+Microsoft is the only one that provides this feature completely free with no
+strings attached but at the cost of a completely private repo which doesn't
+work.
+
+What this means is the repo size will have to include all non-code assets and
+not be able to use the git-lfs feature until it becomes free with no strings
+attached and this also means a much higher repo size for a normal git
+repository.
+
+Still we need to try and keep assets small.
+
+Hopefully Github will eliminate capitalization on git-lfs one day and allow
+open-source projects to be able to use it as it's almost a core feature to use
+in many projects.
+
 ## License
 
 This project has an easy license, it's licensed Apache 2, just do whatever as
