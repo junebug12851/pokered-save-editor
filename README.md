@@ -17,6 +17,7 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
 
 ## About this project
+_We've reached 200 commits * Gasp * (⌒▽⌒)☆ !!!_
 
 This is aimed to be a complete Pokemon Red and Blue save editor, as in, all
 bytes and areas of the save file would be editable. It's designed to be very
