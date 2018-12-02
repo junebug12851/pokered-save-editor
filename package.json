@@ -2,7 +2,7 @@
     "name": "pokered-save-editor",
     "productName": "Pokered Save Editor",
     "description": "Pokemon Red/Blue Save Editor",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/junebug12851/pokered-save-editor.git"
