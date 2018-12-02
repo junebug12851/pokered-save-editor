@@ -8,6 +8,7 @@
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability-percentage/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
 [![Code Climate](https://img.shields.io/codeclimate/tech-debt/junebug12851/pokered-save-editor.svg?style=flat-square)](https://codeclimate.com/github/junebug12851/pokered-save-editor)
+[![Depfu](https://img.shields.io/depfu/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
 [![GitHub issues](https://img.shields.io/github/issues/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
 [![GitHub last commit](https://img.shields.io/github/last-commit/junebug12851/pokered-save-editor.svg?style=flat-square)](https://github.com/junebug12851/pokered-save-editor)
