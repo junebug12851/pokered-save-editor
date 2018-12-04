@@ -9,7 +9,7 @@ export class PokemonBox {
         index?: number,
         recordSize?: number) {
 
-        if (saveFile !== undefined)
+        if (saveFile !== undefined) {
             this.load(
                 saveFile as SaveFileService,
                 startOffset as number,
@@ -18,6 +18,7 @@ export class PokemonBox {
                 index as number,
                 recordSize as number
             );
+        }
 
         // Pokemon box data structure complete, Ready for Pokemon Party to
         // takeover
@@ -47,8 +48,12 @@ export class PokemonBox {
         this.type2 = it.getByte();
 
         // Don't duplicate type 1 to type 2, fill type 2 only if it's different
-        if (this.type1 === this.type2)
+        // Also mark if it was explicitly marked no in-game
+        if (this.type2 === 0xFF) {
+            this.type2ExplicitNo = true;
+        } else if (this.type1 === this.type2) {
             this.type2 = 0xFF;
+        }
 
         this.catchRate = it.getByte();
 
@@ -144,18 +149,28 @@ export class PokemonBox {
         // Don't save level to BoxData if this is in the party
         // This honors the global don't touch policy
         // which is don't touch any bits that don't need to be changed
-        if (recordSize == 0x21)
+        if (recordSize === 0x21) {
             it.setByte(this.level);
-        else
+        } else {
             it.inc();
+        }
 
         it.setByte(this.status);
         it.setByte(this.type1);
 
-        if (this.type2 == 0xFF)
-            it.setByte(this.type1);
-        else
+        // If type 2 explicit no then just write what's in type 2
+        if (this.type2ExplicitNo) {
             it.setByte(this.type2);
+
+            // If type 2 is not explicitly no but implicitly no (Type 1 and 2 were marked the same)
+            // save it as type 1
+        } else if (this.type2 === 0xFF) {
+            it.setByte(this.type1);
+
+            // Else just save type 2
+        } else {
+            it.setByte(this.type2);
+        }
 
         it.setByte(this.catchRate);
 
@@ -165,7 +180,7 @@ export class PokemonBox {
 
         it.setHex(2, this.otID, false);
 
-        let exp = this.exp;
+        const exp = this.exp;
 
         it.setByte((exp & 0xFF0000) >> 16);
         it.setByte((exp & 0x00FF00) >> 8);
@@ -196,9 +211,9 @@ export class PokemonBox {
         return it;
     }
 
-    public species: number = 0;
-    public hp: number = 0;
-    public level: number = 0;
+    public species = 0;
+    public hp = 0;
+    public level = 0;
 
     // Pokemon Status codes are a bit weird
     // The game programatically allows one, more, or all status afflections to
@@ -214,11 +229,16 @@ export class PokemonBox {
     // 16 - Burned
     // 32 - Frozen
     // 64 - Paralyzed
-    public status: number = 0;
+    public status = 0;
 
-    public type1: number = 0;
-    public type2: number = 0;
-    public catchRate: number = 0;
+    public type1 = 0;
+    public type2 = 0;
+
+    // Sometimes type 2 is a duplicate of type 1 and
+    // sometimes it's explicitly 0xFF, this is which one
+    public type2ExplicitNo = false;
+
+    public catchRate = 0;
     public moves: {
         moveID: number;
         pp: number;
@@ -240,19 +260,19 @@ export class PokemonBox {
         pp: 0,
         ppUp: 0
     }];
-    public otID: string = "0000";
-    public exp: number = 0;
-    public hpExp: number = 0;
-    public attackExp: number = 0;
-    public defenseExp: number = 0;
-    public speedExp: number = 0;
-    public specialExp: number = 0;
+    public otID = '0000';
+    public exp = 0;
+    public hpExp = 0;
+    public attackExp = 0;
+    public defenseExp = 0;
+    public speedExp = 0;
+    public specialExp = 0;
     public dv = {
         attack: 0 as number,
         defense: 0 as number,
         speed: 0 as number,
         special: 0 as number
     };
-    public otName: string = "";
-    public nickname: string = "";
+    public otName = '';
+    public nickname = '';
 }
