@@ -20,6 +20,8 @@ export class SaveFileExpanded {
         this.storage = new Storage(saveFile);
         this.area = new Area(saveFile);
         this.world = new World(saveFile);
+        this.daycare = new Daycare(saveFile);
+        this.hof = new HoF(saveFile);
     }
 
     save(saveFile: SaveFileService) {
@@ -28,6 +30,8 @@ export class SaveFileExpanded {
         this.storage.save(saveFile);
         this.area.save(saveFile);
         this.world.save(saveFile);
+        this.daycare.save(saveFile);
+        this.hof.save(saveFile);
     }
 
     // Related to or equipped with the Player

@@ -28,17 +28,15 @@ export class HoFRecord {
 
     save(saveFile: SaveFileService, index: number) {
         const offset = (0x60 * index) + 0x598;
+
         for (let i = 0; i < this.pokemon.length; i++) {
-            this.pokemon[i].save(saveFile, offset, index);
+            this.pokemon[i].save(saveFile, offset, i);
         }
 
         // We need to insert blank HoF pokemon records to account for a non-full
         // HoF team
-        const teamRemain = 6 - this.pokemon.length;
-        if(teamRemain == 0)
-            return;
 
-        for (let i = 0; i < teamRemain; i++) {
+        for (let i = this.pokemon.length; i < 6; i++) {
             HoFPokemon.insertEmpty(saveFile, offset, i);
         }
     }
