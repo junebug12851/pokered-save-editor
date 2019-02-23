@@ -36,6 +36,17 @@ export class HoFPokemon {
         saveFile.setStr(pokemonOffset + 2, 0xB, 10, this.name);
     }
 
+    // Inserts Empty Zero-Filled Record
+    public static insertEmpty(saveFile: SaveFileService, recordOffset: number, index: number) {
+        const pokemonOffset = (0x10 * index) + recordOffset;
+
+        saveFile.setByte(pokemonOffset + 0, 0xFF);
+        saveFile.setByte(pokemonOffset + 1, 0x00);
+        saveFile.copyRange(pokemonOffset + 2, 0xB,
+            new Uint8Array([0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]));
+    }
+
     /**
      * Record Data
      */
