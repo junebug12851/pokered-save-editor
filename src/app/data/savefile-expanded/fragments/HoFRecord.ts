@@ -33,12 +33,18 @@ export class HoFRecord {
             this.pokemon[i].save(saveFile, offset, i);
         }
 
-        // We need to insert blank HoF pokemon records to account for a non-full
-        // HoF team
+        // If the record isn't filled up with 6 Pokemon then
+        // we need to insert an ending marker and not touch the rest of the bytes
+        if(this.pokemon.length >= 6)
+            return;
 
-        for (let i = this.pokemon.length; i < 6; i++) {
-            HoFPokemon.insertEmpty(saveFile, offset, i);
-        }
+        // Calculate the ending marker position which is 
+        // 1 byte after all record data and set to 0xFF thus sealing the rest
+        // of the data
+
+        // Pokemon Record Size * Pokemon Record Number + Record Start Location
+        let endingOffset = (0x10 * this.pokemon.length) + offset;
+        saveFile.setByte(endingOffset, 0xFF);
     }
 
     public pokemon: HoFPokemon[] = [];
