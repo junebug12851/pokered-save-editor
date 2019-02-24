@@ -34,6 +34,9 @@ export class HoFPokemon {
         saveFile.setByte(pokemonOffset + 0, this.species);
         saveFile.setByte(pokemonOffset + 1, this.level);
         saveFile.setStr(pokemonOffset + 2, 0xB, 10, this.name);
+
+        // Normally the Gameboy will actively zero out padding bytes
+        // but we don't set padding bytes per the strict "Only touch whats needed" rule
     }
 
     /**
