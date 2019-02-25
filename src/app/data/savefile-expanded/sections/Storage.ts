@@ -131,11 +131,19 @@ export class Storage {
             this.pokemonBoxes[boxInd][i].save(
                 saveFile,
                 boxOffset + 0x16,
+                boxOffset + 0x1,
                 boxOffset + 0x386,
                 boxOffset + 0x2AA,
                 i
             );
         }
+
+        // Mark end of species list if not full box
+        if(this.pokemonBoxes[boxInd].length >= 20)
+            return;
+
+        let speciesOffset = boxOffset + 1 + this.pokemonBoxes[boxInd].length;
+        saveFile.setByte(speciesOffset, 0xFF);
     }
 
     saveBoxes(saveFile: SaveFileService, boxesOffset: number, boxSet: number) {

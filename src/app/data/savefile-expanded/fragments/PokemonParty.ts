@@ -54,12 +54,14 @@ export class PokemonParty extends PokemonBox {
 
     public save(saveFile: SaveFileService,
         offset: number,
+        speciesStartOffset: number | null,
         nicknameStartOffset: number,
         otNameStartOffset: number,
         index: number): SaveFileIterator {
 
         const it: SaveFileIterator = super.save(saveFile,
             offset,
+            speciesStartOffset,
             nicknameStartOffset,
             otNameStartOffset,
             index,

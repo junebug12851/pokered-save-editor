@@ -20,16 +20,25 @@ export class PlayerPokemon {
     }
 
     public save(saveFile: SaveFileService) {
+        // Set party length and save current party data
         saveFile.setByte(0x2F2C, this.playerParty.length);
         for (let i = 0; i < this.playerParty.length && i < 6; i++) {
             this.playerParty[i].save(
                 saveFile,
                 0x2F34,
+                0x2F2D,
                 0x307E,
                 0x303C,
                 i
             )
         }
+
+        // Mark end of species list if not full party
+        if(this.playerParty.length >= 6)
+            return;
+
+        let speciesOffset = 0x2F2D + this.playerParty.length;
+        saveFile.setByte(speciesOffset, 0xFF);
     }
 
     public playerParty: PokemonParty[] = [];

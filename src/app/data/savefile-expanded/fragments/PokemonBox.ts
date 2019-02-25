@@ -131,6 +131,7 @@ export class PokemonBox {
 
     public save(saveFile: SaveFileService,
         startOffset: number,
+        speciesStartOffset: number | null,
         nicknameStartOffset: number,
         otNameStartOffset: number,
         index: number,
@@ -141,6 +142,12 @@ export class PokemonBox {
         const it: SaveFileIterator = saveFile.iterator.offsetTo(offset);
         const otNameOffset = (index * 0xB) + otNameStartOffset;
         const nicknameOffset = (index * 0xB) + nicknameStartOffset;
+
+        // Add species to species list if exists
+        if(speciesStartOffset !== null) {
+            const speciesOffset = index + speciesStartOffset;
+            saveFile.setByte(speciesOffset, this.species);
+        }
 
         // Re-save back
         it.setByte(this.species);
