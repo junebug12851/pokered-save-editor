@@ -49,6 +49,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -203,7 +204,8 @@ import { RootHoFComponent } from './screens/root-hof/root-hof.component';
         MatPaginatorModule,
         MatButtonToggleModule,
         MatGridListModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatMenuModule
     ],
     providers: [
         SaveFileService,

@@ -50,13 +50,24 @@ mat-card.sticky.ns(style='margin-bottom: 15px !important')
     )
         span.im.im-plus3
 
+    mat-menu(
+        '#menu'="matMenu"
+    )
+        button(
+            mat-menu-item='',
+            color='warn',
+            '(click)'='onRemClick()'
+        )
+            span
+                span.im.im-delete
+                span &nbsp; Delete
+
     button.stick.br(
         mat-mini-fab='',
-        color='warn',
         *ngIf='remBtn',
-        '(click)'='onRemClick()'
+        '[matMenuTriggerFor]'="menu"
     )
-        span.im.im-delete
+        span.im.im-th-menu
 
     button.stick.bl(
         mat-mini-fab='',
