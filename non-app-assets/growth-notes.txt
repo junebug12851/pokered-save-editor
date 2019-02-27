@@ -1,0 +1,18 @@
+Growth Information regarding expirience correlation with level for each Pokemon
+
+* Name is English name to formula
+* Growth ID is the in-game internal growth table and is also used in the Pokemon data table
+    1 & 2 were never used, only 0, 3, 4, & 5
+* Level 100 is Maximum expirience to obtain level cap
+* Formula is formula to calculate expirience
+
+Name:           GrowthID:   Level 100:      Formula:
+Fast            4           800,000         Exp = 4 * n^0.6
+Medium Fast     0           1,000,000       Exp = n^3
+Medium Slow     3           1,059,860       Exp = 1.2 * n^3 - 15 * n^2 + 100*n - 140
+Slow            5           1,250,000       Exp = 5 * n^0.75
+
+Here's the plan to keep things simple:
+
+* offer a slider to slide EXP between the current and next level
+* To actually change levels, change the level number which will start over the EXP at the correct new level range
