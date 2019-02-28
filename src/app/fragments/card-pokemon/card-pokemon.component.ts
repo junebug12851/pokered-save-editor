@@ -18,6 +18,9 @@ import { OnInit } from '@angular/core';
 
 import { Component, Input } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
+import {GameDataService} from '../../data/gameData.service';
+import { Pokemon } from 'src/assets/data/pokemon';
+import { PokemonBox } from 'src/app/data/savefile-expanded/fragments/PokemonBox';
 
 @Component({
     selector: 'card-pokemon',
@@ -26,11 +29,49 @@ import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonPart
 })
 export class CardPokemonComponent implements OnInit {
 
-    constructor() { }
-
-    ngOnInit() {
+    constructor(
+        public gd: GameDataService
+    ) {
 
     }
+
+    ngOnInit() {
+        this.pkmnArr = this.gd.file("pokemon").data;
+    }
+
+    get expStart(): number {
+        if(this.entry == null || this.entry == undefined)
+            return 0;
+
+        const e: PokemonBox = this.entry as PokemonBox;
+        return e.levelToExp(this.pkmnArr, e.level, e.species);
+    }
+
+    get expEnd(): number {
+        if(this.entry == null || this.entry == undefined)
+            return 0;
+
+        const e: PokemonBox = this.entry as PokemonBox;
+        return e.levelToExp(this.pkmnArr, e.level + 1, e.species) - 1;
+    }
+
+    get expPercent(): number {
+        if(this.entry == null || this.entry == undefined)
+            return 0;
+
+        // Grab EXP
+        const e: PokemonBox = this.entry as PokemonBox;
+        let exp = e.exp;
+
+        // Offset start from current and end
+        exp = exp - this.expStart;
+        const expEnd = this.expEnd - this.expStart;
+
+        // Return percentage
+        return (exp / expEnd) * 100;
+    }
+
+    public pkmnArr: Pokemon[] = [];
 
     @Input()
     public entry: any = new PokemonParty();

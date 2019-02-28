@@ -1,5 +1,6 @@
 import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
+import {Pokemon} from '../../../../assets/data/pokemon';
 
 export class PokemonBox {
     constructor(saveFile?: SaveFileService,
@@ -216,6 +217,42 @@ export class PokemonBox {
         saveFile.setStr(nicknameOffset, 0xB, 10, this.nickname);
 
         return it;
+    }
+
+    // Correctly Converts level to Pokemon Exp
+    public levelToExp(pkmn: Pokemon[], level: number, species: number): number {
+        // Get Pokemon Record
+        // The Pokemon Array is organized by species ID with 1 top entry missing
+        // thus offset by 1 accordingly
+        let record = pkmn[species - 1];
+        let exp = 0;
+
+        // Check it's a valid Pokemon (not glitch)
+        // Proceed only if it's valid
+        if(record.pokedex == null || record.pokedex == undefined)
+            return exp;
+
+        // Obtain it's growth rate and calculate accordingly it's exp for the given level
+        const gr = record.growthRate;
+
+        // Growth Rate 0: Medium Fast
+        if(gr == 0)
+            exp = Math.pow(level, 3);
+
+        // Growth Rate 3: Medium Slow
+        else if(gr == 3)
+            exp = (1.2 * Math.pow(level, 3)) - (15 * Math.pow(level, 2)) + (100*level) - 140;
+
+        // Growth Rate 4: Fast
+        else if(gr == 4)
+            exp = 4 * (Math.pow(level, 0.6));
+
+        // Slow
+        else if(gr == 5)
+            exp = 5 * (Math.pow(level, 0.75));
+
+        // Return EXP
+        return Math.ceil(exp);
     }
 
     public species = 0;

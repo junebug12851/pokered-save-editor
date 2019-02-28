@@ -50,6 +50,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSliderModule} from '@angular/material/slider';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -118,6 +119,7 @@ import { WorldTradesComponent } from './screens/world-trades/world-trades.compon
 import { WorldTownsComponent } from './screens/world-towns/world-towns.component';
 import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
 import { RootHoFComponent } from './screens/root-hof/root-hof.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
     declarations: [
@@ -205,7 +207,9 @@ import { RootHoFComponent } from './screens/root-hof/root-hof.component';
         MatButtonToggleModule,
         MatGridListModule,
         MatTooltipModule,
-        MatMenuModule
+        MatMenuModule,
+        MatSliderModule,
+        MatProgressSpinnerModule
     ],
     providers: [
         SaveFileService,

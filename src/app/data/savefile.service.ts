@@ -2,6 +2,7 @@ import { SaveFileIterator } from './savefile-expanded/SaveFileIterator';
 import { SaveFileExpanded } from './savefile-expanded/SaveFileExpanded';
 import { Injectable, NgZone } from '@angular/core';
 import { TextService } from "./text.service";
+import { GameDataService } from './gameData.service';
 
 /**
    Copyright 2018 June Hanabi
@@ -40,6 +41,7 @@ const { ipcRenderer } = window.require('electron');
 export class SaveFileService {
 
     constructor(public saveText: TextService,
+        public gd: GameDataService,
         public ng: NgZone) {
         this.fileDataExpanded = new SaveFileExpanded(this);
         window.saveFile = this;
