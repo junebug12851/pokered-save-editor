@@ -1,1103 +1,2009 @@
 [
-    {
-      "name": "Rhydon",
-      "ind": 1,
-      "pokedex": 111,
-      "growthRate": 5
-    },
-    {
-      "name": "Kangaskhan",
-      "ind": 2,
-      "pokedex": 114,
-      "growthRate": 0
-    },
-    {
-      "name": "Nidoran<m>",
-      "ind": 3,
-      "pokedex": 31,
-      "growthRate": 3
-    },
-    {
-      "name": "Clefairy",
-      "ind": 4,
-      "pokedex": 34,
-      "growthRate": 4
-    },
-    {
-      "name": "Spearow",
-      "ind": 5,
-      "pokedex": 20,
-      "growthRate": 0
-    },
-    {
-      "name": "Voltorb",
-      "ind": 6,
-      "pokedex": 99,
-      "growthRate": 0
-    },
-    {
-      "name": "Nidoking",
-      "ind": 7,
-      "pokedex": 33,
-      "growthRate": 3
-    },
-    {
-      "name": "Slowbro",
-      "ind": 8,
-      "pokedex": 79,
-      "growthRate": 0
-    },
-    {
-      "name": "Ivysaur",
-      "ind": 9,
-      "pokedex": 1,
-      "growthRate": 3
-    },
-    {
-      "name": "Exeggutor",
-      "ind": 10,
-      "pokedex": 102,
-      "growthRate": 5
-    },
-    {
-      "name": "Lickitung",
-      "ind": 11,
-      "pokedex": 107,
-      "growthRate": 0
-    },
-    {
-      "name": "Exeggcute",
-      "ind": 12,
-      "pokedex": 101,
-      "growthRate": 5
-    },
-    {
-      "name": "Grimer",
-      "ind": 13,
-      "pokedex": 87,
-      "growthRate": 0
-    },
-    {
-      "name": "Gengar",
-      "ind": 14,
-      "pokedex": 93,
-      "growthRate": 3
-    },
-    {
-      "name": "Nidoran<f>",
-      "ind": 15,
-      "pokedex": 28,
-      "growthRate": 3
-    },
-    {
-      "name": "Nidoqueen",
-      "ind": 16,
-      "pokedex": 30,
-      "growthRate": 3
-    },
-    {
-      "name": "Cubone",
-      "ind": 17,
-      "pokedex": 103,
-      "growthRate": 0
-    },
-    {
-      "name": "Rhyhorn",
-      "ind": 18,
-      "pokedex": 110,
-      "growthRate": 5
-    },
-    {
-      "name": "Lapras",
-      "ind": 19,
-      "pokedex": 130,
-      "growthRate": 5
-    },
-    {
-      "name": "Arcanine",
-      "ind": 20,
-      "pokedex": 58,
-      "growthRate": 5
-    },
-    {
-      "name": "Mew",
-      "ind": 21,
-      "pokedex": 150,
-      "growthRate": 3
-    },
-    {
-      "name": "Gyarados",
-      "ind": 22,
-      "pokedex": 129,
-      "growthRate": 5
-    },
-    {
-      "name": "Shellder",
-      "ind": 23,
-      "pokedex": 89,
-      "growthRate": 5
-    },
-    {
-      "name": "Tentacool",
-      "ind": 24,
-      "pokedex": 71,
-      "growthRate": 5
-    },
-    {
-      "name": "Gastly",
-      "ind": 25,
-      "pokedex": 91,
-      "growthRate": 3
-    },
-    {
-      "name": "Scyther",
-      "ind": 26,
-      "pokedex": 122,
-      "growthRate": 0
-    },
-    {
-      "name": "Staryu",
-      "ind": 27,
-      "pokedex": 119,
-      "growthRate": 5
-    },
-    {
-      "name": "Blastoise",
-      "ind": 28,
-      "pokedex": 8,
-      "growthRate": 3
-    },
-    {
-      "name": "Pinsir",
-      "ind": 29,
-      "pokedex": 126,
-      "growthRate": 5
-    },
-    {
-      "name": "Tangela",
-      "ind": 30,
-      "pokedex": 113,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing1F",
-      "ind": 31,
-      "glitch": true
-    },
-    {
-      "name": "Missing20",
-      "ind": 32,
-      "glitch": true
-    },
-    {
-      "name": "Growlithe",
-      "ind": 33,
-      "pokedex": 57,
-      "growthRate": 5
-    },
-    {
-      "name": "Onix",
-      "ind": 34,
-      "pokedex": 94,
-      "growthRate": 0
-    },
-    {
-      "name": "Fearow",
-      "ind": 35,
-      "pokedex": 21,
-      "growthRate": 0
-    },
-    {
-      "name": "Pidgey",
-      "ind": 36,
-      "pokedex": 15,
-      "growthRate": 3
-    },
-    {
-      "name": "Slowpoke",
-      "ind": 37,
-      "pokedex": 78,
-      "growthRate": 0
-    },
-    {
-      "name": "Kadabra",
-      "ind": 38,
-      "pokedex": 63,
-      "growthRate": 3
-    },
-    {
-      "name": "Graveler",
-      "ind": 39,
-      "pokedex": 74,
-      "growthRate": 3
-    },
-    {
-      "name": "Chansey",
-      "ind": 40,
-      "pokedex": 112,
-      "growthRate": 4
-    },
-    {
-      "name": "Machoke",
-      "ind": 41,
-      "pokedex": 66,
-      "growthRate": 3
-    },
-    {
-      "name": "Mr.Mime",
-      "ind": 42,
-      "pokedex": 121,
-      "growthRate": 0
-    },
-    {
-      "name": "Hitmonlee",
-      "ind": 43,
-      "pokedex": 105,
-      "growthRate": 0
-    },
-    {
-      "name": "Hitmonchan",
-      "ind": 44,
-      "pokedex": 106,
-      "growthRate": 0
-    },
-    {
-      "name": "Arbok",
-      "ind": 45,
-      "pokedex": 23,
-      "growthRate": 0
-    },
-    {
-      "name": "Parasect",
-      "ind": 46,
-      "pokedex": 46,
-      "growthRate": 0
-    },
-    {
-      "name": "Psyduck",
-      "ind": 47,
-      "pokedex": 53,
-      "growthRate": 0
-    },
-    {
-      "name": "Drowzee",
-      "ind": 48,
-      "pokedex": 95,
-      "growthRate": 0
-    },
-    {
-      "name": "Golem",
-      "ind": 49,
-      "pokedex": 75,
-      "growthRate": 3
-    },
-    {
-      "name": "Missing32",
-      "ind": 50,
-      "glitch": true
-    },
-    {
-      "name": "Magmar",
-      "ind": 51,
-      "pokedex": 125,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing34",
-      "ind": 52,
-      "glitch": true
-    },
-    {
-      "name": "Electabuzz",
-      "ind": 53,
-      "pokedex": 124,
-      "growthRate": 0
-    },
-    {
-      "name": "Magneton",
-      "ind": 54,
-      "pokedex": 81,
-      "growthRate": 0
-    },
-    {
-      "name": "Koffing",
-      "ind": 55,
-      "pokedex": 108,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing38",
-      "ind": 56,
-      "glitch": true
-    },
-    {
-      "name": "Mankey",
-      "ind": 57,
-      "pokedex": 55,
-      "growthRate": 0
-    },
-    {
-      "name": "Seel",
-      "ind": 58,
-      "pokedex": 85,
-      "growthRate": 0
-    },
-    {
-      "name": "Diglett",
-      "ind": 59,
-      "pokedex": 49,
-      "growthRate": 0
-    },
-    {
-      "name": "Tauros",
-      "ind": 60,
-      "pokedex": 127,
-      "growthRate": 5
-    },
-    {
-      "name": "Missing3D",
-      "ind": 61,
-      "glitch": true
-    },
-    {
-      "name": "Missing3E",
-      "ind": 62,
-      "glitch": true
-    },
-    {
-      "name": "Missing3F",
-      "ind": 63,
-      "glitch": true
-    },
-    {
-      "name": "Farfetchd",
-      "ind": 64,
-      "pokedex": 82,
-      "growthRate": 0
-    },
-    {
-      "name": "Venonat",
-      "ind": 65,
-      "pokedex": 47,
-      "growthRate": 0
-    },
-    {
-      "name": "Dragonite",
-      "ind": 66,
-      "pokedex": 148,
-      "growthRate": 5
-    },
-    {
-      "name": "Missing43",
-      "ind": 67,
-      "glitch": true
-    },
-    {
-      "name": "Missing44",
-      "ind": 68,
-      "glitch": true
-    },
-    {
-      "name": "Missing45",
-      "ind": 69,
-      "glitch": true
-    },
-    {
-      "name": "Doduo",
-      "ind": 70,
-      "pokedex": 83,
-      "growthRate": 0
-    },
-    {
-      "name": "Poliwag",
-      "ind": 71,
-      "pokedex": 59,
-      "growthRate": 3
-    },
-    {
-      "name": "Jynx",
-      "ind": 72,
-      "pokedex": 123,
-      "growthRate": 0
-    },
-    {
-      "name": "Moltres",
-      "ind": 73,
-      "pokedex": 145,
-      "growthRate": 5
-    },
-    {
-      "name": "Articuno",
-      "ind": 74,
-      "pokedex": 143,
-      "growthRate": 5
-    },
-    {
-      "name": "Zapdos",
-      "ind": 75,
-      "pokedex": 144,
-      "growthRate": 5
-    },
-    {
-      "name": "Ditto",
-      "ind": 76,
-      "pokedex": 131,
-      "growthRate": 0
-    },
-    {
-      "name": "Meowth",
-      "ind": 77,
-      "pokedex": 51,
-      "growthRate": 0
-    },
-    {
-      "name": "Krabby",
-      "ind": 78,
-      "pokedex": 97,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing4F",
-      "ind": 79,
-      "glitch": true
-    },
-    {
-      "name": "Missing50",
-      "ind": 80,
-      "glitch": true
-    },
-    {
-      "name": "Missing51",
-      "ind": 81,
-      "glitch": true
-    },
-    {
-      "name": "Vulpix",
-      "ind": 82,
-      "pokedex": 36,
-      "growthRate": 0
-    },
-    {
-      "name": "Ninetales",
-      "ind": 83,
-      "pokedex": 37,
-      "growthRate": 0
-    },
-    {
-      "name": "Pikachu",
-      "ind": 84,
-      "pokedex": 24,
-      "growthRate": 0
-    },
-    {
-      "name": "Raichu",
-      "ind": 85,
-      "pokedex": 25,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing56",
-      "ind": 86,
-      "glitch": true
-    },
-    {
-      "name": "Missing57",
-      "ind": 87,
-      "glitch": true
-    },
-    {
-      "name": "Dratini",
-      "ind": 88,
-      "pokedex": 146,
-      "growthRate": 5
-    },
-    {
-      "name": "Dragonair",
-      "ind": 89,
-      "pokedex": 147,
-      "growthRate": 5
-    },
-    {
-      "name": "Kabuto",
-      "ind": 90,
-      "pokedex": 139,
-      "growthRate": 0
-    },
-    {
-      "name": "Kabutops",
-      "ind": 91,
-      "pokedex": 140,
-      "growthRate": 0
-    },
-    {
-      "name": "Horsea",
-      "ind": 92,
-      "pokedex": 115,
-      "growthRate": 0
-    },
-    {
-      "name": "Seadra",
-      "ind": 93,
-      "pokedex": 116,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing5E",
-      "ind": 94,
-      "glitch": true
-    },
-    {
-      "name": "Missing5F",
-      "ind": 95,
-      "glitch": true
-    },
-    {
-      "name": "Sandshrew",
-      "ind": 96,
-      "pokedex": 26,
-      "growthRate": 0
-    },
-    {
-      "name": "Sandslash",
-      "ind": 97,
-      "pokedex": 27,
-      "growthRate": 0
-    },
-    {
-      "name": "Omanyte",
-      "ind": 98,
-      "pokedex": 137,
-      "growthRate": 0
-    },
-    {
-      "name": "Omastar",
-      "ind": 99,
-      "pokedex": 138,
-      "growthRate": 0
-    },
-    {
-      "name": "Jigglypuff",
-      "ind": 100,
-      "pokedex": 38,
-      "growthRate": 4
-    },
-    {
-      "name": "Wigglytuff",
-      "ind": 101,
-      "pokedex": 39,
-      "growthRate": 4
-    },
-    {
-      "name": "Eevee",
-      "ind": 102,
-      "pokedex": 132,
-      "growthRate": 0
-    },
-    {
-      "name": "Flareon",
-      "ind": 103,
-      "pokedex": 135,
-      "growthRate": 0
-    },
-    {
-      "name": "Jolteon",
-      "ind": 104,
-      "pokedex": 134,
-      "growthRate": 0
-    },
-    {
-      "name": "Vaporeon",
-      "ind": 105,
-      "pokedex": 133,
-      "growthRate": 0
-    },
-    {
-      "name": "Machop",
-      "ind": 106,
-      "pokedex": 65,
-      "growthRate": 3
-    },
-    {
-      "name": "Zubat",
-      "ind": 107,
-      "pokedex": 40,
-      "growthRate": 0
-    },
-    {
-      "name": "Ekans",
-      "ind": 108,
-      "pokedex": 22,
-      "growthRate": 0
-    },
-    {
-      "name": "Paras",
-      "ind": 109,
-      "pokedex": 45,
-      "growthRate": 0
-    },
-    {
-      "name": "Poliwhirl",
-      "ind": 110,
-      "pokedex": 60,
-      "growthRate": 3
-    },
-    {
-      "name": "Poliwrath",
-      "ind": 111,
-      "pokedex": 61,
-      "growthRate": 3
-    },
-    {
-      "name": "Weedle",
-      "ind": 112,
-      "pokedex": 12,
-      "growthRate": 0
-    },
-    {
-      "name": "Kakuna",
-      "ind": 113,
-      "pokedex": 13,
-      "growthRate": 0
-    },
-    {
-      "name": "Beedrill",
-      "ind": 114,
-      "pokedex": 14,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing73",
-      "ind": 115,
-      "glitch": true
-    },
-    {
-      "name": "Dodrio",
-      "ind": 116,
-      "pokedex": 84,
-      "growthRate": 0
-    },
-    {
-      "name": "Primeape",
-      "ind": 117,
-      "pokedex": 56,
-      "growthRate": 0
-    },
-    {
-      "name": "Dugtrio",
-      "ind": 118,
-      "pokedex": 50,
-      "growthRate": 0
-    },
-    {
-      "name": "Venomoth",
-      "ind": 119,
-      "pokedex": 48,
-      "growthRate": 0
-    },
-    {
-      "name": "Dewgong",
-      "ind": 120,
-      "pokedex": 86,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing79",
-      "ind": 121,
-      "glitch": true
-    },
-    {
-      "name": "Missing7A",
-      "ind": 122,
-      "glitch": true
-    },
-    {
-      "name": "Caterpie",
-      "ind": 123,
-      "pokedex": 9,
-      "growthRate": 0
-    },
-    {
-      "name": "Metapod",
-      "ind": 124,
-      "pokedex": 10,
-      "growthRate": 0
-    },
-    {
-      "name": "Butterfree",
-      "ind": 125,
-      "pokedex": 11,
-      "growthRate": 0
-    },
-    {
-      "name": "Machamp",
-      "ind": 126,
-      "pokedex": 67,
-      "growthRate": 3
-    },
-    {
-      "name": "Missing7F",
-      "ind": 127,
-      "glitch": true
-    },
-    {
-      "name": "Golduck",
-      "ind": 128,
-      "pokedex": 54,
-      "growthRate": 0
-    },
-    {
-      "name": "Hypno",
-      "ind": 129,
-      "pokedex": 96,
-      "growthRate": 0
-    },
-    {
-      "name": "Golbat",
-      "ind": 130,
-      "pokedex": 41,
-      "growthRate": 0
-    },
-    {
-      "name": "Mewtwo",
-      "ind": 131,
-      "pokedex": 149,
-      "growthRate": 5
-    },
-    {
-      "name": "Snorlax",
-      "ind": 132,
-      "pokedex": 142,
-      "growthRate": 5
-    },
-    {
-      "name": "Magikarp",
-      "ind": 133,
-      "pokedex": 128,
-      "growthRate": 5
-    },
-    {
-      "name": "Missing86",
-      "ind": 134,
-      "glitch": true
-    },
-    {
-      "name": "Missing87",
-      "ind": 135,
-      "glitch": true
-    },
-    {
-      "name": "Muk",
-      "ind": 136,
-      "pokedex": 88,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing89",
-      "ind": 137,
-      "glitch": true
-    },
-    {
-      "name": "Kingler",
-      "ind": 138,
-      "pokedex": 98,
-      "growthRate": 0
-    },
-    {
-      "name": "Cloyster",
-      "ind": 139,
-      "pokedex": 90,
-      "growthRate": 5
-    },
-    {
-      "name": "Missing8C",
-      "ind": 140,
-      "glitch": true
-    },
-    {
-      "name": "Electrode",
-      "ind": 141,
-      "pokedex": 100,
-      "growthRate": 0
-    },
-    {
-      "name": "Clefable",
-      "ind": 142,
-      "pokedex": 35,
-      "growthRate": 4
-    },
-    {
-      "name": "Weezing",
-      "ind": 143,
-      "pokedex": 109,
-      "growthRate": 0
-    },
-    {
-      "name": "Persian",
-      "ind": 144,
-      "pokedex": 52,
-      "growthRate": 0
-    },
-    {
-      "name": "Marowak",
-      "ind": 145,
-      "pokedex": 104,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing92",
-      "ind": 146,
-      "glitch": true
-    },
-    {
-      "name": "Haunter",
-      "ind": 147,
-      "pokedex": 92,
-      "growthRate": 3
-    },
-    {
-      "name": "Abra",
-      "ind": 148,
-      "pokedex": 62,
-      "growthRate": 3
-    },
-    {
-      "name": "Alakazam",
-      "ind": 149,
-      "pokedex": 64,
-      "growthRate": 3
-    },
-    {
-      "name": "Pidgeotto",
-      "ind": 150,
-      "pokedex": 16,
-      "growthRate": 3
-    },
-    {
-      "name": "Pidgeot",
-      "ind": 151,
-      "pokedex": 17,
-      "growthRate": 3
-    },
-    {
-      "name": "Starmie",
-      "ind": 152,
-      "pokedex": 120,
-      "growthRate": 5
-    },
-    {
-      "name": "Bulbasaur",
-      "ind": 153,
-      "pokedex": 0,
-      "growthRate": 3
-    },
-    {
-      "name": "Venusaur",
-      "ind": 154,
-      "pokedex": 2,
-      "growthRate": 3
-    },
-    {
-      "name": "Tentacruel",
-      "ind": 155,
-      "pokedex": 72,
-      "growthRate": 5
-    },
-    {
-      "name": "Missing9C",
-      "ind": 156,
-      "glitch": true
-    },
-    {
-      "name": "Goldeen",
-      "ind": 157,
-      "pokedex": 117,
-      "growthRate": 0
-    },
-    {
-      "name": "Seaking",
-      "ind": 158,
-      "pokedex": 118,
-      "growthRate": 0
-    },
-    {
-      "name": "Missing9F",
-      "ind": 159,
-      "glitch": true
-    },
-    {
-      "name": "MissingA0",
-      "ind": 160,
-      "glitch": true
-    },
-    {
-      "name": "MissingA1",
-      "ind": 161,
-      "glitch": true
-    },
-    {
-      "name": "MissingA2",
-      "ind": 162,
-      "glitch": true
-    },
-    {
-      "name": "Ponyta",
-      "ind": 163,
-      "pokedex": 76,
-      "growthRate": 0
-    },
-    {
-      "name": "Rapidash",
-      "ind": 164,
-      "pokedex": 77,
-      "growthRate": 0
-    },
-    {
-      "name": "Rattata",
-      "ind": 165,
-      "pokedex": 18,
-      "growthRate": 0
-    },
-    {
-      "name": "Raticate",
-      "ind": 166,
-      "pokedex": 19,
-      "growthRate": 0
-    },
-    {
-      "name": "Nidorino",
-      "ind": 167,
-      "pokedex": 32,
-      "growthRate": 3
-    },
-    {
-      "name": "Nidorina",
-      "ind": 168,
-      "pokedex": 29,
-      "growthRate": 3
-    },
-    {
-      "name": "Geodude",
-      "ind": 169,
-      "pokedex": 73,
-      "growthRate": 3
-    },
-    {
-      "name": "Porygon",
-      "ind": 170,
-      "pokedex": 136,
-      "growthRate": 0
-    },
-    {
-      "name": "Aerodactyl",
-      "ind": 171,
-      "pokedex": 141,
-      "growthRate": 5
-    },
-    {
-      "name": "MissingAC",
-      "ind": 172,
-      "glitch": true
-    },
-    {
-      "name": "Magnemite",
-      "ind": 173,
-      "pokedex": 80,
-      "growthRate": 0
-    },
-    {
-      "name": "MissingAE",
-      "ind": 174,
-      "glitch": true
-    },
-    {
-      "name": "MissingAF",
-      "ind": 175,
-      "glitch": true
-    },
-    {
-      "name": "Charmander",
-      "ind": 176,
-      "pokedex": 3,
-      "growthRate": 3
-    },
-    {
-      "name": "Squirtle",
-      "ind": 177,
-      "pokedex": 6,
-      "growthRate": 3
-    },
-    {
-      "name": "Charmeleon",
-      "ind": 178,
-      "pokedex": 4,
-      "growthRate": 3
-    },
-    {
-      "name": "Wartortle",
-      "ind": 179,
-      "pokedex": 7,
-      "growthRate": 3
-    },
-    {
-      "name": "Charizard",
-      "ind": 180,
-      "pokedex": 5,
-      "growthRate": 3
-    },
-    {
-      "name": "MissingB5",
-      "ind": 181,
-      "glitch": true
-    },
-    {
-      "name": "_Kabutops",
-      "ind": 182,
-      "glitch": true
-    },
-    {
-      "name": "_Aerodacty",
-      "ind": 183,
-      "glitch": true
-    },
-    {
-      "name": "Ghost",
-      "ind": 184,
-      "glitch": true
-    },
-    {
-      "name": "Oddish",
-      "ind": 185,
-      "pokedex": 42,
-      "growthRate": 3
-    },
-    {
-      "name": "Gloom",
-      "ind": 186,
-      "pokedex": 43,
-      "growthRate": 3
-    },
-    {
-      "name": "Vileplume",
-      "ind": 187,
-      "pokedex": 44,
-      "growthRate": 3
-    },
-    {
-      "name": "Bellsprout",
-      "ind": 188,
-      "pokedex": 68,
-      "growthRate": 3
-    },
-    {
-      "name": "Weepinbell",
-      "ind": 189,
-      "pokedex": 69,
-      "growthRate": 3
-    },
-    {
-      "name": "Victreebel",
-      "ind": 190,
-      "pokedex": 70,
-      "growthRate": 3
-    }
-  ]
+  {
+    "name": "Rhydon",
+    "ind": 1,
+    "pokedex": 111,
+    "growthRate": 5,
+    "baseHp": 105,
+    "baseAttack": 130,
+    "baseDefense": 120,
+    "baseSpeed": 40,
+    "baseSpecial": 45,
+    "baseExpYield": 204
+  },
+  {
+    "name": "Kangaskhan",
+    "ind": 2,
+    "pokedex": 114,
+    "growthRate": 0,
+    "baseHp": 105,
+    "baseAttack": 95,
+    "baseDefense": 80,
+    "baseSpeed": 90,
+    "baseSpecial": 40,
+    "baseExpYield": 175
+  },
+  {
+    "name": "Nidoran<m>",
+    "ind": 3,
+    "pokedex": 31,
+    "growthRate": 3,
+    "baseHp": 46,
+    "baseAttack": 57,
+    "baseDefense": 40,
+    "baseSpeed": 50,
+    "baseSpecial": 40,
+    "baseExpYield": 60
+  },
+  {
+    "name": "Clefairy",
+    "ind": 4,
+    "pokedex": 34,
+    "growthRate": 4,
+    "baseHp": 70,
+    "baseAttack": 45,
+    "baseDefense": 48,
+    "baseSpeed": 35,
+    "baseSpecial": 60,
+    "baseExpYield": 68
+  },
+  {
+    "name": "Spearow",
+    "ind": 5,
+    "pokedex": 20,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 60,
+    "baseDefense": 30,
+    "baseSpeed": 70,
+    "baseSpecial": 31,
+    "baseExpYield": 58
+  },
+  {
+    "name": "Voltorb",
+    "ind": 6,
+    "pokedex": 99,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 30,
+    "baseDefense": 50,
+    "baseSpeed": 100,
+    "baseSpecial": 55,
+    "baseExpYield": 103
+  },
+  {
+    "name": "Nidoking",
+    "ind": 7,
+    "pokedex": 33,
+    "growthRate": 3,
+    "baseHp": 81,
+    "baseAttack": 92,
+    "baseDefense": 77,
+    "baseSpeed": 85,
+    "baseSpecial": 75,
+    "baseExpYield": 195
+  },
+  {
+    "name": "Slowbro",
+    "ind": 8,
+    "pokedex": 79,
+    "growthRate": 0,
+    "baseHp": 95,
+    "baseAttack": 75,
+    "baseDefense": 110,
+    "baseSpeed": 30,
+    "baseSpecial": 80,
+    "baseExpYield": 164
+  },
+  {
+    "name": "Ivysaur",
+    "ind": 9,
+    "pokedex": 1,
+    "growthRate": 3,
+    "baseHp": 60,
+    "baseAttack": 62,
+    "baseDefense": 63,
+    "baseSpeed": 60,
+    "baseSpecial": 80,
+    "baseExpYield": 141
+  },
+  {
+    "name": "Exeggutor",
+    "ind": 10,
+    "pokedex": 102,
+    "growthRate": 5,
+    "baseHp": 95,
+    "baseAttack": 95,
+    "baseDefense": 85,
+    "baseSpeed": 55,
+    "baseSpecial": 125,
+    "baseExpYield": 212
+  },
+  {
+    "name": "Lickitung",
+    "ind": 11,
+    "pokedex": 107,
+    "growthRate": 0,
+    "baseHp": 90,
+    "baseAttack": 55,
+    "baseDefense": 75,
+    "baseSpeed": 30,
+    "baseSpecial": 60,
+    "baseExpYield": 127
+  },
+  {
+    "name": "Exeggcute",
+    "ind": 12,
+    "pokedex": 101,
+    "growthRate": 5,
+    "baseHp": 60,
+    "baseAttack": 40,
+    "baseDefense": 80,
+    "baseSpeed": 40,
+    "baseSpecial": 60,
+    "baseExpYield": 98
+  },
+  {
+    "name": "Grimer",
+    "ind": 13,
+    "pokedex": 87,
+    "growthRate": 0,
+    "baseHp": 80,
+    "baseAttack": 80,
+    "baseDefense": 50,
+    "baseSpeed": 25,
+    "baseSpecial": 40,
+    "baseExpYield": 90
+  },
+  {
+    "name": "Gengar",
+    "ind": 14,
+    "pokedex": 93,
+    "growthRate": 3,
+    "baseHp": 60,
+    "baseAttack": 65,
+    "baseDefense": 60,
+    "baseSpeed": 110,
+    "baseSpecial": 130,
+    "baseExpYield": 190
+  },
+  {
+    "name": "Nidoran<f>",
+    "ind": 15,
+    "pokedex": 28,
+    "growthRate": 3,
+    "baseHp": 55,
+    "baseAttack": 47,
+    "baseDefense": 52,
+    "baseSpeed": 41,
+    "baseSpecial": 40,
+    "baseExpYield": 59
+  },
+  {
+    "name": "Nidoqueen",
+    "ind": 16,
+    "pokedex": 30,
+    "growthRate": 3,
+    "baseHp": 90,
+    "baseAttack": 82,
+    "baseDefense": 87,
+    "baseSpeed": 76,
+    "baseSpecial": 75,
+    "baseExpYield": 194
+  },
+  {
+    "name": "Cubone",
+    "ind": 17,
+    "pokedex": 103,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 50,
+    "baseDefense": 95,
+    "baseSpeed": 35,
+    "baseSpecial": 40,
+    "baseExpYield": 87
+  },
+  {
+    "name": "Rhyhorn",
+    "ind": 18,
+    "pokedex": 110,
+    "growthRate": 5,
+    "baseHp": 80,
+    "baseAttack": 85,
+    "baseDefense": 95,
+    "baseSpeed": 25,
+    "baseSpecial": 30,
+    "baseExpYield": 135
+  },
+  {
+    "name": "Lapras",
+    "ind": 19,
+    "pokedex": 130,
+    "growthRate": 5,
+    "baseHp": 130,
+    "baseAttack": 85,
+    "baseDefense": 80,
+    "baseSpeed": 60,
+    "baseSpecial": 95,
+    "baseExpYield": 219
+  },
+  {
+    "name": "Arcanine",
+    "ind": 20,
+    "pokedex": 58,
+    "growthRate": 5,
+    "baseHp": 90,
+    "baseAttack": 110,
+    "baseDefense": 80,
+    "baseSpeed": 95,
+    "baseSpecial": 80,
+    "baseExpYield": 213
+  },
+  {
+    "name": "Mew",
+    "ind": 21,
+    "pokedex": 150,
+    "growthRate": 3,
+    "baseHp": 100,
+    "baseAttack": 100,
+    "baseDefense": 100,
+    "baseSpeed": 100,
+    "baseSpecial": 100,
+    "baseExpYield": 64
+  },
+  {
+    "name": "Gyarados",
+    "ind": 22,
+    "pokedex": 129,
+    "growthRate": 5,
+    "baseHp": 95,
+    "baseAttack": 125,
+    "baseDefense": 79,
+    "baseSpeed": 81,
+    "baseSpecial": 100,
+    "baseExpYield": 214
+  },
+  {
+    "name": "Shellder",
+    "ind": 23,
+    "pokedex": 89,
+    "growthRate": 5,
+    "baseHp": 30,
+    "baseAttack": 65,
+    "baseDefense": 100,
+    "baseSpeed": 40,
+    "baseSpecial": 45,
+    "baseExpYield": 97
+  },
+  {
+    "name": "Tentacool",
+    "ind": 24,
+    "pokedex": 71,
+    "growthRate": 5,
+    "baseHp": 40,
+    "baseAttack": 40,
+    "baseDefense": 35,
+    "baseSpeed": 70,
+    "baseSpecial": 100,
+    "baseExpYield": 105
+  },
+  {
+    "name": "Gastly",
+    "ind": 25,
+    "pokedex": 91,
+    "growthRate": 3,
+    "baseHp": 30,
+    "baseAttack": 35,
+    "baseDefense": 30,
+    "baseSpeed": 80,
+    "baseSpecial": 100,
+    "baseExpYield": 95
+  },
+  {
+    "name": "Scyther",
+    "ind": 26,
+    "pokedex": 122,
+    "growthRate": 0,
+    "baseHp": 70,
+    "baseAttack": 110,
+    "baseDefense": 80,
+    "baseSpeed": 105,
+    "baseSpecial": 55,
+    "baseExpYield": 187
+  },
+  {
+    "name": "Staryu",
+    "ind": 27,
+    "pokedex": 119,
+    "growthRate": 5,
+    "baseHp": 30,
+    "baseAttack": 45,
+    "baseDefense": 55,
+    "baseSpeed": 85,
+    "baseSpecial": 70,
+    "baseExpYield": 106
+  },
+  {
+    "name": "Blastoise",
+    "ind": 28,
+    "pokedex": 8,
+    "growthRate": 3,
+    "baseHp": 79,
+    "baseAttack": 83,
+    "baseDefense": 100,
+    "baseSpeed": 78,
+    "baseSpecial": 85,
+    "baseExpYield": 210
+  },
+  {
+    "name": "Pinsir",
+    "ind": 29,
+    "pokedex": 126,
+    "growthRate": 5,
+    "baseHp": 65,
+    "baseAttack": 125,
+    "baseDefense": 100,
+    "baseSpeed": 85,
+    "baseSpecial": 55,
+    "baseExpYield": 200
+  },
+  {
+    "name": "Tangela",
+    "ind": 30,
+    "pokedex": 113,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 55,
+    "baseDefense": 115,
+    "baseSpeed": 60,
+    "baseSpecial": 100,
+    "baseExpYield": 166
+  },
+  {
+    "name": "Missing1F",
+    "ind": 31,
+    "glitch": true
+  },
+  {
+    "name": "Missing20",
+    "ind": 32,
+    "glitch": true
+  },
+  {
+    "name": "Growlithe",
+    "ind": 33,
+    "pokedex": 57,
+    "growthRate": 5,
+    "baseHp": 55,
+    "baseAttack": 70,
+    "baseDefense": 45,
+    "baseSpeed": 60,
+    "baseSpecial": 50,
+    "baseExpYield": 91
+  },
+  {
+    "name": "Onix",
+    "ind": 34,
+    "pokedex": 94,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 45,
+    "baseDefense": 160,
+    "baseSpeed": 70,
+    "baseSpecial": 30,
+    "baseExpYield": 108
+  },
+  {
+    "name": "Fearow",
+    "ind": 35,
+    "pokedex": 21,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 90,
+    "baseDefense": 65,
+    "baseSpeed": 100,
+    "baseSpecial": 61,
+    "baseExpYield": 162
+  },
+  {
+    "name": "Pidgey",
+    "ind": 36,
+    "pokedex": 15,
+    "growthRate": 3,
+    "baseHp": 40,
+    "baseAttack": 45,
+    "baseDefense": 40,
+    "baseSpeed": 56,
+    "baseSpecial": 35,
+    "baseExpYield": 55
+  },
+  {
+    "name": "Slowpoke",
+    "ind": 37,
+    "pokedex": 78,
+    "growthRate": 0,
+    "baseHp": 90,
+    "baseAttack": 65,
+    "baseDefense": 65,
+    "baseSpeed": 15,
+    "baseSpecial": 40,
+    "baseExpYield": 99
+  },
+  {
+    "name": "Kadabra",
+    "ind": 38,
+    "pokedex": 63,
+    "growthRate": 3,
+    "baseHp": 40,
+    "baseAttack": 35,
+    "baseDefense": 30,
+    "baseSpeed": 105,
+    "baseSpecial": 120,
+    "baseExpYield": 145
+  },
+  {
+    "name": "Graveler",
+    "ind": 39,
+    "pokedex": 74,
+    "growthRate": 3,
+    "baseHp": 55,
+    "baseAttack": 95,
+    "baseDefense": 115,
+    "baseSpeed": 35,
+    "baseSpecial": 45,
+    "baseExpYield": 134
+  },
+  {
+    "name": "Chansey",
+    "ind": 40,
+    "pokedex": 112,
+    "growthRate": 4,
+    "baseHp": 250,
+    "baseAttack": 5,
+    "baseDefense": 5,
+    "baseSpeed": 50,
+    "baseSpecial": 105,
+    "baseExpYield": 255
+  },
+  {
+    "name": "Machoke",
+    "ind": 41,
+    "pokedex": 66,
+    "growthRate": 3,
+    "baseHp": 80,
+    "baseAttack": 100,
+    "baseDefense": 70,
+    "baseSpeed": 45,
+    "baseSpecial": 50,
+    "baseExpYield": 146
+  },
+  {
+    "name": "Mr.Mime",
+    "ind": 42,
+    "pokedex": 121,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 45,
+    "baseDefense": 65,
+    "baseSpeed": 90,
+    "baseSpecial": 100,
+    "baseExpYield": 136
+  },
+  {
+    "name": "Hitmonlee",
+    "ind": 43,
+    "pokedex": 105,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 120,
+    "baseDefense": 53,
+    "baseSpeed": 87,
+    "baseSpecial": 35,
+    "baseExpYield": 139
+  },
+  {
+    "name": "Hitmonchan",
+    "ind": 44,
+    "pokedex": 106,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 105,
+    "baseDefense": 79,
+    "baseSpeed": 76,
+    "baseSpecial": 35,
+    "baseExpYield": 140
+  },
+  {
+    "name": "Arbok",
+    "ind": 45,
+    "pokedex": 23,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 85,
+    "baseDefense": 69,
+    "baseSpeed": 80,
+    "baseSpecial": 65,
+    "baseExpYield": 147
+  },
+  {
+    "name": "Parasect",
+    "ind": 46,
+    "pokedex": 46,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 95,
+    "baseDefense": 80,
+    "baseSpeed": 30,
+    "baseSpecial": 80,
+    "baseExpYield": 128
+  },
+  {
+    "name": "Psyduck",
+    "ind": 47,
+    "pokedex": 53,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 52,
+    "baseDefense": 48,
+    "baseSpeed": 55,
+    "baseSpecial": 50,
+    "baseExpYield": 80
+  },
+  {
+    "name": "Drowzee",
+    "ind": 48,
+    "pokedex": 95,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 48,
+    "baseDefense": 45,
+    "baseSpeed": 42,
+    "baseSpecial": 90,
+    "baseExpYield": 102
+  },
+  {
+    "name": "Golem",
+    "ind": 49,
+    "pokedex": 75,
+    "growthRate": 3,
+    "baseHp": 80,
+    "baseAttack": 110,
+    "baseDefense": 130,
+    "baseSpeed": 45,
+    "baseSpecial": 55,
+    "baseExpYield": 177
+  },
+  {
+    "name": "Missing32",
+    "ind": 50,
+    "glitch": true
+  },
+  {
+    "name": "Magmar",
+    "ind": 51,
+    "pokedex": 125,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 95,
+    "baseDefense": 57,
+    "baseSpeed": 93,
+    "baseSpecial": 85,
+    "baseExpYield": 167
+  },
+  {
+    "name": "Missing34",
+    "ind": 52,
+    "glitch": true
+  },
+  {
+    "name": "Electabuzz",
+    "ind": 53,
+    "pokedex": 124,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 83,
+    "baseDefense": 57,
+    "baseSpeed": 105,
+    "baseSpecial": 85,
+    "baseExpYield": 156
+  },
+  {
+    "name": "Magneton",
+    "ind": 54,
+    "pokedex": 81,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 60,
+    "baseDefense": 95,
+    "baseSpeed": 70,
+    "baseSpecial": 120,
+    "baseExpYield": 161
+  },
+  {
+    "name": "Koffing",
+    "ind": 55,
+    "pokedex": 108,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 65,
+    "baseDefense": 95,
+    "baseSpeed": 35,
+    "baseSpecial": 60,
+    "baseExpYield": 114
+  },
+  {
+    "name": "Missing38",
+    "ind": 56,
+    "glitch": true
+  },
+  {
+    "name": "Mankey",
+    "ind": 57,
+    "pokedex": 55,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 80,
+    "baseDefense": 35,
+    "baseSpeed": 70,
+    "baseSpecial": 35,
+    "baseExpYield": 74
+  },
+  {
+    "name": "Seel",
+    "ind": 58,
+    "pokedex": 85,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 45,
+    "baseDefense": 55,
+    "baseSpeed": 45,
+    "baseSpecial": 70,
+    "baseExpYield": 100
+  },
+  {
+    "name": "Diglett",
+    "ind": 59,
+    "pokedex": 49,
+    "growthRate": 0,
+    "baseHp": 10,
+    "baseAttack": 55,
+    "baseDefense": 25,
+    "baseSpeed": 95,
+    "baseSpecial": 45,
+    "baseExpYield": 81
+  },
+  {
+    "name": "Tauros",
+    "ind": 60,
+    "pokedex": 127,
+    "growthRate": 5,
+    "baseHp": 75,
+    "baseAttack": 100,
+    "baseDefense": 95,
+    "baseSpeed": 110,
+    "baseSpecial": 70,
+    "baseExpYield": 211
+  },
+  {
+    "name": "Missing3D",
+    "ind": 61,
+    "glitch": true
+  },
+  {
+    "name": "Missing3E",
+    "ind": 62,
+    "glitch": true
+  },
+  {
+    "name": "Missing3F",
+    "ind": 63,
+    "glitch": true
+  },
+  {
+    "name": "Farfetchd",
+    "ind": 64,
+    "pokedex": 82,
+    "growthRate": 0,
+    "baseHp": 52,
+    "baseAttack": 65,
+    "baseDefense": 55,
+    "baseSpeed": 60,
+    "baseSpecial": 58,
+    "baseExpYield": 94
+  },
+  {
+    "name": "Venonat",
+    "ind": 65,
+    "pokedex": 47,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 55,
+    "baseDefense": 50,
+    "baseSpeed": 45,
+    "baseSpecial": 40,
+    "baseExpYield": 75
+  },
+  {
+    "name": "Dragonite",
+    "ind": 66,
+    "pokedex": 148,
+    "growthRate": 5,
+    "baseHp": 91,
+    "baseAttack": 134,
+    "baseDefense": 95,
+    "baseSpeed": 80,
+    "baseSpecial": 100,
+    "baseExpYield": 218
+  },
+  {
+    "name": "Missing43",
+    "ind": 67,
+    "glitch": true
+  },
+  {
+    "name": "Missing44",
+    "ind": 68,
+    "glitch": true
+  },
+  {
+    "name": "Missing45",
+    "ind": 69,
+    "glitch": true
+  },
+  {
+    "name": "Doduo",
+    "ind": 70,
+    "pokedex": 83,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 85,
+    "baseDefense": 45,
+    "baseSpeed": 75,
+    "baseSpecial": 35,
+    "baseExpYield": 96
+  },
+  {
+    "name": "Poliwag",
+    "ind": 71,
+    "pokedex": 59,
+    "growthRate": 3,
+    "baseHp": 40,
+    "baseAttack": 50,
+    "baseDefense": 40,
+    "baseSpeed": 90,
+    "baseSpecial": 40,
+    "baseExpYield": 77
+  },
+  {
+    "name": "Jynx",
+    "ind": 72,
+    "pokedex": 123,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 50,
+    "baseDefense": 35,
+    "baseSpeed": 95,
+    "baseSpecial": 95,
+    "baseExpYield": 137
+  },
+  {
+    "name": "Moltres",
+    "ind": 73,
+    "pokedex": 145,
+    "growthRate": 5,
+    "baseHp": 90,
+    "baseAttack": 100,
+    "baseDefense": 90,
+    "baseSpeed": 90,
+    "baseSpecial": 125,
+    "baseExpYield": 217
+  },
+  {
+    "name": "Articuno",
+    "ind": 74,
+    "pokedex": 143,
+    "growthRate": 5,
+    "baseHp": 90,
+    "baseAttack": 85,
+    "baseDefense": 100,
+    "baseSpeed": 85,
+    "baseSpecial": 125,
+    "baseExpYield": 215
+  },
+  {
+    "name": "Zapdos",
+    "ind": 75,
+    "pokedex": 144,
+    "growthRate": 5,
+    "baseHp": 90,
+    "baseAttack": 90,
+    "baseDefense": 85,
+    "baseSpeed": 100,
+    "baseSpecial": 125,
+    "baseExpYield": 216
+  },
+  {
+    "name": "Ditto",
+    "ind": 76,
+    "pokedex": 131,
+    "growthRate": 0,
+    "baseHp": 48,
+    "baseAttack": 48,
+    "baseDefense": 48,
+    "baseSpeed": 48,
+    "baseSpecial": 48,
+    "baseExpYield": 61
+  },
+  {
+    "name": "Meowth",
+    "ind": 77,
+    "pokedex": 51,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 45,
+    "baseDefense": 35,
+    "baseSpeed": 90,
+    "baseSpecial": 40,
+    "baseExpYield": 69
+  },
+  {
+    "name": "Krabby",
+    "ind": 78,
+    "pokedex": 97,
+    "growthRate": 0,
+    "baseHp": 30,
+    "baseAttack": 105,
+    "baseDefense": 90,
+    "baseSpeed": 50,
+    "baseSpecial": 25,
+    "baseExpYield": 115
+  },
+  {
+    "name": "Missing4F",
+    "ind": 79,
+    "glitch": true
+  },
+  {
+    "name": "Missing50",
+    "ind": 80,
+    "glitch": true
+  },
+  {
+    "name": "Missing51",
+    "ind": 81,
+    "glitch": true
+  },
+  {
+    "name": "Vulpix",
+    "ind": 82,
+    "pokedex": 36,
+    "growthRate": 0,
+    "baseHp": 38,
+    "baseAttack": 41,
+    "baseDefense": 40,
+    "baseSpeed": 65,
+    "baseSpecial": 65,
+    "baseExpYield": 63
+  },
+  {
+    "name": "Ninetales",
+    "ind": 83,
+    "pokedex": 37,
+    "growthRate": 0,
+    "baseHp": 73,
+    "baseAttack": 76,
+    "baseDefense": 75,
+    "baseSpeed": 100,
+    "baseSpecial": 100,
+    "baseExpYield": 178
+  },
+  {
+    "name": "Pikachu",
+    "ind": 84,
+    "pokedex": 24,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 55,
+    "baseDefense": 30,
+    "baseSpeed": 90,
+    "baseSpecial": 50,
+    "baseExpYield": 82
+  },
+  {
+    "name": "Raichu",
+    "ind": 85,
+    "pokedex": 25,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 90,
+    "baseDefense": 55,
+    "baseSpeed": 100,
+    "baseSpecial": 90,
+    "baseExpYield": 122
+  },
+  {
+    "name": "Missing56",
+    "ind": 86,
+    "glitch": true
+  },
+  {
+    "name": "Missing57",
+    "ind": 87,
+    "glitch": true
+  },
+  {
+    "name": "Dratini",
+    "ind": 88,
+    "pokedex": 146,
+    "growthRate": 5,
+    "baseHp": 41,
+    "baseAttack": 64,
+    "baseDefense": 45,
+    "baseSpeed": 50,
+    "baseSpecial": 50,
+    "baseExpYield": 67
+  },
+  {
+    "name": "Dragonair",
+    "ind": 89,
+    "pokedex": 147,
+    "growthRate": 5,
+    "baseHp": 61,
+    "baseAttack": 84,
+    "baseDefense": 65,
+    "baseSpeed": 70,
+    "baseSpecial": 70,
+    "baseExpYield": 144
+  },
+  {
+    "name": "Kabuto",
+    "ind": 90,
+    "pokedex": 139,
+    "growthRate": 0,
+    "baseHp": 30,
+    "baseAttack": 80,
+    "baseDefense": 90,
+    "baseSpeed": 55,
+    "baseSpecial": 45,
+    "baseExpYield": 119
+  },
+  {
+    "name": "Kabutops",
+    "ind": 91,
+    "pokedex": 140,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 115,
+    "baseDefense": 105,
+    "baseSpeed": 80,
+    "baseSpecial": 70,
+    "baseExpYield": 201
+  },
+  {
+    "name": "Horsea",
+    "ind": 92,
+    "pokedex": 115,
+    "growthRate": 0,
+    "baseHp": 30,
+    "baseAttack": 40,
+    "baseDefense": 70,
+    "baseSpeed": 60,
+    "baseSpecial": 70,
+    "baseExpYield": 83
+  },
+  {
+    "name": "Seadra",
+    "ind": 93,
+    "pokedex": 116,
+    "growthRate": 0,
+    "baseHp": 55,
+    "baseAttack": 65,
+    "baseDefense": 95,
+    "baseSpeed": 85,
+    "baseSpecial": 95,
+    "baseExpYield": 155
+  },
+  {
+    "name": "Missing5E",
+    "ind": 94,
+    "glitch": true
+  },
+  {
+    "name": "Missing5F",
+    "ind": 95,
+    "glitch": true
+  },
+  {
+    "name": "Sandshrew",
+    "ind": 96,
+    "pokedex": 26,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 75,
+    "baseDefense": 85,
+    "baseSpeed": 40,
+    "baseSpecial": 30,
+    "baseExpYield": 93
+  },
+  {
+    "name": "Sandslash",
+    "ind": 97,
+    "pokedex": 27,
+    "growthRate": 0,
+    "baseHp": 75,
+    "baseAttack": 100,
+    "baseDefense": 110,
+    "baseSpeed": 65,
+    "baseSpecial": 55,
+    "baseExpYield": 163
+  },
+  {
+    "name": "Omanyte",
+    "ind": 98,
+    "pokedex": 137,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 40,
+    "baseDefense": 100,
+    "baseSpeed": 35,
+    "baseSpecial": 90,
+    "baseExpYield": 120
+  },
+  {
+    "name": "Omastar",
+    "ind": 99,
+    "pokedex": 138,
+    "growthRate": 0,
+    "baseHp": 70,
+    "baseAttack": 60,
+    "baseDefense": 125,
+    "baseSpeed": 55,
+    "baseSpecial": 115,
+    "baseExpYield": 199
+  },
+  {
+    "name": "Jigglypuff",
+    "ind": 100,
+    "pokedex": 38,
+    "growthRate": 4,
+    "baseHp": 115,
+    "baseAttack": 45,
+    "baseDefense": 20,
+    "baseSpeed": 20,
+    "baseSpecial": 25,
+    "baseExpYield": 76
+  },
+  {
+    "name": "Wigglytuff",
+    "ind": 101,
+    "pokedex": 39,
+    "growthRate": 4,
+    "baseHp": 140,
+    "baseAttack": 70,
+    "baseDefense": 45,
+    "baseSpeed": 45,
+    "baseSpecial": 50,
+    "baseExpYield": 109
+  },
+  {
+    "name": "Eevee",
+    "ind": 102,
+    "pokedex": 132,
+    "growthRate": 0,
+    "baseHp": 55,
+    "baseAttack": 55,
+    "baseDefense": 50,
+    "baseSpeed": 55,
+    "baseSpecial": 65,
+    "baseExpYield": 92
+  },
+  {
+    "name": "Flareon",
+    "ind": 103,
+    "pokedex": 135,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 130,
+    "baseDefense": 60,
+    "baseSpeed": 65,
+    "baseSpecial": 110,
+    "baseExpYield": 198
+  },
+  {
+    "name": "Jolteon",
+    "ind": 104,
+    "pokedex": 134,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 65,
+    "baseDefense": 60,
+    "baseSpeed": 130,
+    "baseSpecial": 110,
+    "baseExpYield": 197
+  },
+  {
+    "name": "Vaporeon",
+    "ind": 105,
+    "pokedex": 133,
+    "growthRate": 0,
+    "baseHp": 130,
+    "baseAttack": 65,
+    "baseDefense": 60,
+    "baseSpeed": 65,
+    "baseSpecial": 110,
+    "baseExpYield": 196
+  },
+  {
+    "name": "Machop",
+    "ind": 106,
+    "pokedex": 65,
+    "growthRate": 3,
+    "baseHp": 70,
+    "baseAttack": 80,
+    "baseDefense": 50,
+    "baseSpeed": 35,
+    "baseSpecial": 35,
+    "baseExpYield": 88
+  },
+  {
+    "name": "Zubat",
+    "ind": 107,
+    "pokedex": 40,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 45,
+    "baseDefense": 35,
+    "baseSpeed": 55,
+    "baseSpecial": 40,
+    "baseExpYield": 54
+  },
+  {
+    "name": "Ekans",
+    "ind": 108,
+    "pokedex": 22,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 60,
+    "baseDefense": 44,
+    "baseSpeed": 55,
+    "baseSpecial": 40,
+    "baseExpYield": 62
+  },
+  {
+    "name": "Paras",
+    "ind": 109,
+    "pokedex": 45,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 70,
+    "baseDefense": 55,
+    "baseSpeed": 25,
+    "baseSpecial": 55,
+    "baseExpYield": 70
+  },
+  {
+    "name": "Poliwhirl",
+    "ind": 110,
+    "pokedex": 60,
+    "growthRate": 3,
+    "baseHp": 65,
+    "baseAttack": 65,
+    "baseDefense": 65,
+    "baseSpeed": 90,
+    "baseSpecial": 50,
+    "baseExpYield": 131
+  },
+  {
+    "name": "Poliwrath",
+    "ind": 111,
+    "pokedex": 61,
+    "growthRate": 3,
+    "baseHp": 90,
+    "baseAttack": 85,
+    "baseDefense": 95,
+    "baseSpeed": 70,
+    "baseSpecial": 70,
+    "baseExpYield": 185
+  },
+  {
+    "name": "Weedle",
+    "ind": 112,
+    "pokedex": 12,
+    "growthRate": 0,
+    "baseHp": 40,
+    "baseAttack": 35,
+    "baseDefense": 30,
+    "baseSpeed": 50,
+    "baseSpecial": 20,
+    "baseExpYield": 52
+  },
+  {
+    "name": "Kakuna",
+    "ind": 113,
+    "pokedex": 13,
+    "growthRate": 0,
+    "baseHp": 45,
+    "baseAttack": 25,
+    "baseDefense": 50,
+    "baseSpeed": 35,
+    "baseSpecial": 25,
+    "baseExpYield": 71
+  },
+  {
+    "name": "Beedrill",
+    "ind": 114,
+    "pokedex": 14,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 80,
+    "baseDefense": 40,
+    "baseSpeed": 75,
+    "baseSpecial": 45,
+    "baseExpYield": 159
+  },
+  {
+    "name": "Missing73",
+    "ind": 115,
+    "glitch": true
+  },
+  {
+    "name": "Dodrio",
+    "ind": 116,
+    "pokedex": 84,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 110,
+    "baseDefense": 70,
+    "baseSpeed": 100,
+    "baseSpecial": 60,
+    "baseExpYield": 158
+  },
+  {
+    "name": "Primeape",
+    "ind": 117,
+    "pokedex": 56,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 105,
+    "baseDefense": 60,
+    "baseSpeed": 95,
+    "baseSpecial": 60,
+    "baseExpYield": 149
+  },
+  {
+    "name": "Dugtrio",
+    "ind": 118,
+    "pokedex": 50,
+    "growthRate": 0,
+    "baseHp": 35,
+    "baseAttack": 80,
+    "baseDefense": 50,
+    "baseSpeed": 120,
+    "baseSpecial": 70,
+    "baseExpYield": 153
+  },
+  {
+    "name": "Venomoth",
+    "ind": 119,
+    "pokedex": 48,
+    "growthRate": 0,
+    "baseHp": 70,
+    "baseAttack": 65,
+    "baseDefense": 60,
+    "baseSpeed": 90,
+    "baseSpecial": 90,
+    "baseExpYield": 138
+  },
+  {
+    "name": "Dewgong",
+    "ind": 120,
+    "pokedex": 86,
+    "growthRate": 0,
+    "baseHp": 90,
+    "baseAttack": 70,
+    "baseDefense": 80,
+    "baseSpeed": 70,
+    "baseSpecial": 95,
+    "baseExpYield": 176
+  },
+  {
+    "name": "Missing79",
+    "ind": 121,
+    "glitch": true
+  },
+  {
+    "name": "Missing7A",
+    "ind": 122,
+    "glitch": true
+  },
+  {
+    "name": "Caterpie",
+    "ind": 123,
+    "pokedex": 9,
+    "growthRate": 0,
+    "baseHp": 45,
+    "baseAttack": 30,
+    "baseDefense": 35,
+    "baseSpeed": 45,
+    "baseSpecial": 20,
+    "baseExpYield": 53
+  },
+  {
+    "name": "Metapod",
+    "ind": 124,
+    "pokedex": 10,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 20,
+    "baseDefense": 55,
+    "baseSpeed": 30,
+    "baseSpecial": 25,
+    "baseExpYield": 72
+  },
+  {
+    "name": "Butterfree",
+    "ind": 125,
+    "pokedex": 11,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 45,
+    "baseDefense": 50,
+    "baseSpeed": 70,
+    "baseSpecial": 80,
+    "baseExpYield": 160
+  },
+  {
+    "name": "Machamp",
+    "ind": 126,
+    "pokedex": 67,
+    "growthRate": 3,
+    "baseHp": 90,
+    "baseAttack": 130,
+    "baseDefense": 80,
+    "baseSpeed": 55,
+    "baseSpecial": 65,
+    "baseExpYield": 193
+  },
+  {
+    "name": "Missing7F",
+    "ind": 127,
+    "glitch": true
+  },
+  {
+    "name": "Golduck",
+    "ind": 128,
+    "pokedex": 54,
+    "growthRate": 0,
+    "baseHp": 80,
+    "baseAttack": 82,
+    "baseDefense": 78,
+    "baseSpeed": 85,
+    "baseSpecial": 80,
+    "baseExpYield": 174
+  },
+  {
+    "name": "Hypno",
+    "ind": 129,
+    "pokedex": 96,
+    "growthRate": 0,
+    "baseHp": 85,
+    "baseAttack": 73,
+    "baseDefense": 70,
+    "baseSpeed": 67,
+    "baseSpecial": 115,
+    "baseExpYield": 165
+  },
+  {
+    "name": "Golbat",
+    "ind": 130,
+    "pokedex": 41,
+    "growthRate": 0,
+    "baseHp": 75,
+    "baseAttack": 80,
+    "baseDefense": 70,
+    "baseSpeed": 90,
+    "baseSpecial": 75,
+    "baseExpYield": 171
+  },
+  {
+    "name": "Mewtwo",
+    "ind": 131,
+    "pokedex": 149,
+    "growthRate": 5,
+    "baseHp": 106,
+    "baseAttack": 110,
+    "baseDefense": 90,
+    "baseSpeed": 130,
+    "baseSpecial": 154,
+    "baseExpYield": 220
+  },
+  {
+    "name": "Snorlax",
+    "ind": 132,
+    "pokedex": 142,
+    "growthRate": 5,
+    "baseHp": 160,
+    "baseAttack": 110,
+    "baseDefense": 65,
+    "baseSpeed": 30,
+    "baseSpecial": 65,
+    "baseExpYield": 154
+  },
+  {
+    "name": "Magikarp",
+    "ind": 133,
+    "pokedex": 128,
+    "growthRate": 5,
+    "baseHp": 20,
+    "baseAttack": 10,
+    "baseDefense": 55,
+    "baseSpeed": 80,
+    "baseSpecial": 20,
+    "baseExpYield": 20
+  },
+  {
+    "name": "Missing86",
+    "ind": 134,
+    "glitch": true
+  },
+  {
+    "name": "Missing87",
+    "ind": 135,
+    "glitch": true
+  },
+  {
+    "name": "Muk",
+    "ind": 136,
+    "pokedex": 88,
+    "growthRate": 0,
+    "baseHp": 105,
+    "baseAttack": 105,
+    "baseDefense": 75,
+    "baseSpeed": 50,
+    "baseSpecial": 65,
+    "baseExpYield": 157
+  },
+  {
+    "name": "Missing89",
+    "ind": 137,
+    "glitch": true
+  },
+  {
+    "name": "Kingler",
+    "ind": 138,
+    "pokedex": 98,
+    "growthRate": 0,
+    "baseHp": 55,
+    "baseAttack": 130,
+    "baseDefense": 115,
+    "baseSpeed": 75,
+    "baseSpecial": 50,
+    "baseExpYield": 206
+  },
+  {
+    "name": "Cloyster",
+    "ind": 139,
+    "pokedex": 90,
+    "growthRate": 5,
+    "baseHp": 50,
+    "baseAttack": 95,
+    "baseDefense": 180,
+    "baseSpeed": 70,
+    "baseSpecial": 85,
+    "baseExpYield": 203
+  },
+  {
+    "name": "Missing8C",
+    "ind": 140,
+    "glitch": true
+  },
+  {
+    "name": "Electrode",
+    "ind": 141,
+    "pokedex": 100,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 50,
+    "baseDefense": 70,
+    "baseSpeed": 140,
+    "baseSpecial": 80,
+    "baseExpYield": 150
+  },
+  {
+    "name": "Clefable",
+    "ind": 142,
+    "pokedex": 35,
+    "growthRate": 4,
+    "baseHp": 95,
+    "baseAttack": 70,
+    "baseDefense": 73,
+    "baseSpeed": 60,
+    "baseSpecial": 85,
+    "baseExpYield": 129
+  },
+  {
+    "name": "Weezing",
+    "ind": 143,
+    "pokedex": 109,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 90,
+    "baseDefense": 120,
+    "baseSpeed": 60,
+    "baseSpecial": 85,
+    "baseExpYield": 173
+  },
+  {
+    "name": "Persian",
+    "ind": 144,
+    "pokedex": 52,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 70,
+    "baseDefense": 60,
+    "baseSpeed": 115,
+    "baseSpecial": 65,
+    "baseExpYield": 148
+  },
+  {
+    "name": "Marowak",
+    "ind": 145,
+    "pokedex": 104,
+    "growthRate": 0,
+    "baseHp": 60,
+    "baseAttack": 80,
+    "baseDefense": 110,
+    "baseSpeed": 45,
+    "baseSpecial": 50,
+    "baseExpYield": 124
+  },
+  {
+    "name": "Missing92",
+    "ind": 146,
+    "glitch": true
+  },
+  {
+    "name": "Haunter",
+    "ind": 147,
+    "pokedex": 92,
+    "growthRate": 3,
+    "baseHp": 45,
+    "baseAttack": 50,
+    "baseDefense": 45,
+    "baseSpeed": 95,
+    "baseSpecial": 115,
+    "baseExpYield": 126
+  },
+  {
+    "name": "Abra",
+    "ind": 148,
+    "pokedex": 62,
+    "growthRate": 3,
+    "baseHp": 25,
+    "baseAttack": 20,
+    "baseDefense": 15,
+    "baseSpeed": 90,
+    "baseSpecial": 105,
+    "baseExpYield": 73
+  },
+  {
+    "name": "Alakazam",
+    "ind": 149,
+    "pokedex": 64,
+    "growthRate": 3,
+    "baseHp": 55,
+    "baseAttack": 50,
+    "baseDefense": 45,
+    "baseSpeed": 120,
+    "baseSpecial": 135,
+    "baseExpYield": 186
+  },
+  {
+    "name": "Pidgeotto",
+    "ind": 150,
+    "pokedex": 16,
+    "growthRate": 3,
+    "baseHp": 63,
+    "baseAttack": 60,
+    "baseDefense": 55,
+    "baseSpeed": 71,
+    "baseSpecial": 50,
+    "baseExpYield": 113
+  },
+  {
+    "name": "Pidgeot",
+    "ind": 151,
+    "pokedex": 17,
+    "growthRate": 3,
+    "baseHp": 83,
+    "baseAttack": 80,
+    "baseDefense": 75,
+    "baseSpeed": 91,
+    "baseSpecial": 70,
+    "baseExpYield": 172
+  },
+  {
+    "name": "Starmie",
+    "ind": 152,
+    "pokedex": 120,
+    "growthRate": 5,
+    "baseHp": 60,
+    "baseAttack": 75,
+    "baseDefense": 85,
+    "baseSpeed": 115,
+    "baseSpecial": 100,
+    "baseExpYield": 207
+  },
+  {
+    "name": "Bulbasaur",
+    "ind": 153,
+    "pokedex": 0,
+    "growthRate": 3,
+    "baseHp": 45,
+    "baseAttack": 49,
+    "baseDefense": 49,
+    "baseSpeed": 45,
+    "baseSpecial": 65,
+    "baseExpYield": 64
+  },
+  {
+    "name": "Venusaur",
+    "ind": 154,
+    "pokedex": 2,
+    "growthRate": 3,
+    "baseHp": 80,
+    "baseAttack": 82,
+    "baseDefense": 83,
+    "baseSpeed": 80,
+    "baseSpecial": 100,
+    "baseExpYield": 208
+  },
+  {
+    "name": "Tentacruel",
+    "ind": 155,
+    "pokedex": 72,
+    "growthRate": 5,
+    "baseHp": 80,
+    "baseAttack": 70,
+    "baseDefense": 65,
+    "baseSpeed": 100,
+    "baseSpecial": 120,
+    "baseExpYield": 205
+  },
+  {
+    "name": "Missing9C",
+    "ind": 156,
+    "glitch": true
+  },
+  {
+    "name": "Goldeen",
+    "ind": 157,
+    "pokedex": 117,
+    "growthRate": 0,
+    "baseHp": 45,
+    "baseAttack": 67,
+    "baseDefense": 60,
+    "baseSpeed": 63,
+    "baseSpecial": 50,
+    "baseExpYield": 111
+  },
+  {
+    "name": "Seaking",
+    "ind": 158,
+    "pokedex": 118,
+    "growthRate": 0,
+    "baseHp": 80,
+    "baseAttack": 92,
+    "baseDefense": 65,
+    "baseSpeed": 68,
+    "baseSpecial": 80,
+    "baseExpYield": 170
+  },
+  {
+    "name": "Missing9F",
+    "ind": 159,
+    "glitch": true
+  },
+  {
+    "name": "MissingA0",
+    "ind": 160,
+    "glitch": true
+  },
+  {
+    "name": "MissingA1",
+    "ind": 161,
+    "glitch": true
+  },
+  {
+    "name": "MissingA2",
+    "ind": 162,
+    "glitch": true
+  },
+  {
+    "name": "Ponyta",
+    "ind": 163,
+    "pokedex": 76,
+    "growthRate": 0,
+    "baseHp": 50,
+    "baseAttack": 85,
+    "baseDefense": 55,
+    "baseSpeed": 90,
+    "baseSpecial": 65,
+    "baseExpYield": 152
+  },
+  {
+    "name": "Rapidash",
+    "ind": 164,
+    "pokedex": 77,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 100,
+    "baseDefense": 70,
+    "baseSpeed": 105,
+    "baseSpecial": 80,
+    "baseExpYield": 192
+  },
+  {
+    "name": "Rattata",
+    "ind": 165,
+    "pokedex": 18,
+    "growthRate": 0,
+    "baseHp": 30,
+    "baseAttack": 56,
+    "baseDefense": 35,
+    "baseSpeed": 72,
+    "baseSpecial": 25,
+    "baseExpYield": 57
+  },
+  {
+    "name": "Raticate",
+    "ind": 166,
+    "pokedex": 19,
+    "growthRate": 0,
+    "baseHp": 55,
+    "baseAttack": 81,
+    "baseDefense": 60,
+    "baseSpeed": 97,
+    "baseSpecial": 50,
+    "baseExpYield": 116
+  },
+  {
+    "name": "Nidorino",
+    "ind": 167,
+    "pokedex": 32,
+    "growthRate": 3,
+    "baseHp": 61,
+    "baseAttack": 72,
+    "baseDefense": 57,
+    "baseSpeed": 65,
+    "baseSpecial": 55,
+    "baseExpYield": 118
+  },
+  {
+    "name": "Nidorina",
+    "ind": 168,
+    "pokedex": 29,
+    "growthRate": 3,
+    "baseHp": 70,
+    "baseAttack": 62,
+    "baseDefense": 67,
+    "baseSpeed": 56,
+    "baseSpecial": 55,
+    "baseExpYield": 117
+  },
+  {
+    "name": "Geodude",
+    "ind": 169,
+    "pokedex": 73,
+    "growthRate": 3,
+    "baseHp": 40,
+    "baseAttack": 80,
+    "baseDefense": 100,
+    "baseSpeed": 20,
+    "baseSpecial": 30,
+    "baseExpYield": 86
+  },
+  {
+    "name": "Porygon",
+    "ind": 170,
+    "pokedex": 136,
+    "growthRate": 0,
+    "baseHp": 65,
+    "baseAttack": 60,
+    "baseDefense": 70,
+    "baseSpeed": 40,
+    "baseSpecial": 75,
+    "baseExpYield": 130
+  },
+  {
+    "name": "Aerodactyl",
+    "ind": 171,
+    "pokedex": 141,
+    "growthRate": 5,
+    "baseHp": 80,
+    "baseAttack": 105,
+    "baseDefense": 65,
+    "baseSpeed": 130,
+    "baseSpecial": 60,
+    "baseExpYield": 202
+  },
+  {
+    "name": "MissingAC",
+    "ind": 172,
+    "glitch": true
+  },
+  {
+    "name": "Magnemite",
+    "ind": 173,
+    "pokedex": 80,
+    "growthRate": 0,
+    "baseHp": 25,
+    "baseAttack": 35,
+    "baseDefense": 70,
+    "baseSpeed": 45,
+    "baseSpecial": 95,
+    "baseExpYield": 89
+  },
+  {
+    "name": "MissingAE",
+    "ind": 174,
+    "glitch": true
+  },
+  {
+    "name": "MissingAF",
+    "ind": 175,
+    "glitch": true
+  },
+  {
+    "name": "Charmander",
+    "ind": 176,
+    "pokedex": 3,
+    "growthRate": 3,
+    "baseHp": 39,
+    "baseAttack": 52,
+    "baseDefense": 43,
+    "baseSpeed": 65,
+    "baseSpecial": 50,
+    "baseExpYield": 65
+  },
+  {
+    "name": "Squirtle",
+    "ind": 177,
+    "pokedex": 6,
+    "growthRate": 3,
+    "baseHp": 44,
+    "baseAttack": 48,
+    "baseDefense": 65,
+    "baseSpeed": 43,
+    "baseSpecial": 50,
+    "baseExpYield": 66
+  },
+  {
+    "name": "Charmeleon",
+    "ind": 178,
+    "pokedex": 4,
+    "growthRate": 3,
+    "baseHp": 58,
+    "baseAttack": 64,
+    "baseDefense": 58,
+    "baseSpeed": 80,
+    "baseSpecial": 65,
+    "baseExpYield": 142
+  },
+  {
+    "name": "Wartortle",
+    "ind": 179,
+    "pokedex": 7,
+    "growthRate": 3,
+    "baseHp": 59,
+    "baseAttack": 63,
+    "baseDefense": 80,
+    "baseSpeed": 58,
+    "baseSpecial": 65,
+    "baseExpYield": 143
+  },
+  {
+    "name": "Charizard",
+    "ind": 180,
+    "pokedex": 5,
+    "growthRate": 3,
+    "baseHp": 78,
+    "baseAttack": 84,
+    "baseDefense": 78,
+    "baseSpeed": 100,
+    "baseSpecial": 85,
+    "baseExpYield": 209
+  },
+  {
+    "name": "MissingB5",
+    "ind": 181,
+    "glitch": true
+  },
+  {
+    "name": "_Kabutops",
+    "ind": 182,
+    "glitch": true
+  },
+  {
+    "name": "_Aerodacty",
+    "ind": 183,
+    "glitch": true
+  },
+  {
+    "name": "Ghost",
+    "ind": 184,
+    "glitch": true
+  },
+  {
+    "name": "Oddish",
+    "ind": 185,
+    "pokedex": 42,
+    "growthRate": 3,
+    "baseHp": 45,
+    "baseAttack": 50,
+    "baseDefense": 55,
+    "baseSpeed": 30,
+    "baseSpecial": 75,
+    "baseExpYield": 78
+  },
+  {
+    "name": "Gloom",
+    "ind": 186,
+    "pokedex": 43,
+    "growthRate": 3,
+    "baseHp": 60,
+    "baseAttack": 65,
+    "baseDefense": 70,
+    "baseSpeed": 40,
+    "baseSpecial": 85,
+    "baseExpYield": 132
+  },
+  {
+    "name": "Vileplume",
+    "ind": 187,
+    "pokedex": 44,
+    "growthRate": 3,
+    "baseHp": 75,
+    "baseAttack": 80,
+    "baseDefense": 85,
+    "baseSpeed": 50,
+    "baseSpecial": 100,
+    "baseExpYield": 184
+  },
+  {
+    "name": "Bellsprout",
+    "ind": 188,
+    "pokedex": 68,
+    "growthRate": 3,
+    "baseHp": 50,
+    "baseAttack": 75,
+    "baseDefense": 35,
+    "baseSpeed": 40,
+    "baseSpecial": 70,
+    "baseExpYield": 84
+  },
+  {
+    "name": "Weepinbell",
+    "ind": 189,
+    "pokedex": 69,
+    "growthRate": 3,
+    "baseHp": 65,
+    "baseAttack": 90,
+    "baseDefense": 50,
+    "baseSpeed": 55,
+    "baseSpecial": 85,
+    "baseExpYield": 151
+  },
+  {
+    "name": "Victreebel",
+    "ind": 190,
+    "pokedex": 70,
+    "growthRate": 3,
+    "baseHp": 80,
+    "baseAttack": 105,
+    "baseDefense": 65,
+    "baseSpeed": 70,
+    "baseSpecial": 100,
+    "baseExpYield": 191
+  }
+]
