@@ -77,6 +77,19 @@ export class PokemonParty extends PokemonBox {
         return it;
     }
 
+    public updateStats() {
+
+        // Stop here if invalid Pokemon
+        if(this.isValidPokemon === false)
+            return;
+
+        this.maxHP = this.hpStat;
+        this.attack = this.attackStat;
+        this.defense = this.defenseStat;
+        this.speed = this.speedStat;
+        this.special = this.specialStat;
+    }
+
     public maxHP: number = 0;
     public attack: number = 0;
     public defense: number = 0;

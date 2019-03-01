@@ -1,5 +1,7 @@
 export interface Pokemon {
 
+    [key: string]: any, // Generic Lookup
+
     // For all Pokemon
     name: string, // Pokemon Name with code (ex Nidoran will use ex: Nidroan<m>)
     ind: number, // Pokemon Index Order

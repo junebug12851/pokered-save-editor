@@ -35,6 +35,13 @@ export class CardPokemonComponent implements OnInit {
 
     ngOnInit() {}
 
+    public updateData() {
+        this.entry.updateExp();
+
+        if(this.entry.updateStats)
+            this.entry.updateStats();
+    }
+
     @Input()
     public entry: any = new PokemonParty();
 

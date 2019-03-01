@@ -3,7 +3,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
         .row.s12
             hp-bar(
                 '[curHP]'='entry.hp'
-                '[maxHP]'='entry.maxHP || 1'
+                '[maxHP]'='entry.maxHP || entry.hpStat || 1'
                 '[disabled]'='disabled'
             )
         .row.s9
@@ -18,7 +18,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
                     placeholder='Level'
                     type='number'
                     '[(ngModel)]'='entry.level'
-                    '(ngModelChange)'="entry.updateExp()"
+                    '(ngModelChange)'="updateData()"
                     required=''
                     min='1'
                     max='100'
@@ -29,7 +29,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
                 '[(ngModel)]'='entry.species'
                 '[disabled]'='disabled'
                 style='width: 100%;'
-                '(ngModelChange)'="entry.updateExp()"
+                '(ngModelChange)'="updateData()"
             )
         .s4
             select-type(
@@ -59,7 +59,18 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                     '[disabled]'='disabled'
                                 )
                         .s4
-                            mat-form-field(style='width: 100%')
+                            //- span('*ngIf'='entry.isValidPokemon !== false') / {{entry.maxHP || entry.hpStat}}
+                            mat-form-field('*ngIf'='entry.isValidPokemon !== false', style='width: 100%')
+                                mat-label Max HP
+                                input(
+                                    matInput=''
+                                    placeholder='Max HP'
+                                    type='number'
+                                    '[value]'='entry.maxHP || entry.hpStat'
+                                    required=''
+                                    '[disabled]'='true'
+                                )
+                            mat-form-field('*ngIf'='entry.isValidPokemon === false', style='width: 100%')
                                 mat-label Max HP
                                 input(
                                     matInput=''
@@ -148,7 +159,28 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                     max='3'
                                 )
                 mat-tab(label="Stats", '[disabled]'='disabled')
-                    .container
+                    .container('*ngIf'='entry.isValidPokemon !== false')
+                        .s3
+                            span HP: {{entry.maxHP || entry.hpStat}}
+                        .s3
+                            span Attack: {{entry.attack || entry.attackStat}}
+                        .s3
+                            span Defense: {{entry.defense || entry.defenseStat}}
+                        .s3
+                            span Speed: {{entry.speed || entry.speedStat}}
+                        .s3
+                            span Special: {{entry.special || entry.specialStat}}
+                    .container('*ngIf'='entry.isValidPokemon === false')
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label HP
+                                input(
+                                    matInput=''
+                                    placeholder='HP'
+                                    type='number'
+                                    '[(ngModel)]'='entry.maxHP'
+                                    '[disabled]'='disabled || entry.maxHP === undefined'
+                                )
                         .s3
                             mat-form-field(style='width: 100%')
                                 mat-label Attack
@@ -280,6 +312,18 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                 )
                 mat-tab(label="DV", '[disabled]'='disabled')
                     .container
+                        .s3
+                            mat-form-field(style='width: 100%')
+                                mat-label HP DV
+                                input(
+                                    matInput=''
+                                    placeholder='HP IV'
+                                    type='number'
+                                    '[(ngModel)]'='entry.hpDV'
+                                    '[disabled]'='true'
+                                    min='0'
+                                    max='15'
+                                )
                         .s3
                             mat-form-field(style='width: 100%')
                                 mat-label Attack DV

@@ -260,11 +260,11 @@ export class PokemonBox {
 
         // Growth Rate 4: Fast
         else if(gr == 4)
-            exp = 4 * (Math.pow(level, 0.6));
+            exp = (4 * Math.pow(level, 3)) / 5
 
         // Growth Rate 5: Slow
         else if(gr == 5)
-            exp = 5 * (Math.pow(level, 0.75));
+            exp = (5 * Math.pow(level, 3)) / 4
 
         // Return EXP
         return Math.floor(exp);
@@ -305,6 +305,62 @@ export class PokemonBox {
             return;
 
         this.exp = this.expStart;
+    }
+
+    // Gets HP DV based on other DV's
+    public get hpDV() {
+        let hpDv = 0;
+
+        if((this.dv.attack % 2) !== 0)
+            hpDv |= 8;
+
+        if((this.dv.defense % 2) !== 0)
+            hpDv |= 4;
+
+        if((this.dv.speed % 2) !== 0)
+            hpDv |= 2;
+
+        if((this.dv.special % 2) !== 0)
+            hpDv |= 1;
+
+        return hpDv;
+    }
+
+    public get hpStat() {
+        const record = this.isValidPokemon;
+
+        // Proceed only if it's valid
+        if(record === false || record.baseHp == undefined)
+            return 1;
+
+        return Math.floor((((record.baseHp+this.hpDV)*2+Math.floor(Math.floor(Math.sqrt(this.hpExp))/4))*this.level)/100) + this.level + 10;
+    }
+
+    public getNonHPStat(statName: string, dv: number, ev: number) {
+        const record = this.isValidPokemon;
+
+        // Proceed only if it's valid
+        if(record === false)
+            return 0;
+
+        const baseStat = record[statName] as number;
+        return Math.floor((((baseStat+dv)*2+Math.floor(Math.floor(Math.sqrt(ev))/4))*this.level)/100) + 5;
+    }
+
+    public get attackStat() {
+        return this.getNonHPStat("baseAttack", this.dv.attack, this.attackExp);
+    }
+
+    public get defenseStat() {
+        return this.getNonHPStat("baseDefense", this.dv.defense, this.defenseExp);
+    }
+
+    public get speedStat() {
+        return this.getNonHPStat("baseSpeed", this.dv.speed, this.speedExp);
+    }
+
+    public get specialStat() {
+        return this.getNonHPStat("baseSpecial", this.dv.special, this.specialExp);
     }
 
     private pkmnArr: Pokemon[] = [];
