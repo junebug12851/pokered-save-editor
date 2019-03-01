@@ -260,115 +260,114 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                 )
                 mat-tab(label="EV", '[disabled]'='disabled')
                     .container
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label HP EV
-                                input(
-                                    matInput=''
-                                    placeholder='HP Exp'
-                                    type='number'
-                                    '[(ngModel)]'='entry.hpExp'
+                        .s6
+                            mat-label HP EV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='65535',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.hpExp"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
                                 )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Attack EV
-                                input(
-                                    matInput=''
-                                    placeholder='Attack Exp'
-                                    type='number'
-                                    '[(ngModel)]'='entry.attackExp'
+                        .s6
+                            mat-label Attack EV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='65535',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.attackExp"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
                                 )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Defense EV
-                                input(
-                                    matInput=''
-                                    placeholder='Defense Exp'
-                                    type='number'
-                                    '[(ngModel)]'='entry.defenseExp'
+                        .s6
+                            mat-label Defense EV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='65535',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.defenseExp"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
                                 )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Speed EV
-                                input(
-                                    matInput=''
-                                    placeholder='Speed Exp'
-                                    type='number'
-                                    '[(ngModel)]'='entry.speedExp'
+                        .s6
+                            mat-label Speed EV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='65535',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.speedExp"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
                                 )
-                        .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Special EV
-                                input(
-                                    matInput=''
-                                    placeholder='Special Exp'
-                                    type='number'
-                                    '[(ngModel)]'='entry.specialExp'
+                        .s6
+                            mat-label Special EV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='65535',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.specialExp"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
                                 )
                 mat-tab(label="DV", '[disabled]'='disabled')
                     .container
                         .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label HP DV
-                                input(
-                                    matInput=''
-                                    placeholder='HP IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.hpDV'
+                            mat-label HP DV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='15',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.hpDV"
+                                    'style'="width: 100%;"
                                     '[disabled]'='true'
-                                    min='0'
-                                    max='15'
                                 )
                         .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Attack DV
-                                input(
-                                    matInput=''
-                                    placeholder='Attack IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.attack'
+                            mat-label Attack DV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='15',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.dv.attack"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
                                 )
                         .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Defense DV
-                                input(
-                                    matInput=''
-                                    placeholder='Defense IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.defense'
+                            mat-label Defense DV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='15',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.dv.defense"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
                                 )
                         .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Speed DV
-                                input(
-                                    matInput=''
-                                    placeholder='Speed IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.speed'
+                            mat-label Speed DV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='15',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.dv.speed"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
                                 )
                         .s3
-                            mat-form-field(style='width: 100%')
-                                mat-label Special DV
-                                input(
-                                    matInput=''
-                                    placeholder='Special IV'
-                                    type='number'
-                                    '[(ngModel)]'='entry.dv.special'
+                            mat-label Special DV
+                            mat-slider(
+                                    'min'='0',
+                                    'max'='15',
+                                    '[thumbLabel]'='true',
+                                    '[(ngModel)]'="entry.dv.special"
+                                    '(ngModelChange)'="updateData()"
+                                    'style'="width: 100%;"
                                     '[disabled]'='disabled'
-                                    min='0'
-                                    max='15'
                                 )
