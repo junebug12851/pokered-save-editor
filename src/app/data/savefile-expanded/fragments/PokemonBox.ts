@@ -219,17 +219,28 @@ export class PokemonBox {
         return it;
     }
 
-    // Correctly Converts level to Pokemon Exp
-    public levelToExp(pkmn: Pokemon[], level: number, species: number): number {
+    // Is this a valid Pokemon? (Is it even in the Pokedex?)
+    // If not returns false, otherwise returns Pokemon Record
+    public isValidPokemon(pkmn: Pokemon[]) {
         // Get Pokemon Record
         // The Pokemon Array is organized by species ID with 1 top entry missing
         // thus offset by 1 accordingly
-        let record = pkmn[species - 1];
-        let exp = 0;
+        let record = pkmn[this.species - 1];
 
         // Check it's a valid Pokemon (not glitch)
-        // Proceed only if it's valid
         if(record.pokedex == null || record.pokedex == undefined)
+            return false;
+
+        return record;
+    }
+
+    // Correctly Converts level to Pokemon Exp
+    public levelToExp(pkmn: Pokemon[], level: number = this.level): number {
+        let record = this.isValidPokemon(pkmn);
+        let exp = 0;
+
+        // Proceed only if it's valid
+        if(record === false)
             return exp;
 
         // Obtain it's growth rate and calculate accordingly it's exp for the given level
@@ -247,12 +258,49 @@ export class PokemonBox {
         else if(gr == 4)
             exp = 4 * (Math.pow(level, 0.6));
 
-        // Slow
+        // Growth Rate 5: Slow
         else if(gr == 5)
             exp = 5 * (Math.pow(level, 0.75));
 
         // Return EXP
-        return Math.ceil(exp);
+        return Math.floor(exp);
+    }
+
+    public expStart(pkmn: Pokemon[]) {
+        if(this.isValidPokemon(pkmn) === false)
+            return this.exp;
+
+        return this.levelToExp(pkmn, (this.level < 100) ? this.level : 100);
+    }
+
+    public expEnd(pkmn: Pokemon[]) {
+        if(this.isValidPokemon(pkmn) === false)
+            return this.exp;
+
+        return this.levelToExp(pkmn, (this.level < 100) ? this.level + 1 : 100) - 1;
+    }
+
+    // Percent of current exp to level between 0-1
+    public expPercent(pkmn: Pokemon[]) {
+        if(this.isValidPokemon(pkmn) === false)
+            return 0;
+
+        if(this.level >= 100)
+            return 1;
+
+        const exp = this.exp - this.expStart(pkmn);
+        const expEnd = this.expEnd(pkmn) - this.expStart(pkmn);
+
+        // Return percentage
+        return exp / expEnd;
+    }
+
+    // Resets EXP to start of current level and current species
+    public updateExp(pkmn: Pokemon[]) {
+        if(this.isValidPokemon(pkmn) === false)
+            return;
+
+        this.exp = this.expStart(pkmn);
     }
 
     public species = 0;
