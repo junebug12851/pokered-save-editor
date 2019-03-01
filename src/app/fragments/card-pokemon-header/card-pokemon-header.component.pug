@@ -18,6 +18,7 @@ mat-card.sticky.ns(style='margin-bottom: 15px !important')
                     placeholder='Level'
                     type='number'
                     '[(ngModel)]'='entry.level'
+                    '(ngModelChange)'="entry.updateExp()"
                     required=''
                     min='1'
                     max='100'
@@ -26,6 +27,7 @@ mat-card.sticky.ns(style='margin-bottom: 15px !important')
         .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
             select-species(
                 '[(ngModel)]'='entry.species'
+                '(ngModelChange)'="entry.updateExp()"
                 '[disabled]'='disabled'
                 style='width: 100%;'
             )

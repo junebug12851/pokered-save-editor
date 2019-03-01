@@ -19,7 +19,6 @@ import { OnInit } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 import {GameDataService} from '../../data/gameData.service';
-import { Pokemon } from 'src/assets/data/pokemon';
 
 @Component({
     selector: 'card-pokemon',
@@ -34,11 +33,7 @@ export class CardPokemonComponent implements OnInit {
 
     }
 
-    ngOnInit() {
-        this.pkmnArr = this.gd.file("pokemon").data;
-    }
-
-    public pkmnArr: Pokemon[] = [];
+    ngOnInit() {}
 
     @Input()
     public entry: any = new PokemonParty();

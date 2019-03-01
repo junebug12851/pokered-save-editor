@@ -18,7 +18,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
                     placeholder='Level'
                     type='number'
                     '[(ngModel)]'='entry.level'
-                    '(ngModelChange)'="entry.updateExp(pkmnArr)"
+                    '(ngModelChange)'="entry.updateExp()"
                     required=''
                     min='1'
                     max='100'
@@ -29,7 +29,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
                 '[(ngModel)]'='entry.species'
                 '[disabled]'='disabled'
                 style='width: 100%;'
-                '(ngModelChange)'="entry.updateExp(pkmnArr)"
+                '(ngModelChange)'="entry.updateExp()"
             )
         .s4
             select-type(
@@ -191,7 +191,7 @@ mat-card.ns(style='margin-bottom: 15px !important')
                                 )
                 mat-tab(label="Exp", '[disabled]'='disabled')
                     .container(
-                        '*ngIf'='entry.isValidPokemon(pkmnArr) !== false'
+                        '*ngIf'='entry.isValidPokemon !== false'
                     )
                         .s12
                             h4(
@@ -201,20 +201,20 @@ mat-card.ns(style='margin-bottom: 15px !important')
                             mat-progress-spinner(
                                 'color'='primary',
                                 'mode'='determinate',
-                                '[value]'='entry.expPercent(pkmnArr) * 100'
+                                '[value]'='entry.expPercent * 100'
                                 'style'="margin: 0 auto;"
                             )
                         .s12
                             mat-slider(
-                                '[min]'='entry.expStart(pkmnArr)',
-                                '[max]'='entry.expEnd(pkmnArr)',
+                                '[min]'='entry.expStart',
+                                '[max]'='entry.expEnd',
                                 '[thumbLabel]'='true',
                                 '[(ngModel)]'="entry.exp"
                                 'style'="width: 100%;"
                                 '[disabled]'='disabled'
                             )
                     .container(
-                        '*ngIf'='entry.isValidPokemon(pkmnArr) === false'
+                        '*ngIf'='entry.isValidPokemon === false'
                     )
                         .s12
                             mat-form-field(style='width: 100%')
