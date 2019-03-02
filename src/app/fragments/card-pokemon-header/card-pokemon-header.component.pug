@@ -5,25 +5,24 @@ mat-card.sticky.ns(style='margin-bottom: 15px !important')
                 '[curHP]'='entry.hp'
                 '[maxHP]'='entry.maxHP || 1'
                 '[disabled]'='disabled'
+                '(input)'='updateHP($event)'
             )
         .row.s9
             name-box(
                 '[value]'='entry.nickname'
             )
-        .s3.right-align
-            mat-form-field(style='width: 100%')
-                mat-label Level
-                input(
-                    matInput=''
-                    placeholder='Level'
-                    type='number'
-                    '[(ngModel)]'='entry.level'
-                    '(ngModelChange)'="entry.updateExp()"
-                    required=''
-                    min='1'
-                    max='100'
-                    '[disabled]'='disabled'
-                )
+        .s3
+            mat-label.label-tiny Level
+            mat-slider(
+                matInput=''
+                '[min]'='1',
+                '[max]'='100',
+                '[thumbLabel]'='true',
+                '[(ngModel)]'="entry.level"
+                '(ngModelChange)'="updateData()"
+                'style'="width: 100%; margin-top: -15px; margin-left: -8px;"
+                '[disabled]'='disabled'
+            )
         .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
             select-species(
                 '[(ngModel)]'='entry.species'

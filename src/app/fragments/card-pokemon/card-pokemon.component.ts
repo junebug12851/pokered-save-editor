@@ -19,6 +19,7 @@ import { OnInit } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 import {GameDataService} from '../../data/gameData.service';
+import { MatSliderChange } from '@angular/material';
 
 @Component({
     selector: 'card-pokemon',
@@ -40,6 +41,14 @@ export class CardPokemonComponent implements OnInit {
 
         if(this.entry.updateStats)
             this.entry.updateStats();
+    }
+
+    public updateHP(event: MatSliderChange) {
+        this.entry.hp = event.value;
+    }
+
+    public get hpStr() {
+        return `${this.entry.hp} / ${this.entry.maxHP || this.entry.hpStat}`
     }
 
     @Input()

@@ -14,7 +14,8 @@
    limitations under the License.
  */
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { MatSliderChange } from '@angular/material';
 
 @Component({
     selector: 'hp-bar',
@@ -33,6 +34,9 @@ export class HPBarComponent {
 
     @Input()
     public disabled: boolean = false;
+
+    @Output()
+    public input: EventEmitter<MatSliderChange> = new EventEmitter<MatSliderChange>();
 
     // Divide curHP into maxHP to get percent (ex: .859245)
     // Then multiply by 100 to get readable and useable percent (ex: 85.9245)

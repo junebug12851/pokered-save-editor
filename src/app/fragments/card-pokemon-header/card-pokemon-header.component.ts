@@ -17,6 +17,7 @@ import { EventEmitter, OnInit } from '@angular/core';
 
 import { Component, Input, Output } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
+import { MatSliderChange } from '@angular/material';
 
 @Component({
     selector: 'card-pokemon-header',
@@ -29,6 +30,17 @@ export class CardPokemonHeader implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    public updateHP(event: MatSliderChange) {
+        this.entry.hp = event.value;
+    }
+
+    public updateData() {
+        this.entry.updateExp();
+
+        if(this.entry.updateStats)
+            this.entry.updateStats();
     }
 
     @Input()

@@ -22,6 +22,34 @@
     background-color: color("grey", "darken-2") !important;
 }
 
+.mat-slider-hp {
+    .mat-slider {
+        padding: 0 !important;
+
+        .mat-slider-track-background {
+            background: none !important;
+        }
+    
+        .mat-slider-track-fill {
+            background: none !important;
+        }
+
+        .mat-slider-thumb {
+            width: 30px;
+            height: 30px;
+            right: -14px;
+            bottom: -15px;
+        }
+    }
+}
+
+.label-tiny {
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: rgba(255,255,255,.7);
+}
+
 .label-padding .mat-form-field-infix {
     padding-top: 18px;
 }
