@@ -232,7 +232,7 @@ export class PokemonBox {
         let record = this.pkmnArr[this.species - 1];
 
         // Check it's a valid Pokemon (not glitch)
-        if(record.pokedex == null || record.pokedex == undefined)
+        if(record == undefined || record.pokedex == null || record.pokedex == undefined)
             return false;
 
         return record;
