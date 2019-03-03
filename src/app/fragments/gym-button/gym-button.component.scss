@@ -20,6 +20,8 @@ button {
     margin-bottom: 10px;
     margin-right: 10px;
     border-radius: 5px;
+    min-width: 100px;
+    background-color: hsl(0, 0%, 40%);
 }
 
 .gym-btn .gym-leader {

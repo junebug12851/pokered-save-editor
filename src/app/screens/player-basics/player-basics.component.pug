@@ -1,8 +1,10 @@
-.container.wrapper
-    .row.s12
-        h5 Player Basics
-    .row.s12.m4
-         name-input-box(
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Name
+            mat-panel-description Player Name &amp; ID
+
+        name-input-box(
             '[maxLength]'="7"
             label="Player Name"
             '[bg]'="true"
@@ -10,20 +12,23 @@
             'template'='<<t>><<c("! I\'ll show")>><br><<c("you how a real")>>'
             '[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerName'
         )
-    .s6.m4.l3
-        mat-form-field
+
+        mat-form-field#player-id
             mat-label Player ID
             input(
                 matInput=''
                 placeholder='Player ID'
                 type='text'
                 '[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerID'
-                required=''
-                pattern='[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]'
                 minlength='4'
                 maxlength='4'
             )
-    .s6.m4.l3
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Money
+            mat-panel-description Player Currency &amp; Casino Coins
+
         mat-form-field
             mat-label Money
             input(
@@ -31,11 +36,10 @@
                 placeholder='Money'
                 type='number'
                 '[(ngModel)]'='fileService.fileDataExpanded.player.basics.money'
-                required=''
                 max='999999'
                 min='0'
             )
-    .s6.m4.l3
+
         mat-form-field
             mat-label Casino Coins
             input(
@@ -43,15 +47,22 @@
                 placeholder='Coins'
                 type='number'
                 '[(ngModel)]'='fileService.fileDataExpanded.player.basics.coins'
-                required=''
                 max='9999'
                 min='0'
             )
-    .s3
+    
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Starter
+            mat-panel-description Player Starter
+
         select-starter('[(ngModel)]'='fileService.fileDataExpanded.player.basics.playerStarter')
-    .row.s12
-        h5 Badges
-    .row.s12
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Badges
+            mat-panel-description Player Gym Badges
+
         gym-button(gymLeader='Brock' gymBadge='Boulder')
         gym-button(gymLeader='Misty' gymBadge='Cascade')
         gym-button(gymLeader='Lt. Surge' gymBadge='Thunder')
