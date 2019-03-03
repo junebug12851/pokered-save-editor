@@ -50,6 +50,14 @@ export class PlayerPokedexComponent implements OnInit {
         return this.pokedexPokemon;
     }
 
+    nameFilter(name: string) {
+        if(name == "Nidoran<f>")
+            return "Nidoran F";
+        else if(name == "Nidoran<m>")
+            return "Nidoran M";
+        else return name;
+    }
+
     getSeen(index: number): boolean {
         return this.fileService.fileDataExpanded.player.pokedex.pokedexSeen[index];
     }

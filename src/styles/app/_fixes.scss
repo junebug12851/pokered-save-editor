@@ -10,3 +10,12 @@ mat-card {
 mat-form-field {
     margin-right: 25px;
 }
+
+mat-list.spaced {
+    .mat-list-item-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

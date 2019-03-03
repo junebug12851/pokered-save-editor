@@ -1,38 +1,34 @@
-mat-list
+mat-list.spaced
     mat-list-item
-        .container
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getSeen(0) ? "primary" : ""'
-                    '(click)'='toggleAllSeen()'
-                )
-                    | Seen
-            .s6.center-align
-                | Toggle All
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getOwn(0) ? "primary" : ""'
-                    '(click)'='toggleAllOwn()'
-                )
-                    | Own
+        button(
+            mat-raised-button=''
+            '[color]'='getSeen(0) ? "primary" : ""'
+            '(click)'='toggleAllSeen()'
+        )
+            | Seen
+        
+        span Toggle All
+
+        button(
+            mat-raised-button=''
+            '[color]'='getOwn(0) ? "primary" : ""'
+            '(click)'='toggleAllOwn()'
+        )
+            | Own
 
     mat-list-item(*ngFor='let entry of entries')
-        .container
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getSeen(entry.pokedex) ? "primary" : ""'
-                    '(click)'='toggleSeen(entry.pokedex)'
-                )
-                    | Seen
-            .s6.center-align
-                | # {{entry.pokedex + 1}} {{entry.name}}
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getOwn(entry.pokedex) ? "primary" : ""'
-                    '(click)'='toggleOwn(entry.pokedex)'
-                )
-                    | Own
+        button(
+            mat-raised-button=''
+            '[color]'='getSeen(entry.pokedex) ? "primary" : ""'
+            '(click)'='toggleSeen(entry.pokedex)'
+        )
+            | Seen
+
+        span # {{entry.pokedex + 1}} {{nameFilter(entry.name)}}
+
+        button(
+            mat-raised-button=''
+            '[color]'='getOwn(entry.pokedex) ? "primary" : ""'
+            '(click)'='toggleOwn(entry.pokedex)'
+        )
+            | Own
