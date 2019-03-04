@@ -55,6 +55,8 @@ export class PlayerPokedexComponent implements OnInit {
             return "Nidoran F";
         else if(name == "Nidoran<m>")
             return "Nidoran M";
+        else if(name == "Mr.Mime")
+            return "Mr. Mime";
         else return name;
     }
 
