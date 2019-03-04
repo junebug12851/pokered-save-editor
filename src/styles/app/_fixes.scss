@@ -11,7 +11,7 @@ mat-form-field {
     margin-right: 25px;
 }
 
-mat-list.spaced {
+mat-list.spaced, mat-list-item.spaced {
     .mat-list-item-content {
         display: flex;
         flex-direction: row;

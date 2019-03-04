@@ -14,19 +14,14 @@
    limitations under the License.
  */
 
-.mat-list {
-    width: 600px;
+.container {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
-// .mat-list-item {
-//     border-bottom: 1px solid transparent;
-//     border-image: linear-gradient(
-
-//         to right,
-//         hsla(0,0%,100%,0) 0%,
-//         hsla(0,0%,100%,.5) 50%,
-//         hsla(0,0%,100%,0) 100%)
-
-//         .5 .001%;
-// }
+entry-item:not(:last-child) {
+    margin-bottom: 15px;
+}

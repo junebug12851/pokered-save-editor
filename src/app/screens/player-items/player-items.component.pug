@@ -1,24 +1,21 @@
-mat-list(style="padding-top: 35px")
+.container
     entry-item(
-        *ngFor='let entry of entries; let i = index; trackBy: entriesTracking'
+        '*ngFor'='let entry of entries; let i = index; trackBy: entriesTracking'
         '[data]'='entries[i]'
         '[disabled]'='false'
         '(remove)'='remListItem(i)'
     )
 
     entry-item(
-        *ngIf='entriesCount == 0'
+        '*ngIf'='entriesCount == 0'
         '[disabled]'='true'
     )
 
-    mat-list-item
-        .container
-            .s8
-                button(
-                    mat-raised-button=''
-                    '(click)'='addListItem()'
-                    '[disabled]'='entriesCount >= 20'
-                    color="primary"
-                    style="width: 100%;"
-                )
-                    span.im.im-plus3
+    button(
+        mat-raised-button=''
+        '(click)'='addListItem()'
+        '[disabled]'='entriesCount >= 20'
+        color="primary"
+        style="width: 100%;"
+    )
+        span.im.im-plus3

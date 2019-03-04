@@ -1,0 +1,19 @@
+// button {
+//     vertical-align: top;
+// }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 5em;
+}
+
+select-item {
+    flex-grow: 2;
+    padding-right: 15px;
+}

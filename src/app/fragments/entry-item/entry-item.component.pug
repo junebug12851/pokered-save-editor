@@ -1,28 +1,25 @@
-mat-list-item
-    .container
-        .s4
-            select-item(
-                '[(ngModel)]'='data.id'
-                '[disabled]'='disabled'
-            )
-        .s2
-            mat-form-field(style="width: 100%;")
-                mat-label Amount
-                input(
-                    matInput=''
-                    placeholder='Amount'
-                    type='number'
-                    '[(ngModel)]'='data.amount'
-                    required=''
-                    max='99'
-                    min='1'
-                    '[disabled]'='disabled'
-                )
-        .s2
-            button(
-                mat-raised-button=''
-                '(click)'='remListItem()'
-                '[disabled]'='disabled'
-                color="accent"
-            )
-                span.im.im-delete
+.container
+    select-item(
+        '[(ngModel)]'='data.id'
+        '[disabled]'='disabled'
+    )
+
+    mat-form-field
+        mat-label Amount
+        input(
+            matInput=''
+            placeholder='Amount'
+            type='number'
+            '[(ngModel)]'='data.amount'
+            max='99'
+            min='1'
+            '[disabled]'='disabled'
+        )
+
+    button(
+        mat-raised-button=''
+        '(click)'='remListItem()'
+        '[disabled]'='disabled'
+        color="accent"
+    )
+        span.im.im-delete
