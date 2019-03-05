@@ -69,6 +69,10 @@ export class StorageAllComponent implements OnInit {
         this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(new PokemonBox());
     }
 
+    containsPokemon(boxNum: number) {
+        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].length > 0;
+    }
+
     ngOnInit() {
 
     }
