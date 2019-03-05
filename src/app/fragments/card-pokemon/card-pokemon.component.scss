@@ -16,6 +16,26 @@ name-input-box {
     margin-top: 15px;
 }
 
+.header {
+    font-weight: bold;
+    width: 5em;
+    display: inline-block;
+    text-align: right;
+    padding-right: 1em;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
 // .card {
 //     border-radius: 5px;
 // }

@@ -41,6 +41,9 @@ export class CardPokemonComponent implements OnInit {
 
         if(this.entry.updateStats)
             this.entry.updateStats();
+
+        if(this.entry.hp > (this.entry.maxHP || this.entry.hpStat))
+            this.entry.hp = (this.entry.maxHP || this.entry.hpStat);
     }
 
     public updateHP(event: MatSliderChange) {
