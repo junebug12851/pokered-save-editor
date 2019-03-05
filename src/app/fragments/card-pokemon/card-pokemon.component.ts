@@ -47,8 +47,8 @@ export class CardPokemonComponent implements OnInit {
         this.entry.hp = event.value;
     }
 
-    public get hpStr() {
-        return `${this.entry.hp} / ${this.entry.maxHP || this.entry.hpStat}`
+    public setScreen(name: string) {
+        this.screen = name;
     }
 
     @Input()
@@ -56,4 +56,7 @@ export class CardPokemonComponent implements OnInit {
 
     @Input()
     public disabled: boolean = false;
+
+    // Current screen to display
+    public screen: string = "basics/name";
 }

@@ -1,80 +1,16 @@
-mat-card.sticky.ns(style='margin-bottom: 15px !important')
-    .container.ns
-        .row.s12
-            hp-bar(
-                '[curHP]'='entry.hp'
-                '[maxHP]'='entry.maxHP || 1'
-                '[disabled]'='disabled'
-                '(input)'='updateHP($event)'
-            )
-        .row.s9
-            name-box(
-                '[value]'='entry.nickname'
-            )
-        .s3
-            mat-label.label-tiny Level
-            mat-slider(
-                matInput=''
-                '[min]'='1',
-                '[max]'='100',
-                '[thumbLabel]'='true',
-                '[(ngModel)]'="entry.level"
-                '(ngModelChange)'="updateData()"
-                'style'="width: 100%; margin-top: -15px; margin-left: -8px;"
-                '[disabled]'='disabled'
-            )
-        .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
-            select-species(
-                '[(ngModel)]'='entry.species'
-                '(ngModelChange)'="entry.updateExp()"
-                '[disabled]'='disabled'
-                style='width: 100%;'
-            )
-        .s4
-            select-type(
-                '[(ngModel)]'='entry.type1'
-                '[disabled]'='disabled'
-                style='width: 100%'
-            )
-        .s4
-            select-type(
-                '[(ngModel)]'='entry.type2'
-                '[disabled]'='disabled'
-                style='width: 100%'
-            )
-
-    button.stick.br(
-        mat-mini-fab='',
-        color='accent',
-        *ngIf='addBtn',
-        '(click)'='onAddClick()'
-    )
-        span.im.im-plus3
-
-    mat-menu(
-        '#menu'="matMenu"
-    )
-        button(
-            mat-menu-item='',
-            color='warn',
-            '(click)'='onRemClick()'
+.row-container
+    .row
+        name-box.grow(
+            '[value]'='entry.nickname'
         )
-            span
-                span.im.im-delete
-                span &nbsp; Delete
 
-    button.stick.br(
-        mat-mini-fab='',
-        *ngIf='remBtn',
-        '[matMenuTriggerFor]'="menu"
-    )
-        span.im.im-th-menu
+        mat-label Lvl: {{entry.level}}
 
-    button.stick.bl(
-        mat-mini-fab='',
-        color='accent',
-        *ngIf='fullViewBtn',
-        '(click)'='onFullViewClick()'
-    )
-        span(*ngIf='fullViewActive == true').im.im-keyboard_arrow_right
-        span(*ngIf='fullViewActive == false').im.im-keyboard_arrow_left
+    .row
+        hp-bar.grow(
+            '[curHP]'='entry.hp'
+            '[maxHP]'='entry.maxHP || 1'
+            '[disabled]'='disabled'
+        )
+
+        span.hp {{entry.hp}} / {{entry.maxHP || this.entry.hpStat || 1}}

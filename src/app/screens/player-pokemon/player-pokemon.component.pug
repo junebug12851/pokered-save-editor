@@ -1,24 +1,36 @@
-.container
-    .l8.s12
-        .container.wrapper.ns-t
-            .s12
-                card-pokemon(
-                    *ngIf='fullView != null'
-                    '[entry]'='fullView'
-                )
-    .l4.s12
-        card-pokemon-header(
-            *ngFor='let entry of entries; let i = index'
+
+mat-accordion
+    mat-expansion-panel(*ngFor='let entry of entries; let i = index', hideToggle='true', '[expanded]'='i == 0')
+        mat-expansion-panel-header(collapsedHeight='75px')
+            card-pokemon-header(
+                '[entry]'='entries[i]'
+            )
+        
+        card-pokemon(
             '[entry]'='entries[i]'
-            '[remBtn]'='true'
-            '[fullViewBtn]'='true'
-            '[fullViewActive]'='fullView == entries[i]'
-            '(onRem)'='onRem(i)'
-            '(onFullView)'='onFullView(entries[i])'
         )
-        card-pokemon-header(
-            *ngIf='entries.length <= 5'
-            '[disabled]'='true'
-            '[addBtn]'='true'
-            '(onAdd)'='onAdd()'
-        )
+
+//- .container
+//-     .l8.s12
+//-         .container.wrapper.ns-t
+//-             .s12
+//-                 card-pokemon(
+//-                     *ngIf='fullView != null'
+//-                     '[entry]'='fullView'
+//-                 )
+//-     .l4.s12
+//-         card-pokemon-header(
+//-             *ngFor='let entry of entries; let i = index'
+//-             '[entry]'='entries[i]'
+//-             '[remBtn]'='true'
+//-             '[fullViewBtn]'='true'
+//-             '[fullViewActive]'='fullView == entries[i]'
+//-             '(onRem)'='onRem(i)'
+//-             '(onFullView)'='onFullView(entries[i])'
+//-         )
+//-         card-pokemon-header(
+//-             *ngIf='entries.length <= 5'
+//-             '[disabled]'='true'
+//-             '[addBtn]'='true'
+//-             '(onAdd)'='onAdd()'
+//-         )

@@ -1,20 +1,19 @@
-.hp-wrapper.mat-slider-hp
-    mat-progress-bar(
-        mode="determinate"
-        '[value]'='percent'
-        style='height: 10px'
+mat-progress-bar(
+    mode="determinate"
+    '[value]'='percent'
+    style='height: 10px'
 
-        '[class.green]'='percent > 50 && !disabled'
-        '[class.amber]'='percent > 20 && percent <= 50 && !disabled'
-        '[class.red]'='percent <= 20 && !disabled'
-        '[class.grey]'='disabled'
-    )
+    '[class.green]'='percent > 50 && !disabled'
+    '[class.amber]'='percent > 20 && percent <= 50 && !disabled'
+    '[class.red]'='percent <= 20 && !disabled'
+    '[class.grey]'='disabled'
+)
 
-    mat-slider(
-        '[min]'='0',
-        '[max]'='maxHP',
-        '[value]'='curHP'
-        'style'="width: 100%; position: absolute; top: -19px; left: 0;"
-        '[disabled]'='disabled'
-        '(input)'='input.emit($event)'
-    )
+    //- mat-slider(
+    //-     '[min]'='0',
+    //-     '[max]'='maxHP',
+    //-     '[value]'='curHP'
+    //-     'style'="width: 100%; position: absolute; top: -19px; left: 0;"
+    //-     '[disabled]'='disabled'
+    //-     '(input)'='input.emit($event)'
+    //- )

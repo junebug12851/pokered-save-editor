@@ -1,27 +1,29 @@
-.card {
-    border-radius: 5px;
+.row-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
-.btn-add.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    vertical-align: top;
 }
 
-.btn-rem.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+span.hp {
+    width: 5em;
+    text-align: right;
 }
 
-.label-title {
-    line-height: 40px;
-}
-
-.clicky {
-    cursor: pointer;
-}
-
-.spacer {
-    padding-bottom: 15px;
+.grow {
+    flex-grow: 2;
 }

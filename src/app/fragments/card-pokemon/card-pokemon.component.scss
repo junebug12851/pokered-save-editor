@@ -1,27 +1,45 @@
-.card {
-    border-radius: 5px;
+.menu button:first-child {
+    padding-left: 0;
 }
 
-.btn-add.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+.align-top {
+    vertical-align: top;
+}
+ 
+name-input-box {
+    display: inline-block;
+    margin-right: 25px;
+    margin-bottom: 25px;
 }
 
-.btn-rem.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+.screen {
+    margin-top: 15px;
 }
 
-.label-title {
-    line-height: 40px;
-}
+// .card {
+//     border-radius: 5px;
+// }
 
-.clicky {
-    cursor: pointer;
-}
+// .btn-add.btn-floating-icon-normal.stick {
+//     bottom: -15px;
+//     right: -15px;
+//     padding-top: 6px !important;
+// }
 
-.spacer {
-    padding-bottom: 15px;
-}
+// .btn-rem.btn-floating-icon-normal.stick {
+//     bottom: -15px;
+//     right: -15px;
+//     padding-top: 6px !important;
+// }
+
+// .label-title {
+//     line-height: 40px;
+// }
+
+// .clicky {
+//     cursor: pointer;
+// }
+
+// .spacer {
+//     padding-bottom: 15px;
+// }

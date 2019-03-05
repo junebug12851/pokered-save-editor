@@ -66,15 +66,8 @@
                         card-pokemon-header(
                             *ngFor='let pokemon of getBoxPokemon(key-1); let i = index; trackBy: trackBoxPokemon'
                             '[entry]'='getBoxPokemon(key-1)[i]'
-                            '[remBtn]'='true'
-                            '[fullViewBtn]'='true'
-                            '[fullViewActive]'='fullView == getBoxPokemon(key-1)[i]'
-                            '(onRem)'='remPokemon(key-1, i)'
-                            '(onFullView)'='onFullView(getBoxPokemon(key-1)[i])'
                         )
                         card-pokemon-header(
                             *ngIf='getBoxPokemon(key-1).length <= 19'
                             '[disabled]'='true'
-                            '[addBtn]'='true'
-                            '(onAdd)'='addPokemon(key-1)'
                         )

@@ -1,10 +1,9 @@
-mat-form-field(style="width: 100%")
+mat-form-field
     mat-label {{label}}
     mat-select(
         '[(ngModel)]'='value'
         '[disabled]'='disabled'
         '(ngModelChange)'='onSpeciesChange($event)'
-        required=''
     )
         mat-option('[value]'="0" '[disabled]'='true') Species
         mat-option(
