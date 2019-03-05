@@ -38,6 +38,10 @@ mat-form-field {
     margin-top: 25px;
 }
 
+mat-expansion-panel:first-child {
+    margin-top: 15px !important;
+}
+
 entry-item:not(:last-child) {
     margin-bottom: 15px;
 }
