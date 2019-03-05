@@ -1,7 +1,9 @@
-.container.wrapper
-    .row.s12
-        h5 Rival Basics
-    .row.s12.m4
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Name
+            mat-panel-description Rival Name
+
         name-input-box(
             '[maxLength]'="7"
             label="Rival Name"
@@ -10,5 +12,10 @@
             'template'='<<t>><<c(": Yeah! Am")>><br><<c("I great or what?")>>'
             '[(ngModel)]'='fileService.fileDataExpanded.rival.rivalName'
         )
-    .s3.m3
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Starter
+            mat-panel-description Rival Starter
+
         select-starter('[(ngModel)]'='fileService.fileDataExpanded.rival.rivalStarter')
