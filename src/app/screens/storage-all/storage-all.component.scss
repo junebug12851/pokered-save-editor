@@ -14,15 +14,58 @@
    limitations under the License.
  */
 
- ul.sticky {
-    overflow: visible;
+.menu button:first-child, .controls button:first-child {
+    padding-left: 0;
 }
 
-.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
+.screen {
+    margin-top: 15px;
 }
 
-.waves-effect {
-    overflow: inherit;
+mat-form-field {
+    width: 5em;
 }
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+entry-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+card-pokemon-header, card-pokemon {
+    width: 100%;
+    height: 100%;
+}
+
+button.addBtn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+// .controls {
+//     display: inline-block;
+//     margin-left: 25px;
+// }
+
+//  ul.sticky {
+//     overflow: visible;
+// }
+
+// .btn-floating-icon-normal.stick {
+//     bottom: -15px;
+//     right: -15px;
+// }
+
+// .waves-effect {
+//     overflow: inherit;
+// }

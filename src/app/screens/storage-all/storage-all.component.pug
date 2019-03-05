@@ -1,73 +1,118 @@
-.container.wrapper
-    .s12
-        h5 Storage
-    .s1
-        mat-form-field
-            mat-label Current Box
-            input(
-                matInput=''
-                placeholder='Current Box'
-                type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.storage.curBox'
-                required=''
-                max='11'
-                min='0'
+mat-menu(
+    '#menuPokemonBoxes'=''
+)
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(1)', '[disabled]'='!boxesPresetup && curBox != 1')
+        span.im.im-checkmark4('*ngIf'='curBox == 1')
+        span &nbsp; Box 1
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(2)', '[disabled]'='!boxesPresetup && curBox != 2')
+        span.im.im-checkmark4('*ngIf'='curBox == 2')
+        span &nbsp; Box 2
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(3)', '[disabled]'='!boxesPresetup && curBox != 3')
+        span.im.im-checkmark4('*ngIf'='curBox == 3')
+        span &nbsp; Box 3
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(4)', '[disabled]'='!boxesPresetup && curBox != 4')
+        span.im.im-checkmark4('*ngIf'='curBox == 4')
+        span &nbsp; Box 4
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(5)', '[disabled]'='!boxesPresetup && curBox != 5')
+        span.im.im-checkmark4('*ngIf'='curBox == 5')
+        span &nbsp; Box 5
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(6)', '[disabled]'='!boxesPresetup && curBox != 6')
+        span.im.im-checkmark4('*ngIf'='curBox == 6')
+        span &nbsp; Box 6
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(7)', '[disabled]'='!boxesPresetup && curBox != 7')
+        span.im.im-checkmark4('*ngIf'='curBox == 7')
+        span &nbsp; Box 7
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(8)', '[disabled]'='!boxesPresetup && curBox != 8')
+        span.im.im-checkmark4('*ngIf'='curBox == 8')
+        span &nbsp; Box 8
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(9)', '[disabled]'='!boxesPresetup && curBox != 9')
+        span.im.im-checkmark4('*ngIf'='curBox == 9')
+        span &nbsp; Box 9
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(10)', '[disabled]'='!boxesPresetup && curBox != 10')
+        span.im.im-checkmark4('*ngIf'='curBox == 10')
+        span &nbsp; Box 10
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(11)', '[disabled]'='!boxesPresetup && curBox != 11')
+        span.im.im-checkmark4('*ngIf'='curBox == 11')
+        span &nbsp; Box 11
+    button('mat-menu-item'='', '(click)'='setScreenPokemon(12)', '[disabled]'='!boxesPresetup && curBox != 12')
+        span.im.im-checkmark4('*ngIf'='curBox == 12')
+        span &nbsp; Box 12
+
+mat-card
+    mat-card-title Storage
+    mat-card-subtitle Pokemon &amp; Item Storage
+    mat-card-content
+        span.menu
+            button(
+                'mat-button'=''
+                '(click)'='setScreenItems()'
+            ) Items
+
+            button(
+                'mat-button'=''
+                '(click)'='setScreenPokemon()'
+            ) Current Pokemon
+
+            button(
+                'mat-button'=''
+                '[matMenuTriggerFor]'="menuPokemonBoxes"
             )
-    .s3
-        mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.storage.changedBoxesBefore'
+                span Other Pokemon
+                span('*ngIf'='viewing != -1') &nbsp; (
+                span.im.im-checkmark4('*ngIf'='viewing == null || curBox == viewing')
+                span('*ngIf'='viewing != -1') Box {{viewing || curBox}})
+
+        .controls
+            button.align-middle(
+                'mat-button'=''
+                '(click)'='makeBoxCurrent()'
+                '*ngIf'='viewing == null || viewing > 0'
+                '[disabled]'='viewing == null || curBox == viewing'
+            ) Make Box Current
+
+            mat-checkbox(
+                '[(ngModel)]'='fileService.fileDataExpanded.storage.changedBoxesBefore'
+                '*ngIf'='viewing == null || viewing > 0'
+            )
+                | Boxes Pre-Setup
+
+.container('*ngIf'='viewing == -1')
+    entry-item(
+        '*ngFor'='let item of boxItems; let i = index; trackBy: trackItems'
+        '[data]'='boxItems[i]'
+        '[disabled]'='false'
+        '(remove)'='remBoxItem(i)'
+    )
+
+    entry-item(
+        '*ngIf'='boxItems.length == 0'
+        '[disabled]'='true'
+    )
+
+    button(
+        mat-raised-button=''
+        '(click)'='addBoxItem()'
+        '[disabled]'='entriesCount >= 50'
+        color="primary"
+        style="width: 100%;"
+    )
+        span.im.im-plus3
+
+mat-accordion('*ngIf'='viewing != -1')
+    mat-expansion-panel(*ngFor='let pokemon of getBoxPokemon(viewingBox); let i = index; trackBy: trackBoxPokemon', hideToggle='true', '[expanded]'='i == 0')
+        mat-expansion-panel-header(collapsedHeight='75px')
+            card-pokemon-header(
+                '[entry]'='getBoxPokemon(viewingBox)[i]'
+            )
+        
+        card-pokemon(
+            '[entry]'='getBoxPokemon(viewingBox)[i]'
+            '(rem)'='remPokemon(viewingBox, i)'
         )
-            | Other boxes are formatted
 
-    .row.s12
-        mat-tab-group
-            mat-tab(label="Items")
-                .container.wrapper
-                    .s12
-                        mat-list(style="padding-top: 35px")
-                            entry-item(
-                                *ngFor='let item of boxItems; let i = index; trackBy: trackItems'
-                                '[data]'='boxItems[i]'
-                                '[disabled]'='false'
-                                '(remove)'='remBoxItem(i)'
-                            )
-
-                            entry-item(
-                                *ngIf='boxItems.length == 0'
-                                '[disabled]'='true'
-                            )
-
-                            mat-list-item
-                                .container
-                                    .s8
-                                        button(
-                                            mat-raised-button=''
-                                            '(click)'='addBoxItem()'
-                                            '[disabled]'='boxItems.length >= 50'
-                                            color="primary"
-                                            style="width: 100%;"
-                                        )
-                                            span.im.im-plus3
-
-            mat-tab(
-                *ngFor='let key of [1,2,3,4,5,6,7,8,9,10,11,12]; trackBy: trackBoxTabs',
-                label="Box {{key}}"
-                '[disabled]'='getBoxDisabled(key-1)'
-            )
-                .container
-                    .l7.s12
-                        .container.ns-t
-                            .s12
-                                card-pokemon(
-                                    *ngIf='fullView != null'
-                                    '[entry]'='fullView'
-                                )
-                    .l5.s12
-                        card-pokemon-header(
-                            *ngFor='let pokemon of getBoxPokemon(key-1); let i = index; trackBy: trackBoxPokemon'
-                            '[entry]'='getBoxPokemon(key-1)[i]'
-                        )
-                        card-pokemon-header(
-                            *ngIf='getBoxPokemon(key-1).length <= 19'
-                            '[disabled]'='true'
-                        )
+button.addBtn(
+    'mat-raised-button'
+    color="primary"
+    '(click)'='addPokemon(viewingBox)'
+    '*ngIf'='viewing != -1 && getBoxPokemon(viewingBox).length < 20'
+) + 

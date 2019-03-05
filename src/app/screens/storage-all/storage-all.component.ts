@@ -47,7 +47,7 @@ export class StorageAllComponent implements OnInit {
     ////////////////////////////////
 
     getBoxPokemon(boxNum: number) {
-        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum];
+        return this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1];
     }
 
     // Should this box be marked as disabled?
@@ -62,22 +62,15 @@ export class StorageAllComponent implements OnInit {
     }
 
     remPokemon(boxNum: number, i: number) {
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum].splice(i, 1);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].splice(i, 1);
     }
 
     addPokemon(boxNum: number) {
-        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum].push(new PokemonBox());
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].push(new PokemonBox());
     }
 
     ngOnInit() {
 
-    }
-
-    onFullView(entry: PokemonBox) {
-        if (this.fullView == entry)
-            this.fullView = null;
-        else
-            this.fullView = entry;
     }
 
     trackItems(index: number) {
@@ -92,5 +85,57 @@ export class StorageAllComponent implements OnInit {
         return index;
     }
 
-    public fullView: PokemonBox | null = null;
+    public setScreenItems() {
+        this.screen = "items";
+        this.viewing = -1;
+    }
+
+    public setScreenPokemon(box: number|null = null) {
+        if(box === null) {
+            this.screen = `pokemon/box${this.curBox}`;
+            this.viewing = null;
+            return;
+        }
+
+        this.screen = `pokemon/box${box}`;
+        this.viewing = box;
+    }
+
+    public makeBoxCurrent() {
+        // Only interested if above 0 and not current box
+        if(this.viewing == null || this.viewing <= 0 || this.viewing == this.curBox)
+            return;
+        
+        this.curBox = this.viewing;
+    }
+
+    // Returns Non-Zero based box number
+    public get curBox() {
+        return this.fileService.fileDataExpanded.storage.curBox + 1;
+    }
+
+    // Sets box number from Non-Zero based number
+    public set curBox(val: number) {
+        this.fileService.fileDataExpanded.storage.curBox = val - 1;
+    }
+
+    public get boxesPresetup() {
+        return this.fileService.fileDataExpanded.storage.changedBoxesBefore;
+    }
+
+    public get viewingBox() {
+        if(this.viewing == null || this.viewing <= 0 || this.viewing == this.curBox)
+            return this.curBox;
+
+        else return this.viewing;
+    }
+
+    // Viewing Items or a Pokemon Box
+    // - 1      Items
+    // null     Current Box
+    // >0       Specific Box
+    public viewing: number|null = -1;
+
+    // Current screen to display
+    public screen: string = "items";
 }
