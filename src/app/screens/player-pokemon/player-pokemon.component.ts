@@ -39,13 +39,4 @@ export class PlayerPokemonComponent {
     onRem(i: number) {
         this.fileService.fileDataExpanded.player.pokemon.playerParty.splice(i, 1);
     }
-
-    onFullView(entry: PokemonParty) {
-        if (this.fullView == entry)
-            this.fullView = null;
-        else
-            this.fullView = entry;
-    }
-
-    public fullView: PokemonParty | null = null;
 }

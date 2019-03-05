@@ -36,6 +36,30 @@ name-input-box {
     text-align: center;
 }
 
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.move-entry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mat-form-field {
+        width: 5em;
+    }
+}
+
+.flex-default-item {
+    flex-grow: 2;
+}
+
 // .card {
 //     border-radius: 5px;
 // }

@@ -1,6 +1,7 @@
 import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
 import {Pokemon} from '../../../../assets/data/pokemon';
+import { GameDataService } from '../../gameData.service';
 
 export class PokemonBox {
     constructor(saveFile?: SaveFileService,
@@ -9,6 +10,9 @@ export class PokemonBox {
         otNameStartOffset?: number,
         index?: number,
         recordSize?: number) {
+
+        this.gd = new GameDataService();
+        this.pkmnArr = this.gd.file("pokemon").data;
 
         if (saveFile !== undefined) {
             this.load(
@@ -36,7 +40,7 @@ export class PokemonBox {
 
         // Grab Pokemon Records
         // These are globally cached so theres no memory issues
-        this.pkmnArr = saveFile.gd.file("pokemon").data;
+        // this.pkmnArr = saveFile.gd.file("pokemon").data;
 
         // Calculate record offset
         const offset = (recordSize * index) + startOffset;
@@ -429,4 +433,5 @@ export class PokemonBox {
     };
     public otName = '';
     public nickname = '';
+    public gd: GameDataService;
 }

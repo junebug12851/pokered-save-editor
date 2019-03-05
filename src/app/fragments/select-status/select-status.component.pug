@@ -1,8 +1,8 @@
-mat-form-field(style="width: 100%")
+mat-form-field
+    mat-label Status
     mat-select(
         '[(ngModel)]'='value'
         '[disabled]'='disabled'
-        required=''
     )
         mat-option('[value]'="255" '[disabled]'='') Choose Status
         mat-option('[value]'="00") ---

@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, Output, EventEmitter } from '@angular/core';
 
 /**
    Copyright 2018 June Hanabi
@@ -59,6 +59,9 @@ export class CardPokemonComponent implements OnInit {
 
     @Input()
     public disabled: boolean = false;
+
+    @Output()
+    public rem: EventEmitter<any> = new EventEmitter<any>();
 
     // Current screen to display
     public screen: string = "basics/name";

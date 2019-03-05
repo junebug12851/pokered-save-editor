@@ -14,6 +14,11 @@ mat-menu(
     button('mat-menu-item'='', '(click)'='setScreen("stats/dv")') DV
     button('mat-menu-item'='', '(click)'='setScreen("stats/exp")') Exp
 
+mat-menu(
+    '#menuShortcuts'=''
+)
+    button('mat-menu-item'='', '(click)'='rem.emit()') Delete
+
 .menu
     button(
         'mat-button'=''
@@ -27,11 +32,18 @@ mat-menu(
 
     button(
         'mat-button'=''
+        '(click)'='setScreen("health")'
     ) Health
 
     button(
         'mat-button'=''
+        '(click)'='setScreen("moves")'
     ) Moves
+
+    button(
+        'mat-button'=''
+        '[matMenuTriggerFor]'="menuShortcuts"
+    ) Shortcuts
 
 .screen(
     '*ngIf'='screen == "basics/name"'
@@ -325,83 +337,84 @@ mat-menu(
             '[disabled]'='disabled'
         )
 
-//- mat-card.ns(style='margin-bottom: 15px !important')
-//-     .container.ns
-//-         .row.s12
-//-             hp-bar(
-//-                 '[curHP]'='entry.hp'
-//-                 '[maxHP]'='entry.maxHP || entry.hpStat || 1'
-//-                 '[disabled]'='disabled'
-//-                 '(input)'='updateHP($event)'
-//-             )
-//-         .row.s12
-//-             mat-tab-group
-//-                 mat-tab(label="Basic", '[disabled]'='disabled')
-//-                     .container
-//-                         .row.s8('*ngIf'='entry.isValidPokemon !== false')
-//-                             mat-form-field(style='width: 100%')
-//-                                 mat-label HP
-//-                                 input(
-//-                                     matInput=''
-//-                                     placeholder='HP'
-//-                                     '[value]'='hpStr'
-//-                                     '[disabled]'='true'
-//-                                 )
-//-                         .row.s4('*ngIf'='entry.isValidPokemon === false')
-//-                             mat-form-field(style='width: 100%')
-//-                                 mat-label Cur HP
-//-                                 input(
-//-                                     matInput=''
-//-                                     placeholder='Cur HP'
-//-                                     type='number'
-//-                                     '[(ngModel)]'='entry.hp'
-//-                                     required=''
-//-                                     '[disabled]'='disabled'
-//-                                 )
-//-                         .s4('*ngIf'='entry.isValidPokemon === false')
-//-                             mat-form-field(style='width: 100%')
-//-                                 mat-label Max HP
-//-                                 input(
-//-                                     matInput=''
-//-                                     placeholder='Max HP'
-//-                                     type='number'
-//-                                     '[(ngModel)]'='entry.maxHP'
-//-                                     required=''
-//-                                     '[disabled]'='disabled || entry.maxHP === undefined'
-//-                                 )
-//-                         .s4
-//-                             select-status(
-//-                                 '[(ngModel)]'='entry.status'
-//-                                 '[disabled]'='disabled'
-//-                                 style='width: 100%'
-//-                             )
-//-                 mat-tab(label="Moves", '[disabled]'='disabled')
-//-                     .container(*ngFor='let move of entry.moves; let i = index')
-//-                         .row.s4
-//-                             select-moves(
-//-                                 '[(ngModel)]'='entry.moves[i].moveID'
-//-                                 '[disabled]'='disabled'
-//-                             )
-//-                         .s4
-//-                             mat-form-field(style='width: 100%')
-//-                                 mat-label Cur PP
-//-                                 input(
-//-                                     matInput=''
-//-                                     placeholder='Cur PP'
-//-                                     type='number'
-//-                                     '[(ngModel)]'='entry.moves[i].pp'
-//-                                     required=''
-//-                                     '[disabled]'='disabled'
-//-                                 )
-//-                         .s4
-//-                             mat-form-field(style='width: 100%')
-//-                                 mat-label PP Up
-//-                                 input(
-//-                                     matInput=''
-//-                                     placeholder='PP Up'
-//-                                     type='number'
-//-                                     '[(ngModel)]'='entry.moves[i].ppUp'
-//-                                     '[disabled]'='disabled'
-//-                                     min='0'
-//-                                     max='3'
-//-                                 )
+.screen(
+    '*ngIf'='screen == "health" && entry.isValidPokemon !== false'
+)
+    select-status.flex-right(
+        '[(ngModel)]'='entry.status'
+        '[disabled]'='disabled'
+    )
+
+    h4.center-text {{entry.hp}}
+
+    mat-progress-spinner.center(
+        'color'='primary',
+        'mode'='determinate',
+        '[value]'='(entry.hp / (entry.maxHP || entry.hpStat || 1)) * 100'
+    )
+
+    mat-slider.max-width(
+        '[min]'='0',
+        '[max]'='entry.maxHP || entry.hpStat || 1',
+        '[thumbLabel]'='true',
+        '[(ngModel)]'="entry.hp"
+        '[disabled]'='disabled'
+    )
+
+.screen(
+    '*ngIf'='screen == "health" && entry.isValidPokemon === false'
+)
+    select-status.inline-block(
+        '[(ngModel)]'='entry.status'
+        '[disabled]'='disabled'
+    )
+
+    mat-form-field
+        mat-label Cur HP
+        input(
+            matInput=''
+            placeholder='Cur HP'
+            type='number'
+            '[(ngModel)]'='entry.hp'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Max HP
+        input(
+            matInput=''
+            placeholder='Cur HP'
+            type='number'
+            '[(ngModel)]'='entry.maxHP'
+            '[disabled]'='disabled || entry.maxHP === undefined'
+        )
+
+.screen(
+    '*ngIf'='screen == "moves"'
+)
+    .move-entry(*ngFor='let move of entry.moves; let i = index')
+        select-moves(
+            '[(ngModel)]'='entry.moves[i].moveID'
+            '[disabled]'='disabled'
+        )
+
+        mat-form-field
+            mat-label Cur PP
+            input(
+                matInput=''
+                placeholder='Cur PP'
+                type='number'
+                '[(ngModel)]'='entry.moves[i].pp'
+                '[disabled]'='disabled'
+            )
+
+        mat-form-field
+            mat-label PP Up
+            mat-select(
+                '[(ngModel)]'='entry.moves[i].ppUp'
+                '[disabled]'='disabled'
+            )
+                mat-option('[value]'='0') 0
+                mat-option('[value]'='1') 1
+                mat-option('[value]'='2') 2
+                mat-option('[value]'='3') 3
