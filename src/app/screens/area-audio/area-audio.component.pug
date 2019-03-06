@@ -1,13 +1,12 @@
-.container.wrapper
-    .row.s12
-        h5 Area Audio
+mat-card
+    mat-card-title Music
+    mat-card-subtitle Currently Playing Music
 
-    .row.l3.s12
-        mat-form-field(style="width: 100%")
+    mat-card-content
+        mat-form-field
             mat-label Music
             mat-select(
                 '[(ngModel)]'='fileService.fileDataExpanded.area.audio.music'
-                required=''
             )
                 mat-option('[value]'='"0"', disabled='') Select Music
                 mat-option('[value]'='"02_BA"') Pallet Town
@@ -57,13 +56,11 @@
                 mat-option('[value]'='"1F_FB"') Meet Male Trainer
                 mat-option('[value]'='"1F_FF"') No Music
 
-    .xl2.l4.m6.s12
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.area.audio.noAudioFadeout'
         )
             span No Audio Fadeout
 
-    .xl3.l5.m6.s12
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.area.audio.preventMusicChange'
         )
