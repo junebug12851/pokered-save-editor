@@ -1,7 +1,8 @@
-.container.wrapper(style="width: 400px")
-    .row.s12
-        mat-label Pre-load initially from built-in list
-        mat-form-field(style="width: 100%;")
+mat-list
+    mat-list-item
+        mat-label Auto load from list
+    mat-list-item
+        mat-form-field
             mat-select(
                 '[(ngModel)]'='this.fileService.fileDataExpanded.area.cachedSprites.spriteSetId'
             )
@@ -10,11 +11,11 @@
                     *ngFor='let entry of preloadFromList; trackBy: spriteListTrackBy',
                     '[value]'='entry.value',
                 ) {{entry.name}}
-    .row.s12
+    mat-list-item
         mat-label Current list of cached sprites
-    .row.s12.ns(*ngFor='let entry of entries; let i = index; trackBy: spriteSetTrackBy;')
-        select-sprite.ns(
+    mat-list-item(*ngFor='let entry of entries; let i = index; trackBy: spriteSetTrackBy;')
+        select-sprite(
             '[(ngModel)]'='entries[i]'
             '[disabled]'='disabled'
-            style="width: 100%;"
+            'label'=""
         )

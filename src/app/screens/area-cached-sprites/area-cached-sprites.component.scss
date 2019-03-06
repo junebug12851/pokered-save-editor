@@ -14,10 +14,31 @@
    limitations under the License.
  */
 
- li {
-     margin-bottom: 10px;
- }
+ mat-list {
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
+    margin: 0 auto;
+}
 
- ul {
-     border: none;
- }
+mat-form-field {
+    width: 100%;
+    margin-right: 0;
+}
+
+select-sprite {
+    width: 100%;
+}
+
+mat-label {
+    color: hsla(0, 0%, 85%, .7);
+    font-size: 14px;
+}
+
+//  li {
+//      margin-bottom: 10px;
+//  }
+
+//  ul {
+//      border: none;
+//  }

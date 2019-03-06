@@ -45,6 +45,9 @@ export class SelectSpriteComponent extends ValueAccessorBase<string> {
     @Input()
     public disabled: boolean = false;
 
+    @Input()
+    public label: string = "Sprite";
+
     get spriteList() {
         const sprites: Sprite[] = _.sortBy(this.gd.file("sprites").data, ["ind"]);
         return sprites;
