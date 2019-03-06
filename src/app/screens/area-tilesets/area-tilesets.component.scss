@@ -13,3 +13,22 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+
+ img {
+   max-width: 256px;
+   width: 100%;
+   display: block;
+   margin: 15px auto;
+ }
+
+ mat-form-field {
+   width: 6em;
+ }
+
+ mat-form-field.double {
+   width: 14em;
+ }
+
+ .container {
+   text-align: center;
+ }
