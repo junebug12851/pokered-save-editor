@@ -13,3 +13,19 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+
+ img {
+   display: block;
+   max-width: 317px;
+   width: 100%;
+ }
+
+ .center {
+   margin: 0 auto;
+   display: table;
+ }
+
+ mat-checkbox {
+   margin-right: 15px;
+   margin-top: 15px;
+ }

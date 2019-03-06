@@ -1,12 +1,12 @@
-.container.wrapper
-    .row.s12
-        h5 Area General
-    .row.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label Contrast
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Contrast
+            mat-panel-description Current Map Contrast
+
+        mat-form-field.center
             mat-select(
                 '[(ngModel)]'='fileService.fileDataExpanded.area.general.contrast'
-                required=''
             )
                 mat-option('[value]'='255', disabled='') Select Contrast Level
                 mat-option('[value]'='0') Normal Contrast
@@ -20,19 +20,22 @@
                 mat-option('[value]'='5') -2b Contrast
                 mat-option('[value]'='7') -3a Contrast
                 mat-option('[value]'='8') -3b Contrast
-    .xl2.l3.m4.s6
+
+        img.center(
+            '[src]'='contrastImgUrl'
+        )
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Other
+            mat-panel-description Other General Area Settings
+
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.area.general.noLetterDelay'
         )
             span No Letter Delay
 
-    .xl2.l3.m4.s6
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.area.general.countPlaytime'
         )
             span Count Playtime
-
-    .row.s12
-        img(
-            '[src]'='contrastImgUrl'
-        )
