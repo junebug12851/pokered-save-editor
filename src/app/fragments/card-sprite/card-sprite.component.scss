@@ -1,35 +1,65 @@
-.card {
-    border-radius: 5px;
+.menu button:first-child {
+    padding-left: 0;
 }
 
-.btn-add.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+.align-top {
+    vertical-align: top;
 }
 
-.btn-rem.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
+.screen {
+    margin-top: 15px;
 }
 
-.label-title {
-    line-height: 40px;
+.header {
+    font-weight: bold;
+    width: 5em;
+    display: inline-block;
+    text-align: right;
+    padding-right: 1em;
 }
 
-.clicky {
-    cursor: pointer;
+.max-width {
+    width: 100%;
 }
 
-.spacer {
-    padding-bottom: 15px;
+.center {
+    margin: 0 auto;
 }
 
-.slim-text {
-    height: 30px !important;
+.center-text {
+    text-align: center;
 }
 
-.card-title {
-    font-size: 20px;
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.move-entry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mat-form-field {
+        width: 5em;
+    }
+}
+
+.flex-default-item {
+    flex-grow: 2;
+}
+
+select-item {
+    width: 12em;
+    display: inline-block;
+}
+
+select-sprite {
+    width: 15em;
+    display: block;
 }

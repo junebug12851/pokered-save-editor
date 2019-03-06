@@ -1,7 +1,7 @@
 import { Sprite } from './../../../assets/data/sprites.d';
 import { GameDataService } from './../../data/gameData.service';
 import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
-import { OnInit } from '@angular/core';
+import { OnInit, EventEmitter, Output } from '@angular/core';
 /**
    Copyright 2018 June Hanabi
 
@@ -43,6 +43,9 @@ export class CardSpriteComponent implements OnInit {
 
     @Input()
     public disabled: boolean = false;
+
+    @Output()
+    public rem: EventEmitter<boolean> = new EventEmitter();
 
     public get spriteName() {
         const data = this.sprites[this.entry.pictureID];
@@ -89,6 +92,13 @@ export class CardSpriteComponent implements OnInit {
     public get isMissable() {
         return this.entry.missableIndex > -1;
     }
+
+    public setScreen(name: string) {
+        this.screen = name;
+    }
+
+    // Current screen to display
+    public screen: string = "basics/sprite";
 
     public sprites: any[] = [];
 }

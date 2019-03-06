@@ -1,24 +1,18 @@
-.container
-    .l8.s12
-        .container.wrapper.ns-t
-            .s12
-                card-sprite(
-                    *ngIf='fullView != null'
-                    '[entry]'='fullView'
-                )
-    .l4.s12
-        card-sprite-header(
-            *ngFor='let entry of entries; let i = index'
+mat-accordion
+    mat-expansion-panel(*ngFor='let entry of entries; let i = index', hideToggle='true', '[expanded]'='i == 0')
+        mat-expansion-panel-header(collapsedHeight='50px')
+            card-sprite-header(
+                '[entry]'='entries[i]'
+            )
+        
+        card-sprite(
             '[entry]'='entries[i]'
-            '[remBtn]'='i != 0'
-            '[fullViewBtn]'='true'
-            '[fullViewActive]'='fullView == entries[i]'
-            '(onRem)'='onRem(i)'
-            '(onFullView)'='onFullView(entries[i])'
+            '(rem)'='onRem(i)'
         )
-        card-sprite-header(
-            *ngIf='entries.length <= 15'
-            '[disabled]'='true'
-            '[addBtn]'='true'
-            '(onAdd)'='onAdd()'
-        )
+
+button.addBtn(
+    'mat-raised-button'
+    color="primary"
+    '(click)'='onAdd()'
+    '*ngIf'='entries.length < 16'
+) +

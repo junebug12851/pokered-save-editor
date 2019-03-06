@@ -1,27 +1,8 @@
-.card {
-    border-radius: 5px;
+.title span.name {
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.btn-add.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
-}
-
-.btn-rem.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
-    padding-top: 6px !important;
-}
-
-.label-title {
-    line-height: 40px;
-}
-
-.clicky {
-    cursor: pointer;
-}
-
-.spacer {
-    padding-bottom: 15px;
+.title span.coords {
+    font-size: 14px;
 }

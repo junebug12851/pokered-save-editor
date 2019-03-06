@@ -1,89 +1,107 @@
-mat-card.sticky.ns(style='margin-bottom: 15px !important')
-    .container.ns
-        .row.s9.s-l.s-t
-            mat-card-title
-                | {{spriteName}}
-        .s3.right-align
-            select-missable(
-                '[(ngModel)]'='entry.missableIndex'
-                '[disabled]'='disabled || isPlayerSprite'
-                '[noneSelectable]'='true'
-                style="width: 100%;"
-            )
-        .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
-            select-sprite(
-                '[(ngModel)]'='entry.pictureID'
-                '[disabled]'='disabled'
-            )
-        .s4
-            mat-form-field(style="width: 100%;")
-                mat-label Movement
-                mat-select(
-                    '[(ngModel)]'='entry.movementByte'
-                    '[disabled]'='disabled'
-                )
-                    mat-option('[value]'='0', '[disabled]'='true') Choose Movement
-                    mat-option('[value]'='255') Stay
-                    mat-option('[value]'='254') Wander
+.title
+    span.name {{spriteName}} &nbsp;
+    span.coords {{coords}}
 
-        // Placeholder until movement is selected
-        .s4(*ngIf='isMovementInvalid')
-            mat-form-field(style="width: 100%;")
-                mat-label Choose Movement
-                mat-select(
-                    '[disabled]'='disabled'
-                )
-                    mat-option('[value]'='', '[disabled]'='true')
+//- .row-container
+//-     .row
+//-         h4 {{spriteName}}
 
-        // Enable only if the card is enabled, range is
-        // applicable here, and the movement byte is set to stay
-        .s4(*ngIf='isMovementStay')
-            mat-form-field(style="width: 100%;")
-                mat-label Stay Direction
-                mat-select(
-                    '[(ngModel)]'='entry.rangeDirByte'
-                    '[disabled]'='disabled || isPlayerSprite'
-                )
-                    mat-option('[value]'='253', '[disabled]'='true') Choose Direction
-                    mat-option('[value]'='208') Down
-                    mat-option('[value]'='209') Up
-                    mat-option('[value]'='210') Left
-                    mat-option('[value]'='211') Right
-                    mat-option('[value]'='255') None
+//-         select-missable(
+//-             '[(ngModel)]'='entry.missableIndex'
+//-             '[disabled]'='true'
+//-             '[noneSelectable]'='true'
+//-         )
 
-        // Enable only if the card is enabled, range is
-        // applicable here, and the movement byte is set to wander
-        .s4(*ngIf='isMovementWander')
-            mat-form-field(style="width: 100%;")
-                mat-label Wandering Range
-                input(
-                    matInput
-                    type='number'
-                    '[(ngModel)]'='entry.rangeDirByte'
-                    '[disabled]'='disabled || isPlayerSprite'
-                )
+//-     .row
+//-         hp-bar.grow(
+//-             '[curHP]'='entry.hp'
+//-             '[maxHP]'='entry.maxHP || 1'
+//-             '[disabled]'='disabled'
+//-         )
 
-    button.stick.br(
-        mat-mini-fab='',
-        color='accent',
-        *ngIf='addBtn',
-        '(click)'='onAddClick()'
-    )
-        span.im.im-plus3
+//-         span.hp {{entry.hp}} / {{entry.maxHP || this.entry.hpStat || 1}}
 
-    button.stick.br(
-        mat-mini-fab='',
-        color='warn',
-        *ngIf='remBtn',
-        '(click)'='onRemClick()'
-    )
-        span.im.im-delete
+//-         .s3.right-align
+//-             select-missable(
+//-                 '[(ngModel)]'='entry.missableIndex'
+//-                 '[disabled]'='disabled || isPlayerSprite'
+//-                 '[noneSelectable]'='true'
+//-                 style="width: 100%;"
+//-             )
+//-         .row.s4.s-lr.s-b(style='padding-bottom: 30px !important;')
+//-             select-sprite(
+//-                 '[(ngModel)]'='entry.pictureID'
+//-                 '[disabled]'='disabled'
+//-             )
+//-         .s4
+//-             mat-form-field(style="width: 100%;")
+//-                 mat-label Movement
+//-                 mat-select(
+//-                     '[(ngModel)]'='entry.movementByte'
+//-                     '[disabled]'='disabled'
+//-                 )
+//-                     mat-option('[value]'='0', '[disabled]'='true') Choose Movement
+//-                     mat-option('[value]'='255') Stay
+//-                     mat-option('[value]'='254') Wander
 
-    button.stick.bl(
-        mat-mini-fab='',
-        color='accent',
-        *ngIf='fullViewBtn',
-        '(click)'='onFullViewClick()'
-    )
-        span(*ngIf='fullViewActive == true').im.im-keyboard_arrow_right
-        span(*ngIf='fullViewActive == false').im.im-keyboard_arrow_left
+//-         // Placeholder until movement is selected
+//-         .s4(*ngIf='isMovementInvalid')
+//-             mat-form-field(style="width: 100%;")
+//-                 mat-label Choose Movement
+//-                 mat-select(
+//-                     '[disabled]'='disabled'
+//-                 )
+//-                     mat-option('[value]'='', '[disabled]'='true')
+
+//-         // Enable only if the card is enabled, range is
+//-         // applicable here, and the movement byte is set to stay
+//-         .s4(*ngIf='isMovementStay')
+//-             mat-form-field(style="width: 100%;")
+//-                 mat-label Stay Direction
+//-                 mat-select(
+//-                     '[(ngModel)]'='entry.rangeDirByte'
+//-                     '[disabled]'='disabled || isPlayerSprite'
+//-                 )
+//-                     mat-option('[value]'='253', '[disabled]'='true') Choose Direction
+//-                     mat-option('[value]'='208') Down
+//-                     mat-option('[value]'='209') Up
+//-                     mat-option('[value]'='210') Left
+//-                     mat-option('[value]'='211') Right
+//-                     mat-option('[value]'='255') None
+
+//-         // Enable only if the card is enabled, range is
+//-         // applicable here, and the movement byte is set to wander
+//-         .s4(*ngIf='isMovementWander')
+//-             mat-form-field(style="width: 100%;")
+//-                 mat-label Wandering Range
+//-                 input(
+//-                     matInput
+//-                     type='number'
+//-                     '[(ngModel)]'='entry.rangeDirByte'
+//-                     '[disabled]'='disabled || isPlayerSprite'
+//-                 )
+
+//-     button.stick.br(
+//-         mat-mini-fab='',
+//-         color='accent',
+//-         *ngIf='addBtn',
+//-         '(click)'='onAddClick()'
+//-     )
+//-         span.im.im-plus3
+
+//-     button.stick.br(
+//-         mat-mini-fab='',
+//-         color='warn',
+//-         *ngIf='remBtn',
+//-         '(click)'='onRemClick()'
+//-     )
+//-         span.im.im-delete
+
+//-     button.stick.bl(
+//-         mat-mini-fab='',
+//-         color='accent',
+//-         *ngIf='fullViewBtn',
+//-         '(click)'='onFullViewClick()'
+//-     )
+//-         span(*ngIf='fullViewActive == true').im.im-keyboard_arrow_right
+//-         span(*ngIf='fullViewActive == false').im.im-keyboard_arrow_left

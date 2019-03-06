@@ -1,9 +1,10 @@
-mat-form-field(style="width: 100%")
+mat-form-field
+    mat-label Select Missable
     mat-select(
         '[(ngModel)]'='value'
         '[disabled]'='disabled'
     )
-        mat-option('[value]'='-1', '[disabled]'='!noneSelectable') &nbsp;
+        mat-option('[value]'='-1', '[disabled]'='!noneSelectable') -----
         mat-option(
             *ngFor='let missable of missableList; let i = index; trackBy: trackBy',
             '[value]'='missable.ind'

@@ -1,302 +1,320 @@
-mat-card.sticky.ns(style='margin-bottom: 15px !important')
-    .container.ns
-        .row.s9.s-l.s-t
-            mat-card-title
-                | {{spriteName}}
-        .s3.right-align
-            select-missable(
-                '[(ngModel)]'='entry.missableIndex'
-                '[disabled]'='disabled || isPlayerSprite'
-                '[noneSelectable]'='true'
-                style="width: 100%;"
-            )
-        .row.s4.s-lr
-            select-sprite(
-                '[(ngModel)]'='entry.pictureID'
-                '[disabled]'='disabled'
-            )
-        .s4
-            mat-form-field(style="width: 100%;")
-                mat-label Movement
-                mat-select(
-                    '[(ngModel)]'='entry.movementByte'
-                    '[disabled]'='disabled'
-                )
-                    mat-option('[value]'='0', '[disabled]'='true') Choose Movement
-                    mat-option('[value]'='255') Stay
-                    mat-option('[value]'='254') Wander
+mat-menu(
+    '#menuBasics'=''
+)
+    button('mat-menu-item'='', '(click)'='setScreen("basics/sprite")') Sprite
+    button('mat-menu-item'='', '(click)'='setScreen("basics/movement")') Movement
 
-        // Placeholder until movement is selected
-        .s4(*ngIf='isMovementInvalid')
-            mat-form-field(style="width: 100%;")
-                mat-label Choose Movement
-                mat-select(
-                    '[disabled]'='disabled'
-                )
-                    mat-option('[value]'='', '[disabled]'='true')
+mat-menu(
+    '#menuPosition'=''
+)
+    button('mat-menu-item'='', '(click)'='setScreen("position/general")') General
+    button('mat-menu-item'='', '(click)'='setScreen("position/details")') Details
 
-        // Enable only if the card is enabled, range is
-        // applicable here, and the movement byte is set to stay
-        .s4(*ngIf='isMovementStay')
-            mat-form-field(style="width: 100%;")
-                mat-label Stay Direction
-                mat-select(
-                    '[(ngModel)]'='entry.rangeDirByte'
-                    '[disabled]'='disabled || isPlayerSprite'
-                )
-                    mat-option('[value]'='253', '[disabled]'='true') Choose Direction
-                    mat-option('[value]'='208') Down
-                    mat-option('[value]'='209') Up
-                    mat-option('[value]'='210') Left
-                    mat-option('[value]'='211') Right
-                    mat-option('[value]'='255') None
+mat-menu(
+    '#menuData'=''
+)
+    button('mat-menu-item'='', '(click)'='setScreen("data/item")', '[disabled]'='isPlayerSprite')
+        span.im.im-checkmark3(*ngIf='isItem')
+        span &nbsp; As Item
 
-        // Enable only if the card is enabled, range is
-        // applicable here, and the movement byte is set to wander
-        .s4(*ngIf='isMovementWander')
-            mat-form-field(style="width: 100%;")
-                mat-label Wandering Range
-                input(
-                    matInput
-                    type='number'
-                    '[(ngModel)]'='entry.rangeDirByte'
-                    '[disabled]'='disabled || isPlayerSprite'
-                )
+    button('mat-menu-item'='', '(click)'='setScreen("data/person")', '[disabled]'='isPlayerSprite')
+        span.im.im-checkmark3(*ngIf='isNonTrainer')
+        span &nbsp; As Person
 
-        .row.s12
-            mat-tab-group
-                mat-tab(label="Position", '[disabled]'='disabled')
-                    .container
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label X
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.xPixels'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Y
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.yPixels'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Map X
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.mapX'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Map Y
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.mapY'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Facing
-                                mat-select(
-                                    '[(ngModel)]'='entry.faceDir'
-                                    '[disabled]'='disabled'
-                                )
-                                    mat-option('[value]'='255', '[disabled]'='true') Choose Facing
-                                    mat-option('[value]'='0') Down
-                                    mat-option('[value]'='4') Up
-                                    mat-option('[value]'='8') Left
-                                    mat-option('[value]'='12') Right
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label In-Grass
-                                mat-select(
-                                    '[(ngModel)]'='entry.grassPriority'
-                                    '[disabled]'='disabled'
-                                )
-                                    mat-option('[value]'='255', '[disabled]'='true') Choose Grass
-                                    mat-option('[value]'='0') No
-                                    mat-option('[value]'='128') Yes
+    button('mat-menu-item'='', '(click)'='setScreen("data/trainer")', '[disabled]'='isPlayerSprite')
+        span.im.im-checkmark3(*ngIf='isTrainer')
+        span &nbsp; As Trainer
 
-                mat-tab('[disabled]'='disabled')
-                    ng-template(mat-tab-label='')
-                        span.im.im-checkmark3(*ngIf='isItem')
-                        | Item
+    mat-divider
+    button('mat-menu-item'='', '(click)'='setScreen("data/missable")' '[disabled]'='isPlayerSprite') Missable
 
-                    .container
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Text ID
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.textID'
-                                    '[disabled]'='disabled || isPlayerSprite'
-                                )
-                        .s4
-                            select-item(
-                                '[(ngModel)]'='entry.trainerClassOrItemID'
-                                '[disabled]'='disabled || isPlayerSprite'
-                                '[noneSelectable]'='true'
-                            )
+mat-menu(
+    '#menuShortcuts'=''
+)
+    button('mat-menu-item'='', '(click)'='rem.emit()') Delete
 
-                mat-tab(label="Person", '[disabled]'='disabled')
-                    ng-template(mat-tab-label='')
-                        span.im.im-checkmark3(*ngIf='isNonTrainer')
-                        | Person
+.menu
+    button(
+        'mat-button'=''
+        '[matMenuTriggerFor]'="menuBasics"
+    ) Basics
 
-                    .container
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Text ID
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.textID'
-                                    '[disabled]'='disabled || isPlayerSprite'
-                                )
+    button(
+        'mat-button'=''
+        '[matMenuTriggerFor]'="menuPosition"
+    ) Position
 
-                mat-tab(label="Trainer", '[disabled]'='disabled')
-                    ng-template(mat-tab-label='')
-                        span.im.im-checkmark3(*ngIf='isTrainer')
-                        | Trainer
+    button(
+        'mat-button'=''
+        '[matMenuTriggerFor]'="menuData"
+    ) Data
 
-                    .container
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Text ID
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.textID'
-                                    '[disabled]'='disabled || isPlayerSprite'
-                                )
-                        .s4
-                            select-trainer(
-                                '[(ngModel)]'='entry.trainerClassOrItemID'
-                                '[disabled]'='disabled || isPlayerSprite'
-                                '[noneSelectable]'='true'
-                            )
+    button(
+        'mat-button'=''
+        '(click)'='setScreen("animation")'
+    ) Animation
 
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Pokemon Set
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.trainerSetID'
-                                    '[disabled]'='disabled || isPlayerSprite'
-                                )
+    button(
+        'mat-button'=''
+        '[matMenuTriggerFor]'="menuShortcuts"
+    ) Actions
 
-                mat-tab(label="Animation", '[disabled]'='disabled')
-                    .container
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Status
-                                mat-select(
-                                    '[(ngModel)]'='entry.movementStatus'
-                                    '[disabled]'='disabled'
-                                )
-                                    mat-option('[value]'='255', '[disabled]'='true') Choose Status
-                                    mat-option('[value]'='0') Uninitialized
-                                    mat-option('[value]'='1') Ready
-                                    mat-option('[value]'='2') Delayed
-                                    mat-option('[value]'='3') Moving
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Frame Index
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.imageIndex'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Frame Offset
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.imageBaseOffset'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Y Step Length
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.yStepVector'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label X Step Length
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.xStepVector'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Frame Delay
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.intraAnimationFrameCounter'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Frame Counter
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.animFrameCounter'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Walk Counter
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.walkAnimationCounter'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Y Track
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.yDisp'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label X Track
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.xDisp'
-                                    '[disabled]'='disabled'
-                                )
-                        .s4
-                            mat-form-field(style="width: 100%;")
-                                mat-label Delay
-                                input(
-                                    matInput
-                                    type='number'
-                                    '[(ngModel)]'='entry.movementDelay'
-                                    '[disabled]'='disabled'
-                                )
+.screen('*ngIf'='screen == "data/missable"')
+    select-missable(
+        '[(ngModel)]'='entry.missableIndex'
+        '[disabled]'='disabled || isPlayerSprite'
+        '[noneSelectable]'='true'
+    )
+
+.screen('*ngIf'='screen == "basics/sprite"')
+    select-sprite(
+        '[(ngModel)]'='entry.pictureID'
+        '[disabled]'='disabled'
+    )
+
+.screen('*ngIf'='screen == "basics/movement"')
+    mat-form-field
+        mat-label Movement
+        mat-select(
+            '[(ngModel)]'='entry.movementByte'
+            '[disabled]'='disabled'
+        )
+            mat-option('[value]'='0', '[disabled]'='true') Choose Movement
+            mat-option('[value]'='255') Stay
+            mat-option('[value]'='254') Wander
+
+    mat-form-field(*ngIf='isMovementStay && !isPlayerSprite')
+        mat-label Stay Direction
+        mat-select(
+            '[(ngModel)]'='entry.rangeDirByte'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+            mat-option('[value]'='253', '[disabled]'='true') Choose Direction
+            mat-option('[value]'='208') Down
+            mat-option('[value]'='209') Up
+            mat-option('[value]'='210') Left
+            mat-option('[value]'='211') Right
+            mat-option('[value]'='255') None
+
+    mat-form-field(*ngIf='isMovementWander && !isPlayerSprite')
+        mat-label Wandering Range
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.rangeDirByte'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+
+.screen('*ngIf'='screen == "position/general"')
+    mat-form-field
+        mat-label X
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.xPixels'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Y
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.yPixels'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Map X
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.mapX'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Map Y
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.mapY'
+            '[disabled]'='disabled'
+        )
+
+.screen('*ngIf'='screen == "position/details"')
+    mat-form-field
+        mat-label Facing
+        mat-select(
+            '[(ngModel)]'='entry.faceDir'
+            '[disabled]'='disabled'
+        )
+            mat-option('[value]'='255', '[disabled]'='true') Choose Facing
+            mat-option('[value]'='0') Down
+            mat-option('[value]'='4') Up
+            mat-option('[value]'='8') Left
+            mat-option('[value]'='12') Right
+
+    mat-form-field
+        mat-label In-Grass
+        mat-select(
+            '[(ngModel)]'='entry.grassPriority'
+            '[disabled]'='disabled'
+        )
+            mat-option('[value]'='255', '[disabled]'='true') Choose Grass
+            mat-option('[value]'='0') No
+            mat-option('[value]'='128') Yes
+
+.screen('*ngIf'='screen == "data/item"')
+    mat-form-field
+        mat-label Text ID
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.textID'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+
+    select-item(
+        '[(ngModel)]'='entry.trainerClassOrItemID'
+        '[disabled]'='disabled || isPlayerSprite'
+        '[noneSelectable]'='true'
+    )
+
+.screen('*ngIf'='screen == "data/person"')
+    mat-form-field
+        mat-label Text ID
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.textID'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+
+.screen('*ngIf'='screen == "data/trainer"')
+    mat-form-field
+        mat-label Text ID
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.textID'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+
+    select-trainer(
+        '[(ngModel)]'='entry.trainerClassOrItemID'
+        '[disabled]'='disabled || isPlayerSprite'
+        '[noneSelectable]'='true'
+    )
+
+    mat-form-field
+        mat-label Pokemon Set
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.trainerSetID'
+            '[disabled]'='disabled || isPlayerSprite'
+        )
+
+.screen('*ngIf'='screen == "animation"')
+    mat-form-field
+        mat-label Status
+        mat-select(
+            '[(ngModel)]'='entry.movementStatus'
+            '[disabled]'='disabled'
+        )
+            mat-option('[value]'='255', '[disabled]'='true') Choose Status
+            mat-option('[value]'='0') Uninitialized
+            mat-option('[value]'='1') Ready
+            mat-option('[value]'='2') Delayed
+            mat-option('[value]'='3') Moving
+
+    mat-form-field
+        mat-label Frame Index
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.imageIndex'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Frame Offset
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.imageBaseOffset'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Y Step Length
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.yStepVector'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label X Step Length
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.xStepVector'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Frame Delay
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.intraAnimationFrameCounter'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Frame Counter
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.animFrameCounter'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Walk Counter
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.walkAnimationCounter'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Y Track
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.yDisp'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label X Track
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.xDisp'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field
+        mat-label Delay
+        input(
+            matInput
+            type='number'
+            '[(ngModel)]'='entry.movementDelay'
+            '[disabled]'='disabled'
+        )

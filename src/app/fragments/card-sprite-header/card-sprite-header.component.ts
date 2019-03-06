@@ -1,6 +1,7 @@
 import { Sprite } from '../../../assets/data/sprites.d';
 import { GameDataService } from './../../data/gameData.service';
-import { EventEmitter, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
+
 /**
    Copyright 2018 June Hanabi
 
@@ -17,7 +18,7 @@ import { EventEmitter, OnInit } from '@angular/core';
    limitations under the License.
  */
 
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SpriteData } from './../../data/savefile-expanded/fragments/SpriteData';
 
 @Component({
@@ -44,37 +45,9 @@ export class CardSpriteHeader implements OnInit {
     @Input()
     public disabled: boolean = false;
 
-    @Input()
-    public addBtn: boolean = false;
-
-    @Input()
-    public remBtn: boolean = false;
-
-    @Input()
-    public fullViewBtn: boolean = false;
-
-    @Input()
-    public fullViewActive: boolean = false;
-
-    @Output()
-    public onAdd: EventEmitter<boolean> = new EventEmitter();
-
-    @Output()
-    public onRem: EventEmitter<boolean> = new EventEmitter();
-
-    @Output()
-    public onFullView: EventEmitter<boolean> = new EventEmitter();
-
-    onAddClick() {
-        this.onAdd.emit(true);
-    }
-
-    onRemClick() {
-        this.onRem.emit(true);
-    }
-
-    onFullViewClick() {
-        this.onFullView.emit(true);
+    public get coords() {
+        const sprite: SpriteData = this.entry;
+        return `(${sprite.mapX}, ${sprite.mapY})`;
     }
 
     public get spriteName() {
