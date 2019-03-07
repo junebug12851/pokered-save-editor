@@ -1,0 +1,31 @@
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // flex-wrap: wrap;
+    // align-content: flex-start;
+
+    margin-bottom: 15px;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .small {
+        min-width: 2em;
+    }
+
+    .medium {
+        min-width: 4em;
+    }
+
+    .large {
+        min-width: 6em;
+    }
+
+    // select-map {
+    //     width: 6em;
+    // }
+}
