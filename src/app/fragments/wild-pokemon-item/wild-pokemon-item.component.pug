@@ -1,29 +1,26 @@
-mat-list-item
-    .container
-        .s4
-            select-species(
-                '[(ngModel)]'='data.pokemon'
-                '[disabled]'='disabled'
-            )
-        .s2
-            mat-form-field(style="width: 100%;")
-                mat-label Level
-                input(
-                    matInput=''
-                    placeholder='Level'
-                    type='number'
-                    '[(ngModel)]'='data.level'
-                    required=''
-                    max='100'
-                    min='1'
-                    '[disabled]'='disabled'
-                )
-        .s3
-            mat-form-field(style="width: 100%;")
-                mat-label Encounter Chance
-                input(
-                    matInput=''
-                    type='text'
-                    '[value]'='encounterChance'
-                    '[disabled]'='true'
-                )
+.row
+    select-species.grow(
+        '[(ngModel)]'='data.pokemon'
+        '[disabled]'='disabled'
+    )
+
+    mat-form-field.small
+        mat-label Level
+        input(
+            matInput=''
+            placeholder='Level'
+            type='number'
+            '[(ngModel)]'='data.level'
+            max='100'
+            min='1'
+            '[disabled]'='disabled'
+        )
+
+    mat-form-field.large
+        mat-label Encounter Chance
+        input(
+            matInput=''
+            type='text'
+            '[value]'='encounterChance'
+            '[disabled]'='true'
+        )

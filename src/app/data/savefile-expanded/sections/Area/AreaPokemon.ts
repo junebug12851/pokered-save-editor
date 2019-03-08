@@ -14,27 +14,55 @@ export class AreaPokemon {
     public load(saveFile: SaveFileService) {
         this.pauseWildEncounters3Steps = saveFile.getBit(0x29D8, 1, 0);
         this.grassRate = saveFile.getByte(0x2B33);
-        const grassPokemon = saveFile.getRange(0x2B34, 20);
 
-        this.grassPokemon = [];
-        for (let i = 0; i < 20; i += 2) {
-            // Add Grass Pokemon
-            this.grassPokemon.push({
-                level: grassPokemon[i],
-                pokemon: grassPokemon[i + 1],
-            });
+        // Load Grass Pokemon only if there's an encounter rate for it
+        if(this.grassRate > 0) {
+            const grassPokemon = saveFile.getRange(0x2B34, 20);
+
+            this.grassPokemon = [];
+            for (let i = 0; i < 20; i += 2) {
+                // Add Grass Pokemon
+                this.grassPokemon.push({
+                    level: grassPokemon[i],
+                    pokemon: grassPokemon[i + 1],
+                });
+            }
+        }
+        else {
+            this.grassPokemon = [];
+            for (let i = 0; i < 10; i ++) {
+                // Add Grass Pokemon
+                this.grassPokemon.push({
+                    level: 1,
+                    pokemon: 0x00,
+                });
+            }
         }
 
         this.waterPokemonRate = saveFile.getByte(0x2B50);
-        const waterPokemon = saveFile.getRange(0x2B51, 20);
 
-        this.waterPokemon = [];
-        for (let i = 0; i < 20; i += 2) {
-            // Add Water Pokemon
-            this.waterPokemon.push({
-                level: waterPokemon[i],
-                pokemon: waterPokemon[i + 1],
-            });
+        // Load Water Pokemon only if there's an encounter rate for it
+        if(this.waterPokemonRate > 0) {
+            const waterPokemon = saveFile.getRange(0x2B51, 20);
+
+            this.waterPokemon = [];
+            for (let i = 0; i < 20; i += 2) {
+                // Add Water Pokemon
+                this.waterPokemon.push({
+                    level: waterPokemon[i],
+                    pokemon: waterPokemon[i + 1],
+                });
+            }
+        }
+        else {
+            this.waterPokemon = [];
+            for (let i = 0; i < 10; i ++) {
+                // Add Grass Pokemon
+                this.waterPokemon.push({
+                    level: 1,
+                    pokemon: 0x00,
+                });
+            }
         }
     }
 
@@ -44,17 +72,25 @@ export class AreaPokemon {
         saveFile.setBit(0x29D8, 1, 0, this.pauseWildEncounters3Steps);
 
         saveFile.setByte(0x2B33, this.grassRate);
-        it.offsetTo(0x2B34);
-        for (let i = 0; i < 10; i++) {
-            it.setByte(this.grassPokemon[i].level);
-            it.setByte(this.grassPokemon[i].pokemon);
+
+        // Save only if there's a grass rate
+        if(this.grassRate > 0) {
+            it.offsetTo(0x2B34);
+            for (let i = 0; i < 10; i++) {
+                it.setByte(this.grassPokemon[i].level);
+                it.setByte(this.grassPokemon[i].pokemon);
+            }
         }
 
         saveFile.setByte(0x2B50, this.waterPokemonRate);
-        it.offsetTo(0x2B51);
-        for (let i = 0; i < 10; i++) {
-            it.setByte(this.waterPokemon[i].level);
-            it.setByte(this.waterPokemon[i].pokemon);
+
+        // Save only if there's a water rate
+        if(this.waterPokemonRate > 0) {
+            it.offsetTo(0x2B51);
+            for (let i = 0; i < 10; i++) {
+                it.setByte(this.waterPokemon[i].level);
+                it.setByte(this.waterPokemon[i].pokemon);
+            }
         }
     }
 

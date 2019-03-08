@@ -1,64 +1,78 @@
-.container.wrapper
-    .s12.l3.m6.s12
-        mat-checkbox(
-            '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.pauseWildEncounters3Steps'
-        )
-            span Pause Encounters for 3 Steps
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title
+                span.im.im-checkmark3(*ngIf='fileService.fileDataExpanded.area.pokemon.grassRate > 0')
+                span &nbsp; Grass Pokemon
+            mat-panel-description Grass Pokemon in Current Map
 
-    .s12
-        h5 Grass Pokemon
-    .xl3.l4.m8.s12
         mat-checkbox(
             '(change)'='grassRateClick()'
             '[checked]'='fileService.fileDataExpanded.area.pokemon.grassRate != 0'
         )
             span Grass Pokemon
-    .xl6.l7.s12
-        mat-form-field(style="width: 100%;")
+
+        mat-form-field
             mat-label Chance of Encounter
             input(
                 matInput=''
                 type='number'
                 '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.grassRate'
-                required=''
                 max='100'
                 min='0'
             )
-    .s12
-        mat-list(style="padding-top: 35px; width: 100%;")
-            wild-pokemon-item(
-                *ngFor='let entry of grassEntries; let i = index; trackBy: entriesTracking'
-                '[data]'='grassEntries[i]'
-                '[disabled]'='fileService.fileDataExpanded.area.pokemon.grassRate == 0'
-                '[index]'='i'
-                '(remove)'='remGrassEntry(i)'
-            )
 
-    .s12
-        h5 Water Pokemon
-    .xl3.l4.m8.s12
+        br
+
+        mat-list
+            mat-list-item('*ngFor'='let entry of grassEntries; let i = index; trackBy: entriesTracking')
+                wild-pokemon-item(
+                    '[data]'='grassEntries[i]'
+                    '[disabled]'='fileService.fileDataExpanded.area.pokemon.grassRate == 0'
+                    '[index]'='i'
+                    '(remove)'='remGrassEntry(i)'
+                )
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title
+                span.im.im-checkmark3(*ngIf='fileService.fileDataExpanded.area.pokemon.waterPokemonRate > 0')
+                span &nbsp; Water Pokemon
+            mat-panel-description Water Pokemon in Current Map
+
         mat-checkbox(
             '(change)'='waterRateClick()'
             '[checked]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate != 0'
         )
             span Water Pokemon
-    .xl6.l7.s12
-        mat-form-field(style="width: 100%;")
+
+        mat-form-field
             mat-label Chance of Encounter
             input(
                 matInput=''
                 type='number'
                 '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate'
-                required=''
                 max='100'
                 min='0'
             )
-    .s12
-        mat-list(style="padding-top: 35px; width: 100%;")
-            wild-pokemon-item(
-                *ngFor='let entry of waterEntries; let i = index; trackBy: entriesTracking'
-                '[data]'='waterEntries[i]'
-                '[disabled]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate == 0'
-                '[index]'='i'
-                '(remove)'='remWaterEntry(i)'
-            )
+
+        br
+
+        mat-list
+            mat-list-item(*ngFor='let entry of waterEntries; let i = index; trackBy: entriesTracking')
+                wild-pokemon-item(
+                    '[data]'='waterEntries[i]'
+                    '[disabled]'='fileService.fileDataExpanded.area.pokemon.waterPokemonRate == 0'
+                    '[index]'='i'
+                    '(remove)'='remWaterEntry(i)'
+                )
+
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Other
+            mat-panel-description Misc &amp; Uncategorized
+
+        mat-checkbox(
+            '[(ngModel)]'='fileService.fileDataExpanded.area.pokemon.pauseWildEncounters3Steps'
+        )
+            span Pause Encounters for 3 Steps

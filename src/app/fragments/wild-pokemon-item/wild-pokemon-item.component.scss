@@ -1,0 +1,30 @@
+.row {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+select-species {
+    max-width: 11em;
+    margin-right: 15px;
+}
+
+mat-form-field.small {
+    min-width: 2em;
+    max-width: 4em;
+    margin-right: 15px;
+}
+
+mat-form-field.large {
+    min-width: 4em;
+    max-width: 8em;
+    margin-right: 15px;
+}
+
+// .expand {
+//     flex-grow: 2;
+// }

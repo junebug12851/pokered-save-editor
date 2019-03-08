@@ -14,10 +14,19 @@
    limitations under the License.
  */
 
-.mat-list {
-    width: 600px;
+ mat-checkbox {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+wild-pokemon-item {
     margin: 0 auto;
 }
+
+// .mat-list {
+//     width: 600px;
+//     margin: 0 auto;
+// }
 
 // .mat-list-item {
 //     border-bottom: 1px solid transparent;
