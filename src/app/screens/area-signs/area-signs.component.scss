@@ -14,21 +14,36 @@
    limitations under the License.
  */
 
-ul.sticky {
-    overflow: visible;
+mat-card {
+    margin-bottom: 25px;
 }
 
-.btn-floating-icon-normal.stick {
-    bottom: -15px;
-    right: -15px;
+button {
+    width: 100%;
+    max-width: 27em;
+    margin: 0 auto;
+    display: block;
 }
 
-.waves-effect {
-    overflow: inherit;
+sign-item {
+    width: 100%;
 }
 
-.slim-list {
-    width: 75%;
-    min-width: 600px;
-    border: none;
-}
+// ul.sticky {
+//     overflow: visible;
+// }
+
+// .btn-floating-icon-normal.stick {
+//     bottom: -15px;
+//     right: -15px;
+// }
+
+// .waves-effect {
+//     overflow: inherit;
+// }
+
+// .slim-list {
+//     width: 75%;
+//     min-width: 600px;
+//     border: none;
+// }

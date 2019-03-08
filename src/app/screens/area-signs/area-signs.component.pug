@@ -1,25 +1,45 @@
-.container.wrapper
-    .s12
-        h5 Signs
+mat-card
+    mat-card-title Signs
+    mat-card-subtitle Signs on current map
 
-    .row.s12(*ngFor='let sign of signs; let i = index; trackBy: trackByFn')
+mat-list
+    mat-list-item(*ngFor='let sign of signs; let i = index; trackBy: trackByFn')
         sign-item(
             '[data]'='signs[i]'
             '[disabled]'='false'
             '(remove)'='remListItem(i)'
         )
 
-    .row.s12(*ngIf='signs.length == 0')
-        sign-item(
-            '[disabled]'='true'
-        )
+button(
+    mat-raised-button=''
+    '*ngIf'='signs.length < 16'
+    '(click)'='addListItem()'
+    color="primary"
+)
+    span.im.im-plus3
 
-    .row.s12
-        button(
-            mat-raised-button=''
-            '(click)'='addListItem()'
-            '[disabled]'='signs.length >= 16'
-            color="primary"
-            style="width: 100%;"
-        )
-            span.im.im-plus3
+//- .container.wrapper
+//-     .s12
+//-         h5 Signs
+
+//-     .row.s12(*ngFor='let sign of signs; let i = index; trackBy: trackByFn')
+//-         sign-item(
+//-             '[data]'='signs[i]'
+//-             '[disabled]'='false'
+//-             '(remove)'='remListItem(i)'
+//-         )
+
+//-     .row.s12(*ngIf='signs.length == 0')
+//-         sign-item(
+//-             '[disabled]'='true'
+//-         )
+
+//-     .row.s12
+//-         button(
+//-             mat-raised-button=''
+//-             '(click)'='addListItem()'
+//-             '[disabled]'='signs.length >= 16'
+//-             color="primary"
+//-             style="width: 100%;"
+//-         )
+//-             span.im.im-plus3
