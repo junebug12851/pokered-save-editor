@@ -1,69 +1,59 @@
-.container
-    .xl2.l3.m6.s12
-        select-map-width(
-            '[(ngModel)]'='data.map'
-            label='Map'
-            '[disabled]'='disabled'
-        )
-    .xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label UL Corner
-            input(
-                matInput=''
-                type='text'
-                '[(ngModel)]'='data.viewPtr'
-                required=''
-                '[disabled]'='disabled'
-            )
+select-map-width(
+    '[(ngModel)]'='data.map'
+    label='Map'
+    '[disabled]'='disabled'
+)
 
-    .row.xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label Strip Src
-            input(
-                matInput=''
-                type='number'
-                '[(ngModel)]'='data.stripSrc'
-                required=''
-                '[disabled]'='disabled'
-            )
-    .xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label Strip Dest
-            input(
-                matInput=''
-                type='number'
-                '[(ngModel)]'='data.stripDest'
-                required=''
-                '[disabled]'='disabled'
-            )
-    .xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label Strip Width
-            input(
-                matInput=''
-                type='number'
-                '[(ngModel)]'='data.stripWidth'
-                required=''
-                '[disabled]'='disabled'
-            )
+mat-form-field
+    mat-label UL Corner
+    input(
+        matInput=''
+        type='text'
+        '[(ngModel)]'='data.viewPtr'
+        '[disabled]'='disabled'
+    )
 
-    .row.xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label X-Align
-            input(
-                matInput=''
-                type='number'
-                '[(ngModel)]'='data.xAlign'
-                required=''
-                '[disabled]'='disabled'
-            )
-    .xl1.l2.m4.s12
-        mat-form-field(style="width: 100%")
-            mat-label Y-Align
-            input(
-                matInput=''
-                type='number'
-                '[(ngModel)]'='data.yAlign'
-                required=''
-                '[disabled]'='disabled'
-            )
+mat-form-field
+    mat-label Strip Src
+    input(
+        matInput=''
+        type='number'
+        '[(ngModel)]'='data.stripSrc'
+        '[disabled]'='disabled'
+    )
+
+mat-form-field
+    mat-label Strip Dest
+    input(
+        matInput=''
+        type='number'
+        '[(ngModel)]'='data.stripDest'
+        '[disabled]'='disabled'
+    )
+
+mat-form-field
+    mat-label Strip Width
+    input(
+        matInput=''
+        type='number'
+        '[(ngModel)]'='data.stripWidth'
+        '[disabled]'='disabled'
+    )
+
+mat-form-field
+    mat-label X-Align
+    input(
+        matInput=''
+        type='number'
+        '[(ngModel)]'='data.xAlign'
+        '[disabled]'='disabled'
+    )
+
+mat-form-field
+    mat-label Y-Align
+    input(
+        matInput=''
+        type='number'
+        '[(ngModel)]'='data.yAlign'
+        '[disabled]'='disabled'
+    )
