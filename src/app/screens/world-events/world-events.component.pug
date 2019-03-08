@@ -1,46 +1,44 @@
-mat-list(style="margin-top: 75px;")
+mat-card
+    mat-card-title Global Events
+    mat-card-subtitle All events completed or not across the entire game
+    mat-card-content
+        p Many are unused, duplicates, vague/unclear, multi-purpose, and/or error prone
+
+mat-list
     mat-list-item
-        .container
-            .s12
-                mat-form-field(
-                    style="width: 100%;"
-                    )
-                    //mat-label(style="height: 36px;") Search
-                    span(matPrefix='')
-                        span.im.im-search3 &nbsp;
-                    input(
-                        matInput=''
-                        type='text'
-                        '[(ngModel)]'='search'
-                    )
+        mat-form-field.expand
+            span(matPrefix='')
+                span.im.im-search3 &nbsp;
+            input(
+                matInput=''
+                type='text'
+                '[(ngModel)]'='search'
+            )
 
     mat-list-item
-        .container
-            .s6
-                | Toggle All
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getEvent(0) ? "primary" : ""'
-                    '(click)'='toggleAllEvents()'
-                )
-                    span.im.im-checkmark4
+        button(
+            mat-raised-button=''
+           '[color]'='getEvent(0) ? "primary" : ""'
+            '(click)'='toggleAllEvents()'
+        )
+            span.im.im-checkmark4
+        
+        span &nbsp; Toggle All
 
     mat-list-item(*ngFor='let entry of paginatedEntries')
-        .container
-            .s6
-                | {{entry.name}}
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getEvent(entry.ind) ? "primary" : ""'
-                    '(click)'='toggleEvent(entry.ind)'
-                )
-                    span.im.im-checkmark4
+        button(
+            mat-raised-button=''
+            '[color]'='getEvent(entry.ind) ? "primary" : ""'
+            '(click)'='toggleEvent(entry.ind)'
+        )
+            span.im.im-checkmark4
+
+        span &nbsp; {{entry.name}}
+
 mat-paginator(
     '[length]'='entries.length'
-    '[pageSize]'='25'
-    '[pageSizeOptions]'="[25, 50, 100]"
+    '[pageSize]'='10'
+    '[pageSizeOptions]'="[5, 10, 15, 25, 50, 100]"
     '[showFirstLastButtons]'='true'
     '(page)'='paginatorChange($event)'
 )

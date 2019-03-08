@@ -85,6 +85,6 @@ export class WorldEventsComponent implements OnInit {
     }
 
     public pageIndex: number = 0;
-    public pageSize: number = 25;
+    public pageSize: number = 10;
     public search: string = "";
 }
