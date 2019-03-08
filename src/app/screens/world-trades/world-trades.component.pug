@@ -1,29 +1,55 @@
-.container.wrapper
-    .s12
-        h5 Trades
+mat-card
+    mat-card-title Trades
+    mat-card-subtitle Completed Trades
+    mat-card-content
+        p Some of these were never inlcuded in the game
 
 mat-list
     mat-list-item
-        .container
-            .s9
-                | Toggle All
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getTrade(0) ? "primary" : ""'
-                    '(click)'='toggleAllTrades()'
-                )
-                    span.im.im-checkmark4
+        button(
+            mat-raised-button=''
+            '[color]'='getTrade(0) ? "primary" : ""'
+            '(click)'='toggleAllTrades()'
+        )
+            span.im.im-checkmark4
+        
+        span &nbsp; Toggle All
 
-    mat-list-item(*ngFor='let entry of trades; let i = index')
-        .container
-            .s9
-                | {{entry.give}} for {{entry.get}} ({{entry.nickname}})
+    mat-list-item(*ngFor='let entry of trades; let i = index;')
+        button(
+            mat-raised-button=''
+            '[color]'='getTrade(i) ? "primary" : ""'
+            '(click)'='toggleTrade(i)'
+        )
+            span.im.im-checkmark4
 
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getTrade(i) ? "primary" : ""'
-                    '(click)'='toggleTrade(i)'
-                )
-                    span.im.im-checkmark4
+        span.name &nbsp; {{entry.give}}
+        span  &nbsp; for &nbsp;
+        span.name {{entry.get}}
+        span.small &nbsp; ({{entry.nickname}})
+
+//- mat-list
+//-     mat-list-item
+//-         .container
+//-             .s9
+//-                 | Toggle All
+//-             .s3
+//-                 button(
+//-                     mat-raised-button=''
+//-                     '[color]'='getTrade(0) ? "primary" : ""'
+//-                     '(click)'='toggleAllTrades()'
+//-                 )
+//-                     span.im.im-checkmark4
+
+//-     mat-list-item(*ngFor='let entry of trades; let i = index')
+//-         .container
+//-             .s9
+//-                 | {{entry.give}} for {{entry.get}} ({{entry.nickname}})
+
+//-             .s3
+//-                 button(
+//-                     mat-raised-button=''
+//-                     '[color]'='getTrade(i) ? "primary" : ""'
+//-                     '(click)'='toggleTrade(i)'
+//-                 )
+//-                     span.im.im-checkmark4
