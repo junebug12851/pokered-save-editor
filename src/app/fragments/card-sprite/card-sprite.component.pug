@@ -31,7 +31,7 @@ mat-menu(
 mat-menu(
     '#menuShortcuts'=''
 )
-    button('mat-menu-item'='', '(click)'='rem.emit()') Delete
+    button('mat-menu-item'='', '(click)'='rem.emit()', '[disabled]'='isPlayerSprite') Delete
 
 .menu
     button(
