@@ -1,7 +1,7 @@
 .row {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     // flex-wrap: wrap;
@@ -11,6 +11,7 @@
 
     mat-form-field {
         width: 100%;
+        max-width: 5em;
     }
 
     .small {

@@ -30,6 +30,12 @@ mat-checkbox {
 
 .stretch {
   width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.max-warp {
+  max-width: 40em;
 }
 
 // ul.sticky {

@@ -98,7 +98,7 @@ mat-accordion
                 '(remove)'='remListItem(i)'
             )
 
-        button.stretch(
+        button.stretch.max-warp(
             '*ngIf'='warpPoints.length < 32'
             mat-raised-button=''
             '(click)'='addListItem()'
