@@ -17,6 +17,10 @@ import { GameDataService } from './../../data/gameData.service';
 
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
+import { PageEvent } from '@angular/material';
+
+//@ts-ignore
+const _ = window.require("lodash");
 
 @Component({
     selector: 'screen-world-missables',
@@ -36,6 +40,25 @@ export class WorldMissablesComponent implements OnInit {
 
     get missables() {
         return this.gd.file("missables").data;
+    }
+
+    get missablesFiltered() {
+        const missables = this.missables;
+
+        if (this.search == "")
+            return missables;
+
+        return _.filter(missables, (el: any) => {
+            const nameUpper = _.upperCase(el.name);
+            const searchUpper = _.upperCase(this.search);
+            return nameUpper.includes(searchUpper);
+        });
+    }
+
+    get paginatedMissables() {
+        const start = this.pageIndex * this.pageSize;
+        const end = start + this.pageSize;
+        return this.missablesFiltered.slice(start, end);
     }
 
     getMissable(index: number): boolean {
@@ -59,4 +82,24 @@ export class WorldMissablesComponent implements OnInit {
             this.setMissable(i, !missable0);
         }
     }
+
+    missableToIndex(missable: any) {
+        for(let i = 0; i < this.missables.length; i++) {
+            const _missable = this.missables[i];
+            if(missable.name == _missable.name) {
+                return i;
+            }
+        }
+
+        return null;
+    }
+
+    paginatorChange(event: PageEvent) {
+        this.pageIndex = event.pageIndex;
+        this.pageSize = event.pageSize;
+    }
+
+    public pageIndex: number = 0;
+    public pageSize: number = 10;
+    public search: string = "";
 }

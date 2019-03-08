@@ -1,29 +1,44 @@
-.container.wrapper
-    .s12
-        h5 Missables
+mat-card
+    mat-card-title Missables
+    mat-card-subtitle Disabled toggleable map scripts and/or sprites
+    mat-card-content
+        p Many are unused, duplicates, vague/unclear, multi-purpose, temporary, and/or error prone
 
 mat-list
     mat-list-item
-        .container
-            .s9
-                | Toggle All
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getMissable(0) ? "primary" : ""'
-                    '(click)'='toggleAllMissables()'
-                )
-                    span.im.im-checkmark4
+        mat-form-field.expand
+            span(matPrefix='')
+                span.im.im-search3 &nbsp;
+            input(
+                matInput=''
+                type='text'
+                '[(ngModel)]'='search'
+            )
 
-    mat-list-item(*ngFor='let entry of missables; let i = index')
-        .container
-            .s9
-                | {{entry.name}}
+    mat-list-item
+        button(
+            mat-raised-button=''
+           '[color]'='getMissable(0) ? "primary" : ""'
+            '(click)'='toggleAllMissables()'
+        )
+            span.im.im-checkmark4
+        
+        span &nbsp; Toggle All
 
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getMissable(i) ? "primary" : ""'
-                    '(click)'='toggleMissable(i)'
-                )
-                    span.im.im-checkmark4
+    mat-list-item(*ngFor='let entry of paginatedMissables; let i = index')
+        button(
+            mat-raised-button=''
+            '[color]'='getMissable(missableToIndex(entry)) ? "primary" : ""'
+            '(click)'='toggleEvent(missableToIndex(entry))'
+        )
+            span.im.im-checkmark4
+
+        span &nbsp; {{entry.name}}
+
+mat-paginator(
+    '[length]'='missablesFiltered.length'
+    '[pageSize]'='10'
+    '[pageSizeOptions]'="[5, 10, 15, 25, 50, 100]"
+    '[showFirstLastButtons]'='true'
+    '(page)'='paginatorChange($event)'
+)
