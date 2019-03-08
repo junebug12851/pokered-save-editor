@@ -1,61 +1,76 @@
-.container.wrapper
-    .s12
-        h5 Hidden Items
+mat-card
+    mat-card-title Hidden Items &amp; Coins
+    mat-card-subtitle All discovered hidden items &amp; coins
 
-mat-list
-    mat-list-item
-        .container
-            .s7
-                | Toggle All
-            .s3
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Hidden Items
+            mat-panel-description All discovered hidden items
+
+        mat-list
+            mat-list-item
+                mat-form-field.expand
+                    span(matPrefix='')
+                        span.im.im-search3 &nbsp;
+                    input(
+                        matInput=''
+                        type='text'
+                        '[(ngModel)]'='search'
+                    )
+
+            mat-list-item
                 button(
                     mat-raised-button=''
                     '[color]'='getItem(0) ? "primary" : ""'
                     '(click)'='toggleAllItems()'
                 )
                     span.im.im-checkmark4
+                
+                span &nbsp; Toggle All
 
-    mat-list-item(*ngFor='let entry of items; let i = index')
-        .container
-            .s4
-                | {{entry.map}}
-            .s3
-                | {{entry.x}},{{entry.y}}
-            .s3
+            mat-list-item(*ngFor='let entry of paginatedItems; let i = index;')
                 button(
                     mat-raised-button=''
-                    '[color]'='getItem(i) ? "primary" : ""'
-                    '(click)'='toggleItem(i)'
+                    '[color]'='getItem(itemToIndex(entry)) ? "primary" : ""'
+                    '(click)'='toggleItem(itemToIndex(entry))'
                 )
                     span.im.im-checkmark4
 
-.container.wrapper
-    .s12
-        h5 Hidden Coins
+                span &nbsp; {{entry.map}}
+                span.small &nbsp; ({{entry.x}}, {{entry.y}})
+        
+        mat-paginator(
+            '[length]'='itemsFiltered.length'
+            '[pageSize]'='10'
+            '[pageSizeOptions]'="[5, 10, 15, 25, 50, 100]"
+            '[showFirstLastButtons]'='true'
+            '(page)'='paginatorChange($event)'
+        )
 
-mat-list
-    mat-list-item
-        .container
-            .s7
-                | Toggle All
-            .s3
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Hidden Coins
+            mat-panel-description All discovered hidden coins
+
+        mat-list
+            mat-list-item
                 button(
                     mat-raised-button=''
                     '[color]'='getCoin(0) ? "primary" : ""'
                     '(click)'='toggleAllCoins()'
                 )
                     span.im.im-checkmark4
+                
+                span &nbsp; Toggle All
 
-    mat-list-item(*ngFor='let entry of coins; let i = index')
-        .container
-            .s4
-                | {{entry.map}}
-            .s3
-                | {{entry.x}},{{entry.y}}
-            .s3
+            mat-list-item(*ngFor='let entry of coins; let i = index;')
                 button(
                     mat-raised-button=''
                     '[color]'='getCoin(i) ? "primary" : ""'
                     '(click)'='toggleCoin(i)'
                 )
                     span.im.im-checkmark4
+
+                span &nbsp; {{entry.map}}
+                span.small &nbsp; ({{entry.x}}, {{entry.y}})
