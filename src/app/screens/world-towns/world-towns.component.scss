@@ -13,13 +13,19 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
+ 
+ mat-card {
+    margin-bottom: 25px;
+}
 
-.mat-list {
-    width: 600px;
+mat-list {
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
     margin: 0 auto;
 }
 
-.mat-list-item {
+mat-list-item:not(:last-child) {
     border-bottom: 1px solid transparent;
     border-image: linear-gradient(
 
@@ -29,4 +35,12 @@
         hsla(0,0%,100%,0) 100%)
 
         .5 .001%;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.name {
+    font-weight: bold;
 }

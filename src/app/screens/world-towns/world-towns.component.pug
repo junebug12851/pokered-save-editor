@@ -1,29 +1,24 @@
-.container.wrapper
-    .s12
-        h5 Towns
+mat-card
+    mat-card-title Towns
+    mat-card-subtitle Towns &amp; Cities visited in person
 
 mat-list
     mat-list-item
-        .container
-            .s9
-                | Toggle All
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getTown(0) ? "primary" : ""'
-                    '(click)'='toggleAllTowns()'
-                )
-                    span.im.im-checkmark4
+        button(
+            mat-raised-button=''
+            '[color]'='getTown(0) ? "primary" : ""'
+            '(click)'='toggleAllTowns()'
+        )
+            span.im.im-checkmark4
+        
+        span &nbsp; Toggle All
 
-    mat-list-item(*ngFor='let entry of towns; let i = index')
-        .container
-            .s9
-                | {{entry.name}}
+    mat-list-item(*ngFor='let entry of towns; let i = index;')
+        button(
+            mat-raised-button=''
+            '[color]'='getTown(i) ? "primary" : ""'
+            '(click)'='toggleTown(i)'
+        )
+            span.im.im-checkmark4
 
-            .s3
-                button(
-                    mat-raised-button=''
-                    '[color]'='getTown(i) ? "primary" : ""'
-                    '(click)'='toggleTown(i)'
-                )
-                    span.im.im-checkmark4
+        span &nbsp; {{entry.name}}
