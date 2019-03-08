@@ -18,6 +18,11 @@ import { GameDataService } from './../../data/gameData.service';
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 
+import { PageEvent } from '@angular/material';
+
+//@ts-ignore
+const _ = window.require("lodash");
+
 @Component({
     selector: 'screen-world-scripts',
     templateUrl: './world-scripts.component.pug',
@@ -37,4 +42,43 @@ export class WorldScriptsComponent implements OnInit {
     get scripts() {
         return this.gd.file("scripts").data;
     }
+
+    get scriptsFiltered() {
+        const scripts = this.scripts;
+
+        if (this.search == "")
+            return scripts;
+
+        return _.filter(scripts, (el: any) => {
+            const nameUpper = _.upperCase(el.readableName);
+            const searchUpper = _.upperCase(this.search);
+            return nameUpper.includes(searchUpper);
+        });
+    }
+
+    get paginatedScripts() {
+        const start = this.pageIndex * this.pageSize;
+        const end = start + this.pageSize;
+        return this.scriptsFiltered.slice(start, end);
+    }
+
+    scriptToIndex(script: any) {
+        for(let i = 0; i < this.scripts.length; i++) {
+            const _script = this.scripts[i];
+            if(script.readableName == _script.readableName) {
+                return i;
+            }
+        }
+
+        return null;
+    }
+
+    paginatorChange(event: PageEvent) {
+        this.pageIndex = event.pageIndex;
+        this.pageSize = event.pageSize;
+    }
+
+    public pageIndex: number = 0;
+    public pageSize: number = 10;
+    public search: string = "";
 }

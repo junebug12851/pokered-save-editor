@@ -14,7 +14,29 @@
    limitations under the License.
  */
 
-.mat-list {
-    width: 400px;
+.expand {
+    width: 100%;
+}
+
+mat-list {
+    width: 100%;
+    max-width: 500px;
+    min-width: 350px;
     margin: 0 auto;
+}
+
+mat-list-item:not(:last-child) {
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+
+        to right,
+        hsla(0,0%,100%,0) 0%,
+        hsla(0,0%,100%,.5) 50%,
+        hsla(0,0%,100%,0) 100%)
+
+        .5 .001%;
+}
+
+mat-list-item:first-child {
+    border-bottom: 0;
 }

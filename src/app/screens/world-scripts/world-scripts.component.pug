@@ -1,13 +1,32 @@
-.container.wrapper
-    .s12
-        h5 Next Script
+mat-card
+    mat-card-title Next Script Pointers
+    mat-card-subtitle Map script pointers to next map script to run
+    mat-card-content
+        p These are often very arbitrary
 
 mat-list
-    mat-list-item(*ngFor='let entry of scripts; let i = index')
-        mat-form-field(style='width: 100%;')
-            mat-label {{entry.readableName}}
+    mat-list-item
+        mat-form-field.expand
+            span(matPrefix='')
+                span.im.im-search3 &nbsp;
             input(
-                matInput
-                type='number'
-                '[(ngModel)]'='fileService.fileDataExpanded.world.scripts.currentScriptProgress[scripts[i].varName]'
+                matInput=''
+                type='text'
+                '[(ngModel)]'='search'
             )
+
+mat-form-field(*ngFor='let entry of paginatedScripts; let i = index')
+    mat-label {{entry.readableName}}
+    input(
+        matInput
+        type='number'
+        '[(ngModel)]'='fileService.fileDataExpanded.world.scripts.currentScriptProgress[scripts[scriptToIndex(entry)].varName]'
+    )
+
+mat-paginator(
+    '[length]'='scriptsFiltered.length'
+    '[pageSize]'='10'
+    '[pageSizeOptions]'="[5, 10, 15, 25, 50, 100]"
+    '[showFirstLastButtons]'='true'
+    '(page)'='paginatorChange($event)'
+)
