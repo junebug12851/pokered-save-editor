@@ -1,0 +1,18 @@
+mat-checkbox {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.vertical {
+    display: inline-block;
+    margin-right: 20px;
+
+    mat-label {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    mat-button-toggle-group {
+        width: min-content;
+    }
+}

@@ -1,24 +1,25 @@
-.container.wrapper
-    .s12
-        h5 Maps
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Maps
+            mat-panel-description Map Data
 
-    .xl2.l3.m6.s12
         select-map(
             label='Last Map'
             '[(ngModel)]'='fileService.fileDataExpanded.world.general.lastMap'
         )
 
-    .xl2.l3.m6.s12
         select-map(
             label='Last Blackout'
             '[(ngModel)]'='fileService.fileDataExpanded.world.general.lastBlackoutMap'
         )
 
-    .s12
-        h5 Options
+    mat-expansion-panel
+        mat-expansion-panel-header
+            mat-panel-title Options
+            mat-panel-description Game Options
 
-    .xl2.l3.m6.s12
-        mat-form-field(style="width: 100%")
+        mat-form-field
             mat-label Text Slowness
             input(
                 matInput=''
@@ -26,36 +27,34 @@
                 '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.textSpeedSlowness'
             )
 
-    .xl2.l3.m6.s12
-        mat-label Battle Style
-        mat-button-toggle-group(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleStyleSet'
-        )
-            mat-button-toggle('[value]'='false')
-                | Shift
-            mat-button-toggle('[value]'='true')
-                | Set
-
-    .xl2.l3.m6.s12
-        mat-label Battle Animation
-        mat-button-toggle-group(
-            '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleAnimOff'
-        )
-            mat-button-toggle('[value]'='true')
-                | Off
-            mat-button-toggle('[value]'='false')
-                | On
-
-    .xl2.l3.m6.s12
         mat-checkbox(
-            style="width: 100%"
             '[(ngModel)]'='fileService.fileDataExpanded.world.general.letterDelay.normalDelay'
         )
             span Normal Text Speed
 
-    .xl2.l3.m6.s12
         mat-checkbox(
-            style="width: 100%"
             '[(ngModel)]'='fileService.fileDataExpanded.world.general.letterDelay.dontDelay'
         )
             span Fastest Text Speed
+
+        br
+
+        .vertical
+            mat-label Battle Style
+            mat-button-toggle-group(
+                '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleStyleSet'
+            )
+                mat-button-toggle('[value]'='false')
+                    | Shift
+                mat-button-toggle('[value]'='true')
+                    | Set
+
+        .vertical
+            mat-label Battle Animation
+            mat-button-toggle-group(
+                '[(ngModel)]'='fileService.fileDataExpanded.world.general.options.battleAnimOff'
+            )
+                mat-button-toggle('[value]'='true')
+                    | Off
+                mat-button-toggle('[value]'='false')
+                    | On

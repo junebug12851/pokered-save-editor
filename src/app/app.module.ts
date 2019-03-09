@@ -52,6 +52,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -212,6 +213,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         MatSliderModule,
         MatProgressSpinnerModule,
         MatExpansionModule,
+        MatSlideToggleModule,
     ],
     providers: [
         SaveFileService,
