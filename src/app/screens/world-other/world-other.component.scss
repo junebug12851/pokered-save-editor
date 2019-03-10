@@ -1,4 +1,21 @@
 mat-checkbox {
     display: inline-block;
     margin-right: 25px;
+    margin-bottom: 15px;
+}
+
+.digits3 {
+    width: 3em;
+}
+
+select-item, select-species {
+    width: 10em;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.fossil-align {
+    display: inline-block;
+    width: 10em;
+    text-align: right;
 }

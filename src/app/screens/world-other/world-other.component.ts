@@ -27,4 +27,14 @@ export class WorldOtherComponent {
     constructor(
         public fileService: SaveFileService,
     ) { }
+
+    togglePlaytime() {
+        let maxed = this.fileService.fileDataExpanded.world.other.playtime.maxed;
+        if(maxed == 0)
+            maxed = 255;
+        else
+            maxed = 0;
+
+        this.fileService.fileDataExpanded.world.other.playtime.maxed = maxed;
+    }
 }

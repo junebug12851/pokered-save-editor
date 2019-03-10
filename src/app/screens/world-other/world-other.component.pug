@@ -4,15 +4,16 @@ mat-accordion
             mat-panel-title Playtime
             mat-panel-description Recorded Playtime
 
-        mat-form-field
-            mat-label Maxed
-            mat-select(
-                '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.maxed'
-            )
-                mat-option(value="0") No
-                mat-option(value="255") Yes
+        mat-checkbox(
+            '#playtimeEnabled'=''
+            '(change)'='togglePlaytime()'
+            '[checked]'='fileService.fileDataExpanded.world.other.playtime.maxed == 0'
+        )
+            span Playtime Enabled
 
-        mat-form-field
+        br
+
+        mat-form-field.digits3
             mat-label Hours
             input(
                 matInput=''
@@ -20,7 +21,7 @@ mat-accordion
                 '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.hours'
             )
 
-        mat-form-field
+        mat-form-field.digits3
             mat-label Minutes
             input(
                 matInput=''
@@ -28,7 +29,7 @@ mat-accordion
                 '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.minutes'
             )
 
-        mat-form-field
+        mat-form-field.digits3
             mat-label Seconds
             input(
                 matInput=''
@@ -36,7 +37,7 @@ mat-accordion
                 '[(ngModel)]'='fileService.fileDataExpanded.world.other.playtime.seconds'
             )
 
-        mat-form-field
+        mat-form-field.digits3
             mat-label Frames
             input(
                 matInput=''
@@ -49,14 +50,16 @@ mat-accordion
             mat-panel-title Fossil
             mat-panel-description Fossil Pokemon
 
-        mat-label Item Given &nbsp;
+        mat-label.fossil-align Item Given &nbsp;
         select-item(
             '[(ngModel)]'='fileService.fileDataExpanded.world.other.fossilItemGiven'
             '[noneSelectable]'='true'
             label=''
         )
 
-        mat-label Resulting Pokemon &nbsp;
+        br
+
+        mat-label.fossil-align Resulting Pokemon &nbsp;
         select-species(
             '[(ngModel)]'='fileService.fileDataExpanded.world.other.fossilPkmnResult'
         )
@@ -64,7 +67,9 @@ mat-accordion
     mat-expansion-panel
         mat-expansion-panel-header
             mat-panel-title Debug
-            mat-panel-description Debug Option
+            mat-panel-description Debug Mode
+
+        p While holding down B, all wild Pokemon battles will not happen until B is released.
 
         mat-checkbox(
             '[(ngModel)]'='fileService.fileDataExpanded.world.other.debugMode'
