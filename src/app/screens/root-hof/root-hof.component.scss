@@ -14,11 +14,27 @@
    limitations under the License.
  */
 
-select {
-    height: 32px;
-    margin-top: 10px;
+mat-card {
+    margin-bottom: 25px;
 }
 
-input {
-    height: 2rem !important;
+.expand {
+    width: 100%;
+}
+
+mat-list {
+    width: 625px;
+    margin: 0 auto;
+
+    mat-list-item {
+        margin: 10px 0;
+    }
+
+    .large {
+        width: 10em;
+    }
+
+    .small {
+        width: 3em;
+    }
 }

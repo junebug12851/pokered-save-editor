@@ -1,7 +1,9 @@
-.container.wrapper
-    .s3
-        mat-form-field(style="width: 100%")
-            mat-label Records
+mat-card
+    mat-card-title Hall of Fame
+    mat-card-subtitle Hall of Fame Records for Elite Four Completion
+    mat-card-content
+        mat-form-field
+            mat-label Record
             mat-select(
                 '[(ngModel)]'='activeRecord'
             )
@@ -11,14 +13,14 @@
                     '[value]'='i'
                 )
                     | {{i+1}}
-    .s1
+
         button(
             'mat-icon-button'=''
             '(click)'='onRecordAdd()'
             '[disabled]'='records.length >= 50'
         )
             span.im.im-add
-    .s1
+
         button(
             'mat-icon-button'=''
             '(click)'='onRecordRem()'
@@ -26,85 +28,46 @@
         )
             span.im.im-remove
 
-    .row.s12
-        mat-list(style="padding-top: 35px")
-            mat-list-item(
-                *ngFor='let entry of pokemon; let i = index; trackBy: trackByFn'
-                style='margin-top: 35px;'
+mat-list
+    mat-list-item(
+        *ngFor='let entry of pokemon; let i = index; trackBy: trackByFn'
+    )
+        name-input(
+            'label'='Nickname'
+            '[(ngModel)]'='entry.name'
+            '[disabled]'='disabled'
+            'template'='<<t>>'
+            'maxlength'='10'
+        )
+
+        select-species(
+            label='Species'
+            '[(ngModel)]'='entry.species'
+        )
+
+        mat-form-field.small
+            mat-label Level
+            input(
+                type='number'
+                matInput=''
+                '[(ngModel)]'='entry.level'
             )
-                .container
-                    .s3
-                        mat-form-field(style='width: 100%')
-                            mat-label Name
-                            input(
-                                type='text'
-                                matInput=''
-                                '[(ngModel)]'='entry.name'
-                            )
-                    .s3
-                        select-species.label-padding(
-                            label='Species'
-                            '[(ngModel)]'='entry.species'
-                        )
-                    .s3
-                        mat-form-field(style='width: 100%')
-                            mat-label Level
-                            input(
-                                type='number'
-                                matInput=''
-                                '[(ngModel)]'='entry.level'
-                            )
-                    .s3
-                        button(
-                            'mat-raised-button'=''
-                            '(click)'='onPokemonRem(i)'
-                            '[disabled]'='activeRecord < 0'
-                            color="warn"
-                        )
-                            span.im.im-trashcan
-            mat-list-item(
-                *ngIf='pokemon.length == 0'
-            )
-                .container
-                    .s3
-                        mat-form-field(style='width: 100%')
-                            mat-label Name
-                            input(
-                                type='text'
-                                matInput=''
-                                '[disabled]'='true'
-                            )
-                    .s3
-                        select-species.label-padding(
-                            label='Species'
-                            '[disabled]'='true'
-                        )
-                    .s3
-                        mat-form-field(style='width: 100%')
-                            mat-label Level
-                            input(
-                                type='number'
-                                matInput=''
-                                '[disabled]'='true'
-                            )
-                    .s3
-                        button(
-                            'mat-raised-button'=''
-                            '(click)'='onRecordRem()'
-                            '[disabled]'='true'
-                            color="warn"
-                        )
-                            span.im.im-trashcan
-            mat-list-item(
-                *ngIf='pokemon.length < 6'
-            )
-                .container
-                    .s12
-                        button(
-                            'mat-raised-button'=''
-                            '(click)'='onPokemonAdd()'
-                            '[disabled]'='pokemon.length >= 6 || activeRecord < 0'
-                            color="primary"
-                            style='width: 100%'
-                        )
-                            span.im.im-add
+
+        button(
+            'mat-raised-button'=''
+            '(click)'='onPokemonRem(i)'
+            '[disabled]'='activeRecord < 0'
+            color="warn"
+        )
+            span.im.im-trashcan
+
+    mat-list-item(
+        *ngIf='activeRecord > -1 && pokemon.length < 6'
+    )
+        button.expand(
+            'mat-raised-button'=''
+            '(click)'='onPokemonAdd()'
+            '[disabled]'='pokemon.length >= 6 || activeRecord < 0'
+            color="primary"
+        )
+            span.im.im-add
