@@ -9,7 +9,7 @@
     .row
         hp-bar.grow(
             '[curHP]'='entry.hp'
-            '[maxHP]'='entry.maxHP || 1'
+            '[maxHP]'='entry.maxHP || entry.hpStat || 1'
             '[disabled]'='disabled'
         )
 

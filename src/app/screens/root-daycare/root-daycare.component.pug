@@ -1,19 +1,27 @@
-.container.wrapper
+mat-card
+    mat-card-title Daycare
+    mat-card-subtitle Pokemon in Daycare
 
-    .xl2.l3.m6.s12
-        mat-checkbox(
-            '(change)'='dayCareUsedClick()'
-            '[checked]'='fileService.fileDataExpanded.daycare.dayCare != null'
-        )
-            span Daycare Used
+mat-checkbox(
+    '(change)'='dayCareUsedClick()'
+    '[checked]'='fileService.fileDataExpanded.daycare.dayCare != null'
+)
+    span Daycare Used
 
-    .s12
-        card-pokemon(
-            *ngIf='fileService.fileDataExpanded.daycare.dayCare != null'
-            '[entry]'='fileService.fileDataExpanded.daycare.dayCare'
-        )
+.pokemon('*ngIf'='fileService.fileDataExpanded.daycare.dayCare != null')
+    card-pokemon-header(
+        '[entry]'='fileService.fileDataExpanded.daycare.dayCare'
+    )
 
-        card-pokemon(
-            *ngIf='fileService.fileDataExpanded.daycare.dayCare == null'
-            disabled='true'
-        )
+    card-pokemon(
+        '[entry]'='fileService.fileDataExpanded.daycare.dayCare'
+    )
+
+.pokemon('*ngIf'='fileService.fileDataExpanded.daycare.dayCare == null')
+    card-pokemon-header(
+        '[disabled]'='true'
+    )
+
+    card-pokemon(
+        '[disabled]'='true'
+    )
