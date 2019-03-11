@@ -50,3 +50,9 @@ mat-list.spaced, mat-list-item.spaced {
         overflow-x: hidden !important;
     }
 }
+
+.button-non-uniform {
+    min-width: 0 !important;
+    width: min-content !important;
+    padding: 1px !important;
+}
