@@ -86,7 +86,7 @@ This features erases all unused data of your save file which there's a lot of. Y
 
 Furthermore if you suspect tampering whether malicious or not such as extra code injected in your save file this will erase it.
 
-![Options](https://thumbs.gfycat.com/FeistyLongIcelandgull-size_restricted.gif)
+![Wipe Unused Space](https://i.imgur.com/iWC0FU8.png)
 
 ## A quick disclaimer
 
