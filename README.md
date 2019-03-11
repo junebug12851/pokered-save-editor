@@ -32,72 +32,59 @@ implement.
 
 Here are some of the features
 
-### Optional Virtual Keyboard
+### All Font Characters
 
 Typing names is meant to be as easy as simply using the keys on your keyboard
-however the game allows up to 256 different tiles and control codes to be used for names
+however the game allows up to 255 different tiles, control codes, and variables to be used for names
 all of which are not directly typable on your keyboard.
 To keep from being unfair and leaving them out, shorthand syntax is used such
-as `<f>` or `<B>` to access all possible tile options. Even better, all 256
+as `<f>` or `<B>` to access all possible tile options. Even better, all 255
 tiles and codes are available in a
-full slide-out virtual keyboard.
-
-![Player Name](https://thumbs.gfycat.com/FarEasyCarpenterant-size_restricted.gif)
+full slide-out virtual keyboard with mouseover tooltips on their shortcode equivalent.
 
 ### Player
 
-![Player Name](https://thumbs.gfycat.com/PassionatePracticalGeese-size_restricted.gif)
+![Player Name](https://thumbs.gfycat.com/FoolhardyFriendlyDodobird-size_restricted.gif)
 
-![Player Id and Money](https://thumbs.gfycat.com/DifferentFastDrafthorse-size_restricted.gif)
+![Player Id and Money](https://thumbs.gfycat.com/AdeptBitterGalapagosalbatross-size_restricted.gif)
 
-![Player Badges](https://thumbs.gfycat.com/UnnaturalFewDinosaur-size_restricted.gif)
+![Player Badges](https://thumbs.gfycat.com/MarvelousDishonestIchthyostega-size_restricted.gif)
 
 ### Pokedex
 
-![Pokedex](https://thumbs.gfycat.com/DistortedSnoopyGodwit-size_restricted.gif)
+![Pokedex](https://thumbs.gfycat.com/WeepyDistantFinwhale-size_restricted.gif)
 
 ### Items
 
-![Bag Items](https://thumbs.gfycat.com/BareJaggedBagworm-size_restricted.gif)
+![Bag Items](https://thumbs.gfycat.com/PessimisticDarlingGlowworm-size_restricted.gif)
 
 ### Pokemon
 
-![Party Pokemon](https://thumbs.gfycat.com/RegularInbornBassethound-size_restricted.gif)
+![Party Pokemon](https://thumbs.gfycat.com/DelightfulEasyCrocodileskink-size_restricted.gif)
 
 ### Area
 
-![Contrast](https://thumbs.gfycat.com/AshamedHomelyBandicoot-size_restricted.gif)
+![Contrast](https://thumbs.gfycat.com/BountifulSkeletalEnglishpointer-size_restricted.gif)
 
-![Music](https://thumbs.gfycat.com/HandyWhichAiredaleterrier-size_restricted.gif)
+![Sprites](https://thumbs.gfycat.com/LividUnrulyAmericanriverotter-size_restricted.gif)
 
-![Sprites](https://thumbs.gfycat.com/SillyGrouchyAbalone-size_restricted.gif)
-
-![Wild Pokemon](https://thumbs.gfycat.com/SkinnySpeedyGrouse-size_restricted.gif)
+![Wild Pokemon](https://thumbs.gfycat.com/MistyUnlawfulInvisiblerail-size_restricted.gif)
 
 ### World
 
-![Events](https://thumbs.gfycat.com/AnimatedFirsthandCuttlefish-size_restricted.gif)
+![Events](https://thumbs.gfycat.com/SoupyCooperativeAfricangoldencat-size_restricted.gif)
 
-![Hidden Items](https://thumbs.gfycat.com/AbleBigHerald-size_restricted.gif)
-
-![Towns](https://thumbs.gfycat.com/WeeWateryAsianlion-size_restricted.gif)
-
-![Options](https://thumbs.gfycat.com/SeparateOrganicKillerwhale-size_restricted.gif)
+![Hidden Items](https://thumbs.gfycat.com/FastOptimisticBrownbear-size_restricted.gif)
 
 ### Hall of Fame
 
-![HoF](https://thumbs.gfycat.com/ZealousGenerousAmericantoad-size_restricted.gif)
+![HoF](https://thumbs.gfycat.com/EllipticalInfiniteHog-size_restricted.gif)
 
-### Other UI
+### Wipe Unused Space
 
-Make use of the menu as a lot of work has gone into both shortcuts and available
-options.
+This features erases all unused data of your save file which there's a lot of. Your normal game will work as though nothing has changed however internally the save file has vastly been cleaned up which works especially well when viewing in editors yourself. Sometimes when submitting a bug report you may be asked to provide a cleaned up version of it since it can make degugging very easy.
 
-One of them is `Wipe Unused Space` which re-formats the entire save-file to
-zeroes top-to-bottom afterwards writing only relevant bits and bytes back. The
-game internally doesn't do this so the save file can become quite cluttered
-over time. Furthermore if you suspect viruses or hi-jacking are embedded in the
-save file this would erase it.
+Furthermore if you suspect tampering whether malicious or not such as extra code injected in your save file this will erase it.
 
 ![Options](https://thumbs.gfycat.com/FeistyLongIcelandgull-size_restricted.gif)
 
@@ -168,41 +155,3 @@ Contributions are definately welcome, just fork and send a pull request.
 * SASS (UI Language) - License MIT, CSS improved
 * Typescript (Scripting language) - Apache 2 License, Eh, it comes with Angular
 * Google Material Icons - (More Icons!) - License Apache 2 License
-
-## Development Instructions
-
-The following development instructions curtesy of Angular CLI, needs some work
-to tailor it for an electron based setup so WIP
-
-This project was generated with
-[Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
-
-### Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app
-will automatically reload if you change any of the source files.
-
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can
-also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-### Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the
-`dist/` directory. Use the `--prod` flag for a production build.
-
-### Running unit tests
-
-Run `ng test` to execute the unit tests via
-[Karma](https://karma-runner.github.io).
-
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via
-[Protractor](http://www.protractortest.org/).
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the
-[Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
