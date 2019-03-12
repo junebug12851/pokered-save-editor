@@ -2,183 +2,189 @@ mat-card
     mat-card-title Event Pokemon
     mat-card-subtitle Pokemon distributed at special events
 
-mat-list
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveGameFreakMew()'
+mat-accordion
+    mat-expansion-panel('[expanded]'='true')
+        mat-expansion-panel-header
+            mat-panel-title Japan
+            mat-panel-description Events in Japan
 
-            matTooltip="Level 5 Mew with max DV's"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+        mat-list
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveGameFreakMew()'
 
-        span &nbsp; Game Freak Mew
+                    matTooltip="Level 5 Mew with max DV's"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveSpaceWorld99Mew()'
+                span &nbsp; Game Freak Mew
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveSpaceWorld99Mew()'
 
-        span &nbsp; Nintendo Space World '99 Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveStampFearow()'
+                span &nbsp; Nintendo Space World '99 Mew
 
-            matTooltip="Level 20 Fearow with Payday"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveStampFearow()'
 
-        span &nbsp; Pokemon Stamp Fearow
+                    matTooltip="Level 20 Fearow with Payday"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveStampRapidash()'
+                span &nbsp; Pokemon Stamp Fearow
 
-            matTooltip="Level 40 Rapidash with Payday"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveStampRapidash()'
 
-        span &nbsp; Pokemon Stamp Rapidash
+                    matTooltip="Level 40 Rapidash with Payday"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='give98BattleTourPikachu()'
+                span &nbsp; Pokemon Stamp Rapidash
 
-            matTooltip="Level 5 Surfing Pikachu"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='give98BattleTourPikachu()'
 
-        span &nbsp; Summer '98 Pokemon Battle Tour Pikachu
+                    matTooltip="Level 5 Surfing Pikachu"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveUniversityMagikarp()'
+                span &nbsp; Summer '98 Pokemon Battle Tour Pikachu
 
-            matTooltip="Level 5 Magikarp with Dragon Rage"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveUniversityMagikarp()'
 
-        span &nbsp; University Magikarp
+                    matTooltip="Level 5 Magikarp with Dragon Rage"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='give7thNxtGenWrldHbyMew()'
+                span &nbsp; University Magikarp
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='give7thNxtGenWrldHbyMew()'
 
-        span &nbsp; 7th Next Generation World Hobby Fair Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveCoroCoroFlyingPikachu()'
+                span &nbsp; 7th Next Generation World Hobby Fair Mew
 
-            matTooltip="Level 5 Pikachu that knows Fly"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveCoroCoroFlyingPikachu()'
 
-        span &nbsp; CoroCoro Flying Pikachu
+                    matTooltip="Level 5 Pikachu that knows Fly"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveCoroCoroSurfingPikachu()'
+                span &nbsp; CoroCoro Flying Pikachu
 
-            matTooltip="Level 5 Pikachu that knows Surf"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveCoroCoroSurfingPikachu()'
 
-        span &nbsp; CoroCoro Surfing Pikachu
+                    matTooltip="Level 5 Pikachu that knows Surf"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveSpaceWorld97Mew()'
+                span &nbsp; CoroCoro Surfing Pikachu
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveSpaceWorld97Mew()'
 
-        span &nbsp; Nintendo Space World '97 Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveCoroCoro20thMew()'
+                span &nbsp; Nintendo Space World '97 Mew
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveCoroCoro20thMew()'
 
-        span &nbsp; CoroCoro 20th Anniversary Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveN64Pikachu()'
+                span &nbsp; CoroCoro 20th Anniversary Mew
 
-            matTooltip="Level 5 Pikachu that knows Thundershock, Growl, and Surf"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveN64Pikachu()'
 
-        span &nbsp; Nintendo 64 Pikachu
+                    matTooltip="Level 5 Pikachu that knows Thundershock, Growl, and Surf"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='give4thNxtGenWrldHbyMew()'
+                span &nbsp; Nintendo 64 Pikachu
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='give4thNxtGenWrldHbyMew()'
 
-        span &nbsp; 4th Next Generation World Hobby Fair Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveLgndPkmnMew()'
+                span &nbsp; 4th Next Generation World Hobby Fair Mew
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveLgndPkmnMew()'
 
-        span &nbsp; Legendary Pokemon Offer 2 Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
 
-    mat-list-item
-        button(
-            mat-raised-button=''
-            '(click)'='giveLgndPkmnMew()'
+                span &nbsp; Legendary Pokemon Offer 2 Mew
 
-            matTooltip="Level 5 Mew"
-            matTooltipPosition="left"
-        )
-            span.im.im-gift2
+            mat-list-item
+                button(
+                    mat-raised-button=''
+                    '(click)'='giveLgndPkmnMew()'
 
-        span &nbsp; Legendary Pokemon Offer 1 Mew
+                    matTooltip="Level 5 Mew"
+                    matTooltipPosition="left"
+                )
+                    span.im.im-gift2
+
+                span &nbsp; Legendary Pokemon Offer 1 Mew
