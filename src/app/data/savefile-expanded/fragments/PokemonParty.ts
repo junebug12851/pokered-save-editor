@@ -27,6 +27,23 @@ export class PokemonParty extends PokemonBox {
                 index as number)
     }
 
+    // Modifies a Pokemon Box to be a Pokemon Party and creates initial stats
+    static convertToPokemonParty(pkmn: PokemonBox) {
+        const _pkmn = pkmn as PokemonParty;
+        _pkmn.updateStats = PokemonParty.prototype.updateStats;
+        _pkmn.updateStats();
+    }
+
+    // Modifies a Pokemon Party to be a Pokemon Box
+    static convertToPokemonBox(pkmn: PokemonParty) {
+        delete pkmn.updateStats;
+        delete pkmn.maxHP;
+        delete pkmn.attack;
+        delete pkmn.defense;
+        delete pkmn.speed;
+        delete pkmn.special;
+    }
+
     public load(saveFile: SaveFileService,
         offset: number,
         nicknameStartOffset: number,

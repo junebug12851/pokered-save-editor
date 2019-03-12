@@ -54,6 +54,11 @@ mat-sidenav-container.sidenav-container
             a.root(mat-list-item='', routerLink='/root-daycare' '[routerLinkActive]'="['active']") Daycare
             a.root(mat-list-item='', routerLink='/root-hof' '[routerLinkActive]'="['active']") Hall of Fame
 
+            // More
+            a.subheader(mat-list-item='') More
+
+            a(mat-list-item='', routerLink='/more-event-pokemon' '[routerLinkActive]'="['active']") Event Pokemon
+
     mat-sidenav-content
         button(
             type='button',

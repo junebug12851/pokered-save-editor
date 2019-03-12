@@ -14,6 +14,7 @@ import { AreaCachedSpritesComponent } from './screens/area-cached-sprites/area-c
 import { AreaTilesetsComponent } from './screens/area-tilesets/area-tilesets.component';
 import { AreaAudioComponent } from './screens/area-audio/area-audio.component';
 import { AreaGeneralComponent } from './screens/area-general/area-general.component';
+import { MoreEventPokemon } from './screens/more-event-pokemon/more-event-pokemon.component';
 /**
    Copyright 2018 June Hanabi
 
@@ -76,6 +77,7 @@ const routes: Routes = [
     { path: 'world-other', component: WorldOtherComponent },
     { path: 'root-daycare', component: RootDaycareComponent },
     { path: 'root-hof', component: RootHoFComponent },
+    { path: 'more-event-pokemon', component: MoreEventPokemon },
     {
         path: '',
         redirectTo: '/player-basics',

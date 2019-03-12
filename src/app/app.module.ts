@@ -53,6 +53,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Modules
 import { FontawesomeModule } from './libs/fontawesome.module';
@@ -122,6 +123,7 @@ import { WorldTownsComponent } from './screens/world-towns/world-towns.component
 import { WorldCompletedComponent } from './screens/world-completed/world-completed.component';
 import { RootHoFComponent } from './screens/root-hof/root-hof.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MoreEventPokemon } from './screens/more-event-pokemon/more-event-pokemon.component';
 
 @NgModule({
     declarations: [
@@ -185,6 +187,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         WorldOtherComponent,
         RootDaycareComponent,
         RootHoFComponent,
+        MoreEventPokemon,
     ],
     imports: [
         BrowserModule,
@@ -214,6 +217,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         MatProgressSpinnerModule,
         MatExpansionModule,
         MatSlideToggleModule,
+        MatSnackBarModule,
     ],
     providers: [
         SaveFileService,
