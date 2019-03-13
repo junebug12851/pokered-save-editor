@@ -26,7 +26,7 @@ export interface EventPokemon {
     
     // Pokemon Moves
     // If Empty use calculated natural moveset
-    moves?: string[],
+    moves: string[],
 
     // Pokemon Custom OT ID
     // If not one is randomly chosen
@@ -37,7 +37,8 @@ export interface EventPokemon {
     level?: number = 5,
 
     // DV Setup
-    // right now it's either left out (random) or 
+    // left out (random)
     // "max" for all 15 DV's
+    // :##:##:##:## To set specific attack, defense, speed, special in that order
     dv?: string
 };

@@ -16,10 +16,16 @@ import { GameDataService } from './../../data/gameData.service';
    limitations under the License.
  */
 
+ // @ts-ignore
+const _: any = window.require("lodash");
+
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
 import { PokemonParty } from 'src/app/data/savefile-expanded/fragments/PokemonParty';
 import {MatSnackBar} from '@angular/material';
+import { EventPokemon } from 'src/assets/data/eventPokemon';
+import { Pokemon } from 'src/assets/data/pokemon';
+import { Move } from 'src/assets/data/moves';
 
 @Component({
     selector: 'more-event-pokemon',
@@ -64,6 +70,7 @@ export class MoreEventPokemon implements OnInit {
         }
     }
 
+    // Random integer inclusive to min and max
     getRandomInt(min: number, max: number): number {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -81,251 +88,177 @@ export class MoreEventPokemon implements OnInit {
         return pkmn;
     }
 
-    // Gets a Lvl 5 Mew that knows Pound with random DV's and OTID
-    get mew() {
+    // Get all events
+    get rawEvents(): EventPokemon[] {
+        return this.fileService.gd.file("eventPokemon").data;
+    }
+
+    // Get all Japanese events
+    get jpRawEvents(): EventPokemon[] {
+        return _.filter(this.rawEvents, ['region', 'Japan']);
+    }
+
+    // Get all European events
+    get euRawEvents(): EventPokemon[] {
+        return _.filter(this.rawEvents, ['region', 'Europe']);
+    }
+
+    // Get all types
+    get rawTypes(): {
+        name: string,
+        ind: number
+    }[] {
+        return this.fileService.gd.file("types").data;
+    }
+
+    // Get all moves
+    get rawMoves(): {
+        name: string,
+        ind: number,
+        glitch?: true
+    }[] {
+        return this.fileService.gd.file("moves").data;
+    }
+
+    getType(typ: string) : number | null {
+        const allTypes = this.rawTypes;
+
+        for(let i = 0; i < allTypes.length; i++) {
+            const typeEntry = allTypes[i];
+            if(typeEntry.name.toUpperCase() == typ.toUpperCase())
+                return typeEntry.ind;
+        }
+
+        return null;
+    }
+
+    getMove(move: string) : Move | null {
+        const allMoves = this.rawMoves;
+
+        for(let i = 0; i < allMoves.length; i++) {
+            const moveEntry = allMoves[i];
+            if(moveEntry.name.toUpperCase() == move.toUpperCase())
+                return moveEntry;
+        }
+
+        return null;
+    }
+
+    // List tracking
+    entriesTracking(index: number) {
+        return index;
+    }
+
+    findPokemonRecord(name: String): Pokemon | null {
+        const allPokemon = this.fileService.gd.file("pokemon").data as Pokemon[];
+
+        for(let i = 0; i < allPokemon.length; i++) {
+            const pkmnEntry = allPokemon[i];
+            if(pkmnEntry.name == name)
+                return pkmnEntry;
+        }
+
+        return null;
+    }
+
+    convertCase(str: string) {
+        let newCase: string = _.startCase(_.lowerCase(str));
+
+        if(newCase == "Mrmime")
+            newCase = "Mr.Mime";
+        else if(newCase == "Nidoranf")
+            newCase = "Nidoran<f>";
+        else if(newCase == "Nidoranm")
+            newCase = "Nidoran<m>";
+
+        return newCase;
+    }
+
+    // Gives the Pokemon
+    genPokemonAndGive(entry: EventPokemon) {
+        // Get a blank Pokemon with random DV's and OT ID
         const pkmn = this.pkmn;
-        pkmn.species = 21; // Mew
-        pkmn.type1 = 24; // Psychic
-        pkmn.type2 = 0xFF; // No 2nd type
-        pkmn.nickname = "MEW";
-        pkmn.level = 5;
-        pkmn.moves[0] = {
-            moveID: 1, // Pound
-            pp: 35,
-            ppUp: 0,
-        }
 
-        return pkmn;
-    }
+        // Get Pokemon Record
+        const nameRecord = this.findPokemonRecord(entry.pokemon);
+        if(nameRecord == null)
+            return;
 
-    // Gets a Lvl 5 Pikachu with random DV's and OTID
-    get pikachu() {
-        const pkmn = this.pkmn;
-        pkmn.species = 84; // Pikachu
-        pkmn.type1 = 23; // Electric
-        pkmn.type2 = 0xFF;
-        pkmn.nickname = "PIKACHU";
-        pkmn.level = 5;
+        // Assign Species Number
+        pkmn.species = nameRecord.ind;
 
-        return pkmn;
-    }
+        if(nameRecord.catchRate !== undefined)
+            pkmn.catchRate = nameRecord.catchRate;
 
-    giveGameFreakMew() {
-        const pkmn = this.mew;
-        pkmn.otName = "GMFRK";
-        pkmn.otID = Number(22796).toString(16).padStart(4, "0").toUpperCase();
+        // Assign Types 1 & 2
+        if(nameRecord.type1 === undefined || nameRecord.type2 === undefined)
+            return;
 
-        // 15 for all DV's as per this event
-        pkmn.dv.attack = 15;
-        pkmn.dv.defense = 15;
-        pkmn.dv.special = 15;
-        pkmn.dv.speed = 15;
-
-        this.givePokemon(pkmn);
-    }
-
-    giveSpaceWorld99Mew() {
-        const pkmn = this.mew;
-        pkmn.otName = "MAKHARI";
-
-        this.givePokemon(pkmn);
-    }
-
-    giveStampFearow() {
-        const pkmn = this.pkmn;
-        pkmn.species = 35; // Fearow
-        pkmn.type1 = 0; // Normal
-        pkmn.type2 = 2; // Flying
-        pkmn.otName = "STAMP";
-        pkmn.nickname = "FEAROW";
-        pkmn.level = 20;
-        pkmn.moves[0] = {
-            moveID: 45, // Growl
-            pp: 40,
-            ppUp: 0,
-        }
-        pkmn.moves[1] = {
-            moveID: 43, // Leer
-            pp: 30,
-            ppUp: 0,
-        }
-        pkmn.moves[2] = {
-            moveID: 31, // Furry Attack
-            pp: 20,
-            ppUp: 0,
-        }
-        pkmn.moves[3] = {
-            moveID: 6, // Pay Day
-            pp: 20,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    giveStampRapidash() {
-        const pkmn = this.pkmn;
-        pkmn.species = 164; // Rapidash
-        pkmn.type1 = 20; // Fire
-        pkmn.type2 = 0xFF;
-        pkmn.otName = "STAMP";
-        pkmn.nickname = "RAPIDASH";
-        pkmn.level = 40;
-        pkmn.moves[0] = {
-            moveID: 52, // Ember
-            pp: 25,
-            ppUp: 0,
-        }
-        pkmn.moves[1] = {
-            moveID: 83, // Fire Spin
-            pp: 15,
-            ppUp: 0,
-        }
-        pkmn.moves[2] = {
-            moveID: 23, // Stomp
-            pp: 20,
-            ppUp: 0,
-        }
-        pkmn.moves[3] = {
-            moveID: 6, // Pay Day
-            pp: 20,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    give98BattleTourPikachu() {
-        const pkmn = this.pikachu;
-        pkmn.otName = "IMAKUNI";
-        pkmn.moves[0] = {
-            moveID: 57, // Surf
-            pp: 15,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    giveUniversityMagikarp() {
-        const pkmn = this.pkmn;
-        pkmn.species = 133; // Magikarp
-        pkmn.type1 = 21; // Water
-        pkmn.type2 = 0xFF;
-        pkmn.otName = "TAMAMSH";
-        pkmn.nickname = "MAGIKARP";
-        pkmn.level = 5;
-        pkmn.moves[0] = {
-            moveID: 150, // Splash
-            pp: 40,
-            ppUp: 0,
-        }
-        pkmn.moves[1] = {
-            moveID: 82, // Dragon Rage
-            pp: 10,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    give7thNxtGenWrldHbyMew() {
-        const pkmn = this.mew;
-
-        const otNames = [
-            "FUKUOKA",
-            "CHIBA",
-            "OSAKA",
-            "HOKAIDO",
-            "AICHI"
-        ];
-
-        pkmn.otName = otNames[this.getRandomInt(0, otNames.length - 1)];
-
-        this.givePokemon(pkmn);
-    }
-
-    giveCoroCoroFlyingPikachu() {
-        const pkmn = this.pikachu;
-        pkmn.otName = "COROCOR";
-        pkmn.moves[0] = {
-            moveID: 19, // Fly
-            pp: 15,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    giveCoroCoroSurfingPikachu() {
-        const pkmn = this.pikachu;
-        pkmn.otName = "COROCOR";
-        pkmn.moves[0] = {
-            moveID: 57, // Surf
-            pp: 15,
-            ppUp: 0,
-        }
-
-        this.givePokemon(pkmn);
-    }
-
-    giveSpaceWorld97Mew() {
-        const pkmn = this.mew;
+        let typeX = this.getType(nameRecord.type1);
+        if(typeX === null)
+            return;
         
-        const otNames = [
-            "YOSHI",
-            "LUIGI",
-        ];
+        pkmn.type1 = typeX;
 
-        pkmn.otName = otNames[this.getRandomInt(0, otNames.length - 1)];
+        typeX = this.getType(nameRecord.type2);
+        if(typeX === null)
+            return;
 
-        this.givePokemon(pkmn);
-    }
+        pkmn.type2 = typeX;
 
-    giveCoroCoro20thMew() {
-        const pkmn = this.mew;
+        if(pkmn.type1 == pkmn.type2)
+            pkmn.type2 = 0xFF;
 
-        pkmn.otName = "COROCOR";
+        // Assign OT Name
+        let otName = entry.otName;
+        if(Array.isArray(entry.otName))
+            otName = otName[this.getRandomInt(0, otName.length - 1)];
 
-        this.givePokemon(pkmn);
-    }
+        // Handled Above
+        // @ts-ignore
+        pkmn.otName = otName;
 
-    giveN64Pikachu() {
-        const pkmn = this.pikachu;
+        // OT ID if present, random otherwise
+        if(entry.otID !== undefined)
+            pkmn.otID = entry.otID;
 
-        pkmn.otName = "NINTEN"
-
-        pkmn.moves[0] = {
-            moveID: 84, // Thundershock
-            pp: 30,
-            ppUp: 0,
+        if(entry.dv != undefined && entry.dv == "max") {
+            pkmn.dv.attack = 15;
+            pkmn.dv.defense = 15;
+            pkmn.dv.special = 15;
+            pkmn.dv.speed = 15;
         }
-        pkmn.moves[1] = {
-            moveID: 45, // Growl
-            pp: 40,
-            ppUp: 0,
+        else if(entry.dv != undefined && entry.dv.startsWith(":")) {
+            const dvs = entry.dv.split(":");
+            dvs.shift();
+
+            pkmn.dv.attack = parseInt(dvs[0]);
+            pkmn.dv.defense = parseInt(dvs[1]);
+            pkmn.dv.speed = parseInt(dvs[2]);
+            pkmn.dv.special = parseInt(dvs[3]);
         }
-        pkmn.moves[2] = {
-            moveID: 57, // Surf
-            pp: 15,
-            ppUp: 0,
+
+        // Assign Nickname
+        pkmn.nickname = nameRecord.name.toUpperCase();
+
+        if(pkmn.nickname == "NIDORAN<M>")
+            pkmn.nickname = "NIDORAN<m>";
+        else if(pkmn.nickname == "NIDORAN<F>")
+            pkmn.nickname = "NIDORAN<f>";
+
+        // Assign Level
+        pkmn.level = (entry.level) ? entry.level : 5;
+
+        for(let i = 0; i < entry.moves.length; i++) {
+            const move = entry.moves[i];
+            const moveData = this.getMove(move);
+            if(moveData == null)
+                return;
+
+            pkmn.moves[i].moveID = moveData.ind;
+            if(moveData.pp !== undefined)
+                pkmn.moves[i].pp = moveData.pp;
         }
-
-        this.givePokemon(pkmn);
-    }
-
-    give4thNxtGenWrldHbyMew() {
-        const pkmn = this.mew;
-
-        pkmn.otName = "TOKYOBY";
-
-        this.givePokemon(pkmn);
-    }
-
-    giveLgndPkmnMew() {
-        const pkmn = this.mew;
-
-        pkmn.otName = "COROCOR";
 
         this.givePokemon(pkmn);
     }

@@ -6,14 +6,20 @@
         "otName": "GMFRK",
         "otID": "590C",
         "dv": "max",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "Nintendo Space World '99 Mew",
         "desc": "Level 5 Mew",
         "pokemon": "Mew",
         "otName": "MAKHARI",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "Pokemon Stamp Fearow",
@@ -75,7 +81,10 @@
             "HOKAIDO",
             "AICHI"
         ],
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "CoroCoro Flying Pikachu",
@@ -105,14 +114,20 @@
             "YOSHI",
             "LUIGI"
         ],
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "CoroCoro 20th Anniversary Mew",
         "desc": "Level 5 Mew",
         "pokemon": "Mew",
         "otName": "COROCOR",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "Nintendo 64 Pikachu",
@@ -131,20 +146,335 @@
         "desc": "Level 5 Mew",
         "pokemon": "Mew",
         "otName": "TOKYOBY",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "Legendary Pokemon Offer 2 Mew",
         "desc": "Level 5 Mew",
         "pokemon": "Mew",
         "otName": "COROCOR",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
     },
     {
         "title": "Legendary Pokemon Offer 1 Mew",
         "desc": "Level 5 Mew",
         "pokemon": "Mew",
         "otName": "COROCOR",
-        "region": "Japan"
+        "region": "Japan",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Nintendo UK's Pokémon Festival Mew",
+        "desc": "Level 5 Mew with max DV's",
+        "pokemon": "Mew",
+        "otName": "GF",
+        "otID": "590C",
+        "dv": "max",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Far, Mor & Børn Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "COPNHGN",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Christmas Present Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "LEIPZIG",
+            "COLOGNE",
+            "MUNICH",
+            "BERLIN",
+            "HAMBURG",
+            "FRNKFRT",
+            "STTGRT",
+            "BREMEN",
+            "HOMBURG",
+            "ANSBACH",
+            "HANNVER",
+            "VIRNHEM"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Sweden Mew on Tour Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "GTHNBRG",
+            "GAVLE",
+            "HALMSTD",
+            "JNKOPNG",
+            "KALMAR",
+            "KRLSTAD",
+            "LULEA",
+            "LUND",
+            "MALMO",
+            "NRKPING",
+            "SKOVDE",
+            "STCKHLM",
+            "SNDSVLL",
+            "TRLHTAN",
+            "UDDEVLA",
+            "UMEA",
+            "VAXJO",
+            "OREBRO",
+            "OSTRSND"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Tennispalatsi Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "FINLAND",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Norway Pokemon Tour Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "EUROPE",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Club Nintendo Mew",
+        "desc": "Level 5 Mew with specific seemingly random DV's",
+        "pokemon": "Mew",
+        "otName": "EUROPE",
+        "dv": ":10:1:12:5",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Pokemon 2000 World Championship Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "SYDNEY",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Millennium Dome Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "EUROPE",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "UK and Ireland Pokémon Championship 2000 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "UK",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Cora Châtelineau Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "BENELUX",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "France Pokémon Tournament Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "PARIS",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Spain Pokémon Tournament Mew",
+        "desc": "Level 5 Mew with oddly specific DV's",
+        "pokemon": "Mew",
+        "otName": "D-J",
+        "otID": "EAE2",
+        "dv": ":6:4:3:8",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Mews Flash Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "UK",
+        "otID": "0DCB",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Pokémon Patrol Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "YOSHIBB",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Nintendo Official Magazine Tour Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "UK",
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Canadian Pokémon Stadium Tour 2000 Mew",
+        "desc": "Level 5 Mew with oddly specific DV's",
+        "pokemon": "Mew",
+        "dv": ":10:1:12:5",
+        "otName": [
+            "LUIGI",
+            "YOSHIC"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Pokémon 2000 Stadium Tour Mew",
+        "desc": "Level 5 Mew with oddly specific DV's",
+        "pokemon": "Mew",
+        "dv": ":10:1:12:5",
+        "otName": [
+            "LINKE",
+            "LINKW",
+            "LUIGE",
+            "LUIGW"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Canada Toys \"R\" Us Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "YOSHIRA",
+            "YOSHIRB"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "US Toys \"R\" Us Mew",
+        "desc": "Level 5 Mew with oddly specific DV's",
+        "pokemon": "Mew",
+        "dv": ":10:1:12:5",
+        "otName": [
+            "YOSHIRA",
+            "YOSHIRB"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Nintendo Power Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "YOSHIRA",
+            "YOSHIRB"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Pokémon League Nintendo Training Tour '99 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "YOSHIRA",
+            "YOSHIRB"
+        ],
+        "region": "Europe",
+        "moves": [
+            "Pound"
+        ]
+    },
+    {
+        "title": "Nintendo Power Pikachu",
+        "desc": "Level 5 Surfing Pikachu",
+        "pokemon": "Pikachu",
+        "otName": "NINTEN",
+        "moves": [
+            "Surf"
+        ],
+        "region": "Europe"
+    },
+    {
+        "title": "Poké Tour Mew",
+        "desc": "Level 5 Mew with oddly specific DV's",
+        "pokemon": "Mew",
+        "otName": [
+            "NAL",
+            "AUS"
+        ],
+        "dv": ":10:1:12:5",
+        "moves": [
+            "Pound"
+        ],
+        "region": "Europe"
     }
 ]
