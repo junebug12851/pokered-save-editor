@@ -35,7 +35,50 @@
         "level": 64,
         "move": "TAKE DOWN"
       }
-    ]
+    ],
+    "initial": [
+      "HORN_ATTACK",
+      "STOMP",
+      "TAIL_WHIP",
+      "FURY_ATTACK"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      48,
+      50,
+      53,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "ROCK",
+    "catchRate": 60
   },
   {
     "name": "Kangaskhan",
@@ -69,7 +112,45 @@
         "level": 46,
         "move": "DIZZY PUNCH"
       }
-    ]
+    ],
+    "initial": [
+      "COMET_PUNCH",
+      "RAGE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      48,
+      50,
+      53,
+      54
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 45
   },
   {
     "name": "Nidoran<m>",
@@ -82,6 +163,9 @@
     "baseSpeed": 50,
     "baseSpecial": 40,
     "baseExpYield": 60,
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": "235",
     "evolution": {
       "level": 16,
       "toName": "NIDORINO"
@@ -111,6 +195,10 @@
         "level": 43,
         "move": "DOUBLE KICK"
       }
+    ],
+    "initial": [
+      "LEER",
+      "TACKLE"
     ]
   },
   {
@@ -153,7 +241,49 @@
         "level": 48,
         "move": "LIGHT SCREEN"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "GROWL"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      38,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 150
   },
   {
     "name": "Spearow",
@@ -191,7 +321,30 @@
         "level": 36,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "GROWL"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      20,
+      31,
+      32,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 255
   },
   {
     "name": "Voltorb",
@@ -229,7 +382,33 @@
         "level": 43,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SCREECH"
+    ],
+    "tmHm": [
+      6,
+      9,
+      20,
+      24,
+      25,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      39,
+      44,
+      45,
+      47,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 190
   },
   {
     "name": "Nidoking",
@@ -255,7 +434,50 @@
         "level": 23,
         "move": "THRASH"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "HORN_ATTACK",
+      "POISON_STING",
+      "THRASH"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      33,
+      34,
+      38,
+      40,
+      44,
+      48,
+      50,
+      53,
+      54
+    ],
+    "type1": "POISON",
+    "type2": "GROUND",
+    "catchRate": 45
   },
   {
     "name": "Slowbro",
@@ -297,7 +519,53 @@
         "level": 55,
         "move": "PSYCHIC M"
       }
-    ]
+    ],
+    "initial": [
+      "CONFUSION",
+      "DISABLE",
+      "HEADBUTT"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      53,
+      54,
+      55
+    ],
+    "type1": "WATER",
+    "type2": "PSYCHIC",
+    "catchRate": 75
   },
   {
     "name": "Ivysaur",
@@ -343,7 +611,32 @@
         "level": 54,
         "move": "SOLARBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "GROWL",
+      "LEECH_SEED"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Exeggutor",
@@ -361,7 +654,36 @@
         "level": 28,
         "move": "STOMP"
       }
-    ]
+    ],
+    "initial": [
+      "BARRAGE",
+      "HYPNOSIS"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      44,
+      46,
+      47,
+      50,
+      54
+    ],
+    "type1": "GRASS",
+    "type2": "PSYCHIC",
+    "catchRate": 45
   },
   {
     "name": "Lickitung",
@@ -395,7 +717,46 @@
         "level": 39,
         "move": "SCREECH"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "SUPERSONIC"
+    ],
+    "tmHm": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      50,
+      51,
+      53,
+      54
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 45
   },
   {
     "name": "Exeggcute",
@@ -437,7 +798,32 @@
         "level": 48,
         "move": "SLEEP POWDER"
       }
-    ]
+    ],
+    "initial": [
+      "BARRAGE",
+      "HYPNOSIS"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      44,
+      46,
+      47,
+      50
+    ],
+    "type1": "GRASS",
+    "type2": "PSYCHIC",
+    "catchRate": 90
   },
   {
     "name": "Grimer",
@@ -479,7 +865,31 @@
         "level": 55,
         "move": "ACID ARMOR"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "DISABLE"
+    ],
+    "tmHm": [
+      6,
+      8,
+      0,
+      20,
+      21,
+      24,
+      25,
+      31,
+      32,
+      34,
+      36,
+      38,
+      44,
+      47,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 190
   },
   {
     "name": "Gengar",
@@ -501,7 +911,44 @@
         "level": 38,
         "move": "DREAM EATER"
       }
-    ]
+    ],
+    "initial": [
+      "LICK",
+      "CONFUSE_RAY",
+      "NIGHT_SHADE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      24,
+      25,
+      29,
+      31,
+      32,
+      34,
+      35,
+      36,
+      40,
+      42,
+      44,
+      46,
+      47,
+      50,
+      54
+    ],
+    "type1": "GHOST",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Nidoran<f>",
@@ -514,6 +961,9 @@
     "baseSpeed": 41,
     "baseSpecial": 40,
     "baseExpYield": 59,
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": "235",
     "evolution": {
       "level": 16,
       "toName": "NIDORINA"
@@ -543,6 +993,10 @@
         "level": 43,
         "move": "DOUBLE KICK"
       }
+    ],
+    "initial": [
+      "GROWL",
+      "TACKLE"
     ]
   },
   {
@@ -569,7 +1023,50 @@
         "level": 23,
         "move": "BODY SLAM"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SCRATCH",
+      "TAIL_WHIP",
+      "BODY_SLAM"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      33,
+      34,
+      38,
+      40,
+      44,
+      48,
+      50,
+      53,
+      54
+    ],
+    "type1": "POISON",
+    "type2": "GROUND",
+    "catchRate": 45
   },
   {
     "name": "Cubone",
@@ -607,7 +1104,41 @@
         "level": 46,
         "move": "RAGE"
       }
-    ]
+    ],
+    "initial": [
+      "BONE_CLUB",
+      "GROWL"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      50,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 190
   },
   {
     "name": "Rhyhorn",
@@ -649,7 +1180,35 @@
         "level": 55,
         "move": "TAKE DOWN"
       }
-    ]
+    ],
+    "initial": [
+      "HORN_ATTACK"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      24,
+      25,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "ROCK",
+    "catchRate": 120
   },
   {
     "name": "Lapras",
@@ -687,7 +1246,42 @@
         "level": 46,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "WATER_GUN",
+      "GROWL"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22,
+      23,
+      24,
+      25,
+      29,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      46,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "ICE",
+    "catchRate": 45
   },
   {
     "name": "Arcanine",
@@ -700,7 +1294,35 @@
     "baseSpeed": 95,
     "baseSpecial": 80,
     "baseExpYield": 213,
-    "moves": []
+    "initial": [
+      "ROAR",
+      "EMBER",
+      "LEER",
+      "TAKE_DOWN"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      23,
+      28,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 75
   },
   {
     "name": "Mew",
@@ -730,7 +1352,71 @@
         "level": 40,
         "move": "PSYCHIC M"
       }
-    ]
+    ],
+    "initial": [
+      "POUND"
+    ],
+    "tmHm": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 45
   },
   {
     "name": "Gyarados",
@@ -764,7 +1450,41 @@
         "level": 52,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "BITE",
+      "DRAGON_RAGE",
+      "LEER",
+      "HYDRO_PUMP"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      23,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      38,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Shellder",
@@ -802,7 +1522,36 @@
         "level": 50,
         "move": "ICE BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "WITHDRAW"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      39,
+      44,
+      47,
+      49,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 190
   },
   {
     "name": "Tentacool",
@@ -852,7 +1601,34 @@
         "level": 48,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "ACID"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      21,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      51,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "POISON",
+    "catchRate": 190
   },
   {
     "name": "Gastly",
@@ -878,7 +1654,33 @@
         "level": 35,
         "move": "DREAM EATER"
       }
-    ]
+    ],
+    "initial": [
+      "LICK",
+      "CONFUSE_RAY",
+      "NIGHT_SHADE"
+    ],
+    "tmHm": [
+      6,
+      0,
+      20,
+      21,
+      24,
+      25,
+      29,
+      31,
+      32,
+      34,
+      36,
+      42,
+      44,
+      46,
+      47,
+      50
+    ],
+    "type1": "GHOST",
+    "type2": "POISON",
+    "catchRate": 190
   },
   {
     "name": "Scyther",
@@ -916,7 +1718,29 @@
         "level": 42,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "QUICK_ATTACK"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      51
+    ],
+    "type1": "BUG",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Staryu",
@@ -962,7 +1786,40 @@
         "level": 47,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      53,
+      55
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 225
   },
   {
     "name": "Blastoise",
@@ -1000,7 +1857,45 @@
         "level": 52,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "TAIL_WHIP",
+      "BUBBLE",
+      "WATER_GUN"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Pinsir",
@@ -1038,7 +1933,31 @@
         "level": 54,
         "move": "SWORDS DANCE"
       }
-    ]
+    ],
+    "initial": [
+      "VICEGRIP"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      19,
+      20,
+      31,
+      32,
+      34,
+      44,
+      50,
+      51,
+      54
+    ],
+    "type1": "BUG",
+    "type2": "BUG",
+    "catchRate": 45
   },
   {
     "name": "Tangela",
@@ -1076,19 +1995,42 @@
         "level": 49,
         "move": "GROWTH"
       }
-    ]
+    ],
+    "initial": [
+      "CONSTRICT",
+      "BIND"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      31,
+      32,
+      34,
+      40,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "GRASS",
+    "catchRate": 45
   },
   {
     "name": "Missing1F",
     "ind": 31,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing20",
     "ind": 32,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Growlithe",
@@ -1126,7 +2068,32 @@
         "level": 50,
         "move": "FLAMETHROWER"
       }
-    ]
+    ],
+    "initial": [
+      "BITE",
+      "ROAR"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      23,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 190
   },
   {
     "name": "Onix",
@@ -1160,7 +2127,34 @@
         "level": 43,
         "move": "HARDEN"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SCREECH"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      36,
+      40,
+      44,
+      47,
+      48,
+      50,
+      54
+    ],
+    "type1": "ROCK",
+    "type2": "GROUND",
+    "catchRate": 45
   },
   {
     "name": "Fearow",
@@ -1194,7 +2188,32 @@
         "level": 43,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "GROWL",
+      "LEER"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 90
   },
   {
     "name": "Pidgey",
@@ -1236,7 +2255,30 @@
         "level": 44,
         "move": "MIRROR MOVE"
       }
-    ]
+    ],
+    "initial": [
+      "GUST"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 255
   },
   {
     "name": "Slowpoke",
@@ -1278,7 +2320,45 @@
         "level": 48,
         "move": "PSYCHIC M"
       }
-    ]
+    ],
+    "initial": [
+      "CONFUSION"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      20,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      53,
+      54,
+      55
+    ],
+    "type1": "WATER",
+    "type2": "PSYCHIC",
+    "catchRate": 190
   },
   {
     "name": "Kadabra",
@@ -1320,7 +2400,42 @@
         "level": 42,
         "move": "REFLECT"
       }
-    ]
+    ],
+    "initial": [
+      "TELEPORT",
+      "CONFUSION",
+      "DISABLE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 100
   },
   {
     "name": "Graveler",
@@ -1362,7 +2477,39 @@
         "level": 43,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "DEFENSE_CURL"
+    ],
+    "tmHm": [
+      1,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      36,
+      38,
+      44,
+      47,
+      48,
+      50,
+      54
+    ],
+    "type1": "ROCK",
+    "type2": "GROUND",
+    "catchRate": 120
   },
   {
     "name": "Chansey",
@@ -1400,7 +2547,52 @@
         "level": 54,
         "move": "DOUBLE EDGE"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "DOUBLESLAP"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      38,
+      40,
+      41,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 30
   },
   {
     "name": "Machoke",
@@ -1438,7 +2630,40 @@
         "level": 52,
         "move": "SUBMISSION"
       }
-    ]
+    ],
+    "initial": [
+      "KARATE_CHOP",
+      "LOW_KICK",
+      "LEER"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      38,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 90
   },
   {
     "name": "Mr.Mime",
@@ -1451,6 +2676,9 @@
     "baseSpeed": 90,
     "baseSpecial": 100,
     "baseExpYield": 136,
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": "45",
     "moves": [
       {
         "level": 15,
@@ -1472,6 +2700,10 @@
         "level": 47,
         "move": "SUBSTITUTE"
       }
+    ],
+    "initial": [
+      "CONFUSION",
+      "BARRIER"
     ]
   },
   {
@@ -1506,7 +2738,35 @@
         "level": 53,
         "move": "MEGA KICK"
       }
-    ]
+    ],
+    "initial": [
+      "DOUBLE_KICK",
+      "MEDITATE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      31,
+      32,
+      34,
+      35,
+      39,
+      40,
+      44,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 45
   },
   {
     "name": "Hitmonchan",
@@ -1540,7 +2800,35 @@
         "level": 53,
         "move": "COUNTER"
       }
-    ]
+    ],
+    "initial": [
+      "COMET_PUNCH",
+      "AGILITY"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      31,
+      32,
+      34,
+      35,
+      39,
+      40,
+      44,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 45
   },
   {
     "name": "Arbok",
@@ -1574,7 +2862,35 @@
         "level": 47,
         "move": "ACID"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "LEER",
+      "POISON_STING"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 90
   },
   {
     "name": "Parasect",
@@ -1608,7 +2924,35 @@
         "level": 48,
         "move": "GROWTH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "STUN_SPORE",
+      "LEECH_LIFE"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      28,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      51
+    ],
+    "type1": "BUG",
+    "type2": "GRASS",
+    "catchRate": 75
   },
   {
     "name": "Psyduck",
@@ -1646,7 +2990,40 @@
         "level": 52,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 190
   },
   {
     "name": "Drowzee",
@@ -1688,7 +3065,41 @@
         "level": 37,
         "move": "MEDITATE"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "HYPNOSIS"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      42,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 190
   },
   {
     "name": "Golem",
@@ -1726,13 +3137,46 @@
         "level": 43,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "DEFENSE_CURL"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      36,
+      38,
+      44,
+      47,
+      48,
+      50,
+      54
+    ],
+    "type1": "ROCK",
+    "type2": "GROUND",
+    "catchRate": 45
   },
   {
     "name": "Missing32",
     "ind": 50,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Magmar",
@@ -1770,13 +3214,43 @@
         "level": 55,
         "move": "FLAMETHROWER"
       }
-    ]
+    ],
+    "initial": [
+      "EMBER"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      38,
+      40,
+      44,
+      46,
+      50,
+      54
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 45
   },
   {
     "name": "Missing34",
     "ind": 52,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Electabuzz",
@@ -1810,7 +3284,44 @@
         "level": 54,
         "move": "THUNDER"
       }
-    ]
+    ],
+    "initial": [
+      "QUICK_ATTACK",
+      "LEER"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      39,
+      40,
+      44,
+      45,
+      46,
+      50,
+      54,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 45
   },
   {
     "name": "Magneton",
@@ -1848,7 +3359,34 @@
         "level": 54,
         "move": "SCREECH"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SONICBOOM",
+      "THUNDERSHOCK"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      15,
+      20,
+      24,
+      25,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      44,
+      45,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 60
   },
   {
     "name": "Koffing",
@@ -1886,13 +3424,34 @@
         "level": 48,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SMOG"
+    ],
+    "tmHm": [
+      6,
+      0,
+      20,
+      24,
+      25,
+      31,
+      32,
+      34,
+      36,
+      38,
+      44,
+      47,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 190
   },
   {
     "name": "Missing38",
     "ind": 56,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Mankey",
@@ -1930,7 +3489,40 @@
         "level": 39,
         "move": "THRASH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "LEER"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      28,
+      31,
+      32,
+      34,
+      35,
+      39,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 190
   },
   {
     "name": "Seel",
@@ -1968,7 +3560,34 @@
         "level": 50,
         "move": "ICE BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "HEADBUTT"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      20,
+      31,
+      32,
+      34,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 190
   },
   {
     "name": "Diglett",
@@ -2006,7 +3625,29 @@
         "level": 40,
         "move": "EARTHQUAKE"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      44,
+      48,
+      50
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 255
   },
   {
     "name": "Tauros",
@@ -2040,25 +3681,51 @@
         "level": 51,
         "move": "TAKE DOWN"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      20,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      50,
+      54
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 45
   },
   {
     "name": "Missing3D",
     "ind": 61,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing3E",
     "ind": 62,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing3F",
     "ind": 63,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Farfetchd",
@@ -2092,7 +3759,34 @@
         "level": 39,
         "move": "SLASH"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "SAND_ATTACK"
+    ],
+    "tmHm": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      50,
+      51,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Venonat",
@@ -2134,7 +3828,30 @@
         "level": 43,
         "move": "PSYCHIC M"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "DISABLE"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      20,
+      21,
+      22,
+      29,
+      31,
+      32,
+      33,
+      34,
+      44,
+      46,
+      50
+    ],
+    "type1": "BUG",
+    "type2": "POISON",
+    "catchRate": 190
   },
   {
     "name": "Dragonite",
@@ -2168,25 +3885,60 @@
         "level": 60,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "LEER",
+      "THUNDER_WAVE",
+      "AGILITY"
+    ],
+    "tmHm": [
+      2,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      23,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      45,
+      50,
+      53,
+      54
+    ],
+    "type1": "DRAGON",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Missing43",
     "ind": 67,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing44",
     "ind": 68,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing45",
     "ind": 69,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Doduo",
@@ -2228,7 +3980,31 @@
         "level": 44,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK"
+    ],
+    "tmHm": [
+      4,
+      6,
+      8,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      40,
+      43,
+      44,
+      49,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 190
   },
   {
     "name": "Poliwag",
@@ -2270,7 +4046,33 @@
         "level": 45,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      29,
+      31,
+      32,
+      34,
+      40,
+      44,
+      46,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 255
   },
   {
     "name": "Jynx",
@@ -2308,7 +4110,42 @@
         "level": 58,
         "move": "BLIZZARD"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "LOVELY_KISS"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      44,
+      46,
+      50
+    ],
+    "type1": "ICE",
+    "type2": "PSYCHIC",
+    "catchRate": 45
   },
   {
     "name": "Moltres",
@@ -2334,7 +4171,33 @@
         "level": 60,
         "move": "SKY ATTACK"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "FIRE_SPIN"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "FIRE",
+    "type2": "FLYING",
+    "catchRate": 3
   },
   {
     "name": "Articuno",
@@ -2360,7 +4223,36 @@
         "level": 60,
         "move": "MIST"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "ICE_BEAM"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "ICE",
+    "type2": "FLYING",
+    "catchRate": 3
   },
   {
     "name": "Zapdos",
@@ -2386,7 +4278,36 @@
         "level": 60,
         "move": "LIGHT SCREEN"
       }
-    ]
+    ],
+    "initial": [
+      "THUNDERSHOCK",
+      "DRILL_PECK"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      39,
+      43,
+      44,
+      45,
+      50,
+      52,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "FLYING",
+    "catchRate": 3
   },
   {
     "name": "Ditto",
@@ -2399,7 +4320,21 @@
     "baseSpeed": 48,
     "baseSpecial": 48,
     "baseExpYield": 61,
-    "moves": []
+    "initial": [
+      "TRANSFORM"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 35
   },
   {
     "name": "Meowth",
@@ -2437,7 +4372,33 @@
         "level": 44,
         "move": "SLASH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      16,
+      20,
+      24,
+      25,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 255
   },
   {
     "name": "Krabby",
@@ -2475,25 +4436,49 @@
         "level": 40,
         "move": "HARDEN"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE",
+      "LEER"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      31,
+      32,
+      34,
+      44,
+      50,
+      51,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 225
   },
   {
     "name": "Missing4F",
     "ind": 79,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing50",
     "ind": 80,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing51",
     "ind": 81,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Vulpix",
@@ -2531,7 +4516,31 @@
         "level": 42,
         "move": "FIRE SPIN"
       }
-    ]
+    ],
+    "initial": [
+      "EMBER",
+      "TAIL_WHIP"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 190
   },
   {
     "name": "Ninetales",
@@ -2544,7 +4553,33 @@
     "baseSpeed": 100,
     "baseSpecial": 100,
     "baseExpYield": 178,
-    "moves": []
+    "initial": [
+      "EMBER",
+      "TAIL_WHIP",
+      "QUICK_ATTACK",
+      "ROAR"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 75
   },
   {
     "name": "Pikachu",
@@ -2582,7 +4617,38 @@
         "level": 43,
         "move": "THUNDER"
       }
-    ]
+    ],
+    "initial": [
+      "THUNDERSHOCK",
+      "GROWL"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      16,
+      17,
+      19,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 190
   },
   {
     "name": "Raichu",
@@ -2595,19 +4661,49 @@
     "baseSpeed": 100,
     "baseSpecial": 90,
     "baseExpYield": 122,
-    "moves": []
+    "initial": [
+      "THUNDERSHOCK",
+      "GROWL",
+      "THUNDER_WAVE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      16,
+      17,
+      19,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 75
   },
   {
     "name": "Missing56",
     "ind": 86,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing57",
     "ind": 87,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Dratini",
@@ -2645,7 +4741,39 @@
         "level": 50,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "LEER"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      23,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      45,
+      50,
+      53
+    ],
+    "type1": "DRAGON",
+    "type2": "DRAGON",
+    "catchRate": 45
   },
   {
     "name": "Dragonair",
@@ -2683,7 +4811,41 @@
         "level": 55,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "LEER",
+      "THUNDER_WAVE"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      23,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      45,
+      50,
+      53
+    ],
+    "type1": "DRAGON",
+    "type2": "DRAGON",
+    "catchRate": 45
   },
   {
     "name": "Kabuto",
@@ -2717,7 +4879,32 @@
         "level": 49,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "HARDEN"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      53
+    ],
+    "type1": "ROCK",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Kabutops",
@@ -2747,7 +4934,40 @@
         "level": 53,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "HARDEN",
+      "ABSORB"
+    ],
+    "tmHm": [
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      19,
+      20,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "ROCK",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Horsea",
@@ -2785,7 +5005,31 @@
         "level": 45,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 225
   },
   {
     "name": "Seadra",
@@ -2819,19 +5063,43 @@
         "level": 52,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE",
+      "SMOKESCREEN"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 75
   },
   {
     "name": "Missing5E",
     "ind": 94,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing5F",
     "ind": 95,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Sandshrew",
@@ -2869,7 +5137,36 @@
         "level": 38,
         "move": "FURY SWIPES"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      17,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      48,
+      50,
+      51,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 255
   },
   {
     "name": "Sandslash",
@@ -2903,7 +5200,38 @@
         "level": 47,
         "move": "FURY SWIPES"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "SAND_ATTACK"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      48,
+      50,
+      51,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 90
   },
   {
     "name": "Omanyte",
@@ -2937,7 +5265,32 @@
         "level": 53,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "WATER_GUN",
+      "WITHDRAW"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      53
+    ],
+    "type1": "ROCK",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Omastar",
@@ -2967,7 +5320,38 @@
         "level": 49,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "WATER_GUN",
+      "WITHDRAW",
+      "HORN_ATTACK"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      19,
+      20,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "ROCK",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Jigglypuff",
@@ -3013,7 +5397,47 @@
         "level": 39,
         "move": "DOUBLE EDGE"
       }
-    ]
+    ],
+    "initial": [
+      "SING"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 170
   },
   {
     "name": "Wigglytuff",
@@ -3026,7 +5450,50 @@
     "baseSpeed": 45,
     "baseSpecial": 50,
     "baseExpYield": 109,
-    "moves": []
+    "initial": [
+      "SING",
+      "DISABLE",
+      "DEFENSE_CURL",
+      "DOUBLESLAP"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      38,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 50
   },
   {
     "name": "Eevee",
@@ -3070,7 +5537,29 @@
         "level": 45,
         "move": "TAKE DOWN"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SAND_ATTACK"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 45
   },
   {
     "name": "Flareon",
@@ -3116,7 +5605,33 @@
         "level": 54,
         "move": "FLAMETHROWER"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SAND_ATTACK",
+      "QUICK_ATTACK",
+      "EMBER"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 45
   },
   {
     "name": "Jolteon",
@@ -3162,7 +5677,36 @@
         "level": 54,
         "move": "THUNDER"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SAND_ATTACK",
+      "QUICK_ATTACK",
+      "THUNDERSHOCK"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 45
   },
   {
     "name": "Vaporeon",
@@ -3208,7 +5752,37 @@
         "level": 54,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SAND_ATTACK",
+      "QUICK_ATTACK",
+      "WATER_GUN"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Machop",
@@ -3246,7 +5820,38 @@
         "level": 46,
         "move": "SUBMISSION"
       }
-    ]
+    ],
+    "initial": [
+      "KARATE_CHOP"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      38,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 180
   },
   {
     "name": "Zubat",
@@ -3284,7 +5889,28 @@
         "level": 36,
         "move": "HAZE"
       }
-    ]
+    ],
+    "initial": [
+      "LEECH_LIFE"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      20,
+      21,
+      31,
+      32,
+      34,
+      39,
+      44,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "FLYING",
+    "catchRate": 255
   },
   {
     "name": "Ekans",
@@ -3322,7 +5948,33 @@
         "level": 38,
         "move": "ACID"
       }
-    ]
+    ],
+    "initial": [
+      "WRAP",
+      "LEER"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      20,
+      21,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 255
   },
   {
     "name": "Paras",
@@ -3360,7 +6012,32 @@
         "level": 41,
         "move": "GROWTH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      20,
+      21,
+      22,
+      28,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      51
+    ],
+    "type1": "BUG",
+    "type2": "GRASS",
+    "catchRate": 190
   },
   {
     "name": "Poliwhirl",
@@ -3402,7 +6079,44 @@
         "level": 49,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE",
+      "HYPNOSIS",
+      "WATER_GUN"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      29,
+      31,
+      32,
+      34,
+      35,
+      40,
+      44,
+      46,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 120
   },
   {
     "name": "Poliwrath",
@@ -3424,7 +6138,46 @@
         "level": 19,
         "move": "WATER GUN"
       }
-    ]
+    ],
+    "initial": [
+      "HYPNOSIS",
+      "WATER_GUN",
+      "DOUBLESLAP",
+      "BODY_SLAM"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      29,
+      31,
+      32,
+      34,
+      35,
+      40,
+      44,
+      46,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "FIGHTING",
+    "catchRate": 45
   },
   {
     "name": "Weedle",
@@ -3441,7 +6194,22 @@
       "level": 7,
       "toName": "KAKUNA"
     },
-    "moves": []
+    "initial": [
+      "POISON_STING",
+      "STRING_SHOT"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "BUG",
+    "type2": "POISON",
+    "catchRate": 255
   },
   {
     "name": "Kakuna",
@@ -3458,7 +6226,21 @@
       "level": 10,
       "toName": "BEEDRILL"
     },
-    "moves": []
+    "initial": [
+      "HARDEN"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "BUG",
+    "type2": "POISON",
+    "catchRate": 120
   },
   {
     "name": "Beedrill",
@@ -3496,13 +6278,36 @@
         "level": 35,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "FURY_ATTACK"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      15,
+      20,
+      21,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      50,
+      51
+    ],
+    "type1": "BUG",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Missing73",
     "ind": 115,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Dodrio",
@@ -3540,7 +6345,34 @@
         "level": 51,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "GROWL",
+      "FURY_ATTACK"
+    ],
+    "tmHm": [
+      4,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      40,
+      43,
+      44,
+      49,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Primeape",
@@ -3574,7 +6406,43 @@
         "level": 46,
         "move": "THRASH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "LEER",
+      "KARATE_CHOP",
+      "FURY_SWIPES"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      24,
+      25,
+      28,
+      31,
+      32,
+      34,
+      35,
+      39,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 75
   },
   {
     "name": "Dugtrio",
@@ -3608,7 +6476,32 @@
         "level": 47,
         "move": "EARTHQUAKE"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL",
+      "DIG"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      44,
+      48,
+      50
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 50
   },
   {
     "name": "Venomoth",
@@ -3646,7 +6539,37 @@
         "level": 50,
         "move": "PSYCHIC M"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "DISABLE",
+      "POISONPOWDER",
+      "LEECH_LIFE"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      44,
+      46,
+      50
+    ],
+    "type1": "BUG",
+    "type2": "POISON",
+    "catchRate": 75
   },
   {
     "name": "Dewgong",
@@ -3680,19 +6603,47 @@
         "level": 56,
         "move": "ICE BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "HEADBUTT",
+      "GROWL",
+      "AURORA_BEAM"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      20,
+      31,
+      32,
+      34,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "ICE",
+    "catchRate": 75
   },
   {
     "name": "Missing79",
     "ind": 121,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing7A",
     "ind": 122,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Caterpie",
@@ -3709,7 +6660,22 @@
       "level": 7,
       "toName": "METAPOD"
     },
-    "moves": []
+    "initial": [
+      "TACKLE",
+      "STRING_SHOT"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "BUG",
+    "type2": "BUG",
+    "catchRate": 255
   },
   {
     "name": "Metapod",
@@ -3726,7 +6692,21 @@
       "level": 10,
       "toName": "BUTTERFREE"
     },
-    "moves": []
+    "initial": [
+      "HARDEN"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "BUG",
+    "type2": "BUG",
+    "catchRate": 120
   },
   {
     "name": "Butterfree",
@@ -3768,7 +6748,34 @@
         "level": 32,
         "move": "PSYBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "CONFUSION"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      44,
+      46,
+      50
+    ],
+    "type1": "BUG",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Machamp",
@@ -3802,13 +6809,46 @@
         "level": 52,
         "move": "SUBMISSION"
       }
-    ]
+    ],
+    "initial": [
+      "KARATE_CHOP",
+      "LOW_KICK",
+      "LEER"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      38,
+      40,
+      44,
+      48,
+      50,
+      54
+    ],
+    "type1": "FIGHTING",
+    "type2": "FIGHTING",
+    "catchRate": 45
   },
   {
     "name": "Missing7F",
     "ind": 127,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Golduck",
@@ -3842,7 +6882,43 @@
         "level": 59,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "TAIL_WHIP",
+      "DISABLE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 75
   },
   {
     "name": "Hypno",
@@ -3880,7 +6956,44 @@
         "level": 43,
         "move": "MEDITATE"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "HYPNOSIS",
+      "DISABLE",
+      "CONFUSION"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      42,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 75
   },
   {
     "name": "Golbat",
@@ -3914,7 +7027,31 @@
         "level": 43,
         "move": "HAZE"
       }
-    ]
+    ],
+    "initial": [
+      "LEECH_LIFE",
+      "SCREECH",
+      "BITE"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      21,
+      31,
+      32,
+      34,
+      39,
+      44,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "FLYING",
+    "catchRate": 90
   },
   {
     "name": "Mewtwo",
@@ -3948,7 +7085,54 @@
         "level": 81,
         "move": "AMNESIA"
       }
-    ]
+    ],
+    "initial": [
+      "CONFUSION",
+      "DISABLE",
+      "SWIFT",
+      "PSYCHIC_M"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      38,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 3
   },
   {
     "name": "Snorlax",
@@ -3978,7 +7162,53 @@
         "level": 56,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "HEADBUTT",
+      "AMNESIA",
+      "REST"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      26,
+      27,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      38,
+      40,
+      44,
+      46,
+      48,
+      50,
+      53,
+      54
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 25
   },
   {
     "name": "Magikarp",
@@ -4000,19 +7230,32 @@
         "level": 15,
         "move": "TACKLE"
       }
-    ]
+    ],
+    "initial": [
+      "SPLASH"
+    ],
+    "tmHm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 255
   },
   {
     "name": "Missing86",
     "ind": 134,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Missing87",
     "ind": 135,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Muk",
@@ -4050,7 +7293,32 @@
         "level": 60,
         "move": "ACID ARMOR"
       }
-    ]
+    ],
+    "initial": [
+      "POUND",
+      "DISABLE",
+      "POISON_GAS"
+    ],
+    "tmHm": [
+      6,
+      8,
+      15,
+      20,
+      21,
+      24,
+      25,
+      31,
+      32,
+      34,
+      36,
+      38,
+      44,
+      47,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 75
   },
   {
     "name": "Missing89",
@@ -4089,7 +7357,36 @@
         "level": 49,
         "move": "HARDEN"
       }
-    ]
+    ],
+    "initial": [
+      "BUBBLE",
+      "LEER",
+      "VICEGRIP"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      31,
+      32,
+      34,
+      44,
+      50,
+      51,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 60
   },
   {
     "name": "Cloyster",
@@ -4107,13 +7404,44 @@
         "level": 50,
         "move": "SPIKE CANNON"
       }
-    ]
+    ],
+    "initial": [
+      "WITHDRAW",
+      "SUPERSONIC",
+      "CLAMP",
+      "AURORA_BEAM"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      39,
+      44,
+      47,
+      49,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "ICE",
+    "catchRate": 60
   },
   {
     "name": "Missing8C",
     "ind": 140,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Electrode",
@@ -4147,7 +7475,36 @@
         "level": 50,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SCREECH",
+      "SONICBOOM"
+    ],
+    "tmHm": [
+      6,
+      9,
+      15,
+      20,
+      24,
+      25,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      39,
+      40,
+      44,
+      45,
+      47,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 60
   },
   {
     "name": "Clefable",
@@ -4160,7 +7517,51 @@
     "baseSpeed": 60,
     "baseSpecial": 85,
     "baseExpYield": 129,
-    "moves": []
+    "initial": [
+      "SING",
+      "DOUBLESLAP",
+      "MINIMIZE",
+      "METRONOME"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      38,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      54,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 25
   },
   {
     "name": "Weezing",
@@ -4194,7 +7595,30 @@
         "level": 53,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SMOG",
+      "SLUDGE"
+    ],
+    "tmHm": [
+      6,
+      15,
+      20,
+      24,
+      25,
+      31,
+      32,
+      34,
+      36,
+      38,
+      44,
+      47,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 60
   },
   {
     "name": "Persian",
@@ -4228,7 +7652,36 @@
         "level": 51,
         "move": "SLASH"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL",
+      "BITE",
+      "SCREECH"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      20,
+      24,
+      25,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 90
   },
   {
     "name": "Marowak",
@@ -4262,13 +7715,49 @@
         "level": 55,
         "move": "RAGE"
       }
-    ]
+    ],
+    "initial": [
+      "BONE_CLUB",
+      "GROWL",
+      "LEER",
+      "FOCUS_ENERGY"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      38,
+      40,
+      44,
+      50,
+      54
+    ],
+    "type1": "GROUND",
+    "type2": "GROUND",
+    "catchRate": 75
   },
   {
     "name": "Missing92",
     "ind": 146,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Haunter",
@@ -4294,7 +7783,33 @@
         "level": 38,
         "move": "DREAM EATER"
       }
-    ]
+    ],
+    "initial": [
+      "LICK",
+      "CONFUSE_RAY",
+      "NIGHT_SHADE"
+    ],
+    "tmHm": [
+      6,
+      0,
+      20,
+      21,
+      24,
+      25,
+      29,
+      31,
+      32,
+      34,
+      36,
+      42,
+      44,
+      46,
+      47,
+      50
+    ],
+    "type1": "GHOST",
+    "type2": "POISON",
+    "catchRate": 90
   },
   {
     "name": "Abra",
@@ -4311,7 +7826,38 @@
       "level": 16,
       "toName": "KADABRA"
     },
-    "moves": []
+    "initial": [
+      "TELEPORT"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 200
   },
   {
     "name": "Alakazam",
@@ -4349,7 +7895,43 @@
         "level": 42,
         "move": "REFLECT"
       }
-    ]
+    ],
+    "initial": [
+      "TELEPORT",
+      "CONFUSION",
+      "DISABLE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "PSYCHIC",
+    "type2": "PSYCHIC",
+    "catchRate": 50
   },
   {
     "name": "Pidgeotto",
@@ -4391,7 +7973,31 @@
         "level": 49,
         "move": "MIRROR MOVE"
       }
-    ]
+    ],
+    "initial": [
+      "GUST",
+      "SAND_ATTACK"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 120
   },
   {
     "name": "Pidgeot",
@@ -4429,7 +8035,33 @@
         "level": 54,
         "move": "MIRROR MOVE"
       }
-    ]
+    ],
+    "initial": [
+      "GUST",
+      "SAND_ATTACK",
+      "QUICK_ATTACK"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "NORMAL",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "Starmie",
@@ -4442,7 +8074,42 @@
     "baseSpeed": 115,
     "baseSpecial": 100,
     "baseExpYield": 207,
-    "moves": []
+    "initial": [
+      "TACKLE",
+      "WATER_GUN",
+      "HARDEN"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      53,
+      55
+    ],
+    "type1": "WATER",
+    "type2": "PSYCHIC",
+    "catchRate": 60
   },
   {
     "name": "Bulbasaur",
@@ -4488,7 +8155,31 @@
         "level": 48,
         "move": "SOLARBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "GROWL"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Venusaur",
@@ -4530,7 +8221,34 @@
         "level": 65,
         "move": "SOLARBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "GROWL",
+      "LEECH_SEED",
+      "VINE_WHIP"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Tentacruel",
@@ -4576,13 +8294,42 @@
         "level": 50,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "ACID",
+      "SUPERSONIC",
+      "WRAP"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      21,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      51,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "POISON",
+    "catchRate": 60
   },
   {
     "name": "Missing9C",
     "ind": 156,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Goldeen",
@@ -4624,7 +8371,33 @@
         "level": 54,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "TAIL_WHIP"
+    ],
+    "tmHm": [
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 225
   },
   {
     "name": "Seaking",
@@ -4662,31 +8435,55 @@
         "level": 54,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "PECK",
+      "TAIL_WHIP",
+      "SUPERSONIC"
+    ],
+    "tmHm": [
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50,
+      53
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 60
   },
   {
     "name": "Missing9F",
     "ind": 159,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "MissingA0",
     "ind": 160,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "MissingA1",
     "ind": 161,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "MissingA2",
     "ind": 162,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Ponyta",
@@ -4728,7 +8525,30 @@
         "level": 48,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "EMBER"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 190
   },
   {
     "name": "Rapidash",
@@ -4766,7 +8586,34 @@
         "level": 55,
         "move": "AGILITY"
       }
-    ]
+    ],
+    "initial": [
+      "EMBER",
+      "TAIL_WHIP",
+      "STOMP",
+      "GROWL"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      20,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 60
   },
   {
     "name": "Rattata",
@@ -4800,7 +8647,34 @@
         "level": 34,
         "move": "SUPER FANG"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "TAIL_WHIP"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      20,
+      24,
+      25,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 255
   },
   {
     "name": "Raticate",
@@ -4830,7 +8704,37 @@
         "level": 41,
         "move": "SUPER FANG"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "TAIL_WHIP",
+      "QUICK_ATTACK"
+    ],
+    "tmHm": [
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      24,
+      25,
+      28,
+      31,
+      32,
+      34,
+      39,
+      40,
+      44,
+      50
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 90
   },
   {
     "name": "Nidorino",
@@ -4872,7 +8776,36 @@
         "level": 50,
         "move": "DOUBLE KICK"
       }
-    ]
+    ],
+    "initial": [
+      "LEER",
+      "TACKLE",
+      "HORN_ATTACK"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 120
   },
   {
     "name": "Nidorina",
@@ -4914,7 +8847,36 @@
         "level": 50,
         "move": "DOUBLE KICK"
       }
-    ]
+    ],
+    "initial": [
+      "GROWL",
+      "TACKLE",
+      "SCRATCH"
+    ],
+    "tmHm": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      24,
+      25,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50
+    ],
+    "type1": "POISON",
+    "type2": "POISON",
+    "catchRate": 120
   },
   {
     "name": "Geodude",
@@ -4956,7 +8918,38 @@
         "level": 36,
         "move": "EXPLOSION"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE"
+    ],
+    "tmHm": [
+      1,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      31,
+      32,
+      34,
+      35,
+      36,
+      38,
+      44,
+      47,
+      48,
+      50,
+      54
+    ],
+    "type1": "ROCK",
+    "type2": "GROUND",
+    "catchRate": 255
   },
   {
     "name": "Porygon",
@@ -4986,7 +8979,40 @@
         "level": 42,
         "move": "TRI ATTACK"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "SHARPEN",
+      "CONVERSION"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      13,
+      14,
+      15,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      40,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55
+    ],
+    "type1": "NORMAL",
+    "type2": "NORMAL",
+    "catchRate": 45
   },
   {
     "name": "Aerodactyl",
@@ -5016,13 +9042,39 @@
         "level": 54,
         "move": "HYPER BEAM"
       }
-    ]
+    ],
+    "initial": [
+      "WING_ATTACK",
+      "AGILITY"
+    ],
+    "tmHm": [
+      2,
+      4,
+      6,
+      9,
+      10,
+      15,
+      20,
+      23,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      43,
+      44,
+      50,
+      52
+    ],
+    "type1": "ROCK",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "MissingAC",
     "ind": 172,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Magnemite",
@@ -5064,19 +9116,41 @@
         "level": 47,
         "move": "SCREECH"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE"
+    ],
+    "tmHm": [
+      6,
+      9,
+      10,
+      20,
+      24,
+      25,
+      30,
+      31,
+      32,
+      33,
+      34,
+      39,
+      44,
+      45,
+      50,
+      55
+    ],
+    "type1": "ELECTRIC",
+    "type2": "ELECTRIC",
+    "catchRate": 190
   },
   {
     "name": "MissingAE",
     "ind": 174,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "MissingAF",
     "ind": 175,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "Charmander",
@@ -5118,7 +9192,40 @@
         "level": 46,
         "move": "FIRE SPIN"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL"
+    ],
+    "tmHm": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      23,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50,
+      51,
+      54
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 45
   },
   {
     "name": "Squirtle",
@@ -5160,7 +9267,40 @@
         "level": 42,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "TAIL_WHIP"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      28,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Charmeleon",
@@ -5202,7 +9342,41 @@
         "level": 56,
         "move": "FIRE SPIN"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL",
+      "EMBER"
+    ],
+    "tmHm": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      23,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50,
+      51,
+      54
+    ],
+    "type1": "FIRE",
+    "type2": "FIRE",
+    "catchRate": 45
   },
   {
     "name": "Wartortle",
@@ -5244,7 +9418,41 @@
         "level": 47,
         "move": "HYDRO PUMP"
       }
-    ]
+    ],
+    "initial": [
+      "TACKLE",
+      "TAIL_WHIP",
+      "BUBBLE"
+    ],
+    "tmHm": [
+      1,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      28,
+      31,
+      32,
+      33,
+      34,
+      40,
+      44,
+      50,
+      53,
+      54
+    ],
+    "type1": "WATER",
+    "type2": "WATER",
+    "catchRate": 45
   },
   {
     "name": "Charizard",
@@ -5282,13 +9490,50 @@
         "level": 55,
         "move": "FIRE SPIN"
       }
-    ]
+    ],
+    "initial": [
+      "SCRATCH",
+      "GROWL",
+      "EMBER",
+      "LEER"
+    ],
+    "tmHm": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      15,
+      17,
+      18,
+      19,
+      20,
+      23,
+      26,
+      27,
+      28,
+      31,
+      32,
+      33,
+      34,
+      38,
+      39,
+      40,
+      44,
+      50,
+      51,
+      54
+    ],
+    "type1": "FIRE",
+    "type2": "FLYING",
+    "catchRate": 45
   },
   {
     "name": "MissingB5",
     "ind": 181,
-    "glitch": true,
-    "moves": []
+    "glitch": true
   },
   {
     "name": "_Kabutops",
@@ -5345,7 +9590,29 @@
         "level": 46,
         "move": "SOLARBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "ABSORB"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 255
   },
   {
     "name": "Gloom",
@@ -5387,7 +9654,31 @@
         "level": 52,
         "move": "SOLARBEAM"
       }
-    ]
+    ],
+    "initial": [
+      "ABSORB",
+      "POISONPOWDER",
+      "STUN_SPORE"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 120
   },
   {
     "name": "Vileplume",
@@ -5413,7 +9704,34 @@
         "level": 19,
         "move": "SLEEP POWDER"
       }
-    ]
+    ],
+    "initial": [
+      "STUN_SPORE",
+      "SLEEP_POWDER",
+      "ACID",
+      "PETAL_DANCE"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 45
   },
   {
     "name": "Bellsprout",
@@ -5459,7 +9777,30 @@
         "level": 42,
         "move": "SLAM"
       }
-    ]
+    ],
+    "initial": [
+      "VINE_WHIP",
+      "GROWTH"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 255
   },
   {
     "name": "Weepinbell",
@@ -5505,7 +9846,31 @@
         "level": 49,
         "move": "SLAM"
       }
-    ]
+    ],
+    "initial": [
+      "VINE_WHIP",
+      "GROWTH",
+      "WRAP"
+    ],
+    "tmHm": [
+      3,
+      6,
+      9,
+      10,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 120
   },
   {
     "name": "Victreebel",
@@ -5531,6 +9896,33 @@
         "level": 18,
         "move": "SLEEP POWDER"
       }
-    ]
+    ],
+    "initial": [
+      "SLEEP_POWDER",
+      "STUN_SPORE",
+      "ACID",
+      "RAZOR_LEAF"
+    ],
+    "tmHm": [
+      3,
+      6,
+      8,
+      9,
+      10,
+      15,
+      20,
+      21,
+      22,
+      31,
+      32,
+      33,
+      34,
+      44,
+      50,
+      51
+    ],
+    "type1": "GRASS",
+    "type2": "POISON",
+    "catchRate": 45
   }
 ]
