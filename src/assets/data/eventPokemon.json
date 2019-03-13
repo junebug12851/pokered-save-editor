@@ -1,0 +1,150 @@
+[
+    {
+        "title": "Game Freak Mew",
+        "desc": "Level 5 Mew with max DV's",
+        "pokemon": "Mew",
+        "otName": "GMFRK",
+        "otID": "590C",
+        "dv": "max",
+        "region": "Japan"
+    },
+    {
+        "title": "Nintendo Space World '99 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "MAKHARI",
+        "region": "Japan"
+    },
+    {
+        "title": "Pokemon Stamp Fearow",
+        "desc": "Level 20 Fearow with Payday",
+        "pokemon": "Fearow",
+        "otName": "STAMP",
+        "level": 20,
+        "moves": [
+            "Growl",
+            "Leer",
+            "Fury Attack",
+            "Pay Day"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "Pokemon Stamp Rapidash",
+        "desc": "Level 40 Rapidash with Payday",
+        "pokemon": "Rapidash",
+        "otName": "STAMP",
+        "level": 40,
+        "moves": [
+            "Ember",
+            "Fire Spin",
+            "Stomp",
+            "Pay Day"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "Summer '98 Pokemon Battle Tour Pikachu",
+        "desc": "Level 5 Surfing Pikachu",
+        "pokemon": "Pikachu",
+        "otName": "IMAKUNI",
+        "moves": [
+            "Surf"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "University Magikarp",
+        "desc": "Level 5 Magikarp with Dragon Rage",
+        "pokemon": "Magikarp",
+        "otName": "TAMAMSH",
+        "moves": [
+            "Splash",
+            "Dragon Rage"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "7th Next Generation World Hobby Fair Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "FUKUOKA",
+            "CHIBA",
+            "OSAKA",
+            "HOKAIDO",
+            "AICHI"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "CoroCoro Flying Pikachu",
+        "desc": "Level 5 Pikachu that knows Fly",
+        "pokemon": "Pikachu",
+        "otName": "COROCOR",
+        "moves": [
+            "Fly"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "CoroCoro Surfing Pikachu",
+        "desc": "Level 5 Pikachu that knows Surf",
+        "pokemon": "Pikachu",
+        "otName": "COROCOR",
+        "moves": [
+            "Surf"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "Nintendo Space World '97 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": [
+            "YOSHI",
+            "LUIGI"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "CoroCoro 20th Anniversary Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "COROCOR",
+        "region": "Japan"
+    },
+    {
+        "title": "Nintendo 64 Pikachu",
+        "desc": "Level 5 Pikachu that knows Thundershock, Growl, and Surf",
+        "pokemon": "Pikachu",
+        "otName": "NINTEN",
+        "moves": [
+            "Thundershock",
+            "Growl",
+            "Surf"
+        ],
+        "region": "Japan"
+    },
+    {
+        "title": "4th Next Generation World Hobby Fair Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "TOKYOBY",
+        "region": "Japan"
+    },
+    {
+        "title": "Legendary Pokemon Offer 2 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "COROCOR",
+        "region": "Japan"
+    },
+    {
+        "title": "Legendary Pokemon Offer 1 Mew",
+        "desc": "Level 5 Mew",
+        "pokemon": "Mew",
+        "otName": "COROCOR",
+        "region": "Japan"
+    }
+]

@@ -9,7 +9,33 @@
     "baseDefense": 120,
     "baseSpeed": 40,
     "baseSpecial": 45,
-    "baseExpYield": 204
+    "baseExpYield": 204,
+    "moves": [
+      {
+        "level": 30,
+        "move": "STOMP"
+      },
+      {
+        "level": 35,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 40,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 48,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 55,
+        "move": "LEER"
+      },
+      {
+        "level": 64,
+        "move": "TAKE DOWN"
+      }
+    ]
   },
   {
     "name": "Kangaskhan",
@@ -21,7 +47,29 @@
     "baseDefense": 80,
     "baseSpeed": 90,
     "baseSpecial": 40,
-    "baseExpYield": 175
+    "baseExpYield": 175,
+    "moves": [
+      {
+        "level": 26,
+        "move": "BITE"
+      },
+      {
+        "level": 31,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 36,
+        "move": "MEGA PUNCH"
+      },
+      {
+        "level": 42,
+        "move": "LEER"
+      },
+      {
+        "level": 46,
+        "move": "DIZZY PUNCH"
+      }
+    ]
   },
   {
     "name": "Nidoran<m>",
@@ -33,7 +81,37 @@
     "baseDefense": 40,
     "baseSpeed": 50,
     "baseSpecial": 40,
-    "baseExpYield": 60
+    "baseExpYield": 60,
+    "evolution": {
+      "level": 16,
+      "toName": "NIDORINO"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 21,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 29,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 43,
+        "move": "DOUBLE KICK"
+      }
+    ]
   },
   {
     "name": "Clefairy",
@@ -45,7 +123,37 @@
     "baseDefense": 48,
     "baseSpeed": 35,
     "baseSpecial": 60,
-    "baseExpYield": 68
+    "baseExpYield": 68,
+    "evolution": {
+      "item": "MOON STONE",
+      "toName": "CLEFABLE"
+    },
+    "moves": [
+      {
+        "level": 13,
+        "move": "SING"
+      },
+      {
+        "level": 18,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 24,
+        "move": "MINIMIZE"
+      },
+      {
+        "level": 31,
+        "move": "METRONOME"
+      },
+      {
+        "level": 39,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 48,
+        "move": "LIGHT SCREEN"
+      }
+    ]
   },
   {
     "name": "Spearow",
@@ -57,7 +165,33 @@
     "baseDefense": 30,
     "baseSpeed": 70,
     "baseSpecial": 31,
-    "baseExpYield": 58
+    "baseExpYield": 58,
+    "evolution": {
+      "level": 20,
+      "toName": "FEAROW"
+    },
+    "moves": [
+      {
+        "level": 9,
+        "move": "LEER"
+      },
+      {
+        "level": 15,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 22,
+        "move": "MIRROR MOVE"
+      },
+      {
+        "level": 29,
+        "move": "DRILL PECK"
+      },
+      {
+        "level": 36,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Voltorb",
@@ -69,7 +203,33 @@
     "baseDefense": 50,
     "baseSpeed": 100,
     "baseSpecial": 55,
-    "baseExpYield": 103
+    "baseExpYield": 103,
+    "evolution": {
+      "level": 30,
+      "toName": "ELECTRODE"
+    },
+    "moves": [
+      {
+        "level": 17,
+        "move": "SONICBOOM"
+      },
+      {
+        "level": 22,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 36,
+        "move": "SWIFT"
+      },
+      {
+        "level": 43,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Nidoking",
@@ -81,7 +241,21 @@
     "baseDefense": 77,
     "baseSpeed": 85,
     "baseSpecial": 75,
-    "baseExpYield": 195
+    "baseExpYield": 195,
+    "moves": [
+      {
+        "level": 8,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 23,
+        "move": "THRASH"
+      }
+    ]
   },
   {
     "name": "Slowbro",
@@ -93,7 +267,37 @@
     "baseDefense": 110,
     "baseSpeed": 30,
     "baseSpecial": 80,
-    "baseExpYield": 164
+    "baseExpYield": 164,
+    "moves": [
+      {
+        "level": 18,
+        "move": "DISABLE"
+      },
+      {
+        "level": 22,
+        "move": "HEADBUTT"
+      },
+      {
+        "level": 27,
+        "move": "GROWL"
+      },
+      {
+        "level": 33,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 37,
+        "move": "WITHDRAW"
+      },
+      {
+        "level": 44,
+        "move": "AMNESIA"
+      },
+      {
+        "level": 55,
+        "move": "PSYCHIC M"
+      }
+    ]
   },
   {
     "name": "Ivysaur",
@@ -105,7 +309,41 @@
     "baseDefense": 63,
     "baseSpeed": 60,
     "baseSpecial": 80,
-    "baseExpYield": 141
+    "baseExpYield": 141,
+    "evolution": {
+      "level": 32,
+      "toName": "VENUSAUR"
+    },
+    "moves": [
+      {
+        "level": 7,
+        "move": "LEECH SEED"
+      },
+      {
+        "level": 13,
+        "move": "VINE WHIP"
+      },
+      {
+        "level": 22,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 30,
+        "move": "RAZOR LEAF"
+      },
+      {
+        "level": 38,
+        "move": "GROWTH"
+      },
+      {
+        "level": 46,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 54,
+        "move": "SOLARBEAM"
+      }
+    ]
   },
   {
     "name": "Exeggutor",
@@ -117,7 +355,13 @@
     "baseDefense": 85,
     "baseSpeed": 55,
     "baseSpecial": 125,
-    "baseExpYield": 212
+    "baseExpYield": 212,
+    "moves": [
+      {
+        "level": 28,
+        "move": "STOMP"
+      }
+    ]
   },
   {
     "name": "Lickitung",
@@ -129,7 +373,29 @@
     "baseDefense": 75,
     "baseSpeed": 30,
     "baseSpecial": 60,
-    "baseExpYield": 127
+    "baseExpYield": 127,
+    "moves": [
+      {
+        "level": 7,
+        "move": "STOMP"
+      },
+      {
+        "level": 15,
+        "move": "DISABLE"
+      },
+      {
+        "level": 23,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 31,
+        "move": "SLAM"
+      },
+      {
+        "level": 39,
+        "move": "SCREECH"
+      }
+    ]
   },
   {
     "name": "Exeggcute",
@@ -141,7 +407,37 @@
     "baseDefense": 80,
     "baseSpeed": 40,
     "baseSpecial": 60,
-    "baseExpYield": 98
+    "baseExpYield": 98,
+    "evolution": {
+      "item": "LEAF STONE",
+      "toName": "EXEGGUTOR"
+    },
+    "moves": [
+      {
+        "level": 25,
+        "move": "REFLECT"
+      },
+      {
+        "level": 28,
+        "move": "LEECH SEED"
+      },
+      {
+        "level": 32,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 37,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 42,
+        "move": "SOLARBEAM"
+      },
+      {
+        "level": 48,
+        "move": "SLEEP POWDER"
+      }
+    ]
   },
   {
     "name": "Grimer",
@@ -153,7 +449,37 @@
     "baseDefense": 50,
     "baseSpeed": 25,
     "baseSpecial": 40,
-    "baseExpYield": 90
+    "baseExpYield": 90,
+    "evolution": {
+      "level": 38,
+      "toName": "MUK"
+    },
+    "moves": [
+      {
+        "level": 30,
+        "move": "POISON GAS"
+      },
+      {
+        "level": 33,
+        "move": "MINIMIZE"
+      },
+      {
+        "level": 37,
+        "move": "SLUDGE"
+      },
+      {
+        "level": 42,
+        "move": "HARDEN"
+      },
+      {
+        "level": 48,
+        "move": "SCREECH"
+      },
+      {
+        "level": 55,
+        "move": "ACID ARMOR"
+      }
+    ]
   },
   {
     "name": "Gengar",
@@ -165,7 +491,17 @@
     "baseDefense": 60,
     "baseSpeed": 110,
     "baseSpecial": 130,
-    "baseExpYield": 190
+    "baseExpYield": 190,
+    "moves": [
+      {
+        "level": 29,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 38,
+        "move": "DREAM EATER"
+      }
+    ]
   },
   {
     "name": "Nidoran<f>",
@@ -177,7 +513,37 @@
     "baseDefense": 52,
     "baseSpeed": 41,
     "baseSpecial": 40,
-    "baseExpYield": 59
+    "baseExpYield": 59,
+    "evolution": {
+      "level": 16,
+      "toName": "NIDORINA"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "SCRATCH"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 21,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 29,
+        "move": "BITE"
+      },
+      {
+        "level": 36,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 43,
+        "move": "DOUBLE KICK"
+      }
+    ]
   },
   {
     "name": "Nidoqueen",
@@ -189,7 +555,21 @@
     "baseDefense": 87,
     "baseSpeed": 76,
     "baseSpecial": 75,
-    "baseExpYield": 194
+    "baseExpYield": 194,
+    "moves": [
+      {
+        "level": 8,
+        "move": "SCRATCH"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 23,
+        "move": "BODY SLAM"
+      }
+    ]
   },
   {
     "name": "Cubone",
@@ -201,7 +581,33 @@
     "baseDefense": 95,
     "baseSpeed": 35,
     "baseSpecial": 40,
-    "baseExpYield": 87
+    "baseExpYield": 87,
+    "evolution": {
+      "level": 28,
+      "toName": "MAROWAK"
+    },
+    "moves": [
+      {
+        "level": 25,
+        "move": "LEER"
+      },
+      {
+        "level": 31,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 38,
+        "move": "THRASH"
+      },
+      {
+        "level": 43,
+        "move": "BONEMERANG"
+      },
+      {
+        "level": 46,
+        "move": "RAGE"
+      }
+    ]
   },
   {
     "name": "Rhyhorn",
@@ -213,7 +619,37 @@
     "baseDefense": 95,
     "baseSpeed": 25,
     "baseSpecial": 30,
-    "baseExpYield": 135
+    "baseExpYield": 135,
+    "evolution": {
+      "level": 42,
+      "toName": "RHYDON"
+    },
+    "moves": [
+      {
+        "level": 30,
+        "move": "STOMP"
+      },
+      {
+        "level": 35,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 40,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 45,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 50,
+        "move": "LEER"
+      },
+      {
+        "level": 55,
+        "move": "TAKE DOWN"
+      }
+    ]
   },
   {
     "name": "Lapras",
@@ -225,7 +661,33 @@
     "baseDefense": 80,
     "baseSpeed": 60,
     "baseSpecial": 95,
-    "baseExpYield": 219
+    "baseExpYield": 219,
+    "moves": [
+      {
+        "level": 16,
+        "move": "SING"
+      },
+      {
+        "level": 20,
+        "move": "MIST"
+      },
+      {
+        "level": 25,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 31,
+        "move": "CONFUSE RAY"
+      },
+      {
+        "level": 38,
+        "move": "ICE BEAM"
+      },
+      {
+        "level": 46,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Arcanine",
@@ -237,7 +699,8 @@
     "baseDefense": 80,
     "baseSpeed": 95,
     "baseSpecial": 80,
-    "baseExpYield": 213
+    "baseExpYield": 213,
+    "moves": []
   },
   {
     "name": "Mew",
@@ -249,7 +712,25 @@
     "baseDefense": 100,
     "baseSpeed": 100,
     "baseSpecial": 100,
-    "baseExpYield": 64
+    "baseExpYield": 64,
+    "moves": [
+      {
+        "level": 10,
+        "move": "TRANSFORM"
+      },
+      {
+        "level": 20,
+        "move": "MEGA PUNCH"
+      },
+      {
+        "level": 30,
+        "move": "METRONOME"
+      },
+      {
+        "level": 40,
+        "move": "PSYCHIC M"
+      }
+    ]
   },
   {
     "name": "Gyarados",
@@ -261,7 +742,29 @@
     "baseDefense": 79,
     "baseSpeed": 81,
     "baseSpecial": 100,
-    "baseExpYield": 214
+    "baseExpYield": 214,
+    "moves": [
+      {
+        "level": 20,
+        "move": "BITE"
+      },
+      {
+        "level": 25,
+        "move": "DRAGON RAGE"
+      },
+      {
+        "level": 32,
+        "move": "LEER"
+      },
+      {
+        "level": 41,
+        "move": "HYDRO PUMP"
+      },
+      {
+        "level": 52,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "Shellder",
@@ -273,7 +776,33 @@
     "baseDefense": 100,
     "baseSpeed": 40,
     "baseSpecial": 45,
-    "baseExpYield": 97
+    "baseExpYield": 97,
+    "evolution": {
+      "item": "WATER STONE",
+      "toName": "CLOYSTER"
+    },
+    "moves": [
+      {
+        "level": 18,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 23,
+        "move": "CLAMP"
+      },
+      {
+        "level": 30,
+        "move": "AURORA BEAM"
+      },
+      {
+        "level": 39,
+        "move": "LEER"
+      },
+      {
+        "level": 50,
+        "move": "ICE BEAM"
+      }
+    ]
   },
   {
     "name": "Tentacool",
@@ -285,7 +814,45 @@
     "baseDefense": 35,
     "baseSpeed": 70,
     "baseSpecial": 100,
-    "baseExpYield": 105
+    "baseExpYield": 105,
+    "evolution": {
+      "level": 30,
+      "toName": "TENTACRUEL"
+    },
+    "moves": [
+      {
+        "level": 7,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 13,
+        "move": "WRAP"
+      },
+      {
+        "level": 18,
+        "move": "POISON STING"
+      },
+      {
+        "level": 22,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 27,
+        "move": "CONSTRICT"
+      },
+      {
+        "level": 33,
+        "move": "BARRIER"
+      },
+      {
+        "level": 40,
+        "move": "SCREECH"
+      },
+      {
+        "level": 48,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Gastly",
@@ -297,7 +864,21 @@
     "baseDefense": 30,
     "baseSpeed": 80,
     "baseSpecial": 100,
-    "baseExpYield": 95
+    "baseExpYield": 95,
+    "evolution": {
+      "level": 25,
+      "toName": "HAUNTER"
+    },
+    "moves": [
+      {
+        "level": 27,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 35,
+        "move": "DREAM EATER"
+      }
+    ]
   },
   {
     "name": "Scyther",
@@ -309,7 +890,33 @@
     "baseDefense": 80,
     "baseSpeed": 105,
     "baseSpecial": 55,
-    "baseExpYield": 187
+    "baseExpYield": 187,
+    "moves": [
+      {
+        "level": 17,
+        "move": "LEER"
+      },
+      {
+        "level": 20,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 24,
+        "move": "DOUBLE TEAM"
+      },
+      {
+        "level": 29,
+        "move": "SLASH"
+      },
+      {
+        "level": 35,
+        "move": "SWORDS DANCE"
+      },
+      {
+        "level": 42,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Staryu",
@@ -321,7 +928,41 @@
     "baseDefense": 55,
     "baseSpeed": 85,
     "baseSpecial": 70,
-    "baseExpYield": 106
+    "baseExpYield": 106,
+    "evolution": {
+      "item": "WATER STONE",
+      "toName": "STARMIE"
+    },
+    "moves": [
+      {
+        "level": 17,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 22,
+        "move": "HARDEN"
+      },
+      {
+        "level": 27,
+        "move": "RECOVER"
+      },
+      {
+        "level": 32,
+        "move": "SWIFT"
+      },
+      {
+        "level": 37,
+        "move": "MINIMIZE"
+      },
+      {
+        "level": 42,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 47,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Blastoise",
@@ -333,7 +974,33 @@
     "baseDefense": 100,
     "baseSpeed": 78,
     "baseSpecial": 85,
-    "baseExpYield": 210
+    "baseExpYield": 210,
+    "moves": [
+      {
+        "level": 8,
+        "move": "BUBBLE"
+      },
+      {
+        "level": 15,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 24,
+        "move": "BITE"
+      },
+      {
+        "level": 31,
+        "move": "WITHDRAW"
+      },
+      {
+        "level": 42,
+        "move": "SKULL BASH"
+      },
+      {
+        "level": 52,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Pinsir",
@@ -345,7 +1012,33 @@
     "baseDefense": 100,
     "baseSpeed": 85,
     "baseSpecial": 55,
-    "baseExpYield": 200
+    "baseExpYield": 200,
+    "moves": [
+      {
+        "level": 25,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 30,
+        "move": "GUILLOTINE"
+      },
+      {
+        "level": 36,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 43,
+        "move": "HARDEN"
+      },
+      {
+        "level": 49,
+        "move": "SLASH"
+      },
+      {
+        "level": 54,
+        "move": "SWORDS DANCE"
+      }
+    ]
   },
   {
     "name": "Tangela",
@@ -357,17 +1050,45 @@
     "baseDefense": 115,
     "baseSpeed": 60,
     "baseSpecial": 100,
-    "baseExpYield": 166
+    "baseExpYield": 166,
+    "moves": [
+      {
+        "level": 29,
+        "move": "ABSORB"
+      },
+      {
+        "level": 32,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 36,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 39,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 45,
+        "move": "SLAM"
+      },
+      {
+        "level": 49,
+        "move": "GROWTH"
+      }
+    ]
   },
   {
     "name": "Missing1F",
     "ind": 31,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing20",
     "ind": 32,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Growlithe",
@@ -379,7 +1100,33 @@
     "baseDefense": 45,
     "baseSpeed": 60,
     "baseSpecial": 50,
-    "baseExpYield": 91
+    "baseExpYield": 91,
+    "evolution": {
+      "item": "FIRE STONE",
+      "toName": "ARCANINE"
+    },
+    "moves": [
+      {
+        "level": 18,
+        "move": "EMBER"
+      },
+      {
+        "level": 23,
+        "move": "LEER"
+      },
+      {
+        "level": 30,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 39,
+        "move": "AGILITY"
+      },
+      {
+        "level": 50,
+        "move": "FLAMETHROWER"
+      }
+    ]
   },
   {
     "name": "Onix",
@@ -391,7 +1138,29 @@
     "baseDefense": 160,
     "baseSpeed": 70,
     "baseSpecial": 30,
-    "baseExpYield": 108
+    "baseExpYield": 108,
+    "moves": [
+      {
+        "level": 15,
+        "move": "BIND"
+      },
+      {
+        "level": 19,
+        "move": "ROCK THROW"
+      },
+      {
+        "level": 25,
+        "move": "RAGE"
+      },
+      {
+        "level": 33,
+        "move": "SLAM"
+      },
+      {
+        "level": 43,
+        "move": "HARDEN"
+      }
+    ]
   },
   {
     "name": "Fearow",
@@ -403,7 +1172,29 @@
     "baseDefense": 65,
     "baseSpeed": 100,
     "baseSpecial": 61,
-    "baseExpYield": 162
+    "baseExpYield": 162,
+    "moves": [
+      {
+        "level": 9,
+        "move": "LEER"
+      },
+      {
+        "level": 15,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 25,
+        "move": "MIRROR MOVE"
+      },
+      {
+        "level": 34,
+        "move": "DRILL PECK"
+      },
+      {
+        "level": 43,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Pidgey",
@@ -415,7 +1206,37 @@
     "baseDefense": 40,
     "baseSpeed": 56,
     "baseSpecial": 35,
-    "baseExpYield": 55
+    "baseExpYield": 55,
+    "evolution": {
+      "level": 18,
+      "toName": "PIDGEOTTO"
+    },
+    "moves": [
+      {
+        "level": 5,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 19,
+        "move": "WHIRLWIND"
+      },
+      {
+        "level": 28,
+        "move": "WING ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "AGILITY"
+      },
+      {
+        "level": 44,
+        "move": "MIRROR MOVE"
+      }
+    ]
   },
   {
     "name": "Slowpoke",
@@ -427,7 +1248,37 @@
     "baseDefense": 65,
     "baseSpeed": 15,
     "baseSpecial": 40,
-    "baseExpYield": 99
+    "baseExpYield": 99,
+    "evolution": {
+      "level": 37,
+      "toName": "SLOWBRO"
+    },
+    "moves": [
+      {
+        "level": 18,
+        "move": "DISABLE"
+      },
+      {
+        "level": 22,
+        "move": "HEADBUTT"
+      },
+      {
+        "level": 27,
+        "move": "GROWL"
+      },
+      {
+        "level": 33,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 40,
+        "move": "AMNESIA"
+      },
+      {
+        "level": 48,
+        "move": "PSYCHIC M"
+      }
+    ]
   },
   {
     "name": "Kadabra",
@@ -439,7 +1290,37 @@
     "baseDefense": 30,
     "baseSpeed": 105,
     "baseSpecial": 120,
-    "baseExpYield": 145
+    "baseExpYield": 145,
+    "evolution": {
+      "trade": true,
+      "toName": "ALAKAZAM"
+    },
+    "moves": [
+      {
+        "level": 16,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 20,
+        "move": "DISABLE"
+      },
+      {
+        "level": 27,
+        "move": "PSYBEAM"
+      },
+      {
+        "level": 31,
+        "move": "RECOVER"
+      },
+      {
+        "level": 38,
+        "move": "PSYCHIC M"
+      },
+      {
+        "level": 42,
+        "move": "REFLECT"
+      }
+    ]
   },
   {
     "name": "Graveler",
@@ -451,7 +1332,37 @@
     "baseDefense": 115,
     "baseSpeed": 35,
     "baseSpecial": 45,
-    "baseExpYield": 134
+    "baseExpYield": 134,
+    "evolution": {
+      "trade": true,
+      "toName": "GOLEM"
+    },
+    "moves": [
+      {
+        "level": 11,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 16,
+        "move": "ROCK THROW"
+      },
+      {
+        "level": 21,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "HARDEN"
+      },
+      {
+        "level": 36,
+        "move": "EARTHQUAKE"
+      },
+      {
+        "level": 43,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Chansey",
@@ -463,7 +1374,33 @@
     "baseDefense": 5,
     "baseSpeed": 50,
     "baseSpecial": 105,
-    "baseExpYield": 255
+    "baseExpYield": 255,
+    "moves": [
+      {
+        "level": 24,
+        "move": "SING"
+      },
+      {
+        "level": 30,
+        "move": "GROWL"
+      },
+      {
+        "level": 38,
+        "move": "MINIMIZE"
+      },
+      {
+        "level": 44,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 48,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 54,
+        "move": "DOUBLE EDGE"
+      }
+    ]
   },
   {
     "name": "Machoke",
@@ -475,7 +1412,33 @@
     "baseDefense": 70,
     "baseSpeed": 45,
     "baseSpecial": 50,
-    "baseExpYield": 146
+    "baseExpYield": 146,
+    "evolution": {
+      "trade": true,
+      "toName": "MACHAMP"
+    },
+    "moves": [
+      {
+        "level": 20,
+        "move": "LOW KICK"
+      },
+      {
+        "level": 25,
+        "move": "LEER"
+      },
+      {
+        "level": 36,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 44,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 52,
+        "move": "SUBMISSION"
+      }
+    ]
   },
   {
     "name": "Mr.Mime",
@@ -487,7 +1450,29 @@
     "baseDefense": 65,
     "baseSpeed": 90,
     "baseSpecial": 100,
-    "baseExpYield": 136
+    "baseExpYield": 136,
+    "moves": [
+      {
+        "level": 15,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 23,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 31,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 39,
+        "move": "MEDITATE"
+      },
+      {
+        "level": 47,
+        "move": "SUBSTITUTE"
+      }
+    ]
   },
   {
     "name": "Hitmonlee",
@@ -499,7 +1484,29 @@
     "baseDefense": 53,
     "baseSpeed": 87,
     "baseSpecial": 35,
-    "baseExpYield": 139
+    "baseExpYield": 139,
+    "moves": [
+      {
+        "level": 33,
+        "move": "ROLLING KICK"
+      },
+      {
+        "level": 38,
+        "move": "JUMP KICK"
+      },
+      {
+        "level": 43,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 48,
+        "move": "HI JUMP KICK"
+      },
+      {
+        "level": 53,
+        "move": "MEGA KICK"
+      }
+    ]
   },
   {
     "name": "Hitmonchan",
@@ -511,7 +1518,29 @@
     "baseDefense": 79,
     "baseSpeed": 76,
     "baseSpecial": 35,
-    "baseExpYield": 140
+    "baseExpYield": 140,
+    "moves": [
+      {
+        "level": 33,
+        "move": "FIRE PUNCH"
+      },
+      {
+        "level": 38,
+        "move": "ICE PUNCH"
+      },
+      {
+        "level": 43,
+        "move": "THUNDERPUNCH"
+      },
+      {
+        "level": 48,
+        "move": "MEGA PUNCH"
+      },
+      {
+        "level": 53,
+        "move": "COUNTER"
+      }
+    ]
   },
   {
     "name": "Arbok",
@@ -523,7 +1552,29 @@
     "baseDefense": 69,
     "baseSpeed": 80,
     "baseSpecial": 65,
-    "baseExpYield": 147
+    "baseExpYield": 147,
+    "moves": [
+      {
+        "level": 10,
+        "move": "POISON STING"
+      },
+      {
+        "level": 17,
+        "move": "BITE"
+      },
+      {
+        "level": 27,
+        "move": "GLARE"
+      },
+      {
+        "level": 36,
+        "move": "SCREECH"
+      },
+      {
+        "level": 47,
+        "move": "ACID"
+      }
+    ]
   },
   {
     "name": "Parasect",
@@ -535,7 +1586,29 @@
     "baseDefense": 80,
     "baseSpeed": 30,
     "baseSpecial": 80,
-    "baseExpYield": 128
+    "baseExpYield": 128,
+    "moves": [
+      {
+        "level": 13,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 20,
+        "move": "LEECH LIFE"
+      },
+      {
+        "level": 30,
+        "move": "SPORE"
+      },
+      {
+        "level": 39,
+        "move": "SLASH"
+      },
+      {
+        "level": 48,
+        "move": "GROWTH"
+      }
+    ]
   },
   {
     "name": "Psyduck",
@@ -547,7 +1620,33 @@
     "baseDefense": 48,
     "baseSpeed": 55,
     "baseSpecial": 50,
-    "baseExpYield": 80
+    "baseExpYield": 80,
+    "evolution": {
+      "level": 33,
+      "toName": "GOLDUCK"
+    },
+    "moves": [
+      {
+        "level": 28,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 31,
+        "move": "DISABLE"
+      },
+      {
+        "level": 36,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 43,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 52,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Drowzee",
@@ -559,7 +1658,37 @@
     "baseDefense": 45,
     "baseSpeed": 42,
     "baseSpecial": 90,
-    "baseExpYield": 102
+    "baseExpYield": 102,
+    "evolution": {
+      "level": 26,
+      "toName": "HYPNO"
+    },
+    "moves": [
+      {
+        "level": 12,
+        "move": "DISABLE"
+      },
+      {
+        "level": 17,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 24,
+        "move": "HEADBUTT"
+      },
+      {
+        "level": 29,
+        "move": "POISON GAS"
+      },
+      {
+        "level": 32,
+        "move": "PSYCHIC M"
+      },
+      {
+        "level": 37,
+        "move": "MEDITATE"
+      }
+    ]
   },
   {
     "name": "Golem",
@@ -571,12 +1700,39 @@
     "baseDefense": 130,
     "baseSpeed": 45,
     "baseSpecial": 55,
-    "baseExpYield": 177
+    "baseExpYield": 177,
+    "moves": [
+      {
+        "level": 11,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 16,
+        "move": "ROCK THROW"
+      },
+      {
+        "level": 21,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "HARDEN"
+      },
+      {
+        "level": 36,
+        "move": "EARTHQUAKE"
+      },
+      {
+        "level": 43,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Missing32",
     "ind": 50,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Magmar",
@@ -588,12 +1744,39 @@
     "baseDefense": 57,
     "baseSpeed": 93,
     "baseSpecial": 85,
-    "baseExpYield": 167
+    "baseExpYield": 167,
+    "moves": [
+      {
+        "level": 36,
+        "move": "LEER"
+      },
+      {
+        "level": 39,
+        "move": "CONFUSE RAY"
+      },
+      {
+        "level": 43,
+        "move": "FIRE PUNCH"
+      },
+      {
+        "level": 48,
+        "move": "SMOKESCREEN"
+      },
+      {
+        "level": 52,
+        "move": "SMOG"
+      },
+      {
+        "level": 55,
+        "move": "FLAMETHROWER"
+      }
+    ]
   },
   {
     "name": "Missing34",
     "ind": 52,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Electabuzz",
@@ -605,7 +1788,29 @@
     "baseDefense": 57,
     "baseSpeed": 105,
     "baseSpecial": 85,
-    "baseExpYield": 156
+    "baseExpYield": 156,
+    "moves": [
+      {
+        "level": 34,
+        "move": "THUNDERSHOCK"
+      },
+      {
+        "level": 37,
+        "move": "SCREECH"
+      },
+      {
+        "level": 42,
+        "move": "THUNDERPUNCH"
+      },
+      {
+        "level": 49,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 54,
+        "move": "THUNDER"
+      }
+    ]
   },
   {
     "name": "Magneton",
@@ -617,7 +1822,33 @@
     "baseDefense": 95,
     "baseSpeed": 70,
     "baseSpecial": 120,
-    "baseExpYield": 161
+    "baseExpYield": 161,
+    "moves": [
+      {
+        "level": 21,
+        "move": "SONICBOOM"
+      },
+      {
+        "level": 25,
+        "move": "THUNDERSHOCK"
+      },
+      {
+        "level": 29,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 38,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 46,
+        "move": "SWIFT"
+      },
+      {
+        "level": 54,
+        "move": "SCREECH"
+      }
+    ]
   },
   {
     "name": "Koffing",
@@ -629,12 +1860,39 @@
     "baseDefense": 95,
     "baseSpeed": 35,
     "baseSpecial": 60,
-    "baseExpYield": 114
+    "baseExpYield": 114,
+    "evolution": {
+      "level": 35,
+      "toName": "WEEZING"
+    },
+    "moves": [
+      {
+        "level": 32,
+        "move": "SLUDGE"
+      },
+      {
+        "level": 37,
+        "move": "SMOKESCREEN"
+      },
+      {
+        "level": 40,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 45,
+        "move": "HAZE"
+      },
+      {
+        "level": 48,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Missing38",
     "ind": 56,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Mankey",
@@ -646,7 +1904,33 @@
     "baseDefense": 35,
     "baseSpeed": 70,
     "baseSpecial": 35,
-    "baseExpYield": 74
+    "baseExpYield": 74,
+    "evolution": {
+      "level": 28,
+      "toName": "PRIMEAPE"
+    },
+    "moves": [
+      {
+        "level": 15,
+        "move": "KARATE CHOP"
+      },
+      {
+        "level": 21,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 27,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 33,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 39,
+        "move": "THRASH"
+      }
+    ]
   },
   {
     "name": "Seel",
@@ -658,7 +1942,33 @@
     "baseDefense": 55,
     "baseSpeed": 45,
     "baseSpecial": 70,
-    "baseExpYield": 100
+    "baseExpYield": 100,
+    "evolution": {
+      "level": 34,
+      "toName": "DEWGONG"
+    },
+    "moves": [
+      {
+        "level": 30,
+        "move": "GROWL"
+      },
+      {
+        "level": 35,
+        "move": "AURORA BEAM"
+      },
+      {
+        "level": 40,
+        "move": "REST"
+      },
+      {
+        "level": 45,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 50,
+        "move": "ICE BEAM"
+      }
+    ]
   },
   {
     "name": "Diglett",
@@ -670,7 +1980,33 @@
     "baseDefense": 25,
     "baseSpeed": 95,
     "baseSpecial": 45,
-    "baseExpYield": 81
+    "baseExpYield": 81,
+    "evolution": {
+      "level": 26,
+      "toName": "DUGTRIO"
+    },
+    "moves": [
+      {
+        "level": 15,
+        "move": "GROWL"
+      },
+      {
+        "level": 19,
+        "move": "DIG"
+      },
+      {
+        "level": 24,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "SLASH"
+      },
+      {
+        "level": 40,
+        "move": "EARTHQUAKE"
+      }
+    ]
   },
   {
     "name": "Tauros",
@@ -682,22 +2018,47 @@
     "baseDefense": 95,
     "baseSpeed": 110,
     "baseSpecial": 70,
-    "baseExpYield": 211
+    "baseExpYield": 211,
+    "moves": [
+      {
+        "level": 21,
+        "move": "STOMP"
+      },
+      {
+        "level": 28,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 35,
+        "move": "LEER"
+      },
+      {
+        "level": 44,
+        "move": "RAGE"
+      },
+      {
+        "level": 51,
+        "move": "TAKE DOWN"
+      }
+    ]
   },
   {
     "name": "Missing3D",
     "ind": 61,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing3E",
     "ind": 62,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing3F",
     "ind": 63,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Farfetchd",
@@ -709,7 +2070,29 @@
     "baseDefense": 55,
     "baseSpeed": 60,
     "baseSpecial": 58,
-    "baseExpYield": 94
+    "baseExpYield": 94,
+    "moves": [
+      {
+        "level": 7,
+        "move": "LEER"
+      },
+      {
+        "level": 15,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 23,
+        "move": "SWORDS DANCE"
+      },
+      {
+        "level": 31,
+        "move": "AGILITY"
+      },
+      {
+        "level": 39,
+        "move": "SLASH"
+      }
+    ]
   },
   {
     "name": "Venonat",
@@ -721,7 +2104,37 @@
     "baseDefense": 50,
     "baseSpeed": 45,
     "baseSpecial": 40,
-    "baseExpYield": 75
+    "baseExpYield": 75,
+    "evolution": {
+      "level": 31,
+      "toName": "VENOMOTH"
+    },
+    "moves": [
+      {
+        "level": 24,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 27,
+        "move": "LEECH LIFE"
+      },
+      {
+        "level": 30,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 35,
+        "move": "PSYBEAM"
+      },
+      {
+        "level": 38,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 43,
+        "move": "PSYCHIC M"
+      }
+    ]
   },
   {
     "name": "Dragonite",
@@ -733,22 +2146,47 @@
     "baseDefense": 95,
     "baseSpeed": 80,
     "baseSpecial": 100,
-    "baseExpYield": 218
+    "baseExpYield": 218,
+    "moves": [
+      {
+        "level": 10,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 20,
+        "move": "AGILITY"
+      },
+      {
+        "level": 35,
+        "move": "SLAM"
+      },
+      {
+        "level": 45,
+        "move": "DRAGON RAGE"
+      },
+      {
+        "level": 60,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "Missing43",
     "ind": 67,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing44",
     "ind": 68,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing45",
     "ind": 69,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Doduo",
@@ -760,7 +2198,37 @@
     "baseDefense": 45,
     "baseSpeed": 75,
     "baseSpecial": 35,
-    "baseExpYield": 96
+    "baseExpYield": 96,
+    "evolution": {
+      "level": 31,
+      "toName": "DODRIO"
+    },
+    "moves": [
+      {
+        "level": 20,
+        "move": "GROWL"
+      },
+      {
+        "level": 24,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "DRILL PECK"
+      },
+      {
+        "level": 36,
+        "move": "RAGE"
+      },
+      {
+        "level": 40,
+        "move": "TRI ATTACK"
+      },
+      {
+        "level": 44,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Poliwag",
@@ -772,7 +2240,37 @@
     "baseDefense": 40,
     "baseSpeed": 90,
     "baseSpecial": 40,
-    "baseExpYield": 77
+    "baseExpYield": 77,
+    "evolution": {
+      "level": 25,
+      "toName": "POLIWHIRL"
+    },
+    "moves": [
+      {
+        "level": 16,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 19,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 25,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 31,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 38,
+        "move": "AMNESIA"
+      },
+      {
+        "level": 45,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Jynx",
@@ -784,7 +2282,33 @@
     "baseDefense": 35,
     "baseSpeed": 95,
     "baseSpecial": 95,
-    "baseExpYield": 137
+    "baseExpYield": 137,
+    "moves": [
+      {
+        "level": 18,
+        "move": "LICK"
+      },
+      {
+        "level": 23,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 31,
+        "move": "ICE PUNCH"
+      },
+      {
+        "level": 39,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 47,
+        "move": "THRASH"
+      },
+      {
+        "level": 58,
+        "move": "BLIZZARD"
+      }
+    ]
   },
   {
     "name": "Moltres",
@@ -796,7 +2320,21 @@
     "baseDefense": 90,
     "baseSpeed": 90,
     "baseSpecial": 125,
-    "baseExpYield": 217
+    "baseExpYield": 217,
+    "moves": [
+      {
+        "level": 51,
+        "move": "LEER"
+      },
+      {
+        "level": 55,
+        "move": "AGILITY"
+      },
+      {
+        "level": 60,
+        "move": "SKY ATTACK"
+      }
+    ]
   },
   {
     "name": "Articuno",
@@ -808,7 +2346,21 @@
     "baseDefense": 100,
     "baseSpeed": 85,
     "baseSpecial": 125,
-    "baseExpYield": 215
+    "baseExpYield": 215,
+    "moves": [
+      {
+        "level": 51,
+        "move": "BLIZZARD"
+      },
+      {
+        "level": 55,
+        "move": "AGILITY"
+      },
+      {
+        "level": 60,
+        "move": "MIST"
+      }
+    ]
   },
   {
     "name": "Zapdos",
@@ -820,7 +2372,21 @@
     "baseDefense": 85,
     "baseSpeed": 100,
     "baseSpecial": 125,
-    "baseExpYield": 216
+    "baseExpYield": 216,
+    "moves": [
+      {
+        "level": 51,
+        "move": "THUNDER"
+      },
+      {
+        "level": 55,
+        "move": "AGILITY"
+      },
+      {
+        "level": 60,
+        "move": "LIGHT SCREEN"
+      }
+    ]
   },
   {
     "name": "Ditto",
@@ -832,7 +2398,8 @@
     "baseDefense": 48,
     "baseSpeed": 48,
     "baseSpecial": 48,
-    "baseExpYield": 61
+    "baseExpYield": 61,
+    "moves": []
   },
   {
     "name": "Meowth",
@@ -844,7 +2411,33 @@
     "baseDefense": 35,
     "baseSpeed": 90,
     "baseSpecial": 40,
-    "baseExpYield": 69
+    "baseExpYield": 69,
+    "evolution": {
+      "level": 28,
+      "toName": "PERSIAN"
+    },
+    "moves": [
+      {
+        "level": 12,
+        "move": "BITE"
+      },
+      {
+        "level": 17,
+        "move": "PAY DAY"
+      },
+      {
+        "level": 24,
+        "move": "SCREECH"
+      },
+      {
+        "level": 33,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 44,
+        "move": "SLASH"
+      }
+    ]
   },
   {
     "name": "Krabby",
@@ -856,22 +2449,51 @@
     "baseDefense": 90,
     "baseSpeed": 50,
     "baseSpecial": 25,
-    "baseExpYield": 115
+    "baseExpYield": 115,
+    "evolution": {
+      "level": 28,
+      "toName": "KINGLER"
+    },
+    "moves": [
+      {
+        "level": 20,
+        "move": "VICEGRIP"
+      },
+      {
+        "level": 25,
+        "move": "GUILLOTINE"
+      },
+      {
+        "level": 30,
+        "move": "STOMP"
+      },
+      {
+        "level": 35,
+        "move": "CRABHAMMER"
+      },
+      {
+        "level": 40,
+        "move": "HARDEN"
+      }
+    ]
   },
   {
     "name": "Missing4F",
     "ind": 79,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing50",
     "ind": 80,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing51",
     "ind": 81,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Vulpix",
@@ -883,7 +2505,33 @@
     "baseDefense": 40,
     "baseSpeed": 65,
     "baseSpecial": 65,
-    "baseExpYield": 63
+    "baseExpYield": 63,
+    "evolution": {
+      "item": "FIRE STONE",
+      "toName": "NINETALES"
+    },
+    "moves": [
+      {
+        "level": 16,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "ROAR"
+      },
+      {
+        "level": 28,
+        "move": "CONFUSE RAY"
+      },
+      {
+        "level": 35,
+        "move": "FLAMETHROWER"
+      },
+      {
+        "level": 42,
+        "move": "FIRE SPIN"
+      }
+    ]
   },
   {
     "name": "Ninetales",
@@ -895,7 +2543,8 @@
     "baseDefense": 75,
     "baseSpeed": 100,
     "baseSpecial": 100,
-    "baseExpYield": 178
+    "baseExpYield": 178,
+    "moves": []
   },
   {
     "name": "Pikachu",
@@ -907,7 +2556,33 @@
     "baseDefense": 30,
     "baseSpeed": 90,
     "baseSpecial": 50,
-    "baseExpYield": 82
+    "baseExpYield": 82,
+    "evolution": {
+      "item": "THUNDER STONE",
+      "toName": "RAICHU"
+    },
+    "moves": [
+      {
+        "level": 9,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 16,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 26,
+        "move": "SWIFT"
+      },
+      {
+        "level": 33,
+        "move": "AGILITY"
+      },
+      {
+        "level": 43,
+        "move": "THUNDER"
+      }
+    ]
   },
   {
     "name": "Raichu",
@@ -919,17 +2594,20 @@
     "baseDefense": 55,
     "baseSpeed": 100,
     "baseSpecial": 90,
-    "baseExpYield": 122
+    "baseExpYield": 122,
+    "moves": []
   },
   {
     "name": "Missing56",
     "ind": 86,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing57",
     "ind": 87,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Dratini",
@@ -941,7 +2619,33 @@
     "baseDefense": 45,
     "baseSpeed": 50,
     "baseSpecial": 50,
-    "baseExpYield": 67
+    "baseExpYield": 67,
+    "evolution": {
+      "level": 30,
+      "toName": "DRAGONAIR"
+    },
+    "moves": [
+      {
+        "level": 10,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 20,
+        "move": "AGILITY"
+      },
+      {
+        "level": 30,
+        "move": "SLAM"
+      },
+      {
+        "level": 40,
+        "move": "DRAGON RAGE"
+      },
+      {
+        "level": 50,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "Dragonair",
@@ -953,7 +2657,33 @@
     "baseDefense": 65,
     "baseSpeed": 70,
     "baseSpecial": 70,
-    "baseExpYield": 144
+    "baseExpYield": 144,
+    "evolution": {
+      "level": 55,
+      "toName": "DRAGONITE"
+    },
+    "moves": [
+      {
+        "level": 10,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 20,
+        "move": "AGILITY"
+      },
+      {
+        "level": 35,
+        "move": "SLAM"
+      },
+      {
+        "level": 45,
+        "move": "DRAGON RAGE"
+      },
+      {
+        "level": 55,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "Kabuto",
@@ -965,7 +2695,29 @@
     "baseDefense": 90,
     "baseSpeed": 55,
     "baseSpecial": 45,
-    "baseExpYield": 119
+    "baseExpYield": 119,
+    "evolution": {
+      "level": 40,
+      "toName": "KABUTOPS"
+    },
+    "moves": [
+      {
+        "level": 34,
+        "move": "ABSORB"
+      },
+      {
+        "level": 39,
+        "move": "SLASH"
+      },
+      {
+        "level": 44,
+        "move": "LEER"
+      },
+      {
+        "level": 49,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Kabutops",
@@ -977,7 +2729,25 @@
     "baseDefense": 105,
     "baseSpeed": 80,
     "baseSpecial": 70,
-    "baseExpYield": 201
+    "baseExpYield": 201,
+    "moves": [
+      {
+        "level": 34,
+        "move": "ABSORB"
+      },
+      {
+        "level": 39,
+        "move": "SLASH"
+      },
+      {
+        "level": 46,
+        "move": "LEER"
+      },
+      {
+        "level": 53,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Horsea",
@@ -989,7 +2759,33 @@
     "baseDefense": 70,
     "baseSpeed": 60,
     "baseSpecial": 70,
-    "baseExpYield": 83
+    "baseExpYield": 83,
+    "evolution": {
+      "level": 32,
+      "toName": "SEADRA"
+    },
+    "moves": [
+      {
+        "level": 19,
+        "move": "SMOKESCREEN"
+      },
+      {
+        "level": 24,
+        "move": "LEER"
+      },
+      {
+        "level": 30,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 37,
+        "move": "AGILITY"
+      },
+      {
+        "level": 45,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Seadra",
@@ -1001,17 +2797,41 @@
     "baseDefense": 95,
     "baseSpeed": 85,
     "baseSpecial": 95,
-    "baseExpYield": 155
+    "baseExpYield": 155,
+    "moves": [
+      {
+        "level": 19,
+        "move": "SMOKESCREEN"
+      },
+      {
+        "level": 24,
+        "move": "LEER"
+      },
+      {
+        "level": 30,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 41,
+        "move": "AGILITY"
+      },
+      {
+        "level": 52,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Missing5E",
     "ind": 94,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing5F",
     "ind": 95,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Sandshrew",
@@ -1023,7 +2843,33 @@
     "baseDefense": 85,
     "baseSpeed": 40,
     "baseSpecial": 30,
-    "baseExpYield": 93
+    "baseExpYield": 93,
+    "evolution": {
+      "level": 22,
+      "toName": "SANDSLASH"
+    },
+    "moves": [
+      {
+        "level": 10,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "SLASH"
+      },
+      {
+        "level": 24,
+        "move": "POISON STING"
+      },
+      {
+        "level": 31,
+        "move": "SWIFT"
+      },
+      {
+        "level": 38,
+        "move": "FURY SWIPES"
+      }
+    ]
   },
   {
     "name": "Sandslash",
@@ -1035,7 +2881,29 @@
     "baseDefense": 110,
     "baseSpeed": 65,
     "baseSpecial": 55,
-    "baseExpYield": 163
+    "baseExpYield": 163,
+    "moves": [
+      {
+        "level": 10,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 17,
+        "move": "SLASH"
+      },
+      {
+        "level": 27,
+        "move": "POISON STING"
+      },
+      {
+        "level": 36,
+        "move": "SWIFT"
+      },
+      {
+        "level": 47,
+        "move": "FURY SWIPES"
+      }
+    ]
   },
   {
     "name": "Omanyte",
@@ -1047,7 +2915,29 @@
     "baseDefense": 100,
     "baseSpeed": 35,
     "baseSpecial": 90,
-    "baseExpYield": 120
+    "baseExpYield": 120,
+    "evolution": {
+      "level": 40,
+      "toName": "OMASTAR"
+    },
+    "moves": [
+      {
+        "level": 34,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 39,
+        "move": "LEER"
+      },
+      {
+        "level": 46,
+        "move": "SPIKE CANNON"
+      },
+      {
+        "level": 53,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Omastar",
@@ -1059,7 +2949,25 @@
     "baseDefense": 125,
     "baseSpeed": 55,
     "baseSpecial": 115,
-    "baseExpYield": 199
+    "baseExpYield": 199,
+    "moves": [
+      {
+        "level": 34,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 39,
+        "move": "LEER"
+      },
+      {
+        "level": 44,
+        "move": "SPIKE CANNON"
+      },
+      {
+        "level": 49,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Jigglypuff",
@@ -1071,7 +2979,41 @@
     "baseDefense": 20,
     "baseSpeed": 20,
     "baseSpecial": 25,
-    "baseExpYield": 76
+    "baseExpYield": 76,
+    "evolution": {
+      "item": "MOON STONE",
+      "toName": "WIGGLYTUFF"
+    },
+    "moves": [
+      {
+        "level": 9,
+        "move": "POUND"
+      },
+      {
+        "level": 14,
+        "move": "DISABLE"
+      },
+      {
+        "level": 19,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 24,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 29,
+        "move": "REST"
+      },
+      {
+        "level": 34,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 39,
+        "move": "DOUBLE EDGE"
+      }
+    ]
   },
   {
     "name": "Wigglytuff",
@@ -1083,7 +3025,8 @@
     "baseDefense": 45,
     "baseSpeed": 45,
     "baseSpecial": 50,
-    "baseExpYield": 109
+    "baseExpYield": 109,
+    "moves": []
   },
   {
     "name": "Eevee",
@@ -1095,7 +3038,39 @@
     "baseDefense": 50,
     "baseSpeed": 55,
     "baseSpecial": 65,
-    "baseExpYield": 92
+    "baseExpYield": 92,
+    "evolution": [
+      {
+        "item": "FIRE STONE",
+        "toName": "FLAREON"
+      },
+      {
+        "item": "THUNDER STONE",
+        "toName": "JOLTEON"
+      },
+      {
+        "item": "WATER STONE",
+        "toName": "VAPOREON"
+      }
+    ],
+    "moves": [
+      {
+        "level": 27,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 37,
+        "move": "BITE"
+      },
+      {
+        "level": 45,
+        "move": "TAKE DOWN"
+      }
+    ]
   },
   {
     "name": "Flareon",
@@ -1107,7 +3082,41 @@
     "baseDefense": 60,
     "baseSpeed": 65,
     "baseSpecial": 110,
-    "baseExpYield": 198
+    "baseExpYield": 198,
+    "moves": [
+      {
+        "level": 27,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "EMBER"
+      },
+      {
+        "level": 37,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 40,
+        "move": "BITE"
+      },
+      {
+        "level": 42,
+        "move": "LEER"
+      },
+      {
+        "level": 44,
+        "move": "FIRE SPIN"
+      },
+      {
+        "level": 48,
+        "move": "RAGE"
+      },
+      {
+        "level": 54,
+        "move": "FLAMETHROWER"
+      }
+    ]
   },
   {
     "name": "Jolteon",
@@ -1119,7 +3128,41 @@
     "baseDefense": 60,
     "baseSpeed": 130,
     "baseSpecial": 110,
-    "baseExpYield": 197
+    "baseExpYield": 197,
+    "moves": [
+      {
+        "level": 27,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "THUNDERSHOCK"
+      },
+      {
+        "level": 37,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 40,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 42,
+        "move": "DOUBLE KICK"
+      },
+      {
+        "level": 44,
+        "move": "AGILITY"
+      },
+      {
+        "level": 48,
+        "move": "PIN MISSILE"
+      },
+      {
+        "level": 54,
+        "move": "THUNDER"
+      }
+    ]
   },
   {
     "name": "Vaporeon",
@@ -1131,7 +3174,41 @@
     "baseDefense": 60,
     "baseSpeed": 65,
     "baseSpecial": 110,
-    "baseExpYield": 196
+    "baseExpYield": 196,
+    "moves": [
+      {
+        "level": 27,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 31,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 37,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 40,
+        "move": "BITE"
+      },
+      {
+        "level": 42,
+        "move": "ACID ARMOR"
+      },
+      {
+        "level": 44,
+        "move": "HAZE"
+      },
+      {
+        "level": 48,
+        "move": "MIST"
+      },
+      {
+        "level": 54,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Machop",
@@ -1143,7 +3220,33 @@
     "baseDefense": 50,
     "baseSpeed": 35,
     "baseSpecial": 35,
-    "baseExpYield": 88
+    "baseExpYield": 88,
+    "evolution": {
+      "level": 28,
+      "toName": "MACHOKE"
+    },
+    "moves": [
+      {
+        "level": 20,
+        "move": "LOW KICK"
+      },
+      {
+        "level": 25,
+        "move": "LEER"
+      },
+      {
+        "level": 32,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 39,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 46,
+        "move": "SUBMISSION"
+      }
+    ]
   },
   {
     "name": "Zubat",
@@ -1155,7 +3258,33 @@
     "baseDefense": 35,
     "baseSpeed": 55,
     "baseSpecial": 40,
-    "baseExpYield": 54
+    "baseExpYield": 54,
+    "evolution": {
+      "level": 22,
+      "toName": "GOLBAT"
+    },
+    "moves": [
+      {
+        "level": 10,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "BITE"
+      },
+      {
+        "level": 21,
+        "move": "CONFUSE RAY"
+      },
+      {
+        "level": 28,
+        "move": "WING ATTACK"
+      },
+      {
+        "level": 36,
+        "move": "HAZE"
+      }
+    ]
   },
   {
     "name": "Ekans",
@@ -1167,7 +3296,33 @@
     "baseDefense": 44,
     "baseSpeed": 55,
     "baseSpecial": 40,
-    "baseExpYield": 62
+    "baseExpYield": 62,
+    "evolution": {
+      "level": 22,
+      "toName": "ARBOK"
+    },
+    "moves": [
+      {
+        "level": 10,
+        "move": "POISON STING"
+      },
+      {
+        "level": 17,
+        "move": "BITE"
+      },
+      {
+        "level": 24,
+        "move": "GLARE"
+      },
+      {
+        "level": 31,
+        "move": "SCREECH"
+      },
+      {
+        "level": 38,
+        "move": "ACID"
+      }
+    ]
   },
   {
     "name": "Paras",
@@ -1179,7 +3334,33 @@
     "baseDefense": 55,
     "baseSpeed": 25,
     "baseSpecial": 55,
-    "baseExpYield": 70
+    "baseExpYield": 70,
+    "evolution": {
+      "level": 24,
+      "toName": "PARASECT"
+    },
+    "moves": [
+      {
+        "level": 13,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 20,
+        "move": "LEECH LIFE"
+      },
+      {
+        "level": 27,
+        "move": "SPORE"
+      },
+      {
+        "level": 34,
+        "move": "SLASH"
+      },
+      {
+        "level": 41,
+        "move": "GROWTH"
+      }
+    ]
   },
   {
     "name": "Poliwhirl",
@@ -1191,7 +3372,37 @@
     "baseDefense": 65,
     "baseSpeed": 90,
     "baseSpecial": 50,
-    "baseExpYield": 131
+    "baseExpYield": 131,
+    "evolution": {
+      "item": "WATER STONE",
+      "toName": "POLIWRATH"
+    },
+    "moves": [
+      {
+        "level": 16,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 19,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 26,
+        "move": "DOUBLESLAP"
+      },
+      {
+        "level": 33,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 41,
+        "move": "AMNESIA"
+      },
+      {
+        "level": 49,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Poliwrath",
@@ -1203,7 +3414,17 @@
     "baseDefense": 95,
     "baseSpeed": 70,
     "baseSpecial": 70,
-    "baseExpYield": 185
+    "baseExpYield": 185,
+    "moves": [
+      {
+        "level": 16,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 19,
+        "move": "WATER GUN"
+      }
+    ]
   },
   {
     "name": "Weedle",
@@ -1215,7 +3436,12 @@
     "baseDefense": 30,
     "baseSpeed": 50,
     "baseSpecial": 20,
-    "baseExpYield": 52
+    "baseExpYield": 52,
+    "evolution": {
+      "level": 7,
+      "toName": "KAKUNA"
+    },
+    "moves": []
   },
   {
     "name": "Kakuna",
@@ -1227,7 +3453,12 @@
     "baseDefense": 50,
     "baseSpeed": 35,
     "baseSpecial": 25,
-    "baseExpYield": 71
+    "baseExpYield": 71,
+    "evolution": {
+      "level": 10,
+      "toName": "BEEDRILL"
+    },
+    "moves": []
   },
   {
     "name": "Beedrill",
@@ -1239,12 +3470,39 @@
     "baseDefense": 40,
     "baseSpeed": 75,
     "baseSpecial": 45,
-    "baseExpYield": 159
+    "baseExpYield": 159,
+    "moves": [
+      {
+        "level": 12,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 16,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 20,
+        "move": "TWINEEDLE"
+      },
+      {
+        "level": 25,
+        "move": "RAGE"
+      },
+      {
+        "level": 30,
+        "move": "PIN MISSILE"
+      },
+      {
+        "level": 35,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Missing73",
     "ind": 115,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Dodrio",
@@ -1256,7 +3514,33 @@
     "baseDefense": 70,
     "baseSpeed": 100,
     "baseSpecial": 60,
-    "baseExpYield": 158
+    "baseExpYield": 158,
+    "moves": [
+      {
+        "level": 20,
+        "move": "GROWL"
+      },
+      {
+        "level": 24,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "DRILL PECK"
+      },
+      {
+        "level": 39,
+        "move": "RAGE"
+      },
+      {
+        "level": 45,
+        "move": "TRI ATTACK"
+      },
+      {
+        "level": 51,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Primeape",
@@ -1268,7 +3552,29 @@
     "baseDefense": 60,
     "baseSpeed": 95,
     "baseSpecial": 60,
-    "baseExpYield": 149
+    "baseExpYield": 149,
+    "moves": [
+      {
+        "level": 15,
+        "move": "KARATE CHOP"
+      },
+      {
+        "level": 21,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 27,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 37,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 46,
+        "move": "THRASH"
+      }
+    ]
   },
   {
     "name": "Dugtrio",
@@ -1280,7 +3586,29 @@
     "baseDefense": 50,
     "baseSpeed": 120,
     "baseSpecial": 70,
-    "baseExpYield": 153
+    "baseExpYield": 153,
+    "moves": [
+      {
+        "level": 15,
+        "move": "GROWL"
+      },
+      {
+        "level": 19,
+        "move": "DIG"
+      },
+      {
+        "level": 24,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 35,
+        "move": "SLASH"
+      },
+      {
+        "level": 47,
+        "move": "EARTHQUAKE"
+      }
+    ]
   },
   {
     "name": "Venomoth",
@@ -1292,7 +3620,33 @@
     "baseDefense": 60,
     "baseSpeed": 90,
     "baseSpecial": 90,
-    "baseExpYield": 138
+    "baseExpYield": 138,
+    "moves": [
+      {
+        "level": 24,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 27,
+        "move": "LEECH LIFE"
+      },
+      {
+        "level": 30,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 38,
+        "move": "PSYBEAM"
+      },
+      {
+        "level": 43,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 50,
+        "move": "PSYCHIC M"
+      }
+    ]
   },
   {
     "name": "Dewgong",
@@ -1304,17 +3658,41 @@
     "baseDefense": 80,
     "baseSpeed": 70,
     "baseSpecial": 95,
-    "baseExpYield": 176
+    "baseExpYield": 176,
+    "moves": [
+      {
+        "level": 30,
+        "move": "GROWL"
+      },
+      {
+        "level": 35,
+        "move": "AURORA BEAM"
+      },
+      {
+        "level": 44,
+        "move": "REST"
+      },
+      {
+        "level": 50,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 56,
+        "move": "ICE BEAM"
+      }
+    ]
   },
   {
     "name": "Missing79",
     "ind": 121,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing7A",
     "ind": 122,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Caterpie",
@@ -1326,7 +3704,12 @@
     "baseDefense": 35,
     "baseSpeed": 45,
     "baseSpecial": 20,
-    "baseExpYield": 53
+    "baseExpYield": 53,
+    "evolution": {
+      "level": 7,
+      "toName": "METAPOD"
+    },
+    "moves": []
   },
   {
     "name": "Metapod",
@@ -1338,7 +3721,12 @@
     "baseDefense": 55,
     "baseSpeed": 30,
     "baseSpecial": 25,
-    "baseExpYield": 72
+    "baseExpYield": 72,
+    "evolution": {
+      "level": 10,
+      "toName": "BUTTERFREE"
+    },
+    "moves": []
   },
   {
     "name": "Butterfree",
@@ -1350,7 +3738,37 @@
     "baseDefense": 50,
     "baseSpeed": 70,
     "baseSpecial": 80,
-    "baseExpYield": 160
+    "baseExpYield": 160,
+    "moves": [
+      {
+        "level": 12,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 16,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 17,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 21,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 26,
+        "move": "WHIRLWIND"
+      },
+      {
+        "level": 32,
+        "move": "PSYBEAM"
+      }
+    ]
   },
   {
     "name": "Machamp",
@@ -1362,12 +3780,35 @@
     "baseDefense": 80,
     "baseSpeed": 55,
     "baseSpecial": 65,
-    "baseExpYield": 193
+    "baseExpYield": 193,
+    "moves": [
+      {
+        "level": 20,
+        "move": "LOW KICK"
+      },
+      {
+        "level": 25,
+        "move": "LEER"
+      },
+      {
+        "level": 36,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 44,
+        "move": "SEISMIC TOSS"
+      },
+      {
+        "level": 52,
+        "move": "SUBMISSION"
+      }
+    ]
   },
   {
     "name": "Missing7F",
     "ind": 127,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Golduck",
@@ -1379,7 +3820,29 @@
     "baseDefense": 78,
     "baseSpeed": 85,
     "baseSpecial": 80,
-    "baseExpYield": 174
+    "baseExpYield": 174,
+    "moves": [
+      {
+        "level": 28,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 31,
+        "move": "DISABLE"
+      },
+      {
+        "level": 39,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 48,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 59,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Hypno",
@@ -1391,7 +3854,33 @@
     "baseDefense": 70,
     "baseSpeed": 67,
     "baseSpecial": 115,
-    "baseExpYield": 165
+    "baseExpYield": 165,
+    "moves": [
+      {
+        "level": 12,
+        "move": "DISABLE"
+      },
+      {
+        "level": 17,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 24,
+        "move": "HEADBUTT"
+      },
+      {
+        "level": 33,
+        "move": "POISON GAS"
+      },
+      {
+        "level": 37,
+        "move": "PSYCHIC M"
+      },
+      {
+        "level": 43,
+        "move": "MEDITATE"
+      }
+    ]
   },
   {
     "name": "Golbat",
@@ -1403,7 +3892,29 @@
     "baseDefense": 70,
     "baseSpeed": 90,
     "baseSpecial": 75,
-    "baseExpYield": 171
+    "baseExpYield": 171,
+    "moves": [
+      {
+        "level": 10,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 15,
+        "move": "BITE"
+      },
+      {
+        "level": 21,
+        "move": "CONFUSE RAY"
+      },
+      {
+        "level": 32,
+        "move": "WING ATTACK"
+      },
+      {
+        "level": 43,
+        "move": "HAZE"
+      }
+    ]
   },
   {
     "name": "Mewtwo",
@@ -1415,7 +3926,29 @@
     "baseDefense": 90,
     "baseSpeed": 130,
     "baseSpecial": 154,
-    "baseExpYield": 220
+    "baseExpYield": 220,
+    "moves": [
+      {
+        "level": 63,
+        "move": "BARRIER"
+      },
+      {
+        "level": 66,
+        "move": "PSYCHIC M"
+      },
+      {
+        "level": 70,
+        "move": "RECOVER"
+      },
+      {
+        "level": 75,
+        "move": "MIST"
+      },
+      {
+        "level": 81,
+        "move": "AMNESIA"
+      }
+    ]
   },
   {
     "name": "Snorlax",
@@ -1427,7 +3960,25 @@
     "baseDefense": 65,
     "baseSpeed": 30,
     "baseSpecial": 65,
-    "baseExpYield": 154
+    "baseExpYield": 154,
+    "moves": [
+      {
+        "level": 35,
+        "move": "BODY SLAM"
+      },
+      {
+        "level": 41,
+        "move": "HARDEN"
+      },
+      {
+        "level": 48,
+        "move": "DOUBLE EDGE"
+      },
+      {
+        "level": 56,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "Magikarp",
@@ -1439,17 +3990,29 @@
     "baseDefense": 55,
     "baseSpeed": 80,
     "baseSpecial": 20,
-    "baseExpYield": 20
+    "baseExpYield": 20,
+    "evolution": {
+      "level": 20,
+      "toName": "GYARADOS"
+    },
+    "moves": [
+      {
+        "level": 15,
+        "move": "TACKLE"
+      }
+    ]
   },
   {
     "name": "Missing86",
     "ind": 134,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Missing87",
     "ind": 135,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Muk",
@@ -1461,7 +4024,33 @@
     "baseDefense": 75,
     "baseSpeed": 50,
     "baseSpecial": 65,
-    "baseExpYield": 157
+    "baseExpYield": 157,
+    "moves": [
+      {
+        "level": 30,
+        "move": "POISON GAS"
+      },
+      {
+        "level": 33,
+        "move": "MINIMIZE"
+      },
+      {
+        "level": 37,
+        "move": "SLUDGE"
+      },
+      {
+        "level": 45,
+        "move": "HARDEN"
+      },
+      {
+        "level": 53,
+        "move": "SCREECH"
+      },
+      {
+        "level": 60,
+        "move": "ACID ARMOR"
+      }
+    ]
   },
   {
     "name": "Missing89",
@@ -1478,7 +4067,29 @@
     "baseDefense": 115,
     "baseSpeed": 75,
     "baseSpecial": 50,
-    "baseExpYield": 206
+    "baseExpYield": 206,
+    "moves": [
+      {
+        "level": 20,
+        "move": "VICEGRIP"
+      },
+      {
+        "level": 25,
+        "move": "GUILLOTINE"
+      },
+      {
+        "level": 34,
+        "move": "STOMP"
+      },
+      {
+        "level": 42,
+        "move": "CRABHAMMER"
+      },
+      {
+        "level": 49,
+        "move": "HARDEN"
+      }
+    ]
   },
   {
     "name": "Cloyster",
@@ -1490,12 +4101,19 @@
     "baseDefense": 180,
     "baseSpeed": 70,
     "baseSpecial": 85,
-    "baseExpYield": 203
+    "baseExpYield": 203,
+    "moves": [
+      {
+        "level": 50,
+        "move": "SPIKE CANNON"
+      }
+    ]
   },
   {
     "name": "Missing8C",
     "ind": 140,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Electrode",
@@ -1507,7 +4125,29 @@
     "baseDefense": 70,
     "baseSpeed": 140,
     "baseSpecial": 80,
-    "baseExpYield": 150
+    "baseExpYield": 150,
+    "moves": [
+      {
+        "level": 17,
+        "move": "SONICBOOM"
+      },
+      {
+        "level": 22,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 29,
+        "move": "LIGHT SCREEN"
+      },
+      {
+        "level": 40,
+        "move": "SWIFT"
+      },
+      {
+        "level": 50,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Clefable",
@@ -1519,7 +4159,8 @@
     "baseDefense": 73,
     "baseSpeed": 60,
     "baseSpecial": 85,
-    "baseExpYield": 129
+    "baseExpYield": 129,
+    "moves": []
   },
   {
     "name": "Weezing",
@@ -1531,7 +4172,29 @@
     "baseDefense": 120,
     "baseSpeed": 60,
     "baseSpecial": 85,
-    "baseExpYield": 173
+    "baseExpYield": 173,
+    "moves": [
+      {
+        "level": 32,
+        "move": "SLUDGE"
+      },
+      {
+        "level": 39,
+        "move": "SMOKESCREEN"
+      },
+      {
+        "level": 43,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 49,
+        "move": "HAZE"
+      },
+      {
+        "level": 53,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Persian",
@@ -1543,7 +4206,29 @@
     "baseDefense": 60,
     "baseSpeed": 115,
     "baseSpecial": 65,
-    "baseExpYield": 148
+    "baseExpYield": 148,
+    "moves": [
+      {
+        "level": 12,
+        "move": "BITE"
+      },
+      {
+        "level": 17,
+        "move": "PAY DAY"
+      },
+      {
+        "level": 24,
+        "move": "SCREECH"
+      },
+      {
+        "level": 37,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 51,
+        "move": "SLASH"
+      }
+    ]
   },
   {
     "name": "Marowak",
@@ -1555,12 +4240,35 @@
     "baseDefense": 110,
     "baseSpeed": 45,
     "baseSpecial": 50,
-    "baseExpYield": 124
+    "baseExpYield": 124,
+    "moves": [
+      {
+        "level": 25,
+        "move": "LEER"
+      },
+      {
+        "level": 33,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 41,
+        "move": "THRASH"
+      },
+      {
+        "level": 48,
+        "move": "BONEMERANG"
+      },
+      {
+        "level": 55,
+        "move": "RAGE"
+      }
+    ]
   },
   {
     "name": "Missing92",
     "ind": 146,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Haunter",
@@ -1572,7 +4280,21 @@
     "baseDefense": 45,
     "baseSpeed": 95,
     "baseSpecial": 115,
-    "baseExpYield": 126
+    "baseExpYield": 126,
+    "evolution": {
+      "trade": true,
+      "toName": "GENGAR"
+    },
+    "moves": [
+      {
+        "level": 29,
+        "move": "HYPNOSIS"
+      },
+      {
+        "level": 38,
+        "move": "DREAM EATER"
+      }
+    ]
   },
   {
     "name": "Abra",
@@ -1584,7 +4306,12 @@
     "baseDefense": 15,
     "baseSpeed": 90,
     "baseSpecial": 105,
-    "baseExpYield": 73
+    "baseExpYield": 73,
+    "evolution": {
+      "level": 16,
+      "toName": "KADABRA"
+    },
+    "moves": []
   },
   {
     "name": "Alakazam",
@@ -1596,7 +4323,33 @@
     "baseDefense": 45,
     "baseSpeed": 120,
     "baseSpecial": 135,
-    "baseExpYield": 186
+    "baseExpYield": 186,
+    "moves": [
+      {
+        "level": 16,
+        "move": "CONFUSION"
+      },
+      {
+        "level": 20,
+        "move": "DISABLE"
+      },
+      {
+        "level": 27,
+        "move": "PSYBEAM"
+      },
+      {
+        "level": 31,
+        "move": "RECOVER"
+      },
+      {
+        "level": 38,
+        "move": "PSYCHIC M"
+      },
+      {
+        "level": 42,
+        "move": "REFLECT"
+      }
+    ]
   },
   {
     "name": "Pidgeotto",
@@ -1608,7 +4361,37 @@
     "baseDefense": 55,
     "baseSpeed": 71,
     "baseSpecial": 50,
-    "baseExpYield": 113
+    "baseExpYield": 113,
+    "evolution": {
+      "level": 36,
+      "toName": "PIDGEOT"
+    },
+    "moves": [
+      {
+        "level": 5,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "WHIRLWIND"
+      },
+      {
+        "level": 31,
+        "move": "WING ATTACK"
+      },
+      {
+        "level": 40,
+        "move": "AGILITY"
+      },
+      {
+        "level": 49,
+        "move": "MIRROR MOVE"
+      }
+    ]
   },
   {
     "name": "Pidgeot",
@@ -1620,7 +4403,33 @@
     "baseDefense": 75,
     "baseSpeed": 91,
     "baseSpecial": 70,
-    "baseExpYield": 172
+    "baseExpYield": 172,
+    "moves": [
+      {
+        "level": 5,
+        "move": "SAND ATTACK"
+      },
+      {
+        "level": 12,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 21,
+        "move": "WHIRLWIND"
+      },
+      {
+        "level": 31,
+        "move": "WING ATTACK"
+      },
+      {
+        "level": 44,
+        "move": "AGILITY"
+      },
+      {
+        "level": 54,
+        "move": "MIRROR MOVE"
+      }
+    ]
   },
   {
     "name": "Starmie",
@@ -1632,7 +4441,8 @@
     "baseDefense": 85,
     "baseSpeed": 115,
     "baseSpecial": 100,
-    "baseExpYield": 207
+    "baseExpYield": 207,
+    "moves": []
   },
   {
     "name": "Bulbasaur",
@@ -1644,7 +4454,41 @@
     "baseDefense": 49,
     "baseSpeed": 45,
     "baseSpecial": 65,
-    "baseExpYield": 64
+    "baseExpYield": 64,
+    "evolution": {
+      "level": 16,
+      "toName": "IVYSAUR"
+    },
+    "moves": [
+      {
+        "level": 7,
+        "move": "LEECH SEED"
+      },
+      {
+        "level": 13,
+        "move": "VINE WHIP"
+      },
+      {
+        "level": 20,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 27,
+        "move": "RAZOR LEAF"
+      },
+      {
+        "level": 34,
+        "move": "GROWTH"
+      },
+      {
+        "level": 41,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 48,
+        "move": "SOLARBEAM"
+      }
+    ]
   },
   {
     "name": "Venusaur",
@@ -1656,7 +4500,37 @@
     "baseDefense": 83,
     "baseSpeed": 80,
     "baseSpecial": 100,
-    "baseExpYield": 208
+    "baseExpYield": 208,
+    "moves": [
+      {
+        "level": 7,
+        "move": "LEECH SEED"
+      },
+      {
+        "level": 13,
+        "move": "VINE WHIP"
+      },
+      {
+        "level": 22,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 30,
+        "move": "RAZOR LEAF"
+      },
+      {
+        "level": 43,
+        "move": "GROWTH"
+      },
+      {
+        "level": 55,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 65,
+        "move": "SOLARBEAM"
+      }
+    ]
   },
   {
     "name": "Tentacruel",
@@ -1668,12 +4542,47 @@
     "baseDefense": 65,
     "baseSpeed": 100,
     "baseSpecial": 120,
-    "baseExpYield": 205
+    "baseExpYield": 205,
+    "moves": [
+      {
+        "level": 7,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 13,
+        "move": "WRAP"
+      },
+      {
+        "level": 18,
+        "move": "POISON STING"
+      },
+      {
+        "level": 22,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 27,
+        "move": "CONSTRICT"
+      },
+      {
+        "level": 35,
+        "move": "BARRIER"
+      },
+      {
+        "level": 43,
+        "move": "SCREECH"
+      },
+      {
+        "level": 50,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Missing9C",
     "ind": 156,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Goldeen",
@@ -1685,7 +4594,37 @@
     "baseDefense": 60,
     "baseSpeed": 63,
     "baseSpecial": 50,
-    "baseExpYield": 111
+    "baseExpYield": 111,
+    "evolution": {
+      "level": 33,
+      "toName": "SEAKING"
+    },
+    "moves": [
+      {
+        "level": 19,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 24,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 37,
+        "move": "WATERFALL"
+      },
+      {
+        "level": 45,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 54,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Seaking",
@@ -1697,27 +4636,57 @@
     "baseDefense": 65,
     "baseSpeed": 68,
     "baseSpecial": 80,
-    "baseExpYield": 170
+    "baseExpYield": 170,
+    "moves": [
+      {
+        "level": 19,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 24,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 30,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 39,
+        "move": "WATERFALL"
+      },
+      {
+        "level": 48,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 54,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Missing9F",
     "ind": 159,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "MissingA0",
     "ind": 160,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "MissingA1",
     "ind": 161,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "MissingA2",
     "ind": 162,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Ponyta",
@@ -1729,7 +4698,37 @@
     "baseDefense": 55,
     "baseSpeed": 90,
     "baseSpecial": 65,
-    "baseExpYield": 152
+    "baseExpYield": 152,
+    "evolution": {
+      "level": 40,
+      "toName": "RAPIDASH"
+    },
+    "moves": [
+      {
+        "level": 30,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 32,
+        "move": "STOMP"
+      },
+      {
+        "level": 35,
+        "move": "GROWL"
+      },
+      {
+        "level": 39,
+        "move": "FIRE SPIN"
+      },
+      {
+        "level": 43,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 48,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Rapidash",
@@ -1741,7 +4740,33 @@
     "baseDefense": 70,
     "baseSpeed": 105,
     "baseSpecial": 80,
-    "baseExpYield": 192
+    "baseExpYield": 192,
+    "moves": [
+      {
+        "level": 30,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 32,
+        "move": "STOMP"
+      },
+      {
+        "level": 35,
+        "move": "GROWL"
+      },
+      {
+        "level": 39,
+        "move": "FIRE SPIN"
+      },
+      {
+        "level": 47,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 55,
+        "move": "AGILITY"
+      }
+    ]
   },
   {
     "name": "Rattata",
@@ -1753,7 +4778,29 @@
     "baseDefense": 35,
     "baseSpeed": 72,
     "baseSpecial": 25,
-    "baseExpYield": 57
+    "baseExpYield": 57,
+    "evolution": {
+      "level": 20,
+      "toName": "RATICATE"
+    },
+    "moves": [
+      {
+        "level": 7,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 14,
+        "move": "HYPER FANG"
+      },
+      {
+        "level": 23,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 34,
+        "move": "SUPER FANG"
+      }
+    ]
   },
   {
     "name": "Raticate",
@@ -1765,7 +4812,25 @@
     "baseDefense": 60,
     "baseSpeed": 97,
     "baseSpecial": 50,
-    "baseExpYield": 116
+    "baseExpYield": 116,
+    "moves": [
+      {
+        "level": 7,
+        "move": "QUICK ATTACK"
+      },
+      {
+        "level": 14,
+        "move": "HYPER FANG"
+      },
+      {
+        "level": 27,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 41,
+        "move": "SUPER FANG"
+      }
+    ]
   },
   {
     "name": "Nidorino",
@@ -1777,7 +4842,37 @@
     "baseDefense": 57,
     "baseSpeed": 65,
     "baseSpecial": 55,
-    "baseExpYield": 118
+    "baseExpYield": 118,
+    "evolution": {
+      "item": "MOON STONE",
+      "toName": "NIDOKING"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "HORN ATTACK"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 23,
+        "move": "FOCUS ENERGY"
+      },
+      {
+        "level": 32,
+        "move": "FURY ATTACK"
+      },
+      {
+        "level": 41,
+        "move": "HORN DRILL"
+      },
+      {
+        "level": 50,
+        "move": "DOUBLE KICK"
+      }
+    ]
   },
   {
     "name": "Nidorina",
@@ -1789,7 +4884,37 @@
     "baseDefense": 67,
     "baseSpeed": 56,
     "baseSpecial": 55,
-    "baseExpYield": 117
+    "baseExpYield": 117,
+    "evolution": {
+      "item": "MOON STONE",
+      "toName": "NIDOQUEEN"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "SCRATCH"
+      },
+      {
+        "level": 14,
+        "move": "POISON STING"
+      },
+      {
+        "level": 23,
+        "move": "TAIL WHIP"
+      },
+      {
+        "level": 32,
+        "move": "BITE"
+      },
+      {
+        "level": 41,
+        "move": "FURY SWIPES"
+      },
+      {
+        "level": 50,
+        "move": "DOUBLE KICK"
+      }
+    ]
   },
   {
     "name": "Geodude",
@@ -1801,7 +4926,37 @@
     "baseDefense": 100,
     "baseSpeed": 20,
     "baseSpecial": 30,
-    "baseExpYield": 86
+    "baseExpYield": 86,
+    "evolution": {
+      "level": 25,
+      "toName": "GRAVELER"
+    },
+    "moves": [
+      {
+        "level": 11,
+        "move": "DEFENSE CURL"
+      },
+      {
+        "level": 16,
+        "move": "ROCK THROW"
+      },
+      {
+        "level": 21,
+        "move": "SELFDESTRUCT"
+      },
+      {
+        "level": 26,
+        "move": "HARDEN"
+      },
+      {
+        "level": 31,
+        "move": "EARTHQUAKE"
+      },
+      {
+        "level": 36,
+        "move": "EXPLOSION"
+      }
+    ]
   },
   {
     "name": "Porygon",
@@ -1813,7 +4968,25 @@
     "baseDefense": 70,
     "baseSpeed": 40,
     "baseSpecial": 75,
-    "baseExpYield": 130
+    "baseExpYield": 130,
+    "moves": [
+      {
+        "level": 23,
+        "move": "PSYBEAM"
+      },
+      {
+        "level": 28,
+        "move": "RECOVER"
+      },
+      {
+        "level": 35,
+        "move": "AGILITY"
+      },
+      {
+        "level": 42,
+        "move": "TRI ATTACK"
+      }
+    ]
   },
   {
     "name": "Aerodactyl",
@@ -1825,12 +4998,31 @@
     "baseDefense": 65,
     "baseSpeed": 130,
     "baseSpecial": 60,
-    "baseExpYield": 202
+    "baseExpYield": 202,
+    "moves": [
+      {
+        "level": 33,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 38,
+        "move": "BITE"
+      },
+      {
+        "level": 45,
+        "move": "TAKE DOWN"
+      },
+      {
+        "level": 54,
+        "move": "HYPER BEAM"
+      }
+    ]
   },
   {
     "name": "MissingAC",
     "ind": 172,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Magnemite",
@@ -1842,17 +5034,49 @@
     "baseDefense": 70,
     "baseSpeed": 45,
     "baseSpecial": 95,
-    "baseExpYield": 89
+    "baseExpYield": 89,
+    "evolution": {
+      "level": 30,
+      "toName": "MAGNETON"
+    },
+    "moves": [
+      {
+        "level": 21,
+        "move": "SONICBOOM"
+      },
+      {
+        "level": 25,
+        "move": "THUNDERSHOCK"
+      },
+      {
+        "level": 29,
+        "move": "SUPERSONIC"
+      },
+      {
+        "level": 35,
+        "move": "THUNDER WAVE"
+      },
+      {
+        "level": 41,
+        "move": "SWIFT"
+      },
+      {
+        "level": 47,
+        "move": "SCREECH"
+      }
+    ]
   },
   {
     "name": "MissingAE",
     "ind": 174,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "MissingAF",
     "ind": 175,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "Charmander",
@@ -1864,7 +5088,37 @@
     "baseDefense": 43,
     "baseSpeed": 65,
     "baseSpecial": 50,
-    "baseExpYield": 65
+    "baseExpYield": 65,
+    "evolution": {
+      "level": 16,
+      "toName": "CHARMELEON"
+    },
+    "moves": [
+      {
+        "level": 9,
+        "move": "EMBER"
+      },
+      {
+        "level": 15,
+        "move": "LEER"
+      },
+      {
+        "level": 22,
+        "move": "RAGE"
+      },
+      {
+        "level": 30,
+        "move": "SLASH"
+      },
+      {
+        "level": 38,
+        "move": "FLAMETHROWER"
+      },
+      {
+        "level": 46,
+        "move": "FIRE SPIN"
+      }
+    ]
   },
   {
     "name": "Squirtle",
@@ -1876,7 +5130,37 @@
     "baseDefense": 65,
     "baseSpeed": 43,
     "baseSpecial": 50,
-    "baseExpYield": 66
+    "baseExpYield": 66,
+    "evolution": {
+      "level": 16,
+      "toName": "WARTORTLE"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "BUBBLE"
+      },
+      {
+        "level": 15,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 22,
+        "move": "BITE"
+      },
+      {
+        "level": 28,
+        "move": "WITHDRAW"
+      },
+      {
+        "level": 35,
+        "move": "SKULL BASH"
+      },
+      {
+        "level": 42,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Charmeleon",
@@ -1888,7 +5172,37 @@
     "baseDefense": 58,
     "baseSpeed": 80,
     "baseSpecial": 65,
-    "baseExpYield": 142
+    "baseExpYield": 142,
+    "evolution": {
+      "level": 36,
+      "toName": "CHARIZARD"
+    },
+    "moves": [
+      {
+        "level": 9,
+        "move": "EMBER"
+      },
+      {
+        "level": 15,
+        "move": "LEER"
+      },
+      {
+        "level": 24,
+        "move": "RAGE"
+      },
+      {
+        "level": 33,
+        "move": "SLASH"
+      },
+      {
+        "level": 42,
+        "move": "FLAMETHROWER"
+      },
+      {
+        "level": 56,
+        "move": "FIRE SPIN"
+      }
+    ]
   },
   {
     "name": "Wartortle",
@@ -1900,7 +5214,37 @@
     "baseDefense": 80,
     "baseSpeed": 58,
     "baseSpecial": 65,
-    "baseExpYield": 143
+    "baseExpYield": 143,
+    "evolution": {
+      "level": 36,
+      "toName": "BLASTOISE"
+    },
+    "moves": [
+      {
+        "level": 8,
+        "move": "BUBBLE"
+      },
+      {
+        "level": 15,
+        "move": "WATER GUN"
+      },
+      {
+        "level": 24,
+        "move": "BITE"
+      },
+      {
+        "level": 31,
+        "move": "WITHDRAW"
+      },
+      {
+        "level": 39,
+        "move": "SKULL BASH"
+      },
+      {
+        "level": 47,
+        "move": "HYDRO PUMP"
+      }
+    ]
   },
   {
     "name": "Charizard",
@@ -1912,12 +5256,39 @@
     "baseDefense": 78,
     "baseSpeed": 100,
     "baseSpecial": 85,
-    "baseExpYield": 209
+    "baseExpYield": 209,
+    "moves": [
+      {
+        "level": 9,
+        "move": "EMBER"
+      },
+      {
+        "level": 15,
+        "move": "LEER"
+      },
+      {
+        "level": 24,
+        "move": "RAGE"
+      },
+      {
+        "level": 36,
+        "move": "SLASH"
+      },
+      {
+        "level": 46,
+        "move": "FLAMETHROWER"
+      },
+      {
+        "level": 55,
+        "move": "FIRE SPIN"
+      }
+    ]
   },
   {
     "name": "MissingB5",
     "ind": 181,
-    "glitch": true
+    "glitch": true,
+    "moves": []
   },
   {
     "name": "_Kabutops",
@@ -1944,7 +5315,37 @@
     "baseDefense": 55,
     "baseSpeed": 30,
     "baseSpecial": 75,
-    "baseExpYield": 78
+    "baseExpYield": 78,
+    "evolution": {
+      "level": 21,
+      "toName": "GLOOM"
+    },
+    "moves": [
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 17,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 19,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 24,
+        "move": "ACID"
+      },
+      {
+        "level": 33,
+        "move": "PETAL DANCE"
+      },
+      {
+        "level": 46,
+        "move": "SOLARBEAM"
+      }
+    ]
   },
   {
     "name": "Gloom",
@@ -1956,7 +5357,37 @@
     "baseDefense": 70,
     "baseSpeed": 40,
     "baseSpecial": 85,
-    "baseExpYield": 132
+    "baseExpYield": 132,
+    "evolution": {
+      "item": "LEAF STONE",
+      "toName": "VILEPLUME"
+    },
+    "moves": [
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 17,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 19,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 28,
+        "move": "ACID"
+      },
+      {
+        "level": 38,
+        "move": "PETAL DANCE"
+      },
+      {
+        "level": 52,
+        "move": "SOLARBEAM"
+      }
+    ]
   },
   {
     "name": "Vileplume",
@@ -1968,7 +5399,21 @@
     "baseDefense": 85,
     "baseSpeed": 50,
     "baseSpecial": 100,
-    "baseExpYield": 184
+    "baseExpYield": 184,
+    "moves": [
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 17,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 19,
+        "move": "SLEEP POWDER"
+      }
+    ]
   },
   {
     "name": "Bellsprout",
@@ -1980,7 +5425,41 @@
     "baseDefense": 35,
     "baseSpeed": 40,
     "baseSpecial": 70,
-    "baseExpYield": 84
+    "baseExpYield": 84,
+    "evolution": {
+      "level": 21,
+      "toName": "WEEPINBELL"
+    },
+    "moves": [
+      {
+        "level": 13,
+        "move": "WRAP"
+      },
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 18,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 21,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 26,
+        "move": "ACID"
+      },
+      {
+        "level": 33,
+        "move": "RAZOR LEAF"
+      },
+      {
+        "level": 42,
+        "move": "SLAM"
+      }
+    ]
   },
   {
     "name": "Weepinbell",
@@ -1992,7 +5471,41 @@
     "baseDefense": 50,
     "baseSpeed": 55,
     "baseSpecial": 85,
-    "baseExpYield": 151
+    "baseExpYield": 151,
+    "evolution": {
+      "item": "LEAF STONE",
+      "toName": "VICTREEBEL"
+    },
+    "moves": [
+      {
+        "level": 13,
+        "move": "WRAP"
+      },
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 18,
+        "move": "SLEEP POWDER"
+      },
+      {
+        "level": 23,
+        "move": "STUN SPORE"
+      },
+      {
+        "level": 29,
+        "move": "ACID"
+      },
+      {
+        "level": 38,
+        "move": "RAZOR LEAF"
+      },
+      {
+        "level": 49,
+        "move": "SLAM"
+      }
+    ]
   },
   {
     "name": "Victreebel",
@@ -2004,6 +5517,20 @@
     "baseDefense": 65,
     "baseSpeed": 70,
     "baseSpecial": 100,
-    "baseExpYield": 191
+    "baseExpYield": 191,
+    "moves": [
+      {
+        "level": 13,
+        "move": "WRAP"
+      },
+      {
+        "level": 15,
+        "move": "POISONPOWDER"
+      },
+      {
+        "level": 18,
+        "move": "SLEEP POWDER"
+      }
+    ]
   }
 ]
