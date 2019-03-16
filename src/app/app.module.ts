@@ -15,6 +15,8 @@ import { AreaPlayerComponent } from './screens/area-player/area-player.component
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
 import { CardSpriteHeader } from './fragments/card-sprite-header/card-sprite-header.component';
 import { CardPokemonHeader } from './fragments/card-pokemon-header/card-pokemon-header.component';
+import {PokemonDBService} from "./data/pokemonDb.service";
+
 /**
    Copyright 2018 June Hanabi
 
@@ -124,6 +126,7 @@ import { WorldCompletedComponent } from './screens/world-completed/world-complet
 import { RootHoFComponent } from './screens/root-hof/root-hof.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MoreEventPokemon } from './screens/more-event-pokemon/more-event-pokemon.component';
+import { GameDataService } from './data/gameData.service';
 
 @NgModule({
     declarations: [
@@ -221,7 +224,9 @@ import { MoreEventPokemon } from './screens/more-event-pokemon/more-event-pokemo
     ],
     providers: [
         SaveFileService,
-        KeyboardService
+        KeyboardService,
+        GameDataService,
+        PokemonDBService
     ],
     bootstrap: [AppComponent]
 })

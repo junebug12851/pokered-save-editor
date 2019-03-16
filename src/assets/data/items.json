@@ -507,333 +507,393 @@
         "ind": 97
     },
     {
-        "name": "HM 01",
+        "name": "HM 01: Cut",
         "ind": 196,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 51,
+        "hm": 1
     },
     {
-        "name": "HM 02",
+        "name": "HM 02: Fly",
         "ind": 197,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 52,
+        "hm": 2
     },
     {
-        "name": "HM 03",
+        "name": "HM 03: Surf",
         "ind": 198,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 53,
+        "hm": 3
     },
     {
-        "name": "HM 04",
+        "name": "HM 04: Strength",
         "ind": 199,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 54,
+        "hm": 4
     },
     {
-        "name": "HM 05",
+        "name": "HM 05: Flash",
         "ind": 200,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 55,
+        "hm": 5
     },
     {
-        "name": "TM 01",
+        "name": "TM 01: Mega Punch",
+        "tm": 1,
         "ind": 201,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 02",
+        "name": "TM 02: Razor Wind",
         "ind": 202,
+        "tm": 2,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 03",
+        "name": "TM 03: Swords Dance",
         "ind": 203,
+        "tm": 3,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 04",
+        "name": "TM 04: Whirlwind",
         "ind": 204,
+        "tm": 4,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 05",
+        "name": "TM 05: Mega Kick",
         "ind": 205,
+        "tm": 5,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 06",
+        "name": "TM 06: Toxic",
         "ind": 206,
+        "tm": 6,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 07",
+        "name": "TM 07: Horn Drill",
         "ind": 207,
+        "tm": 7,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 08",
+        "name": "TM 08: Body Slam",
         "ind": 208,
+        "tm": 8,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 09",
+        "name": "TM 09: Take Down",
         "ind": 209,
+        "tm": 9,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 10",
+        "name": "TM 10: Double Edge",
         "ind": 210,
+        "tm": 10,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 11",
+        "name": "TM 11: Bubblebeam",
         "ind": 211,
+        "tm": 11,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 12",
+        "name": "TM 12: Water Gun",
         "ind": 212,
+        "tm": 12,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 13",
+        "name": "TM 13: Ice Beam",
         "ind": 213,
+        "tm": 13,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 14",
+        "name": "TM 14: Blizzard",
         "ind": 214,
+        "tm": 14,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 15",
+        "name": "TM 15: Hyper Beam",
         "ind": 215,
+        "tm": 15,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 16",
+        "name": "TM 16: Pay Day",
         "ind": 216,
+        "tm": 16,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 17",
+        "name": "TM 17: Submission",
         "ind": 217,
+        "tm": 17,
         "normal": true,
         "typical": true
     },
     {
-        "name": "TM 18",
+        "name": "TM 18: Counter",
         "ind": 218,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 18
     },
     {
-        "name": "TM 19",
+        "name": "TM 19: Seismic Toss",
         "ind": 219,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 19
     },
     {
-        "name": "TM 20",
+        "name": "TM 20: Rage",
         "ind": 220,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 20
     },
     {
-        "name": "TM 21",
+        "name": "TM 21: Mega Drain",
         "ind": 221,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 21
     },
     {
-        "name": "TM 22",
+        "name": "TM 22: Solarbeam",
         "ind": 222,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 22
     },
     {
-        "name": "TM 23",
+        "name": "TM 23: Dragon Rage",
         "ind": 223,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 23
     },
     {
-        "name": "TM 24",
+        "name": "TM 24: Thunderbolt",
         "ind": 224,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 24
     },
     {
-        "name": "TM 25",
+        "name": "TM 25: Thunder",
         "ind": 225,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 25
     },
     {
-        "name": "TM 26",
+        "name": "TM 26: Earthquake",
         "ind": 226,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 26
     },
     {
-        "name": "TM 27",
+        "name": "TM 27: Fissure",
         "ind": 227,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 27
     },
     {
-        "name": "TM 28",
+        "name": "TM 28: Dig",
         "ind": 228,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 28
     },
     {
-        "name": "TM 29",
+        "name": "TM 29: Psychic",
         "ind": 229,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 29
     },
     {
-        "name": "TM 30",
+        "name": "TM 30: Teleport",
         "ind": 230,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 30
     },
     {
-        "name": "TM 31",
+        "name": "TM 31: Mimic",
         "ind": 231,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 31
     },
     {
-        "name": "TM 32",
+        "name": "TM 32: Double Team",
         "ind": 232,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 32
     },
     {
-        "name": "TM 33",
+        "name": "TM 33: Reflect",
         "ind": 233,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 33
     },
     {
-        "name": "TM 34",
+        "name": "TM 34: Bide",
         "ind": 234,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 34
     },
     {
-        "name": "TM 35",
+        "name": "TM 35: Metronome",
         "ind": 235,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 35
     },
     {
-        "name": "TM 36",
+        "name": "TM 36: Selfdestruct",
         "ind": 236,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 36
     },
     {
-        "name": "TM 37",
+        "name": "TM 37: Egg Bomb",
         "ind": 237,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 37
     },
     {
-        "name": "TM 38",
+        "name": "TM 38: Fireblast",
         "ind": 238,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 38
     },
     {
-        "name": "TM 39",
+        "name": "TM 39: Swift",
         "ind": 239,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 39
     },
     {
-        "name": "TM 40",
+        "name": "TM 40: Skullbash",
         "ind": 240,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 40
     },
     {
-        "name": "TM 41",
+        "name": "TM 41: Softboiled",
         "ind": 241,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 41
     },
     {
-        "name": "TM 42",
+        "name": "TM 42: Dream Eater",
         "ind": 242,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 42
     },
     {
-        "name": "TM 43",
+        "name": "TM 43: Sky Attack",
         "ind": 243,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 43
     },
     {
-        "name": "TM 44",
+        "name": "TM 44: Rest",
         "ind": 244,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 44
     },
     {
-        "name": "TM 45",
+        "name": "TM 45: Thunder Wave",
         "ind": 245,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 45
     },
     {
-        "name": "TM 46",
+        "name": "TM 46: Psywave",
         "ind": 246,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 46
     },
     {
-        "name": "TM 47",
+        "name": "TM 47: Explosion",
         "ind": 247,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 47
     },
     {
-        "name": "TM 48",
+        "name": "TM 48: Rock Slide",
         "ind": 248,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 48
     },
     {
-        "name": "TM 49",
+        "name": "TM 49: Tri Attack",
         "ind": 249,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 49
     },
     {
-        "name": "TM 50",
+        "name": "TM 50: Substitute",
         "ind": 250,
         "normal": true,
-        "typical": true
+        "typical": true,
+        "tm": 50
     }
 ]

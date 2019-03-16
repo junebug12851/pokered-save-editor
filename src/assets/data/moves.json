@@ -37,7 +37,8 @@
       "power": 80,
       "type": "NORMAL",
       "accuracy": 85,
-      "pp": 20
+      "pp": 20,
+      "tm": 1
     },
     {
       "name": "Pay Day",
@@ -45,7 +46,8 @@
       "power": 40,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 16
     },
     {
       "name": "Fire Punch",
@@ -101,14 +103,16 @@
       "power": 80,
       "type": "NORMAL",
       "accuracy": 75,
-      "pp": 10
+      "pp": 10,
+      "tm": 2
     },
     {
       "name": "Swords Dance",
       "ind": 14,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 30
+      "pp": 30,
+      "tm": 3
     },
     {
       "name": "Cut",
@@ -116,7 +120,9 @@
       "power": 50,
       "type": "NORMAL",
       "accuracy": 95,
-      "pp": 30
+      "pp": 30,
+      "tm": 51,
+      "hm": 1
     },
     {
       "name": "Gust",
@@ -139,7 +145,8 @@
       "ind": 18,
       "type": "NORMAL",
       "accuracy": 85,
-      "pp": 20
+      "pp": 20,
+      "tm": 4
     },
     {
       "name": "Fly",
@@ -147,7 +154,9 @@
       "power": 70,
       "type": "FLYING",
       "accuracy": 95,
-      "pp": 15
+      "pp": 15,
+      "tm": 52,
+      "hm": 2
     },
     {
       "name": "Bind",
@@ -195,7 +204,8 @@
       "power": 120,
       "type": "NORMAL",
       "accuracy": 75,
-      "pp": 5
+      "pp": 5,
+      "tm": 5
     },
     {
       "name": "Jump Kick",
@@ -250,7 +260,8 @@
       "power": 1,
       "type": "NORMAL",
       "accuracy": 30,
-      "pp": 5
+      "pp": 5,
+      "tm": 7
     },
     {
       "name": "Tackle",
@@ -266,7 +277,8 @@
       "power": 85,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 8
     },
     {
       "name": "Wrap",
@@ -282,7 +294,8 @@
       "power": 90,
       "type": "NORMAL",
       "accuracy": 85,
-      "pp": 20
+      "pp": 20,
+      "tm": 9
     },
     {
       "name": "Thrash",
@@ -298,7 +311,8 @@
       "power": 100,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 10
     },
     {
       "name": "Tail Whip",
@@ -442,7 +456,9 @@
       "power": 95,
       "type": "WATER",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 53,
+      "hm": 3
     },
     {
       "name": "Ice Beam",
@@ -450,7 +466,8 @@
       "power": 95,
       "type": "ICE",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 13
     },
     {
       "name": "Blizzard",
@@ -458,7 +475,8 @@
       "power": 120,
       "type": "ICE",
       "accuracy": 90,
-      "pp": 5
+      "pp": 5,
+      "tm": 14
     },
     {
       "name": "Psybeam",
@@ -474,7 +492,8 @@
       "power": 65,
       "type": "WATER",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 11
     },
     {
       "name": "Aurora Beam",
@@ -490,7 +509,8 @@
       "power": 150,
       "type": "NORMAL",
       "accuracy": 90,
-      "pp": 5
+      "pp": 5,
+      "tm": 15
     },
     {
       "name": "Peck",
@@ -514,7 +534,8 @@
       "power": 80,
       "type": "FIGHTING",
       "accuracy": 80,
-      "pp": 25
+      "pp": 25,
+      "tm": 17
     },
     {
       "name": "Low Kick",
@@ -530,7 +551,8 @@
       "power": 1,
       "type": "FIGHTING",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 18
     },
     {
       "name": "Seismic Toss",
@@ -538,7 +560,8 @@
       "power": 1,
       "type": "FIGHTING",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 19
     },
     {
       "name": "Strength",
@@ -546,7 +569,9 @@
       "power": 80,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 54,
+      "hm": 4
     },
     {
       "name": "Absorb",
@@ -562,7 +587,8 @@
       "power": 40,
       "type": "GRASS",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 21
     },
     {
       "name": "Leech Seed",
@@ -592,7 +618,8 @@
       "power": 120,
       "type": "GRASS",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 22
     },
     {
       "name": "Poisonpowder",
@@ -636,7 +663,8 @@
       "power": 1,
       "type": "DRAGON",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 23
     },
     {
       "name": "Fire Spin",
@@ -660,14 +688,16 @@
       "power": 95,
       "type": "ELECTRIC",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 24
     },
     {
       "name": "Thunder Wave",
       "ind": 86,
       "type": "ELECTRIC",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 45
     },
     {
       "name": "Thunder",
@@ -675,7 +705,8 @@
       "power": 120,
       "type": "ELECTRIC",
       "accuracy": 70,
-      "pp": 10
+      "pp": 10,
+      "tm": 25
     },
     {
       "name": "Rock Throw",
@@ -691,7 +722,8 @@
       "power": 100,
       "type": "GROUND",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 26
     },
     {
       "name": "Fissure",
@@ -699,7 +731,8 @@
       "power": 1,
       "type": "GROUND",
       "accuracy": 30,
-      "pp": 5
+      "pp": 5,
+      "tm": 27
     },
     {
       "name": "Dig",
@@ -707,14 +740,16 @@
       "power": 100,
       "type": "GROUND",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 28
     },
     {
       "name": "Toxic",
       "ind": 92,
       "type": "POISON",
       "accuracy": 85,
-      "pp": 10
+      "pp": 10,
+      "tm": 6
     },
     {
       "name": "Confusion",
@@ -725,12 +760,13 @@
       "pp": 25
     },
     {
-      "name": "Psychic M",
+      "name": "Psychic",
       "ind": 94,
       "power": 90,
       "type": "PSYCHIC",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 29
     },
     {
       "name": "Hypnosis",
@@ -767,14 +803,16 @@
       "power": 20,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 20
     },
     {
       "name": "Teleport",
       "ind": 100,
       "type": "PSYCHIC",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 30
     },
     {
       "name": "Night Shade",
@@ -788,7 +826,8 @@
       "ind": 102,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 31
     },
     {
       "name": "Screech",
@@ -802,7 +841,8 @@
       "ind": 104,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 32
     },
     {
       "name": "Recover",
@@ -844,7 +884,8 @@
       "ind": 110,
       "type": "WATER",
       "accuracy": 100,
-      "pp": 40
+      "pp": 40,
+      "tm": 12
     },
     {
       "name": "Defense Curl",
@@ -879,7 +920,8 @@
       "ind": 115,
       "type": "PSYCHIC",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 33
     },
     {
       "name": "Focus Energy",
@@ -893,14 +935,16 @@
       "ind": 117,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 34
     },
     {
       "name": "Metronome",
       "ind": 118,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 35
     },
     {
       "name": "Mirror Move",
@@ -915,7 +959,8 @@
       "power": 130,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 5
+      "pp": 5,
+      "tm": 36
     },
     {
       "name": "Egg Bomb",
@@ -923,7 +968,8 @@
       "power": 100,
       "type": "NORMAL",
       "accuracy": 75,
-      "pp": 10
+      "pp": 10,
+      "tm": 37
     },
     {
       "name": "Lick",
@@ -963,7 +1009,8 @@
       "power": 120,
       "type": "FIRE",
       "accuracy": 85,
-      "pp": 5
+      "pp": 5,
+      "tm": 38
     },
     {
       "name": "Waterfall",
@@ -987,7 +1034,8 @@
       "power": 60,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 20
+      "pp": 20,
+      "tm": 39
     },
     {
       "name": "Skull Bash",
@@ -995,7 +1043,8 @@
       "power": 100,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 40
     },
     {
       "name": "Spike Cannon",
@@ -1032,7 +1081,8 @@
       "ind": 135,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 41
     },
     {
       "name": "Hi Jump Kick",
@@ -1055,7 +1105,8 @@
       "power": 100,
       "type": "PSYCHIC",
       "accuracy": 100,
-      "pp": 15
+      "pp": 15,
+      "tm": 42
     },
     {
       "name": "Poison Gas",
@@ -1093,7 +1144,8 @@
       "power": 140,
       "type": "FLYING",
       "accuracy": 90,
-      "pp": 5
+      "pp": 5,
+      "tm": 43
     },
     {
       "name": "Transform",
@@ -1130,7 +1182,9 @@
       "ind": 148,
       "type": "NORMAL",
       "accuracy": 70,
-      "pp": 20
+      "pp": 20,
+      "tm": 55,
+      "hm": 5
     },
     {
       "name": "Psywave",
@@ -1138,7 +1192,8 @@
       "power": 1,
       "type": "PSYCHIC",
       "accuracy": 80,
-      "pp": 15
+      "pp": 15,
+      "tm": 46
     },
     {
       "name": "Splash",
@@ -1168,7 +1223,8 @@
       "power": 170,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 5
+      "pp": 5,
+      "tm": 47
     },
     {
       "name": "Fury Swipes",
@@ -1191,7 +1247,8 @@
       "ind": 156,
       "type": "PSYCHIC",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 44
     },
     {
       "name": "Rock Slide",
@@ -1199,7 +1256,8 @@
       "power": 75,
       "type": "ROCK",
       "accuracy": 90,
-      "pp": 10
+      "pp": 10,
+      "tm": 48
     },
     {
       "name": "Hyper Fang",
@@ -1229,7 +1287,8 @@
       "power": 80,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 49
     },
     {
       "name": "Super Fang",
@@ -1253,7 +1312,8 @@
       "glitch": true,
       "type": "NORMAL",
       "accuracy": 100,
-      "pp": 10
+      "pp": 10,
+      "tm": 50
     },
     {
       "name": "Struggle",
