@@ -19,6 +19,7 @@ import { OnInit, Output, EventEmitter } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 import {GameDataService} from '../../data/gameData.service';
+import {PokemonDBService} from '../../data/pokemonDB.service';
 import { MatSliderChange } from '@angular/material';
 
 @Component({
@@ -29,7 +30,8 @@ import { MatSliderChange } from '@angular/material';
 export class CardPokemonComponent implements OnInit {
 
     constructor(
-        public gd: GameDataService
+        public gd: GameDataService,
+        public pdb: PokemonDBService
     ) {
 
     }

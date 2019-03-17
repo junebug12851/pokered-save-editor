@@ -52,10 +52,13 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
     public disabled: boolean = false;
 
     @Input()
-    public species: string | null = null;
+    public species: number | null = null;
 
     get pokemonData() {
-        return this.pdb.pokemon[_.snakeCase(this.species)];
+        if(this.species == null)
+            return undefined;
+
+        return this.pdb.pokemon[this.species];
     }
 
     get movesList() {
@@ -117,10 +120,12 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
             ret.unshift({name: "--- Learnable Moves ---", ind: 0x00, disable: true});
         }
 
+        console.log(this.species, this.pokemonData, learnset, tmHms);
+
         return ret;
     }
 
     movesTracking(index: number) {
-        return index;
+        return `${index}-${this.species}`;
     }
 }

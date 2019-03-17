@@ -40,6 +40,12 @@ export class PokemonDBService {
         this.process1(this.rawPokemon, this.pokemon, "name");
         this.process1(this.rawTypes, this.types, "name");
 
+        // Add in aliases
+        this.process1Alts(this.rawItems, this.items, "ind", "name");
+        this.process1Alts(this.rawMoves, this.moves, "ind", "name");
+        this.process1Alts(this.rawPokemon, this.pokemon, "ind", "name");
+        this.process1Alts(this.rawTypes, this.types, "ind", "name");
+
         // Circular Link everything
         // Yes I'm aware of the dangers and pitfalls of circular linking
         // I'm choosing it anyways for now
@@ -55,15 +61,22 @@ export class PokemonDBService {
         }
     }
 
+    process1Alts(from: any, to: any, key: any, origKey: any) {
+        for(let i = 0; i < from.length; i++) {
+            const entry = from[i];
+            to[entry[key]] = to[_.snakeCase(entry[origKey])];
+        }
+    }
+
     process2Items() {
         const self = this;
 
         _.forOwn(this.items, function(value: any) {
-            if(value.tm !== undefined) {
+            if(value.tm !== undefined && value._tm === undefined) {
                 value._tm = value.tm;
                 value.tm = _.find(self.moves, ['tm', value.tm]);
             }
-            if(value.hm !== undefined) {
+            if(value.hm !== undefined && value._hm === undefined) {
                 value._hm = value.hm;
                 value.hm = _.find(self.moves, ['hm', value.hm]);
             }
@@ -74,15 +87,15 @@ export class PokemonDBService {
         const self = this;
 
         _.forOwn(this.moves, function(value: any) {
-            if(value.type !== undefined) {
+            if(value.type !== undefined && value._type === undefined) {
                 value._type = value.type;
                 value.type = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type))]);
             }
-            if(value.tm !== undefined) {
+            if(value.tm !== undefined && value._tm === undefined) {
                 value._tm = value.tm;
                 value.tm = _.find(self.items, ['_tm', value.tm]);
             }
-            if(value.hm !== undefined) {
+            if(value.hm !== undefined && value._hm === undefined) {
                 value._hm = value.hm;
                 value.hm = _.find(self.items, ['_hm', value.hm]);
             }
@@ -96,12 +109,15 @@ export class PokemonDBService {
             if(value.moves !== undefined) {
                 for(let i = 0; i < value.moves.length; i++) {
                     const move = value.moves[i];
+                    if(move._move !== undefined)
+                        continue;
+
                     move._move = move.move;
                     move.move = _.find(self.moves, ['name', _.startCase(_.lowerCase(move.move))]);
                 }
             }
 
-            if(value.initial !== undefined) {
+            if(value.initial !== undefined && value._initial === undefined) {
                 value._initial = _.cloneDeep(value.initial);
                 for(let i = 0; i < value.initial.length; i++) {
                     const initial = value.initial[i];
@@ -109,7 +125,7 @@ export class PokemonDBService {
                 }
             }
 
-            if(value.tmHm !== undefined) {
+            if(value.tmHm !== undefined && value._tmHm === undefined) {
                 value._tmHm = _.cloneDeep(value.tmHm);
                 for(let i = 0; i < value.tmHm.length; i++) {
                     const tmHmEntry = value.tmHm[i];
@@ -117,22 +133,25 @@ export class PokemonDBService {
                 }
             }
 
-            if(value.type1 !== undefined) {
+            if(value.type1 !== undefined && value._type1 === undefined) {
                 value._type1 = value.type1;
                 value.type1 = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type1))]);
             }
 
-            if(value.type2 !== undefined) {
+            if(value.type2 !== undefined && value._type2 === undefined) {
                 value._type2 = value.type2;
                 value.type2 = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type2))]);
             }
 
             if(value.evolution !== undefined) {
                 const process = (entry: any) => {
-                    if(entry.item !== undefined) {
+                    if(entry.item !== undefined && entry._item === undefined) {
                         entry._item = entry.item;
                         entry.item = _.find(self.items, ['name', _.startCase(_.lowerCase(entry.item))]);
                     }
+
+                    if(entry._toName !== undefined)
+                        return;
 
                     entry._toName = entry.toName;
                     entry.toName = _.find(self.pokemon, ['name', _.startCase(_.lowerCase(entry.toName))]);
