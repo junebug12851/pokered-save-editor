@@ -15,6 +15,9 @@ import { Type } from "../../assets/data/types";
  * types
  */
 
+// @ts-ignore
+const _ = window.require("lodash");
+
 @Injectable({
     providedIn: 'root'
 })
@@ -22,14 +25,116 @@ export class PokemonDBService {
     constructor(
         public gd: GameDataService
     ) {
+        // @ts-ignore
+        window.pokemonDB = this;
+
+        // Get Raw Data
         this.rawItems = this.gd.file("items").data;
         this.rawMoves = this.gd.file("moves").data;
         this.rawPokemon = this.gd.file("pokemon").data;
         this.rawTypes = this.gd.file("types").data;
+
+        // Convert to index data by name in snake_case form
+        this.process1(this.rawItems, this.items, "name");
+        this.process1(this.rawMoves, this.moves, "name");
+        this.process1(this.rawPokemon, this.pokemon, "name");
+        this.process1(this.rawTypes, this.types, "name");
+
+        // Circular Link everything
+        this.process2Items();
+        this.process2Moves();
+        this.process2Pokemon();
+    }
+
+    process1(from: any, to: any, key: any) {
+        for(let i = 0; i < from.length; i++) {
+            const entry = from[i];
+            to[_.snakeCase(entry[key])] = _.cloneDeep(entry);
+        }
+    }
+
+    process2Items() {
+        const self = this;
+
+        _.forOwn(this.items, function(value: any) {
+            if(value.tm !== undefined) {
+                value._tm = value.tm;
+                value.tm = _.find(self.moves, ['tm', value.tm]);
+            }
+            if(value.hm !== undefined) {
+                value._hm = value.hm;
+                value.hm = _.find(self.moves, ['hm', value.hm]);
+            }
+        });
+    }
+
+    process2Moves() {
+        const self = this;
+
+        _.forOwn(this.moves, function(value: any) {
+            if(value.type !== undefined) {
+                value._type = value.type;
+                value.type = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type))]);
+            }
+            if(value.tm !== undefined) {
+                value._tm = value.tm;
+                value.tm = _.find(self.items, ['_tm', value.tm]);
+            }
+            if(value.hm !== undefined) {
+                value._hm = value.hm;
+                value.hm = _.find(self.items, ['_hm', value.hm]);
+            }
+        });
+    }
+
+    process2Pokemon() {
+        const self = this;
+
+        _.forOwn(this.pokemon, function(value: any) {
+            if(value.moves !== undefined) {
+                for(let i = 0; i < value.moves.length; i++) {
+                    const move = value.moves[i];
+                    move._move = move.move;
+                    move.move = _.find(self.moves, ['name', _.startCase(_.lowerCase(move.move))]);
+                }
+            }
+
+            if(value.initial !== undefined) {
+                value._initial = _.cloneDeep(value.initial);
+                for(let i = 0; i < value.initial.length; i++) {
+                    const initial = value.initial[i];
+                    value.initial[i] = _.find(self.moves, ['name', _.startCase(_.lowerCase(initial))]);
+                }
+            }
+
+            if(value.tmHm !== undefined) {
+                value._tmHm = _.cloneDeep(value.tmHm);
+                for(let i = 0; i < value.tmHm.length; i++) {
+                    const tmHmEntry = value.tmHm[i];
+                    value.tmHm[i] = _.find(self.moves, ['_tm', tmHmEntry]);
+                }
+            }
+        });
     }
 
     public rawItems: Item[];
     public rawMoves: Move[];
     public rawPokemon: Pokemon[];
     public rawTypes: Type[];
+
+    public items: {
+        [key: string]: any
+    } = {};
+
+    public moves: {
+        [key: string]: any
+    } = {};
+
+    public pokemon: {
+        [key: string]: any
+    } = {};
+
+    public types: {
+        [key: string]: any
+    } = {};
 }

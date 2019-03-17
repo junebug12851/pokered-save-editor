@@ -17,6 +17,7 @@
 import { SaveFileService } from './../../data/savefile.service';
 import { Component } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
+import { PokemonDBService } from 'src/app/data/pokemonDb.service';
 
 @Component({
     selector: 'screen-player-pokemon',
@@ -26,6 +27,7 @@ import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonPart
 export class PlayerPokemonComponent {
     constructor(
         public fileService: SaveFileService,
+        public pdb: PokemonDBService,
     ) { }
 
     get entries() {
