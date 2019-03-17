@@ -19,6 +19,7 @@ import { ValueAccessorBase } from './../abstract/ValueAccessorBase';
  */
 
 import { Component, Input } from '@angular/core';
+import { PokemonDBService } from '../../data/pokemonDB.service';
 
 import {
     NG_VALUE_ACCESSOR,
@@ -41,7 +42,8 @@ const _ = window.require("lodash");
 export class SelectMovesComponent extends ValueAccessorBase<string> {
 
     constructor(
-        public gd: GameDataService
+        public gd: GameDataService,
+        public pdb: PokemonDBService
     ) {
         super();
     }
@@ -49,7 +51,35 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
     @Input()
     public disabled: boolean = false;
 
+    @Input()
+    public species: string | null = null;
+
+    get pokemonData() {
+        return this.pdb.pokemon[_.snakeCase(this.species)];
+    }
+
     get movesList() {
+
+        // Gather applicable Learnset (If Any)
+        let learnset = [];
+        if(this.pokemonData !== undefined && this.pokemonData.moves !== undefined)
+            for (const learn of this.pokemonData.moves) {
+                learnset.push({
+                    name: `Level: ${learn.level} - ${learn.move.name}`,
+                    ind: learn.move.ind
+                });
+            }
+
+        // Gather applicable TM & HM's (If Any)
+        let tmHms = [];
+        if(this.pokemonData !== undefined && this.pokemonData.tmHm !== undefined)
+            for (const tm of this.pokemonData.tmHm) {
+                tmHms.push({
+                    name: tm.name,
+                    ind: tm.ind
+                });
+            }
+
         const moves = this.gd.file("moves").data;
 
         let moveListReg = _.filter(moves, (value: Move) => {
@@ -70,12 +100,24 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
 
         moveListGlitch = _.sortBy(moveListGlitch, ['name']);
 
-        return [
+        const ret = [
             { name: "--- Regular Moves ---", ind: 0x00, disable: true },
             ...moveListReg,
             { name: "--- Glitch Moves ---", ind: 0x00, disable: true },
             ...moveListGlitch,
         ];
+
+        if(tmHms.length > 0) {
+            ret.unshift(...tmHms);
+            ret.unshift({name: "--- Learnable TM/HMs ---", ind: 0x00, disable: true});
+        }
+
+        if(learnset.length > 0) {
+            ret.unshift(...learnset);
+            ret.unshift({name: "--- Learnable Moves ---", ind: 0x00, disable: true});
+        }
+
+        return ret;
     }
 
     movesTracking(index: number) {
