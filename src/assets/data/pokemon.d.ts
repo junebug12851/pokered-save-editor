@@ -1,3 +1,17 @@
+export interface PokemonEvolution {
+    // The Pokemon evolves by reaching this level
+    level?: number;
+
+    // The Pokemon evolves by using this item
+    item?: string;
+
+    // The Pokemon evolves by trading it
+    trade?: true;
+
+    // The Pokemon evolves into this Pokemon
+    toName: string;
+}
+
 export interface Pokemon {
 
     [key: string]: any, // Generic Lookup
@@ -43,19 +57,7 @@ export interface Pokemon {
     catchRate?: number;
 
     // This Pokemon can evolve and this is how
-    evolution?: {
-        // The Pokemon evolves by reaching this level
-        level?: number;
-
-        // The Pokemon evolves by using this item
-        item?: string;
-
-        // The Pokemon evolves by trading it
-        trade?: true;
-
-        // The Pokemon evolves into this Pokemon
-        toName: string;
-    }
+    evolution?: PokemonEvolution | PokemonEvolution[];
 
     // For Invalid Pokemon
     glitch?: boolean, // Is this a glitch Pokemon?

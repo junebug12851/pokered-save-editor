@@ -15,7 +15,7 @@ import { AreaPlayerComponent } from './screens/area-player/area-player.component
 import { AreaSignsComponent } from './screens/area-signs/area-signs.component';
 import { CardSpriteHeader } from './fragments/card-sprite-header/card-sprite-header.component';
 import { CardPokemonHeader } from './fragments/card-pokemon-header/card-pokemon-header.component';
-import {PokemonDBService} from "./data/pokemonDb.service";
+import {PokemonDBService} from "./data/pokemonDB.service";
 
 /**
    Copyright 2018 June Hanabi

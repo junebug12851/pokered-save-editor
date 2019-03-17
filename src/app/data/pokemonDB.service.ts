@@ -8,7 +8,7 @@ import { Type } from "../../assets/data/types";
 
 /**
  * Files
- * 
+ *
  * items
  * moves
  * pokemon
@@ -113,6 +113,36 @@ export class PokemonDBService {
                     const tmHmEntry = value.tmHm[i];
                     value.tmHm[i] = _.find(self.moves, ['_tm', tmHmEntry]);
                 }
+            }
+
+            if(value.type1 !== undefined) {
+                value._type1 = value.type1;
+                value.type1 = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type1))]);
+            }
+
+            if(value.type2 !== undefined) {
+                value._type2 = value.type2;
+                value.type2 = _.find(self.types, ['name', _.startCase(_.lowerCase(value.type2))]);
+            }
+
+            if(value.evolution !== undefined) {
+                const process = (entry: any) => {
+                    if(entry.item !== undefined) {
+                        entry._item = entry.item;
+                        entry.item = _.find(self.items, ['name', _.startCase(_.lowerCase(entry.item))]);
+                    }
+
+                    entry._toName = entry.toName;
+                    entry.toName = _.find(self.pokemon, ['name', _.startCase(_.lowerCase(entry.toName))]);
+                }
+
+                if(Array.isArray(value.evolution)) {
+                    for(let i = 0; i < value.evolution.length; i++) {
+                        process(value.evolution[i]);
+                    }
+                }
+                else
+                    process(value.evolution);
             }
         });
     }

@@ -17,7 +17,7 @@
 import { SaveFileService } from './../../data/savefile.service';
 import { Component } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
-import { PokemonDBService } from 'src/app/data/pokemonDb.service';
+import { PokemonDBService } from '../../data/pokemonDB.service';
 
 @Component({
     selector: 'screen-player-pokemon',
