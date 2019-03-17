@@ -41,6 +41,8 @@ export class PokemonDBService {
         this.process1(this.rawTypes, this.types, "name");
 
         // Circular Link everything
+        // Yes I'm aware of the dangers and pitfalls of circular linking
+        // I'm choosing it anyways for now
         this.process2Items();
         this.process2Moves();
         this.process2Pokemon();
