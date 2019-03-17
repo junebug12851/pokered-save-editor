@@ -3,7 +3,7 @@ mat-form-field
         '[(ngModel)]'='value'
         '[disabled]'='disabled'
     )
-        mat-option('[value]'="255" '[disabled]'='') Choose Move
+        mat-option('[value]'="0" '[disabled]'='') ---
         mat-option(
             *ngFor='let move of movesList; trackBy: movesTracking',
             '[value]'='move.ind',

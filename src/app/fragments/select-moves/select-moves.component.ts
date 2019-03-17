@@ -65,6 +65,14 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
 
         // Gather applicable Learnset (If Any)
         let learnset = [];
+        if(this.pokemonData !== undefined && this.pokemonData.initial !== undefined)
+            for (const learn of this.pokemonData.initial) {
+                learnset.push({
+                    name: `Level: 1 - ${learn.name}`,
+                    ind: learn.ind
+                });
+            }
+
         if(this.pokemonData !== undefined && this.pokemonData.moves !== undefined)
             for (const learn of this.pokemonData.moves) {
                 learnset.push({
@@ -78,7 +86,7 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
         if(this.pokemonData !== undefined && this.pokemonData.tmHm !== undefined)
             for (const tm of this.pokemonData.tmHm) {
                 tmHms.push({
-                    name: tm.name,
+                    name: `${tm.tm.name}`,
                     ind: tm.ind
                 });
             }
@@ -104,9 +112,9 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
         moveListGlitch = _.sortBy(moveListGlitch, ['name']);
 
         const ret = [
-            { name: "--- Regular Moves ---", ind: 0x00, disable: true },
+            { name: "--- All Regular Moves ---", ind: 0x00, disable: true },
             ...moveListReg,
-            { name: "--- Glitch Moves ---", ind: 0x00, disable: true },
+            { name: "--- All Glitch Moves ---", ind: 0x00, disable: true },
             ...moveListGlitch,
         ];
 
@@ -119,8 +127,6 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
             ret.unshift(...learnset);
             ret.unshift({name: "--- Learnable Moves ---", ind: 0x00, disable: true});
         }
-
-        console.log(this.species, this.pokemonData, learnset, tmHms);
 
         return ret;
     }

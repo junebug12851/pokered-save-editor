@@ -4323,15 +4323,6 @@
     "initial": [
       "TRANSFORM"
     ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
     "type1": "NORMAL",
     "type2": "NORMAL",
     "catchRate": 35
@@ -6198,15 +6189,6 @@
       "POISON_STING",
       "STRING_SHOT"
     ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
     "type1": "BUG",
     "type2": "POISON",
     "catchRate": 255
@@ -6228,15 +6210,6 @@
     },
     "initial": [
       "HARDEN"
-    ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "type1": "BUG",
     "type2": "POISON",
@@ -6664,15 +6637,6 @@
       "TACKLE",
       "STRING_SHOT"
     ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
     "type1": "BUG",
     "type2": "BUG",
     "catchRate": 255
@@ -6694,15 +6658,6 @@
     },
     "initial": [
       "HARDEN"
-    ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "type1": "BUG",
     "type2": "BUG",
@@ -7233,15 +7188,6 @@
     ],
     "initial": [
       "SPLASH"
-    ],
-    "tmHm": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "type1": "WATER",
     "type2": "WATER",
