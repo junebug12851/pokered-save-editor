@@ -21,6 +21,10 @@ import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonPart
 import {GameDataService} from '../../data/gameData.service';
 import {PokemonDBService} from '../../data/pokemonDB.service';
 import { MatSliderChange } from '@angular/material';
+import { SaveFileService } from '../../data/savefile.service';
+
+// @ts-ignore
+const _ = window.require("lodash");
 
 @Component({
     selector: 'card-pokemon',
@@ -31,12 +35,66 @@ export class CardPokemonComponent implements OnInit {
 
     constructor(
         public gd: GameDataService,
-        public pdb: PokemonDBService
+        public pdb: PokemonDBService,
+        public file: SaveFileService,
     ) {
 
     }
 
     ngOnInit() {}
+
+    public onSpeciesChange() {
+        this.updateData();
+
+        const species = this.pdb.pokemon[this.entry.species];
+        if(species == undefined || species.name == undefined)
+            return;
+
+        if(species.type1 !== undefined)
+            this.entry.type1 = species.type1.ind;
+
+        if(species.type2 !== undefined)
+            this.entry.type2 = species.type2.ind;
+
+        if(this.entry.type1 == this.entry.type2)
+            this.entry.type2 = 0xFF;
+
+        if(species.catchRate !== undefined)
+            this.entry.catchRate = species.catchRate;
+
+        const nickname = this.entry.nickname;
+        let changeNick = false;
+
+        if(nickname != "") {
+            for(let i = 0; i <= this.pdb.rawPokemon.length; i++) {
+                const pkmnEntry = this.pdb.pokemon[i];
+                if(pkmnEntry == undefined || pkmnEntry.name == undefined)
+                    continue;
+    
+                let pkmnEntryName = pkmnEntry.name.toUpperCase();
+                if(pkmnEntryName == "NIDORAN<F>")
+                    pkmnEntryName = "NIDORAN<f>"
+                else if(pkmnEntryName == "NIDORAN<M>")
+                    pkmnEntryName = "NIDORAN<m>"
+    
+                if(nickname == pkmnEntryName) {
+                    changeNick = true;
+                    break;
+                }
+            }
+        }
+        else
+            changeNick = true;
+        
+        if(!changeNick)
+            return;
+
+        this.entry.nickname = species.name.toUpperCase();
+        if(this.entry.nickname == "NIDORAN<F>")
+            this.entry.nickname = "NIDORAN<f>"
+        else if(this.entry.nickname == "NIDORAN<M>")
+            this.entry.nickname = "NIDORAN<m>"
+    }
 
     public updateData() {
         this.entry.updateExp();
@@ -54,6 +112,241 @@ export class CardPokemonComponent implements OnInit {
 
     public setScreen(name: string) {
         this.screen = name;
+    }
+
+    public maxPP(moveId: number, move: any) {
+        const moveEntry = this.pdb.moves[moveId];
+        if(moveEntry == undefined)
+            return "??";
+
+        const pp = moveEntry.pp;
+        if(pp == undefined)
+            return "??";
+
+        const ppUp = move.ppUp;
+        const ppUpPercent = (ppUp * 0.2) + 1;
+
+        return Math.floor(pp * ppUpPercent);
+    }
+
+    onPpUpChange(move: any) {
+        const maxPP = this.maxPP(move.moveID, move);
+        if(maxPP == "??")
+            return;
+
+        if(move.pp > maxPP)
+            move.pp = maxPP;
+    }
+
+    onMoveChange(newVal: number, move: any) {
+        const moveEntry = this.pdb.moves[newVal];
+        if(moveEntry == undefined)
+            return;
+
+        if(moveEntry.glitch == true)
+            return;
+
+        const maxPP = this.maxPP(newVal, move);
+        if(maxPP == "??")
+            return;
+
+        if(move.pp > maxPP)
+            move.pp = maxPP;
+    }
+
+    get isMaxLevel() {
+        return this.entry.level >= 100;
+    }
+
+    doMaxLevel() {
+        this.entry.level = 100;
+        this.updateData();
+    }
+
+    get isHealed() {
+        const hpHealed = (this.entry.hp == (this.entry.maxHP || this.entry.hpStat));
+        const statusHealed = this.entry.status == 0;
+        let ppFull = true;
+        for(let i = 0; i < this.entry.moves.length; i++) {
+            const maxPP = this.maxPP(this.entry.moves[i].moveID, this.entry.moves[i]);
+            if(maxPP != "??") {
+                if(this.entry.moves[i].pp != maxPP)
+                    ppFull = false;
+            }
+        }
+
+        return hpHealed && statusHealed && ppFull;
+    }
+
+    doHeal() {
+        this.entry.hp = this.entry.maxHP || this.entry.hpStat;
+        this.entry.status = 0;
+        for(let i = 0; i < this.entry.moves.length; i++) {
+            const maxPP = this.maxPP(this.entry.moves[i].moveID, this.entry.moves[i]);
+            if(maxPP != "??")
+                this.entry.moves[i].pp = maxPP;
+        }
+    }
+
+    get isMaxPPUps() {
+        let ppUpsFull = true;
+        for(let i = 0; i < this.entry.moves.length; i++) {
+            const maxPP = this.maxPP(this.entry.moves[i].moveID, this.entry.moves[i]);
+            if(maxPP != "??") {
+                if(this.entry.moves[i].ppUp < 3)
+                    ppUpsFull = false;
+            }
+        }
+
+        return ppUpsFull;
+    }
+
+    maxPPUps() {
+        for(let i = 0; i < this.entry.moves.length; i++) {
+            const maxPP = this.maxPP(this.entry.moves[i].moveID, this.entry.moves[i]);
+            if(maxPP != "??")
+                this.entry.moves[i].ppUp = 3;
+        }
+    }
+
+    get isMaxEVs() {
+        return this.entry.hpExp == 0xFFFF &&
+            this.entry.attackExp == 0xFFFF &&
+            this.entry.defenseExp == 0xFFFF &&
+            this.entry.speedExp == 0xFFFF &&
+            this.entry.specialExp == 0xFFFF;
+    }
+
+    doMaxEVs() {
+        this.entry.hpExp = 0xFFFF;
+        this.entry.attackExp = 0xFFFF;
+        this.entry.defenseExp = 0xFFFF;
+        this.entry.speedExp = 0xFFFF;
+        this.entry.specialExp = 0xFFFF;
+        this.updateData();
+    }
+
+    doResetEVs() {
+        this.entry.hpExp = 0;
+        this.entry.attackExp = 0;
+        this.entry.defenseExp = 0;
+        this.entry.speedExp = 0;
+        this.entry.specialExp = 0;
+        this.updateData();
+    }
+
+    get isMaxDVs() {
+        return this.entry.dv.attack == 15 &&
+            this.entry.dv.defense == 15 &&
+            this.entry.dv.speed == 15 &&
+            this.entry.dv.special == 15;
+    }
+
+    doMaxDVs() {
+        this.entry.dv.attack = 15;
+        this.entry.dv.defense = 15;
+        this.entry.dv.speed = 15;
+        this.entry.dv.special = 15;
+        this.updateData();
+    }
+
+    doReRollDVs() {
+        this.entry.dv.attack = _.random(0, 15, false);
+        this.entry.dv.defense = _.random(0, 15, false);
+        this.entry.dv.speed = _.random(0, 15, false);
+        this.entry.dv.special = _.random(0, 15, false);
+        this.updateData();
+    }
+
+    get isFullyMaxed() {
+        return this.isMaxLevel && 
+            this.isHealed &&
+            this.isMaxPPUps &&
+            this.isMaxEVs &&
+            this.isMaxDVs;
+    }
+
+    doFullyMaxed() {
+        this.doMaxLevel();
+        this.maxPPUps();
+        this.doMaxEVs();
+        this.doMaxDVs();
+
+        this.doHeal();
+    }
+
+    doFullReset() {
+        this.entry.level = 5;
+
+        const monData = this.pdb.pokemon[this.entry.species];
+        if(monData == undefined)
+            return;
+        
+        for(let i = 0; i < 4; i++) {
+            if(monData.initial == undefined)
+                continue;
+
+            this.entry.moves[i].moveID = (monData.initial[i]) ? monData.initial[i].ind : 0;
+            this.entry.moves[i].pp = 0;
+            this.entry.moves[i].ppUp = 0;
+        }
+
+        this.doResetEVs();
+
+        this.doHeal();
+        this.updateData();
+    }
+
+    get isTradedMon() {
+        return (this.entry.otID != this.file.fileDataExpanded.player.basics.playerID) ||
+            (this.entry.otName != this.file.fileDataExpanded.player.basics.playerName)
+    }
+
+    makeTradeMon() {
+        const names: string[] = this.gd.file("names").data;
+        this.entry.otID = _.random(0, 0xFFFF, false).toString(16).toUpperCase().padStart(4, "0");
+        this.entry.otName = names[_.random(0, names.length - 1, false)];
+    }
+
+    makeOwnMon() {
+        this.entry.otID = this.file.fileDataExpanded.player.basics.playerID;
+        this.entry.otName = this.file.fileDataExpanded.player.basics.playerName;
+    }
+
+    get isNicknamed() {
+        const species = this.pdb.pokemon[this.entry.species];
+        if(species == undefined || species.name == undefined)
+            return null;
+
+        let nickname = species.name.toUpperCase();
+        if(nickname == "NIDORAN<F>")
+            nickname = "NIDORAN<f>"
+        else if(nickname == "NIDORAN<M>")
+            nickname = "NIDORAN<m>"
+
+        if(this.entry.nickname == nickname)
+            return false;
+        
+        return true;
+    }
+
+    makeNickname() {
+        const names: string[] = this.gd.file("names").data;
+        this.entry.nickname = names[_.random(0, names.length - 1, false)];
+    }
+
+    makeOwnName() {
+        const species = this.pdb.pokemon[this.entry.species];
+        if(species == undefined || species.name == undefined)
+            return;
+
+        let nickname = species.name.toUpperCase();
+        if(nickname == "NIDORAN<F>")
+            nickname = "NIDORAN<f>"
+        else if(nickname == "NIDORAN<M>")
+            nickname = "NIDORAN<m>"
+
+        this.entry.nickname = nickname;
     }
 
     @Input()

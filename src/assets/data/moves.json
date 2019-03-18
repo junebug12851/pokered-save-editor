@@ -1309,7 +1309,6 @@
     {
       "name": "Substitute",
       "ind": 164,
-      "glitch": true,
       "type": "NORMAL",
       "accuracy": 100,
       "pp": 10,

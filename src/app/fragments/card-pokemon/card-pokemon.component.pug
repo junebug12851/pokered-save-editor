@@ -17,6 +17,24 @@ mat-menu(
 mat-menu(
     '#menuShortcuts'=''
 )
+    button('mat-menu-item'='', '(click)'='doHeal()', '[disabled]'='isHealed') Heal
+    mat-divider
+    button('mat-menu-item'='', '(click)'='doMaxLevel()', '[disabled]'='isMaxLevel') Max Level
+    button('mat-menu-item'='', '(click)'='maxPPUps()', '[disabled]'='isMaxPPUps') Max PP Ups
+    button('mat-menu-item'='', '(click)'='doMaxEVs()', '[disabled]'='isMaxEVs') Max EV's
+    button('mat-menu-item'='', '(click)'='doResetEVs()') Reset EV's
+    button('mat-menu-item'='', '(click)'='doReRollDVs()') Re-Roll DV's
+    button('mat-menu-item'='', '(click)'='doMaxDVs()', '[disabled]'='isMaxDVs') Max DV's
+    mat-divider
+    button('mat-menu-item'='', '(click)'='doFullyMaxed()', '[disabled]'='isFullyMaxed') Max Out
+    button('mat-menu-item'='', '(click)'='doFullReset()') Full Reset
+    mat-divider
+    button('mat-menu-item'='', '(click)'='makeTradeMon()', '[disabled]'='isTradedMon') Make Traded Pokemon
+    button('mat-menu-item'='', '(click)'='makeOwnMon()', '[disabled]'='!isTradedMon') Make Own Pokemon
+    mat-divider
+    button('mat-menu-item'='', '(click)'='makeNickname()', '[disabled]'='isNicknamed == true') Make Nicknamed
+    button('mat-menu-item'='', '(click)'='makeOwnName()', '[disabled]'='isNicknamed == false') Make Own Name
+    mat-divider
     button('mat-menu-item'='', '(click)'='rem.emit()') Delete
 
 .menu
@@ -60,8 +78,8 @@ mat-menu(
 )
     select-species(
         '[(ngModel)]'='entry.species'
+        '(ngModelChange)'="onSpeciesChange()"
         '[disabled]'='disabled'
-        '(ngModelChange)'="updateData()"
     )
 
     select-type(
@@ -395,6 +413,7 @@ mat-menu(
     .move-entry(*ngFor='let move of entry.moves; let i = index')
         select-moves(
             '[(ngModel)]'='entry.moves[i].moveID'
+            '(ngModelChange)'="onMoveChange($event, move)"
             '[disabled]'='disabled'
             '[species]'='entry.species'
         )
@@ -410,9 +429,20 @@ mat-menu(
             )
 
         mat-form-field
+            mat-label Max PP
+            input(
+                matInput=''
+                placeholder='Max PP'
+                type='text'
+                '[value]'='maxPP(move.moveID, move)'
+                '[disabled]'='true'
+            )
+
+        mat-form-field
             mat-label PP Up
             mat-select(
                 '[(ngModel)]'='entry.moves[i].ppUp'
+                '(selectionChange)'="onPpUpChange(move)"
                 '[disabled]'='disabled'
             )
                 mat-option('[value]'='0') 0

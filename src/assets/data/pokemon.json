@@ -517,7 +517,7 @@
       },
       {
         "level": 55,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       }
     ],
     "initial": [
@@ -1350,7 +1350,7 @@
       },
       {
         "level": 40,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       }
     ],
     "initial": [
@@ -1411,8 +1411,7 @@
       52,
       53,
       54,
-      55,
-      56
+      55
     ],
     "type1": "PSYCHIC",
     "type2": "PSYCHIC",
@@ -2318,7 +2317,7 @@
       },
       {
         "level": 48,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       }
     ],
     "initial": [
@@ -2394,7 +2393,7 @@
       },
       {
         "level": 38,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       },
       {
         "level": 42,
@@ -3059,7 +3058,7 @@
       },
       {
         "level": 32,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       },
       {
         "level": 37,
@@ -3826,7 +3825,7 @@
       },
       {
         "level": 43,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       }
     ],
     "initial": [
@@ -6510,7 +6509,7 @@
       },
       {
         "level": 50,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       }
     ],
     "initial": [
@@ -6905,7 +6904,7 @@
       },
       {
         "level": 37,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       },
       {
         "level": 43,
@@ -7026,7 +7025,7 @@
       },
       {
         "level": 66,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       },
       {
         "level": 70,
@@ -7045,7 +7044,7 @@
       "CONFUSION",
       "DISABLE",
       "SWIFT",
-      "PSYCHIC_M"
+      "PSYCHIC"
     ],
     "tmHm": [
       1,
@@ -7835,7 +7834,7 @@
       },
       {
         "level": 38,
-        "move": "PSYCHIC M"
+        "move": "PSYCHIC"
       },
       {
         "level": 42,

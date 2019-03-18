@@ -131,6 +131,20 @@ export class SelectMovesComponent extends ValueAccessorBase<string> {
         return ret;
     }
 
+    getTooltip(move: any) {
+        const moveData = this.pdb.moves[move.ind];
+        
+        if(moveData === undefined || moveData.glitch)
+            return "";
+
+        const power = (moveData.power && moveData.power > 1) ? moveData.power : "---";
+        const type = (moveData.type) ? _.startCase(_.lowerCase(moveData.type.name)) : "---";
+        const accuracy = (moveData.accuracy) ? `${moveData.accuracy}%` : "---";
+        const pp = (moveData.pp) ? moveData.pp : "---";
+        
+        return `Power:${power} Type:${type} Accuracy:${accuracy} PP:${pp}`;
+    }
+
     movesTracking(index: number) {
         return `${index}-${this.species}`;
     }
