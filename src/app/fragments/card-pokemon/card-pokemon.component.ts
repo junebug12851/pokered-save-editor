@@ -226,6 +226,14 @@ export class CardPokemonComponent implements OnInit {
         this.updateData();
     }
 
+    get isMinEVs() {
+        return this.entry.hpExp == 0 &&
+            this.entry.attackExp == 0 &&
+            this.entry.defenseExp == 0 &&
+            this.entry.speedExp == 0 &&
+            this.entry.specialExp == 0;
+    }
+
     doResetEVs() {
         this.entry.hpExp = 0;
         this.entry.attackExp = 0;
@@ -273,6 +281,34 @@ export class CardPokemonComponent implements OnInit {
         this.doMaxDVs();
 
         this.doHeal();
+    }
+
+    get isFullyReset() {
+
+        const monData = this.pdb.pokemon[this.entry.species];
+        if(monData == undefined)
+            return null;
+
+        let movesReset = true;
+        
+        for(let i = 0; i < 4; i++) {
+            if(monData.initial == undefined)
+                continue;
+
+            movesReset = this.entry.moves[i].moveID == (monData.initial[i]) ? monData.initial[i].ind : 0;
+            if(!movesReset)
+                break;
+
+            movesReset = this.entry.moves[i].pp == 0;
+            if(!movesReset)
+                break;
+
+            movesReset = this.entry.moves[i].ppUp == 0;
+            if(!movesReset)
+                break;
+        }
+
+        return this.entry.level == 5 && movesReset && this.isMinEVs && this.isHealed;
     }
 
     doFullReset() {

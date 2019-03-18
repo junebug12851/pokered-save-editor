@@ -22,12 +22,12 @@ mat-menu(
     button('mat-menu-item'='', '(click)'='doMaxLevel()', '[disabled]'='isMaxLevel') Max Level
     button('mat-menu-item'='', '(click)'='maxPPUps()', '[disabled]'='isMaxPPUps') Max PP Ups
     button('mat-menu-item'='', '(click)'='doMaxEVs()', '[disabled]'='isMaxEVs') Max EV's
-    button('mat-menu-item'='', '(click)'='doResetEVs()') Reset EV's
+    button('mat-menu-item'='', '(click)'='doResetEVs()', '[disabled]'='isMinEVs') Reset EV's
     button('mat-menu-item'='', '(click)'='doReRollDVs()') Re-Roll DV's
     button('mat-menu-item'='', '(click)'='doMaxDVs()', '[disabled]'='isMaxDVs') Max DV's
     mat-divider
     button('mat-menu-item'='', '(click)'='doFullyMaxed()', '[disabled]'='isFullyMaxed') Max Out
-    button('mat-menu-item'='', '(click)'='doFullReset()') Full Reset
+    button('mat-menu-item'='', '(click)'='doFullReset()', '[disabled]'='isFullyReset') Full Reset
     mat-divider
     button('mat-menu-item'='', '(click)'='makeTradeMon()', '[disabled]'='isTradedMon') Make Traded Pokemon
     button('mat-menu-item'='', '(click)'='makeOwnMon()', '[disabled]'='!isTradedMon') Make Own Pokemon
