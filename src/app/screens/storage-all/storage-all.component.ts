@@ -1,4 +1,6 @@
 import { PokemonBox } from './../../data/savefile-expanded/fragments/PokemonBox';
+import { PokemonParty } from './../../data/savefile-expanded/fragments/PokemonParty';
+
 /**
    Copyright 2018 June Hanabi
 
@@ -17,6 +19,7 @@ import { PokemonBox } from './../../data/savefile-expanded/fragments/PokemonBox'
 
 import { Component, OnInit } from '@angular/core';
 import { SaveFileService } from "../../data/savefile.service";
+import {MatSnackBar} from '@angular/material';
 
 @Component({
     selector: 'screen-storage-all',
@@ -27,7 +30,14 @@ export class StorageAllComponent implements OnInit {
 
     constructor(
         public fileService: SaveFileService,
+        private snackBar: MatSnackBar
     ) { }
+
+    notify(message: string) {
+        this.snackBar.open(message, '', {
+            duration: 2 * 1000,
+        });
+    }
 
     get boxItems() {
         return this.fileService.fileDataExpanded.storage.boxItems;
@@ -63,6 +73,19 @@ export class StorageAllComponent implements OnInit {
 
     remPokemon(boxNum: number, i: number) {
         this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].splice(i, 1);
+    }
+
+    withdrawPokemon(boxNum: number, i: number) {
+        const party = this.fileService.fileDataExpanded.player.pokemon.playerParty;
+
+        if(party.length >= 6)
+            return this.notify("Party is full");
+
+        const pkmn = this.fileService.fileDataExpanded.storage.pokemonBoxes[boxNum - 1].splice(i, 1)[0];
+        PokemonParty.convertToPokemonParty(pkmn);
+        party.push(pkmn as PokemonParty);
+
+        return this.notify("Withdrew Pokemon into party");
     }
 
     addPokemon(boxNum: number) {

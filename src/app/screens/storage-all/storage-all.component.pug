@@ -120,6 +120,8 @@ mat-accordion('*ngIf'='viewing != -1')
         card-pokemon(
             '[entry]'='getBoxPokemon(viewingBox)[i]'
             '(rem)'='remPokemon(viewingBox, i)'
+            '(onWithdrawDeposit)'='withdrawPokemon(viewingBox, i)'
+            '[partyMon]'='false'
         )
 
 button.addBtn(

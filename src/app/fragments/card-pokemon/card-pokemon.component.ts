@@ -22,6 +22,7 @@ import {GameDataService} from '../../data/gameData.service';
 import {PokemonDBService} from '../../data/pokemonDB.service';
 import { MatSliderChange } from '@angular/material';
 import { SaveFileService } from '../../data/savefile.service';
+import {MatSnackBar} from '@angular/material';
 
 // @ts-ignore
 const _ = window.require("lodash");
@@ -37,11 +38,18 @@ export class CardPokemonComponent implements OnInit {
         public gd: GameDataService,
         public pdb: PokemonDBService,
         public file: SaveFileService,
+        private snackBar: MatSnackBar
     ) {
 
     }
 
     ngOnInit() {}
+
+    notify(message: string) {
+        this.snackBar.open(message, '', {
+            duration: 2 * 1000,
+        });
+    }
 
     public onSpeciesChange() {
         this.updateData();
@@ -390,6 +398,12 @@ export class CardPokemonComponent implements OnInit {
 
     @Input()
     public disabled: boolean = false;
+
+    @Input()
+    public partyMon: boolean = true;
+
+    @Output()
+    public onWithdrawDeposit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     @Output()
     public rem: EventEmitter<any> = new EventEmitter<any>();

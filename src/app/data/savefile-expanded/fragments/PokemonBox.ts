@@ -2,6 +2,10 @@ import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
 import {Pokemon} from '../../../../assets/data/pokemon';
 import { GameDataService } from '../../gameData.service';
+import { PokemonDBService } from '../../pokemonDb.service';
+
+// @ts-ignore
+const _ = window.require("lodash");
 
 export class PokemonBox {
     constructor(saveFile?: SaveFileService,
@@ -27,6 +31,62 @@ export class PokemonBox {
 
         // Pokemon box data structure complete, Ready for Pokemon Party to
         // takeover
+    }
+
+    // Creates a new Pokemon of a random starter-like species without a nickname
+    // and not traded. Depending on the species everything else is filled out
+    // accordingly such as the chosen species type, catch rate, and initial moves
+    // the level is level 5
+    // The random species chosen is a base evolution species that's not legendary
+    static newPokemon(file: SaveFileService, pdb: PokemonDBService, gd: GameDataService) {
+        const pkmn = new PokemonBox();
+        const pkmnList = gd.file("randomPkmn").data;
+        const pkmnData = pdb.pokemon[_.snakeCase(pkmnList[_.random(0, pkmnList.length, false)])];
+
+        pkmn.species = pkmnData.ind;
+        pkmn.level = 5;
+
+        if(pkmnData.type1 !== undefined)
+            pkmn.type1 = pkmnData.type1.ind;
+
+        if(pkmnData.type2 !== undefined)
+            pkmn.type2 = pkmnData.type2.ind;
+
+        if(pkmn.type1 == pkmn.type2)
+            pkmn.type2 = 0xFF;
+
+        for(let i = 0; i < 4; i++) {
+            if(pkmnData.initial == undefined)
+                continue;
+
+            pkmn.moves[i].moveID = (pkmnData.initial[i]) ? pkmnData.initial[i].ind : 0;
+            pkmn.moves[i].pp = (pkmnData.initial[i]) ? pkmnData.initial[i].pp : 0;
+            pkmn.moves[i].ppUp = 0;
+        }
+
+        pkmn.otID = file.fileDataExpanded.player.basics.playerID;
+        pkmn.otName = file.fileDataExpanded.player.basics.playerName;
+
+        pkmn.dv.attack = _.random(0, 15, false);
+        pkmn.dv.defense = _.random(0, 15, false);
+        pkmn.dv.speed = _.random(0, 15, false);
+        pkmn.dv.special = _.random(0, 15, false);
+
+        let nickname = pkmnData.name.toUpperCase();
+        if(nickname == "NIDORAN<F>")
+            nickname = "NIDORAN<f>"
+        else if(nickname == "NIDORAN<M>")
+            nickname = "NIDORAN<m>"
+
+        pkmn.nickname = nickname;
+
+        if(pkmnData.catchRate !== undefined)
+            pkmn.catchRate = pkmnData.catchRate;
+
+        pkmn.hp = pkmn.hpStat;
+        pkmn.updateExp();
+
+        return pkmn;
     }
 
     public load(saveFile: SaveFileService,

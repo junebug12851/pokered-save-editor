@@ -35,6 +35,8 @@ mat-menu(
     button('mat-menu-item'='', '(click)'='makeNickname()', '[disabled]'='isNicknamed == true') Make Nicknamed
     button('mat-menu-item'='', '(click)'='makeOwnName()', '[disabled]'='isNicknamed == false') Make Own Name
     mat-divider
+    button('mat-menu-item'='', '(click)'='onWithdrawDeposit.emit()', '*ngIf'='!partyMon') Withdraw from PC
+    button('mat-menu-item'='', '(click)'='onWithdrawDeposit.emit()', '*ngIf'='partyMon') Deposit to PC
     button('mat-menu-item'='', '(click)'='rem.emit()') Delete
 
 .menu

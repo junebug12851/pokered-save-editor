@@ -11,7 +11,9 @@ mat-accordion
         
         card-pokemon(
             '[entry]'='entries[i]'
+            '[partyMon]'='true'
             '(rem)'='onRem(i)'
+            '(onWithdrawDeposit)'='onDeposit(i)'
         )
 
 button.addBtn(

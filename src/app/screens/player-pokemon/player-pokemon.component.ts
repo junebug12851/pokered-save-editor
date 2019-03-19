@@ -18,6 +18,9 @@ import { SaveFileService } from './../../data/savefile.service';
 import { Component } from '@angular/core';
 import { PokemonParty } from '../../data/savefile-expanded/fragments/PokemonParty';
 import { PokemonDBService } from '../../data/pokemonDB.service';
+import { PokemonBox } from '../../data/savefile-expanded/fragments/PokemonBox';
+import { GameDataService } from '../../data/gameData.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
     selector: 'screen-player-pokemon',
@@ -28,17 +31,44 @@ export class PlayerPokemonComponent {
     constructor(
         public fileService: SaveFileService,
         public pdb: PokemonDBService,
+        public gd: GameDataService,
+        private snackBar: MatSnackBar
     ) { }
+
+    notify(message: string) {
+        this.snackBar.open(message, '', {
+            duration: 2 * 1000,
+        });
+    }
 
     get entries() {
         return this.fileService.fileDataExpanded.player.pokemon.playerParty;
     }
 
     onAdd() {
-        this.fileService.fileDataExpanded.player.pokemon.playerParty.push(new PokemonParty());
+        const pkmn = PokemonBox.newPokemon(this.fileService, this.pdb, this.gd) as PokemonParty;
+        PokemonParty.convertToPokemonParty(pkmn);
+        this.fileService.fileDataExpanded.player.pokemon.playerParty.push(pkmn);
     }
 
     onRem(i: number) {
         this.fileService.fileDataExpanded.player.pokemon.playerParty.splice(i, 1);
+    }
+
+    onDeposit(i: number) {
+        const curBox = this.fileService.fileDataExpanded.storage.pokemonBoxes[
+            this.fileService.fileDataExpanded.storage.curBox
+        ];
+
+        if(curBox.length >= 20)
+            return this.notify("Current Box is full");
+
+        const pkmn = this.fileService.fileDataExpanded.player.pokemon.playerParty.splice(i, 1)[0];
+        PokemonParty.convertToPokemonBox(pkmn);
+        this.fileService.fileDataExpanded.storage.pokemonBoxes[
+            this.fileService.fileDataExpanded.storage.curBox
+        ].push(pkmn);
+
+        return this.notify("Deposited Pokemon into current box");
     }
 }
