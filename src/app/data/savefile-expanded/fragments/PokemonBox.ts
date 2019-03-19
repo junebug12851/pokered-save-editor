@@ -2,7 +2,7 @@ import { SaveFileIterator } from './../SaveFileIterator';
 import { SaveFileService } from './../../savefile.service';
 import {Pokemon} from '../../../../assets/data/pokemon';
 import { GameDataService } from '../../gameData.service';
-import { PokemonDBService } from '../../pokemonDb.service';
+import { PokemonDBService } from '../../pokemonDB.service';
 
 // @ts-ignore
 const _ = window.require("lodash");
