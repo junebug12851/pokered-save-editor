@@ -18,13 +18,16 @@ mat-menu(
     '#menuShortcuts'=''
 )
     button('mat-menu-item'='', '(click)'='doHeal()', '[disabled]'='isHealed') Heal
+    button('mat-menu-item'='', '(click)'='doEvolve()', '[disabled]'='!canEvolve') Evolve
     mat-divider
     button('mat-menu-item'='', '(click)'='doMaxLevel()', '[disabled]'='isMaxLevel') Max Level
     button('mat-menu-item'='', '(click)'='maxPPUps()', '[disabled]'='isMaxPPUps') Max PP Ups
+    mat-divider
+    button('mat-menu-item'='', '(click)'='doMaxDVs()', '[disabled]'='isMaxDVs') Max DV's
+    button('mat-menu-item'='', '(click)'='doReRollDVs()') Re-Roll DV's
+    mat-divider
     button('mat-menu-item'='', '(click)'='doMaxEVs()', '[disabled]'='isMaxEVs') Max EV's
     button('mat-menu-item'='', '(click)'='doResetEVs()', '[disabled]'='isMinEVs') Reset EV's
-    button('mat-menu-item'='', '(click)'='doReRollDVs()') Re-Roll DV's
-    button('mat-menu-item'='', '(click)'='doMaxDVs()', '[disabled]'='isMaxDVs') Max DV's
     mat-divider
     button('mat-menu-item'='', '(click)'='doFullyMaxed()', '[disabled]'='isFullyMaxed') Max Out
     button('mat-menu-item'='', '(click)'='doFullReset()', '[disabled]'='isFullyReset') Full Reset

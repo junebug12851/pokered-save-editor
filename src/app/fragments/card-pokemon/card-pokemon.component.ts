@@ -393,6 +393,23 @@ export class CardPokemonComponent implements OnInit {
         this.entry.nickname = nickname;
     }
 
+    get canEvolve() {
+        const species = this.pdb.pokemon[this.entry.species];
+        if(species == undefined || species.evolution == undefined)
+            return false;
+
+        return true;
+    }
+
+    doEvolve() {
+        const species = this.pdb.pokemon[this.entry.species];
+        if(species == undefined || species.evolution == undefined)
+            return;
+
+        this.entry.species = species.evolution.toName.ind;
+        this.onSpeciesChange();
+    }
+
     @Input()
     public entry: any = new PokemonParty();
 
