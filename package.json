@@ -65,7 +65,7 @@
         "@types/node": "~11.9.5",
         "apply-loader": "^2.0.0",
         "codelyzer": "~4.5.0",
-        "core-js": "^2.6.5",
+        "core-js": "^3.0.0",
         "cross-env": "^5.2.0",
         "electron": "^4.0.5",
         "electron-builder": "^20.38.5",
