@@ -35,7 +35,7 @@
     "private": true,
     "dependencies": {
         "bluebird": "^3.5.3",
-        "electron-store": "^2.0.0",
+        "electron-store": "^3.0.0",
         "lodash": "^4.17.11"
     },
     "devDependencies": {
