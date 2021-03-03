@@ -80,7 +80,7 @@
         "karma-jasmine-html-reporter": "^1.4.0",
         "ng-cli-pug-loader": "^0.1.7",
         "protractor": "^5.4.2",
-        "pug": "^2.0.3",
+        "pug": "^3.0.2",
         "pug-loader": "^2.4.0",
         "rxjs": "^6.4.0",
         "rxjs-compat": "^6.4.0",
