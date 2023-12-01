@@ -68,7 +68,7 @@
         "codelyzer": "~4.5.0",
         "core-js": "^2.6.5",
         "cross-env": "^5.2.0",
-        "electron": "^4.1.1",
+        "electron": "^27.1.3",
         "electron-builder": "^20.39.0",
         "hammerjs": "^2.0.8",
         "jasmine-core": "~3.3.0",
